@@ -19,21 +19,26 @@
       <h1 class="page-title">Antibioticoterapia nas principais infecções</h1>
     </header>
 
-    <section class="prose">
+    <section class="prose" aria-label="Introdução à terapia empírica">
       <p>Na prática clínica, a decisão inicial sobre antibioticoterapia geralmente ocorre antes da identificação definitiva do microrganismo. Nessa fase, denominada terapia empírica, o tratamento baseia-se na estimativa probabilística do foco infeccioso, construída a partir da apresentação clínica, do sítio anatômico envolvido e do contexto epidemiológico, permitindo inferir o perfil microbiológico mais provável naquele cenário clínico<sup>1,2</sup>.</p>
 
       <p>A partir dessa estimativa inicial, o raciocínio clínico orienta-se pelo sítio provável da infecção e pelas características do paciente. Quadros respiratórios, urinários, intra-abdominais, cutâneos ou sistêmicos apresentam padrões microbiológicos distintos, o que direciona a escolha do espectro antibacteriano inicial. O objetivo não é identificar precisamente o microrganismo, mas selecionar uma cobertura adequada ao risco clínico e ao perfil etiológico mais provável.</p>
 
-      <section class="cap8-p69-interaction" aria-label="Organização do raciocínio clínico por foco provável">
-        <div class="cap8-p69-tabs" role="tablist" aria-label="Focos prováveis de infecção">
-          <button class="cap8-p69-tab is-active" type="button" role="tab" aria-selected="true" data-focus="respiratorio">Respiratório</button>
-          <button class="cap8-p69-tab" type="button" role="tab" aria-selected="false" data-focus="cutaneo">Cutâneo</button>
-          <button class="cap8-p69-tab" type="button" role="tab" aria-selected="false" data-focus="intraabdominal">Intra-abdominal</button>
-          <button class="cap8-p69-tab" type="button" role="tab" aria-selected="false" data-focus="sistemico">Sistêmico</button>
-          <button class="cap8-p69-tab" type="button" role="tab" aria-selected="false" data-focus="urinario">Urinário</button>
+      <section class="cap8-p69-interaction" aria-labelledby="p69-interaction-title">
+        <div class="cap8-p69-interaction-head">
+          <p class="cap8-p69-interaction-kicker"
+          <p>Selecione um foco infeccioso para comparar os principais elementos da avaliação empírica.</p>
         </div>
 
-        <div class="cap8-p69-panel" data-p69-panel>
+        <div class="cap8-p69-tabs" role="tablist" aria-label="Focos prováveis de infecção">
+          <button id="p69-tab-respiratorio" class="cap8-p69-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="p69-focus-panel" tabindex="0" data-focus="respiratorio">Respiratório</button>
+          <button id="p69-tab-cutaneo" class="cap8-p69-tab" type="button" role="tab" aria-selected="false" aria-controls="p69-focus-panel" tabindex="-1" data-focus="cutaneo">Cutâneo</button>
+          <button id="p69-tab-intraabdominal" class="cap8-p69-tab" type="button" role="tab" aria-selected="false" aria-controls="p69-focus-panel" tabindex="-1" data-focus="intraabdominal">Intra-abdominal</button>
+          <button id="p69-tab-sistemico" class="cap8-p69-tab" type="button" role="tab" aria-selected="false" aria-controls="p69-focus-panel" tabindex="-1" data-focus="sistemico">Sistêmico</button>
+          <button id="p69-tab-urinario" class="cap8-p69-tab" type="button" role="tab" aria-selected="false" aria-controls="p69-focus-panel" tabindex="-1" data-focus="urinario">Urinário</button>
+        </div>
+
+        <div id="p69-focus-panel" class="cap8-p69-panel" role="tabpanel" aria-labelledby="p69-tab-respiratorio" aria-live="polite" data-p69-panel>
           <p class="cap8-p69-kicker" data-p69-kicker>Foco respiratório</p>
           <h2 class="cap8-p69-subtitle" data-p69-title>O foco provável organiza a primeira cobertura</h2>
 
@@ -41,27 +46,39 @@
             <p class="cap8-p69-text" data-p69-text>Em infecções respiratórias, a decisão inicial depende da coerência entre quadro clínico, exame físico e, quando disponível, achados de imagem. O foco anatômico ajuda a estimar quais patógenos são mais prováveis e qual amplitude de cobertura faz sentido naquele contexto.</p>
 
             <div class="cap8-p69-meta">
-              <p><strong>Peso decisório:</strong> <span data-p69-weight>Compatibilidade clínica do quadro e gravidade da apresentação.</span></p>
-              <p><strong>Erro a evitar:</strong> <span data-p69-risk>Presumir infecção bacteriana apenas com base em sintomas respiratórios inespecíficos.</span></p>
+              <div class="cap8-p69-meta-item cap8-p69-meta-item--decision">
+                <strong>Peso decisório</strong>
+                <p data-p69-weight>Compatibilidade clínica do quadro e gravidade da apresentação.</p>
+              </div>
+              <div class="cap8-p69-meta-item cap8-p69-meta-item--risk">
+                <strong>Erro a evitar</strong>
+                <p data-p69-risk>Presumir infecção bacteriana apenas com base em sintomas respiratórios inespecíficos.</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <p>Esse processo exige avaliação clínica individualizada, pois um mesmo tipo de infecção pode demandar abordagens distintas conforme características do paciente, como idade, comorbidades, hospitalizações recentes, exposição prévia a antibacterianos e presença de dispositivos invasivos. Esses fatores modificam o perfil microbiológico esperado e impactam diretamente na definição da terapia empírica <sup>3,4</sup>.</p>
+      <h2 class="cap8-p69-section-divider">
+        <span aria-hidden="true"></span>
+        Da escolha empírica à reavaliação
+        <span aria-hidden="true"></span>
+      </h2>
 
-      <p>A amplitude do espectro antibacteriano deve ser proporcional à gravidade da apresentação clínica. Em pacientes instáveis ou com suspeita de infecção grave, recomenda-se uma cobertura inicial mais ampla, visando reduzir o risco de inadequação terapêutica precoce <sup>5</sup>. Em apresentações menos graves, estratégias com espectro mais estreito são geralmente adequadas, desde que compatíveis com o perfil clínico e epidemiológico.</p>
+      <p>Esse processo exige avaliação clínica individualizada, pois um mesmo tipo de infecção pode demandar abordagens distintas conforme características do paciente, como idade, comorbidades, hospitalizações recentes, exposição prévia a antibacterianos e presença de dispositivos invasivos. Esses fatores modificam o perfil microbiológico esperado e impactam diretamente na definição da terapia empírica<sup>3,4</sup>.</p>
 
-      <p>À medida que novas informações, especialmente microbiológicas e clínicas, se tornam disponíveis, a terapia empírica deve ser reavaliada e ajustada, com estreitamento do espectro conforme a identificação do agente etiológico <sup>3,6</sup>.</p>
+      <p>A amplitude do espectro antibacteriano deve ser proporcional à gravidade da apresentação clínica. Em pacientes instáveis ou com suspeita de infecção grave, recomenda-se uma cobertura inicial mais ampla, visando reduzir o risco de inadequação terapêutica precoce<sup>5</sup>. Em apresentações menos graves, estratégias com espectro mais estreito são geralmente adequadas, desde que compatíveis com o perfil clínico e epidemiológico.</p>
 
-      <p>Nem toda manifestação clínica sugestiva de infecção corresponde a doença infecciosa ativa, sendo fundamental integrar dados da história clínica, exame físico e exames complementares para distinguir infecção verdadeira, colonização microbiológica e processos inflamatórios não infecciosos <sup>7,8</sup>.</p>
+      <p>À medida que novas informações, especialmente microbiológicas e clínicas, se tornam disponíveis, a terapia empírica deve ser reavaliada e ajustada, com estreitamento do espectro conforme a identificação do agente etiológico<sup>3,6</sup>.</p>
+
+      <p>Nem toda manifestação clínica sugestiva de infecção corresponde a doença infecciosa ativa, sendo fundamental integrar dados da história clínica, exame físico e exames complementares para distinguir infecção verdadeira, colonização microbiológica e processos inflamatórios não infecciosos<sup>7,8</sup>.</p>
     </section>
 
- <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="../capitulo-07/p68.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 8 · Página 69 de 89</div>
-  <a class="btn primary" href="p70.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="../capitulo-07/p68.html" aria-label="Ir para a página anterior">← Anterior</a>
+      <div class="center">Capítulo 8 · Página 69 de 89</div>
+      <a class="btn primary" href="p70.html" aria-label="Ir para a próxima página">Próxima →</a>
+    </nav>
   </main>
 
   <script src="../../js/app.js"></script>

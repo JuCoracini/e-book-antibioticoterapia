@@ -15,7 +15,6 @@
 </head>
 
 <body class="cap3-page25">
-
   <main class="page-shell cap3-shell">
 
     <header class="page-header">
@@ -23,66 +22,98 @@
       <h1 class="page-title">Alteração do alvo molecular</h1>
     </header>
 
-    <section class="prose cap3-reading-flow" aria-label="Texto principal">
-
+    <section class="prose cap3-reading-flow">
       <p>
-        Outra estratégia adaptativa importante consiste na modificação estrutural do alvo molecular do antibacteriano. Quando a atividade de um fármaco depende de ligação específica a uma proteína ou enzima bacteriana, alterações nesse sítio de ligação podem reduzir sua afinidade, comprometendo a eficácia terapêutica <sup>3,5</sup>.
+        A ação de muitos antibacterianos depende da ligação específica a uma estrutura bacteriana. Quando esse alvo é modificado, substituído ou protegido, a afinidade do fármaco pode diminuir, comprometendo sua atividade. Nesse mecanismo, o antibacteriano permanece estruturalmente íntegro; a resistência decorre da alteração da estrutura sobre a qual ele deveria atuar <sup>3,4,9</sup>.
       </p>
 
-      <p>
-        Diferentemente da inativação enzimática, na qual o antibacteriano é degradado antes de exercer sua ação, na alteração de alvo a molécula do fármaco permanece estruturalmente íntegra. No entanto, a modificação do sítio de ligação impede que o antibacteriano interaja de forma eficaz com sua estrutura-alvo, reduzindo sua atividade biológica.
-      </p>
+      <section class="cap3-p25-compare" aria-label="Diferença entre inativação enzimática e alteração do alvo">
+        <article class="cap3-p25-compareCard cap3-p25-compareCard--drug">
+          <span>Inativação enzimática</span>
+          <strong>O antibacteriano é modificado</strong>
+          <p>Uma enzima bacteriana altera ou destrói a estrutura necessária para a ação do fármaco.</p>
+        </article>
+        <div class="cap3-p25-versus" aria-hidden="true">≠</div>
+        <article class="cap3-p25-compareCard cap3-p25-compareCard--target">
+          <span>Alteração do alvo</span>
+          <strong>O alvo bacteriano é modificado</strong>
+          <p>O fármaco permanece íntegro, mas sua ligação ao alvo torna-se insuficiente.</p>
+        </article>
+      </section>
 
       <figure class="figure cap3-p25-figure">
-        <button
-          type="button"
-          data-zoom="../../assets/capitulo-03/imagens/pbp-alvo-modificado.png"
-          aria-label="Ampliar imagem sobre alteração de alvo molecular"
-        >
-          <img
-            src="../../assets/capitulo-03/imagens/pbp-alvo-modificado.png"
-            alt="Comparação entre PBP sensível e PBP modificada"
-            loading="lazy"
-          />
+        <button type="button" data-zoom="../../assets/capitulo-03/imagens/alvo-molecular-modificado.png" aria-label="Ampliar comparação entre alvo molecular normal e modificado">
+          <img src="../../assets/capitulo-03/imagens/alvo-molecular-modificado.png" alt="Comparação entre bactéria com alvo molecular normal e bactéria com alvo modificado" loading="lazy" />
         </button>
-
+        <span class="cap3-p25-zoomHint">Clique na figura para ampliar</span>
         <figcaption class="caption cap3-p25-caption">
-          <strong>Alteração do alvo molecular:</strong> a modificação estrutural das proteínas ligadoras de penicilina reduz a afinidade pelos β-lactâmicos, permitindo a continuidade da síntese da parede celular mesmo na presença do fármaco.
+          A modificação do alvo reduz a afinidade do antibacteriano e permite a manutenção da função bacteriana que deveria ser inibida.
         </figcaption>
       </figure>
 
-      <p>
-        Um exemplo clássico envolve modificações nas proteínas ligadoras de penicilina (PBPs). Em determinadas bactérias, alterações estruturais nessas proteínas podem reduzir de forma significativa a ligação dos antibacterianos β-lactâmicos, permitindo a continuidade da síntese da parede celular.
-      </p>
+      <section class="cap3-p25-interaction" data-cap3-p25 aria-labelledby="cap3P25InteractionTitle">
+        <h2 id="cap3P25InteractionTitle">O alvo pode ser alterado de diferentes formas</h2>
+        <p class="cap3-p25-instruction">Selecione um exemplo para relacionar a alteração molecular à classe afetada.</p>
 
-      <p>
-        Outro exemplo ocorre com antibacterianos que atuam sobre os ribossomos bacterianos. Alterações estruturais na subunidade ribossomal podem modificar o sítio de ligação de macrolídeos e outros inibidores da síntese proteica, reduzindo a capacidade desses fármacos de interferir na tradução do RNA mensageiro.
-      </p>
+        <div class="cap3-p25-tabs" role="tablist" aria-label="Exemplos de alteração do alvo molecular">
+          <button class="cap3-p25-tab is-active" type="button" role="tab" id="cap3P25TabPbp" aria-selected="true" aria-controls="cap3P25PanelPbp" tabindex="0" data-p25-tab="pbp">PBP2a</button>
+          <button class="cap3-p25-tab" type="button" role="tab" id="cap3P25TabDna" aria-selected="false" aria-controls="cap3P25PanelDna" tabindex="-1" data-p25-tab="dna">DNA girase</button>
+          <button class="cap3-p25-tab" type="button" role="tab" id="cap3P25TabRibo" aria-selected="false" aria-controls="cap3P25PanelRibo" tabindex="-1" data-p25-tab="ribossomo">Ribossomo 50S</button>
+        </div>
 
-      <p>
-        A alteração de alvo molecular pode resultar de mutações no genoma bacteriano ou da aquisição de genes que codificam variantes modificadas dessas proteínas. Em alguns microrganismos, múltiplas modificações podem acumular-se progressivamente, produzindo níveis mais elevados de resistência.
-      </p>
+        <article class="cap3-p25-panel is-active" id="cap3P25PanelPbp" role="tabpanel" aria-labelledby="cap3P25TabPbp" data-p25-panel="pbp">
+          <div class="cap3-p25-panelLead cap3-p25-panelLead--blue">
+            <span>Alvo</span><strong>Proteínas ligadoras de penicilina</strong>
+          </div>
+          <div class="cap3-p25-panelBody">
+            <div><small>Como ocorre</small><p>O gene <em>mecA</em> codifica a PBP2a, uma PBP alternativa com baixa afinidade pela maioria dos β-lactâmicos.</p></div>
+            <div><small>Consequência</small><p>A síntese da parede celular pode continuar mesmo quando outras PBPs estão inibidas.</p></div>
+            <div><small>Exemplo clínico</small><p><em>Staphylococcus aureus</em> resistente à meticilina (MRSA) <sup>3,9,13</sup>.</p></div>
+          </div>
+        </article>
 
-      <p>
-        Esse processo pode se refletir no laboratório como elevação gradual da concentração inibitória mínima (MIC), mesmo na ausência de enzimas inativadoras detectáveis.
-      </p>
+        <article class="cap3-p25-panel" id="cap3P25PanelDna" role="tabpanel" aria-labelledby="cap3P25TabDna" data-p25-panel="dna" hidden>
+          <div class="cap3-p25-panelLead cap3-p25-panelLead--orange">
+            <span>Alvo</span><strong>DNA girase e topoisomerase IV</strong>
+          </div>
+          <div class="cap3-p25-panelBody">
+            <div><small>Como ocorre</small><p>Mutações alteram regiões dessas enzimas envolvidas na interação com as fluoroquinolonas.</p></div>
+            <div><small>Consequência</small><p>A afinidade do fármaco diminui e a replicação do DNA deixa de ser adequadamente inibida.</p></div>
+            <div><small>Classe afetada</small><p>Fluoroquinolonas; mutações sucessivas podem elevar progressivamente a concentração inibitória mínima (CIM) <sup>3,4,9</sup>.</p></div>
+          </div>
+        </article>
 
-      <p>
-        Na prática clínica, esse mecanismo pode ser observado quando uma bactéria inicialmente descrita como sensível a determinado β-lactâmico passa a apresentar aumento significativo da MIC após exposição prévia ao antibacteriano. Investigações adicionais podem revelar alterações estruturais nas PBPs responsáveis pela redução da afinidade do fármaco.
-      </p>
+        <article class="cap3-p25-panel" id="cap3P25PanelRibo" role="tabpanel" aria-labelledby="cap3P25TabRibo" data-p25-panel="ribossomo" hidden>
+          <div class="cap3-p25-panelLead cap3-p25-panelLead--purple">
+            <span>Alvo</span><strong>RNA ribossômico 23S da subunidade 50S</strong>
+          </div>
+          <div class="cap3-p25-panelBody">
+            <div><small>Como ocorre</small><p>Enzimas codificadas por genes <em>erm</em> metilam o RNA ribossômico 23S e modificam o sítio de ligação.</p></div>
+            <div><small>Consequência</small><p>A ligação do antibacteriano ao ribossomo diminui, comprometendo a inibição da síntese proteica.</p></div>
+            <div><small>Classes afetadas</small><p>O fenótipo MLS<sub>B</sub> pode comprometer macrolídeos, lincosamidas e estreptograminas B <sup>3,4,9</sup>.</p></div>
+          </div>
+        </article>
+      </section>
 
-      <p>
-        Nesse cenário, o antibacteriano não foi degradado nem expulso da célula bacteriana; sua capacidade de interação com o alvo molecular foi reduzida pela modificação estrutural da proteína bacteriana.
-      </p>
+      <aside class="cap3-p25-clinical">
+        <div class="cap3-p25-clinicalIcon" aria-hidden="true">◎</div>
+        <div>
+          <strong>Leitura clínica do mecanismo</strong>
+          <p>O aumento da CIM sem evidência de inativação enzimática pode estar relacionado à modificação ou à substituição do alvo. A interpretação deve integrar o perfil do antibiograma, a espécie bacteriana e, quando necessário, testes fenotípicos ou moleculares <sup>3,9,13</sup>.</p>
+        </div>
+      </aside>
 
+      <aside class="cap3-p25-key">
+        <strong>Para recordar</strong>
+        <p>Na alteração do alvo molecular, o fármaco permanece íntegro; é a estrutura bacteriana reconhecida por ele que se torna diferente ou menos acessível.</p>
+      </aside>
     </section>
 
- <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p24.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 3 · Página 25 de 89</div>
-  <a class="btn primary" href="p26.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
-
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="p24.html" aria-label="Ir para a página anterior">← Anterior</a>
+      <div class="center">Capítulo 3 · Página 25 de 89</div>
+      <a class="btn primary" href="p26.html" aria-label="Ir para a próxima página">Próxima →</a>
+    </nav>
   </main>
 
   <script src="../../js/app.js"></script>

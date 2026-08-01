@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../../css/base.css"/>
   <link rel="stylesheet" href="../../css/components.css"/>
@@ -21,206 +21,130 @@
   <main class="page-shell cap2-shell">
 
     <header class="page-header">
-      <div>
-        <div class="chapter">Capítulo 2 — Mecanismos de Ação dos Antibacterianos</div>
-        <h1 class="page-title">Quiz de revisão</h1>
-      </div>
+      <div class="chapter">Capítulo 2 — Mecanismos de Ação dos Antibacterianos</div>
+      <h1 class="page-title">Quiz de revisão</h1>
     </header>
 
-    <section class="prose cap2-reading-flow" aria-label="Introdução do quiz">
-      
-    </section>
+    <section
+      class="cap2-p19Quiz"
+      data-cap2-p19
+      aria-label="Quiz de revisão do capítulo 2"
+    >
 
-    <section class="cap2-p19Quiz" data-cap2-p19 aria-label="Quiz de revisão do capítulo 2">
-      <div class="cap2-p19Status" aria-live="polite" data-p19-status>
-        <span class="cap2-p19Status__label">Leitura aplicada do capítulo</span>
-        <span class="cap2-p19Status__value">0 de 2 situações confirmadas</span>
+      <div class="cap2-p19Status" aria-live="polite">
+        <span class="cap2-p19Status__value" data-p19-progress>
+          Situação 1 de 2
+        </span>
+
+        <div class="cap2-p19Dots" aria-hidden="true">
+          <span class="is-active"></span>
+          <span></span>
+        </div>
       </div>
 
-      <article class="cap2-p19Question" data-q="1" data-question-state="pending">
-        <div class="cap2-p19QuestionHeader">
-          <span class="cap2-p19Kicker">Situação clínica 1</span>
-          <h2 class="cap2-p19QuestionTitle">Atividade dependente de crescimento bacteriano</h2>
-        </div>
+      <article class="cap2-p19Question" data-p19-question>
+        <span class="cap2-p19Kicker" data-p19-kicker>
+          Situação clínica 1
+        </span>
 
-        <p class="cap2-p19Case">
-          Durante a discussão de um caso clínico em enfermaria, um estudante observa que determinados antibacterianos apresentam maior atividade quando as bactérias estão em fase de multiplicação ativa. Na endocardite infecciosa, bactérias presentes nas vegetações valvares podem permanecer em alta densidade e com crescimento lento, muitas em fase estacionária. Nessa situação, antibacterianos dependentes da divisão bacteriana, como os β-lactâmicos, tendem a apresentar menor atividade bactericida em comparação com sua ação sobre microrganismos em multiplicação ativa. Esse fenômeno contribui para a necessidade de tratamento prolongado e, em algumas situações, de terapia combinada, visando aumentar a eficácia bactericida e favorecer a esterilização das vegetações.
+        <p class="cap2-p19Case" data-p19-case>
+          Durante a discussão de um caso de endocardite infecciosa, o estudante observa que β-lactâmicos podem apresentar menor atividade contra bactérias das vegetações valvares, que frequentemente permanecem em crescimento lento ou em fase estacionária.
         </p>
 
-        <p class="cap2-p19Prompt">
+        <p class="cap2-p19Prompt" data-p19-prompt>
           Qual característica do mecanismo de ação explica esse comportamento?
         </p>
 
-        <div class="cap2-p19Options" role="group" aria-label="Alternativas da situação clínica 1">
-          <button type="button" data-answer="a" data-correct="true">
-            <span class="cap2-p19Letter">A</span>
-            <span>Esses fármacos atuam principalmente sobre estruturas envolvidas na síntese da parede celular ou na replicação do DNA.</span>
-          </button>
-
-          <button type="button" data-answer="b">
-            <span class="cap2-p19Letter">B</span>
-            <span>Esses fármacos atuam exclusivamente em bactérias Gram-positivas.</span>
-          </button>
-
-          <button type="button" data-answer="c">
-            <span class="cap2-p19Letter">C</span>
-            <span>Esses fármacos atuam apenas quando há resposta inflamatória intensa do hospedeiro.</span>
-          </button>
-
-          <button type="button" data-answer="d">
-            <span class="cap2-p19Letter">D</span>
-            <span>Esses fármacos dependem da presença de anticorpos para exercer sua atividade.</span>
-          </button>
-        </div>
+        <div
+          class="cap2-p19Options"
+          role="group"
+          aria-label="Alternativas da situação clínica"
+          data-p19-options
+        ></div>
 
         <div class="cap2-p19Actions">
-          <button class="cap2-p19Btn cap2-p19Btn--primary" type="button" data-p19-action="confirm" disabled>
-            Confirmar interpretação
+          <button
+            class="cap2-p19Btn cap2-p19Btn--primary"
+            type="button"
+            data-p19-confirm
+            disabled
+          >
+            Confirmar análise
           </button>
-          <button class="cap2-p19Btn cap2-p19Btn--ghost" type="button" data-p19-action="reset" hidden>
-            Refazer
+
+          <button
+            class="cap2-p19Btn cap2-p19Btn--ghost"
+            type="button"
+            data-p19-reset
+            hidden
+          >
+            Rever decisão
           </button>
         </div>
 
-        <div class="cap2-p19Feedback" role="region" aria-live="polite"></div>
-
-        <template class="cap2-p19FeedbackMap">
-{
-  "a": {
-    "type": "correct",
-    "title": "Interpretação adequada",
-    "text": "Alguns antibacterianos apresentam maior atividade quando as bactérias estão em crescimento ativo, porque interferem em processos que ocorrem durante a multiplicação celular, como a síntese da parede celular, a replicação do DNA e a formação de ligações estruturais essenciais. Quando as bactérias se encontram em fase estacionária ou apresentam metabolismo reduzido, esses processos ocorrem com menor intensidade, o que pode diminuir a atividade de certos antibacterianos."
-  },
-  "b": {
-    "type": "error",
-    "title": "Generalização incorreta",
-    "text": "A maior atividade em fase de multiplicação ativa não se explica por atuação exclusiva em bactérias Gram-positivas. O fator determinante é a dependência do antibacteriano de processos celulares intensamente ativos durante o crescimento bacteriano."
-  },
-  "c": {
-    "type": "error",
-    "title": "Raciocínio inadequado",
-    "text": "A atividade desses fármacos não depende da intensidade da resposta inflamatória do hospedeiro, mas da presença de alvos celulares bacterianos ativos durante a multiplicação."
-  },
-  "d": {
-    "type": "error",
-    "title": "Conceito incorreto",
-    "text": "A atividade dos antibacterianos não depende, em regra, da presença de anticorpos. Ela decorre da interação do fármaco com alvos bacterianos específicos."
-  }
-}
-        </template>
+        <div
+          class="cap2-p19Feedback"
+          role="region"
+          aria-live="polite"
+          data-p19-feedback
+        ></div>
       </article>
 
-      <article class="cap2-p19Question" data-q="2" data-question-state="pending">
-        <div class="cap2-p19QuestionHeader">
-          <span class="cap2-p19Kicker">Situação clínica 2</span>
-          <h2 class="cap2-p19QuestionTitle">Toxicidade seletiva e alvo ribossomal</h2>
-        </div>
+      <div class="cap2-p19Controls">
+        <button type="button" data-p19-prev disabled>
+          ← Situação anterior
+        </button>
 
-        <p class="cap2-p19Case">
-          Paciente de 24 anos procurou atendimento com febre, tosse seca, cefaleia e mal-estar há 5 dias, tendo sido diagnosticado com pneumonia atípica. O médico prescreveu claritromicina. Durante a discussão do caso, o preceptor relata ao interno de medicina que o antibacteriano prescrito interfere na síntese proteica e questiona se esse mesmo mecanismo poderia afetar essa função na paciente.
-        </p>
-
-        <p class="cap2-p19Prompt">
-          Qual alternativa explica corretamente por que esse mecanismo pode atuar preferencialmente sobre a bactéria?
-        </p>
-
-        <div class="cap2-p19Options" role="group" aria-label="Alternativas da situação clínica 2">
-          <button type="button" data-answer="a">
-            <span class="cap2-p19Letter">A</span>
-            <span>O fármaco inibe a síntese da parede celular bacteriana, estrutura idêntica à encontrada nas células humanas, portanto, pode afetar a paciente.</span>
-          </button>
-
-          <button type="button" data-answer="b" data-correct="true">
-            <span class="cap2-p19Letter">B</span>
-            <span>O fármaco atua sobre o ribossomo bacteriano 50S, enquanto as células humanas possuem ribossomos 80S, estruturalmente diferentes.</span>
-          </button>
-
-          <button type="button" data-answer="c">
-            <span class="cap2-p19Letter">C</span>
-            <span>O fármaco bloqueia a replicação do DNA humano com maior intensidade do que a do DNA bacteriano, causando efeitos indesejáveis para a paciente.</span>
-          </button>
-
-          <button type="button" data-answer="d">
-            <span class="cap2-p19Letter">D</span>
-            <span>O fármaco destrói indiscriminadamente as membranas das células bacterianas e das células do hospedeiro.</span>
-          </button>
-        </div>
-
-        <div class="cap2-p19Actions">
-          <button class="cap2-p19Btn cap2-p19Btn--primary" type="button" data-p19-action="confirm" disabled>
-            Confirmar interpretação
-          </button>
-          <button class="cap2-p19Btn cap2-p19Btn--ghost" type="button" data-p19-action="reset" hidden>
-            Refazer
-          </button>
-        </div>
-
-        <div class="cap2-p19Feedback" role="region" aria-live="polite"></div>
-
-        <template class="cap2-p19FeedbackMap">
-{
-  "a": {
-    "type": "error",
-    "title": "Conceito incorreto",
-    "text": "Macrolídeos não atuam sobre a parede celular, e a parede bacteriana não é idêntica a estruturas humanas. O ponto central do caso é a diferença entre o alvo ribossomal bacteriano e o humano."
-  },
-  "b": {
-    "type": "correct",
-    "title": "Interpretação adequada",
-    "text": "Nessa situação ocorre toxicidade seletiva. Os macrolídeos atuam preferencialmente sobre o ribossomo bacteriano 50S, enquanto as células humanas possuem ribossomos 80S, estruturalmente diferentes. Essa diferença permite inibição preferencial da síntese proteica bacteriana, com menor impacto sobre as células do hospedeiro."
-  },
-  "c": {
-    "type": "error",
-    "title": "Mecanismo inadequado",
-    "text": "O caso não descreve interferência predominante na replicação do DNA humano. A claritromicina é um macrolídeo, e seu mecanismo principal envolve a inibição da síntese proteica bacteriana por atuação no ribossomo."
-  },
-  "d": {
-    "type": "error",
-    "title": "Raciocínio incompatível com a classe",
-    "text": "Macrolídeos não atuam por destruição indiscriminada de membranas. O mecanismo central dessa classe envolve ligação ao ribossomo bacteriano e interferência na tradução."
-  }
-}
-        </template>
-      </article>
-
-      <section class="cap2-p19Completion" data-p19-completion hidden aria-live="polite">
-        <div class="cap2-p19Completion__header">
-          <span class="cap2-p19Completion__kicker">Fechamento clínico</span>
-          <h2 class="cap2-p19Completion__title">Síntese dos mecanismos de ação dos antibacterianos</h2>
-        </div>
-
-        <p class="cap2-p19Completion__text" data-p19-completion-text>
-          Ao final do capítulo, a interpretação do efeito de um antibacteriano exige relacionar alvo celular, fase de crescimento bacteriano e grau de seletividade em relação ao hospedeiro. Essa articulação é o que permite compreender por que classes distintas apresentam comportamentos microbiológicos e perfis terapêuticos diferentes.
-        </p>
-      </section>
-
-      <div class="cap2-p19ClosingBlock">
-        <p>
-         A compreensão dos alvos celulares bacterianos, dos mecanismos farmacológicos de interferência e dos padrões de resposta microbiológica permite interpretar com maior precisão por que diferentes classes apresentam comportamentos distintos frente às bactérias. Essa base conceitual é essencial para o uso racional dos antibacterianos.
-        </p>
+        <button type="button" data-p19-next disabled>
+          Próxima situação →
+        </button>
       </div>
+
     </section>
 
     <details class="cap2-refBox">
-      <summary>Referências</summary>
+      <summary>
+        <div class="cap2-refHeader">
+          <div class="cap2-refText">
+            <strong>Referências</strong>
+          </div>
+
+          <div class="cap2-refAction"></div>
+        </div>
+      </summary>
+
       <div class="cap2-refContent">
         <p>1. Blaser MJ, Cohen JI, Holland SM, editors. Mandell, Douglas, and Bennett’s Principles and Practice of Infectious Diseases. 10th ed. Philadelphia: Elsevier; 2025.</p>
         <p>2. Brunton LL, Hilal-Dandan R, Knollmann BC, editors. Goodman & Gilman’s The Pharmacological Basis of Therapeutics. 14th ed. New York: McGraw-Hill Education; 2023. 1419 p.</p>
         <p>3. Murray PR, Rosenthal KS, Pfaller MA. Medical Microbiology. 10th ed. Philadelphia: Elsevier; 2025.</p>
-        <p>4. Pankey GA, Sabath LD. Clinical Relevance of Bacteriostatic versus Bactericidal Mechanisms of Action in the Treatment of Gram‐Positive Bacterial Infections. Clinical Infectious Diseases. 2004 Mar 15;38(6):864–70. doi:10.1086/381972.</p>
+        <p>4. Bush K, Bradford PA. Epidemiology of β-Lactamase-Producing Pathogens. Clin Microbiol Rev. 2020 Mar 18;33(2). doi:10.1128/CMR.00047-19</p>
+        <p>5. Pankey GA, Sabath LD. Clinical Relevance of Bacteriostatic versus Bactericidal Mechanisms of Action in the Treatment of Gram‐Positive Bacterial Infections. Clinical Infectious Diseases. 2004 Mar 15;38(6):864–70. doi:10.1086/381972</p>
+        <p>6. Bush K, Bradford PA. β-Lactams and β-Lactamase Inhibitors: An Overview. Cold Spring Harb Perspect Med. 2016 Aug;6(8):a025247. doi:10.1101/cshperspect.a025247</p>
+        <p>7. Falagas ME, Kasiakou SK. Toxicity of polymyxins: a systematic review of the evidence from old and recent studies. Crit Care. 2006 Feb 13;10(1):R27. doi:10.1186/cc3995</p>
+	<p>8. Nation RL, Li J. Colistin in the 21st century. Curr Opin Infect Dis. 2009 Dec;22(6):535–43. doi:10.1097/QCO.0b013e328332e672</p>
+	<p>9. Steenbergen JN, Alder J, Thorne GM, Tally FP. Daptomycin: a lipopeptide antibiotic for the treatment of serious Gram-positive infections. Journal of Antimicrobial Chemotherapy. 2005 Mar 1;55(3):283–8. doi:10.1093/jac/dkh546</p>
+	<p>10. Miller WR, Bayer AS, Arias CA. Mechanism of Action and Resistance to Daptomycin in Staphylococcus aureus and Enterococci. Cold Spring Harb Perspect Med. 2016 Nov;6(11):a026997. doi:10.1101/cshperspect.a026997</p>
+	<p>11. Wilson DN. Ribosome-targeting antibiotics and mechanisms of bacterial resistance. Nat Rev Microbiol. 2014 Jan 16;12(1):35–48. doi:10.1038/nrmicro3155</p>
+	<p>12. Hooper DC, Jacoby GA. Mechanisms of drug resistance: quinolone resistance. Ann N Y Acad Sci. 2015 Sep 17;1354(1):12–31. doi:10.1111/nyas.12830</p>
+	<p>13. European Committee on Antimicrobial Susceptibility Testing (EUCAST). Clinical breakpoints and interpretation of S, I and R [Internet]. Växjö, Sweden; 2024. Available from: https://www.eucast.org</p>
+	<p>14. Turnidge J, Paterson DL. Setting and Revising Antibacterial Susceptibility Breakpoints. Clin Microbiol Rev. 2007 Jul;20(3):391–408. doi:10.1128/CMR.00047-06</p>
+	<p>15. Pankey GA, Sabath LD. Clinical Relevance of Bacteriostatic versus Bactericidal Mechanisms of Action in the Treatment of Gram‐Positive Bacterial Infections. Clinical Infectious Diseases. 2004 Mar 15;38(6):864–70. doi:10.1086/381972</p>
+	<p>16. Craig WA. State‐of‐the‐Art Clinical Article: Pharmacokinetic/Pharmacodynamic Parameters: Rationale for Antibacterial Dosing of Mice and Men. Clinical Infectious Diseases. 1998 Jan;26(1):1–10. doi:10.1086/516284</p>
+	<p>17. Lewis K. The Science of Antibiotic Discovery. Cell. 2020 Apr;181(1):29–45. doi:10.1016/j.cell.2020.02.056</p>
+	<p>18. Brook I. Inoculum Effect. Clinical Infectious Diseases. 1989 May 1;11(3):361–8. doi:10.1093/clinids/11.3.361</p>
+	<p>19. Lenhard JR, Bulman ZP. Inoculum effect of β-lactam antibiotics. Journal of Antimicrobial Chemotherapy. 2019 Oct 1;74(10):2825–43. doi:10.1093/jac/dkz226</p>
+	<p>20. Stewart PS, William Costerton J. Antibiotic resistance of bacteria in biofilms. The Lancet. 2001 Jul;358(9276):135–8. doi:10.1016/S0140-6736(01)05321-1</p>
+	<p>21. Hall CW, Mah TF. Molecular mechanisms of biofilm-based antibiotic resistance and tolerance in pathogenic bacteria. FEMS Microbiol Rev. 2017 May 1;41(3):276–301. doi:10.1093/femsre/fux010</p>
+ 
+
       </div>
     </details>
 
- 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p18.html" aria-label="Ir para a página anterior">← Anterior</a>
-
-  <div class="center">Capítulo 2 · Página 19 de 89</div>
-
-  <a class="btn primary" href="../capitulo-03/p20.html" aria-label="Ir para a próxima página">
-    Próxima →
-  </a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="p18.html" aria-label="Ir para a página anterior">← Anterior</a>
+      <div class="center">Capítulo 2 · Página 19 de 89</div>
+      <a class="btn primary" href="../capitulo-03/p20.html" aria-label="Ir para a próxima página">Próxima →</a>
+    </nav>
 
   </main>
 

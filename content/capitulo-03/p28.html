@@ -1,143 +1,161 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Capítulo 3 — Página 28</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../../css/base.css" />
-  <link rel="stylesheet" href="../../css/components.css" />
-  <link rel="stylesheet" href="../../css/capitulo-03.css" />
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/capitulo-03.css">
 </head>
 
 <body class="cap3-page28">
-
   <main class="page-shell cap3-shell">
-
     <header class="page-header">
       <div class="chapter">Capítulo 3 — Mecanismos de Resistência Bacteriana</div>
-      <h1 class="page-title">Resistência cruzada, multirresistência e impacto clínico</h1>
+      <h1 class="page-title">Multirresistência e impacto clínico</h1>
     </header>
 
-    <section class="prose cap3-reading-flow" aria-label="Texto principal">
-
+    <section class="prose cap3-reading-flow">
       <p>
-        A resistência bacteriana pode apresentar diferentes padrões de distribuição entre antibacterianos. Dois conceitos frequentemente utilizados para descrever esses padrões são resistência cruzada e multirresistência.
+        A multirresistência corresponde à não suscetibilidade a antibacterianos pertencentes a múltiplas categorias, podendo resultar do acúmulo de diferentes mecanismos de resistência ou, em determinadas situações, da ação de um mecanismo com amplo espectro de substratos. A resistência cruzada, por sua vez, ocorre quando um mesmo mecanismo compromete antibacterianos relacionados, pertencentes à mesma classe ou a classes distintas que compartilham alvo, sítio de ligação ou características estruturais semelhantes <sup>1–3,9,15</sup>.
       </p>
 
       <p>
-        A resistência cruzada ocorre quando um único mecanismo adaptativo reduz a suscetibilidade a dois ou mais antibacterianos que compartilham estrutura química semelhante ou o mesmo alvo molecular. Nesse contexto, diferentes fármacos da mesma classe podem ser afetados por uma mesma alteração bacteriana.
+        Em bactérias Gram-negativas, esse perfil frequentemente decorre da combinação entre produção de β-lactamases, redução da permeabilidade da membrana, aumento da atividade das bombas de efluxo e alterações do alvo molecular. Como consequência, as opções terapêuticas tornam-se progressivamente mais limitadas, representando um dos principais desafios da prática clínica <sup>1,3,9</sup>.
       </p>
 
-      <section class="cap3-p28-compare" aria-label="Comparação entre resistência cruzada e multirresistência">
-        <article class="cap3-p28-card">
-          <h2 class="cap3-p28-title">Resistência cruzada</h2>
+      <section class="cap3-p28-interaction" aria-labelledby="cap3P28Title">
+        <div class="cap3-p28-intro">
+          <div>
+            <span class="cap3-p28-eyebrow">Construa o perfil</span>
+            <h2 id="cap3P28Title">Associe mecanismos e repercussões</h2>
+          </div>
+          <button type="button" class="cap3-p28-reset" disabled>Limpar seleção</button>
+        </div>
 
-          <figure class="figure cap3-p28-figure">
-            <button
-              type="button"
-              data-zoom="../../assets/capitulo-03/imagens/resistencia-cruzada.png"
-              aria-label="Ampliar imagem de resistência cruzada"
-            >
-              <img
-                src="../../assets/capitulo-03/imagens/resistencia-cruzada.png"
-                alt="Esquema ilustrando resistência cruzada"
-                loading="lazy"
-              />
+        <p class="cap3-p28-instruction">
+          Selecione os mecanismos presentes e observe como diferentes processos podem ampliar o perfil de resistência.
+        </p>
+
+        <div class="cap3-p28-builder">
+          <div class="cap3-p28-mechanisms" role="group" aria-label="Mecanismos de resistência">
+            <button type="button" data-p28-mech="carbapenemase" aria-pressed="false">
+              <span class="cap3-p28-check" aria-hidden="true"></span>
+              <span><strong>Carbapenemase</strong><small>Inativação enzimática</small></span>
             </button>
 
-            <figcaption class="caption cap3-p28-caption">
-              <strong>Resistência cruzada:</strong> um único mecanismo adaptativo reduz a suscetibilidade a múltiplos antibacterianos que compartilham alvo ou estrutura semelhante.
-            </figcaption>
-          </figure>
-        </article>
-
-        <article class="cap3-p28-card">
-          <h2 class="cap3-p28-title">Multirresistência</h2>
-
-          <figure class="figure cap3-p28-figure">
-            <button
-              type="button"
-              data-zoom="../../assets/capitulo-03/imagens/multirresistencia-plasmideo.png"
-              aria-label="Ampliar imagem de multirresistência"
-            >
-              <img
-                src="../../assets/capitulo-03/imagens/multirresistencia-plasmideo.png"
-                alt="Esquema ilustrando multirresistência associada a plasmídeos"
-                loading="lazy"
-              />
+            <button type="button" data-p28-mech="porinas" aria-pressed="false">
+              <span class="cap3-p28-check" aria-hidden="true"></span>
+              <span><strong>Perda de porinas</strong><small>Menor entrada do fármaco</small></span>
             </button>
 
-            <figcaption class="caption cap3-p28-caption">
-              <strong>Multirresistência:</strong> diferentes mecanismos podem atuar simultaneamente, comprometendo múltiplas classes de antibacterianos.
-            </figcaption>
-          </figure>
-        </article>
+            <button type="button" data-p28-mech="efluxo" aria-pressed="false">
+              <span class="cap3-p28-check" aria-hidden="true"></span>
+              <span><strong>Bomba de efluxo</strong><small>Maior remoção intracelular</small></span>
+            </button>
+
+            <button type="button" data-p28-mech="girase" aria-pressed="false">
+              <span class="cap3-p28-check" aria-hidden="true"></span>
+              <span><strong>Alteração da DNA girase</strong><small>Modificação do alvo</small></span>
+            </button>
+          </div>
+
+          <div class="cap3-p28-profile" aria-live="polite">
+            <div class="cap3-p28-profileHead">
+              <div>
+                <span>Perfil construído</span>
+                <strong class="cap3-p28-profileTitle">Nenhum mecanismo selecionado</strong>
+              </div>
+              <div class="cap3-p28-meter" aria-label="Complexidade do perfil">
+                <i></i><i></i><i></i><i></i>
+              </div>
+            </div>
+
+            <div class="cap3-p28-consequence">
+              <span>Consequência microbiológica</span>
+              <p>Selecione um ou mais mecanismos para observar suas possíveis repercussões.</p>
+            </div>
+
+            <div class="cap3-p28-classTitle">Classes potencialmente afetadas</div>
+            <div class="cap3-p28-classGrid">
+              <span data-p28-class="penicilinas">Penicilinas</span>
+              <span data-p28-class="cefalosporinas">Cefalosporinas</span>
+              <span data-p28-class="carbapenemicos">Carbapenêmicos</span>
+              <span data-p28-class="fluoroquinolonas">Fluoroquinolonas</span>
+              <span data-p28-class="tetraciclinas">Tetraciclinas</span>
+              <span data-p28-class="macrolideos">Macrolídeos</span>
+            </div>
+
+            <p class="cap3-p28-caution">
+              A presença do mecanismo indica potencial de comprometimento, mas não determina isoladamente a categoria S, I ou R.
+            </p>
+          </div>
+        </div>
       </section>
 
       <p>
-        Um exemplo clássico envolve modificações na subunidade ribossomal 50S, que podem reduzir simultaneamente a afinidade de macrolídeos, lincosamidas e estreptograminas. De maneira semelhante, mutações na DNA girase ou na topoisomerase IV podem comprometer a atividade de múltiplas fluoroquinolonas, uma vez que esses antibacterianos dependem da interação com o mesmo complexo enzimático <sup>1,3</sup>.
+        A multirresistência não resulta de um único mecanismo, mas da associação de diferentes adaptações bacterianas. Quanto maior o número de mecanismos presentes, maior tende a ser o número de classes de antibacterianos comprometidas e menor a disponibilidade de opções terapêuticas <sup>1–3,9</sup>.
       </p>
 
-      <p>
-        Do ponto de vista clínico, compreender a resistência cruzada evita substituições ineficazes dentro da mesma classe farmacológica. A troca de um antibacteriano por outro estruturalmente semelhante pode não modificar o desfecho terapêutico quando o mecanismo de resistência afeta o alvo compartilhado.
-      </p>
+      <section class="cap3-p28-classification" aria-labelledby="cap3P28ClassificationTitle">
+        <div class="cap3-p28-classificationHead">
+          <div>
+            <span class="cap3-p28-eyebrow">Classificação epidemiológica</span>
+            <h2 id="cap3P28ClassificationTitle">MDR, XDR e PDR</h2>
+          </div>
+          <button
+            type="button"
+            class="cap3-p28-zoom"
+            data-zoom="../../assets/capitulo-03/imagens/multirresistencia_mdr_xdr_pdr.png"
+            aria-label="Ampliar quadro comparativo MDR, XDR e PDR"
+          >Ampliar quadro</button>
+        </div>
 
-      <p>
-        A multirresistência, por outro lado, refere-se à presença simultânea de resistência a múltiplas classes distintas de antibacterianos. Esse fenômeno geralmente resulta da combinação de diferentes mecanismos adaptativos, como produção de enzimas inativadoras, alterações de permeabilidade da membrana e ativação de bombas de efluxo <sup>5</sup>.
-      </p>
+        <div class="cap3-p28-definitionTabs" role="tablist" aria-label="Classificações dos perfis de resistência">
+          <button type="button" class="is-active" data-p28-definition="mdr" role="tab" aria-selected="true">MDR</button>
+          <button type="button" data-p28-definition="xdr" role="tab" aria-selected="false">XDR</button>
+          <button type="button" data-p28-definition="pdr" role="tab" aria-selected="false">PDR</button>
+        </div>
 
-      <p>
-        Em alguns casos, elementos genéticos móveis, como plasmídeos, podem carregar múltiplos genes de resistência. A aquisição de um único plasmídeo pode modificar de forma significativa o perfil de suscetibilidade de uma bactéria, permitindo resistência simultânea a diversos grupos farmacológicos.
-      </p>
+        <div class="cap3-p28-definitionPanel" role="tabpanel" aria-live="polite">
+          <strong>Multirresistente</strong>
+          <p>Não suscetibilidade a pelo menos um agente em três ou mais categorias de antibacterianos.</p>
+          <span>Há resistência relevante, mas ainda podem existir diferentes opções terapêuticas.</span>
+        </div>
 
-      <p>
-        Essa dinâmica contribui para a disseminação de microrganismos multirresistentes, especialmente em ambientes hospitalares, onde a pressão seletiva associada ao uso frequente de antibacterianos favorece a persistência dessas cepas.
-      </p>
-
-      <p>
-        Do ponto de vista clínico, a presença de resistência pode se manifestar como redução da resposta terapêutica esperada, persistência de sinais infecciosos ou necessidade de revisão do esquema antibacteriano. Entretanto, o desfecho do tratamento não depende exclusivamente da presença de um mecanismo de resistência.
-      </p>
-
-      <p>
-        Fatores como carga bacteriana, local da infecção, penetração do antibacteriano no tecido acometido, características farmacocinéticas do fármaco e condição imunológica do hospedeiro também influenciam a resposta ao tratamento <sup>3</sup>.
-      </p>
-
-      <p>
-        Além do impacto individual, a resistência bacteriana possui também uma dimensão epidemiológica e populacional. O uso repetido de antibacterianos em um serviço de saúde exerce pressão seletiva sobre as populações bacterianas locais, favorecendo a persistência e a disseminação de cepas resistentes.
-      </p>
-
-      <figure class="cap3-p28-cycle">
-        <button id="cap3P28CycleButton" type="button" aria-label="Explorar ciclo de pressão seletiva">
+        <figure class="cap3-p28-sourceFigure">
           <img
-            src="../../assets/capitulo-03/imagens/ciclo-pressao-seletiva.png"
-            alt="Esquema do ciclo de pressão seletiva e disseminação da resistência"
+            src="../../assets/capitulo-03/imagens/multirresistencia_mdr_xdr_pdr.png"
+            alt="Quadro comparativo das classificações MDR, XDR e PDR"
             loading="lazy"
-          />
-          <span class="cap3-p28-cycle__mask"></span>
-          <span class="cap3-p28-cycle__focus cap3-p28-cycle__focus--1"></span>
-          <span class="cap3-p28-cycle__focus cap3-p28-cycle__focus--2"></span>
-          <span class="cap3-p28-cycle__focus cap3-p28-cycle__focus--3"></span>
-          <span class="cap3-p28-cycle__focus cap3-p28-cycle__focus--4"></span>
-        </button>
-
-        <figcaption class="caption">
-          <strong>Dimensão epidemiológica:</strong> clique na imagem para percorrer o ciclo de pressão seletiva e disseminação de cepas resistentes.
-        </figcaption>
-      </figure>
+          >
+          <figcaption>
+            Classificação dos perfis de resistência adquirida segundo os critérios propostos por Magiorakos et al. (2012).
+          </figcaption>
+        </figure>
+      </section>
 
       <p>
-        Nesse contexto, a resistência deixa de ser apenas uma característica de um microrganismo isolado e passa a representar um fenômeno coletivo que influencia padrões epidemiológicos, estratégias de tratamento empírico e políticas de controle de infecção.
+        As classificações MDR, XDR e PDR são utilizadas principalmente para fins de vigilância epidemiológica e padronização da comunicação entre laboratórios e profissionais de saúde, permitindo descrever de forma uniforme o grau de resistência apresentado por um microrganismo <sup>15</sup>.
       </p>
 
-      <p>
-        Assim, a resistência antimicrobiana deve ser compreendida como resultado da interação entre biologia bacteriana, exposição antimicrobiana e contexto clínico-epidemiológico, reforçando a importância do uso criterioso dos antibacterianos na prática médica.
-      </p>
+      <details class="cap3-p28-clinical">
+        <summary>Aplicação clínica</summary>
+        <p>
+          Um paciente internado em unidade de terapia intensiva apresenta infecção por <em>Klebsiella pneumoniae</em> resistente a cefalosporinas, carbapenêmicos, fluoroquinolonas e aminoglicosídeos. A investigação microbiológica demonstra produção de carbapenemase associada à perda de porinas e ao aumento da atividade das bombas de efluxo. Nesse caso, diferentes mecanismos atuam simultaneamente, caracterizando um perfil de multirresistência <sup>3,9,15</sup>.
+        </p>
+      </details>
 
+      <aside class="cap3-p28-summary">
+        <strong>Distinção essencial</strong>
+        <span>A resistência cruzada decorre de um mecanismo que afeta antibacterianos relacionados. A multirresistência envolve diferentes mecanismos e pode comprometer múltiplas classes.</span>
+      </aside>
     </section>
 
     <nav class="pager" aria-label="Paginação">
@@ -145,7 +163,6 @@
       <div class="center">Capítulo 3 · Página 28 de 89</div>
       <a class="btn primary" href="p29.html" aria-label="Ir para a próxima página">Próxima →</a>
     </nav>
-
   </main>
 
   <script src="../../js/app.js"></script>

@@ -3,11 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 5 — Página 44</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -19,95 +24,315 @@
   <main class="page-shell">
 
     <header class="page-header">
-      <div class="chapter">Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma</div>
-      <h1 class="page-title">Teste de sensibilidade</h1>
+      <div class="chapter">
+        Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma
+      </div>
+
+    
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <section class="prose cap5-p44-reading">
 
       <p>
-        Após a identificação do microrganismo, o laboratório realiza o teste de sensibilidade antimicrobiana, cujo objetivo é avaliar o comportamento da bactéria frente a concentrações conhecidas de diferentes antibacterianos em condições laboratoriais padronizadas <sup>2,3,10</sup>.
+        Após identificar o microrganismo, o laboratório não fornece apenas um nome. A espécie bacteriana passa a oferecer informações que ajudam na interpretação do perfil microbiológico antes mesmo da análise do antibiograma.
       </p>
 
       <p>
-        Esses testes determinam se o crescimento bacteriano é inibido na presença de concentrações definidas de determinado antibacteriano. O resultado obtido corresponde ao comportamento observado <em>in vitro</em>, sob condições metodológicas previamente definidas e controladas <sup>2,3</sup>.
+        Cada bactéria apresenta características próprias relacionadas à sua ecologia, virulência, resistência intrínseca e capacidade de adquirir mecanismos de resistência. Por isso, reconhecer a espécie permite antecipar informações importantes sobre o comportamento esperado daquele microrganismo <sup>1,5</sup>.
       </p>
 
-      <p>
-        Na rotina microbiológica clínica, dois princípios metodológicos são utilizados com maior frequência: a difusão em disco e a microdiluição em caldo <sup>2,5</sup>.
-      </p>
+      <section
+        class="cap5-p44-interaction cap5-p44-reveal"
+        data-cap5-p44
+        aria-label="Fluxograma para interpretação da espécie bacteriana"
+      >
 
-      <p class="eyebrow center-note">Difusão em disco</p>
+        <p class="cap5-p44-instruction">
+          Selecione uma espécie e percorra as etapas do raciocínio antes de interpretar as categorias S, I e R.
+        </p>
 
-      <p>
-        No método de difusão em disco, discos de papel impregnados com quantidades padronizadas de antibacteriano são posicionados sobre a superfície de um meio de cultura previamente inoculado com a bactéria isolada.
-      </p>
+        <div
+          class="cap5-p44-species"
+          role="tablist"
+          aria-label="Espécies bacterianas"
+        >
 
-      <section class="cap5-p44-tempo" aria-labelledby="cap5-p44-tempo-title">
-        <div class="cap5-p44-tempo__head">
-          <h3 id="cap5-p44-tempo-title">A difusão acontece progressivamente no meio</h3>
-          <p>
-            Ao longo da incubação, forma-se um gradiente de concentração ao redor do disco. A leitura do halo só faz sentido depois que essa difusão se estabelece.
-          </p>
-        </div>
-
-        <div class="cap5-p44-controls" role="tablist" aria-label="Evolução temporal da difusão em disco">
-          <button class="tempo-btn active" type="button" role="tab" aria-selected="true" data-tempo="0">0h</button>
-          <button class="tempo-btn" type="button" role="tab" aria-selected="false" data-tempo="6">6h</button>
-          <button class="tempo-btn" type="button" role="tab" aria-selected="false" data-tempo="12">12h</button>
-          <button class="tempo-btn" type="button" role="tab" aria-selected="false" data-tempo="18">18h</button>
-          <button class="tempo-btn" type="button" role="tab" aria-selected="false" data-tempo="24">24h</button>
-        </div>
-
-        <figure class="cap5-p44-figure">
           <button
-            class="cap5-p44-figure__zoom"
+            class="cap5-p44-speciesButton is-active"
             type="button"
-            data-zoom="../../assets/capitulo-05/imagens/difusao-disco-0h.png"
-            aria-label="Ampliar imagem da difusão em disco"
+            role="tab"
+            id="cap5P44SpeciesEcoli"
+            aria-selected="true"
+            tabindex="0"
+            data-p44-species="ecoli"
           >
-            <img
-              id="tempo-img"
-              src="../../assets/capitulo-05/imagens/difusao-disco-0h.png"
-              alt="Placa de difusão em disco no tempo inicial."
-              loading="lazy"
-            />
+            <em>Escherichia coli</em>
           </button>
-          <figcaption id="tempo-caption" class="cap5-p44-figure__caption">
-            Tempo inicial: o antibacteriano ainda não se difundiu de forma significativa no meio.
-          </figcaption>
-        </figure>
+
+          <button
+            class="cap5-p44-speciesButton"
+            type="button"
+            role="tab"
+            id="cap5P44SpeciesKlebsiella"
+            aria-selected="false"
+            tabindex="-1"
+            data-p44-species="klebsiella"
+          >
+            <em>Klebsiella pneumoniae</em>
+          </button>
+
+          <button
+            class="cap5-p44-speciesButton"
+            type="button"
+            role="tab"
+            id="cap5P44SpeciesPseudomonas"
+            aria-selected="false"
+            tabindex="-1"
+            data-p44-species="pseudomonas"
+          >
+            <em>Pseudomonas aeruginosa</em>
+          </button>
+
+          <button
+            class="cap5-p44-speciesButton"
+            type="button"
+            role="tab"
+            id="cap5P44SpeciesEnterococcus"
+            aria-selected="false"
+            tabindex="-1"
+            data-p44-species="enterococcus"
+          >
+            <em>Enterococcus faecalis</em>
+          </button>
+
+          <button
+            class="cap5-p44-speciesButton"
+            type="button"
+            role="tab"
+            id="cap5P44SpeciesSaureus"
+            aria-selected="false"
+            tabindex="-1"
+            data-p44-species="saureus"
+          >
+            <em>Staphylococcus aureus</em>
+          </button>
+
+        </div>
+
+        <div
+          class="cap5-p44-flow"
+          aria-label="Etapas do raciocínio microbiológico"
+        >
+
+          <button
+            class="cap5-p44-flowStep is-active"
+            type="button"
+            data-p44-step="species"
+          >
+            <span class="cap5-p44-flowNumber">1</span>
+
+            <span class="cap5-p44-flowText">
+              <strong>Espécie identificada</strong>
+              <small>Qual bactéria foi isolada?</small>
+            </span>
+          </button>
+
+          <span class="cap5-p44-flowArrow" aria-hidden="true">↓</span>
+
+          <button
+            class="cap5-p44-flowStep"
+            type="button"
+            data-p44-step="known"
+          >
+            <span class="cap5-p44-flowNumber">2</span>
+
+            <span class="cap5-p44-flowText">
+              <strong>O que já sei?</strong>
+              <small>Ecologia e relevância clínica</small>
+            </span>
+          </button>
+
+          <span class="cap5-p44-flowArrow" aria-hidden="true">↓</span>
+
+          <button
+            class="cap5-p44-flowStep"
+            type="button"
+            data-p44-step="intrinsic"
+          >
+            <span class="cap5-p44-flowNumber">3</span>
+
+            <span class="cap5-p44-flowText">
+              <strong>Resistência intrínseca</strong>
+              <small>O que já é esperado da espécie?</small>
+            </span>
+          </button>
+
+          <span class="cap5-p44-flowArrow" aria-hidden="true">↓</span>
+
+          <button
+            class="cap5-p44-flowStep"
+            type="button"
+            data-p44-step="acquired"
+          >
+            <span class="cap5-p44-flowNumber">4</span>
+
+            <span class="cap5-p44-flowText">
+              <strong>Mecanismos adquiridos</strong>
+              <small>O que precisa ser investigado?</small>
+            </span>
+          </button>
+
+          <span class="cap5-p44-flowArrow" aria-hidden="true">↓</span>
+
+          <button
+            class="cap5-p44-flowStep"
+            type="button"
+            data-p44-step="panel"
+          >
+            <span class="cap5-p44-flowNumber">5</span>
+
+            <span class="cap5-p44-flowText">
+              <strong>Leitura do antibiograma</strong>
+              <small>Como a espécie modifica o painel?</small>
+            </span>
+          </button>
+
+        </div>
+
+        <article
+          class="cap5-p44-panel"
+          id="cap5P44Panel"
+          aria-live="polite"
+        >
+
+          <span
+            id="cap5P44PanelKicker"
+            class="cap5-p44-panelKicker"
+          >
+            Etapa 1
+          </span>
+
+          <h2
+            id="cap5P44PanelTitle"
+            class="cap5-p44-panelTitle"
+          >
+            Espécie identificada
+          </h2>
+
+          <div
+            id="cap5P44PanelBody"
+            class="cap5-p44-panelBody"
+          >
+            <p>
+              O laboratório identificou <em>Escherichia coli</em>. A partir desse momento, o resultado deixa de representar apenas um grupo amplo de bacilos Gram-negativos e passa a fornecer um contexto microbiológico específico.
+            </p>
+          </div>
+
+          <div class="cap5-p44-panelFooter">
+
+            <span class="cap5-p44-selectedLabel">
+              Espécie em análise
+            </span>
+
+            <strong id="cap5P44SelectedSpecies">
+              <em>Escherichia coli</em>
+            </strong>
+
+          </div>
+
+        </article>
+
       </section>
 
-      <p>
-        Durante a incubação, o antibacteriano difunde-se radialmente no ágar, formando um gradiente de concentração. Próximo ao disco, a concentração é mais elevada; à medida que se afasta, diminui progressivamente.
-      </p>
+      <aside class="cap5-p44-question cap5-p44-reveal">
 
-      <p>
-        Se a bactéria for suscetível ao antibacteriano testado, ocorre inibição do crescimento bacteriano ao redor do disco, formando uma zona clara denominada halo de inibição.
-      </p>
+        <span>
+          Antes de observar S, I ou R, pergunte:
+        </span>
 
-      <p>
-        Após o período de incubação, o diâmetro desse halo é medido em milímetros. Esse valor é comparado a tabelas interpretativas que relacionam o tamanho do halo à probabilidade de atividade do antibacteriano contra aquele microrganismo <sup>10,12</sup>.
-      </p>
+        <strong>
+          O que eu já sei sobre essa bactéria?
+        </strong>
 
-      <p class="cap5-p44-closing">
-        Esse método fornece, portanto, uma medida indireta da suscetibilidade bacteriana, baseada no diâmetro da zona de inibição observada no meio sólido.
-      </p>
+      </aside>
+
+      <section
+        class="cap5-p44-summary cap5-p44-reveal"
+        aria-labelledby="cap5P44SummaryTitle"
+      >
+
+        <h2
+          id="cap5P44SummaryTitle"
+          class="cap5-p44-summaryTitle"
+        >
+          A espécie modifica a leitura do painel
+        </h2>
+
+        <div class="cap5-p44-summaryGrid">
+
+          <article>
+            <span>Antimicrobianos ausentes</span>
+            <p>
+              Alguns fármacos podem não aparecer porque a espécie apresenta resistência intrínseca ou porque seu teste não possui utilidade clínica.
+            </p>
+          </article>
+
+          <article>
+            <span>Resultados relacionados</span>
+            <p>
+              Determinados marcadores de resistência modificam a interpretação de vários antimicrobianos da mesma classe.
+            </p>
+          </article>
+
+          <article>
+            <span>Perfil inesperado</span>
+            <p>
+              Resultados incompatíveis com o comportamento biológico conhecido da espécie exigem análise crítica ou revisão laboratorial.
+            </p>
+          </article>
+
+          <article>
+            <span>Tratamento dirigido</span>
+            <p>
+              A decisão final depende da espécie, do perfil de suscetibilidade, da exposição ao fármaco e do sítio da infecção.
+            </p>
+          </article>
+
+        </div>
+
+      </section>
+
+      <aside class="cap5-p44-principle cap5-p44-reveal">
+        O antibiograma não deve ser lido como uma lista independente de resultados. Cada categoria deve ser analisada à luz das características biológicas e dos padrões de resistência da espécie identificada.
+      </aside>
 
     </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p43.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 5 · Página 44 de 89</div>
-  <a class="btn primary" href="p45.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+      <a
+        class="btn"
+        href="p43.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
 
+      <div class="center">
+        Capítulo 5 · Página 44 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p45.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+    </nav>
 
   </main>
 
   <script src="../../js/app.js"></script>
   <script src="../../js/capitulo-05.js"></script>
-
 </body>
 </html>

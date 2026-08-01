@@ -2,10 +2,14 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Capítulo 1 — Página 1</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -16,24 +20,61 @@
   <main class="page-shell cap1-shell">
 
     <header class="page-header">
-      <div class="chapter">Capítulo 1 — Fundamentos Conceituais dos Antibacterianos</div>
-      <h1 class="page-title">Evolução da Antibioticoterapia</h1>
+      <div class="chapter">
+        Capítulo 1 — Fundamentos Conceituais dos Antibacterianos
+      </div>
+
+      <h1 class="page-title">
+        Evolução da Antibioticoterapia
+      </h1>
     </header>
 
     <section class="prose">
-      <p>O desenvolvimento e a ampla utilização de antimicrobianos, especialmente os antibacterianos, ao longo do século XX transformaram profundamente o tratamento das doenças infecciosas. Antes de sua disponibilidade, infecções como pneumonias bacterianas, sepse e complicações infecciosas pós-operatórias estavam associadas a elevada mortalidade, mesmo em hospitais estruturados. Na ausência de terapias direcionadas ao microrganismo causador, as intervenções limitavam-se ao suporte clínico e ao manejo das complicações, sem possibilidade de interferência direta sobre o agente infeccioso <sup>1</sup>.</p>
 
-      <p>A introdução de fármacos capazes de atuar seletivamente sobre estruturas bacterianas modificou esse cenário. Ao comprometer a viabilidade bacteriana, esses fármacos ampliaram de maneira significativa as possibilidades terapêuticas e preventivas. Tornou-se possível o tratamento efetivo de infecções potencialmente fatais, a realização mais segura de procedimentos cirúrgicos complexos e o desenvolvimento de intervenções médicas que dependem de controle rigoroso de infecções, como transplantes de órgãos, terapias imunossupressoras e cuidados intensivos modernos <sup>2</sup>.</p>
+      <p>
+        O desenvolvimento e a ampla utilização de antibacterianos, ao longo do século XX,
+        transformaram profundamente o tratamento das doenças infecciosas. Antes de sua
+        disponibilidade, infecções como pneumonias bacterianas, sepse e infecções
+        pós-operatórias estavam associadas à elevada mortalidade, mesmo em hospitais
+        estruturados. Na ausência de terapias direcionadas ao microrganismo causador, as
+        intervenções limitavam-se ao suporte clínico e ao manejo das complicações, sem
+        possibilidade de interferência direta sobre o agente infeccioso
+        <sup>1–3</sup>.
+      </p>
 
-      <p>A exposição de populações bacterianas aos antibacterianos exerce pressão seletiva, favorecendo a sobrevivência e a disseminação de cepas resistentes. Em uma população bacteriana, a maioria dos microrganismos pode ser sensível ao fármaco, enquanto variantes com menor suscetibilidade ao antibacteriano podem já estar presentes em baixa frequência. Essas variantes podem surgir por mutações espontâneas ou resultar da presença prévia de genes ou determinantes genéticos de resistência na população bacteriana.</p>
+      <p>
+        A introdução de fármacos capazes de atuar seletivamente sobre estruturas bacterianas
+        modificou esse cenário. Ao comprometer a viabilidade bacteriana, esses medicamentos
+        ampliaram significativamente as possibilidades terapêuticas e preventivas. Tornou-se
+        possível tratar infecções potencialmente fatais, realizar procedimentos cirúrgicos
+        complexos com maior segurança e viabilizar intervenções médicas que dependem do
+        controle rigoroso de infecções, como transplantes de órgãos, terapias
+        imunossupressoras e cuidados intensivos modernos
+        <sup>3,4</sup>.
+      </p>
 
-      <p>Quando o antibacteriano é introduzido, os microrganismos sensíveis tendem a ser eliminados de forma predominante. As bactérias portadoras de mecanismos de resistência sobrevivem à exposição e passam a predominar na população. Esse processo caracteriza a seleção de cepas resistentes, que passam a predominar na população bacteriana sob pressão antimicrobiana.</p>
+      <p>
+        A exposição de populações bacterianas aos antibacterianos exerce pressão seletiva.
+        Enquanto as bactérias sensíveis tendem a ser eliminadas predominantemente, variantes
+        menos suscetíveis, já presentes em baixa frequência, podem persistir e tornar-se
+        proporcionalmente mais frequentes na população remanescente. O fármaco, portanto,
+        não cria diretamente a resistência, mas seleciona variantes que já apresentavam
+        menor suscetibilidade
+        <sup>5</sup>.
+      </p>
 
-      <section class="amr-figure" aria-labelledby="amrFigureTitle" data-amr-figure>
-        
+      <section
+        class="amr-figure"
+        data-amr-figure
+        aria-labelledby="amrFigureTitle"
+      >
 
-        <p class="amr-figure__intro">
-          Selecione um cenário e observe como a exposição modifica simultaneamente o controle da infecção e a persistência relativa de cepas resistentes.
+        <p
+          class="amr-figure__intro"
+          id="amrFigureTitle"
+        >
+          Compare os cenários e observe, separadamente, o controle do foco infeccioso e
+          a composição relativa da população bacteriana remanescente.
         </p>
 
         <div
@@ -41,6 +82,7 @@
           role="tablist"
           aria-label="Cenários de exposição ao antibacteriano"
         >
+
           <button
             class="amr-selector__tab is-active"
             type="button"
@@ -76,8 +118,9 @@
             data-amr-scenario="interrupcao"
             tabindex="-1"
           >
-            Suspensão precoce
+            Interrupção antes do controle da infecção
           </button>
+
         </div>
 
         <div
@@ -87,60 +130,192 @@
           aria-labelledby="amrTabAdequado"
           data-amr-panel
         >
-          <div class="amr-stage__plate" id="petri" aria-hidden="true"></div>
 
-          <div class="amr-stage__legend" aria-hidden="true">
+          <div
+            class="amr-stage__plate"
+            id="petri"
+            aria-hidden="true"
+          ></div>
+
+          <div
+            class="amr-stage__legend"
+            aria-label="Legenda da representação bacteriana"
+          >
+
             <span class="amr-stage__legendItem">
-              <span class="amr-stage__dot amr-stage__dot--sensitive"></span>
+              <span
+                class="amr-stage__dot amr-stage__dot--sensitive"
+                aria-hidden="true"
+              ></span>
               Bactérias sensíveis
             </span>
+
             <span class="amr-stage__legendItem">
-              <span class="amr-stage__dot amr-stage__dot--resistant"></span>
+              <span
+                class="amr-stage__dot amr-stage__dot--resistant"
+                aria-hidden="true"
+              ></span>
               Bactérias resistentes
             </span>
+
           </div>
 
           <div class="amr-metrics">
+
             <div class="amr-metric">
-              <p class="amr-metric__label">Controle do foco infeccioso</p>
-              <div class="amr-metric__track" aria-hidden="true">
-                <span class="amr-metric__fill" id="amrControlFill"></span>
+              <p class="amr-metric__label">
+                Controle do foco infeccioso
+              </p>
+
+              <div
+                class="amr-metric__track"
+                aria-hidden="true"
+              >
+                <span
+                  class="amr-metric__fill"
+                  id="amrControlFill"
+                ></span>
               </div>
-              <p class="amr-metric__value" id="amrControlLabel">Elevado</p>
+
+              <p
+                class="amr-metric__value"
+                id="amrControlLabel"
+              >
+                Elevado
+              </p>
             </div>
 
             <div class="amr-metric">
-              <p class="amr-metric__label">Persistência relativa de cepas resistentes</p>
-              <div class="amr-metric__track" aria-hidden="true">
-                <span class="amr-metric__fill amr-metric__fill--resistance" id="amrResistanceFill"></span>
+              <p class="amr-metric__label">
+                Persistência relativa de variantes resistentes
+              </p>
+
+              <div
+                class="amr-metric__track"
+                aria-hidden="true"
+              >
+                <span
+                  class="amr-metric__fill amr-metric__fill--resistance"
+                  id="amrResistanceFill"
+                ></span>
               </div>
-              <p class="amr-metric__value" id="amrResistanceLabel">Baixa predominância residual</p>
+
+              <p
+                class="amr-metric__value"
+                id="amrResistanceLabel"
+              >
+                Baixa
+              </p>
             </div>
+
           </div>
 
           <div class="amr-text">
-            <h3 class="amr-text__title" id="amrScenarioTitle">Exposição terapêutica adequada</h3>
-            <p class="amr-text__body" id="amrFeedback">
-              A exposição adequada tende a reduzir de forma mais consistente a população bacteriana sensível e a favorecer melhor controle clínico do foco infeccioso. A fração resistente remanescente mantém relevância biológica, mas a carga total da população bacteriana tende a ser menor.
+
+            <h2
+              class="amr-text__title"
+              id="amrScenarioTitle"
+            >
+              Exposição terapêutica adequada
+            </h2>
+
+            <p
+              class="amr-text__body"
+              id="amrFeedback"
+              aria-live="polite"
+            >
+              A exposição adequada ao contexto clínico reduz expressivamente a carga
+              bacteriana e favorece o controle do foco infeccioso. Entre as bactérias
+              remanescentes, a proporção relativa das variantes pode se modificar.
             </p>
+
           </div>
+
+          <div class="amr-observe">
+
+            <button
+              class="amr-observe__button"
+              type="button"
+              aria-expanded="false"
+              aria-controls="amrObserveContent"
+              data-amr-observe-button
+            >
+              <span aria-hidden="true">ⓘ</span>
+              O que observar?
+            </button>
+
+            <div
+              class="amr-observe__content"
+              id="amrObserveContent"
+              data-amr-observe-content
+              hidden
+            >
+              <ul>
+                <li>
+                  Compare a redução da carga bacteriana entre os três cenários.
+                </li>
+
+                <li>
+                  Observe a proporção entre bactérias sensíveis e resistentes remanescentes.
+                </li>
+
+                <li>
+                  Relacione o padrão visual com o grau de controle do foco infeccioso.
+                </li>
+              </ul>
+            </div>
+
+          </div>
+
+          <p class="amr-stage__note">
+            Representação esquemática e qualitativa. As quantidades e as barras não
+            correspondem a valores clínicos mensurados nem definem duração de tratamento.
+          </p>
+
         </div>
       </section>
 
       <div class="highlight">
-        Em geral, os antibacterianos não induzem diretamente o surgimento de resistência, mas exercem pressão seletiva ao favorecer a proliferação de variantes bacterianas resistentes previamente existentes, embora, em alguns casos, possam induzir a expressão de mecanismos de resistência, como a produção de β-lactamases.
+        A duração da antibioticoterapia deve ser individualizada conforme o diagnóstico,
+        o controle do foco, a resposta clínica e as evidências disponíveis. Tanto a exposição
+        insuficiente quanto o prolongamento desnecessário podem comprometer a segurança e
+        favorecer a pressão seletiva
+        <sup>3,5</sup>.
       </div>
 
-      <p>Atualmente compreende-se que a resistência bacteriana constitui uma consequência evolutiva previsível da exposição aos antibacterianos. Esse fenômeno pode resultar de mutações espontâneas ou da aquisição de genes de resistência por transferência horizontal, frequentemente mediada por plasmídeos, transposons ou outros elementos genéticos móveis <sup>3</sup>.</p>
+      <p>
+        Nas últimas décadas, a resistência antimicrobiana consolidou-se como um dos principais
+        desafios da saúde pública global. Estima-se que, em 2019, aproximadamente 4,95 milhões
+        de mortes estiveram associadas à resistência bacteriana em todo o mundo, evidenciando seu impacto
+        sobre os desfechos clínicos, a sustentabilidade dos sistemas de saúde e a eficácia
+        das estratégias terapêuticas disponíveis
+        <sup>6</sup>.
+      </p>
 
-      <p>Nas últimas décadas, a resistência antimicrobiana consolidou-se como um problema estrutural de saúde pública global. Estimativas indicam que, em 2019, aproximadamente 4,95 milhões de mortes estiveram associadas à resistência bacteriana. Esses dados evidenciam o impacto desse fenômeno não apenas nos desfechos clínicos individuais, mas também na organização dos sistemas de saúde e na eficácia das estratégias terapêuticas disponíveis globalmente <sup>1</sup>.</p>
     </section>
 
-    <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="../sumario/p00.html">← Anterior</a>
-  <div class="center">Capítulo 1 · Página 1 de 89</div>
-  <a class="btn primary" href="p02.html">Próxima →</a>
-</nav>
+    <nav
+      class="pager"
+      aria-label="Paginação"
+    >
+      <a
+        class="btn"
+        href="../sumario/p00.html"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 1 · Página 1 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p02.html"
+      >
+        Próxima →
+      </a>
+    </nav>
 
   </main>
 

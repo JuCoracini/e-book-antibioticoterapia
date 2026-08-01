@@ -2,12 +2,17 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Capítulo 5 — Página 49</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -19,128 +24,268 @@
   <main class="page-shell">
 
     <header class="page-header">
-      <div class="chapter">Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma</div>
-      <h1 class="page-title">Observações do laudo que modificam a interpretação</h1>
+      <div class="chapter">
+        Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma
+      </div>
+
+      <h1 class="page-title">
+        β-lactamases de espectro estendido
+      </h1>
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <section class="prose cap5-p49-reading">
 
-      <p>
-        Alguns mecanismos de resistência não envolvem produção de β-lactamases, mas sim alterações estruturais no alvo do antibacteriano. Um exemplo é o <em>Staphylococcus aureus</em> resistente à meticilina (MRSA), no qual ocorre modificação das proteínas ligadoras de penicilina. Essa alteração reduz a afinidade pelos β-lactâmicos, fazendo com que esses antibacterianos sejam considerados ineficazes independentemente do resultado isolado do teste para alguns agentes dessa classe <sup>1,10,16</sup>.
-      </p>
+      <section
+        class="cap5-p49-report cap5-p49-reveal"
+        aria-label="Exemplo de laudo microbiológico com ESBL"
+      >
+        <span class="cap5-p49-reportLabel">
+          Laudo microbiológico
+        </span>
 
-      <p>
-        Outro exemplo envolve os enterococos resistentes à vancomicina (VRE), nos quais ocorre modificação do alvo molecular do glicopeptídeo. Esse mecanismo reduz a atividade da vancomicina e possui implicações relevantes no manejo clínico e no controle de infecção hospitalar <sup>1,11,17</sup>.
-      </p>
+        <strong>
+          <em>Escherichia coli</em>
+        </strong>
 
-      <section class="cap5-p49-compare" aria-labelledby="cap5-p49-compare-title">
-        <div class="cap5-p49-compare__head">
-          <h3 id="cap5-p49-compare-title">Como o interno deve ler esses fenótipos no laudo</h3>
-          <p>
-            O ponto central não é apenas reconhecer o nome do mecanismo. É entender como ele modifica o significado do painel e altera a confiança que se pode depositar no resultado isolado do teste.
-          </p>
+        <p>
+          ESBL positiva
+        </p>
+
+        <div class="cap5-p49-reportQuestion">
+          O que essa observação acrescenta à interpretação do antibiograma?
         </div>
+      </section>
 
-        <div class="cap5-p49-compare__controls" role="tablist" aria-label="Fenótipos que modificam a leitura do antibiograma">
+      <p>
+        As β-lactamases de espectro estendido, denominadas ESBL, são enzimas produzidas principalmente por espécies da ordem Enterobacterales, com destaque para <em>Escherichia coli</em>, <em>Klebsiella pneumoniae</em> e <em>Proteus mirabilis</em>. Essas enzimas hidrolisam diferentes penicilinas, cefalosporinas de amplo espectro e aztreonam, reduzindo ou abolindo a atividade desses antibacterianos <sup>1,3,4,6,11</sup>.
+      </p>
+
+      <p>
+        Ao informar “ESBL positiva”, o laboratório não apresenta apenas uma sigla. Ele indica que o microrganismo possui um mecanismo de resistência capaz de modificar a interpretação dos β-lactâmicos e de influenciar a escolha terapêutica.
+      </p>
+
+      <section
+        class="cap5-p49-interaction cap5-p49-reveal"
+        data-cap5-p49
+        aria-label="Reconhecimento laboratorial da produção de ESBL"
+      >
+
+        <p class="cap5-p49-instruction">
+          Selecione uma etapa para observar como o laboratório reconhece o perfil sugestivo e demonstra a ação do ácido clavulânico.
+        </p>
+
+        <div
+          class="cap5-p49-tabs"
+          role="tablist"
+          aria-label="Etapas da investigação fenotípica da ESBL"
+        >
+
           <button
-            class="cap5-p49-compare__tab is-active"
+            class="cap5-p49-tab is-active"
             type="button"
             role="tab"
+            id="cap5P49TabScreening"
             aria-selected="true"
-            data-p49-step="mrsa"
+            aria-controls="cap5P49View"
+            tabindex="0"
+            data-p49-target="screening"
           >
-            MRSA
+            Perfil sugestivo
           </button>
 
           <button
-            class="cap5-p49-compare__tab"
+            class="cap5-p49-tab"
             type="button"
             role="tab"
+            id="cap5P49TabConfirmation"
             aria-selected="false"
-            data-p49-step="vre"
+            aria-controls="cap5P49View"
+            tabindex="-1"
+            data-p49-target="confirmation"
           >
-            VRE
+            Confirmação fenotípica
           </button>
 
-          <button
-            class="cap5-p49-compare__tab"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            data-p49-step="mlsb"
-          >
-            MLS<sub>B</sub> induzível
-          </button>
         </div>
 
-        <div class="cap5-p49-compare__stage">
-          <figure class="cap5-p49-card is-active" data-p49-card="mrsa">
+        <article
+          id="cap5P49View"
+          class="cap5-p49-view"
+          role="tabpanel"
+          aria-labelledby="cap5P49TabScreening"
+          aria-live="polite"
+        >
+
+          <figure class="cap5-p49-figure">
+
             <button
-              class="cap5-p49-card__zoom"
+              id="cap5P49Zoom"
+              class="cap5-p49-zoom"
               type="button"
-              id="cap5-p49-zoom"
-              data-zoom="../../assets/capitulo-05/imagens/mrsa-orsa-disco.png"
-              aria-label="Ampliar imagem relacionada ao MRSA"
+              data-zoom="../../assets/capitulo-05/imagens/esbl-perfil-sugestivo.png"
+              aria-label="Ampliar imagem do perfil fenotípico sugestivo de ESBL"
             >
               <img
-                id="cap5-p49-image"
-                src="../../assets/capitulo-05/imagens/mrsa-orsa-disco.png"
-                alt="Imagem ilustrativa relacionada ao fenótipo MRSA."
+                id="cap5P49Image"
+                src="../../assets/capitulo-05/imagens/esbl-perfil-sugestivo.png"
+                alt="Teste de suscetibilidade com perfil sugestivo de produção de ESBL"
                 loading="lazy"
               />
             </button>
-            <figcaption id="cap5-p49-caption" class="cap5-p49-card__caption">
-              MRSA. A alteração do alvo modifica a interpretação dos β-lactâmicos.
+
+            <figcaption
+              id="cap5P49Caption"
+              class="cap5-p49-caption"
+            >
+              Perfil fenotípico que pode levantar a suspeita de produção de ESBL.
             </figcaption>
+
           </figure>
 
-          <div class="cap5-p49-compare__panel" aria-live="polite">
-            <div class="cap5-p49-compare__eyebrow" id="cap5-p49-eyebrow">Alteração do alvo dos β-lactâmicos</div>
-            <h3 class="cap5-p49-compare__title" id="cap5-p49-title">MRSA</h3>
-            <p class="cap5-p49-compare__text" id="cap5-p49-text">
-              No MRSA, a modificação das proteínas ligadoras de penicilina altera o significado do painel de β-lactâmicos. A leitura do laudo não deve se limitar ao resultado isolado desses antibacterianos.
-            </p>
-            <div class="cap5-p49-compare__note" id="cap5-p49-note">
-              A presença desse mecanismo torna inadequada a interpretação isolada de parte dos β-lactâmicos.
+          <div class="cap5-p49-analysis">
+
+            <span
+              id="cap5P49Kicker"
+              class="cap5-p49-kicker"
+            >
+              Etapa de triagem
+            </span>
+
+            <h2
+              id="cap5P49Title"
+              class="cap5-p49-title"
+            >
+              Redução da suscetibilidade a cefalosporinas de amplo espectro
+            </h2>
+
+            <div
+              id="cap5P49Body"
+              class="cap5-p49-infoGrid"
+            >
+
+              <article class="cap5-p49-info">
+                <span>O que o laboratório observa</span>
+
+                <p>
+                  Um padrão de redução dos halos de inibição frente a determinados β-lactâmicos utilizados na investigação.
+                </p>
+              </article>
+
+              <article class="cap5-p49-info">
+                <span>O que esse padrão indica</span>
+
+                <p>
+                  O comportamento pode levantar a suspeita de produção de uma β-lactamase de espectro estendido.
+                </p>
+              </article>
+
+              <article class="cap5-p49-info">
+                <span>O que ainda não conclui</span>
+
+                <p>
+                  O padrão sugestivo, isoladamente, não deve ser confundido com confirmação definitiva do mecanismo.
+                </p>
+              </article>
+
+              <article class="cap5-p49-info cap5-p49-info--key">
+                <span>Ponto principal</span>
+
+                <p>
+                  A triagem seleciona isolados que exigem avaliação complementar pelo método adotado pelo laboratório.
+                </p>
+              </article>
+
             </div>
+
           </div>
-        </div>
+
+        </article>
+
       </section>
 
-      <p>
-        Também podem aparecer observações relacionadas a fenótipos específicos de resistência, como o fenótipo MLS <sub>B</sub> induzível, no qual pode ocorrer falha terapêutica com clindamicina, mesmo quando o resultado inicial sugere suscetibilidade <sup>1,10,12</sup>.
-      </p>
+      <section
+        class="cap5-p49-clinical cap5-p49-reveal"
+        aria-labelledby="cap5P49ClinicalTitle"
+      >
 
-      <section class="cap5-p49-hlar" aria-labelledby="cap5-p49-hlar-title">
-        <div class="cap5-p49-hlar__head">
-          <h3 id="cap5-p49-hlar-title">HLAR em <em>Enterococcus</em></h3>
+        <h2 id="cap5P49ClinicalTitle">
+          O que muda na antibioticoterapia
+
+        <div class="cap5-p49-clinicalGrid">
+
+          <article>
+            <span>Mecanismo reconhecido</span>
+
+            <p>
+              O isolado produz uma enzima capaz de comprometer diferentes β-lactâmicos.
+            </p>
+          </article>
+
+          <article>
+            <span>Leitura do painel</span>
+
+            <p>
+              Os resultados devem ser interpretados de forma integrada, considerando a espécie e os critérios vigentes.
+            </p>
+          </article>
+
+          <article>
+            <span>Contexto da infecção</span>
+
+            <p>
+              Sítio infeccioso, gravidade, carga bacteriana e possibilidade de controle do foco influenciam a decisão.
+            </p>
+          </article>
+
+          <article>
+            <span>Escolha terapêutica</span>
+
+            <p>
+              A sigla ESBL não determina sozinha um tratamento único; é necessário avaliar o perfil completo de suscetibilidade.
+            </p>
+          </article>
+
         </div>
 
-        <p>
-          A resistência de alto nível a aminoglicosídeos em <em>Enterococcus</em> sp. interfere no potencial de sinergismo entre classes antimicrobianas. Nesse contexto, a observação do laudo não descreve apenas resistência isolada, mas limitação de uma estratégia terapêutica combinada.
-        </p>
-
-        <div class="cap5-p49-hlar__note">
-          O ponto central não é apenas a perda de atividade do aminoglicosídeo, mas a perda do efeito de associação entre classes antimicrobianas.
-        </div>
       </section>
 
-      <p>
-        Essas observações devem ser interpretadas em conjunto com a espécie identificada e com as categorias de suscetibilidade apresentadas no antibiograma.
-      </p>
+      <aside class="cap5-p49-caution cap5-p49-reveal">
+        Em infecções graves ou invasivas, a presença de ESBL exige análise cuidadosa das cefalosporinas de amplo espectro e das demais opções disponíveis. A decisão não deve se basear apenas na sigla nem em um resultado isolado.
+      </aside>
+
+      <aside class="cap5-p49-principle cap5-p49-reveal">
+        <strong>ESBL não é apenas uma sigla no laudo.</strong> Ela informa que a bactéria produz uma enzima capaz de comprometer diferentes β-lactâmicos e que esse mecanismo deve ser incorporado à interpretação do antibiograma antes da definição terapêutica.
+      </aside>
 
     </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p48.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 5 · Página 49 de 89</div>
-  <a class="btn primary" href="p50.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+
+      <a
+        class="btn"
+        href="p48.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 5 · Página 49 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p50.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+
+    </nav>
 
   </main>
 
   <script src="../../js/app.js"></script>
   <script src="../../js/capitulo-05.js"></script>
-
 </body>
 </html>

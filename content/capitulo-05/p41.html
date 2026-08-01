@@ -3,11 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 5 — Página 41</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -16,140 +21,260 @@
 
 <body class="cap5-page41">
 
-  <main class="container page-shell">
+  <main class="page-shell">
 
     <header class="page-header">
-      <div>
-        <div class="chapter">Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma</div>
-        <h1 class="page-title">Bacterioscopia e coloração de Gram</h1>
+      <div class="chapter">
+        Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma
       </div>
+
+      <h1 class="page-title">
+        Coloração de Gram
+      </h1>
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <section class="prose cap5-p41v3-reading">
 
       <p>
-        O procedimento técnico segue uma sequência padronizada. Inicialmente, o material é distribuído em uma lâmina de vidro e fixado, geralmente por calor, para preservar a morfologia bacteriana e promover aderência celular. Em seguida, aplica-se o corante primário (cristal violeta), que penetra nas células bacterianas. A adição do lugol atua como mordente, formando um complexo cristal violeta–iodo no interior da célula <sup>2,3</sup>.
+        A coloração de Gram é a principal técnica diferencial utilizada na bacterioscopia clínica. Seu princípio baseia-se nas diferenças estruturais do envelope bacteriano, especialmente na espessura da camada de peptidoglicano e na presença da membrana externa das bactérias Gram-negativas <sup>2,5</sup>.
       </p>
 
-      <section class="gram-sim gram-sim--compact" data-gram-sim aria-labelledby="gram-sim-title">
-        <div class="gram-sim__header">
-          <h2 id="gram-sim-title" class="gram-sim__title">Como a coloração de Gram acontece</h2>
-          <p class="gram-sim__subtitle">
-            A sequência do método permite compreender como a estrutura da parede celular bacteriana determina a retenção ou a perda do corante ao final da coloração.
-          </p>
+      <p>
+        Essas características determinam a retenção ou a perda do complexo cristal violeta–iodo durante a descoloração. Ao final do procedimento, as bactérias Gram-positivas permanecem azul-arroxeadas, enquanto as Gram-negativas incorporam o contra-corante e adquirem coloração rosada <sup>5</sup>.
+      </p>
+
+      <section
+        class="cap5-p41v3-interaction cap5-p41v3-reveal"
+        data-cap5-p41v3
+        aria-label="Etapas da coloração de Gram"
+      >
+
+        <p class="cap5-p41v3-instruction">
+          Selecione uma etapa para acompanhar o comportamento das bactérias Gram-positivas e Gram-negativas durante a técnica.
+        </p>
+
+        <div
+          class="cap5-p41v3-tabs"
+          role="tablist"
+          aria-label="Etapas da coloração de Gram"
+        >
+          <button
+            class="cap5-p41v3-tab is-active"
+            type="button"
+            role="tab"
+            id="cap5P41V3TabFixacao"
+            aria-selected="true"
+            aria-controls="cap5P41V3View"
+            tabindex="0"
+            data-p41v3-target="fixacao"
+          >
+            <span>1</span>
+            Fixação
+          </button>
+
+          <button
+            class="cap5-p41v3-tab"
+            type="button"
+            role="tab"
+            id="cap5P41V3TabCristal"
+            aria-selected="false"
+            aria-controls="cap5P41V3View"
+            tabindex="-1"
+            data-p41v3-target="cristal"
+          >
+            <span>2</span>
+            Cristal violeta
+          </button>
+
+          <button
+            class="cap5-p41v3-tab"
+            type="button"
+            role="tab"
+            id="cap5P41V3TabLugol"
+            aria-selected="false"
+            aria-controls="cap5P41V3View"
+            tabindex="-1"
+            data-p41v3-target="lugol"
+          >
+            <span>3</span>
+            Lugol
+          </button>
+
+          <button
+            class="cap5-p41v3-tab cap5-p41v3-tab--critical"
+            type="button"
+            role="tab"
+            id="cap5P41V3TabAlcool"
+            aria-selected="false"
+            aria-controls="cap5P41V3View"
+            tabindex="-1"
+            data-p41v3-target="alcool"
+          >
+            <span>4</span>
+            Descoloração
+          </button>
+
+          <button
+            class="cap5-p41v3-tab"
+            type="button"
+            role="tab"
+            id="cap5P41V3TabSafranina"
+            aria-selected="false"
+            aria-controls="cap5P41V3View"
+            tabindex="-1"
+            data-p41v3-target="safranina"
+          >
+            <span>5</span>
+            Safranina
+          </button>
         </div>
 
-        <div class="gram-sim__controls" role="tablist" aria-label="Etapas da coloração de Gram">
-          <button class="gram-step is-active" type="button" role="tab" aria-selected="true" data-step="fixacao">1. Fixação</button>
-          <button class="gram-step" type="button" role="tab" aria-selected="false" data-step="cristal">2. Cristal violeta</button>
-          <button class="gram-step" type="button" role="tab" aria-selected="false" data-step="lugol">3. Lugol</button>
-          <button class="gram-step gram-step--critical" type="button" role="tab" aria-selected="false" data-step="alcool">4. Álcool/acetona</button>
-          <button class="gram-step" type="button" role="tab" aria-selected="false" data-step="safranina">5. Safranina</button>
-        </div>
+        <article
+          id="cap5P41V3View"
+          class="cap5-p41v3-view"
+          role="tabpanel"
+          aria-labelledby="cap5P41V3TabFixacao"
+          aria-live="polite"
+        >
 
-        <div class="gram-sim__stage">
-          <figure class="gram-stage-card">
+          <figure class="cap5-p41v3-figure">
             <button
-              id="gram-stage-zoom"
-              class="gram-stage-card__zoom"
+              id="cap5P41V3Zoom"
+              class="cap5-p41v3-zoom"
               type="button"
-              aria-label="Ampliar imagem da etapa atual"
+              data-zoom="../../assets/capitulo-05/imagens/fixacao.png"
+              aria-label="Ampliar imagem da etapa de fixação"
             >
               <img
-                id="gram-stage-image"
-                class="gram-stage-card__image"
+                id="cap5P41V3Image"
                 src="../../assets/capitulo-05/imagens/fixacao.png"
-                alt="Etapa de fixação na coloração de Gram"
+                alt="Etapa de fixação da amostra na coloração de Gram"
+                loading="lazy"
               />
             </button>
+
+            <figcaption
+              id="cap5P41V3Caption"
+              class="cap5-p41v3-caption"
+            >
+              Preparação e fixação do material clínico na lâmina.
+            </figcaption>
           </figure>
 
-          <aside class="gram-stage-panel" aria-live="polite">
-            <span id="gram-stage-pill" class="gram-stage-panel__pill">Etapa preparatória</span>
-            <h3 id="gram-stage-title" class="gram-stage-panel__title">Fixação</h3>
-            <p id="gram-stage-text" class="gram-stage-panel__text">
-              Inicialmente, o material é distribuído em uma lâmina de vidro e fixado, geralmente por calor, para preservar a morfologia bacteriana e promover aderência celular. Nesta etapa inicial, ainda não há diferenciação entre bactérias Gram-positivas e Gram-negativas, mas a amostra fica preparada para receber os reagentes seguintes.
-            </p>
+          <div class="cap5-p41v3-summary">
 
-            <div class="gram-stage-panel__nav">
-              <button id="gram-prev" class="btn" type="button">← Etapa anterior</button>
-              <button id="gram-next" class="btn" type="button">Próxima etapa →</button>
+            <div class="cap5-p41v3-summaryHeader">
+              <span
+                id="cap5P41V3Kicker"
+                class="cap5-p41v3-kicker"
+              >
+                Etapa preparatória
+              </span>
+
+              <h2
+                id="cap5P41V3Title"
+                class="cap5-p41v3-title"
+              >
+                Fixação da amostra
+              </h2>
             </div>
-          </aside>
-        </div>
 
-        <div class="gram-sim__focus">
-          <div class="gram-sim__focus-box">
-            A etapa crítica do método é a descoloração com álcool-acetona.
+            <div
+              id="cap5P41V3Body"
+              class="cap5-p41v3-body"
+            >
+              <div class="cap5-p41v3-infoGrid">
+
+                <article class="cap5-p41v3-info">
+                  <span>Função da etapa</span>
+                  <p>
+                    Promover a aderência do material à lâmina e preservar a morfologia bacteriana.
+                  </p>
+                </article>
+
+                <article class="cap5-p41v3-info">
+                  <span>Gram-positivas</span>
+                  <p>
+                    Ainda não apresentam diferenciação cromática.
+                  </p>
+                </article>
+
+                <article class="cap5-p41v3-info">
+                  <span>Gram-negativas</span>
+                  <p>
+                    Ainda não apresentam diferenciação cromática.
+                  </p>
+                </article>
+
+                <article class="cap5-p41v3-info cap5-p41v3-info--key">
+                  <span>Ponto-chave</span>
+                  <p>
+                    A etapa prepara a amostra para receber os reagentes, sem diferenciar os grupos bacterianos.
+                  </p>
+                </article>
+
+              </div>
+            </div>
+
           </div>
-        </div>
+
+        </article>
       </section>
 
-      <section class="cap5-p41-compare" aria-labelledby="cap5-p41-compare-title">
-        <div class="cap5-p41-compare__head">
-          <h2 id="cap5-p41-compare-title" class="cap5-p41-compare__title">Por que Gram-positivas e Gram-negativas se comportam de modo diferente?</h2>
-          <p class="cap5-p41-compare__subtitle">
-            A retenção ou perda do complexo cristal violeta–iodo depende diretamente da organização da parede celular bacteriana.
+      <section
+        class="cap5-p41v3-results cap5-p41v3-reveal"
+        aria-label="Resultado da coloração de Gram"
+      >
+
+        <article class="cap5-p41v3-result cap5-p41v3-result--positive">
+          <strong>Gram-positivas</strong>
+
+          <p>
+            Retêm o complexo cristal violeta–iodo e permanecem azul-arroxeadas.
           </p>
-        </div>
+        </article>
 
-        <div class="cap5-p41-compare__grid">
-          <figure class="cap5-p41-compare__card">
-  <button
-  class="cap5-p41-compare__zoom"
-  type="button"
-  data-zoom="../../assets/capitulo-05/imagens/gram-positivo.png"
-  aria-label="Ampliar estrutura de bactéria Gram-positiva"
->
-              <img
-                src="../../assets/capitulo-05/imagens/gram-positivo.png"
-                alt="Estrutura de bactéria Gram-positiva."
-                loading="lazy"
-              />
-            </button>
-            <figcaption>
-              <strong>Gram-positivas</strong><br>
-              Camada espessa de peptidoglicano e ausência de membrana externa.
-            </figcaption>
-          </figure>
+        <article class="cap5-p41v3-result cap5-p41v3-result--negative">
+          <strong>Gram-negativas</strong>
 
-          <figure class="cap5-p41-compare__card">
-            <button
-  class="cap5-p41-compare__zoom"
-  type="button"
-  data-zoom="../../assets/capitulo-05/imagens/gram-negativo.png"
-  aria-label="Ampliar estrutura de bactéria Gram-negativa"
->
-              <img
-                src="../../assets/capitulo-05/imagens/gram-negativo.png"
-                alt="Estrutura de bactéria Gram-negativa."
-                loading="lazy"
-              />
-            </button>
-            <figcaption>
-              <strong>Gram-negativas</strong><br>
-              Camada delgada de peptidoglicano e presença de membrana externa.
-            </figcaption>
-          </figure>
-        </div>
+          <p>
+            Perdem o corante primário e incorporam a safranina, tornando-se rosadas.
+          </p>
+        </article>
+
       </section>
 
       <p>
-        Apesar de seu valor inicial, a bacterioscopia possui limitações importantes. O exame não permite identificar com precisão a espécie bacteriana nem determinar o perfil de suscetibilidade aos antibacterianos. Seu papel é fornecer uma caracterização estrutural precoce do microrganismo presente na amostra, contribuindo para a interpretação do processo diagnóstico microbiológico <sup>1,2</sup>.
+        A reação ao Gram representa uma característica estrutural inicial do microrganismo, mas não permite identificar a espécie bacteriana nem determinar seu perfil de suscetibilidade.
       </p>
 
     </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p40.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 5 · Página 41 de 89</div>
-  <a class="btn primary" href="p42.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+      <a
+        class="btn"
+        href="p40.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 5 · Página 41 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p42.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+    </nav>
 
   </main>
 
   <script src="../../js/app.js"></script>
   <script src="../../js/capitulo-05.js"></script>
-
 </body>
 </html>

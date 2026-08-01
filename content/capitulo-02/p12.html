@@ -3,155 +3,365 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 2 — Página 12</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
   <link rel="stylesheet" href="../../css/capitulo-02.css" />
 </head>
 
-<body class="cap2-shell cap2-page12">
-  <main class="page-shell">
+<body class="cap2-page12">
+
+  <main class="page-shell cap2-shell">
 
     <header class="page-header">
       <div class="chapter">Capítulo 2 — Mecanismos de Ação dos Antibacterianos</div>
       <h1 class="page-title">Classificação dos antibacterianos segundo o alvo celular</h1>
     </header>
 
-    <section class="prose">
+    <section class="prose cap2-reading-flow">
+
       <p>
-        A classificação dos antibacterianos pode ser organizada de acordo com o alvo celular sobre o qual atuam. Essa abordagem permite relacionar cada classe farmacológica ao processo biológico bacteriano afetado, facilitando a compreensão do mecanismo de ação e das diferenças entre os grupos terapêuticos <sup>1,2</sup>.
+        Os antibacterianos podem ser classificados de acordo com o principal alvo celular sobre o qual atuam. Essa organização relaciona cada classe farmacológica ao processo biológico bacteriano afetado, facilitando a compreensão dos mecanismos de ação, do espectro de atividade e dos padrões de resistência compartilhados entre diferentes grupos terapêuticos <sup>1,2</sup>.
       </p>
 
       <p>
-        Classes distintas podem compartilhar o mesmo alvo molecular, e variações estruturais dentro de uma mesma família não necessariamente modificam o mecanismo central de atuação.
+        Classes farmacológicas distintas podem atuar sobre o mesmo alvo celular. Modificações estruturais dentro de uma mesma família podem alterar propriedades como espectro de atividade, estabilidade frente às β-lactamases e perfil farmacocinético, sem necessariamente modificar o mecanismo de ação predominante.
       </p>
 
       <p>
-        O quadro a seguir apresenta as classes antibacterianas organizadas segundo seu mecanismo de ação predominante.
+        O quadro a seguir apresenta as principais classes de antibacterianos organizadas segundo o alvo celular predominante.
       </p>
-    </section>
 
-    <section class="cap2-tableSection" aria-labelledby="cap2TableTitle" data-cap2-table-section>
-      <div class="cap2-table-lead">
-        <p id="cap2TableTitle" class="cap2-table-note">
-          A organização por alvo celular permite antecipar efeitos terapêuticos e padrões de resistência compartilhados entre diferentes classes.
-        </p>
-        <p class="cap2-table-scrollHint" data-cap2-table-hint hidden>
+      <section
+        class="cap2-p12-tableSection cap2-p12-reveal"
+        data-cap2-p12
+        aria-label="Classificação dos antibacterianos segundo o alvo celular"
+      >
+
+        <p class="cap2-p12-scrollHint" data-p12-scroll-hint hidden>
           Deslize horizontalmente para visualizar toda a tabela.
         </p>
-      </div>
 
-      <div class="cap2-table-wrapper" data-cap2-table-wrapper>
-        <table class="cap2-table" aria-label="Classificação dos antibacterianos segundo o alvo celular">
-          <thead>
-            <tr>
-              <th scope="col">Alvo celular</th>
-              <th scope="col">Classe</th>
-              <th scope="col">Representantes</th>
-            </tr>
-          </thead>
+        <div
+          class="cap2-p12-tableWrapper"
+          data-p12-table-wrapper
+          tabindex="0"
+          aria-label="Tabela com classificação dos antibacterianos; em telas menores, use a rolagem horizontal"
+        >
+          <table class="cap2-p12-table">
+            <caption class="sr-only">
+              Classificação dos antibacterianos segundo o alvo celular, a classe farmacológica e os principais representantes.
+            </caption>
 
-          <tbody>
-            <tr class="group-start">
-              <th scope="rowgroup" rowspan="5">Síntese da parede celular</th>
-              <th scope="row">Penicilinas</th>
-              <td>Ex.: Penicilina G · Amoxicilina · Oxacilina · Piperacilina</td>
-            </tr>
-            <tr>
-              <th scope="row">Cefalosporinas</th>
-              <td>
-                Ex.: 1ª geração: Cefazolina<br>
-                2ª geração: Cefuroxima<br>
-                3ª geração: Ceftriaxona · Ceftazidima<br>
-                4ª geração: Cefepima<br>
-                5ª geração: Ceftarolina
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">Carbapenêmicos</th>
-              <td>Ex.: Imipenem · Meropenem · Ertapenem</td>
-            </tr>
-            <tr>
-              <th scope="row">Monobactâmicos</th>
-              <td>Ex.: Aztreonam</td>
-            </tr>
-            <tr>
-              <th scope="row">Glicopeptídeos</th>
-              <td>Ex.: Vancomicina · Teicoplanina</td>
-            </tr>
+            <colgroup>
+              <col class="cap2-p12-colTarget">
+              <col class="cap2-p12-colClass">
+              <col class="cap2-p12-colDrugs">
+            </colgroup>
 
-            <tr class="group-start">
-              <th scope="rowgroup" rowspan="5">Síntese proteica</th>
-              <th scope="row">Aminoglicosídeos</th>
-              <td>Ex.: Gentamicina · Amicacina</td>
-            </tr>
-            <tr>
-              <th scope="row">Tetraciclinas</th>
-              <td>Ex.: Doxiciclina · Minociclina</td>
-            </tr>
-            <tr>
-              <th scope="row">Macrolídeos</th>
-              <td>Ex.: Azitromicina · Claritromicina · Eritromicina</td>
-            </tr>
-            <tr>
-              <th scope="row">Lincosamidas</th>
-              <td>Ex.: Clindamicina</td>
-            </tr>
-            <tr>
-              <th scope="row">Oxazolidinonas</th>
-              <td>Ex.: Linezolida</td>
-            </tr>
+            <thead>
+              <tr>
+                <th scope="col">Alvo celular</th>
+                <th scope="col">Classe farmacológica</th>
+                <th scope="col">Principais representantes</th>
+              </tr>
+            </thead>
 
-            <tr class="group-start">
-              <th scope="rowgroup" rowspan="3">Ácidos nucleicos</th>
-              <th scope="row">Fluoroquinolonas</th>
-              <td>Ex.: Ciprofloxacino · Levofloxacino · Norfloxacino · Moxifloxacino</td>
-            </tr>
-            <tr>
-              <th scope="row">Rifamicinas</th>
-              <td>Ex.: Rifampicina</td>
-            </tr>
-            <tr>
-              <th scope="row">Nitroimidazóis</th>
-              <td>Ex.: Metronidazol</td>
-            </tr>
+            <tbody>
+              <tr class="cap2-p12-groupStart">
+                <th
+                  scope="rowgroup"
+                  rowspan="5"
+                  class="cap2-p12-targetCell cap2-p12-targetCell--parede"
+                >
+                  <span class="cap2-p12-targetLabel">
+                    Síntese da parede celular
+                  </span>
+                </th>
 
-            <tr class="group-start">
-              <th scope="rowgroup" rowspan="3">Metabolismo do folato</th>
-              <th scope="row">Sulfonamidas</th>
-              <td>Ex.: Sulfametoxazol</td>
-            </tr>
-            <tr>
-              <th scope="row">Inibidores da di-hidrofolato redutase (DHFR)</th>
-              <td>Ex.: Trimetoprim</td>
-            </tr>
-            <tr>
-              <th scope="row">Associação sequencial da via do folato</th>
-              <td>Ex.: Sulfametoxazol + Trimetoprim (SMX–TMP)</td>
-            </tr>
+                <th scope="row">Penicilinas</th>
 
-            <tr class="group-start">
-              <th scope="rowgroup" rowspan="2">Membrana citoplasmática</th>
-              <th scope="row">Polimixinas</th>
-              <td>Ex.: Polimixina B · Colistina</td>
-            </tr>
-            <tr>
-              <th scope="row">Lipopeptídeos</th>
-              <td>Ex.: Daptomicina</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+                <td>
+                  <div class="cap2-p12-drugList">
+                    <span>Penicilina G</span>
+                    <span>Amoxicilina</span>
+                    <span>Oxacilina</span>
+                    <span>Piperacilina</span>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">Cefalosporinas</th>
+
+                <td>
+                  <div class="cap2-p12-generationList">
+                    <p><strong>1ª geração:</strong> Cefazolina</p>
+                    <p><strong>2ª geração:</strong> Cefuroxima</p>
+                    <p><strong>3ª geração:</strong> Ceftriaxona · Ceftazidima</p>
+                    <p><strong>4ª geração:</strong> Cefepima</p>
+                    <p><strong>5ª geração:</strong> Ceftarolina</p>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">Carbapenêmicos</th>
+
+                <td>
+                  <div class="cap2-p12-drugList">
+                    <span>Imipenem</span>
+                    <span>Meropenem</span>
+                    <span>Ertapenem</span>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">Monobactâmicos</th>
+
+                <td>
+                  <div class="cap2-p12-drugList">
+                    <span>Aztreonam</span>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">Glicopeptídeos</th>
+
+                <td>
+                  <div class="cap2-p12-drugList">
+                    <span>Vancomicina</span>
+                    <span>Teicoplanina</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+
+            <tbody>
+              <tr class="cap2-p12-groupStart">
+                <th
+                  scope="rowgroup"
+                  rowspan="5"
+                  class="cap2-p12-targetCell cap2-p12-targetCell--proteina"
+                >
+                  <span class="cap2-p12-targetLabel">
+                    Síntese proteica
+                  </span>
+                </th>
+
+                <th scope="row">Aminoglicosídeos</th>
+
+                <td>
+                  <div class="cap2-p12-drugList">
+                    <span>Gentamicina</span>
+                    <span>Amicacina</span>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">Tetraciclinas</th>
+
+                <td>
+                  <div class="cap2-p12-drugList">
+                    <span>Doxiciclina</span>
+                    <span>Minociclina</span>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">Macrolídeos</th>
+
+                <td>
+                  <div class="cap2-p12-drugList">
+                    <span>Azitromicina</span>
+                    <span>Claritromicina</span>
+                    <span>Eritromicina</span>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">Lincosamidas</th>
+
+                <td>
+                  <div class="cap2-p12-drugList">
+                    <span>Clindamicina</span>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">Oxazolidinonas</th>
+
+                <td>
+                  <div class="cap2-p12-drugList">
+                    <span>Linezolida</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+
+            <tbody>
+              <tr class="cap2-p12-groupStart">
+                <th
+                  scope="rowgroup"
+                  rowspan="3"
+                  class="cap2-p12-targetCell cap2-p12-targetCell--nucleicos"
+                >
+                  <span class="cap2-p12-targetLabel">
+                    Ácidos nucleicos
+                  </span>
+                </th>
+
+                <th scope="row">Fluoroquinolonas</th>
+
+                <td>
+                  <div class="cap2-p12-drugList">
+                    <span>Ciprofloxacino</span>
+                    <span>Levofloxacino</span>
+                    <span>Moxifloxacino</span>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">Rifamicinas</th>
+
+                <td>
+                  <div class="cap2-p12-drugList">
+                    <span>Rifampicina</span>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Nitroimidazóis<sup>*</sup>
+                </th>
+
+                <td>
+                  <div class="cap2-p12-drugList">
+                    <span>Metronidazol</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+
+            <tbody>
+              <tr class="cap2-p12-groupStart">
+                <th
+                  scope="rowgroup"
+                  rowspan="3"
+                  class="cap2-p12-targetCell cap2-p12-targetCell--folato"
+                >
+                  <span class="cap2-p12-targetLabel">
+                    Síntese do folato
+                  </span>
+                </th>
+
+                <th scope="row">Sulfonamidas</th>
+
+                <td>
+                  <div class="cap2-p12-drugList">
+                    <span>Sulfametoxazol</span>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Inibidores da di-hidrofolato redutase (DHFR)
+                </th>
+
+                <td>
+                  <div class="cap2-p12-drugList">
+                    <span>Trimetoprim</span>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">
+                  Associação sequencial da via do folato
+                </th>
+
+                <td>
+                  <div class="cap2-p12-drugList">
+                    <span>Sulfametoxazol + trimetoprim</span>
+                    <span>SMX–TMP</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+
+            <tbody>
+              <tr class="cap2-p12-groupStart">
+                <th
+                  scope="rowgroup"
+                  rowspan="2"
+                  class="cap2-p12-targetCell cap2-p12-targetCell--membrana"
+                >
+                  <span class="cap2-p12-targetLabel">
+                    Membrana citoplasmática
+                  </span>
+                </th>
+
+                <th scope="row">Polimixinas</th>
+
+                <td>
+                  <div class="cap2-p12-drugList">
+                    <span>Polimixina B</span>
+                    <span>Colistina</span>
+                  </div>
+                </td>
+              </tr>
+
+              <tr>
+                <th scope="row">Lipopeptídeos</th>
+
+                <td>
+                  <div class="cap2-p12-drugList">
+                    <span>Daptomicina</span>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <aside class="cap2-p12-note cap2-p12-reveal">
+        Os nitroimidazóis geram metabólitos reativos que promovem dano ao DNA após ativação intracelular em microrganismos anaeróbios. Por simplificação didática, são apresentados na categoria “Ácidos nucleicos”.
+      </aside>
+
+      <aside class="cap2-p12-key cap2-p12-reveal">
+        Classes farmacológicas diferentes podem compartilhar o mesmo alvo celular. Por isso, modificações nesse alvo ou em estruturas relacionadas podem comprometer simultaneamente a atividade de diferentes antibacterianos.
+      </aside>
+
     </section>
 
-     <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p11.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 2 · Página 12 de 89</div>
-  <a class="btn primary" href="p13.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="p11.html" aria-label="Ir para a página anterior">
+        ← Anterior
+      </a>
+
+      <div class="center">Capítulo 2 · Página 12 de 89</div>
+
+      <a class="btn primary" href="p13.html" aria-label="Ir para a próxima página">
+        Próxima →
+      </a>
+    </nav>
 
   </main>
 

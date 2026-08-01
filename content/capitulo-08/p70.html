@@ -20,75 +20,75 @@
       <h1 class="page-title">Infecções respiratórias</h1>
     </header>
 
-    <section class="prose">
+    <section class="prose" aria-label="Infecções respiratórias e decisão terapêutica">
 
-      <p>As infecções respiratórias constituem uma das causas mais frequentes de prescrição de antibacterianos na prática clínica. Entretanto, uma parcela significativa dos quadros respiratórios agudos é causada por vírus respiratórios ou por processos inflamatórios não infecciosos, situações nas quais o uso de antibacterianos não traz benefício clínico <sup>3,8</sup>.</p>
+      <p>As infecções respiratórias constituem uma das causas mais frequentes de prescrição de antibacterianos na prática clínica. Entretanto, uma parcela significativa dos quadros respiratórios agudos é causada por vírus respiratórios ou por processos inflamatórios não infecciosos, situações nas quais o uso de antibacterianos não traz benefício clínico<sup>3,8</sup>.</p>
 
-      <p>O primeiro passo do raciocínio clínico é avaliar a probabilidade de infecção bacteriana. Sintomas como tosse, febre e mal-estar são comuns em diversas infecções respiratórias, mas isoladamente não permitem distinguir etiologia viral de bacteriana. A presença de infiltrado pulmonar em exames de imagem, associada a sinais clínicos compatíveis com processo infeccioso sistêmico, aumenta significativamente a probabilidade de pneumonia bacteriana <sup>1,2</sup>.</p>
+      <p>O primeiro passo do raciocínio clínico é avaliar a probabilidade de infecção bacteriana. Sintomas como tosse, febre e mal-estar são comuns em diversas infecções respiratórias, mas isoladamente não permitem distinguir etiologia viral de bacteriana. A presença de infiltrado pulmonar em exames de imagem, associada a sinais clínicos compatíveis com processo infeccioso sistêmico, aumenta significativamente a probabilidade de pneumonia bacteriana<sup>1,2</sup>.</p>
 
-      <!-- INTERAÇÃO -->
-      <section class="cap8-p70-sim" data-p70-sim>
+      <section class="cap8-p70-sim" aria-labelledby="p70-sim-title" data-p70-sim>
+        <header class="cap8-p70-sim-head">
+          <p class="cap8-p70-kicker">Decisão clínica em duas etapas</p>
+          
+          <p>Diante de um quadro respiratório inicial, analise os dados disponíveis antes de definir a conduta.</p>
+        </header>
 
-        <p class="cap8-p70-lead">
-          Diante de um quadro respiratório inicial, o primeiro desafio é estimar a probabilidade de infecção bacteriana.
-        </p>
-
-        <p class="cap8-p70-case">
-          Paciente com tosse, febre e mal-estar há 2 dias, sem sinais de gravidade e sem exame de imagem disponível.
-        </p>
-
-        <div class="cap8-p70-options">
-          <button class="cap8-p70-option" data-choice="alta">
-            Alta probabilidade de infecção bacteriana
-          </button>
-
-          <button class="cap8-p70-option" data-choice="moderada">
-            Probabilidade intermediária — necessita melhor avaliação
-          </button>
-
-          <button class="cap8-p70-option" data-choice="baixa">
-            Baixa probabilidade — possível etiologia viral
-          </button>
+        <div class="cap8-p70-case">
+          <span class="cap8-p70-case-label">Apresentação inicial</span>
+          <p>Paciente com tosse, febre e mal-estar há 2 dias, sem sinais de gravidade e sem exame de imagem disponível.</p>
         </div>
 
-        <div class="cap8-p70-feedback"></div>
+        <fieldset class="cap8-p70-question">
+          <legend>Qual é a interpretação mais consistente neste momento?</legend>
+          <div class="cap8-p70-options">
+            <button class="cap8-p70-option" type="button" aria-pressed="false" data-choice="alta">Alta probabilidade de infecção bacteriana</button>
+            <button class="cap8-p70-option" type="button" aria-pressed="false" data-choice="moderada">Probabilidade intermediária — necessita melhor avaliação</button>
+            <button class="cap8-p70-option" type="button" aria-pressed="false" data-choice="baixa">Baixa probabilidade — possível etiologia viral</button>
+          </div>
+        </fieldset>
+
+        <div class="cap8-p70-feedback" role="status" aria-live="polite"></div>
 
         <div class="cap8-p70-evolution" hidden>
+          <div class="cap8-p70-evolution-head">
+            <span>Etapa 2</span>
+            <h3>Novo dado disponível</h3>
+            <p>Integre o achado ao quadro clínico e reavalie sua interpretação inicial.</p>
+          </div>
 
           <div class="cap8-p70-figure">
             <img src="../../assets/capitulo-08/imagens/pneumonia-probabilidade.png" alt="Sinais sistêmicos aumentam probabilidade de pneumonia bacteriana" data-zoom>
-            <figcaption class="caption">
-              A presença de infiltrado pulmonar associada a sinais sistêmicos aumenta significativamente a probabilidade de pneumonia bacteriana.
-            </figcaption>
+            <figcaption class="caption">A presença de infiltrado pulmonar associada a sinais sistêmicos aumenta significativamente a probabilidade de pneumonia bacteriana.</figcaption>
           </div>
 
-          <button class="btn ghost" data-reveal>
-            Reavaliar o raciocínio clínico
-          </button>
-
-          <div class="cap8-p70-reveal"></div>
-
+          <button class="btn ghost cap8-p70-reveal-btn" type="button" aria-expanded="false" aria-controls="p70-reveal" data-reveal>Integrar o novo dado ao raciocínio</button>
+          <div id="p70-reveal" class="cap8-p70-reveal" role="status" aria-live="polite"></div>
         </div>
-
       </section>
 
-      <p>Entre os agentes mais frequentemente associados à pneumonia adquirida na comunidade destacam-se <em>Streptococcus pneumoniae</em> e <em>Haemophilus influenzae</em>, além de patógenos respiratórios denominados atípicos em determinados contextos clínicos. A distribuição etiológica varia conforme idade, presença de doença pulmonar estrutural, comorbidades e gravidade da apresentação <sup>1,2</sup>.</p>
+      <h2 class="cap8-p70-section-divider">
+        <span aria-hidden="true"></span>
+        Do perfil etiológico à escolha do espectro
+        <span aria-hidden="true"></span>
+      </h2>
 
-      <p>Uma vez estabelecida a plausibilidade de infecção bacteriana, a escolha inicial do espectro antimicrobiano deve considerar o risco individual de resistência. Em pacientes jovens, sem comorbidades relevantes e sem exposições recentes ao sistema de saúde, a probabilidade de patógenos multirresistentes costuma ser baixa, não havendo justificativa para ampliação desnecessária do espectro antimicrobiano <sup>3,4</sup>.</p>
+      <p>Entre os agentes mais frequentemente associados à pneumonia adquirida na comunidade destacam-se <em>Streptococcus pneumoniae</em> e <em>Haemophilus influenzae</em>, além de patógenos respiratórios denominados atípicos em determinados contextos clínicos. A distribuição etiológica varia conforme idade, presença de doença pulmonar estrutural, comorbidades e gravidade da apresentação<sup>1,2</sup>.</p>
 
-      <p>Por outro lado, idade avançada, doença pulmonar crônica, hospitalizações recentes ou uso prévio de antibacterianos podem modificar o perfil etiológico esperado e aumentar o risco de resistência bacteriana, devendo ser considerados na definição da estratégia inicial <sup>3,4</sup>.</p>
+      <p>Uma vez estabelecida a probabilidade de infecção bacteriana, a escolha inicial do espectro antimicrobiano deve considerar o risco individual de resistência. Em pacientes jovens, sem comorbidades relevantes e sem exposições recentes ao sistema de saúde, a probabilidade de patógenos multirresistentes costuma ser baixa, não havendo justificativa para ampliação desnecessária do espectro antimicrobiano<sup>3,4</sup>.</p>
 
-      <p>Em pacientes hospitalizados, a coleta de amostras para investigação microbiológica pode auxiliar na identificação do agente etiológico. Quando um microrganismo é identificado e apresenta perfil de suscetibilidade favorável, o estreitamento terapêutico permite reduzir a exposição desnecessária a antibacterianos de amplo espectro <sup>3,6</sup>.</p>
+      <p>Por outro lado, idade avançada, doença pulmonar crônica, hospitalizações recentes ou uso prévio de antibacterianos podem modificar o perfil etiológico esperado e aumentar o risco de resistência bacteriana, devendo ser considerados na definição da estratégia inicial<sup>3,4</sup>.</p>
 
-      <p>A abordagem das infecções respiratórias ilustra dois erros frequentes na prática clínica: a prescrição de antibacterianos para quadros virais autolimitados e a ampliação desnecessária do espectro em situações de baixo risco de resistência. Em ambos os casos, o prejuízo não está apenas na ausência de benefício clínico adicional, mas também no aumento da toxicidade potencial e da pressão seletiva sobre a microbiota <sup>3,9</sup>.</p>
+      <p>Em pacientes hospitalizados, a coleta de amostras para investigação microbiológica pode auxiliar na identificação do agente etiológico. Quando um microrganismo é identificado e apresenta perfil de suscetibilidade favorável, o estreitamento terapêutico permite reduzir a exposição desnecessária a antibacterianos de amplo espectro<sup>3,6</sup>.</p>
+
+      <p>A abordagem das infecções respiratórias ilustra dois erros frequentes na prática clínica: a prescrição de antibacterianos para quadros virais autolimitados e a ampliação desnecessária do espectro em situações de baixo risco de resistência. Em ambos os casos, o prejuízo não está apenas na ausência de benefício clínico adicional, mas também no aumento da toxicidade potencial e da pressão seletiva sobre a microbiota<sup>3,9</sup>.</p>
 
     </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p69.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 8 · Página 70 de 89</div>
-  <a class="btn primary" href="p71.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="p69.html" aria-label="Ir para a página anterior">← Anterior</a>
+      <div class="center">Capítulo 8 · Página 70 de 89</div>
+      <a class="btn primary" href="p71.html" aria-label="Ir para a próxima página">Próxima →</a>
+    </nav>
 
   </main>
 

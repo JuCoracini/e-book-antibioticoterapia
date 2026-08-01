@@ -1,228 +1,398 @@
 /* =========================
-   PÁGINA 11 — ALVOS CELULARES
+   PÁGINA 11 — ALVOS CELULARES DOS ANTIBACTERIANOS
    ========================= */
 
-(function initPage11Targets() {
-  const root = document.querySelector("[data-cap2-targets]");
-  if (!root) return;
+(function initPage11CellTargets(){
+  const root = document.querySelector("[data-cap2-p11]");
+  if(!root) return;
 
-  const tabs = Array.from(root.querySelectorAll("[data-target]"));
-  const panel = document.getElementById("cap2TargetPanel");
-  const panelTitle = document.getElementById("cap2TargetPanelTitle");
-  const panelBody = document.getElementById("cap2TargetPanelBody");
+  const tabs = Array.from(root.querySelectorAll("[data-p11-target]"));
+  const title = root.querySelector("[data-p11-title]");
+  const functionText = root.querySelector("[data-p11-function]");
+  const consequenceText = root.querySelector("[data-p11-consequence]");
+  const responseText = root.querySelector("[data-p11-response]");
+  const panel = root.querySelector(".cap2-p11-panel");
 
-  if (!tabs.length || !panel || !panelTitle || !panelBody) return;
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
 
-  const targetMap = {
-    parede: {
-      tabId: "cap2TargetTabParede",
-      title: "Parede celular — perda de resistência mecânica",
-      body: `
-        <p>Quando a síntese do peptidoglicano é interrompida, a bactéria perde parte importante da estrutura que sustenta sua forma e resiste ao estresse osmótico. Por isso, esse alvo tende a ser mais relevante em microrganismos em crescimento ativo, nos quais a parede está sendo continuamente remodelada.</p>
-        <p>Do ponto de vista microbiológico, a resposta costuma se associar a colapso estrutural mais direto, o que ajuda a entender por que várias classes que atuam nesse alvo se relacionam a efeito bactericida.</p>
-      `
+  const data = {
+    parede:{
+      title:"Parede celular",
+      function:"Síntese e remodelamento do peptidoglicano.",
+      consequence:"Perda progressiva da integridade estrutural e da resistência ao estresse osmótico.",
+      response:"Frequentemente bactericida, especialmente em bactérias em crescimento ativo."
     },
-    ribossomo: {
-      tabId: "cap2TargetTabRibossomo",
-      title: "Ribossomo 70S — bloqueio da adaptação e da multiplicação",
-      body: `
-        <p>A inibição ribossomal reduz a produção de proteínas necessárias ao metabolismo, à divisão celular e à resposta ao ambiente. Em vez de romper imediatamente a estrutura bacteriana, esse mecanismo costuma comprometer a capacidade de a célula continuar funcionando e se multiplicando.</p>
-        <p>Esse padrão ajuda a compreender por que muitos fármacos que atuam sobre síntese proteica se associam a efeito bacteriostático, embora existam exceções importantes, como os aminoglicosídeos.</p>
-      `
+    ribossomo:{
+      title:"Ribossomo 70S",
+      function:"Síntese de proteínas essenciais ao metabolismo, ao crescimento e à divisão bacteriana.",
+      consequence:"Redução da capacidade de multiplicação e de adaptação ao ambiente.",
+      response:"Predominantemente bacteriostática em muitas classes, com exceções bactericidas, como aminoglicosídeos."
     },
-    dna: {
-      tabId: "cap2TargetTabDNA",
-      title: "DNA/RNA — interrupção de processos centrais de informação genética",
-      body: `
-        <p>Quando replicação ou transcrição são bloqueadas, a célula bacteriana deixa de copiar adequadamente seu material genético ou de gerar RNA mensageiro funcional. O resultado é perda rápida da capacidade de manter processos celulares indispensáveis.</p>
-        <p>Como esse alvo interfere diretamente no fluxo de informação genética, a repercussão pode ser intensa mesmo sem alteração visível imediata da morfologia bacteriana.</p>
-      `
+    dna:{
+      title:"DNA e RNA",
+      function:"Replicação do DNA, controle do superenrolamento e transcrição do RNA.",
+      consequence:"Interrupção do fluxo de informação genética e perda da viabilidade celular.",
+      response:"Frequentemente bactericida, dependendo da classe, da concentração e da espécie bacteriana."
     },
-    folato: {
-      tabId: "cap2TargetTabFolato",
-      title: "Folato — redução progressiva da capacidade replicativa",
-      body: `
-        <p>A via do folato não é um componente estrutural da bactéria, mas um sistema metabólico necessário à produção de nucleotídeos. Sua inibição reduz a disponibilidade de precursores para síntese de DNA e RNA, comprometendo a multiplicação de forma mais indireta.</p>
-        <p>Por depender de esgotamento metabólico progressivo, esse alvo costuma produzir efeito menos abrupto do que os mecanismos que afetam parede celular ou membrana.</p>
-      `
+    folato:{
+      title:"Síntese do folato",
+      function:"Produção de precursores necessários à síntese de nucleotídeos.",
+      consequence:"Redução progressiva da síntese de DNA e da capacidade replicativa bacteriana.",
+      response:"Geralmente bacteriostática; a associação sulfametoxazol-trimetoprima pode apresentar efeito bactericida em microrganismos suscetíveis."
     },
-    membrana: {
-      tabId: "cap2TargetTabMembrana",
-      title: "Membrana citoplasmática — colapso funcional rápido",
-      body: `
-        <p>A membrana citoplasmática participa da manutenção da permeabilidade seletiva, do equilíbrio iônico e de funções energéticas essenciais. Quando sua organização é perturbada, a célula perde rapidamente a capacidade de manter gradientes e integridade funcional.</p>
-        <p>Por essa razão, mecanismos dirigidos à membrana tendem a se associar a resposta microbiológica mais imediata, frequentemente com perda acelerada de viabilidade.</p>
-      `
+    membrana:{
+      title:"Membrana citoplasmática",
+      function:"Manutenção da permeabilidade seletiva, dos gradientes eletroquímicos e da homeostase celular.",
+      consequence:"Perda de conteúdo intracelular, desorganização funcional e colapso de processos vitais.",
+      response:"A alteração importante da integridade da membrana geralmente produz efeito bactericida, cuja velocidade depende do fármaco, da espécie e da exposição."
     }
   };
 
-  function activate(targetKey) {
-    const state = targetMap[targetKey];
-    if (!state) return;
+  function activate(key){
+    const selected = data[key];
+    if(!selected) return;
 
-    tabs.forEach((tab) => {
-      const isActive = tab.dataset.target === targetKey;
-      tab.classList.toggle("is-active", isActive);
-      tab.setAttribute("aria-selected", isActive ? "true" : "false");
-      tab.setAttribute("tabindex", isActive ? "0" : "-1");
+    if(panel && !prefersReducedMotion){
+      panel.style.animation = "none";
+      void panel.offsetHeight;
+      panel.style.animation = "";
+    }
+
+    tabs.forEach(function(tab){
+      const active = tab.dataset.p11Target === key;
+      tab.classList.toggle("is-active", active);
+      tab.setAttribute("aria-selected", active ? "true" : "false");
+      tab.setAttribute("tabindex", active ? "0" : "-1");
+
+      if(active && panel && tab.id){
+        panel.setAttribute("aria-labelledby", tab.id);
+      }
     });
 
-    panel.setAttribute("aria-labelledby", state.tabId);
-    panelTitle.textContent = state.title;
-    panelBody.innerHTML = state.body;
+    title.textContent = selected.title;
+    functionText.textContent = selected.function;
+    consequenceText.textContent = selected.consequence;
+    responseText.textContent = selected.response;
   }
 
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      activate(tab.dataset.target);
+  tabs.forEach(function(tab){
+    tab.addEventListener("click", function(){
+      activate(tab.dataset.p11Target);
     });
 
-    tab.addEventListener("keydown", (event) => {
+    tab.addEventListener("keydown", function(event){
       const currentIndex = tabs.indexOf(tab);
       let nextIndex = null;
 
-      if (event.key === "ArrowRight") {
+      if(event.key === "ArrowRight" || event.key === "ArrowDown"){
         nextIndex = (currentIndex + 1) % tabs.length;
       }
 
-      if (event.key === "ArrowLeft") {
+      if(event.key === "ArrowLeft" || event.key === "ArrowUp"){
         nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
       }
 
-      if (nextIndex === null) return;
+      if(event.key === "Home"){
+        nextIndex = 0;
+      }
+
+      if(event.key === "End"){
+        nextIndex = tabs.length - 1;
+      }
+
+      if(nextIndex === null) return;
 
       event.preventDefault();
       tabs[nextIndex].focus();
-      activate(tabs[nextIndex].dataset.target);
+      activate(tabs[nextIndex].dataset.p11Target);
     });
   });
 
   activate("parede");
+
+  const revealItems = document.querySelectorAll(".cap2-page11 .cap2-p11-reveal");
+
+  if(!("IntersectionObserver" in window)){
+    revealItems.forEach(function(item){
+      item.classList.add("is-visible");
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold:0.18,
+      rootMargin:"0px 0px -40px 0px"
+    }
+  );
+
+  revealItems.forEach(function(item){
+    observer.observe(item);
+  });
 })();
 /* =========================
-   PÁGINA 12 — TABELA EDITORIAL
+   PÁGINA 12 — CLASSIFICAÇÃO SEGUNDO O ALVO CELULAR
    ========================= */
 
-(function initPage12Table() {
-  const section = document.querySelector("[data-cap2-table-section]");
-  if (!section) return;
+(function initPage12ClassificationTable(){
+  const root = document.querySelector("[data-cap2-p12]");
+  if(!root) return;
 
-  const wrapper = section.querySelector("[data-cap2-table-wrapper]");
-  const hint = section.querySelector("[data-cap2-table-hint]");
+  const wrapper = root.querySelector("[data-p12-table-wrapper]");
+  const hint = root.querySelector("[data-p12-scroll-hint]");
 
-  if (!wrapper || !hint) return;
+  if(!wrapper) return;
 
-  function updateScrollableState() {
+  function updateScrollableState(){
     const isScrollable = wrapper.scrollWidth > wrapper.clientWidth + 4;
+
     wrapper.classList.toggle("is-scrollable", isScrollable);
-    hint.hidden = !isScrollable;
+
+    if(hint){
+      hint.hidden = !isScrollable;
+    }
   }
 
   updateScrollableState();
+
   window.addEventListener("resize", updateScrollableState);
+
+  const revealItems = document.querySelectorAll(
+    ".cap2-page12 .cap2-p12-reveal"
+  );
+
+  const prefersReducedMotion = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if(prefersReducedMotion || !("IntersectionObserver" in window)){
+    revealItems.forEach(function(item){
+      item.classList.add("is-visible");
+    });
+
+    return;
+  }
+
+  const revealObserver = new IntersectionObserver(
+    function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      });
+    },
+    {
+      threshold:.14,
+      rootMargin:"0px 0px -35px 0px"
+    }
+  );
+
+  revealItems.forEach(function(item){
+    revealObserver.observe(item);
+  });
 })();
 /* =========================
-   PÁGINA 13 — PAREDE CELULAR
+   PÁGINA 13 — INIBIÇÃO DA SÍNTESE DA PAREDE CELULAR
    ========================= */
 
-(function initPage13Wall() {
+(function initPage13CellWall(){
   const root = document.querySelector("[data-cap2-wall]");
-  if (!root) return;
+  if(!root) return;
 
   const tabs = Array.from(root.querySelectorAll("[data-wall-tab]"));
-  const panel = document.getElementById("cap2P13Panel");
-  const image = document.getElementById("cap2P13Image");
-  const caption = document.getElementById("cap2P13Caption");
-  const title = document.getElementById("cap2P13Title");
-  const body = document.getElementById("cap2P13Body");
+  const panel = root.querySelector("#cap2P13Panel");
+  const image = root.querySelector("#cap2P13Image");
+  const caption = root.querySelector("#cap2P13Caption");
+  const kicker = root.querySelector("#cap2P13Kicker");
+  const title = root.querySelector("#cap2P13Title");
+  const body = root.querySelector("#cap2P13Body");
   const zoomButton = root.querySelector(".cap2-p13-zoom");
+  const prefersReducedMotion = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  if (!tabs.length || !panel || !image || !caption || !title || !body || !zoomButton) return;
+  if(
+    !tabs.length ||
+    !panel ||
+    !image ||
+    !caption ||
+    !kicker ||
+    !title ||
+    !body ||
+    !zoomButton
+  ){
+    return;
+  }
 
   const states = {
-    sintese: {
-      tabId: "cap2P13TabSintese",
-      src: "../../assets/capitulo-02/imagens/sintese-peptidoglicano.png",
-      alt: "Etapas da síntese do peptidoglicano na parede celular bacteriana",
-      caption: "Etapas da síntese do peptidoglicano na parede celular bacteriana. Clique para ampliar.",
-      title: "Etapas da síntese do peptidoglicano",
-      body: `
-        <p>1) Formação dos precursores no citoplasma: unidades de NAG e NAM são sintetizadas e associadas a pequenas cadeias peptídicas, formando precursores solúveis.</p>
-        <p>2) Transporte através da membrana citoplasmática: os precursores são transportados para a face externa da membrana por meio de um carreador lipídico denominado bactoprenol.</p>
-        <p>3) Incorporação à parede existente: as novas subunidades são adicionadas à rede de peptidoglicano por reações de transglicosilação, ampliando a estrutura da parede celular.</p>
-        <p>4) Formação das ligações cruzadas: as PBPs catalisam a reação de transpeptidação, formando pontes entre cadeias peptídicas adjacentes, conferindo resistência mecânica à parede celular.</p>
-        <p><strong>Implicação clínica:</strong> antibacterianos que atuam nessa etapa tendem a ser mais eficazes em bactérias em crescimento ativo.</p>
+    sintese:{
+      tabId:"cap2P13TabSintese",
+      image:"../../assets/capitulo-02/imagens/sintese-peptidoglicano.png",
+      alt:"Etapas da síntese do peptidoglicano na parede celular bacteriana",
+      caption:"Etapas da síntese do peptidoglicano na parede celular bacteriana.",
+      kicker:"Processo fisiológico",
+      title:"Formação e maturação da parede celular",
+      body:`
+        <div class="cap2-p13-infoGrid">
+          <article class="cap2-p13-infoItem">
+            <span>Função do processo</span>
+            <p>Produzir e renovar continuamente a rede de peptidoglicano da parede celular.</p>
+          </article>
+
+          <article class="cap2-p13-infoItem">
+            <span>Resultado estrutural</span>
+            <p>Formação de uma estrutura rígida, capaz de manter a forma bacteriana e resistir à pressão osmótica.</p>
+          </article>
+
+          <article class="cap2-p13-infoItem">
+            <span>Importância biológica</span>
+            <p>Permite crescimento, divisão celular e manutenção da integridade mecânica da bactéria.</p>
+          </article>
+
+          <article class="cap2-p13-infoItem cap2-p13-infoItem--result">
+            <span>Implicação farmacológica</span>
+            <p>As etapas finais desse processo constituem alvos importantes para β-lactâmicos e glicopeptídeos.</p>
+          </article>
+        </div>
       `
     },
 
-    beta: {
-      tabId: "cap2P13TabBeta",
-      src: "../../assets/capitulo-02/imagens/beta-lactamicos-transpeptidacao.png",
-      alt: "Interferência dos β-lactâmicos na etapa de transpeptidação do peptidoglicano",
-      caption: "Interferência dos β-lactâmicos na etapa de transpeptidação do peptidoglicano. Clique para ampliar.",
-      title: "β-lactâmicos",
-      body: `
-        <p>Os β-lactâmicos ligam-se às proteínas ligadoras de penicilina (PBPs), enzimas envolvidas nas etapas finais da síntese da parede celular bacteriana.</p>
-        <p>Ao ocuparem esses alvos, impedem a reação de transpeptidação responsável pela formação das ligações cruzadas entre cadeias peptídicas adjacentes do peptidoglicano.</p>
-        <p>Com isso, a parede celular recém-sintetizada perde resistência mecânica e torna-se progressivamente incapaz de sustentar a integridade estrutural da bactéria, favorecendo lise celular, especialmente durante fases de crescimento ativo <sup>2,4</sup>.</p>
+    beta:{
+      tabId:"cap2P13TabBeta",
+      image:"../../assets/capitulo-02/imagens/beta-lactamicos-transpeptidacao.png",
+      alt:"Interferência dos beta-lactâmicos na etapa de transpeptidação do peptidoglicano",
+      caption:"Interferência dos β-lactâmicos na etapa de transpeptidação do peptidoglicano.",
+      kicker:"Inibição enzimática",
+      title:"Ação dos β-lactâmicos sobre as PBPs",
+      body:`
+        <div class="cap2-p13-infoGrid">
+          <article class="cap2-p13-infoItem">
+            <span>Alvo molecular</span>
+            <p>Proteínas ligadoras de penicilina, especialmente as enzimas envolvidas na transpeptidação.</p>
+          </article>
+
+          <article class="cap2-p13-infoItem">
+            <span>Etapa comprometida</span>
+            <p>Formação das ligações cruzadas entre as cadeias peptídicas do peptidoglicano.</p>
+          </article>
+
+          <article class="cap2-p13-infoItem">
+            <span>Consequência estrutural</span>
+            <p>A parede recém-formada perde resistência mecânica e torna-se progressivamente instável.</p>
+          </article>
+
+          <article class="cap2-p13-infoItem cap2-p13-infoItem--result">
+            <span>Resposta microbiológica</span>
+            <p>Efeito predominantemente bactericida em bactérias em crescimento ativo. A ativação de autolisinas pode contribuir para a lise.</p>
+          </article>
+        </div>
       `
     },
 
-    glico: {
-      tabId: "cap2P13TabGlico",
-      src: "../../assets/capitulo-02/imagens/glicopeptideos-dala-dala.png",
-      alt: "Interferência dos glicopeptídeos na incorporação e ligação cruzada do peptidoglicano",
-      caption: "Interferência dos glicopeptídeos na incorporação e ligação cruzada do peptidoglicano. Clique para ampliar.",
-      title: "Glicopeptídeos",
-      body: `
-        <p>Os glicopeptídeos atuam por mecanismo distinto dos β-lactâmicos. Em vez de se ligarem às PBPs, ligam-se diretamente à extremidade terminal D-Ala-D-Ala dos precursores do peptidoglicano.</p>
-        <p>Essa ligação cria impedimento estérico que dificulta a incorporação das novas subunidades à parede em formação e compromete também as etapas posteriores de ligação cruzada.</p>
-        <p>Como consequência, a estrutura do peptidoglicano torna-se progressivamente instável, reduzindo a resistência da parede celular e favorecendo lise bacteriana em condições apropriadas <sup>1,2</sup>.</p>
+    glico:{
+      tabId:"cap2P13TabGlico",
+      image:"../../assets/capitulo-02/imagens/glicopeptideos-dala-dala.png",
+      alt:"Interferência dos glicopeptídeos na síntese do peptidoglicano",
+      caption:"Interferência dos glicopeptídeos na incorporação e ligação cruzada do peptidoglicano.",
+      kicker:"Bloqueio do precursor",
+      title:"Ação dos glicopeptídeos sobre o terminal D-Ala-D-Ala",
+      body:`
+        <div class="cap2-p13-infoGrid">
+          <article class="cap2-p13-infoItem">
+            <span>Alvo molecular</span>
+            <p>Terminal D-Ala-D-Ala presente nos precursores do peptidoglicano.</p>
+          </article>
+
+          <article class="cap2-p13-infoItem">
+            <span>Etapas comprometidas</span>
+            <p>A ligação ao precursor dificulta a incorporação das novas subunidades e a formação das ligações cruzadas.</p>
+          </article>
+
+          <article class="cap2-p13-infoItem">
+            <span>Consequência estrutural</span>
+            <p>A parede em formação torna-se progressivamente incompleta e mecanicamente frágil.</p>
+          </article>
+
+          <article class="cap2-p13-infoItem cap2-p13-infoItem--result">
+            <span>Resposta microbiológica</span>
+            <p>Efeito bactericida em microrganismos suscetíveis, especialmente durante o crescimento ativo.</p>
+          </article>
+        </div>
       `
     }
   };
 
-  function activate(key) {
+  function activate(key){
     const state = states[key];
-    if (!state) return;
+    if(!state) return;
 
-    tabs.forEach((tab) => {
-      const isActive = tab.dataset.wallTab === key;
-      tab.classList.toggle("is-active", isActive);
-      tab.setAttribute("aria-selected", isActive ? "true" : "false");
-      tab.setAttribute("tabindex", isActive ? "0" : "-1");
+    tabs.forEach(function(tab){
+      const active = tab.dataset.wallTab === key;
+
+      tab.classList.toggle("is-active", active);
+      tab.setAttribute("aria-selected", active ? "true" : "false");
+      tab.setAttribute("tabindex", active ? "0" : "-1");
     });
 
     panel.setAttribute("aria-labelledby", state.tabId);
+    root.dataset.wallState = key;
 
-    image.src = state.src;
-    image.alt = state.alt;
-    caption.textContent = state.caption;
-    title.textContent = state.title;
-    body.innerHTML = state.body;
+    image.classList.add("is-changing");
 
-    zoomButton.setAttribute("data-zoom", state.src);
-    zoomButton.setAttribute("aria-label", `Ampliar imagem: ${state.title}`);
+    window.setTimeout(function(){
+      image.src = state.image;
+      image.alt = state.alt;
+
+      caption.textContent = state.caption;
+      kicker.textContent = state.kicker;
+      title.textContent = state.title;
+      body.innerHTML = state.body;
+
+      zoomButton.dataset.zoom = state.image;
+      zoomButton.setAttribute(
+        "aria-label",
+        "Ampliar imagem: " + state.title
+      );
+
+      image.classList.remove("is-changing");
+    }, prefersReducedMotion ? 0 : 160);
   }
 
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
+  tabs.forEach(function(tab){
+    tab.addEventListener("click", function(){
       activate(tab.dataset.wallTab);
     });
 
-    tab.addEventListener("keydown", (event) => {
+    tab.addEventListener("keydown", function(event){
       const currentIndex = tabs.indexOf(tab);
       let nextIndex = null;
 
-      if (event.key === "ArrowRight") {
+      if(event.key === "ArrowRight" || event.key === "ArrowDown"){
         nextIndex = (currentIndex + 1) % tabs.length;
       }
 
-      if (event.key === "ArrowLeft") {
+      if(event.key === "ArrowLeft" || event.key === "ArrowUp"){
         nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
       }
 
-      if (nextIndex === null) return;
+      if(event.key === "Home"){
+        nextIndex = 0;
+      }
+
+      if(event.key === "End"){
+        nextIndex = tabs.length - 1;
+      }
+
+      if(nextIndex === null) return;
 
       event.preventDefault();
       tabs[nextIndex].focus();
@@ -231,940 +401,1796 @@
   });
 
   activate("sintese");
+
+  const revealItems = document.querySelectorAll(
+    ".cap2-page13 .cap2-p13-reveal"
+  );
+
+  if(prefersReducedMotion || !("IntersectionObserver" in window)){
+    revealItems.forEach(function(item){
+      item.classList.add("is-visible");
+    });
+
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold:.16,
+      rootMargin:"0px 0px -35px 0px"
+    }
+  );
+
+  revealItems.forEach(function(item){
+    observer.observe(item);
+  });
 })();
 /* =========================
    PÁGINA 14 — MEMBRANA CITOPLASMÁTICA
+   VERSÃO SEM CONFLITOS
    ========================= */
 
-(function initPage14Membrane() {
-  const root = document.querySelector("[data-cap2-membrane]");
-  if (!root) return;
+(function initPage14MembraneV2(){
+  const root = document.querySelector("[data-cap2-p14v2]");
+  if(!root) return;
 
-  const tabs = Array.from(root.querySelectorAll("[data-membrane-drug]"));
-  const panel = document.getElementById("cap2P14Panel");
-  const image = document.getElementById("cap2P14Image");
-  const caption = document.getElementById("cap2P14Caption");
-  const zoomButton = root.querySelector(".cap2-p14-zoom");
-  const title = document.getElementById("cap2P14Title");
-  const text = document.getElementById("cap2P14Text");
-  const step = document.getElementById("cap2P14Step");
-  const prev = document.getElementById("cap2P14Prev");
-  const next = document.getElementById("cap2P14Next");
+  const tabs = Array.from(
+    root.querySelectorAll("[data-p14v2-target]")
+  );
 
-  if (!tabs.length || !panel || !image || !caption || !zoomButton || !title || !text || !step || !prev || !next) {
+  const view = root.querySelector("#cap2P14V2View");
+  const image = root.querySelector("#cap2P14V2Image");
+  const caption = root.querySelector("#cap2P14V2Caption");
+  const kicker = root.querySelector("#cap2P14V2Kicker");
+  const title = root.querySelector("#cap2P14V2Title");
+  const body = root.querySelector("#cap2P14V2Body");
+  const zoomButton = root.querySelector(".cap2-p14v2-zoom");
+  const prefersReducedMotion = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const controls = root.querySelector("[data-p14v2-controls]");
+  const counter = root.querySelector("[data-p14v2-counter]");
+  const prevButton = root.querySelector('[data-p14v2-action="prev"]');
+  const nextButton = root.querySelector('[data-p14v2-action="next"]');
+
+  if(
+    !tabs.length ||
+    !view ||
+    !image ||
+    !caption ||
+    !kicker ||
+    !title ||
+    !body ||
+    !zoomButton ||
+    !controls ||
+    !counter ||
+    !prevButton ||
+    !nextButton
+  ){
     return;
   }
 
   const states = {
-    membrana: {
-      tabId: "cap2P14TabMembrana",
-      steps: [
+    membrana:{
+      tabId:"cap2P14V2TabMembrana",
+      steps:[
         {
-          src: "../../assets/capitulo-02/imagens/membrana-citoplasmatica.png",
-          alt: "Estrutura da membrana citoplasmática bacteriana",
-          caption: "Estrutura da membrana citoplasmática bacteriana. Clique para ampliar.",
-          title: "Funções essenciais da membrana citoplasmática",
-          text: `
-            <p>A organização da membrana citoplasmática permite a manutenção do gradiente eletroquímico, fundamental para a produção de energia e para o funcionamento de sistemas de transporte seletivo. A integridade dessa estrutura é indispensável para a homeostase celular.</p>
+          image:"../../assets/capitulo-02/imagens/membrana-citoplasmatica.png",
+          alt:"Estrutura da membrana citoplasmática bacteriana",
+          caption:"Estrutura da membrana citoplasmática bacteriana.",
+          kicker:"Estrutura fisiológica",
+          title:"Funções essenciais da membrana citoplasmática",
+          body:`
+            <div class="cap2-p14v2-infoGrid">
+
+              <article class="cap2-p14v2-info">
+                <span>Função de barreira</span>
+                <p>Controla a entrada e a saída de substâncias entre o citoplasma e o meio extracelular.</p>
+              </article>
+
+              <article class="cap2-p14v2-info">
+                <span>Equilíbrio eletroquímico</span>
+                <p>Mantém gradientes iônicos e o potencial elétrico necessário ao funcionamento celular.</p>
+              </article>
+
+              <article class="cap2-p14v2-info">
+                <span>Produção de energia</span>
+                <p>Abriga sistemas associados à força próton-motriz, à respiração celular e à síntese de ATP.</p>
+              </article>
+
+              <article class="cap2-p14v2-info cap2-p14v2-info--result">
+                <span>Implicação farmacológica</span>
+                <p>Sua desorganização compromete rapidamente a homeostase e a viabilidade da bactéria.</p>
+              </article>
+
+            </div>
           `
         }
       ]
     },
 
-    polimixina: {
-      tabId: "cap2P14TabPolimixina",
-      steps: [
+    polimixinas:{
+      tabId:"cap2P14V2TabPolimixinas",
+      steps:[
         {
-          src: "../../assets/capitulo-02/imagens/polimixina-fase-1.png",
-          alt: "Ligação inicial da polimixina ao envelope bacteriano",
-          caption: "Ligação inicial da polimixina ao envelope bacteriano. Clique para ampliar.",
-          title: "Polimixinas — interação inicial com o envelope bacteriano",
-          text: `
-            <p>As polimixinas ligam-se inicialmente ao lipid A, componente do lipopolissacarídeo da membrana externa de bactérias Gram-negativas.</p>
-            <p>Essa interação desloca cátions divalentes estabilizadores e inicia a desorganização do envelope bacteriano <sup>1</sup>.</p>
+          image:"../../assets/capitulo-02/imagens/polimixina-fase-1.png",
+          alt:"Ligação inicial das polimixinas ao lipídio A do lipopolissacarídeo",
+          caption:"Ligação inicial das polimixinas ao lipídio A da membrana externa de bactérias Gram-negativas.",
+          kicker:"Etapa 1",
+          title:"Ligação ao lipídio A e desestabilização do LPS",
+          body:`
+            <div class="cap2-p14v2-infoGrid">
+
+              <article class="cap2-p14v2-info">
+                <span>Alvo inicial</span>
+                <p>Lipídio A do lipopolissacarídeo da membrana externa de bactérias Gram-negativas.</p>
+              </article>
+
+              <article class="cap2-p14v2-info">
+                <span>Evento molecular</span>
+                <p>Deslocamento de cálcio e magnésio, que estabilizam as moléculas de LPS.</p>
+              </article>
+
+              <article class="cap2-p14v2-info">
+                <span>Consequência inicial</span>
+                <p>Desorganização progressiva e redução da estabilidade da membrana externa.</p>
+              </article>
+
+              <article class="cap2-p14v2-info cap2-p14v2-info--result">
+                <span>Implicação</span>
+                <p>A perda da estabilidade facilita a progressão do antibacteriano até a membrana citoplasmática.</p>
+              </article>
+
+            </div>
           `
         },
+
         {
-          src: "../../assets/capitulo-02/imagens/polimixina-fase-2.png",
-          alt: "Desorganização progressiva da membrana bacteriana após ação da polimixina",
-          caption: "Desorganização progressiva da membrana bacteriana após ação da polimixina. Clique para ampliar.",
-          title: "Polimixinas — aumento da permeabilidade e colapso funcional",
-          text: `
-            <p>A desestabilização do envelope aumenta a permeabilidade da membrana e favorece perda progressiva da função de barreira.</p>
-            <p>O resultado é comprometimento rápido da homeostase celular e perda de viabilidade bacteriana.</p>
+          image:"../../assets/capitulo-02/imagens/polimixina-fase-2.png",
+          alt:"Aumento da permeabilidade bacteriana provocado pelas polimixinas",
+          caption:"Aumento da permeabilidade e perda da função de barreira após a ação das polimixinas.",
+          kicker:"Etapa 2",
+          title:"Aumento da permeabilidade e perda da homeostase",
+          body:`
+            <div class="cap2-p14v2-infoGrid">
+
+              <article class="cap2-p14v2-info">
+                <span>Evento central</span>
+                <p>Dano à bicamada fosfolipídica e aumento importante da permeabilidade da membrana.</p>
+              </article>
+
+              <article class="cap2-p14v2-info">
+                <span>Consequência celular</span>
+                <p>Extravasamento de componentes intracelulares e perda do gradiente eletroquímico.</p>
+              </article>
+
+              <article class="cap2-p14v2-info">
+                <span>Impacto metabólico</span>
+                <p>Interrupção de processos energéticos e de transporte essenciais à célula.</p>
+              </article>
+
+              <article class="cap2-p14v2-info cap2-p14v2-info--result">
+                <span>Resposta microbiológica</span>
+                <p>Efeito bactericida rápido associado à perda da função de barreira.</p>
+              </article>
+
+            </div>
           `
         }
       ]
     },
 
-    daptomicina: {
-      tabId: "cap2P14TabDaptomicina",
-      steps: [
+    daptomicina:{
+      tabId:"cap2P14V2TabDaptomicina",
+      steps:[
         {
-          src: "../../assets/capitulo-02/imagens/daptomicina-fase-1.png",
-          alt: "Ligação inicial da daptomicina à membrana citoplasmática bacteriana",
-          caption: "Ligação inicial da daptomicina à membrana citoplasmática bacteriana. Clique para ampliar.",
-          title: "Daptomicina — ligação inicial à membrana",
-          text: `
-            <p>Em presença de cálcio, a daptomicina liga-se à membrana citoplasmática de bactérias Gram-positivas.</p>
-            <p>Essa interação altera a organização da membrana e prepara o cenário para perda do equilíbrio eletroquímico <sup>2</sup>.</p>
+          image:"../../assets/capitulo-02/imagens/daptomicina-fase-1.png",
+          alt:"Inserção dependente de cálcio da daptomicina na membrana bacteriana",
+          caption:"Inserção dependente de cálcio da daptomicina na membrana citoplasmática de bactérias Gram-positivas.",
+          kicker:"Etapa 1",
+          title:"Inserção dependente de cálcio",
+          body:`
+            <div class="cap2-p14v2-infoGrid">
+
+              <article class="cap2-p14v2-info">
+                <span>Condição necessária</span>
+                <p>O cálcio promove alteração conformacional da molécula de daptomicina.</p>
+              </article>
+
+              <article class="cap2-p14v2-info">
+                <span>Alvo estrutural</span>
+                <p>Fosfolipídios aniônicos da membrana citoplasmática de bactérias Gram-positivas.</p>
+              </article>
+
+              <article class="cap2-p14v2-info">
+                <span>Evento inicial</span>
+                <p>Inserção da molécula na bicamada lipídica sem lise imediata.</p>
+              </article>
+
+              <article class="cap2-p14v2-info cap2-p14v2-info--result">
+                <span>Implicação</span>
+                <p>A inserção permite a agregação das moléculas e prepara a perda do potencial elétrico.</p>
+              </article>
+
+            </div>
           `
         },
+
         {
-          src: "../../assets/capitulo-02/imagens/daptomicina-fase-2.png",
-          alt: "Despolarização da membrana bacteriana induzida pela daptomicina",
-          caption: "Despolarização da membrana bacteriana induzida pela daptomicina. Clique para ampliar.",
-          title: "Daptomicina — despolarização da membrana",
-          text: `
-            <p>A inserção do fármaco na membrana altera o potencial elétrico transmembrana e compromete o equilíbrio iônico necessário ao funcionamento celular.</p>
-            <p>Com isso, processos dependentes de energia passam a falhar rapidamente.</p>
+          image:"../../assets/capitulo-02/imagens/daptomicina-fase-2.png",
+          alt:"Oligomerização da daptomicina e despolarização da membrana",
+          caption:"Oligomerização da daptomicina e despolarização do potencial elétrico transmembrana.",
+          kicker:"Etapa 2",
+          title:"Oligomerização e despolarização",
+          body:`
+            <div class="cap2-p14v2-infoGrid">
+
+              <article class="cap2-p14v2-info">
+                <span>Evento central</span>
+                <p>Agregação das moléculas de daptomicina após sua inserção na membrana.</p>
+              </article>
+
+              <article class="cap2-p14v2-info">
+                <span>Alteração elétrica</span>
+                <p>Rápida despolarização associada ao efluxo de potássio.</p>
+              </article>
+
+              <article class="cap2-p14v2-info">
+                <span>Característica</span>
+                <p>A perda funcional ocorre sem necessidade de lise imediata da célula.</p>
+              </article>
+
+              <article class="cap2-p14v2-info cap2-p14v2-info--result">
+                <span>Implicação</span>
+                <p>A bactéria perde a capacidade de sustentar processos dependentes do gradiente eletroquímico.</p>
+              </article>
+
+            </div>
           `
         },
+
         {
-          src: "../../assets/capitulo-02/imagens/daptomicina-fase-3.png",
-          alt: "Colapso funcional da célula bacteriana após ação da daptomicina",
-          caption: "Colapso funcional da célula bacteriana após ação da daptomicina. Clique para ampliar.",
-          title: "Daptomicina — colapso funcional da célula bacteriana",
-          text: `
-            <p>A perda sustentada do equilíbrio eletroquímico compromete funções essenciais da célula bacteriana.</p>
-            <p>O desfecho é colapso funcional rápido, compatível com o efeito bactericida observado para essa classe.</p>
+          image:"../../assets/capitulo-02/imagens/daptomicina-fase-3.png",
+          alt:"Colapso funcional da bactéria após ação da daptomicina",
+          caption:"Colapso funcional após a perda sustentada do potencial de membrana.",
+          kicker:"Etapa 3",
+          title:"Colapso metabólico e perda de viabilidade",
+          body:`
+            <div class="cap2-p14v2-infoGrid">
+
+              <article class="cap2-p14v2-info">
+                <span>Processos interrompidos</span>
+                <p>Síntese de ATP, transporte ativo e biossíntese de macromoléculas.</p>
+              </article>
+
+              <article class="cap2-p14v2-info">
+                <span>Consequência funcional</span>
+                <p>Perda sustentada da homeostase e incapacidade de manter funções essenciais.</p>
+              </article>
+
+              <article class="cap2-p14v2-info">
+                <span>Evento predominante</span>
+                <p>Colapso funcional decorrente da despolarização, sem lise imediata.</p>
+              </article>
+
+              <article class="cap2-p14v2-info cap2-p14v2-info--result">
+                <span>Resposta microbiológica</span>
+                <p>Efeito bactericida rápido contra bactérias Gram-positivas suscetíveis.</p>
+              </article>
+
+            </div>
           `
         }
       ]
     }
   };
 
-  let currentKey = "membrana";
-  let currentIndex = 0;
+  let currentTarget = "membrana";
+  let currentStep = 0;
+  let transitionTimer = null;
 
-  function render() {
-    const group = states[currentKey];
-    if (!group) return;
+  function render(){
+    const group = states[currentTarget];
+    if(!group) return;
 
-    const item = group.steps[currentIndex];
-    if (!item) return;
+    const state = group.steps[currentStep];
+    if(!state) return;
 
-    tabs.forEach((tab) => {
-      const isActive = tab.dataset.membraneDrug === currentKey;
-      tab.classList.toggle("is-active", isActive);
-      tab.setAttribute("aria-selected", isActive ? "true" : "false");
-      tab.setAttribute("tabindex", isActive ? "0" : "-1");
+    tabs.forEach(function(tab){
+      const active = tab.dataset.p14v2Target === currentTarget;
+
+      tab.classList.toggle("is-active", active);
+      tab.setAttribute(
+        "aria-selected",
+        active ? "true" : "false"
+      );
+      tab.setAttribute(
+        "tabindex",
+        active ? "0" : "-1"
+      );
     });
 
-    panel.setAttribute("aria-labelledby", group.tabId);
+    view.setAttribute("aria-labelledby", group.tabId);
+    root.dataset.p14v2State = currentTarget;
 
-    image.src = item.src;
-    image.alt = item.alt;
-    caption.textContent = item.caption;
-    title.textContent = item.title;
-    text.innerHTML = item.text;
+    window.clearTimeout(transitionTimer);
+    image.classList.add("is-changing");
 
-    zoomButton.setAttribute("data-zoom", item.src);
-    zoomButton.setAttribute("aria-label", `Ampliar imagem: ${item.title}`);
+    transitionTimer = window.setTimeout(function(){
+      image.src = state.image;
+      image.alt = state.alt;
 
-    if (group.steps.length > 1) {
-      step.textContent = `Etapa ${currentIndex + 1} de ${group.steps.length}`;
-      prev.style.display = "inline-flex";
-      next.style.display = "inline-flex";
-      prev.disabled = currentIndex === 0;
-      next.disabled = currentIndex === group.steps.length - 1;
-    } else {
-      step.textContent = "";
-      prev.style.display = "none";
-      next.style.display = "none";
+      caption.textContent = state.caption;
+      kicker.textContent = state.kicker;
+      title.textContent = state.title;
+      body.innerHTML = state.body;
+
+      zoomButton.dataset.zoom = state.image;
+      zoomButton.setAttribute(
+        "aria-label",
+        "Ampliar imagem: " + state.title
+      );
+
+      image.classList.remove("is-changing");
+    }, prefersReducedMotion ? 0 : 160);
+
+    const hasMultipleSteps = group.steps.length > 1;
+
+    controls.hidden = !hasMultipleSteps;
+
+    if(hasMultipleSteps){
+      counter.textContent =
+        "Etapa " +
+        (currentStep + 1) +
+        " de " +
+        group.steps.length;
+
+      prevButton.disabled = currentStep === 0;
+      nextButton.disabled =
+        currentStep === group.steps.length - 1;
+    }else{
+      counter.textContent = "";
+      prevButton.disabled = true;
+      nextButton.disabled = true;
     }
   }
 
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      currentKey = tab.dataset.membraneDrug;
-      currentIndex = 0;
-      render();
+  function activateTarget(target){
+    if(!states[target]) return;
+
+    currentTarget = target;
+    currentStep = 0;
+
+    render();
+  }
+
+  tabs.forEach(function(tab){
+    tab.addEventListener("click", function(){
+      activateTarget(tab.dataset.p14v2Target);
     });
 
-    tab.addEventListener("keydown", (event) => {
-      const currentTabIndex = tabs.indexOf(tab);
-      let nextTabIndex = null;
+    tab.addEventListener("keydown", function(event){
+      const currentIndex = tabs.indexOf(tab);
+      let nextIndex = null;
 
-      if (event.key === "ArrowRight") {
-        nextTabIndex = (currentTabIndex + 1) % tabs.length;
+      if(
+        event.key === "ArrowRight" ||
+        event.key === "ArrowDown"
+      ){
+        nextIndex = (currentIndex + 1) % tabs.length;
       }
 
-      if (event.key === "ArrowLeft") {
-        nextTabIndex = (currentTabIndex - 1 + tabs.length) % tabs.length;
+      if(
+        event.key === "ArrowLeft" ||
+        event.key === "ArrowUp"
+      ){
+        nextIndex =
+          (currentIndex - 1 + tabs.length) % tabs.length;
       }
 
-      if (nextTabIndex === null) return;
+      if(event.key === "Home"){
+        nextIndex = 0;
+      }
+
+      if(event.key === "End"){
+        nextIndex = tabs.length - 1;
+      }
+
+      if(nextIndex === null) return;
 
       event.preventDefault();
-      tabs[nextTabIndex].focus();
-      currentKey = tabs[nextTabIndex].dataset.membraneDrug;
-      currentIndex = 0;
-      render();
+
+      tabs[nextIndex].focus();
+      activateTarget(
+        tabs[nextIndex].dataset.p14v2Target
+      );
     });
   });
 
-  prev.addEventListener("click", () => {
-    const group = states[currentKey];
-    if (!group || currentIndex === 0) return;
-    currentIndex -= 1;
+  prevButton.addEventListener("click", function(){
+    if(currentStep === 0) return;
+
+    currentStep -= 1;
     render();
   });
 
-  next.addEventListener("click", () => {
-    const group = states[currentKey];
-    if (!group || currentIndex >= group.steps.length - 1) return;
-    currentIndex += 1;
+  nextButton.addEventListener("click", function(){
+    const group = states[currentTarget];
+
+    if(
+      !group ||
+      currentStep >= group.steps.length - 1
+    ){
+      return;
+    }
+
+    currentStep += 1;
     render();
   });
 
   render();
-})();
-/* =========================
-   PÁGINA 15 — SÍNTESE PROTEICA
-   ========================= */
 
-(function initPage15Protein() {
-  const root = document.querySelector("[data-cap2-p15]");
-  if (!root) return;
+  const revealItems = document.querySelectorAll(
+    ".cap2-page14 .cap2-p14v2-reveal"
+  );
 
-  const tabs = Array.from(root.querySelectorAll("[data-p15-tab]"));
-  const panel = document.getElementById("cap2P15Panel");
-  const image = document.getElementById("cap2P15Image");
-  const caption = document.getElementById("cap2P15Caption");
-  const title = document.getElementById("cap2P15Title");
-  const body = document.getElementById("cap2P15Body");
-  const zoomButton = root.querySelector(".cap2-p15-zoom");
-
-  if (!tabs.length || !panel || !image || !caption || !title || !body || !zoomButton) return;
-
-  const states = {
-    normal: {
-      tabId: "cap2P15TabNormal",
-      src: "../../assets/capitulo-02/imagens/cap02-p15-normal.png",
-      alt: "Síntese proteica bacteriana em condições normais",
-      caption: "Processo normal da síntese proteica bacteriana. Clique para ampliar.",
-      title: "Processo normal da tradução bacteriana",
-      body: `
-        <p>No processo fisiológico, a subunidade 30S reconhece o RNA mensageiro e posiciona o tRNA iniciador. Em seguida, a subunidade 50S se associa ao complexo, permitindo a entrada sequencial de novos tRNAs, a formação das ligações peptídicas e a elongação ordenada da cadeia polipeptídica.</p>
-        <p>Esse fluxo contínuo explica por que a síntese proteica depende da integridade funcional das duas subunidades ribossomais bacterianas.</p>
-      `
-    },
-
-    "30s": {
-      tabId: "cap2P15Tab30S",
-      src: "../../assets/capitulo-02/imagens/cap02-p15-30s.png",
-      alt: "Interferência de antibacterianos na subunidade 30S",
-      caption: "Inibição da iniciação por ação sobre a subunidade 30S. Clique para ampliar.",
-      title: "Interferência sobre a subunidade 30S",
-      body: `
-        <p>Alguns antibacterianos ligam-se à subunidade 30S e perturbam a etapa inicial da tradução bacteriana, comprometendo o reconhecimento adequado do RNAm e o correto posicionamento do tRNA iniciador.</p>
-        <p>Quando a montagem do complexo de iniciação falha, a síntese proteica deixa de progredir de maneira eficiente desde o início do processo traducional.</p>
-      `
-    },
-
-    "50s": {
-      tabId: "cap2P15Tab50S",
-      src: "../../assets/capitulo-02/imagens/cap02-p15-50s.png",
-      alt: "Interferência de antibacterianos na subunidade 50S",
-      caption: "Inibição da elongação por ação sobre a subunidade 50S. Clique para ampliar.",
-      title: "Interferência sobre a subunidade 50S",
-      body: `
-        <p>Outros antibacterianos ligam-se à subunidade 50S e interferem na elongação da cadeia polipeptídica, comprometendo a formação da ligação peptídica, a progressão do ribossomo ao longo do RNAm ou a translocação dos tRNAs.</p>
-        <p>Como consequência, a síntese da proteína é interrompida antes da conclusão do produto funcional, reduzindo progressivamente a capacidade metabólica e adaptativa da bactéria.</p>
-      `
-    }
-  };
-
-  function activate(key) {
-    const state = states[key];
-    if (!state) return;
-
-    tabs.forEach((tab) => {
-      const isActive = tab.dataset.p15Tab === key;
-      tab.classList.toggle("is-active", isActive);
-      tab.setAttribute("aria-selected", isActive ? "true" : "false");
-      tab.setAttribute("tabindex", isActive ? "0" : "-1");
+  if(prefersReducedMotion || !("IntersectionObserver" in window)){
+    revealItems.forEach(function(item){
+      item.classList.add("is-visible");
     });
 
-    panel.setAttribute("aria-labelledby", state.tabId);
-    image.src = state.src;
-    image.alt = state.alt;
-    caption.textContent = state.caption;
-    title.textContent = state.title;
-    body.innerHTML = state.body;
-
-    zoomButton.setAttribute("data-zoom", state.src);
-    zoomButton.setAttribute("aria-label", `Ampliar imagem: ${state.title}`);
-  }
-
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      activate(tab.dataset.p15Tab);
-    });
-
-    tab.addEventListener("keydown", (event) => {
-      const currentIndex = tabs.indexOf(tab);
-      let nextIndex = null;
-
-      if (event.key === "ArrowRight") {
-        nextIndex = (currentIndex + 1) % tabs.length;
-      }
-
-      if (event.key === "ArrowLeft") {
-        nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
-      }
-
-      if (nextIndex === null) return;
-
-      event.preventDefault();
-      tabs[nextIndex].focus();
-      activate(tabs[nextIndex].dataset.p15Tab);
-    });
-  });
-
-  activate("normal");
-})();
-/* =========================
-   PÁGINA 16 — ÁCIDOS NUCLEICOS
-   ========================= */
-
-(function initPage16Nucleic() {
-  const root = document.querySelector("[data-cap2-nucleic]");
-  if (!root) return;
-
-  const tabs = Array.from(root.querySelectorAll("[data-nucleic-tab]"));
-  const panel = document.getElementById("cap2P16Panel");
-  const image = document.getElementById("cap2P16Image");
-  const caption = document.getElementById("cap2P16Caption");
-  const zoomButton = root.querySelector(".cap2-p16-zoom");
-  const title = document.getElementById("cap2P16Title");
-  const text = document.getElementById("cap2P16Text");
-
-  if (!tabs.length || !panel || !image || !caption || !zoomButton || !title || !text) {
     return;
   }
 
-  const states = {
-    processo: {
-      tabId: "cap2P16TabProcesso",
-      src: "../../assets/capitulo-02/imagens/acidos-nucleicos-processo.png",
-      alt: "Etapas gerais da replicação e transcrição do DNA bacteriano",
-      caption: "Etapas gerais da replicação e transcrição do DNA bacteriano. Clique para ampliar.",
-      title: "Processo geral",
-      text: `
-        <p>A replicação bacteriana depende da abertura da dupla hélice, do controle do superenrolamento e da síntese ordenada de novas fitas de DNA.</p>
-        <p>Paralelamente, a transcrição converte a informação genética em RNA mensageiro por ação da RNA polimerase, tornando possível a síntese de proteínas necessárias ao funcionamento celular.</p>
-      `
-    },
+  const observer = new IntersectionObserver(
+    function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
 
-    fluoroquinolonas: {
-      tabId: "cap2P16TabFluoroquinolonas",
-      src: "../../assets/capitulo-02/imagens/fluoroquinolona-dna-topoisomerase.png",
-      alt: "Interferência das fluoroquinolonas no complexo DNA-topoisomerase",
-      caption: "Interferência das fluoroquinolonas no complexo DNA-topoisomerase. Clique para ampliar.",
-      title: "Fluoroquinolonas",
-      text: `
-        <p>As fluoroquinolonas ligam-se ao complexo formado entre o DNA e as topoisomerases após a clivagem da fita, impedindo sua religação.</p>
-        <p>O resultado é o acúmulo de quebras no DNA e a interrupção da replicação cromossômica <sup>2</sup>.</p>
-      `
-    },
-
-    rifamicinas: {
-      tabId: "cap2P16TabRifamicinas",
-      src: "../../assets/capitulo-02/imagens/rifamicina-rna-polimerase.png",
-      alt: "Bloqueio da transcrição bacteriana por rifamicinas",
-      caption: "Bloqueio da transcrição bacteriana por rifamicinas. Clique para ampliar.",
-      title: "Rifamicinas",
-      text: `
-        <p>As rifamicinas ligam-se à RNA polimerase bacteriana e bloqueiam sua progressão ao longo do DNA.</p>
-        <p>Com isso, a síntese de RNA mensageiro é interrompida, comprometendo indiretamente a produção proteica <sup>1</sup>.</p>
-      `
-    },
-
-    nitroimidazois: {
-      tabId: "cap2P16TabNitroimidazois",
-      src: "../../assets/capitulo-02/imagens/nitroimidazol-dano-dna.png",
-      alt: "Dano molecular direto ao DNA induzido por nitroimidazóis",
-      caption: "Dano molecular direto ao DNA induzido por nitroimidazóis. Clique para ampliar.",
-      title: "Nitroimidazóis",
-      text: `
-        <p>Após ativação intracelular em microrganismos anaeróbios ou em condições de baixo potencial redox, os nitroimidazóis geram metabólitos reativos.</p>
-        <p>Esses metabólitos interagem com o DNA e promovem dano molecular direto, comprometendo a estabilidade genética bacteriana <sup>1</sup>.</p>
-      `
-    }
-  };
-
-  function render(key) {
-    const state = states[key];
-    if (!state) return;
-
-    tabs.forEach((tab) => {
-      const isActive = tab.dataset.nucleicTab === key;
-      tab.classList.toggle("is-active", isActive);
-      tab.setAttribute("aria-selected", isActive ? "true" : "false");
-      tab.setAttribute("tabindex", isActive ? "0" : "-1");
-    });
-
-    panel.setAttribute("aria-labelledby", state.tabId);
-
-    image.src = state.src;
-    image.alt = state.alt;
-    caption.textContent = state.caption;
-    title.textContent = state.title;
-    text.innerHTML = state.text;
-
-    zoomButton.setAttribute("data-zoom", state.src);
-    zoomButton.setAttribute("aria-label", `Ampliar imagem: ${state.title}`);
-  }
-
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      render(tab.dataset.nucleicTab);
-    });
-
-    tab.addEventListener("keydown", (event) => {
-      const currentIndex = tabs.indexOf(tab);
-      let nextIndex = null;
-
-      if (event.key === "ArrowRight") {
-        nextIndex = (currentIndex + 1) % tabs.length;
-      }
-
-      if (event.key === "ArrowLeft") {
-        nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
-      }
-
-      if (nextIndex === null) return;
-
-      event.preventDefault();
-      tabs[nextIndex].focus();
-      render(tabs[nextIndex].dataset.nucleicTab);
-    });
-  });
-
-  render("processo");
-})();
-/* =========================
-   PÁGINA 17 — METABOLISMO DO FOLATO
-   ========================= */
-
-(function initPage17Folato() {
-  const root = document.querySelector("[data-folato]");
-  if (!root) return;
-
-  const image = document.getElementById("cap2P17Image");
-  const title = document.getElementById("cap2P17Title");
-  const text = document.getElementById("cap2P17Text");
-  const step = document.getElementById("cap2P17Step");
-  const caption = document.getElementById("cap2P17Caption");
-  const prev = document.getElementById("cap2P17Prev");
-  const next = document.getElementById("cap2P17Next");
-  const zoomButton = root.querySelector(".cap2-p17-zoom");
-
-  if (!image || !title || !text || !step || !caption || !prev || !next || !zoomButton) {
-    return;
-  }
-
-  const states = [
-    {
-      src: "../../assets/capitulo-02/imagens/folato-via-geral.png",
-      alt: "Via metabólica bacteriana do folato",
-      caption: "Via metabólica bacteriana do folato. Clique para ampliar.",
-      title: "Via do folato",
-      text: `
-        <p>A síntese bacteriana do folato começa com a incorporação do PABA e prossegue pela formação do ácido di-hidrofólico (DHF) e do ácido tetrahidrofólico (THF).</p>
-        <p>O THF atua como cofator essencial para a síntese de purinas e timidilato, etapas indispensáveis à produção de DNA e RNA.</p>
-      `
-    },
-    {
-      src: "../../assets/capitulo-02/imagens/folato-sulfonamida.png",
-      alt: "Interferência das sulfonamidas na via bacteriana do folato",
-      caption: "Interferência das sulfonamidas na via bacteriana do folato. Clique para ampliar.",
-      title: "Sulfonamidas",
-      text: `
-        <p>As sulfonamidas apresentam estrutura semelhante ao PABA e competem com esse substrato na etapa inicial da via.</p>
-        <p>Como consequência, a produção de DHF é reduzida, comprometendo a continuidade da síntese do folato <sup>1</sup>.</p>
-      `
-    },
-    {
-      src: "../../assets/capitulo-02/imagens/folato-trimetoprim.png",
-      alt: "Interferência do trimetoprim na conversão de DHF em THF",
-      caption: "Interferência do trimetoprim na conversão de DHF em THF. Clique para ampliar.",
-      title: "Trimetoprim",
-      text: `
-        <p>O trimetoprim inibe a di-hidrofolato redutase bacteriana, impedindo a conversão de DHF em THF.</p>
-        <p>Sem THF funcional, a célula bacteriana passa a ter menor disponibilidade de cofatores para a síntese de nucleotídeos.</p>
-      `
-    },
-    {
-      src: "../../assets/capitulo-02/imagens/folato-associacao.png",
-      alt: "Bloqueio sequencial da via do folato pela associação sulfametoxazol-trimetoprim",
-      caption: "Bloqueio sequencial da via do folato pela associação sulfametoxazol-trimetoprim. Clique para ampliar.",
-      title: "Associação sulfametoxazol–trimetoprim",
-      text: `
-        <p>A associação promove bloqueio sequencial da via metabólica, interferindo em duas etapas consecutivas da síntese do folato.</p>
-        <p>Esse efeito intensifica a redução da produção de nucleotídeos e compromete de forma mais acentuada a capacidade replicativa bacteriana.</p>
-      `
-    }
-  ];
-
-  let currentIndex = 0;
-
-  function render() {
-    const state = states[currentIndex];
-    if (!state) return;
-
-    image.src = state.src;
-    image.alt = state.alt;
-    caption.textContent = state.caption;
-    title.textContent = state.title;
-    text.innerHTML = state.text;
-
-    zoomButton.setAttribute("data-zoom", state.src);
-    zoomButton.setAttribute("aria-label", `Ampliar imagem: ${state.title}`);
-
-    step.textContent = `Etapa ${currentIndex + 1} de ${states.length}`;
-    prev.disabled = currentIndex === 0;
-    next.disabled = currentIndex === states.length - 1;
-  }
-
-  prev.addEventListener("click", () => {
-    if (currentIndex === 0) return;
-    currentIndex -= 1;
-    render();
-  });
-
-  next.addEventListener("click", () => {
-    if (currentIndex >= states.length - 1) return;
-    currentIndex += 1;
-    render();
-  });
-
-  render();
-})();
-/* =========================
-   PÁGINA 18 — BACTERICIDA VS BACTERIOSTÁTICO
-   ========================= */
-
-(function initPage18Response() {
-  const root = document.querySelector("[data-cap2-response]");
-  if (!root) return;
-
-  const tabs = Array.from(root.querySelectorAll("[data-response-tab]"));
-  const panel = document.getElementById("cap2P18Panel");
-  const image = document.getElementById("cap2P18Image");
-  const caption = document.getElementById("cap2P18Caption");
-  const zoomButtons = Array.from(root.querySelectorAll(".cap2-p18-zoom"));
-  const mainZoomButton = root.querySelector(".cap2-p18-figure .cap2-p18-zoom");
-  const title = document.getElementById("cap2P18Title");
-  const text = document.getElementById("cap2P18Text");
-
-  if (!tabs.length || !panel || !image || !caption || !mainZoomButton || !title || !text) {
-    return;
-  }
-
-  const states = {
-    bacteriostatico: {
-      tabId: "cap2P18TabBacteriostatico",
-      src: "../../assets/capitulo-02/imagens/bacteriostatico-resposta-populacional.png",
-      alt: "Representação visual de resposta bacteriostática",
-      caption: "Representação visual de resposta bacteriostática. Clique para ampliar.",
-      title: "Bacteriostático",
-      text: `
-        <p>O padrão bacteriostático corresponde à inibição da multiplicação bacteriana sem redução necessariamente imediata do número de células viáveis. Em termos populacionais, o crescimento deixa de progredir como ocorreria na ausência do antibacteriano.</p>
-        <p>Esse comportamento ajuda a entender por que muitos fármacos que interferem na síntese proteica ou em vias metabólicas bacterianas tendem a produzir estabilização populacional mais do que queda abrupta do inóculo.</p>
-        <p><strong>Ponto importante:</strong> esse padrão microbiológico não implica, por si só, menor relevância clínica. Seu significado depende do sítio infeccioso, do estado do hospedeiro e do contexto terapêutico.</p>
-      `
-    },
-
-    bactericida: {
-      tabId: "cap2P18TabBactericida",
-      src: "../../assets/capitulo-02/imagens/bactericida-resposta-populacional.png",
-      alt: "Representação visual de resposta bactericida",
-      caption: "Representação visual de resposta bactericida. Clique para ampliar.",
-      title: "Bactericida",
-      text: `
-        <p>O padrão bactericida corresponde à redução progressiva da população bacteriana viável ao longo do tempo, refletindo perda efetiva de viabilidade celular após exposição ao antibacteriano.</p>
-        <p>Esse comportamento é frequentemente associado a fármacos que interferem diretamente em estruturas essenciais, como parede celular, membrana citoplasmática ou integridade do DNA, produzindo dano celular mais decisivo.</p>
-        <p><strong>Ponto importante:</strong> mesmo esse padrão não deve ser tratado como sinônimo automático de superioridade terapêutica. O desfecho clínico continua dependente do contexto microbiológico e do paciente.</p>
-      `
-    }
-  };
-
-  function activate(key) {
-    const state = states[key];
-    if (!state) return;
-
-    tabs.forEach((tab) => {
-      const isActive = tab.dataset.responseTab === key;
-      tab.classList.toggle("is-active", isActive);
-      tab.setAttribute("aria-selected", isActive ? "true" : "false");
-      tab.setAttribute("tabindex", isActive ? "0" : "-1");
-    });
-
-    panel.setAttribute("aria-labelledby", state.tabId);
-
-    image.src = state.src;
-    image.alt = state.alt;
-    caption.textContent = state.caption;
-    title.textContent = state.title;
-    text.innerHTML = state.text;
-
-    mainZoomButton.setAttribute("data-zoom", state.src);
-    mainZoomButton.setAttribute("aria-label", `Ampliar imagem: ${state.title}`);
-  }
-
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      activate(tab.dataset.responseTab);
-    });
-
-    tab.addEventListener("keydown", (event) => {
-      const currentIndex = tabs.indexOf(tab);
-      let nextIndex = null;
-
-      if (event.key === "ArrowRight") {
-        nextIndex = (currentIndex + 1) % tabs.length;
-      }
-
-      if (event.key === "ArrowLeft") {
-        nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
-      }
-
-      if (nextIndex === null) return;
-
-      event.preventDefault();
-      tabs[nextIndex].focus();
-      activate(tabs[nextIndex].dataset.responseTab);
-    });
-  });
-
-  activate("bacteriostatico");
-
-  zoomButtons.forEach((button) => {
-    if (!button.hasAttribute("type")) {
-      button.setAttribute("type", "button");
-    }
-  });
-})();
-/* =========================
-   PÁGINA 19 — QUIZ DE REVISÃO
-   ========================= */
-
-(function initPage19ClinicalReview() {
-  const root = document.querySelector("[data-cap2-p19]");
-  if (!root) return;
-
-  const questions = Array.from(root.querySelectorAll(".cap2-p19Question"));
-  const statusValue = root.querySelector(".cap2-p19Status__value");
-  const completion = root.querySelector("[data-p19-completion]");
-  const completionText = root.querySelector("[data-p19-completion-text]");
-
-  if (!questions.length) return;
-
-  const completionMap = {
-    perfect:
-      "Você articulou adequadamente os dois eixos centrais desta revisão: a atividade de certos antibacterianos depende da intensidade de processos celulares bacterianos em curso, e a toxicidade seletiva decorre de diferenças estruturais ou metabólicas entre bactéria e hospedeiro.",
-    partial:
-      "A leitura conceitual está em consolidação, mas ainda exige atenção a dois pontos: alguns mecanismos têm desempenho dependente do crescimento bacteriano, e a seletividade terapêutica não decorre de ausência absoluta de risco, mas de diferenças suficientes entre alvos bacterianos e humanos.",
-    needsReview:
-      "Vale revisar o encadeamento conceitual do capítulo: primeiro, identificar qual processo celular bacteriano está sendo atingido; depois, entender em que contexto esse processo é mais ativo; por fim, reconhecer por que esse alvo pode ser explorado terapeuticamente com relativa seletividade."
-  };
-
-  function updateStatus() {
-    const confirmedCount = questions.filter(
-      (question) => question.dataset.questionState === "confirmed"
-    ).length;
-
-    if (statusValue) {
-      statusValue.textContent = `${confirmedCount} de ${questions.length} situações confirmadas`;
-    }
-
-    if (!completion || !completionText) return;
-
-    if (confirmedCount !== questions.length) {
-      completion.hidden = true;
-      return;
-    }
-
-    const correctCount = questions.filter(
-      (question) => question.dataset.result === "correct"
-    ).length;
-
-    if (correctCount === questions.length) {
-      completionText.textContent = completionMap.perfect;
-    } else if (correctCount >= 1) {
-      completionText.textContent = completionMap.partial;
-    } else {
-      completionText.textContent = completionMap.needsReview;
-    }
-
-    completion.hidden = false;
-  }
-
-  questions.forEach((question) => {
-    const optionButtons = Array.from(
-      question.querySelectorAll(".cap2-p19Options button")
-    );
-    const confirmBtn = question.querySelector('[data-p19-action="confirm"]');
-    const resetBtn = question.querySelector('[data-p19-action="reset"]');
-    const feedbackBox = question.querySelector(".cap2-p19Feedback");
-    const feedbackTemplate = question.querySelector(".cap2-p19FeedbackMap");
-
-    if (!confirmBtn || !resetBtn || !feedbackBox || !feedbackTemplate) return;
-
-    let selectedAnswer = null;
-    let confirmed = false;
-    let feedbackMap = {};
-
-    try {
-      feedbackMap = JSON.parse(feedbackTemplate.innerHTML.trim());
-    } catch (error) {
-      console.error("Erro ao ler feedback da revisão do capítulo 2:", error);
-      return;
-    }
-
-    function resetQuestion() {
-      confirmed = false;
-      selectedAnswer = null;
-      question.dataset.questionState = "pending";
-      question.dataset.result = "";
-
-      optionButtons.forEach((button) => {
-        button.disabled = false;
-        button.classList.remove("selected", "correct", "error");
-        button.setAttribute("aria-pressed", "false");
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
       });
-
-      feedbackBox.innerHTML = "";
-      feedbackBox.className = "cap2-p19Feedback";
-
-      confirmBtn.hidden = false;
-      confirmBtn.disabled = true;
-      resetBtn.hidden = true;
-
-      updateStatus();
+    },
+    {
+      threshold:.16,
+      rootMargin:"0px 0px -35px 0px"
     }
+  );
 
-    optionButtons.forEach((button) => {
-      button.setAttribute("aria-pressed", "false");
+  revealItems.forEach(function(item){
+    observer.observe(item);
+  });
+})();
+/* =========================
+   PÁGINA 15 — INIBIÇÃO DA SÍNTESE PROTEICA
+   ========================= */
 
-      button.addEventListener("click", () => {
-        if (confirmed) return;
+(function initPage15ProteinSynthesisV2(){
+  const root = document.querySelector("[data-cap2-p15v2]");
+  if(!root) return;
 
-        optionButtons.forEach((item) => {
-          item.classList.remove("selected");
-          item.setAttribute("aria-pressed", "false");
-        });
+  const tabs = Array.from(
+    root.querySelectorAll("[data-p15v2-target]")
+  );
 
-        button.classList.add("selected");
-        button.setAttribute("aria-pressed", "true");
+  const view = root.querySelector("#cap2P15V2View");
+  const image = root.querySelector("#cap2P15V2Image");
+  const caption = root.querySelector("#cap2P15V2Caption");
+  const kicker = root.querySelector("#cap2P15V2Kicker");
+  const title = root.querySelector("#cap2P15V2Title");
+  const body = root.querySelector("#cap2P15V2Body");
+  const zoomButton = root.querySelector(".cap2-p15v2-zoom");
+  const prefersReducedMotion = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-        selectedAnswer = button.dataset.answer || null;
-        confirmBtn.disabled = !selectedAnswer;
-      });
-    });
+  if(
+    !tabs.length ||
+    !view ||
+    !image ||
+    !caption ||
+    !kicker ||
+    !title ||
+    !body ||
+    !zoomButton
+  ){
+    return;
+  }
 
-    confirmBtn.addEventListener("click", () => {
-      if (!selectedAnswer || confirmed) return;
+  const states = {
+    normal:{
+      tabId:"cap2P15V2TabNormal",
+      image:"../../assets/capitulo-02/imagens/cap02-p15-normal.png",
+      alt:"Processo normal da síntese proteica bacteriana",
+      caption:"Processo normal da síntese proteica bacteriana.",
+      kicker:"Processo fisiológico",
+      title:"Atuação coordenada das subunidades 30S e 50S",
+      body:`
+        <div class="cap2-p15v2-infoGrid">
 
-      confirmed = true;
+          <article class="cap2-p15v2-info">
+            <span>Função do processo</span>
+            <p>Converter a informação codificada no RNAm em uma cadeia de aminoácidos organizada.</p>
+          </article>
 
-      const chosen = question.querySelector(
-        `.cap2-p19Options button[data-answer="${selectedAnswer}"]`
+          <article class="cap2-p15v2-info">
+            <span>Papel da subunidade 30S</span>
+            <p>Reconhecer o RNAm, posicionar os tRNAs e assegurar a leitura adequada dos códons.</p>
+          </article>
+
+          <article class="cap2-p15v2-info">
+            <span>Papel da subunidade 50S</span>
+            <p>Catalisar a formação das ligações peptídicas e permitir a elongação da cadeia polipeptídica.</p>
+          </article>
+
+          <article class="cap2-p15v2-info cap2-p15v2-info--result">
+            <span>Importância biológica</span>
+            <p>A produção contínua de proteínas sustenta o metabolismo, o crescimento e a adaptação bacteriana.</p>
+          </article>
+
+        </div>
+      `
+    },
+
+    "30s":{
+      tabId:"cap2P15V2Tab30S",
+      image:"../../assets/capitulo-02/imagens/cap02-p15-30s.png",
+      alt:"Interferência dos antibacterianos sobre a subunidade ribossomal 30S",
+      caption:"Interferência farmacológica sobre a subunidade ribossomal bacteriana 30S.",
+      kicker:"Alvo ribossomal",
+      title:"Interferência sobre a subunidade 30S",
+      body:`
+        <div class="cap2-p15v2-infoGrid">
+
+          <article class="cap2-p15v2-info">
+            <span>Funções comprometidas</span>
+            <p>Reconhecimento do RNAm, posicionamento dos tRNAs e fidelidade da leitura dos códons.</p>
+          </article>
+
+          <article class="cap2-p15v2-info">
+            <span>Possíveis efeitos</span>
+            <p>Bloqueio da iniciação da tradução ou incorporação incorreta de aminoácidos na proteína em formação.</p>
+          </article>
+
+          <article class="cap2-p15v2-info">
+            <span>Classes relacionadas</span>
+            <p>Tetraciclinas e aminoglicosídeos atuam sobre a subunidade 30S por mecanismos distintos.</p>
+          </article>
+
+          <article class="cap2-p15v2-info cap2-p15v2-info--result">
+            <span>Resposta microbiológica</span>
+            <p>As tetraciclinas são predominantemente bacteriostáticas; os aminoglicosídeos apresentam efeito bactericida.</p>
+          </article>
+
+        </div>
+      `
+    },
+
+    "50s":{
+      tabId:"cap2P15V2Tab50S",
+      image:"../../assets/capitulo-02/imagens/cap02-p15-50s.png",
+      alt:"Interferência dos antibacterianos sobre a subunidade ribossomal 50S",
+      caption:"Interferência farmacológica sobre a subunidade ribossomal bacteriana 50S.",
+      kicker:"Alvo ribossomal",
+      title:"Interferência sobre a subunidade 50S",
+      body:`
+        <div class="cap2-p15v2-infoGrid">
+
+          <article class="cap2-p15v2-info">
+            <span>Funções comprometidas</span>
+            <p>Formação das ligações peptídicas, translocação dos tRNAs e progressão do ribossomo pelo RNAm.</p>
+          </article>
+
+          <article class="cap2-p15v2-info">
+            <span>Consequência traducional</span>
+            <p>A elongação é interrompida antes da formação de uma proteína completa e funcional.</p>
+          </article>
+
+          <article class="cap2-p15v2-info">
+            <span>Classes relacionadas</span>
+            <p>Macrolídeos, lincosamidas, oxazolidinonas e outras classes atuam em regiões distintas da subunidade 50S.</p>
+          </article>
+
+          <article class="cap2-p15v2-info cap2-p15v2-info--result">
+            <span>Resposta microbiológica</span>
+            <p>Predomina a redução progressiva da multiplicação bacteriana, frequentemente associada a efeito bacteriostático.</p>
+          </article>
+
+        </div>
+      `
+    }
+  };
+
+  let currentTarget = "normal";
+  let transitionTimer = null;
+
+  function render(target){
+    const state = states[target];
+    if(!state) return;
+
+    currentTarget = target;
+
+    tabs.forEach(function(tab){
+      const active = tab.dataset.p15v2Target === target;
+
+      tab.classList.toggle("is-active", active);
+      tab.setAttribute(
+        "aria-selected",
+        active ? "true" : "false"
       );
-      const correct = question.querySelector(
-        '.cap2-p19Options button[data-correct="true"]'
+      tab.setAttribute(
+        "tabindex",
+        active ? "0" : "-1"
       );
-      const item = feedbackMap[selectedAnswer];
-      const isCorrect = Boolean(chosen && chosen.dataset.correct === "true");
-
-      question.dataset.questionState = "confirmed";
-      question.dataset.result = isCorrect ? "correct" : "error";
-
-      optionButtons.forEach((button) => {
-        button.disabled = true;
-      });
-
-      if (chosen) {
-        if (isCorrect) {
-          chosen.classList.add("correct");
-          feedbackBox.className = "cap2-p19Feedback correct";
-        } else {
-          chosen.classList.add("error");
-          if (correct) correct.classList.add("correct");
-          feedbackBox.className = "cap2-p19Feedback error";
-        }
-      }
-
-      if (item) {
-        feedbackBox.innerHTML = `
-          <p><strong>${item.title}</strong></p>
-          <p>${item.text}</p>
-        `;
-      }
-
-      confirmBtn.hidden = true;
-      resetBtn.hidden = false;
-
-      updateStatus();
     });
 
-    resetBtn.addEventListener("click", resetQuestion);
+    view.setAttribute("aria-labelledby", state.tabId);
+    root.dataset.p15v2State = target;
 
-    resetQuestion();
+    window.clearTimeout(transitionTimer);
+    image.classList.add("is-changing");
+
+    transitionTimer = window.setTimeout(function(){
+  image.src = state.image;
+  image.alt = state.alt;
+
+  caption.textContent = state.caption;
+  kicker.textContent = state.kicker;
+  title.textContent = state.title;
+  body.innerHTML = state.body;
+
+  zoomButton.dataset.zoom = state.image;
+  zoomButton.setAttribute(
+    "aria-label",
+    "Ampliar imagem: " + state.title
+  );
+
+  image.classList.remove("is-changing");
+}, prefersReducedMotion ? 0 : 160);
+  }
+
+  tabs.forEach(function(tab){
+    tab.addEventListener("click", function(){
+      render(tab.dataset.p15v2Target);
+    });
+
+    tab.addEventListener("keydown", function(event){
+      const currentIndex = tabs.indexOf(tab);
+      let nextIndex = null;
+
+      if(
+        event.key === "ArrowRight" ||
+        event.key === "ArrowDown"
+      ){
+        nextIndex = (currentIndex + 1) % tabs.length;
+      }
+
+      if(
+        event.key === "ArrowLeft" ||
+        event.key === "ArrowUp"
+      ){
+        nextIndex =
+          (currentIndex - 1 + tabs.length) % tabs.length;
+      }
+
+      if(event.key === "Home"){
+        nextIndex = 0;
+      }
+
+      if(event.key === "End"){
+        nextIndex = tabs.length - 1;
+      }
+
+      if(nextIndex === null) return;
+
+      event.preventDefault();
+
+      tabs[nextIndex].focus();
+      render(tabs[nextIndex].dataset.p15v2Target);
+    });
   });
 
-  updateStatus();
+  render(currentTarget);
+
+  const revealItems = document.querySelectorAll(
+    ".cap2-page15 .cap2-p15v2-reveal"
+  );
+
+  if(prefersReducedMotion || !("IntersectionObserver" in window)){
+    revealItems.forEach(function(item){
+      item.classList.add("is-visible");
+    });
+
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold:.16,
+      rootMargin:"0px 0px -35px 0px"
+    }
+  );
+
+  revealItems.forEach(function(item){
+    observer.observe(item);
+  });
 })();
 /* =========================
-   PÁGINA 19 — QUIZ DE REVISÃO
+   PÁGINA 16 — INIBIÇÃO DA SÍNTESE DE ÁCIDOS NUCLEICOS
    ========================= */
+
+(function initPage16NucleicAcidsV2(){
+  const root = document.querySelector("[data-cap2-p16v2]");
+  if(!root) return;
+
+  const tabs = Array.from(
+    root.querySelectorAll("[data-p16v2-target]")
+  );
+
+  const view = root.querySelector("#cap2P16V2View");
+  const image = root.querySelector("#cap2P16V2Image");
+  const caption = root.querySelector("#cap2P16V2Caption");
+  const kicker = root.querySelector("#cap2P16V2Kicker");
+  const title = root.querySelector("#cap2P16V2Title");
+  const body = root.querySelector("#cap2P16V2Body");
+  const zoomButton = root.querySelector(".cap2-p16v2-zoom");
+  const prefersReducedMotion = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if(
+    !tabs.length ||
+    !view ||
+    !image ||
+    !caption ||
+    !kicker ||
+    !title ||
+    !body ||
+    !zoomButton
+  ){
+    return;
+  }
+
+  const states = {
+    processo:{
+      tabId:"cap2P16V2TabProcesso",
+      image:"../../assets/capitulo-02/imagens/acidos-nucleicos-processo.png",
+      alt:"Etapas gerais da replicação do DNA e da transcrição do RNA bacteriano",
+      caption:"Processos gerais de replicação do DNA e transcrição do RNA bacteriano.",
+      kicker:"Fluxo da informação genética",
+      title:"Replicação do DNA e transcrição do RNA",
+      body:`
+        <div class="cap2-p16v2-infoGrid">
+
+          <article class="cap2-p16v2-info">
+            <span>Replicação</span>
+            <p>Duplica o cromossomo bacteriano antes da divisão celular.</p>
+          </article>
+
+          <article class="cap2-p16v2-info">
+            <span>Controle topológico</span>
+            <p>A DNA girase e a topoisomerase IV regulam a tensão e o superenrolamento do DNA.</p>
+          </article>
+
+          <article class="cap2-p16v2-info">
+            <span>Transcrição</span>
+            <p>A RNA polimerase converte a informação do DNA em moléculas de RNA funcionais.</p>
+          </article>
+
+          <article class="cap2-p16v2-info cap2-p16v2-info--result">
+            <span>Importância biológica</span>
+            <p>Esses processos sustentam a divisão, a expressão gênica e a adaptação bacteriana.</p>
+          </article>
+
+        </div>
+      `
+    },
+
+    fluoroquinolonas:{
+      tabId:"cap2P16V2TabFluoro",
+      image:"../../assets/capitulo-02/imagens/fluoroquinolona-dna-topoisomerase.png",
+      alt:"Interferência das fluoroquinolonas no complexo formado entre DNA e topoisomerases",
+      caption:"Interferência das fluoroquinolonas no complexo DNA–topoisomerase.",
+      kicker:"Bloqueio da replicação",
+      title:"Estabilização do complexo DNA–topoisomerase",
+      body:`
+        <div class="cap2-p16v2-infoGrid">
+
+          <article class="cap2-p16v2-info">
+            <span>Alvos moleculares</span>
+            <p>DNA girase e topoisomerase IV, com importância relativa variável entre diferentes grupos bacterianos.</p>
+          </article>
+
+          <article class="cap2-p16v2-info">
+            <span>Evento central</span>
+            <p>Estabilização do complexo formado após a clivagem do DNA, impedindo a religação das fitas.</p>
+          </article>
+
+          <article class="cap2-p16v2-info">
+            <span>Consequência genética</span>
+            <p>Acúmulo de quebras no DNA e interrupção da progressão da replicação cromossômica.</p>
+          </article>
+
+          <article class="cap2-p16v2-info cap2-p16v2-info--result">
+            <span>Resposta microbiológica</span>
+            <p>Perda da integridade do material genético e efeito predominantemente bactericida.</p>
+          </article>
+
+        </div>
+      `
+    },
+
+    rifamicinas:{
+      tabId:"cap2P16V2TabRifamicinas",
+      image:"../../assets/capitulo-02/imagens/rifamicina-rna-polimerase.png",
+      alt:"Bloqueio da transcrição bacteriana pela ligação das rifamicinas à RNA polimerase",
+      caption:"Bloqueio da transcrição bacteriana por ação das rifamicinas.",
+      kicker:"Bloqueio da transcrição",
+      title:"Inibição da RNA polimerase bacteriana",
+      body:`
+        <div class="cap2-p16v2-infoGrid">
+
+          <article class="cap2-p16v2-info">
+            <span>Alvo molecular</span>
+            <p>Subunidade β da RNA polimerase bacteriana dependente de DNA.</p>
+          </article>
+
+          <article class="cap2-p16v2-info">
+            <span>Etapa comprometida</span>
+            <p>Início da elongação da transcrição e progressão inicial da síntese de RNA.</p>
+          </article>
+
+          <article class="cap2-p16v2-info">
+            <span>Consequência funcional</span>
+            <p>Interrupção precoce da formação de RNA mensageiro e de outros RNAs celulares.</p>
+          </article>
+
+          <article class="cap2-p16v2-info cap2-p16v2-info--result">
+            <span>Impacto microbiológico</span>
+            <p>Redução rápida da expressão gênica e da produção de proteínas essenciais.</p>
+          </article>
+
+        </div>
+      `
+    },
+
+    nitroimidazois:{
+      tabId:"cap2P16V2TabNitro",
+      image:"../../assets/capitulo-02/imagens/nitroimidazol-dano-dna.png",
+      alt:"Dano molecular direto ao DNA após ativação intracelular dos nitroimidazóis",
+      caption:"Dano direto ao DNA provocado por metabólitos reativos dos nitroimidazóis.",
+      kicker:"Ativação intracelular",
+      title:"Formação de metabólitos reativos e dano ao DNA",
+      body:`
+        <div class="cap2-p16v2-infoGrid">
+
+          <article class="cap2-p16v2-info">
+            <span>Condição de ativação</span>
+            <p>Redução enzimática do pró-fármaco em microrganismos anaeróbios ou em ambientes de baixo potencial redox.</p>
+          </article>
+
+          <article class="cap2-p16v2-info">
+            <span>Evento molecular</span>
+            <p>Formação de radicais livres e outros metabólitos altamente reativos.</p>
+          </article>
+
+          <article class="cap2-p16v2-info">
+            <span>Consequência genética</span>
+            <p>Quebras nas fitas de DNA e outras alterações que comprometem sua estabilidade.</p>
+          </article>
+
+          <article class="cap2-p16v2-info cap2-p16v2-info--result">
+            <span>Resposta microbiológica</span>
+            <p>Perda da integridade genética e morte de microrganismos suscetíveis.</p>
+          </article>
+
+        </div>
+      `
+    }
+  };
+
+  let currentTarget = "processo";
+  let transitionTimer = null;
+
+  function render(target){
+    const state = states[target];
+    if(!state) return;
+
+    currentTarget = target;
+
+    tabs.forEach(function(tab){
+      const active = tab.dataset.p16v2Target === target;
+
+      tab.classList.toggle("is-active", active);
+      tab.setAttribute(
+        "aria-selected",
+        active ? "true" : "false"
+      );
+      tab.setAttribute(
+        "tabindex",
+        active ? "0" : "-1"
+      );
+    });
+
+    view.setAttribute("aria-labelledby", state.tabId);
+    root.dataset.p16v2State = target;
+
+    window.clearTimeout(transitionTimer);
+    image.classList.add("is-changing");
+
+    transitionTimer = window.setTimeout(function(){
+      image.src = state.image;
+      image.alt = state.alt;
+
+      caption.textContent = state.caption;
+      kicker.textContent = state.kicker;
+      title.textContent = state.title;
+      body.innerHTML = state.body;
+
+      zoomButton.dataset.zoom = state.image;
+      zoomButton.setAttribute(
+        "aria-label",
+        "Ampliar imagem: " + state.title
+      );
+
+      image.classList.remove("is-changing");
+    }, prefersReducedMotion ? 0 : 160);
+  }
+
+  tabs.forEach(function(tab){
+    tab.addEventListener("click", function(){
+      render(tab.dataset.p16v2Target);
+    });
+
+    tab.addEventListener("keydown", function(event){
+      const currentIndex = tabs.indexOf(tab);
+      let nextIndex = null;
+
+      if(
+        event.key === "ArrowRight" ||
+        event.key === "ArrowDown"
+      ){
+        nextIndex = (currentIndex + 1) % tabs.length;
+      }
+
+      if(
+        event.key === "ArrowLeft" ||
+        event.key === "ArrowUp"
+      ){
+        nextIndex =
+          (currentIndex - 1 + tabs.length) % tabs.length;
+      }
+
+      if(event.key === "Home"){
+        nextIndex = 0;
+      }
+
+      if(event.key === "End"){
+        nextIndex = tabs.length - 1;
+      }
+
+      if(nextIndex === null) return;
+
+      event.preventDefault();
+
+      tabs[nextIndex].focus();
+      render(tabs[nextIndex].dataset.p16v2Target);
+    });
+  });
+  render(currentTarget);
+
+  const revealItems = document.querySelectorAll(
+    ".cap2-page16 .cap2-p16v2-reveal"
+  );
+
+  if(prefersReducedMotion || !("IntersectionObserver" in window)){
+    revealItems.forEach(function(item){
+      item.classList.add("is-visible");
+    });
+
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold:.16,
+      rootMargin:"0px 0px -35px 0px"
+    }
+  );
+
+  revealItems.forEach(function(item){
+    observer.observe(item);
+  });
+})();
+/* =========================
+   PÁGINA 17 — INIBIÇÃO DO METABOLISMO DO FOLATO
+   ========================= */
+
+(function initPage17FolatoV2(){
+  const root = document.querySelector("[data-cap2-p17v2]");
+  if(!root) return;
+
+  const tabs = Array.from(
+    root.querySelectorAll("[data-p17v2-target]")
+  );
+
+  const view = root.querySelector("#cap2P17V2View");
+  const image = root.querySelector("#cap2P17V2Image");
+  const caption = root.querySelector("#cap2P17V2Caption");
+  const kicker = root.querySelector("#cap2P17V2Kicker");
+  const title = root.querySelector("#cap2P17V2Title");
+  const body = root.querySelector("#cap2P17V2Body");
+  const zoomButton = root.querySelector(".cap2-p17v2-zoom");
+  const prefersReducedMotion = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if(
+    !tabs.length ||
+    !view ||
+    !image ||
+    !caption ||
+    !kicker ||
+    !title ||
+    !body ||
+    !zoomButton
+  ){
+    return;
+  }
+
+  const states = {
+    via:{
+      tabId:"cap2P17V2TabVia",
+      image:"../../assets/capitulo-02/imagens/folato-via-geral.png",
+      alt:"Via metabólica bacteriana de síntese do folato",
+      caption:"Via metabólica bacteriana de síntese do folato.",
+      kicker:"Via metabólica",
+      title:"Produção de folato e síntese de nucleotídeos",
+      body:`
+        <div class="cap2-p17v2-infoGrid">
+
+          <article class="cap2-p17v2-info">
+            <span>Precursor inicial</span>
+            <p>O PABA participa das etapas iniciais da síntese bacteriana do folato.</p>
+          </article>
+
+          <article class="cap2-p17v2-info">
+            <span>Intermediário metabólico</span>
+            <p>O ácido di-hidrofólico (DHF) é formado antes da etapa de redução enzimática.</p>
+          </article>
+
+          <article class="cap2-p17v2-info">
+            <span>Cofator funcional</span>
+            <p>O ácido tetrahidrofólico (THF) fornece unidades de um carbono para reações biossintéticas.</p>
+          </article>
+
+          <article class="cap2-p17v2-info cap2-p17v2-info--result">
+            <span>Resultado biológico</span>
+            <p>A via sustenta a produção de purinas, timidilato e, consequentemente, de DNA e RNA.</p>
+          </article>
+
+        </div>
+      `
+    },
+
+    sulfonamidas:{
+      tabId:"cap2P17V2TabSulfonamidas",
+      image:"../../assets/capitulo-02/imagens/folato-sulfonamida.png",
+      alt:"Interferência das sulfonamidas na via bacteriana do folato",
+      caption:"Bloqueio da etapa dependente de PABA pelas sulfonamidas.",
+      kicker:"Antagonismo metabólico",
+      title:"Inibição da di-hidropteroato sintase",
+      body:`
+        <div class="cap2-p17v2-infoGrid">
+
+          <article class="cap2-p17v2-info">
+            <span>Relação estrutural</span>
+            <p>As sulfonamidas apresentam estrutura semelhante ao PABA.</p>
+          </article>
+
+          <article class="cap2-p17v2-info">
+            <span>Alvo enzimático</span>
+            <p>Di-hidropteroato sintase (DHPS), envolvida em etapa inicial da via bacteriana.</p>
+          </article>
+
+          <article class="cap2-p17v2-info">
+            <span>Consequência metabólica</span>
+            <p>A competição com o PABA reduz a formação de ácido di-hidrofólico.</p>
+          </article>
+
+          <article class="cap2-p17v2-info cap2-p17v2-info--result">
+            <span>Resposta microbiológica</span>
+            <p>Redução progressiva da síntese de nucleotídeos, geralmente associada a efeito bacteriostático.</p>
+          </article>
+
+        </div>
+      `
+    },
+
+    trimetoprim:{
+      tabId:"cap2P17V2TabTrimetoprim",
+      image:"../../assets/capitulo-02/imagens/folato-trimetoprim.png",
+      alt:"Interferência do trimetoprim na conversão de DHF em THF",
+      caption:"Bloqueio da conversão de DHF em THF pelo trimetoprim.",
+      kicker:"Inibição enzimática",
+      title:"Inibição da di-hidrofolato redutase bacteriana",
+      body:`
+        <div class="cap2-p17v2-infoGrid">
+
+          <article class="cap2-p17v2-info">
+            <span>Alvo enzimático</span>
+            <p>Di-hidrofolato redutase (DHFR) bacteriana.</p>
+          </article>
+
+          <article class="cap2-p17v2-info">
+            <span>Etapa comprometida</span>
+            <p>Conversão do ácido di-hidrofólico em ácido tetrahidrofólico.</p>
+          </article>
+
+          <article class="cap2-p17v2-info">
+            <span>Consequência metabólica</span>
+            <p>A redução de THF limita a síntese de purinas e timidilato.</p>
+          </article>
+
+          <article class="cap2-p17v2-info cap2-p17v2-info--result">
+            <span>Resposta microbiológica</span>
+            <p>Comprometimento progressivo da multiplicação, geralmente com efeito bacteriostático quando utilizado isoladamente.</p>
+          </article>
+
+        </div>
+      `
+    },
+
+    associacao:{
+      tabId:"cap2P17V2TabAssociacao",
+      image:"../../assets/capitulo-02/imagens/folato-associacao.png",
+      alt:"Bloqueio sequencial da via do folato pela associação sulfametoxazol-trimetoprim",
+      caption:"Bloqueio sequencial da via do folato pela associação sulfametoxazol–trimetoprim.",
+      kicker:"Bloqueio sequencial",
+      title:"Ação combinada de sulfametoxazol e trimetoprim",
+      body:`
+        <div class="cap2-p17v2-infoGrid">
+
+          <article class="cap2-p17v2-info">
+            <span>Primeiro bloqueio</span>
+            <p>O sulfametoxazol reduz a formação de DHF ao inibir a etapa dependente de PABA.</p>
+          </article>
+
+          <article class="cap2-p17v2-info">
+            <span>Segundo bloqueio</span>
+            <p>O trimetoprim impede a conversão de DHF em THF.</p>
+          </article>
+
+          <article class="cap2-p17v2-info">
+            <span>Consequência metabólica</span>
+            <p>A inibição consecutiva reduz de forma mais intensa a disponibilidade de cofatores e nucleotídeos.</p>
+          </article>
+
+          <article class="cap2-p17v2-info cap2-p17v2-info--result">
+            <span>Resposta microbiológica</span>
+            <p>Maior comprometimento da replicação bacteriana, frequentemente associado a atividade bactericida.</p>
+          </article>
+
+        </div>
+      `
+    }
+  };
+
+  let currentTarget = "via";
+  let transitionTimer = null;
+
+  function render(target){
+    const state = states[target];
+    if(!state) return;
+
+    currentTarget = target;
+
+    tabs.forEach(function(tab){
+      const active = tab.dataset.p17v2Target === target;
+
+      tab.classList.toggle("is-active", active);
+      tab.setAttribute(
+        "aria-selected",
+        active ? "true" : "false"
+      );
+      tab.setAttribute(
+        "tabindex",
+        active ? "0" : "-1"
+      );
+    });
+
+    view.setAttribute("aria-labelledby", state.tabId);
+    root.dataset.p17v2State = target;
+
+    window.clearTimeout(transitionTimer);
+    image.classList.add("is-changing");
+
+    transitionTimer = window.setTimeout(function(){
+      image.src = state.image;
+      image.alt = state.alt;
+      image.classList.toggle(
+        "cap2-p17v2-image--via",
+        target === "via"
+      );
+
+      caption.textContent = state.caption;
+      kicker.textContent = state.kicker;
+      title.textContent = state.title;
+      body.innerHTML = state.body;
+
+      zoomButton.dataset.zoom = state.image;
+      zoomButton.setAttribute(
+        "aria-label",
+        "Ampliar imagem: " + state.title
+      );
+
+      image.classList.remove("is-changing");
+    }, prefersReducedMotion ? 0 : 160);
+  }
+
+  tabs.forEach(function(tab){
+    tab.addEventListener("click", function(){
+      render(tab.dataset.p17v2Target);
+    });
+
+    tab.addEventListener("keydown", function(event){
+      const currentIndex = tabs.indexOf(tab);
+      let nextIndex = null;
+
+      if(
+        event.key === "ArrowRight" ||
+        event.key === "ArrowDown"
+      ){
+        nextIndex = (currentIndex + 1) % tabs.length;
+      }
+
+      if(
+        event.key === "ArrowLeft" ||
+        event.key === "ArrowUp"
+      ){
+        nextIndex =
+          (currentIndex - 1 + tabs.length) % tabs.length;
+      }
+
+      if(event.key === "Home"){
+        nextIndex = 0;
+      }
+
+      if(event.key === "End"){
+        nextIndex = tabs.length - 1;
+      }
+
+      if(nextIndex === null) return;
+
+      event.preventDefault();
+
+      tabs[nextIndex].focus();
+      render(tabs[nextIndex].dataset.p17v2Target);
+    });
+  });
+
+  render(currentTarget);
+
+  const revealItems = document.querySelectorAll(
+    ".cap2-page17 .cap2-p17v2-reveal"
+  );
+
+  if(prefersReducedMotion || !("IntersectionObserver" in window)){
+    revealItems.forEach(function(item){
+      item.classList.add("is-visible");
+    });
+
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold:.16,
+      rootMargin:"0px 0px -35px 0px"
+    }
+  );
+
+  revealItems.forEach(function(item){
+    observer.observe(item);
+  });
+})();
+/* =========================
+   PÁGINA 18 — BACTERICIDA E BACTERIOSTÁTICO
+   ========================= */
+
+(function initPage18ResponsePatternsV2(){
+  const root = document.querySelector("[data-cap2-p18v2]");
+  if(!root) return;
+
+  const tabs = Array.from(
+    root.querySelectorAll("[data-p18v2-target]")
+  );
+
+  const view = root.querySelector("#cap2P18V2View");
+  const image = root.querySelector("#cap2P18V2Image");
+  const caption = root.querySelector("#cap2P18V2Caption");
+  const kicker = root.querySelector("#cap2P18V2Kicker");
+  const title = root.querySelector("#cap2P18V2Title");
+  const body = root.querySelector("#cap2P18V2Body");
+  const zoomButton = root.querySelector(".cap2-p18v2-zoom");
+  const prefersReducedMotion = window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if(
+    !tabs.length ||
+    !view ||
+    !image ||
+    !caption ||
+    !kicker ||
+    !title ||
+    !body ||
+    !zoomButton
+  ){
+    return;
+  }
+
+  const states = {
+    bacteriostatico:{
+      tabId:"cap2P18V2TabBacteriostatico",
+      image:"../../assets/capitulo-02/imagens/bacteriostatico-resposta-populacional.png",
+      alt:"Representação do comportamento bacteriostático de uma população bacteriana",
+      caption:"Representação do padrão de resposta bacteriostática.",
+      kicker:"Padrão populacional",
+      title:"Inibição da multiplicação bacteriana",
+      body:`
+        <div class="cap2-p18v2-infoGrid">
+
+          <article class="cap2-p18v2-info">
+            <span>Interpretação microbiológica</span>
+            <p>A expansão da população é interrompida ou significativamente reduzida durante a exposição.</p>
+          </article>
+
+          <article class="cap2-p18v2-info">
+            <span>Classes frequentemente associadas</span>
+            <p>Tetraciclinas, macrolídeos, lincosamidas, oxazolidinonas e sulfonamidas.</p>
+          </article>
+
+          <article class="cap2-p18v2-info">
+            <span>Dependência experimental</span>
+            <p>O comportamento pode variar conforme a concentração, a espécie bacteriana e o tempo de exposição.</p>
+          </article>
+
+          <article class="cap2-p18v2-info cap2-p18v2-info--result">
+            <span>Importância clínica</span>
+            <p>Atividade bacteriostática não significa menor eficácia terapêutica.</p>
+          </article>
+
+        </div>
+      `
+    },
+
+    bactericida:{
+      tabId:"cap2P18V2TabBactericida",
+      image:"../../assets/capitulo-02/imagens/bactericida-resposta-populacional.png",
+      alt:"Representação do comportamento bactericida de uma população bacteriana",
+      caption:"Representação do padrão de resposta bactericida.",
+      kicker:"Padrão populacional",
+      title:"Perda efetiva da viabilidade bacteriana",
+      body:`
+        <div class="cap2-p18v2-infoGrid">
+
+          <article class="cap2-p18v2-info">
+            <span>Interpretação microbiológica</span>
+            <p>A exposição provoca perda efetiva da viabilidade e redução da população bacteriana recuperável.</p>
+          </article>
+
+          <article class="cap2-p18v2-info">
+            <span>Mecanismos frequentemente associados</span>
+            <p>Dano à parede celular, à membrana citoplasmática ou ao DNA, além de exceções como aminoglicosídeos.</p>
+          </article>
+
+          <article class="cap2-p18v2-info">
+            <span>Critério experimental</span>
+            <p>Convencionalmente, utiliza-se a redução mínima de 3 log<sub>10</sub> UFC/mL em relação ao inóculo inicial.</p>
+          </article>
+
+          <article class="cap2-p18v2-info cap2-p18v2-info--result">
+            <span>Importância clínica</span>
+            <p>Atividade bactericida não significa superioridade terapêutica em todas as infecções.</p>
+          </article>
+
+        </div>
+      `
+    }
+  };
+
+  let currentTarget = "bacteriostatico";
+  let transitionTimer = null;
+
+  function render(target){
+    const state = states[target];
+    if(!state) return;
+
+    currentTarget = target;
+
+    tabs.forEach(function(tab){
+      const active = tab.dataset.p18v2Target === target;
+
+      tab.classList.toggle("is-active", active);
+
+      tab.setAttribute(
+        "aria-selected",
+        active ? "true" : "false"
+      );
+
+      tab.setAttribute(
+        "tabindex",
+        active ? "0" : "-1"
+      );
+    });
+
+    view.setAttribute("aria-labelledby", state.tabId);
+    root.dataset.p18v2State = target;
+
+    window.clearTimeout(transitionTimer);
+    image.classList.add("is-changing");
+
+    transitionTimer = window.setTimeout(function(){
+      image.src = state.image;
+      image.alt = state.alt;
+
+      caption.textContent = state.caption;
+      kicker.textContent = state.kicker;
+      title.textContent = state.title;
+      body.innerHTML = state.body;
+
+      zoomButton.dataset.zoom = state.image;
+
+      zoomButton.setAttribute(
+        "aria-label",
+        "Ampliar imagem: " + state.title
+      );
+
+      image.classList.remove("is-changing");
+    }, prefersReducedMotion ? 0 : 160);
+  }
+
+  tabs.forEach(function(tab){
+    tab.addEventListener("click", function(){
+      render(tab.dataset.p18v2Target);
+    });
+
+    tab.addEventListener("keydown", function(event){
+      const currentIndex = tabs.indexOf(tab);
+      let nextIndex = null;
+
+      if(
+        event.key === "ArrowRight" ||
+        event.key === "ArrowDown"
+      ){
+        nextIndex = (currentIndex + 1) % tabs.length;
+      }
+
+      if(
+        event.key === "ArrowLeft" ||
+        event.key === "ArrowUp"
+      ){
+        nextIndex =
+          (currentIndex - 1 + tabs.length) % tabs.length;
+      }
+
+      if(event.key === "Home"){
+        nextIndex = 0;
+      }
+
+      if(event.key === "End"){
+        nextIndex = tabs.length - 1;
+      }
+
+      if(nextIndex === null) return;
+
+      event.preventDefault();
+
+      tabs[nextIndex].focus();
+      render(tabs[nextIndex].dataset.p18v2Target);
+    });
+  });
+
+  render(currentTarget);
+
+  const revealItems = document.querySelectorAll(
+    ".cap2-page18 .cap2-p18v2-reveal"
+  );
+
+  if(prefersReducedMotion || !("IntersectionObserver" in window)){
+    revealItems.forEach(function(item){
+      item.classList.add("is-visible");
+    });
+
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold:.16,
+      rootMargin:"0px 0px -35px 0px"
+    }
+  );
+
+  revealItems.forEach(function(item){
+    observer.observe(item);
+  });
+})();
+/* =====================================================
+   PÁGINA 19 — QUIZ DE REVISÃO
+   ===================================================== */
 
 (function initPage19Quiz(){
   const root = document.querySelector("[data-cap2-p19]");
+
   if(!root) return;
 
-  const questions = Array.from(root.querySelectorAll(".cap2-p19Question"));
-  const navPrev = root.querySelector('[data-p19-action="prev"]');
-  const navNext = root.querySelector('[data-p19-action="next"]');
-  const progress = root.querySelector(".cap2-p19Progress");
-  const doneBlock = root.querySelector(".cap2-p19Done");
-
-  if(!questions.length || !navPrev || !navNext || !progress || !doneBlock) return;
-
-  let currentIndex = 0;
-
-  function parseFeedbackMap(questionEl){
-    const template = questionEl.querySelector(".cap2-p19FeedbackMap");
-    if(!template) return {};
-    try{
-      return JSON.parse(template.innerHTML.trim());
-    }catch{
-      return {};
+  const situations = [
+    {
+      caseText:
+        "Durante a discussão de um caso de endocardite infecciosa, o estudante observa que β-lactâmicos podem apresentar menor atividade contra bactérias das vegetações valvares, que frequentemente permanecem em crescimento lento ou em fase estacionária.",
+      prompt:"Qual característica do mecanismo de ação explica esse comportamento?",
+      correct:"a",
+      options:[
+        {
+          key:"a",
+          label:"Os β-lactâmicos interferem na síntese do peptidoglicano, processo mais ativo durante o crescimento e a divisão bacteriana."
+        },
+        {
+          key:"b",
+          label:"Esses fármacos atuam exclusivamente sobre bactérias Gram-positivas."
+        },
+        {
+          key:"c",
+          label:"A atividade desses fármacos depende de uma resposta inflamatória intensa do hospedeiro."
+        },
+        {
+          key:"d",
+          label:"Esses fármacos dependem da presença de anticorpos para exercer sua atividade."
+        }
+      ],
+      feedback:{
+        a:"A síntese e a remodelação do peptidoglicano são mais intensas durante o crescimento e a divisão bacteriana. Em populações de crescimento lento ou em fase estacionária, a atividade bactericida dos β-lactâmicos pode ser reduzida.",
+        b:"A dependência do crescimento bacteriano não se explica por atividade exclusiva contra Gram-positivos. O fator central é a intensidade dos processos celulares sobre os quais o antibacteriano atua.",
+        c:"A atividade dos β-lactâmicos não depende da intensidade da resposta inflamatória do hospedeiro, mas da interação com as PBPs e da atividade de síntese da parede celular.",
+        d:"A ação dos β-lactâmicos decorre da ligação às PBPs bacterianas e não depende da presença de anticorpos."
+      }
+    },
+    {
+      caseText:
+        "Paciente de 24 anos com pneumonia atípica recebeu claritromicina. Durante a discussão do caso, o preceptor pergunta por que a inibição da síntese proteica bacteriana não compromete da mesma forma a síntese proteica das células da paciente.",
+      prompt:"Qual alternativa explica corretamente essa seletividade?",
+      correct:"b",
+      options:[
+        {
+          key:"a",
+          label:"A claritromicina inibe uma parede celular estruturalmente idêntica às estruturas das células humanas."
+        },
+        {
+          key:"b",
+          label:"A claritromicina liga-se à subunidade 50S bacteriana, enquanto os ribossomos citoplasmáticos humanos são 80S e estruturalmente diferentes."
+        },
+        {
+          key:"c",
+          label:"O fármaco bloqueia preferencialmente a replicação do DNA humano, preservando o DNA bacteriano."
+        },
+        {
+          key:"d",
+          label:"O fármaco destrói indiscriminadamente as membranas bacterianas e as membranas das células humanas."
+        }
+      ],
+      feedback:{
+        a:"Macrolídeos não atuam sobre a parede celular. A seletividade decorre principalmente das diferenças estruturais entre os ribossomos bacterianos e os ribossomos citoplasmáticos humanos.",
+        b:"A claritromicina é um macrolídeo que atua preferencialmente sobre a subunidade 50S do ribossomo bacteriano. A diferença em relação aos ribossomos citoplasmáticos humanos 80S permite inibição preferencial da tradução bacteriana.",
+        c:"A claritromicina não atua predominantemente sobre a replicação do DNA. Seu principal alvo é a subunidade 50S do ribossomo bacteriano.",
+        d:"Macrolídeos não atuam por destruição indiscriminada de membranas. Seu mecanismo central é a interferência na síntese proteica bacteriana."
+      }
     }
+  ];
+
+  const progress = root.querySelector("[data-p19-progress]");
+  const kicker = root.querySelector("[data-p19-kicker]");
+  const caseBox = root.querySelector("[data-p19-case]");
+  const prompt = root.querySelector("[data-p19-prompt]");
+  const optionsBox = root.querySelector("[data-p19-options]");
+  const confirmButton = root.querySelector("[data-p19-confirm]");
+  const resetButton = root.querySelector("[data-p19-reset]");
+  const feedback = root.querySelector("[data-p19-feedback]");
+  const prevButton = root.querySelector("[data-p19-prev]");
+  const nextButton = root.querySelector("[data-p19-next]");
+  const dots = Array.from(root.querySelectorAll(".cap2-p19Dots span"));
+
+  if(
+    !progress || !kicker || !caseBox || !prompt || !optionsBox ||
+    !confirmButton || !resetButton || !feedback || !prevButton ||
+    !nextButton || !dots.length
+  ){
+    return;
   }
 
-  function updateProgress(){
-    progress.textContent = `Questão ${currentIndex + 1} de ${questions.length}`;
-  }
-
-  function showQuestion(index){
-    currentIndex = index;
-
-    questions.forEach((q, i) => {
-      q.classList.toggle("active", i === index);
-    });
-
-    doneBlock.hidden = true;
-    updateProgress();
-
-    navPrev.disabled = index === 0;
-    navNext.disabled = index === questions.length - 1;
-  }
-
-  function showDone(){
-    questions.forEach((q) => q.classList.remove("active"));
-    doneBlock.hidden = false;
-    progress.textContent = `Questões concluídas`;
-    navPrev.disabled = true;
-    navNext.disabled = true;
-  }
-
-  questions.forEach((questionEl, questionIndex) => {
-    const options = Array.from(questionEl.querySelectorAll(".cap2-p19Options button"));
-    const confirmBtn = questionEl.querySelector('[data-p19-action="confirm"]');
-    const resetBtn = questionEl.querySelector('[data-p19-action="reset"]');
-    const feedbackEl = questionEl.querySelector(".cap2-p19Feedback");
-    const feedbackMap = parseFeedbackMap(questionEl);
-
-    let selectedAnswer = null;
-    let confirmed = false;
-
-    function resetQuestion(){
-      selectedAnswer = null;
-      confirmed = false;
-
-      options.forEach((option) => {
-        option.classList.remove("is-selected", "is-correct", "is-wrong");
-        option.disabled = false;
-      });
-
-      confirmBtn.disabled = true;
-      resetBtn.hidden = true;
-
-      feedbackEl.className = "cap2-p19Feedback";
-      feedbackEl.innerHTML = "";
-    }
-
-    options.forEach((option) => {
-      option.addEventListener("click", () => {
-        if(confirmed) return;
-
-        options.forEach((btn) => btn.classList.remove("is-selected"));
-        option.classList.add("is-selected");
-        selectedAnswer = option.dataset.answer || null;
-        confirmBtn.disabled = !selectedAnswer;
-      });
-    });
-
-    confirmBtn.addEventListener("click", () => {
-      if(!selectedAnswer || confirmed) return;
-
-      confirmed = true;
-
-      const selectedBtn = options.find((btn) => btn.dataset.answer === selectedAnswer);
-      const correctBtn = options.find((btn) => btn.hasAttribute("data-correct"));
-      const data = feedbackMap[selectedAnswer];
-
-      options.forEach((btn) => {
-        btn.disabled = true;
-        if(btn === correctBtn) btn.classList.add("is-correct");
-      });
-
-      if(selectedBtn && selectedBtn !== correctBtn){
-        selectedBtn.classList.add("is-wrong");
-      }
-
-      if(data){
-        feedbackEl.className = `cap2-p19Feedback is-visible ${data.type === "correct" ? "is-correct" : "is-error"}`;
-        feedbackEl.innerHTML = `
-          <p class="cap2-p19FeedbackTitle">${data.title}</p>
-          <p class="cap2-p19FeedbackText">${data.text}</p>
-        `;
-      }
-
-      confirmBtn.disabled = true;
-      resetBtn.hidden = false;
-
-      const isLastQuestion = questionIndex === questions.length - 1;
-      const allAnswered = questions.every((q) => {
-        const btn = q.querySelector('[data-p19-action="reset"]');
-        return btn && btn.hidden === false;
-      });
-
-      if(isLastQuestion && allAnswered){
-        setTimeout(showDone, 300);
-      }
-    });
-
-    resetBtn.addEventListener("click", resetQuestion);
-
-    resetQuestion();
+  let current = 0;
+  const responses = situations.map(function(){
+    return {selected:null, confirmed:false};
   });
 
-  navPrev.addEventListener("click", () => {
-    if(currentIndex > 0){
-      showQuestion(currentIndex - 1);
+  function updateNavigation(){
+    const response = responses[current];
+
+    prevButton.disabled = current === 0;
+    nextButton.disabled =
+      current === situations.length - 1 || !response.confirmed;
+
+    nextButton.textContent =
+      current === situations.length - 1
+        ? "Última situação"
+        : "Próxima situação →";
+
+    dots.forEach(function(dot, index){
+      dot.classList.toggle("is-active", index === current);
+      dot.classList.toggle("is-answered", responses[index].confirmed);
+    });
+  }
+
+  function showConfirmedState(item, response){
+    const buttons = Array.from(
+      optionsBox.querySelectorAll("[data-answer]")
+    );
+    const isCorrect = response.selected === item.correct;
+
+    buttons.forEach(function(button){
+      button.disabled = true;
+      button.classList.remove("is-selected", "is-correct", "is-error");
+
+      if(button.dataset.answer === item.correct){
+        button.classList.add("is-correct");
+      }
+
+      if(button.dataset.answer === response.selected && !isCorrect){
+        button.classList.add("is-error");
+      }
+    });
+
+    feedback.className =
+      "cap2-p19Feedback is-visible " +
+      (isCorrect ? "is-correct" : "is-error");
+
+    feedback.innerHTML = `
+      <strong>${isCorrect
+        ? "Interpretação mais adequada."
+        : "Considere novamente os dados."}</strong>
+      <p>${item.feedback[response.selected]}</p>
+    `;
+
+    confirmButton.hidden = true;
+    resetButton.hidden = false;
+  }
+
+  function render(){
+    const item = situations[current];
+    const response = responses[current];
+    const letters = ["A", "B", "C", "D"];
+
+    progress.textContent =
+      "Situação " + (current + 1) + " de " + situations.length;
+    kicker.textContent = "Situação clínica " + (current + 1);
+    caseBox.innerHTML = item.caseText;
+    prompt.textContent = item.prompt;
+
+    optionsBox.innerHTML = item.options.map(function(option, index){
+      return `
+        <button type="button" data-answer="${option.key}">
+          <span class="cap2-p19Letter">${letters[index]}</span>
+          <span>${option.label}</span>
+        </button>
+      `;
+    }).join("");
+
+    feedback.className = "cap2-p19Feedback";
+    feedback.innerHTML = "";
+    confirmButton.hidden = false;
+    confirmButton.disabled = !response.selected;
+    resetButton.hidden = true;
+
+    const buttons = Array.from(
+      optionsBox.querySelectorAll("[data-answer]")
+    );
+
+    buttons.forEach(function(button){
+      if(!response.confirmed && button.dataset.answer === response.selected){
+        button.classList.add("is-selected");
+      }
+
+      button.addEventListener("click", function(){
+        if(response.confirmed) return;
+
+        response.selected = button.dataset.answer;
+
+        buttons.forEach(function(itemButton){
+          itemButton.classList.toggle(
+            "is-selected",
+            itemButton === button
+          );
+        });
+
+        confirmButton.disabled = false;
+      });
+    });
+
+    if(response.confirmed){
+      showConfirmedState(item, response);
+    }
+
+    updateNavigation();
+  }
+
+  confirmButton.addEventListener("click", function(){
+    const response = responses[current];
+
+    if(!response.selected) return;
+
+    response.confirmed = true;
+    showConfirmedState(situations[current], response);
+    updateNavigation();
+  });
+
+  resetButton.addEventListener("click", function(){
+    responses[current] = {selected:null, confirmed:false};
+    render();
+  });
+
+  prevButton.addEventListener("click", function(){
+    if(current > 0){
+      current -= 1;
+      render();
     }
   });
 
-  navNext.addEventListener("click", () => {
-    if(currentIndex < questions.length - 1){
-      showQuestion(currentIndex + 1);
+  nextButton.addEventListener("click", function(){
+    if(
+      current < situations.length - 1 &&
+      responses[current].confirmed
+    ){
+      current += 1;
+      render();
     }
   });
 
-  showQuestion(0);
+  render();
 })();

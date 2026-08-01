@@ -2,12 +2,17 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Capítulo 5 — Página 51</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -19,131 +24,416 @@
   <main class="page-shell">
 
     <header class="page-header">
-      <div class="chapter">Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma</div>
-      <h1 class="page-title">Erros frequentes e limites da interpretação do antibiograma</h1>
+      <div class="chapter">
+        Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma
+      </div>
+
+      <h1 class="page-title">
+        Carbapenemases
+      </h1>
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <section class="prose cap5-p51-reading">
 
       <p>
-        A interpretação inadequada do antibiograma costuma ocorrer quando o laudo é analisado de forma fragmentada. O exame fornece informações microbiológicas padronizadas, mas sua leitura exige integração com outros elementos do processo diagnóstico <sup>1,2</sup>.
+        Os carbapenêmicos, como meropenem, imipenem e ertapenem, estão entre os β-lactâmicos de maior espectro utilizados no tratamento de infecções graves causadas por bacilos Gram-negativos. Algumas bactérias, entretanto, adquiriram enzimas capazes de comprometer a atividade desses antimicrobianos, denominadas carbapenemases <sup>1,3,6</sup>.
       </p>
 
-      <section class="cap5-p51-map" aria-labelledby="cap5-p51-map-title">
-        <div class="cap5-p51-map__head">
-          <h3 id="cap5-p51-map-title">Armadilhas interpretativas mais frequentes</h3>
-          <p>
-            Cada erro abaixo surge quando um único elemento do laudo passa a ser lido isoladamente. A interpretação adequada depende de recompor o significado microbiológico do resultado antes de transformá-lo em decisão terapêutica.
-          </p>
-        </div>
+      <p>
+        Na rotina laboratorial, mecanismos como KPC, NDM e OXA-48-like podem ser informados explicitamente no laudo microbiológico. Essa observação acrescenta uma informação que modifica a interpretação do antibiograma e deve ser considerada antes da definição terapêutica <sup>3,4,8</sup>.
+      </p>
 
-        <div class="cap5-p51-map__controls" role="tablist" aria-label="Erros frequentes na interpretação do antibiograma">
-          <button
-            class="cap5-p51-map__tab is-active"
-            type="button"
-            role="tab"
-            aria-selected="true"
-            data-p51-step="1"
-          >
-            <span class="cap5-p51-map__n">1</span>
-            <span class="cap5-p51-map__label">“Mais sensível” = melhor</span>
-          </button>
+      <section
+        class="cap5-p51-report cap5-p51-reveal"
+        aria-label="Exemplo de laudo com carbapenemase"
+      >
+        <span class="cap5-p51-reportLabel">
+          Hemocultura
+        </span>
 
-          <button
-            class="cap5-p51-map__tab"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            data-p51-step="2"
-          >
-            <span class="cap5-p51-map__n">2</span>
-            <span class="cap5-p51-map__label">“I” = ineficaz</span>
-          </button>
+        <strong>
+          <em>Klebsiella pneumoniae</em>
+        </strong>
 
-          <button
-            class="cap5-p51-map__tab"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            data-p51-step="3"
-          >
-            <span class="cap5-p51-map__n">3</span>
-            <span class="cap5-p51-map__label">CIM isolada</span>
-          </button>
+        <p>
+          KPC positiva
+        </p>
 
-          <button
-            class="cap5-p51-map__tab"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            data-p51-step="4"
-          >
-            <span class="cap5-p51-map__n">4</span>
-            <span class="cap5-p51-map__label">Ignorar observações</span>
-          </button>
-
-          <button
-            class="cap5-p51-map__tab"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            data-p51-step="5"
-          >
-            <span class="cap5-p51-map__n">5</span>
-            <span class="cap5-p51-map__label">Painel incompleto = esquecimento</span>
-          </button>
-
-          <button
-            class="cap5-p51-map__tab"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            data-p51-step="6"
-          >
-            <span class="cap5-p51-map__n">6</span>
-            <span class="cap5-p51-map__label">Confundir <em>in vitro</em> com decisão clínica</span>
-          </button>
-        </div>
-
-        <div class="cap5-p51-map__panel" aria-live="polite">
-          <div class="cap5-p51-map__eyebrow" id="cap5-p51-eyebrow">Erro frequente de leitura</div>
-          <h3 class="cap5-p51-map__title" id="cap5-p51-title">
-            Supor que o antibiograma estabelece uma hierarquia entre antibacterianos
-          </h3>
-
-          <div class="cap5-p51-map__body" id="cap5-p51-body">
-            <p>
-              Um equívoco frequente é assumir que o antibiograma estabelece uma hierarquia entre antibacterianos ou que determinados agentes seriam “mais eficazes” por apresentarem resultados favoráveis no teste. Na prática, cada antibacteriano é avaliado individualmente, e as categorias interpretativas indicam probabilidade de inibição bacteriana sob condições específicas de exposição, não permitindo comparações diretas de superioridade entre diferentes fármacos <sup>1,8</sup>.
-            </p>
-          </div>
-
-          <div class="cap5-p51-map__note" id="cap5-p51-note">
-            O laudo informa comportamento microbiológico padronizado, não um ranking terapêutico entre fármacos.
-          </div>
+        <div class="cap5-p51-reportQuestion">
+          O que essa observação acrescenta ao resultado microbiológico?
         </div>
       </section>
 
       <p>
-        Por essas razões, o resultado do teste de sensibilidade deve ser compreendido como uma estimativa microbiológica obtida <em>in vitro</em>. A decisão terapêutica depende da integração desse dado com o foco infeccioso, as características do paciente e o contexto clínico em que a infecção ocorre <sup>1,2</sup>.
+        Antes mesmo de analisar detalhadamente todos os antimicrobianos testados, o clínico já reconhece que o isolado apresenta um mecanismo de resistência com potencial para reduzir a atividade dos carbapenêmicos e de outros β-lactâmicos.
       </p>
 
-      <p>
-        A leitura adequada do antibiograma exige reconhecer tanto o valor quanto as limitações do teste, evitando interpretações simplificadas baseadas em um único elemento do laudo.
-      </p>
+      <figure class="cap5-p51-mainFigure cap5-p51-reveal">
+
+        <button
+          class="cap5-p51-mainZoom"
+          type="button"
+          data-zoom="../../assets/capitulo-05/imagens/carbapenemases_kpc_ndm_oxa48.png"
+          aria-label="Ampliar comparação entre KPC, NDM e OXA-48-like"
+        >
+          <img
+            src="../../assets/capitulo-05/imagens/carbapenemases_kpc_ndm_oxa48.png"
+            alt="Comparação entre as carbapenemases KPC, NDM e OXA-48-like"
+            loading="lazy"
+          />
+        </button>
+
+        <figcaption>
+          Principais classes de carbapenemases e suas características microbiológicas.
+        </figcaption>
+
+      </figure>
+
+      <section
+        class="cap5-p51-interpretation cap5-p51-reveal"
+        data-cap5-p51-flow
+        aria-labelledby="cap5P51FlowTitle"
+      >
+
+        <div class="cap5-p51-flowHeader">
+
+          <span class="cap5-p51-flowEyebrow">
+            Leitura orientada do laudo
+          </span>
+
+          <h2 id="cap5P51FlowTitle">
+            Como interpretar a informação “KPC positiva”?
+          </h2>
+
+          <p>
+            Percorra as etapas para observar como a identificação do mecanismo modifica o raciocínio clínico.
+          </p>
+
+        </div>
+
+        <div
+          class="cap5-p51-flow"
+          role="tablist"
+          aria-label="Etapas da interpretação de uma carbapenemase"
+        >
+
+          <button
+            class="cap5-p51-flowStep is-active"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            tabindex="0"
+            data-p51-step="identification"
+          >
+            <span>1</span>
+
+            <strong>
+              Identificação
+            </strong>
+
+            <small>
+              Qual bactéria foi isolada?
+            </small>
+          </button>
+
+          <b aria-hidden="true">→</b>
+
+          <button
+            class="cap5-p51-flowStep"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            tabindex="-1"
+            data-p51-step="mechanism"
+          >
+            <span>2</span>
+
+            <strong>
+              Mecanismo informado
+            </strong>
+
+            <small>
+              Qual carbapenemase foi detectada?
+            </small>
+          </button>
+
+          <b aria-hidden="true">→</b>
+
+          <button
+            class="cap5-p51-flowStep"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            tabindex="-1"
+            data-p51-step="panel"
+          >
+            <span>3</span>
+
+            <strong>
+              Leitura do painel
+            </strong>
+
+            <small>
+              Quais agentes permanecem ativos?
+            </small>
+          </button>
+
+          <b aria-hidden="true">→</b>
+
+          <button
+            class="cap5-p51-flowStep"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            tabindex="-1"
+            data-p51-step="context"
+          >
+            <span>4</span>
+
+            <strong>
+              Contexto clínico
+            </strong>
+
+            <small>
+              Qual é o foco e a gravidade?
+            </small>
+          </button>
+
+          <b aria-hidden="true">→</b>
+
+          <button
+            class="cap5-p51-flowStep"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            tabindex="-1"
+            data-p51-step="therapy"
+          >
+            <span>5</span>
+
+            <strong>
+              Terapia dirigida
+            </strong>
+
+            <small>
+              Qual opção possui atividade prevista?
+            </small>
+          </button>
+
+        </div>
+
+        <article
+          class="cap5-p51-flowPanel"
+          id="cap5P51FlowPanel"
+          aria-live="polite"
+        >
+
+          <span
+            id="cap5P51FlowKicker"
+            class="cap5-p51-flowKicker"
+          >
+            Etapa 1
+          </span>
+
+          <h3
+            id="cap5P51FlowPanelTitle"
+            class="cap5-p51-flowPanelTitle"
+          >
+            A espécie fornece o contexto inicial
+          </h3>
+
+          <p
+            id="cap5P51FlowText"
+            class="cap5-p51-flowText"
+          >
+            A identificação de <em>Klebsiella pneumoniae</em> direciona o raciocínio para uma Enterobacterales com relevância clínica e epidemiológica na disseminação de mecanismos de resistência.
+          </p>
+
+        </article>
+
+      </section>
+
+      <section
+        class="cap5-p51-clinical cap5-p51-reveal"
+        aria-labelledby="cap5P51ClinicalTitle"
+      >
+
+        <h2 id="cap5P51ClinicalTitle">
+          O que deve orientar a decisão?
+        </h2>
+
+        <div class="cap5-p51-clinicalGrid">
+
+          <article>
+            <span>Espécie bacteriana</span>
+
+            <p>
+              O significado do mecanismo deve ser interpretado dentro do comportamento microbiológico da espécie isolada.
+            </p>
+          </article>
+
+          <article>
+            <span>Perfil completo de suscetibilidade</span>
+
+            <p>
+              A presença da carbapenemase não substitui a leitura das categorias S, I e R dos agentes testados.
+            </p>
+          </article>
+
+          <article>
+            <span>Sítio e gravidade da infecção</span>
+
+            <p>
+              Bacteremia, pneumonia, infecção urinária ou foco abdominal podem exigir estratégias terapêuticas diferentes.
+            </p>
+          </article>
+
+          <article>
+            <span>Atividade contra o mecanismo</span>
+
+            <p>
+              A escolha deve considerar se o antibacteriano ou a combinação possui atividade prevista contra a enzima identificada.
+            </p>
+          </article>
+
+        </div>
+
+      </section>
+
+      <section
+        class="cap5-p51-case cap5-p51-reveal"
+        data-cap5-p51-case
+        aria-labelledby="cap5P51CaseTitle"
+      >
+
+        <div class="cap5-p51-caseHeader">
+
+          <span class="cap5-p51-caseEyebrow">
+            Aplicação clínica
+          </span>
+
+          <h2 id="cap5P51CaseTitle">
+            Qual princípio deve orientar a interpretação?
+          </h2>
+
+        </div>
+
+        <div class="cap5-p51-caseReport">
+
+          <span>Paciente com sepse de origem urinária</span>
+
+          <strong>
+            <em>Klebsiella pneumoniae</em>
+          </strong>
+
+          <p>
+            KPC positiva
+          </p>
+
+        </div>
+
+        <div
+          class="cap5-p51-caseOptions"
+          role="group"
+          aria-label="Alternativas para interpretação do laudo"
+        >
+
+          <button
+            class="cap5-p51-caseOption"
+            type="button"
+            data-p51-answer="all"
+          >
+            <span>A</span>
+
+            <p>
+              A presença de KPC significa que todos os antibacterianos são ineficazes.
+            </p>
+          </button>
+
+          <button
+            class="cap5-p51-caseOption"
+            type="button"
+            data-p51-answer="ignore"
+          >
+            <span>B</span>
+
+            <p>
+              A informação de KPC pode ser ignorada quando algum agente aparece como sensível.
+            </p>
+          </button>
+
+          <button
+            class="cap5-p51-caseOption"
+            type="button"
+            data-p51-answer="integrate"
+          >
+            <span>C</span>
+
+            <p>
+              O mecanismo identificado deve ser integrado ao perfil de suscetibilidade, ao foco infeccioso e à atividade prevista do tratamento contra essa enzima.
+            </p>
+          </button>
+
+          <button
+            class="cap5-p51-caseOption"
+            type="button"
+            data-p51-answer="same"
+          >
+            <span>D</span>
+
+            <p>
+              KPC, NDM e OXA-48-like devem ser interpretadas como mecanismos equivalentes.
+            </p>
+          </button>
+
+        </div>
+
+        <div
+          id="cap5P51CaseFeedback"
+          class="cap5-p51-caseFeedback"
+          hidden
+          aria-live="polite"
+        ></div>
+
+      </section>
+
+      <aside class="cap5-p51-epidemiology cap5-p51-reveal">
+        A identificação de carbapenemases também possui relevância epidemiológica. Esses mecanismos podem estar associados à disseminação hospitalar e exigir comunicação às equipes responsáveis pela prevenção e pelo controle de infecções.
+      </aside>
+
+      <aside class="cap5-p51-principle cap5-p51-reveal">
+        A presença de uma carbapenemase não significa que todos os antibacterianos sejam ineficazes. Ela indica que o mecanismo deve ser integrado à espécie, ao antibiograma, ao sítio da infecção e à atividade prevista das opções terapêuticas disponíveis.
+      </aside>
 
     </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p50.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 5 · Página 51 de 89</div>
-  <a class="btn primary" href="p52.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
 
+      <a
+        class="btn"
+        href="p50.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 5 · Página 51 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p52.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+
+    </nav>
 
   </main>
 
   <script src="../../js/app.js"></script>
   <script src="../../js/capitulo-05.js"></script>
-
 </body>
 </html>

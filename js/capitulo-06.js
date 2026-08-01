@@ -1,581 +1,1332 @@
 /* =========================
-   PÁGINA 54
+   PÁGINA 54 — POR QUE ASSOCIAR ANTIBACTERIANOS?
    ========================= */
-
-// Nenhuma interação específica necessária.
-// Utiliza apenas:
-// - Lightbox global (app.js)
-// - Paginação global
 
 (function initCap6Page54(){
-  // Página intencionalmente limpa para manter fluidez cognitiva
-})();
 
-/* =========================
-   PÁGINA 55 — INTERAÇÕES
-   ========================= */
+  const root =
+    document.querySelector(".cap6-page54");
 
-(function initCap6Page55Interactions(){
-  const root = document.querySelector("[data-cap6-p55]");
   if(!root) return;
 
-  const tabs = Array.from(root.querySelectorAll("[data-p55-tab]"));
-  const title = root.querySelector("[data-p55-title]");
-  const lead = root.querySelector("[data-p55-lead]");
-  const summary = root.querySelector("[data-p55-summary]");
-  const barA = root.querySelector("[data-p55-bar-a]");
-  const barB = root.querySelector("[data-p55-bar-b]");
-  const barCombo = root.querySelector("[data-p55-bar-combo]");
+  const interaction =
+    root.querySelector("[data-cap6-p54]");
 
-  if(!tabs.length || !title || !lead || !summary || !barA || !barB || !barCombo) return;
+  if(!interaction) return;
 
-  const map = {
-    sinergismo: {
-      title: "Sinergismo",
-      lead: "A combinação produz atividade antimicrobiana superior à obtida com cada antibacteriano isoladamente.",
-      summary: "A ação de um agente favorece ou potencializa a atividade do outro, podendo acelerar a redução da carga bacteriana em contextos específicos.",
-      widths: { a: "48%", b: "42%", combo: "86%" }
+  const answers = Array.from(
+    interaction.querySelectorAll("[data-p54-answer]")
+  );
+
+  const feedback =
+    interaction.querySelector("[data-p54-feedback]");
+
+  if(!answers.length || !feedback) return;
+
+  const content = {
+
+    quantidade:{
+      correct:false,
+
+      title:
+        "Mais antibacterianos não significam maior eficácia.",
+
+      text:
+        "A combinação não deve ser mantida apenas porque contém dois agentes. Sem um objetivo microbiológico ou clínico definido, a associação pode aumentar toxicidade, pressão seletiva e alterações da microbiota sem oferecer benefício proporcional."
     },
-    aditivo: {
-      title: "Efeito aditivo",
-      lead: "A combinação produz resultado equivalente à soma das atividades individuais de cada antibacteriano.",
-      summary: "Não há interação biológica relevante entre os agentes. O efeito observado reflete a contribuição independente de cada fármaco.",
-      widths: { a: "42%", b: "38%", combo: "66%" }
-    },
-    indiferenca: {
-      title: "Indiferença",
-      lead: "A associação não altera de forma significativa a resposta obtida com monoterapia adequada.",
-      summary: "A presença de dois agentes ativos não modifica substancialmente a dinâmica infecciosa nem acrescenta benefício consistente.",
-      widths: { a: "62%", b: "56%", combo: "62%" }
-    },
-    antagonismo: {
-      title: "Antagonismo",
-      lead: "A combinação reduz a eficácia global porque a ação de um agente interfere no mecanismo necessário para a atividade do outro.",
-      summary: "O resultado combinado torna-se inferior ao esperado, ilustrando que associação antibacteriana não corresponde automaticamente a maior eficácia.",
-      widths: { a: "64%", b: "54%", combo: "36%" }
+
+    objetivo:{
+      correct:true,
+
+      title:
+        "Interpretação adequada.",
+
+      text:
+        "A associação deve responder a uma finalidade específica: ampliar a cobertura empírica, obter sinergismo comprovado, reduzir a seleção de resistência em situações bem estabelecidas ou tratar uma infecção polimicrobiana."
     }
+
   };
 
-  function activate(key){
-    const item = map[key];
-    if(!item) return;
+  answers.forEach(function(button){
 
-    tabs.forEach(tab => {
-      tab.setAttribute("aria-selected", tab.dataset.p55Tab === key ? "true" : "false");
+    button.addEventListener("click", function(){
+
+      const key =
+        button.dataset.p54Answer;
+
+      const selected =
+        content[key];
+
+      if(!selected) return;
+
+      answers.forEach(function(item){
+
+        item.classList.remove(
+          "is-correct",
+          "is-wrong"
+        );
+
+      });
+
+      button.classList.add(
+        selected.correct
+          ? "is-correct"
+          : "is-wrong"
+      );
+
+      feedback.className =
+        "cap6-p54-case__feedback " +
+        (
+          selected.correct
+            ? "is-correct"
+            : "is-wrong"
+        );
+
+      feedback.innerHTML = `
+        <strong>${selected.title}</strong>
+        <p>${selected.text}</p>
+      `;
+
     });
 
-    title.textContent = item.title;
-    lead.textContent = item.lead;
-    summary.textContent = item.summary;
-
-    barA.style.width = item.widths.a;
-    barB.style.width = item.widths.b;
-    barCombo.style.width = item.widths.combo;
-  }
-
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => activate(tab.dataset.p55Tab));
   });
 
-  activate("sinergismo");
-})();
-/* =========================
-   PÁGINA 56 — COBERTURA
-   ========================= */
+  const revealItems =
+    root.querySelectorAll(".cap6-p54-reveal");
 
-(function initCap6Page56Coverage(){
-  const root = document.querySelector("[data-cap6-p56]");
-  if(!root) return;
+  if(!("IntersectionObserver" in window)){
 
-  const tabs = Array.from(root.querySelectorAll("[data-p56-tab]"));
-  const title = root.querySelector("[data-p56-title]");
-  const lead = root.querySelector("[data-p56-lead]");
-  const summary = root.querySelector("[data-p56-summary]");
+    revealItems.forEach(function(item){
 
-  const aGp = root.querySelector("[data-p56-a-gp]");
-  const aGn = root.querySelector("[data-p56-a-gn]");
-  const aAna = root.querySelector("[data-p56-a-ana]");
-  const bGp = root.querySelector("[data-p56-b-gp]");
-  const bGn = root.querySelector("[data-p56-b-gn]");
-  const bAna = root.querySelector("[data-p56-b-ana]");
+      item.classList.add("is-visible");
 
-  if(!tabs.length || !title || !lead || !summary || !aGp || !aGn || !aAna || !bGp || !bGn || !bAna) return;
-
-  const segments = [aGp, aGn, aAna, bGp, bGn, bAna];
-
-  const map = {
-    complementar: {
-      title: "Cobertura complementar",
-      lead: "Cada antibacteriano amplia o espectro global ao cobrir grupos bacterianos distintos, o que pode ser útil diante de incerteza diagnóstica relevante.",
-      summary: "Nesta situação, a associação amplia a cobertura porque cada agente alcança grupos bacterianos diferentes. O objetivo é reduzir o risco inicial de cobertura insuficiente, e não manter dois agentes indefinidamente.",
-      on: ["aGp", "bGn", "bAna"]
-    },
-    duplicada: {
-      title: "Duplicação de espectro",
-      lead: "Os dois agentes atuam sobre grupos bacterianos semelhantes, produzindo sobreposição de cobertura sem benefício proporcional claro.",
-      summary: "Aqui a associação tende a aumentar exposição farmacológica e pressão seletiva sem ampliar de modo relevante a chance de cobertura adequada. Quando dados clínicos e microbiológicos permitem, essa redundância perde justificativa biológica.",
-      on: ["aGp", "aGn", "bGp", "bGn"]
-    }
-  };
-
-  function clearSegments(){
-    segments.forEach(seg => seg.classList.remove("is-on"));
-  }
-
-  function activateSegments(keys){
-    const ref = { aGp, aGn, aAna, bGp, bGn, bAna };
-    keys.forEach(key => {
-      if(ref[key]) ref[key].classList.add("is-on");
-    });
-  }
-
-  function activate(key){
-    const item = map[key];
-    if(!item) return;
-
-    tabs.forEach(tab => {
-      tab.setAttribute("aria-selected", tab.dataset.p56Tab === key ? "true" : "false");
     });
 
-    title.textContent = item.title;
-    lead.textContent = item.lead;
-    summary.textContent = item.summary;
+    return;
 
-    clearSegments();
-    activateSegments(item.on);
   }
 
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => activate(tab.dataset.p56Tab));
-  });
+  const observer =
+    new IntersectionObserver(
 
-  activate("complementar");
-})();
-/* =========================
-   PÁGINA 57 — RESISTÊNCIA
-   ========================= */
+      function(entries){
 
-(function initCap6Page57Resistance(){
-  const root = document.querySelector("[data-cap6-p57]");
-  if(!root) return;
+        entries.forEach(function(entry){
 
-  const tabs = Array.from(root.querySelectorAll("[data-p57-tab]"));
-  const title = root.querySelector("[data-p57-title]");
-  const lead = root.querySelector("[data-p57-lead]");
-  const summary = root.querySelector("[data-p57-summary]");
-  const initialBox = root.querySelector("[data-p57-initial]");
-  const finalBox = root.querySelector("[data-p57-final]");
+          if(!entry.isIntersecting) return;
 
-  if(!tabs.length || !title || !lead || !summary || !initialBox || !finalBox) return;
+          entry.target.classList.add(
+            "is-visible"
+          );
 
-  const map = {
-    mono: {
-      title: "Monoterapia",
-      lead: "Quando apenas um antibacteriano é utilizado, subpopulações com menor suscetibilidade a esse agente podem sobreviver e expandir-se se a exposição não for plenamente supressiva.",
-      summary: "Neste cenário, a pressão seletiva recai sobre um único alvo. Se a exposição for insuficiente para suprimir toda a população, variantes menos suscetíveis podem persistir e tornar-se proporcionalmente mais frequentes.",
-      initial: { sens: 28, less: 6, multi: 0 },
-      final: { sens: 6, less: 14, multi: 0 }
-    },
-    combo: {
-      title: "Terapia combinada",
-      lead: "Quando dois agentes com alvos independentes são utilizados simultaneamente, a sobrevivência passa a exigir adaptação contra ambos, o que pode reduzir a probabilidade de expansão de variantes resistentes em contextos específicos.",
-      summary: "A associação pode reduzir a chance de que subpopulações menos suscetíveis escapem durante o tratamento, mas esse benefício depende de carga bacteriana, exposição adequada e características biológicas do patógeno.",
-      initial: { sens: 28, less: 6, multi: 2 },
-      final: { sens: 3, less: 2, multi: 1 }
-    }
-  };
+          observer.unobserve(
+            entry.target
+          );
 
-  function makeDot(type){
-    const dot = document.createElement("span");
-    dot.className = `cap6-p57-particle cap6-p57-particle--${type}`;
-    return dot;
-  }
+        });
 
-  function fillBox(box, counts){
-    box.innerHTML = "";
-    ["sens", "less", "multi"].forEach(type => {
-      const total = counts[type] || 0;
-      for(let i = 0; i < total; i++){
-        box.appendChild(makeDot(type));
+      },
+
+      {
+        threshold:0.18,
+        rootMargin:"0px 0px -40px 0px"
       }
-    });
-  }
 
-  function activate(key){
-    const item = map[key];
-    if(!item) return;
+    );
 
-    tabs.forEach(tab => {
-      tab.setAttribute("aria-selected", tab.dataset.p57Tab === key ? "true" : "false");
-    });
+  revealItems.forEach(function(item){
 
-    title.textContent = item.title;
-    lead.textContent = item.lead;
-    summary.textContent = item.summary;
+    observer.observe(item);
 
-    fillBox(initialBox, item.initial);
-    fillBox(finalBox, item.final);
-  }
-
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => activate(tab.dataset.p57Tab));
   });
 
-  activate("mono");
 })();
-
 /* =========================
-   PÁGINA 58 — PK/PD
+   PÁGINA 55 — INTERAÇÃO ENTRE ANTIBACTERIANOS
    ========================= */
 
-(function initCap6Page58PKPD(){
-  const root = document.querySelector("[data-cap6-p58]");
+(function initCap6Page55(){
+
+  const root =
+    document.querySelector(".cap6-page55");
+
   if(!root) return;
 
-  const tabs = Array.from(root.querySelectorAll("[data-p58-tab]"));
-  const title = root.querySelector("[data-p58-title]");
-  const lead = root.querySelector("[data-p58-lead]");
-  const summary = root.querySelector("[data-p58-summary]");
-  const curve = root.querySelector("[data-p58-curve]");
-  const badge = root.querySelector("[data-p58-badge]");
-  const pressure = root.querySelector("[data-p58-pressure]");
-  const control = root.querySelector("[data-p58-control]");
+  const interaction =
+    root.querySelector("[data-cap6-p55]");
 
-  if(!tabs.length || !title || !lead || !summary || !curve || !badge || !pressure || !control) return;
+  if(!interaction) return;
 
-  const map = {
-    subexp: {
-      title: "Exposição insuficiente",
-      lead: "O antibacteriano é administrado, mas a concentração no sítio infeccioso permanece abaixo do nível necessário para supressão efetiva da população bacteriana.",
-      summary: "Quando a exposição local é inadequada, o patógeno permanece sob pressão incompleta. Nessa situação, o problema central não é ausência de um segundo fármaco, mas falha de exposição do regime inicial.",
-      curve: "M60 178 C120 168, 160 160, 210 154 S315 150, 370 156 S470 168, 610 178",
-      stroke: "#94a3b8",
-      badgeText: "Insuficiente",
-      badgeClass: "cap6-p58-badge cap6-p58-badge--warn",
-      pressure: "Intermediária",
-      control: "Inconsistente"
+  const answers = Array.from(
+    interaction.querySelectorAll("[data-p55-answer]")
+  );
+
+  const feedback =
+    interaction.querySelector("[data-p55-feedback]");
+
+  if(!answers.length || !feedback) return;
+
+  const content = {
+
+    suficiente:{
+      correct:false,
+
+      title:
+        "O resultado laboratorial não define sozinho a indicação.",
+
+      text:
+        "O sinergismo descreve uma interação observada em condições experimentais, mas não comprova automaticamente benefício clínico. A associação deve possuir indicação específica, sustentada por evidências e pelo contexto da infecção."
     },
-    add: {
-      title: "Adicionar outro agente",
-      lead: "A introdução de um segundo antibacteriano aumenta a exposição farmacológica global, mas não corrige automaticamente a falha estrutural do regime inicial nem garante erradicação consistente.",
-      summary: "Sem correção da dose, do intervalo, da via ou da penetração tecidual, a combinação pode apenas ampliar a pressão seletiva sobre a população bacteriana sem resolver a falha central de exposição.",
-      curve: "M60 178 C120 166, 160 154, 210 146 S300 142, 360 148 S465 160, 610 170",
-      stroke: "#0e7490",
-      badgeText: "Parcial",
-      badgeClass: "cap6-p58-badge cap6-p58-badge--mixed",
-      pressure: "Ampliada",
-      control: "Ainda incerto"
-    },
-    opt: {
-      title: "Otimizar o regime",
-      lead: "Ajustar dose, intervalo, via de administração e condições de penetração no foco infeccioso aborda diretamente o determinante farmacológico da falha terapêutica.",
-      summary: "A intensificação racional começa com correção da exposição local e reavaliação do foco infeccioso. Só depois disso a ampliação farmacológica pode ser discutida de modo biologicamente consistente.",
-      curve: "M60 172 C110 118, 150 95, 210 84 S320 88, 372 96 S470 120, 610 170",
-      stroke: "#1abc9c",
-      badgeText: "Adequada",
-      badgeClass: "cap6-p58-badge cap6-p58-badge--ok",
-      pressure: "Supressiva",
-      control: "Mais consistente"
+
+    contexto:{
+      correct:true,
+
+      title:
+        "Interpretação adequada.",
+
+      text:
+        "Os resultados de estudos in vitro ajudam a compreender o comportamento da combinação, mas devem ser integrados às evidências clínicas. A indicação depende do microrganismo, do foco infeccioso e do objetivo terapêutico."
     }
+
   };
 
-  function activate(key){
-    const item = map[key];
-    if(!item) return;
+  answers.forEach(function(button){
 
-    tabs.forEach(tab => {
-      tab.setAttribute("aria-selected", tab.dataset.p58Tab === key ? "true" : "false");
+    button.addEventListener("click", function(){
+
+      const key =
+        button.dataset.p55Answer;
+
+      const selected =
+        content[key];
+
+      if(!selected) return;
+
+      answers.forEach(function(item){
+
+        item.classList.remove(
+          "is-correct",
+          "is-wrong"
+        );
+
+      });
+
+      button.classList.add(
+        selected.correct
+          ? "is-correct"
+          : "is-wrong"
+      );
+
+      feedback.className =
+        "cap6-p55-case__feedback " +
+        (
+          selected.correct
+            ? "is-correct"
+            : "is-wrong"
+        );
+
+      feedback.innerHTML = `
+        <strong>${selected.title}</strong>
+        <p>${selected.text}</p>
+      `;
+
     });
 
-    title.textContent = item.title;
-    lead.textContent = item.lead;
-    summary.textContent = item.summary;
-    curve.setAttribute("d", item.curve);
-    curve.style.stroke = item.stroke;
-
-    badge.textContent = item.badgeText;
-    badge.className = item.badgeClass;
-
-    pressure.textContent = item.pressure;
-    control.textContent = item.control;
-  }
-
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => activate(tab.dataset.p58Tab));
   });
 
-  activate("subexp");
+  const revealItems =
+    root.querySelectorAll(".cap6-p55-reveal");
+
+  if(!("IntersectionObserver" in window)){
+
+    revealItems.forEach(function(item){
+
+      item.classList.add("is-visible");
+
+    });
+
+    return;
+
+  }
+
+  const observer =
+    new IntersectionObserver(
+
+      function(entries){
+
+        entries.forEach(function(entry){
+
+          if(!entry.isIntersecting) return;
+
+          entry.target.classList.add(
+            "is-visible"
+          );
+
+          observer.unobserve(
+            entry.target
+          );
+
+        });
+
+      },
+
+      {
+        threshold:0.18,
+        rootMargin:"0px 0px -40px 0px"
+      }
+
+    );
+
+  revealItems.forEach(function(item){
+
+    observer.observe(item);
+
+  });
+
 })();
 /* =========================
-   PÁGINA 59 — CONSEQUÊNCIAS
+   PÁGINA 56 — ASSOCIAÇÃO PARA AMPLIAR A COBERTURA
+   ========================= */
+
+(function initCap6Page56(){
+
+  const root =
+    document.querySelector(".cap6-page56");
+
+  if(!root) return;
+
+  const interaction =
+    root.querySelector("[data-cap6-p56]");
+
+  if(!interaction) return;
+
+  const answers = Array.from(
+    interaction.querySelectorAll("[data-p56-answer]")
+  );
+
+  if(!answers.length) return;
+
+  const content = {
+
+    "complementar-sinergismo":{
+      caseName:"complementar",
+      correct:false,
+
+      title:
+        "O objetivo principal não é o sinergismo.",
+
+      text:
+        "Nesse contexto, a associação é empírica e busca cobrir grupos diferentes de microrganismos enquanto o agente etiológico permanece desconhecido. A demonstração de sinergismo não é a justificativa central."
+    },
+
+    "complementar-cobertura":{
+      caseName:"complementar",
+      correct:true,
+
+      title:
+        "Interpretação adequada: cobertura complementar.",
+
+      text:
+        "O cefepime amplia a cobertura contra bacilos Gram-negativos, incluindo Pseudomonas aeruginosa, enquanto a vancomicina cobre cocos Gram-positivos resistentes, incluindo MRSA. A combinação aumenta a probabilidade de atividade inicial contra o agente responsável."
+    },
+
+    "duplicacao-sim":{
+      caseName:"duplicacao",
+      correct:false,
+
+      title:
+        "Dois antibacterianos não significam dois espectros diferentes.",
+
+      text:
+        "Piperacilina-tazobactam e meropenem apresentam ampla sobreposição de atividade contra Gram-negativos, incluindo Pseudomonas aeruginosa, e anaeróbios. A presença de dois agentes não garante ampliação relevante da cobertura."
+    },
+
+    "duplicacao-nao":{
+      caseName:"duplicacao",
+      correct:true,
+
+      title:
+        "Interpretação adequada: duplicação de espectro.",
+
+      text:
+        "Quando os dois agentes cobrem vários dos mesmos grupos bacterianos, o ganho de cobertura pode ser pequeno. Na ausência de indicação específica, a associação pode aumentar toxicidade, custos e pressão seletiva sem benefício proporcional."
+    }
+
+  };
+
+  answers.forEach(function(button){
+
+    button.addEventListener("click", function(){
+
+      const key =
+        button.dataset.p56Answer;
+
+      const selected =
+        content[key];
+
+      if(!selected) return;
+
+      const currentCase =
+        interaction.querySelector(
+          `[data-p56-case="${selected.caseName}"]`
+        );
+
+      if(!currentCase) return;
+
+      const caseButtons = Array.from(
+        currentCase.querySelectorAll(
+          "[data-p56-answer]"
+        )
+      );
+
+      const feedback =
+        currentCase.querySelector(
+          `[data-p56-feedback="${selected.caseName}"]`
+        );
+
+      if(!feedback) return;
+
+      caseButtons.forEach(function(item){
+
+        item.classList.remove(
+          "is-correct",
+          "is-wrong"
+        );
+
+      });
+
+      button.classList.add(
+        selected.correct
+          ? "is-correct"
+          : "is-wrong"
+      );
+
+      feedback.className =
+        "cap6-p56-case__feedback " +
+        (
+          selected.correct
+            ? "is-correct"
+            : "is-wrong"
+        );
+
+      feedback.innerHTML = `
+        <strong>${selected.title}</strong>
+        <p>${selected.text}</p>
+      `;
+
+    });
+
+  });
+
+  const revealItems =
+    root.querySelectorAll(".cap6-p56-reveal");
+
+  if(!("IntersectionObserver" in window)){
+
+    revealItems.forEach(function(item){
+
+      item.classList.add("is-visible");
+
+    });
+
+    return;
+
+  }
+
+  const observer =
+    new IntersectionObserver(
+
+      function(entries){
+
+        entries.forEach(function(entry){
+
+          if(!entry.isIntersecting) return;
+
+          entry.target.classList.add(
+            "is-visible"
+          );
+
+          observer.unobserve(
+            entry.target
+          );
+
+        });
+
+      },
+
+      {
+        threshold:0.18,
+        rootMargin:"0px 0px -40px 0px"
+      }
+
+    );
+
+  revealItems.forEach(function(item){
+
+    observer.observe(item);
+
+  });
+
+})();
+/* =========================
+   PÁGINA 57 — TRATAMENTO EMPÍRICO E DESCALONAMENTO
+   ========================= */
+
+(function initCap6Page57(){
+
+  const root =
+    document.querySelector(".cap6-page57");
+
+  if(!root) return;
+
+  const interaction =
+    root.querySelector("[data-cap6-p57]");
+
+  if(!interaction) return;
+
+  const answers = Array.from(
+    interaction.querySelectorAll("[data-p57-answer]")
+  );
+
+  const feedback =
+    interaction.querySelector("[data-p57-feedback]");
+
+  if(!answers.length || !feedback) return;
+
+  const content = {
+
+    manter:{
+      correct:false,
+
+      title:
+        "A cobertura empírica deve ser reavaliada.",
+
+      text:
+        "A associação foi utilizada enquanto o agente etiológico era desconhecido. Após a identificação de um único microrganismo suscetível ao cefepime, a vancomicina perde sua justificativa microbiológica. Manter ambos aumenta a exposição sem benefício proporcional."
+    },
+
+    descalonar:{
+      correct:true,
+
+      title:
+        "Interpretação adequada: descalonamento.",
+
+      text:
+        "Quando o agente etiológico e seu perfil de suscetibilidade são conhecidos, o esquema deve ser direcionado. O descalonamento consiste em retirar componentes desnecessários e manter o antibacteriano de menor espectro que permaneça eficaz."
+    }
+
+  };
+
+  answers.forEach(function(button){
+
+    button.addEventListener("click", function(){
+
+      const key =
+        button.dataset.p57Answer;
+
+      const selected =
+        content[key];
+
+      if(!selected) return;
+
+      answers.forEach(function(item){
+
+        item.classList.remove(
+          "is-correct",
+          "is-wrong"
+        );
+
+      });
+
+      button.classList.add(
+        selected.correct
+          ? "is-correct"
+          : "is-wrong"
+      );
+
+      feedback.className =
+        "cap6-p57-case__feedback " +
+        (
+          selected.correct
+            ? "is-correct"
+            : "is-wrong"
+        );
+
+      feedback.innerHTML = `
+        <strong>${selected.title}</strong>
+        <p>${selected.text}</p>
+      `;
+
+    });
+
+  });
+
+  const revealItems =
+    root.querySelectorAll(".cap6-p57-reveal");
+
+  if(!("IntersectionObserver" in window)){
+
+    revealItems.forEach(function(item){
+
+      item.classList.add("is-visible");
+
+    });
+
+    return;
+
+  }
+
+  const observer =
+    new IntersectionObserver(
+
+      function(entries){
+
+        entries.forEach(function(entry){
+
+          if(!entry.isIntersecting) return;
+
+          entry.target.classList.add(
+            "is-visible"
+          );
+
+          observer.unobserve(
+            entry.target
+          );
+
+        });
+
+      },
+
+      {
+        threshold:0.18,
+        rootMargin:"0px 0px -40px 0px"
+      }
+
+    );
+
+  revealItems.forEach(function(item){
+
+    observer.observe(item);
+
+  });
+
+})();
+/* =========================
+   PÁGINA 58 — ASSOCIAÇÃO PARA PREVENIR RESISTÊNCIA
+   ========================= */
+
+(function initCap6Page58(){
+
+  const root =
+    document.querySelector(".cap6-page58");
+
+  if(!root) return;
+
+  const interaction =
+    root.querySelector("[data-cap6-p58]");
+
+  if(!interaction) return;
+
+  const answers = Array.from(
+    interaction.querySelectorAll("[data-p58-case-answer]")
+  );
+
+  if(!answers.length) return;
+
+  const content = {
+
+    "tuberculose-sim":{
+      caseName:"tuberculose",
+      correct:true,
+
+      title:
+        "Interpretação adequada.",
+
+      text:
+        "Na tuberculose, diferentes fármacos são utilizados simultaneamente para reduzir a probabilidade de seleção de mutantes naturalmente resistentes durante o tratamento."
+    },
+
+    "tuberculose-nao":{
+      caseName:"tuberculose",
+      correct:false,
+
+      title:
+        "Reavalie a finalidade da associação.",
+
+      text:
+        "A tuberculose constitui o exemplo clássico em que a prevenção da seleção de resistência é um objetivo direto da terapia combinada."
+    },
+
+    "itu-sim":{
+      caseName:"itu",
+      correct:false,
+
+      title:
+        "A associação não reduz resistência automaticamente.",
+
+      text:
+        "Quando existe um único microrganismo suscetível e um antibacteriano apropriado, acrescentar outro agente geralmente amplia exposição, toxicidade e pressão seletiva sem benefício microbiológico proporcional."
+    },
+
+    "itu-nao":{
+      caseName:"itu",
+      correct:true,
+
+      title:
+        "Interpretação adequada.",
+
+      text:
+        "Nas infecções bacterianas comuns, a monoterapia costuma ser suficiente quando existe um agente ativo. A prevenção da resistência depende principalmente de escolha, dose, duração e controle do foco adequados."
+    }
+
+  };
+
+  answers.forEach(function(button){
+
+    button.addEventListener("click", function(){
+
+      const key =
+        button.dataset.p58CaseAnswer;
+
+      const selected =
+        content[key];
+
+      if(!selected) return;
+
+      const currentCase =
+        interaction.querySelector(
+          `[data-p58-case="${selected.caseName}"]`
+        );
+
+      if(!currentCase) return;
+
+      const caseButtons = Array.from(
+        currentCase.querySelectorAll(
+          "[data-p58-case-answer]"
+        )
+      );
+
+      const feedback =
+        currentCase.querySelector(
+          `[data-p58-feedback="${selected.caseName}"]`
+        );
+
+      if(!feedback) return;
+
+      caseButtons.forEach(function(item){
+
+        item.classList.remove(
+          "is-correct",
+          "is-wrong"
+        );
+
+      });
+
+      button.classList.add(
+        selected.correct
+          ? "is-correct"
+          : "is-wrong"
+      );
+
+      feedback.className =
+        "cap6-p58-case__feedback " +
+        (
+          selected.correct
+            ? "is-correct"
+            : "is-wrong"
+        );
+
+      feedback.innerHTML = `
+        <strong>${selected.title}</strong>
+        <p>${selected.text}</p>
+      `;
+
+    });
+
+  });
+
+  const revealItems =
+    root.querySelectorAll(".cap6-p58-reveal");
+
+  if(!("IntersectionObserver" in window)){
+
+    revealItems.forEach(function(item){
+
+      item.classList.add("is-visible");
+
+    });
+
+    return;
+
+  }
+
+  const observer =
+    new IntersectionObserver(
+
+      function(entries){
+
+        entries.forEach(function(entry){
+
+          if(!entry.isIntersecting) return;
+
+          entry.target.classList.add(
+            "is-visible"
+          );
+
+          observer.unobserve(
+            entry.target
+          );
+
+        });
+
+      },
+
+      {
+        threshold:0.18,
+        rootMargin:"0px 0px -40px 0px"
+      }
+
+    );
+
+  revealItems.forEach(function(item){
+
+    observer.observe(item);
+
+  });
+
+})();
+/* =========================
+   PÁGINA 59 — QUANDO A ASSOCIAÇÃO NÃO CORRIGE O PROBLEMA
    ========================= */
 
 (function initCap6Page59(){
-  const root = document.querySelector("[data-cap6-p59]");
+
+  const root =
+    document.querySelector(".cap6-page59");
+
   if(!root) return;
 
-  const tabs = Array.from(root.querySelectorAll("[data-p59-tab]"));
-  const title = root.querySelector("[data-p59-title]");
-  const text = root.querySelector("[data-p59-text]");
-  const summary = root.querySelector("[data-p59-summary]");
+  const interaction =
+    root.querySelector("[data-cap6-p59]");
 
-  const label1 = root.querySelector("[data-p59-label-1]");
-  const label2 = root.querySelector("[data-p59-label-2]");
-  const label3 = root.querySelector("[data-p59-label-3]");
+  if(!interaction) return;
 
-  const value1 = root.querySelector("[data-p59-value-1]");
-  const value2 = root.querySelector("[data-p59-value-2]");
-  const value3 = root.querySelector("[data-p59-value-3]");
+  const answers = Array.from(
+    interaction.querySelectorAll("[data-p59-answer]")
+  );
 
-  if(!tabs.length || !title || !text || !summary || !label1 || !label2 || !label3 || !value1 || !value2 || !value3) return;
+  const feedback =
+    interaction.querySelector("[data-p59-feedback]");
 
-  const map = {
-    organico: {
-      title: "Impacto orgânico",
-      text: "A exposição simultânea a múltiplos antibacterianos pode ampliar toxicidade sistêmica e interações medicamentosas, especialmente quando há sobreposição de vias de eliminação ou de perfis de evento adverso.",
-      summary: "O risco não depende apenas do número de fármacos prescritos, mas da forma como seus perfis farmacológicos e tóxicos se sobrepõem no mesmo paciente.",
-      flow: {
-        l1: "Exposição",
-        v1: "Somar fármacos",
-        l2: "Amplificação",
-        v2: "Sobrepor toxicidade",
-        l3: "Consequência",
-        v3: "Maior risco clínico"
-      }
+  if(!answers.length || !feedback) return;
+
+  const content = {
+
+    ampliar:{
+      correct:false,
+
+      title:
+        "A ampliação da cobertura não é a primeira explicação.",
+
+      text:
+        "O microrganismo já demonstra suscetibilidade ao antibacteriano utilizado. Antes de interpretar a ausência de resposta como necessidade de outro agente, devem ser considerados a exposição farmacológica e o controle do foco infeccioso."
     },
-    microbiota: {
-      title: "Impacto na microbiota",
-      text: "A exposição combinada reduz a diversidade da microbiota comensal e favorece a expansão de microrganismos oportunistas, incluindo patógenos como Clostridioides difficile.",
-      summary: "A soma de agentes antibacterianos tende a prolongar e intensificar a disrupção ecológica intestinal, com perda de proteção contra colonização por oportunistas.",
-      flow: {
-        l1: "Exposição",
-        v1: "Ampliar espectro",
-        l2: "Desequilíbrio",
-        v2: "Reduzir diversidade",
-        l3: "Consequência",
-        v3: "Disbiose e oportunistas"
-      }
-    },
-    hospitalar: {
-      title: "Impacto hospitalar",
-      text: "A utilização frequente de múltiplos antibacterianos contribui para a seleção e disseminação de microrganismos multirresistentes em ambientes hospitalares.",
-      summary: "A pressão seletiva repetida sobre a comunidade bacteriana do hospital favorece a persistência de cepas adaptadas e reduz progressivamente as opções terapêuticas disponíveis.",
-      flow: {
-        l1: "Exposição",
-        v1: "Pressão repetida",
-        l2: "Seleção",
-        v2: "Favorecer resistentes",
-        l3: "Consequência",
-        v3: "Disseminação hospitalar"
-      }
+
+    reavaliar:{
+      correct:true,
+
+      title:
+        "Interpretação adequada.",
+
+      text:
+        "A suscetibilidade no antibiograma é apenas um dos determinantes da resposta. Dose, intervalo, via, penetração no sítio infeccioso e controle do foco também influenciam o sucesso terapêutico. A associação não corrige essas falhas."
     }
+
   };
 
-  function activate(key){
-    const item = map[key];
-    if(!item) return;
+  answers.forEach(function(button){
 
-    tabs.forEach(tab => {
-      tab.setAttribute("aria-selected", tab.dataset.p59Tab === key ? "true" : "false");
+    button.addEventListener("click", function(){
+
+      const key =
+        button.dataset.p59Answer;
+
+      const selected =
+        content[key];
+
+      if(!selected) return;
+
+      answers.forEach(function(item){
+
+        item.classList.remove(
+          "is-correct",
+          "is-wrong"
+        );
+
+      });
+
+      button.classList.add(
+        selected.correct
+          ? "is-correct"
+          : "is-wrong"
+      );
+
+      feedback.className =
+        "cap6-p59-case__feedback " +
+        (
+          selected.correct
+            ? "is-correct"
+            : "is-wrong"
+        );
+
+      feedback.innerHTML = `
+        <strong>${selected.title}</strong>
+        <p>${selected.text}</p>
+      `;
+
     });
 
-    title.textContent = item.title;
-    text.textContent = item.text;
-    summary.textContent = item.summary;
-
-    label1.textContent = item.flow.l1;
-    value1.textContent = item.flow.v1;
-
-    label2.textContent = item.flow.l2;
-    value2.textContent = item.flow.v2;
-
-    label3.textContent = item.flow.l3;
-    value3.textContent = item.flow.v3;
-  }
-
-  tabs.forEach(tab => {
-    tab.addEventListener("click", () => activate(tab.dataset.p59Tab));
   });
 
-  activate("organico");
+  const revealItems =
+    root.querySelectorAll(".cap6-p59-reveal");
+
+  if(!("IntersectionObserver" in window)){
+
+    revealItems.forEach(function(item){
+
+      item.classList.add("is-visible");
+
+    });
+
+    return;
+
+  }
+
+  const observer =
+    new IntersectionObserver(
+
+      function(entries){
+
+        entries.forEach(function(entry){
+
+          if(!entry.isIntersecting) return;
+
+          entry.target.classList.add(
+            "is-visible"
+          );
+
+          observer.unobserve(
+            entry.target
+          );
+
+        });
+
+      },
+
+      {
+        threshold:0.18,
+        rootMargin:"0px 0px -40px 0px"
+      }
+
+    );
+
+  revealItems.forEach(function(item){
+
+    observer.observe(item);
+
+  });
+
 })();
 /* =========================
-   PÁGINA 60 — QUANDO NÃO ASSOCIAR
+   PÁGINA 60 — CONSEQUÊNCIAS DO USO INDISCRIMINADO
    ========================= */
 
 (function initCap6Page60(){
-  const root = document.querySelector("[data-cap6-p60]");
+
+  const root =
+    document.querySelector(".cap6-page60");
+
   if(!root) return;
 
-  const cards = Array.from(root.querySelectorAll("[data-item]"));
-  const result = root.querySelector("[data-result]");
+  const interaction =
+    root.querySelector("[data-cap6-p60]");
 
-  if(!cards.length || !result) return;
+  if(!interaction) return;
 
-  const state = {
-    sensivel: false,
-    mono: false,
-    poli: false,
-    evolucao: false
-  };
+  const revealButton =
+    interaction.querySelector("[data-p60-reveal]");
 
-  function render(){
-    const { sensivel, mono, poli, evolucao } = state;
+  const consequences =
+    interaction.querySelector("[data-p60-consequences]");
 
-    if (sensivel && mono && !poli && evolucao){
-      result.textContent = "A associação perde sustentação biológica. O agente foi identificado, há exposição adequada em monoterapia, não há evidência plausível de infecção polimicrobiana e a evolução é favorável: o cenário aponta para revisão crítica e descalonamento.";
-      return;
+  if(!revealButton || !consequences) return;
+
+  function setExpanded(expanded){
+
+    revealButton.setAttribute(
+      "aria-expanded",
+      expanded ? "true" : "false"
+    );
+
+    consequences.hidden = !expanded;
+
+    revealButton.textContent =
+      expanded
+        ? "Ocultar consequências"
+        : "Mostrar consequências";
+
+    if(expanded){
+
+      consequences
+        .querySelectorAll(".cap6-p60-consequence")
+        .forEach(function(item, index){
+
+          item.style.opacity = "0";
+          item.style.transform = "translateY(8px)";
+
+          window.setTimeout(function(){
+
+            item.style.transition =
+              "opacity .32s ease, transform .32s ease";
+
+            item.style.opacity = "1";
+            item.style.transform = "translateY(0)";
+
+          }, index * 85);
+
+        });
+
     }
 
-    if (sensivel && mono && !poli){
-      result.textContent = "A monoterapia já parece tecnicamente suficiente. Na ausência de infecção polimicrobiana plausível, manter dois antibacterianos tende a ampliar toxicidade e pressão seletiva sem benefício proporcional.";
-      return;
-    }
-
-    if (poli){
-      result.textContent = "Há justificativa potencial para manter cobertura ampliada, mas ela deve ser continuamente reavaliada. A presença de plausibilidade polimicrobiana impede descalonamento automático, porém não dispensa revisão microbiológica e clínica.";
-      return;
-    }
-
-    if (evolucao && !poli){
-      result.textContent = "A melhora clínica favorece reavaliação da combinação inicial. Quando o quadro evolui bem e não há evidência de etiologia polimicrobiana, o risco de exposição prolongada pode superar o benefício de manter a associação.";
-      return;
-    }
-
-    if (sensivel || mono || evolucao){
-      result.textContent = "Há elementos que enfraquecem a necessidade de manter associação, mas a decisão depende da integração entre microbiologia, exposição farmacológica, plausibilidade etiológica e evolução clínica.";
-      return;
-    }
-
-    result.textContent = "Selecione os critérios presentes no caso para avaliar se a associação ainda possui justificativa biológica.";
   }
 
-  cards.forEach(card => {
-    card.addEventListener("click", () => {
-      const key = card.dataset.item;
-      state[key] = !state[key];
-      card.classList.toggle("is-active", state[key]);
-      card.setAttribute("aria-pressed", state[key] ? "true" : "false");
-      render();
+  revealButton.addEventListener(
+    "click",
+    function(){
+
+      const expanded =
+        revealButton.getAttribute(
+          "aria-expanded"
+        ) === "true";
+
+      setExpanded(!expanded);
+
+    }
+  );
+
+  setExpanded(false);
+
+  const revealItems =
+    root.querySelectorAll(".cap6-p60-reveal");
+
+  if(!("IntersectionObserver" in window)){
+
+    revealItems.forEach(function(item){
+
+      item.classList.add("is-visible");
+
     });
+
+    return;
+
+  }
+
+  const observer =
+    new IntersectionObserver(
+
+      function(entries){
+
+        entries.forEach(function(entry){
+
+          if(!entry.isIntersecting) return;
+
+          entry.target.classList.add(
+            "is-visible"
+          );
+
+          observer.unobserve(
+            entry.target
+          );
+
+        });
+
+      },
+
+      {
+        threshold:0.18,
+        rootMargin:"0px 0px -40px 0px"
+      }
+
+    );
+
+  revealItems.forEach(function(item){
+
+    observer.observe(item);
+
   });
 
-  render();
 })();
 /* =========================
    PÁGINA 61 — QUIZ DE REVISÃO
    ========================= */
 
-(function initCap6Page61Quiz(){
+(function initCap6Page61(){
   const root = document.querySelector("[data-cap6-p61]");
-  if(!root) return;
 
-  const questions = Array.from(root.querySelectorAll(".cap6-p61Question"));
-  const status = root.querySelector("[data-p61-status]");
-  const statusValue = status ? status.querySelector(".cap6-p61Status__value") : null;
-  const completion = root.querySelector("[data-p61-completion]");
+  if(!root){
+    return;
+  }
 
-  if(!questions.length || !statusValue) return;
+  const questions = Array.from(
+    root.querySelectorAll(".cap6-p61Question")
+  );
+
+  const statusValue = root.querySelector(
+    ".cap6-p61Status__value"
+  );
+
+  const completion = root.querySelector(
+    "[data-p61-completion]"
+  );
 
   function updateStatus(){
-    const confirmed = questions.filter(q => q.dataset.questionState === "done").length;
-    statusValue.textContent = `${confirmed} de ${questions.length} situações confirmadas`;
+    const confirmedQuestions = questions.filter(function(question){
+      return question.dataset.questionState === "confirmed";
+    }).length;
+
+    if(statusValue){
+      statusValue.textContent =
+        confirmedQuestions +
+        " de " +
+        questions.length +
+        " situações confirmadas";
+    }
 
     if(completion){
-      completion.hidden = confirmed !== questions.length;
+      completion.hidden =
+        confirmedQuestions !== questions.length;
     }
   }
 
-  function renderFeedback(container, type, title, text){
-    container.innerHTML = `
-      <div class="cap6-p61FeedbackCard cap6-p61FeedbackCard--${type}">
-        <p class="cap6-p61FeedbackTitle">${title}</p>
-        <p class="cap6-p61FeedbackText">${text}</p>
-      </div>
-    `;
-  }
+  function parseFeedbackMap(question){
+    const template = question.querySelector(
+      ".cap6-p61FeedbackMap"
+    );
 
-  questions.forEach(question => {
-    const options = Array.from(question.querySelectorAll(".cap6-p61Options button"));
-    const confirmBtn = question.querySelector('[data-p61-action="confirm"]');
-    const resetBtn = question.querySelector('[data-p61-action="reset"]');
-    const feedback = question.querySelector(".cap6-p61Feedback");
-    const feedbackMapEl = question.querySelector(".cap6-p61FeedbackMap");
-
-    if(!confirmBtn || !resetBtn || !feedback || !feedbackMapEl) return;
-
-    let selected = null;
-    let locked = false;
-    let feedbackMap = {};
+    if(!template){
+      return {};
+    }
 
     try{
-      feedbackMap = JSON.parse(feedbackMapEl.innerHTML.trim());
-    }catch(e){
-      feedbackMap = {};
+      return JSON.parse(
+        template.content.textContent.trim()
+      );
+    }catch(error){
+      console.warn(
+        "Não foi possível interpretar o conteúdo de feedback da página 61.",
+        error
+      );
+
+      return {};
     }
+  }
 
-    function clearState(){
-      selected = null;
-      locked = false;
-      question.dataset.questionState = "pending";
-      confirmBtn.disabled = true;
-      resetBtn.hidden = true;
-      feedback.innerHTML = "";
+  function updateSelectedOption(options, selectedOption){
+    options.forEach(function(option){
+      const isSelected = option === selectedOption;
 
-      options.forEach(option => {
-        option.classList.remove("is-selected", "is-correct", "is-wrong");
-        option.disabled = false;
-      });
+      option.classList.toggle(
+        "is-selected",
+        isSelected
+      );
 
-      updateStatus();
-    }
+      option.setAttribute(
+        "aria-pressed",
+        isSelected ? "true" : "false"
+      );
+    });
+  }
 
-    options.forEach(option => {
-      option.addEventListener("click", () => {
-        if(locked) return;
+  function clearOptionStates(options){
+    options.forEach(function(option){
+      option.disabled = false;
 
-        selected = option.dataset.answer;
-        confirmBtn.disabled = false;
+      option.classList.remove(
+        "is-selected",
+        "is-correct",
+        "is-error"
+      );
 
-        options.forEach(btn => btn.classList.remove("is-selected"));
-        option.classList.add("is-selected");
+      option.setAttribute(
+        "aria-pressed",
+        "false"
+      );
+    });
+  }
+
+  questions.forEach(function(question){
+    const options = Array.from(
+      question.querySelectorAll(
+        ".cap6-p61Options button"
+      )
+    );
+
+    const confirmButton = question.querySelector(
+      '[data-p61-action="confirm"]'
+    );
+
+    const resetButton = question.querySelector(
+      '[data-p61-action="reset"]'
+    );
+
+    const feedback = question.querySelector(
+      ".cap6-p61Feedback"
+    );
+
+    const feedbackMap = parseFeedbackMap(question);
+
+    let selectedAnswer = null;
+
+    options.forEach(function(option){
+      option.addEventListener("click", function(){
+        if(
+          question.dataset.questionState === "confirmed"
+        ){
+          return;
+        }
+
+        selectedAnswer = option.dataset.answer;
+
+        updateSelectedOption(
+          options,
+          option
+        );
+
+        if(confirmButton){
+          confirmButton.disabled = false;
+        }
       });
     });
 
-    confirmBtn.addEventListener("click", () => {
-      if(!selected || locked) return;
+    if(confirmButton){
+      confirmButton.addEventListener("click", function(){
+        if(!selectedAnswer){
+          return;
+        }
 
-      locked = true;
-      question.dataset.questionState = "done";
-      resetBtn.hidden = false;
-      confirmBtn.disabled = true;
+        const selectedOption = question.querySelector(
+          '[data-answer="' +
+          selectedAnswer +
+          '"]'
+        );
 
-      const chosen = options.find(option => option.dataset.answer === selected);
-      const correct = options.find(option => option.hasAttribute("data-correct"));
+        if(!selectedOption){
+          return;
+        }
 
-      options.forEach(option => {
-        option.disabled = true;
+        const isCorrect =
+          selectedOption.dataset.correct === "true";
+
+        const selectedFeedback =
+          feedbackMap[selectedAnswer];
+
+        options.forEach(function(option){
+          option.disabled = true;
+
+          option.classList.remove(
+            "is-selected"
+          );
+
+          option.setAttribute(
+            "aria-pressed",
+            "false"
+          );
+
+          if(
+            option.dataset.correct === "true"
+          ){
+            option.classList.add(
+              "is-correct"
+            );
+          }
+
+          if(
+            option.dataset.answer === selectedAnswer &&
+            !isCorrect
+          ){
+            option.classList.add(
+              "is-error"
+            );
+          }
+        });
+
+        if(
+          feedback &&
+          selectedFeedback
+        ){
+          const feedbackClass =
+            selectedFeedback.type === "correct"
+              ? "is-correct"
+              : "is-error";
+
+          feedback.className =
+            "cap6-p61Feedback is-visible " +
+            feedbackClass;
+
+          feedback.innerHTML =
+            "<strong>" +
+            selectedFeedback.title +
+            "</strong>" +
+            "<p>" +
+            selectedFeedback.text +
+            "</p>";
+        }
+
+        question.dataset.questionState =
+          "confirmed";
+
+        confirmButton.hidden = true;
+
+        if(resetButton){
+          resetButton.hidden = false;
+          resetButton.focus();
+        }
+
+        updateStatus();
       });
+    }
 
-      if(chosen){
-        chosen.classList.add(chosen.hasAttribute("data-correct") ? "is-correct" : "is-wrong");
-      }
+    if(resetButton){
+      resetButton.addEventListener("click", function(){
+        selectedAnswer = null;
 
-      if(correct && correct !== chosen){
-        correct.classList.add("is-correct");
-      }
+        question.dataset.questionState =
+          "pending";
 
-      const entry = feedbackMap[selected];
-      if(entry){
-        renderFeedback(feedback, entry.type, entry.title, entry.text);
-      }
+        clearOptionStates(options);
 
-      updateStatus();
-    });
+        if(feedback){
+          feedback.className =
+            "cap6-p61Feedback";
 
-    resetBtn.addEventListener("click", clearState);
+          feedback.innerHTML = "";
+        }
 
-    clearState();
+        if(confirmButton){
+          confirmButton.hidden = false;
+          confirmButton.disabled = true;
+        }
+
+        resetButton.hidden = true;
+
+        updateStatus();
+
+        if(options[0]){
+          options[0].focus();
+        }
+      });
+    }
   });
 
   updateStatus();

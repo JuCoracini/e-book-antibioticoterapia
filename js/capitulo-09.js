@@ -1,6 +1,53 @@
 (function () {
   "use strict";
 
+  function initCap9Page76Activity() {
+    const root = document.querySelector("[data-cap9-p76-activity]");
+    if (!root) return;
+
+    const buttons = Array.from(root.querySelectorAll("[data-p76-answer]"));
+    const feedback = root.querySelector(".cap9-p76-feedback");
+
+    const feedbacks = {
+      a: {
+        type: "error",
+        title: "❌ Incorreta.",
+        text: "A prescrição de antibacterianos deve ser baseada em critérios clínicos e evidências científicas, não apenas na expectativa do paciente. O uso desnecessário expõe o indivíduo a riscos e contribui para o uso inadequado desses medicamentos."
+      },
+      b: {
+        type: "correct",
+        title: "✅ Correta.",
+        text: "Quando não há indicação de antibacteriano, a comunicação adequada é parte fundamental da conduta. Explicar os motivos da não prescrição, orientar medidas de suporte e esclarecer sinais de alerta fortalece a confiança do paciente e favorece o uso racional dos antimicrobianos."
+      },
+      c: {
+        type: "error",
+        title: "❌ Incorreta.",
+        text: "Reduzir arbitrariamente a duração do tratamento não torna a prescrição mais segura. A indicação, a dose e a duração devem ser definidas de acordo com a condição clínica e as evidências disponíveis."
+      }
+    };
+
+    buttons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        const answer = button.dataset.p76Answer;
+        const item = feedbacks[answer];
+        if (!item || !feedback) return;
+
+        buttons.forEach(function (option) {
+          option.classList.remove("is-correct", "is-error");
+        });
+
+        button.classList.add(item.type === "correct" ? "is-correct" : "is-error");
+
+        feedback.className = "cap9-p76-feedback is-visible";
+        feedback.classList.add(item.type === "correct" ? "is-correct" : "is-error");
+
+        feedback.innerHTML =
+          "<strong>" + item.title + "</strong>" +
+          "<span>" + item.text + "</span>";
+      });
+    });
+  }
+
   function initCap9Page79Flow() {
     const root = document.querySelector(".cap9-page79 [data-cap9-flow]");
     if (!root) return;
@@ -237,6 +284,7 @@
 
           feedback.classList.add("is-visible");
           feedback.classList.add(entry.type === "correct" ? "is-correct" : "is-error");
+
           feedback.innerHTML =
             '<p class="cap9-p81Feedback__title">' + entry.title + '</p>' +
             '<p class="cap9-p81Feedback__text">' + entry.text + "</p>";
@@ -263,11 +311,13 @@
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", function () {
+      initCap9Page76Activity();
       initCap9Page79Flow();
       initCap9Page80Decision();
       initCap9Page81();
     });
   } else {
+    initCap9Page76Activity();
     initCap9Page79Flow();
     initCap9Page80Decision();
     initCap9Page81();

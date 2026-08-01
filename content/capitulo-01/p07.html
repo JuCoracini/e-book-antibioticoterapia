@@ -2,12 +2,26 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
+
   <title>Capítulo 1 — Página 7</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -19,140 +33,452 @@
   <main class="page-shell cap1-shell">
 
     <header class="page-header">
-      <div class="chapter">Capítulo 1 — Fundamentos Conceituais dos Antibacterianos</div>
-      <h1 class="page-title">Colonização, contaminação e infecção</h1>
+
+      <div class="chapter">
+        Capítulo 1 — Fundamentos Conceituais dos Antibacterianos
+      </div>
+
+      <h1 class="page-title">
+        Colonização, Contaminação e Infecção
+      </h1>
+
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <section
+      class="prose"
+      aria-label="Introdução"
+    >
 
       <p>
-        A escolha adequada do espectro de ação para uma terapêutica antibacteriana pressupõe que exista um processo infeccioso ativo a ser tratado. Antes de selecionar a cobertura microbiológica e iniciar um antibacteriano, é necessário responder a uma pergunta fundamental: há, de fato, uma infecção em curso?
+        Antes de selecionar a cobertura microbiológica ou considerar o uso de um
+        antibacteriano, é necessário responder a uma pergunta fundamental:
+        o microrganismo identificado está realmente relacionado a um processo
+        infeccioso ativo?
+        <sup>3</sup>
       </p>
 
       <p>
-        A simples detecção de microrganismos em um exame microbiológico não constitui indicação automática de antibioticoterapia. A presença de um microrganismo identificado em cultura não equivale necessariamente à existência de doença infecciosa. A microbiologia identifica microrganismos, mas o diagnóstico de infecção depende da integração entre achados microbiológicos, quadro clínico e evidências de resposta inflamatória do hospedeiro <sup>2,5</sup>.
-      </p>
-
-      <p>
-        Por essa razão, a interpretação adequada dos resultados laboratoriais exige distinguir três situações distintas: colonização, contaminação e infecção. O uso de antibacterianos em contextos que não correspondem a infecção ativa pode expor o paciente a efeitos adversos desnecessários, alterar a microbiota comensal e aumentar a pressão seletiva sobre populações bacterianas <sup>1,18</sup>.
+        A detecção de microrganismos em um exame não constitui, isoladamente,
+        diagnóstico de infecção. A interpretação depende da integração entre
+        resultado microbiológico, quadro clínico, resposta inflamatória e
+        compatibilidade entre o microrganismo identificado e o sítio de coleta
+        <sup>3,6</sup>.
       </p>
 
     </section>
 
-    <section class="cap1-p07-stage" data-p07 aria-label="Interpretação comparativa entre colonização, contaminação e infecção">
+    <section
+      class="cap1-p07-concepts"
+      aria-labelledby="cap1P07ConceptsTitle"
+    >
+
+      <div class="cap1-p07-concepts__head">
+
+     
+
+        <h2 id="cap1P07ConceptsTitle">
+          O mesmo achado microbiológico pode ter significados diferentes
+        </h2>
+
+      </div>
+
+      <div class="cap1-p07-conceptGrid">
+
+        <article class="cap1-p07-concept cap1-p07-concept--colonization">
+
+          
+          <h3>
+            Colonização
+          </h3>
+
+          <p>
+            Presença e multiplicação de microrganismos em superfícies corporais
+            ou sítios normalmente colonizados, sem evidências de invasão
+            tecidual, dano ou resposta inflamatória atribuível.
+          </p>
+
+          
+
+        </article>
+
+        <article class="cap1-p07-concept cap1-p07-concept--contamination">
+
+          
+
+          <h3>
+            Contaminação
+          </h3>
+
+          <p>
+            Microrganismo introduzido na amostra durante coleta, transporte,
+            processamento ou manipulação laboratorial.
+          </p>
+
+        </article>
+
+        <article class="cap1-p07-concept cap1-p07-concept--infection">
+
+         
+          <h3>
+            Infecção
+          </h3>
+
+          <p>
+            Processo em que um microrganismo invade ou se multiplica em tecidos
+            do hospedeiro e produz dano, manifestações clínicas ou resposta
+            inflamatória, cuja intensidade pode variar.
+          </p>
+
+        
+        </article>
+
+      </div>
+
+    </section>
+
+    <section
+      class="cap1-p07-stage"
+      data-p07-decision
+      aria-labelledby="cap1P07DecisionTitle"
+    >
+
       <div class="cap1-p07-stage__inner">
 
-        <p class="cap1-p07-intro">
-          Selecione uma situação e observe como o mesmo dado microbiológico pode assumir significados diferentes conforme o contexto clínico e a plausibilidade diagnóstica.
-        </p>
+        <div class="cap1-p07-head">
 
-        <div class="cap1-p07-tabs" role="tablist" aria-label="Situações clínicas">
-          <button
-            class="cap1-p07-tab is-active"
-            type="button"
-            role="tab"
-            aria-selected="true"
-            tabindex="0"
-            data-p07-tab="colonizacao"
-          >
-            Colonização
-          </button>
+        
 
-          <button
-            class="cap1-p07-tab"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            tabindex="-1"
-            data-p07-tab="contaminacao"
-          >
-            Contaminação
-          </button>
+          <p>
+            Analise cada situação e selecione a interpretação que melhor integra
+            os dados apresentados.
+          </p>
 
-          <button
-            class="cap1-p07-tab"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            tabindex="-1"
-            data-p07-tab="infeccao"
-          >
-            Infecção
-          </button>
         </div>
 
-        <div class="cap1-p07-panel" role="tabpanel" aria-live="polite">
-          <div class="cap1-p07-summary">
-            <p class="cap1-p07-summary__eyebrow" id="p07Eyebrow"></p>
-            <h2 class="cap1-p07-summary__title" id="p07Title"></h2>
-            <p class="cap1-p07-summary__text" id="p07Summary"></p>
+        <div
+          class="cap1-p07-status"
+          aria-live="polite"
+        >
+          <span id="p07Step">
+            Situação 1 de 3
+          </span>
+        </div>
+
+        <article
+          class="cap1-p07-case"
+          aria-labelledby="p07CaseTitle"
+        >
+
+          <span
+            class="cap1-p07-case__type"
+            id="p07CaseType"
+          >
+            Resultado urinário
+          </span>
+
+          <h3 id="p07CaseTitle">
+            Urocultura positiva sem sintomas
+          </h3>
+
+          <div
+            class="cap1-p07-caseBox"
+            id="p07CaseText"
+          >
+            Paciente sem sintomas urinários apresenta urocultura com crescimento
+            de <em>Escherichia coli</em> em contagem significativa, sem sinais
+            clínicos ou laboratoriais atribuíveis à infecção urinária.
           </div>
 
-          <div class="cap1-p07-grid">
-            <article class="cap1-p07-card">
-              <p class="cap1-p07-card__label">Características</p>
-              <p class="cap1-p07-card__text" id="p07Features"></p>
-            </article>
+          <p class="cap1-p07-question">
+            Qual interpretação melhor integra os dados apresentados?
+          </p>
 
-            <article class="cap1-p07-card">
-              <p class="cap1-p07-card__label">Exemplo clínico</p>
-              <p class="cap1-p07-card__text" id="p07Example"></p>
-            </article>
+          <div
+            class="cap1-p07-options"
+            role="group"
+            aria-label="Alternativas de interpretação"
+          >
 
-            <article class="cap1-p07-card">
-              <p class="cap1-p07-card__label">Leitura microbiológica</p>
-              <p class="cap1-p07-card__text" id="p07Reading"></p>
-            </article>
+            <button
+              type="button"
+              data-p07-answer="colonizacao"
+            >
+              Colonização
+            </button>
 
-            <article class="cap1-p07-card">
-              <p class="cap1-p07-card__label">Implicação prática</p>
-              <p class="cap1-p07-card__text" id="p07Practice"></p>
-            </article>
+            <button
+              type="button"
+              data-p07-answer="contaminacao"
+            >
+              Contaminação
+            </button>
+
+            <button
+              type="button"
+              data-p07-answer="infeccao"
+            >
+              Infecção
+            </button>
+
           </div>
+
+          <div
+            class="cap1-p07-feedback"
+            id="p07Feedback"
+            aria-live="polite"
+            aria-atomic="true"
+          >
+
+            <strong>
+              Analise o contexto clínico.
+            </strong>
+
+            <p>
+              Considere sintomas, resposta inflamatória, qualidade da amostra e
+              coerência entre o microrganismo e o sítio de coleta.
+            </p>
+
+          </div>
+
+          <div
+            class="cap1-p07-evidence"
+            id="p07Evidence"
+            hidden
+          >
+
+            <div>
+              <span aria-hidden="true">✓</span>
+              <strong id="p07EvidenceMicroorganism">
+                Microrganismo presente
+              </strong>
+            </div>
+
+            <div>
+              <span aria-hidden="true">✓</span>
+              <strong id="p07EvidenceInflammation">
+                Sem resposta inflamatória atribuível
+              </strong>
+            </div>
+
+            <div>
+              <span aria-hidden="true">✓</span>
+              <strong id="p07EvidenceMeaning">
+                Interpretação: colonização
+              </strong>
+            </div>
+
+          </div>
+
+        </article>
+
+        <div class="cap1-p07-controls">
+
+          <button
+            type="button"
+            id="p07Prev"
+            disabled
+          >
+            ← Situação anterior
+          </button>
+
+          <div
+            class="cap1-p07-dots"
+            aria-hidden="true"
+          >
+            <span class="is-active"></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <button
+            type="button"
+            id="p07Next"
+          >
+            Próxima situação →
+          </button>
+
+        </div>
+
+        <section
+          class="cap1-p07-summary"
+          id="p07Summary"
+          aria-labelledby="cap1P07SummaryTitle"
+          hidden
+        >
+
+          <h3 id="cap1P07SummaryTitle">
+            Como diferenciar as três situações?
+          </h3>
+
+          <div class="cap1-p07-summaryGrid">
+
+            <div class="cap1-p07-summaryHead">
+              Situação
+            </div>
+
+            <div class="cap1-p07-summaryHead">
+              Microrganismo
+            </div>
+
+            <div class="cap1-p07-summaryHead">
+              Correlação clínica
+            </div>
+
+            <div class="cap1-p07-summaryHead">
+              Significado
+            </div>
+
+            <div class="cap1-p07-summaryLabel cap1-p07-summaryLabel--colonization">
+              Colonização
+            </div>
+
+            <div>
+              Presente
+            </div>
+
+            <div>
+              Sem evidência de doença ativa
+            </div>
+
+            <div>
+              Presença sem infecção
+            </div>
+
+            <div class="cap1-p07-summaryLabel cap1-p07-summaryLabel--contamination">
+              Contaminação
+            </div>
+
+            <div>
+              Presente na amostra
+            </div>
+
+            <div>
+              Incompatível ou insuficiente
+            </div>
+
+            <div>
+              Pode não representar o paciente
+            </div>
+
+            <div class="cap1-p07-summaryLabel cap1-p07-summaryLabel--infection">
+              Infecção
+            </div>
+
+            <div>
+              Presente ou presumido
+            </div>
+
+            <div>
+              Quadro clínico compatível
+            </div>
+
+            <div>
+              Processo infeccioso ativo
+            </div>
+
+          </div>
+
+        </section>
+
+      </div>
+
+    </section>
+
+    <section
+      class="prose"
+      aria-label="Integração diagnóstica"
+    >
+
+      <p>
+        A interpretação incorreta de um resultado microbiológico pode levar ao
+        uso desnecessário de antibacterianos, efeitos adversos, alteração da
+        microbiota e maior pressão seletiva para resistência
+        <sup>6,15,20</sup>.
+      </p>
+
+      <div
+        class="cap1-p07-dimensions"
+        aria-label="Dimensões consideradas no diagnóstico de infecção"
+      >
+
+        <div>
+          <strong>
+            Clínica
+          </strong>
+
+          <span>
+            Sintomas, sinais e evolução
+          </span>
+        </div>
+
+        <div>
+          <strong>
+            Laboratório
+          </strong>
+
+          <span>
+            Evidências de inflamação ou disfunção
+          </span>
+        </div>
+
+        <div>
+          <strong>
+            Microbiologia
+          </strong>
+
+          <span>
+            Qualidade da amostra e significado do isolamento
+          </span>
+        </div>
+
+        <div>
+          <strong>
+            Contexto
+          </strong>
+
+          <span>
+            Sítio anatômico, epidemiologia e fatores de risco
+          </span>
         </div>
 
       </div>
-    </section>
-
-    <section class="prose" aria-label="Continuação do texto principal">
 
       <p>
-        A microbiota desempenha funções fisiológicas importantes, incluindo modulação do sistema imune, manutenção da integridade das superfícies epiteliais e competição ecológica com microrganismos potencialmente patogênicos <sup>5,18</sup>.
-      </p>
-
-      <p>
-        A erradicação desnecessária dessa microbiota pode favorecer disbiose, perda da colonização protetora e seleção de microrganismos resistentes <sup>18</sup>.
-      </p>
-
-      <p>
-        A interpretação inadequada de resultados microbiológicos pode levar ao início desnecessário de antibacterianos, prolongamento da internação hospitalar, realização de exames adicionais e aumento dos custos assistenciais <sup>2</sup>.
-      </p>
-
-      <p>
-        O diagnóstico de infecção não deve ser estabelecido apenas com base em uma cultura positiva. Ele requer a integração de diferentes elementos clínicos e laboratoriais.
-      </p>
-
-      <p>
-        Na prática clínica, a avaliação diagnóstica costuma considerar:
-      </p>
-
-      <ul>
-        <li>quadro clínico compatível</li>
-        <li>evidência laboratorial de inflamação ou infecção</li>
-        <li>plausibilidade anatômica do sítio de isolamento</li>
-        <li>contexto epidemiológico do paciente</li>
-      </ul>
-
-      <p>
-        Da mesma forma que uma cultura positiva isoladamente não confirma infecção, uma cultura negativa também não exclui o diagnóstico quando existe forte evidência clínica de doença infecciosa <sup>2</sup>.
+        Da mesma forma que uma cultura positiva isoladamente não confirma
+        infecção, uma cultura negativa também não exclui esse diagnóstico quando
+        existe forte suspeita clínica. Isso pode ocorrer após uso prévio de
+        antimicrobianos, em infecções por microrganismos de difícil cultivo ou
+        quando a coleta da amostra é inadequada
+        <sup>3</sup>.
       </p>
 
     </section>
 
-    <nav class="pager" aria-label="Paginação">
-      <a class="btn" href="p06.html" aria-label="Ir para a página anterior">← Anterior</a>
-      <div class="center">Capítulo 1 · Página 7 de 89</div>
-      <a class="btn primary" href="p08.html" aria-label="Ir para a próxima página">Próxima →</a>
+    <nav
+      class="pager"
+      aria-label="Paginação"
+    >
+
+      <a
+        class="btn"
+        href="p06.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 1 · Página 7 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p08.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+
     </nav>
 
   </main>

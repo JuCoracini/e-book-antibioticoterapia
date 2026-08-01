@@ -100,6 +100,7 @@ window.location.href="p84.html";
 };
 
 })();
+
 /* =====================================================
    CAPÍTULO 10
    PÁGINA 84 — SIMULAÇÃO 1 (REAVALIAR E AJUSTAR)

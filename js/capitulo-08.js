@@ -55,10 +55,11 @@
       const isActive = tab.dataset.focus === activeKey;
       tab.classList.toggle("is-active", isActive);
       tab.setAttribute("aria-selected", isActive ? "true" : "false");
+      tab.setAttribute("tabindex", isActive ? "0" : "-1");
     });
   }
 
-  function renderFocus(key){
+  function renderFocus(key, animate = true){
     const entry = data[key];
     if (!entry) return;
 
@@ -69,211 +70,561 @@
     risk.textContent = entry.risk;
 
     syncTabs(key);
+    panel.setAttribute("aria-labelledby", `p69-tab-${key}`);
+
+    if (animate) {
+      panel.classList.remove("is-updating");
+      void panel.offsetWidth;
+      panel.classList.add("is-updating");
+    }
   }
 
-  function measurePanelHeight(){
-    const original = {
-      kicker: kicker.textContent,
-      title: title.textContent,
-      text: text.textContent,
-      weight: weight.textContent,
-      risk: risk.textContent
-    };
-
-    let maxHeight = panel.offsetHeight;
-
-    Object.keys(data).forEach((key) => {
-      const entry = data[key];
-      kicker.textContent = entry.kicker;
-      title.textContent = entry.title;
-      text.textContent = entry.text;
-      weight.textContent = entry.weight;
-      risk.textContent = entry.risk;
-
-      const height = panel.scrollHeight;
-      if (height > maxHeight) maxHeight = height;
-    });
-
-    kicker.textContent = original.kicker;
-    title.textContent = original.title;
-    text.textContent = original.text;
-    weight.textContent = original.weight;
-    risk.textContent = original.risk;
-
-    panel.style.setProperty("--p69-panel-height", `${Math.ceil(maxHeight)}px`);
-    page.querySelector(".cap8-p69-interaction")?.style.setProperty("--p69-panel-height", `${Math.ceil(maxHeight)}px`);
-  }
-
-  tabs.forEach((tab) => {
+  tabs.forEach((tab, index) => {
     tab.addEventListener("click", () => {
       renderFocus(tab.dataset.focus);
     });
-  });
 
-  renderFocus("respiratorio");
+    tab.addEventListener("keydown", (event) => {
+      const keys = ["ArrowRight", "ArrowLeft", "Home", "End"];
+      if (!keys.includes(event.key)) return;
 
-  window.requestAnimationFrame(() => {
-    measurePanelHeight();
-    renderFocus("respiratorio");
-  });
+      event.preventDefault();
+      let nextIndex = index;
 
-  window.addEventListener("resize", () => {
-    measurePanelHeight();
-  });
-})();
+      if (event.key === "ArrowRight") nextIndex = (index + 1) % tabs.length;
+      if (event.key === "ArrowLeft") nextIndex = (index - 1 + tabs.length) % tabs.length;
+      if (event.key === "Home") nextIndex = 0;
+      if (event.key === "End") nextIndex = tabs.length - 1;
 
-(function initCap8Page70(){
-  const root = document.querySelector(".cap8-page70");
-  if (!root) return;
-
-  const options = root.querySelectorAll(".cap8-p70-option");
-  const feedback = root.querySelector(".cap8-p70-feedback");
-  const evolution = root.querySelector(".cap8-p70-evolution");
-  const revealBtn = root.querySelector("[data-reveal]");
-  const reveal = root.querySelector(".cap8-p70-reveal");
-
-  const map = {
-    alta: "Leitura precipitada. Sintomas isolados não permitem distinguir etiologia viral de bacteriana.",
-    moderada: "Raciocínio parcialmente adequado, mas ainda faltam elementos objetivos para sustentar infecção bacteriana.",
-    baixa: "Leitura mais consistente. Na ausência de achados específicos, a probabilidade de etiologia viral é maior."
-  };
-
-  options.forEach(btn=>{
-    btn.addEventListener("click", ()=>{
-      options.forEach(b=>b.classList.remove("is-selected"));
-      btn.classList.add("is-selected");
-
-      feedback.textContent = map[btn.dataset.choice];
-      feedback.classList.add("is-visible");
-
-      evolution.hidden = false;
+      tabs[nextIndex].focus();
+      renderFocus(tabs[nextIndex].dataset.focus);
     });
   });
 
-  revealBtn?.addEventListener("click", ()=>{
-    reveal.innerHTML = "A presença de infiltrado pulmonar associada a sinais sistêmicos aumenta significativamente a probabilidade de pneumonia bacteriana.";
-    reveal.classList.add("is-visible");
-  });
-
+  renderFocus("respiratorio", false);
 })();
-(function initCap8Page71(){
-  const root = document.querySelector(".cap8-page71");
+
+(function initCap8Page70() {
+  const root = document.querySelector(".cap8-page70");
+
   if (!root) return;
 
-  const options = root.querySelectorAll(".cap8-p71-option");
-  const feedback = root.querySelector(".cap8-p71-feedback");
-  const consequenceBox = root.querySelector(".cap8-p71-consequence");
-  const consequenceBtn = root.querySelector("[data-consequence]");
-  const result = root.querySelector(".cap8-p71-result");
+  const options = Array.from(
+    root.querySelectorAll(".cap8-p70-option")
+  );
 
-  const map = {
-    infeccao: {
-      text: "Interpretação inadequada. A presença isolada de bacteriúria não define infecção urinária ativa na ausência de sintomas."
+  const feedback = root.querySelector(
+    ".cap8-p70-feedback"
+  );
+
+  const evolution = root.querySelector(
+    ".cap8-p70-evolution"
+  );
+
+  const revealButton = root.querySelector(
+    "[data-reveal]"
+  );
+
+  const reveal = root.querySelector(
+    ".cap8-p70-reveal"
+  );
+
+  if (
+    !options.length ||
+    !feedback ||
+    !evolution
+  ) {
+    return;
+  }
+
+  const feedbackMap = {
+    alta: {
+      title: "Interpretação precipitada",
+      text:
+        "Sintomas isolados não permitem distinguir " +
+        "etiologia viral de bacteriana."
     },
-    colonizacao: {
-      text: "Interpretação mais consistente. Na ausência de sintomas urinários, a bacteriúria corresponde à colonização e não deve ser tratada na maioria das situações."
+
+    moderada: {
+      title: "Raciocínio parcialmente adequado",
+      text:
+        "Ainda faltam elementos objetivos para " +
+        "sustentar infecção bacteriana."
     },
-    inconclusivo: {
-      text: "Leitura incompleta. A urocultura não deve ser interpretada isoladamente, mas neste caso já há elementos suficientes para afastar infecção ativa."
+
+    baixa: {
+      title: "Leitura mais consistente",
+      text:
+        "Na ausência de achados específicos, a " +
+        "probabilidade de etiologia viral é maior."
     }
   };
 
-  options.forEach(btn=>{
-    btn.addEventListener("click", ()=>{
-      options.forEach(b=>b.classList.remove("is-selected"));
-      btn.classList.add("is-selected");
+  function selectOption(selectedButton) {
+    const choice = selectedButton.dataset.choice;
+    const entry = feedbackMap[choice];
 
-      feedback.textContent = map[btn.dataset.choice].text;
-      feedback.classList.add("is-visible");
+    if (!entry) return;
 
-      consequenceBox.hidden = false;
+    options.forEach((button) => {
+      button.classList.remove("is-selected");
+      button.setAttribute("aria-pressed", "false");
+    });
+
+    selectedButton.classList.add("is-selected");
+    selectedButton.setAttribute("aria-pressed", "true");
+
+    feedback.innerHTML = `
+      <strong>${entry.title}</strong>
+      <span>${entry.text}</span>
+    `;
+
+    feedback.classList.add("is-visible");
+
+    evolution.hidden = false;
+  }
+
+  options.forEach((button) => {
+    button.addEventListener("click", () => {
+      selectOption(button);
     });
   });
 
-  consequenceBtn?.addEventListener("click", ()=>{
-    result.innerHTML = "O tratamento desnecessário pode levar à seleção de cepas resistentes, alteração da microbiota e exposição a efeitos adversos sem benefício clínico.";
-    result.classList.add("is-visible");
-  });
+  revealButton?.addEventListener("click", () => {
+    if (!reveal) return;
 
+    reveal.textContent =
+      "O novo conjunto de achados aumenta a probabilidade " +
+      "de etiologia bacteriana e modifica a avaliação " +
+      "realizada apenas com base nos sintomas iniciais.";
+
+    reveal.classList.add("is-visible");
+
+    revealButton.setAttribute(
+      "aria-expanded",
+      "true"
+    );
+
+    revealButton.textContent =
+      "Novo dado integrado ao raciocínio";
+  });
 })();
-(function initCap8Page72(){
-  const root = document.querySelector(".cap8-page72");
+
+(function initCap8Page71() {
+  const root = document.querySelector(".cap8-page71");
+
   if (!root) return;
 
-  const options = root.querySelectorAll(".cap8-p72-option");
-  const feedback = root.querySelector(".cap8-p72-feedback");
+  const options = Array.from(
+    root.querySelectorAll(".cap8-p71-option")
+  );
 
-  const map = {
-    polimicrobiana: "Característica importante, mas não é o elemento determinante isolado da conduta clínica.",
-    espectro: "Pode ser necessário em determinados contextos, mas não garante resolução do processo infeccioso.",
-    foco: "Esse é o princípio central. Sem controle do foco infeccioso, a infecção pode persistir mesmo na presença de antibacterianos ativos."
+  const feedback = root.querySelector(
+    ".cap8-p71-feedback"
+  );
+
+  const consequenceBox = root.querySelector(
+    ".cap8-p71-consequence"
+  );
+
+  const consequenceButton = root.querySelector(
+    "[data-consequence]"
+  );
+
+  const result = root.querySelector(
+    ".cap8-p71-result"
+  );
+
+  if (
+    !options.length ||
+    !feedback ||
+    !consequenceBox
+  ) {
+    return;
+  }
+
+  const feedbackMap = {
+    infeccao: {
+      title: "Interpretação inadequada",
+      text:
+        "A presença isolada de bacteriúria não " +
+        "define infecção urinária ativa na " +
+        "ausência de sintomas.",
+      tone: "warning"
+    },
+
+    colonizacao: {
+      title: "Interpretação mais consistente",
+      text:
+        "Na ausência de sintomas urinários, a " +
+        "bacteriúria corresponde à colonização " +
+        "e não deve ser tratada na maioria das " +
+        "situações.",
+      tone: "correct"
+    },
+
+    inconclusivo: {
+      title: "Leitura incompleta",
+      text:
+        "A urocultura não deve ser interpretada " +
+        "isoladamente, mas neste caso já há " +
+        "elementos suficientes para afastar " +
+        "infecção ativa.",
+      tone: "warning"
+    }
   };
 
-  options.forEach(btn=>{
-    btn.addEventListener("click", ()=>{
-      options.forEach(b=>b.classList.remove("is-selected"));
-      btn.classList.add("is-selected");
+  function selectOption(selectedButton) {
+    const choice = selectedButton.dataset.choice;
+    const entry = feedbackMap[choice];
 
-      feedback.textContent = map[btn.dataset.choice];
-      feedback.classList.add("is-visible");
+    if (!entry) return;
+
+    options.forEach((button) => {
+      button.classList.remove("is-selected");
+      button.setAttribute("aria-pressed", "false");
+    });
+
+    selectedButton.classList.add("is-selected");
+
+    selectedButton.setAttribute(
+      "aria-pressed",
+      "true"
+    );
+
+    feedback.className =
+      `cap8-p71-feedback is-visible is-${entry.tone}`;
+
+    feedback.innerHTML = `
+      <strong>${entry.title}</strong>
+      <span>${entry.text}</span>
+    `;
+
+    consequenceBox.hidden = false;
+  }
+
+  options.forEach((button) => {
+    button.addEventListener("click", () => {
+      selectOption(button);
     });
   });
 
+  consequenceButton?.addEventListener(
+    "click",
+    () => {
+      if (!result) return;
+
+      result.innerHTML = `
+        <strong>
+          Risco do tratamento desnecessário
+        </strong>
+
+        <span>
+          O tratamento pode levar à seleção de
+          cepas resistentes, alteração da microbiota
+          e exposição a efeitos adversos sem
+          benefício clínico.
+        </span>
+      `;
+
+      result.classList.add("is-visible");
+
+      consequenceButton.setAttribute(
+        "aria-expanded",
+        "true"
+      );
+
+      consequenceButton.textContent =
+        "Risco do tratamento analisado";
+    }
+  );
 })();
-(function initCap8Page73(){
+
+
+(function initCap8Page72() {
+  const root = document.querySelector(".cap8-page72");
+
+  if (!root) return;
+
+  const options = Array.from(
+    root.querySelectorAll(".cap8-p72-option")
+  );
+
+  const feedback = root.querySelector(
+    ".cap8-p72-feedback"
+  );
+
+  if (!options.length || !feedback) return;
+
+  const feedbackMap = {
+    polimicrobiana: {
+      title: "Perfil microbiológico relevante",
+
+      text:
+        "A etiologia polimicrobiana influencia a " +
+        "cobertura inicial, mas não determina " +
+        "isoladamente toda a conduta clínica.",
+
+      tone: "micro"
+    },
+
+    espectro: {
+      title:
+        "Cobertura necessária, mas não suficiente",
+
+      text:
+        "A amplitude do espectro deve acompanhar " +
+        "o contexto clínico e epidemiológico, mas " +
+        "não garante a resolução do processo " +
+        "infeccioso.",
+
+      tone: "spectrum"
+    },
+
+    foco: {
+      title: "Elemento decisivo da abordagem",
+
+      text:
+        "Sem controle do foco infeccioso, a " +
+        "infecção pode persistir mesmo na presença " +
+        "de antibacterianos microbiologicamente " +
+        "ativos.",
+
+      tone: "focus"
+    }
+  };
+
+  function selectOption(selectedButton) {
+    const choice = selectedButton.dataset.choice;
+    const entry = feedbackMap[choice];
+
+    if (!entry) return;
+
+    options.forEach((button) => {
+      button.classList.remove("is-selected");
+
+      button.setAttribute(
+        "aria-pressed",
+        "false"
+      );
+    });
+
+    selectedButton.classList.add("is-selected");
+
+    selectedButton.setAttribute(
+      "aria-pressed",
+      "true"
+    );
+
+    feedback.className =
+      `cap8-p72-feedback is-visible is-${entry.tone}`;
+
+    feedback.innerHTML = `
+      <strong>${entry.title}</strong>
+      <span>${entry.text}</span>
+    `;
+  }
+
+  options.forEach((button) => {
+    button.addEventListener("click", () => {
+      selectOption(button);
+    });
+  });
+})();
+
+(function initCap8Page73() {
   const page = document.querySelector(".cap8-page73");
+
   if (!page) return;
 
-  const data = {
+  const phaseData = {
     "hora-zero": {
       kicker: "Hora Zero",
-      title: "Prioridade é não atrasar cobertura adequada",
-      text: "Em pacientes com suspeita de sepse e disfunção orgânica, a prioridade é iniciar prontamente terapia antimicrobiana empírica adequada. Nessa fase, a urgência clínica predomina sobre a precisão etiológica, e o risco de inadequação terapêutica precoce pesa diretamente no prognóstico.",
-      focus: "Reduzir rapidamente o risco de tratamento inicial inadequado.",
-      risk: "Subestimar a gravidade do quadro e atrasar a cobertura empírica nas primeiras horas."
+
+      title:
+        "Prioridade é não atrasar cobertura adequada",
+
+      text:
+        "Em pacientes com suspeita de sepse e " +
+        "disfunção orgânica, a prioridade é iniciar " +
+        "prontamente terapia antimicrobiana empírica " +
+        "adequada. Nessa fase, a urgência clínica " +
+        "predomina sobre a precisão etiológica, e o " +
+        "risco de inadequação terapêutica precoce " +
+        "pesa diretamente no prognóstico.",
+
+      focus:
+        "Reduzir rapidamente o risco de tratamento " +
+        "inicial inadequado.",
+
+      risk:
+        "Subestimar a gravidade do quadro e atrasar " +
+        "a cobertura empírica nas primeiras horas."
     },
+
     "24-48h": {
       kicker: "24–48h",
-      title: "Reavaliação contínua passa a reorganizar a conduta",
-      text: "À medida que a evolução clínica e os resultados parciais se tornam disponíveis, a estratégia inicial precisa ser reavaliada. Nessa fase, o raciocínio deve integrar resposta clínica, foco provável e dados microbiológicos ainda incompletos, sem manter decisões iniciais de forma automática.",
-      focus: "Integrar evolução clínica, hipótese etiológica e resultados parciais.",
-      risk: "Manter cobertura empírica ampla sem reavaliação ativa da estratégia inicial."
+
+      title:
+        "Reavaliação contínua passa a reorganizar a conduta",
+
+      text:
+        "À medida que a evolução clínica e os " +
+        "resultados parciais se tornam disponíveis, " +
+        "a estratégia inicial precisa ser reavaliada. " +
+        "Nessa fase, o raciocínio deve integrar " +
+        "resposta clínica, foco provável e dados " +
+        "microbiológicos ainda incompletos, sem manter " +
+        "decisões iniciais de forma automática.",
+
+      focus:
+        "Integrar evolução clínica, hipótese etiológica " +
+        "e resultados parciais.",
+
+      risk:
+        "Manter cobertura empírica ampla sem " +
+        "reavaliação ativa da estratégia inicial."
     },
+
     "72h": {
       kicker: "72h+",
-      title: "Patógeno identificado deve orientar terapia direcionada",
-      text: "Quando o microrganismo é identificado e seu perfil de suscetibilidade se torna conhecido, a terapia deve ser ajustada ao patógeno isolado. O objetivo passa a ser preservar eficácia clínica com menor exposição ecológica e menor uso desnecessário de antibacterianos de amplo espectro.",
-      focus: "Direcionar o tratamento ao agente identificado e reduzir exposição desnecessária.",
-      risk: "Manter ampliação empírica inicial indefinidamente, mesmo diante de dados que permitem estreitamento."
+
+      title:
+        "Patógeno identificado deve orientar terapia direcionada",
+
+      text:
+        "Quando o microrganismo é identificado e seu " +
+        "perfil de suscetibilidade se torna conhecido, " +
+        "a terapia deve ser ajustada ao patógeno " +
+        "isolado. O objetivo passa a ser preservar " +
+        "eficácia clínica com menor exposição ecológica " +
+        "e menor uso desnecessário de antibacterianos " +
+        "de amplo espectro.",
+
+      focus:
+        "Direcionar o tratamento ao agente identificado " +
+        "e reduzir exposição desnecessária.",
+
+      risk:
+        "Manter ampliação empírica inicial " +
+        "indefinidamente, mesmo diante de dados que " +
+        "permitem estreitamento."
     }
   };
 
-  const tabs = Array.from(page.querySelectorAll(".cap8-p73-tab"));
-  const segments = Array.from(page.querySelectorAll(".cap8-p73-stage__segment"));
-  const timeline = page.querySelector(".cap8-p73-timeline");
-  const panel = page.querySelector("[data-p73-panel]");
-  const kicker = page.querySelector("[data-p73-kicker]");
-  const title = page.querySelector("[data-p73-title]");
-  const text = page.querySelector("[data-p73-text]");
-  const focus = page.querySelector("[data-p73-focus]");
-  const risk = page.querySelector("[data-p73-risk]");
+  const tabs = Array.from(
+    page.querySelectorAll(".cap8-p73-tab")
+  );
 
-  if (!tabs.length || !timeline || !panel || !kicker || !title || !text || !focus || !risk) return;
+  const segments = Array.from(
+    page.querySelectorAll(
+      ".cap8-p73-stage__segment"
+    )
+  );
 
-  function syncTabs(activeKey){
+  const timeline = page.querySelector(
+    ".cap8-p73-timeline"
+  );
+
+  const panel = page.querySelector(
+    "[data-p73-panel]"
+  );
+
+  const kicker = page.querySelector(
+    "[data-p73-kicker]"
+  );
+
+  const title = page.querySelector(
+    "[data-p73-title]"
+  );
+
+  const text = page.querySelector(
+    "[data-p73-text]"
+  );
+
+  const focus = page.querySelector(
+    "[data-p73-focus]"
+  );
+
+  const risk = page.querySelector(
+    "[data-p73-risk]"
+  );
+
+  if (
+    !tabs.length ||
+    !timeline ||
+    !panel ||
+    !kicker ||
+    !title ||
+    !text ||
+    !focus ||
+    !risk
+  ) {
+    return;
+  }
+
+  const phaseOrder = [
+    "hora-zero",
+    "24-48h",
+    "72h"
+  ];
+
+  function synchronizeTimeline(activeKey) {
+    const activeIndex =
+      phaseOrder.indexOf(activeKey);
+
     tabs.forEach((tab) => {
-      const isActive = tab.dataset.phase === activeKey;
-      tab.classList.toggle("is-active", isActive);
-      tab.setAttribute("aria-selected", isActive ? "true" : "false");
+      const isActive =
+        tab.dataset.phase === activeKey;
+
+      tab.classList.toggle(
+        "is-active",
+        isActive
+      );
+
+      tab.setAttribute(
+        "aria-selected",
+        isActive ? "true" : "false"
+      );
+
+      tab.setAttribute(
+        "tabindex",
+        isActive ? "0" : "-1"
+      );
     });
 
     segments.forEach((segment) => {
-      segment.classList.toggle("is-active", segment.dataset.segment === activeKey);
+      const segmentIndex =
+        phaseOrder.indexOf(
+          segment.dataset.segment
+        );
+
+      const isActive =
+        segmentIndex === activeIndex;
+
+      const isComplete =
+        segmentIndex < activeIndex;
+
+      segment.classList.toggle(
+        "is-active",
+        isActive
+      );
+
+      segment.classList.toggle(
+        "is-complete",
+        isComplete
+      );
     });
+
+    timeline.dataset.activePhase = activeKey;
   }
 
-  function renderPhase(key){
-    const entry = data[key];
+  function renderPhase(
+    phaseKey,
+    animate = true
+  ) {
+    const entry = phaseData[phaseKey];
+
     if (!entry) return;
 
     kicker.textContent = entry.kicker;
@@ -282,108 +633,240 @@
     focus.textContent = entry.focus;
     risk.textContent = entry.risk;
 
-    syncTabs(key);
+    synchronizeTimeline(phaseKey);
+
+    panel.setAttribute(
+      "aria-labelledby",
+      `p73-tab-${phaseKey}`
+    );
+
+    if (animate) {
+      panel.classList.remove("is-updating");
+
+      void panel.offsetWidth;
+
+      panel.classList.add("is-updating");
+    }
   }
 
-  function measurePanelHeight(){
-    const original = {
-      kicker: kicker.textContent,
-      title: title.textContent,
-      text: text.textContent,
-      focus: focus.textContent,
-      risk: risk.textContent
-    };
-
-    let maxHeight = panel.offsetHeight;
-
-    Object.keys(data).forEach((key) => {
-      const entry = data[key];
-      kicker.textContent = entry.kicker;
-      title.textContent = entry.title;
-      text.textContent = entry.text;
-      focus.textContent = entry.focus;
-      risk.textContent = entry.risk;
-
-      const height = panel.scrollHeight;
-      if (height > maxHeight) maxHeight = height;
-    });
-
-    kicker.textContent = original.kicker;
-    title.textContent = original.title;
-    text.textContent = original.text;
-    focus.textContent = original.focus;
-    risk.textContent = original.risk;
-
-    const finalHeight = `${Math.ceil(maxHeight)}px`;
-    panel.style.setProperty("--p73-panel-height", finalHeight);
-    timeline.style.setProperty("--p73-panel-height", finalHeight);
-  }
-
-  tabs.forEach((tab) => {
+  tabs.forEach((tab, index) => {
     tab.addEventListener("click", () => {
       renderPhase(tab.dataset.phase);
     });
+
+    tab.addEventListener(
+      "keydown",
+      (event) => {
+        const navigationKeys = [
+          "ArrowRight",
+          "ArrowLeft",
+          "Home",
+          "End"
+        ];
+
+        if (
+          !navigationKeys.includes(event.key)
+        ) {
+          return;
+        }
+
+        event.preventDefault();
+
+        let nextIndex = index;
+
+        if (event.key === "ArrowRight") {
+          nextIndex =
+            (index + 1) % tabs.length;
+        }
+
+        if (event.key === "ArrowLeft") {
+          nextIndex =
+            (index - 1 + tabs.length) %
+            tabs.length;
+        }
+
+        if (event.key === "Home") {
+          nextIndex = 0;
+        }
+
+        if (event.key === "End") {
+          nextIndex = tabs.length - 1;
+        }
+
+        tabs[nextIndex].focus();
+
+        renderPhase(
+          tabs[nextIndex].dataset.phase
+        );
+      }
+    );
   });
 
-  renderPhase("hora-zero");
-
-  window.requestAnimationFrame(() => {
-    measurePanelHeight();
-    renderPhase("hora-zero");
-  });
-
-  window.addEventListener("resize", measurePanelHeight);
+  renderPhase("hora-zero", false);
 })();
 
-(function initCap8Page74(){
+(function initCap8Page74() {
   const page = document.querySelector(".cap8-page74");
+
   if (!page) return;
 
-  const data = {
+  const caseData = {
     "nao-purulenta": {
       kicker: "Celulite não purulenta",
-      title: "Sem gravidade e sem purulência, o alvo inicial costuma ser mais estreito",
-      text: "Na ausência de secreção purulenta, abscesso e sinais sistêmicos relevantes, a hipótese de infecção superficial não purulenta orienta cobertura dirigida principalmente a estreptococos, sem justificativa rotineira para ampliação desnecessária do espectro.",
-      focus: "Direcionar o tratamento ao perfil mais provável e evitar amplo espectro desnecessário.",
-      risk: "Automatizar cobertura ampliada para Gram-negativos e anaeróbios em infecções superficiais não complicadas."
+
+      title:
+        "Sem gravidade e sem purulência, o alvo " +
+        "inicial costuma ser mais estreito",
+
+      text:
+        "Na ausência de secreção purulenta, abscesso " +
+        "e sinais sistêmicos relevantes, a hipótese " +
+        "de infecção superficial não purulenta orienta " +
+        "cobertura dirigida principalmente a " +
+        "estreptococos, sem justificativa rotineira " +
+        "para ampliação desnecessária do espectro.",
+
+      focus:
+        "Direcionar o tratamento ao perfil mais " +
+        "provável e evitar amplo espectro desnecessário.",
+
+      risk:
+        "Automatizar cobertura ampliada para " +
+        "Gram-negativos e anaeróbios em infecções " +
+        "superficiais não complicadas."
     },
-    "purulenta": {
+
+    purulenta: {
       kicker: "Abscesso purulento",
-      title: "Quando há purulência, drenagem reorganiza a prioridade terapêutica",
-      text: "A presença de coleção purulenta ou abscesso aumenta a probabilidade de participação estafilocócica e recoloca a drenagem como elemento central da conduta. Em quadros selecionados, sem sinais sistêmicos de infecção, a intervenção local pode ser suficiente sem necessidade obrigatória de antibioticoterapia sistêmica.",
-      focus: "Reconhecer o papel central da drenagem e ajustar a necessidade real de antibioticoterapia.",
-      risk: "Reduzir todo quadro purulento a antibacteriano sistêmico, negligenciando a abordagem local do foco."
+
+      title:
+        "Quando há purulência, drenagem reorganiza " +
+        "a prioridade terapêutica",
+
+      text:
+        "A presença de coleção purulenta ou abscesso " +
+        "aumenta a probabilidade de participação " +
+        "estafilocócica e recoloca a drenagem como " +
+        "elemento central da conduta. Em quadros " +
+        "selecionados, sem sinais sistêmicos de " +
+        "infecção, a intervenção local pode ser " +
+        "suficiente sem necessidade obrigatória de " +
+        "antibioticoterapia sistêmica.",
+
+      focus:
+        "Reconhecer o papel central da drenagem e " +
+        "ajustar a necessidade real de antibioticoterapia.",
+
+      risk:
+        "Reduzir todo quadro purulento a antibacteriano " +
+        "sistêmico, negligenciando a abordagem local " +
+        "do foco."
     },
-    "grave": {
+
+    grave: {
       kicker: "Necrose / gravidade",
-      title: "Rápida progressão, necrose ou instabilidade mudam imediatamente a escala da resposta",
-      text: "Em apresentações com necrose tecidual, progressão rápida, instabilidade hemodinâmica ou comprometimento sistêmico importante, a probabilidade de infecção invasiva ou polimicrobiana aumenta. Nessa situação, a conduta passa a exigir abordagem terapêutica mais abrangente e, frequentemente, intervenção cirúrgica imediata.",
-      focus: "Reconhecer gravidade precocemente e integrar antibacteriano amplo com avaliação cirúrgica urgente.",
-      risk: "Tratar quadros potencialmente necrosantes como celulites simples e retardar intervenção decisiva."
+
+      title:
+        "Rápida progressão, necrose ou instabilidade " +
+        "mudam imediatamente a escala da resposta",
+
+      text:
+        "Em apresentações com necrose tecidual, " +
+        "progressão rápida, instabilidade hemodinâmica " +
+        "ou comprometimento sistêmico importante, a " +
+        "probabilidade de infecção invasiva ou " +
+        "polimicrobiana aumenta. Nessa situação, a " +
+        "conduta passa a exigir abordagem terapêutica " +
+        "mais abrangente e, frequentemente, intervenção " +
+        "cirúrgica imediata.",
+
+      focus:
+        "Reconhecer gravidade precocemente e integrar " +
+        "antibacteriano amplo com avaliação cirúrgica " +
+        "urgente.",
+
+      risk:
+        "Tratar quadros potencialmente necrosantes " +
+        "como celulites simples e retardar intervenção " +
+        "decisiva."
     }
   };
 
-  const tabs = Array.from(page.querySelectorAll(".cap8-p74-tab"));
-  const clinic = page.querySelector(".cap8-p74-clinic");
-  const panel = page.querySelector("[data-p74-panel]");
-  const kicker = page.querySelector("[data-p74-kicker]");
-  const title = page.querySelector("[data-p74-title]");
-  const text = page.querySelector("[data-p74-text]");
-  const focus = page.querySelector("[data-p74-focus]");
-  const risk = page.querySelector("[data-p74-risk]");
+  const tabs = Array.from(
+    page.querySelectorAll(".cap8-p74-tab")
+  );
 
-  if (!tabs.length || !clinic || !panel || !kicker || !title || !text || !focus || !risk) return;
+  const clinic = page.querySelector(
+    ".cap8-p74-clinic"
+  );
 
-  function syncTabs(activeKey){
-    tabs.forEach((tab) => {
-      const isActive = tab.dataset.case === activeKey;
-      tab.classList.toggle("is-active", isActive);
-      tab.setAttribute("aria-selected", isActive ? "true" : "false");
-    });
+  const panel = page.querySelector(
+    "[data-p74-panel]"
+  );
+
+  const kicker = page.querySelector(
+    "[data-p74-kicker]"
+  );
+
+  const title = page.querySelector(
+    "[data-p74-title]"
+  );
+
+  const text = page.querySelector(
+    "[data-p74-text]"
+  );
+
+  const focus = page.querySelector(
+    "[data-p74-focus]"
+  );
+
+  const risk = page.querySelector(
+    "[data-p74-risk]"
+  );
+
+  if (
+    !tabs.length ||
+    !clinic ||
+    !panel ||
+    !kicker ||
+    !title ||
+    !text ||
+    !focus ||
+    !risk
+  ) {
+    return;
   }
 
-  function renderCase(key){
-    const entry = data[key];
+  function synchronizeTabs(activeKey) {
+    tabs.forEach((tab) => {
+      const isActive =
+        tab.dataset.case === activeKey;
+
+      tab.classList.toggle(
+        "is-active",
+        isActive
+      );
+
+      tab.setAttribute(
+        "aria-selected",
+        isActive ? "true" : "false"
+      );
+
+      tab.setAttribute(
+        "tabindex",
+        isActive ? "0" : "-1"
+      );
+    });
+
+    clinic.dataset.activeCase = activeKey;
+  }
+
+  function renderCase(
+    caseKey,
+    animate = true
+  ) {
+    const entry = caseData[caseKey];
+
     if (!entry) return;
 
     kicker.textContent = entry.kicker;
@@ -392,181 +875,335 @@
     focus.textContent = entry.focus;
     risk.textContent = entry.risk;
 
-    syncTabs(key);
+    synchronizeTabs(caseKey);
+
+    panel.setAttribute(
+      "aria-labelledby",
+      `p74-tab-${caseKey}`
+    );
+
+    if (animate) {
+      panel.classList.remove("is-updating");
+
+      void panel.offsetWidth;
+
+      panel.classList.add("is-updating");
+    }
   }
 
-  function measurePanelHeight(){
-    const original = {
-      kicker: kicker.textContent,
-      title: title.textContent,
-      text: text.textContent,
-      focus: focus.textContent,
-      risk: risk.textContent
-    };
-
-    let maxHeight = panel.offsetHeight;
-
-    Object.keys(data).forEach((key) => {
-      const entry = data[key];
-      kicker.textContent = entry.kicker;
-      title.textContent = entry.title;
-      text.textContent = entry.text;
-      focus.textContent = entry.focus;
-      risk.textContent = entry.risk;
-
-      const height = panel.scrollHeight;
-      if (height > maxHeight) maxHeight = height;
-    });
-
-    kicker.textContent = original.kicker;
-    title.textContent = original.title;
-    text.textContent = original.text;
-    focus.textContent = original.focus;
-    risk.textContent = original.risk;
-
-    const finalHeight = `${Math.ceil(maxHeight)}px`;
-    panel.style.setProperty("--p74-panel-height", finalHeight);
-    clinic.style.setProperty("--p74-panel-height", finalHeight);
-  }
-
-  tabs.forEach((tab) => {
+  tabs.forEach((tab, index) => {
     tab.addEventListener("click", () => {
       renderCase(tab.dataset.case);
     });
+
+    tab.addEventListener(
+      "keydown",
+      (event) => {
+        const navigationKeys = [
+          "ArrowRight",
+          "ArrowLeft",
+          "Home",
+          "End"
+        ];
+
+        if (
+          !navigationKeys.includes(event.key)
+        ) {
+          return;
+        }
+
+        event.preventDefault();
+
+        let nextIndex = index;
+
+        if (event.key === "ArrowRight") {
+          nextIndex =
+            (index + 1) % tabs.length;
+        }
+
+        if (event.key === "ArrowLeft") {
+          nextIndex =
+            (index - 1 + tabs.length) %
+            tabs.length;
+        }
+
+        if (event.key === "Home") {
+          nextIndex = 0;
+        }
+
+        if (event.key === "End") {
+          nextIndex = tabs.length - 1;
+        }
+
+        tabs[nextIndex].focus();
+
+        renderCase(
+          tabs[nextIndex].dataset.case
+        );
+      }
+    );
   });
 
-  renderCase("nao-purulenta");
-
-  window.requestAnimationFrame(() => {
-    measurePanelHeight();
-    renderCase("nao-purulenta");
-  });
-
-  window.addEventListener("resize", measurePanelHeight);
+  renderCase("nao-purulenta", false);
 })();
-(function initCap8Page75(){
+
+
+/* =========================
+   PÁGINA 75 — QUIZ DE REVISÃO
+   Padrão interativo da página 10
+   ========================= */
+
+(function initCap8Page75ClinicalSynthesis() {
   const root = document.querySelector("[data-cap8-p75]");
+
   if (!root) return;
 
-  const statusValue = root.querySelector(".cap8-p75Status__value");
-  const questions = Array.from(root.querySelectorAll(".cap8-p75Question"));
-  const completion = root.querySelector("[data-p75-completion]");
+  const questions = Array.from(
+    root.querySelectorAll(".cap8-p75Question")
+  );
 
-  function parseFeedbackMap(article){
-    const template = article.querySelector(".cap8-p75FeedbackMap");
-    if (!template) return {};
-    try {
-      return JSON.parse(template.innerHTML.trim());
-    } catch (error) {
-      console.error("Erro ao ler feedback do quiz da página 75:", error);
-      return {};
-    }
-  }
+  const statusValue = root.querySelector(
+    ".cap8-p75Status__value"
+  );
 
-  function updateStatus(){
+  const completion = root.querySelector(
+    "[data-p75-completion]"
+  );
+
+  const completionText = root.querySelector(
+    "[data-p75-completion-text]"
+  );
+
+  if (!questions.length) return;
+
+  const completionMap = {
+    perfect:
+      "Você articulou os dois eixos centrais desta síntese: achados isolados não substituem a avaliação clínica, e a presença de um foco anatômico passível de intervenção pode ser determinante para o sucesso terapêutico.",
+
+    partial:
+      "A leitura clínica está se consolidando, mas ainda exige atenção a dois pontos: a etiologia não deve ser definida por um dado laboratorial isolado, e a antibioticoterapia não substitui o controle de um foco infeccioso drenável.",
+
+    needsReview:
+      "Vale revisar o encadeamento clínico do capítulo: primeiro, estimar a probabilidade de infecção bacteriana; depois, identificar o foco provável; por fim, integrar cobertura antimicrobiana e necessidade de intervenção sobre o foco."
+  };
+
+  function updateStatus() {
     const confirmedCount = questions.filter(
-      (question) => question.getAttribute("data-question-state") === "confirmed"
+      (question) =>
+        question.dataset.questionState === "confirmed"
     ).length;
 
-    if (statusValue){
-      statusValue.textContent = `${confirmedCount} de ${questions.length} situações confirmadas`;
+    if (statusValue) {
+      statusValue.textContent =
+        `${confirmedCount} de ${questions.length} situações confirmadas`;
     }
 
-    if (completion){
-      completion.hidden = confirmedCount !== questions.length;
+    if (!completion || !completionText) return;
+
+    if (confirmedCount !== questions.length) {
+      completion.hidden = true;
+      return;
     }
+
+    const correctCount = questions.filter(
+      (question) =>
+        question.dataset.result === "correct"
+    ).length;
+
+    if (correctCount === questions.length) {
+      completionText.textContent = completionMap.perfect;
+    } else if (correctCount >= 1) {
+      completionText.textContent = completionMap.partial;
+    } else {
+      completionText.textContent = completionMap.needsReview;
+    }
+
+    completion.hidden = false;
   }
 
-  function clearFeedback(feedback){
-    feedback.className = "cap8-p75Feedback";
-    feedback.innerHTML = "";
-  }
+  questions.forEach((question) => {
+    const optionButtons = Array.from(
+      question.querySelectorAll(
+        ".cap8-p75Options button"
+      )
+    );
 
-  questions.forEach((article) => {
-    const options = Array.from(article.querySelectorAll(".cap8-p75Options button"));
-    const confirmButton = article.querySelector('[data-p75-action="confirm"]');
-    const resetButton = article.querySelector('[data-p75-action="reset"]');
-    const feedback = article.querySelector(".cap8-p75Feedback");
-    const feedbackMap = parseFeedbackMap(article);
+    const confirmButton = question.querySelector(
+      '[data-p75-action="confirm"]'
+    );
+
+    const resetButton = question.querySelector(
+      '[data-p75-action="reset"]'
+    );
+
+    const feedbackBox = question.querySelector(
+      ".cap8-p75Feedback"
+    );
+
+    const feedbackTemplate = question.querySelector(
+      ".cap8-p75FeedbackMap"
+    );
+
+    if (
+      !confirmButton ||
+      !resetButton ||
+      !feedbackBox ||
+      !feedbackTemplate
+    ) {
+      return;
+    }
 
     let selectedAnswer = null;
+    let confirmed = false;
+    let feedbackMap = {};
 
-    function resetQuestion(){
+    try {
+      feedbackMap = JSON.parse(
+        feedbackTemplate.innerHTML.trim()
+      );
+    } catch (error) {
+      console.error(
+        "Erro ao ler o feedback do quiz da página 75:",
+        error
+      );
+
+      return;
+    }
+
+    function resetQuestion() {
+      confirmed = false;
       selectedAnswer = null;
-      article.setAttribute("data-question-state", "pending");
 
-      options.forEach((button) => {
+      question.dataset.questionState = "pending";
+      question.dataset.result = "";
+
+      optionButtons.forEach((button) => {
         button.disabled = false;
-        button.classList.remove("is-selected", "is-correct", "is-error");
+
+        button.classList.remove(
+          "selected",
+          "correct",
+          "error"
+        );
+
+        button.setAttribute(
+          "aria-pressed",
+          "false"
+        );
       });
 
-      if (confirmButton){
-        confirmButton.disabled = true;
-      }
+      feedbackBox.innerHTML = "";
+      feedbackBox.className = "cap8-p75Feedback";
 
-      if (resetButton){
-        resetButton.hidden = true;
-      }
-
-      if (feedback){
-        clearFeedback(feedback);
-      }
+      confirmButton.hidden = false;
+      confirmButton.disabled = true;
+      resetButton.hidden = true;
 
       updateStatus();
     }
 
-    options.forEach((button) => {
+    optionButtons.forEach((button) => {
+      button.setAttribute(
+        "aria-pressed",
+        "false"
+      );
+
       button.addEventListener("click", () => {
-        if (article.getAttribute("data-question-state") === "confirmed") return;
+        if (confirmed) return;
 
-        selectedAnswer = button.getAttribute("data-answer");
+        optionButtons.forEach((item) => {
+          item.classList.remove("selected");
 
-        options.forEach((option) => {
-          option.classList.remove("is-selected");
+          item.setAttribute(
+            "aria-pressed",
+            "false"
+          );
         });
 
-        button.classList.add("is-selected");
+        button.classList.add("selected");
 
-        if (confirmButton){
-          confirmButton.disabled = false;
-        }
+        button.setAttribute(
+          "aria-pressed",
+          "true"
+        );
+
+        selectedAnswer =
+          button.dataset.answer || null;
+
+        confirmButton.disabled =
+          !selectedAnswer;
       });
     });
 
-    confirmButton?.addEventListener("click", () => {
-      if (!selectedAnswer) return;
+    confirmButton.addEventListener("click", () => {
+      if (!selectedAnswer || confirmed) return;
 
-      const selectedButton = options.find(
-        (button) => button.getAttribute("data-answer") === selectedAnswer
+      confirmed = true;
+
+      const chosenButton = question.querySelector(
+        `.cap8-p75Options button[data-answer="${selectedAnswer}"]`
       );
 
-      const entry = feedbackMap[selectedAnswer];
-      if (!selectedButton || !entry || !feedback) return;
+      const correctButton = question.querySelector(
+        '.cap8-p75Options button[data-correct="true"]'
+      );
 
-      article.setAttribute("data-question-state", "confirmed");
+      const feedbackItem =
+        feedbackMap[selectedAnswer];
 
-      options.forEach((button) => {
+      const isCorrect = Boolean(
+        chosenButton &&
+        chosenButton.dataset.correct === "true"
+      );
+
+      question.dataset.questionState =
+        "confirmed";
+
+      question.dataset.result =
+        isCorrect ? "correct" : "error";
+
+      optionButtons.forEach((button) => {
         button.disabled = true;
-        button.classList.remove("is-selected");
       });
 
-      selectedButton.classList.add(entry.type === "correct" ? "is-correct" : "is-error");
+      if (chosenButton) {
+        if (isCorrect) {
+          chosenButton.classList.add("correct");
 
-      feedback.classList.add("is-visible", entry.type === "correct" ? "is-correct" : "is-error");
-      feedback.innerHTML = `
-        <p class="cap8-p75Feedback__title">${entry.title}</p>
-        <p class="cap8-p75Feedback__text">${entry.text}</p>
-      `;
+          feedbackBox.className =
+            "cap8-p75Feedback correct";
+        } else {
+          chosenButton.classList.add("error");
 
-      confirmButton.disabled = true;
-      if (resetButton){
-        resetButton.hidden = false;
+          if (correctButton) {
+            correctButton.classList.add("correct");
+          }
+
+          feedbackBox.className =
+            "cap8-p75Feedback error";
+        }
       }
+
+      if (feedbackItem) {
+        feedbackBox.innerHTML = `
+          <p>
+            <strong>${feedbackItem.title}</strong>
+          </p>
+
+          <p>${feedbackItem.text}</p>
+        `;
+      }
+
+      confirmButton.hidden = true;
+      resetButton.hidden = false;
 
       updateStatus();
     });
 
-    resetButton?.addEventListener("click", resetQuestion);
+    resetButton.addEventListener(
+      "click",
+      resetQuestion
+    );
 
     resetQuestion();
   });

@@ -7,7 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -16,137 +16,116 @@
 
 <body class="cap4-page30">
 
-  <main class="page-shell">
+  <main class="page-shell cap4-shell">
 
     <header class="page-header">
       <div class="chapter">Capítulo 4 — Farmacocinética e Farmacodinâmica Aplicadas</div>
-      <h1 class="page-title">Exposição antimicrobiana e seleção de resistência</h1>
+      <h1 class="page-title">Exposição ao antibacteriano e seleção de resistência</h1>
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <section class="prose cap4-reading-flow">
 
       <p>
-        A exposição a um antibacteriano não determina apenas a probabilidade de resposta clínica imediata. Ela também modifica o ambiente biológico no qual a população bacteriana se encontra. Cada administração do fármaco cria um cenário seletivo no foco infeccioso, no qual subpopulações bacterianas com diferentes níveis de suscetibilidade passam a competir sob novas condições de pressão farmacológica <sup>1,2</sup>.
+        A exposição a um antibacteriano não determina apenas a probabilidade de resposta clínica imediata. Ela também modifica o ambiente biológico no qual a população bacteriana se encontra. Cada administração do fármaco estabelece um cenário seletivo no foco infeccioso, alterando a competição entre subpopulações bacterianas com diferentes níveis de suscetibilidade sob a influência da pressão farmacológica <sup>1,2</sup>.
       </p>
 
       <p>
-        Mesmo em infecções causadas por microrganismos classificados como suscetíveis, a população bacteriana não é homogênea. Pequenas variações genéticas ou fenotípicas podem conferir vantagem adaptativa discreta quando a concentração do antibacteriano se aproxima do limite inferior necessário para inibição bacteriana. Nesse contexto, o efeito do antibacteriano não se restringe à erradicação do patógeno, mas também altera a composição relativa dessas subpopulações ao longo do tempo <sup>3</sup>.
+        Mesmo em infecções causadas por microrganismos classificados como suscetíveis, a população bacteriana não é homogênea. Pequenas variações genéticas ou fenotípicas podem conferir vantagem adaptativa quando a exposição ao antibacteriano se aproxima do limite inferior necessário para inibição do crescimento bacteriano. Assim, além de reduzir a carga microbiana, o tratamento modifica progressivamente a composição relativa dessas subpopulações ao longo do tempo <sup>3,4</sup>.
       </p>
 
       <p>
-        Quando a exposição alcança níveis consistentemente superiores aos necessários para inibição e morte bacteriana, a probabilidade de eliminação dessas variantes é maior. Entretanto, quando a curva concentração–tempo permanece próxima à concentração inibitória mínima, pode ocorrer pressão seletiva sem erradicação completa da população bacteriana.
+        Quando a exposição ao antibacteriano permanece suficientemente elevada, aumenta a probabilidade de eliminação tanto das bactérias mais suscetíveis quanto das variantes com menor suscetibilidade relativa. Entretanto, concentrações próximas à CIM podem exercer pressão seletiva sem promover erradicação completa da população bacteriana.
       </p>
 
       <p>
-        Essa faixa intermediária de exposição é frequentemente descrita como janela de seleção mutante, um intervalo de concentrações no qual bactérias mais suscetíveis são inibidas, enquanto variantes com menor suscetibilidade relativa permanecem viáveis e aumentam sua frequência na população <sup>4,5</sup>.
+        Esse fenômeno é descrito pelo conceito de janela de seleção mutante (<em>Mutant Selection Window</em>), correspondente ao intervalo de concentrações entre a CIM e a concentração de prevenção de mutantes (CPM). Nessa faixa, bactérias mais suscetíveis tendem a ser inibidas, enquanto variantes com menor suscetibilidade relativa permanecem viáveis, aumentando a probabilidade de seleção de resistência <sup>5,6</sup>.
       </p>
 
-      <section class="cap4-p30-figureBlock" aria-labelledby="cap4-p30-figure-title">
-        <div class="cap4-p30-figureBlock__head">
-          <p class="eyebrow">Leitura visual do conceito</p>
-          <h3 id="cap4-p30-figure-title" class="cap4-p30-figureBlock__title">Como a exposição pode favorecer seleção sem erradicação completa</h3>
-          <p class="cap4-p30-figureBlock__subtitle">
-            A figura não substitui o texto: ela ajuda a localizar visualmente o ponto em que a exposição deixa de ser apenas terapêutica e passa a ter relevância seletiva.
-          </p>
+      <figure class="figure cap4-p30-figure cap4-p30-reveal">
+        <button
+          type="button"
+          class="cap4-p30-figure__zoom"
+          data-zoom="../../assets/capitulo-04/imagens/jsm-curva-selecao.png"
+          aria-label="Ampliar figura da janela de seleção mutante"
+        >
+          <img
+            src="../../assets/capitulo-04/imagens/jsm-curva-selecao.png"
+            alt="Curva concentração-tempo mostrando a concentração inibitória mínima, a concentração de prevenção de mutantes e a janela de seleção mutante"
+            loading="lazy"
+          />
+        </button>
+
+        <figcaption class="caption cap4-p30-caption">
+          Relação entre a curva concentração–tempo, a concentração inibitória mínima (CIM), a concentração de prevenção de mutantes (CPM) e a janela de seleção mutante.
+        </figcaption>
+      </figure>
+
+      <section class="cap4-p30-guide cap4-p30-reveal" aria-label="Leitura guiada da janela de seleção mutante">
+        <div class="cap4-p30-guide__head">
+          
+          <p>Clique nos elementos para interpretar a figura.</p>
         </div>
 
-        <figure class="figure cap4-p30-figure">
-          <button
-            type="button"
-            class="cap4-p30-figure__zoom"
-            data-zoom="../../assets/capitulo-04/imagens/jsm-curva-selecao.png"
-            aria-label="Ampliar figura da janela de seleção mutante"
-          >
-            <img
-              src="../../assets/capitulo-04/imagens/jsm-curva-selecao.png"
-              alt="Curva concentração-tempo mostrando a concentração inibitória mínima, a concentração de prevenção de mutantes e a janela de seleção mutante."
-              loading="lazy"
-            />
+        <div class="cap4-p30-guide__controls" role="tablist" aria-label="Elementos da figura">
+          <button class="cap4-p30-guide__chip is-active" type="button" role="tab" aria-selected="true" data-p30-step="cim">
+            CIM
           </button>
-          <figcaption class="caption">
-            A permanência da curva entre a CIM e a CPM ajuda a visualizar por que parte da população pode ser suprimida enquanto variantes menos suscetíveis continuam viáveis sob pressão seletiva.
-          </figcaption>
-        </figure>
 
-        <div class="cap4-p30-guide" aria-label="Leitura guiada da figura">
-          <div class="cap4-p30-guide__controls" role="tablist" aria-label="Elementos da figura">
-            <button class="cap4-p30-guide__chip is-active" type="button" role="tab" aria-selected="true" data-p30-step="cim">
-              CIM
-            </button>
-            <button class="cap4-p30-guide__chip" type="button" role="tab" aria-selected="false" data-p30-step="cpm">
-              CPM
-            </button>
-            <button class="cap4-p30-guide__chip" type="button" role="tab" aria-selected="false" data-p30-step="janela">
-              Janela de seleção
-            </button>
-            <button class="cap4-p30-guide__chip" type="button" role="tab" aria-selected="false" data-p30-step="curva">
-              Curva concentração–tempo
-            </button>
-          </div>
+          <button class="cap4-p30-guide__chip" type="button" role="tab" aria-selected="false" data-p30-step="cpm">
+            CPM
+          </button>
 
-          <div class="cap4-p30-guide__panel" aria-live="polite">
-            <div class="cap4-p30-guide__eyebrow" id="cap4-p30-eyebrow">Leitura interpretativa</div>
-            <h3 class="cap4-p30-guide__title" id="cap4-p30-title">Estar acima da CIM não resolve sozinho o problema seletivo</h3>
-            <div class="cap4-p30-guide__text" id="cap4-p30-text">
-              <p>
-                A CIM marca o ponto a partir do qual a inibição bacteriana se torna possível no ensaio laboratorial. Mas, do ponto de vista clínico, o risco seletivo não desaparece apenas por ultrapassar esse limiar: ainda pode haver sobrevivência relativa de variantes menos suscetíveis.
-              </p>
-            </div>
+          <button class="cap4-p30-guide__chip" type="button" role="tab" aria-selected="false" data-p30-step="janela">
+            Janela de seleção
+          </button>
+
+          <button class="cap4-p30-guide__chip" type="button" role="tab" aria-selected="false" data-p30-step="curva">
+            Curva concentração–tempo
+          </button>
+        </div>
+
+        <div class="cap4-p30-guide__panel" aria-live="polite">
+          <div class="cap4-p30-guide__eyebrow" id="cap4-p30-eyebrow">Conceito-chave</div>
+          <h3 class="cap4-p30-guide__title" id="cap4-p30-title">Concentração inibitória mínima</h3>
+          <div class="cap4-p30-guide__text" id="cap4-p30-text">
+            <p>
+              A CIM representa a menor concentração capaz de inibir o crescimento bacteriano em condições laboratoriais padronizadas.
+            </p>
           </div>
         </div>
       </section>
 
       <p>
-        Na prática clínica, esse conceito ajuda a compreender por que esquemas posológicos inadequados, intervalos entre doses excessivamente prolongados ou interrupção precoce do tratamento podem favorecer a emergência de subpopulações menos suscetíveis.
+        A CIM representa a menor concentração capaz de inibir o crescimento bacteriano em condições laboratoriais padronizadas. Entretanto, ultrapassar esse limiar não elimina, por si só, o risco de seleção de resistência. Um dos fatores relevantes é o tempo durante o qual a concentração do antibacteriano permanece na janela de seleção mutante, associado à intensidade da exposição nessa faixa. 
       </p>
 
       <p>
-        A permanência prolongada nessa zona intermediária pode promover deslocamento gradual da distribuição de suscetibilidade da população bacteriana, resultando em elevação progressiva da concentração inibitória mínima observada ao longo de exposições repetidas ao antibacteriano <sup>1</sup>.
+        Esse conceito ajuda a compreender por que exposições insuficientes, intervalos posológicos excessivamente prolongados ou interrupção antes da duração clinicamente indicada podem favorecer a persistência de variantes menos suscetíveis.
       </p>
+
+      <aside class="cap4-p30-clinical-example cap4-p30-reveal">
+        <div class="cap4-p30-example-label">🩺 Exemplo clínico</div>
+
+        <p>
+          Em uma pneumonia bacteriana com elevada carga bacteriana, oscilações importantes na concentração do antibacteriano podem manter parte da população bacteriana exposta por período prolongado à janela de seleção mutante. Embora ocorra redução da carga bacteriana, variantes com menor suscetibilidade relativa podem persistir e tornar-se proporcionalmente mais frequentes ao longo do tratamento <sup>1</sup>.
+        </p>
+      </aside>
 
       <p>
-        A probabilidade de permanência na janela de seleção depende da relação entre a farmacocinética do fármaco (como o organismo absorve, distribui e elimina o antibacteriano) e a farmacodinâmica (como o fármaco atua sobre a bactéria).
+        A permanência da concentração nessa faixa depende da interação entre a farmacocinética do fármaco, que determina sua absorção, distribuição e eliminação, e a farmacodinâmica, que relaciona essa exposição à atividade sobre a bactéria. Essa interação é expressa pelos principais índices farmacocinéticos/farmacodinâmicos (PK/PD), apresentados na próxima seção <sup>6–8</sup>.
       </p>
 
-      <p>
-        Essa relação é descrita por índices farmacodinâmicos que conectam exposição ao fármaco e atividade antimicrobiana:
-      </p>
-
-      <div class="cap4-p30-indices" aria-label="Índices farmacodinâmicos">
-        <div class="cap4-p30-indices__item">
-          <p class="cap4-p30-indices__term">%fT&gt;MIC</p>
-          <p class="cap4-p30-indices__desc">percentual do tempo em que a concentração livre do antibacteriano permanece acima da CIM</p>
-          <p class="cap4-p30-indices__focus">→ principal para β-lactâmicos</p>
-        </div>
-
-        <div class="cap4-p30-indices__item">
-          <p class="cap4-p30-indices__term">Cmax/MIC</p>
-          <p class="cap4-p30-indices__desc">relação entre a concentração máxima alcançada e a CIM</p>
-          <p class="cap4-p30-indices__focus">→ relevante para aminoglicosídeos</p>
-        </div>
-
-        <div class="cap4-p30-indices__item">
-          <p class="cap4-p30-indices__term">AUC/MIC</p>
-          <p class="cap4-p30-indices__desc">relação entre a exposição total ao fármaco ao longo do tempo e a CIM</p>
-          <p class="cap4-p30-indices__focus">→ importante para fluoroquinolonas e glicopeptídeos</p>
-        </div>
-      </div>
-
-      <p>
-        Esses parâmetros determinam se a exposição alcançada é suficiente para eliminar a população bacteriana de forma consistente ou se parte dela permanecerá viável sob pressão seletiva incompleta <sup>5,6</sup>.
-      </p>
-
-      <p>
-        Condições clínicas como alta carga bacteriana, penetração heterogênea em determinados compartimentos, alterações na depuração renal ou intervalos posológicos inadequados podem manter a exposição próxima ao limiar inferior eficaz, permitindo a persistência de subpopulações menos suscetíveis no foco infeccioso <sup>7–9</sup>.
-      </p>
+      <aside class="cap4-p30-box cap4-p30-key cap4-p30-reveal">
+        A seleção de resistência depende não apenas da presença do antibacteriano, mas da intensidade e da duração da exposição em relação à suscetibilidade da população bacteriana.
+      </aside>
 
     </section>
 
- <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="../capitulo-03/p29.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 4 · Página 30 de 89</div>
-  <a class="btn primary" href="p31.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="../capitulo-03/p29.html" aria-label="Ir para a página anterior">← Anterior</a>
+      <div class="center">Capítulo 4 · Página 30 de 89</div>
+      <a class="btn primary" href="p31.html" aria-label="Ir para a próxima página">Próxima →</a>
+    </nav>
 
   </main>
 

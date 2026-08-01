@@ -3,10 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 5 — Página 40</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -18,136 +23,279 @@
   <main class="page-shell">
 
     <header class="page-header">
-      <div>
-        <div class="chapter">Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma</div>
-        <h1 class="page-title">Bacterioscopia e coloração de Gram</h1>
+      <div class="chapter">
+        Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma
       </div>
+
+      <h1 class="page-title">
+        Bacterioscopia
+      </h1>
     </header>
 
-    <section class="prose cap5-p40-prose" aria-label="Texto principal">
+    <section class="prose cap5-p40v3-reading">
 
       <p>
-        A bacterioscopia costuma ser o primeiro dado microbiológico disponível durante a investigação de uma infecção bacteriana <sup>1,2</sup>.
+        A bacterioscopia costuma fornecer a primeira informação microbiológica disponível, permitindo uma avaliação inicial da qualidade da amostra e das características do microrganismo antes da conclusão da cultura e do teste de suscetibilidade aos antimicrobianos <sup>1,2</sup>.
+      Auxilia na interpretação inicial do processo infeccioso e na avaliação da representatividade da amostra clínica <sup>2</sup>.
       </p>
 
-      <section class="cap5-p40-sequence" aria-label="Sequência temporal dos dados microbiológicos">
-        <div class="cap5-p40-sequence__track">
+      <section
+        class="cap5-p40v3-sequence cap5-p40v3-reveal"
+        aria-label="Sequência do processamento microbiológico"
+      >
+        <div class="cap5-p40v3-sequenceTrack">
 
-          <div class="cap5-p40-sequence__time">
-            <span></span>
-            <strong>Tempo</strong>
-            <span></span>
+          <div class="cap5-p40v3-sequenceItem is-current">
+            <span class="cap5-p40v3-sequenceNumber">1</span>
+
+            <div>
+              <strong>Bacterioscopia</strong>
+              <small>Informação microscópica inicial</small>
+            </div>
           </div>
 
-          <div class="cap5-p40-sequence__steps">
-            <article class="cap5-p40-step is-active" aria-current="step">
-              <span class="cap5-p40-step__number">1</span>
-              <h3>Bacterioscopia</h3>
-              <p>Observação direta do material clínico ao microscópio após coloração, permitindo identificar características estruturais iniciais do microrganismo.</p>
-            </article>
+          <span class="cap5-p40v3-sequenceArrow" aria-hidden="true">→</span>
 
-            <div class="cap5-p40-step__arrow" aria-hidden="true">→</div>
+          <div class="cap5-p40v3-sequenceItem">
+            <span class="cap5-p40v3-sequenceNumber">2</span>
 
-            <article class="cap5-p40-step is-muted">
-              <span class="cap5-p40-step__number">2</span>
-              <h3>Cultura</h3>
-              <p>Isolamento do microrganismo em meio adequado, permitindo identificação mais precisa.</p>
-            </article>
-
-            <div class="cap5-p40-step__arrow" aria-hidden="true">→</div>
-
-            <article class="cap5-p40-step is-muted">
-              <span class="cap5-p40-step__number">3</span>
-              <h3>Antibiograma</h3>
-              <p>Perfil de suscetibilidade antimicrobiana obtido após isolamento bacteriano.</p>
-            </article>
+            <div>
+              <strong>Cultura</strong>
+              <small>Isolamento do microrganismo</small>
+            </div>
           </div>
 
-          <div class="cap5-p40-sequence__note">
-            A bacterioscopia é a primeira janela de visibilidade microbiológica e ajuda a orientar o raciocínio clínico antes da cultura e do antibiograma.
+          <span class="cap5-p40v3-sequenceArrow" aria-hidden="true">→</span>
+
+          <div class="cap5-p40v3-sequenceItem">
+            <span class="cap5-p40v3-sequenceNumber">3</span>
+
+            <div>
+              <strong>Identificação</strong>
+              <small>Definição do agente isolado</small>
+            </div>
           </div>
+
+          <span class="cap5-p40v3-sequenceArrow" aria-hidden="true">→</span>
+
+          <div class="cap5-p40v3-sequenceItem">
+            <span class="cap5-p40v3-sequenceNumber">4</span>
+
+            <div>
+              <strong>Antibiograma</strong>
+              <small>Perfil de suscetibilidade</small>
+            </div>
+          </div>
+
         </div>
+
+        <p class="cap5-p40v3-sequenceNote">
+          À medida que o processamento laboratorial avança, as informações tornam-se progressivamente mais específicas.
+        </p>
       </section>
 
       <p>
-        Entre os métodos de coloração utilizados na rotina laboratorial, a coloração de Gram é a técnica mais empregada. Seu princípio baseia-se na diferença estrutural da parede celular bacteriana, particularmente na espessura da camada de peptidoglicano e na presença ou ausência de membrana externa. Essas diferenças determinam a retenção ou perda do corante durante o processo de descoloração <sup>1,2</sup>.
+        A análise microscópica permite avaliar simultaneamente características bacterianas e elementos celulares presentes no material clínico. Para interpretar o campo, é necessário observar a reação à coloração de Gram, a morfologia, o arranjo bacteriano, a quantidade de microrganismos e a presença de células inflamatórias ou epiteliais.
       </p>
 
-      <p>
-        Além da diferenciação entre Gram-positivas e Gram-negativas, a bacterioscopia fornece outras informações relevantes para a interpretação inicial da amostra:
-      </p>
+      <section
+        class="cap5-p40v3-interaction cap5-p40v3-reveal"
+        data-cap5-p40v3
+        aria-label="Interpretação de uma bacterioscopia"
+      >
 
-      <ul class="cap5-p40-list">
-        <li>morfologia bacteriana (cocos, bacilos ou cocobacilos)</li>
-        <li>arranjo celular (cachos, cadeias, diplococos)</li>
-        <li>quantidade aproximada de bactérias por campo microscópico</li>
-        <li>presença de leucócitos</li>
-        <li>presença de células epiteliais</li>
-      </ul>
+        <p class="cap5-p40v3-instruction">
+          Explore os elementos do campo microscópico e observe o que cada achado acrescenta à interpretação da amostra.
+        </p>
 
-      <p>
-        Esses achados ajudam a contextualizar o isolamento microbiológico. Em amostras respiratórias, por exemplo, a proporção entre leucócitos e células epiteliais pode indicar a qualidade da amostra coletada. Predomínio de células epiteliais pode sugerir contaminação por secreções da orofaringe, enquanto maior número de leucócitos pode ser compatível com processo inflamatório local <sup>2,3</sup>.
-      </p>
-
-      <figure class="cap5-p40-microscope" aria-labelledby="cap5-p40-microscope-caption">
-        <div class="cap5-p40-microscope__body">
-
+        <div
+          class="cap5-p40v3-tabs"
+          role="tablist"
+          aria-label="Aspectos avaliados na bacterioscopia"
+        >
           <button
-            class="cap5-p40-ocular"
+            class="cap5-p40v3-tab is-active"
             type="button"
-            data-zoom="../../assets/capitulo-05/imagens/microscopia-bacterioscopia.png"
-            aria-label="Ampliar campo microscópico com leucócitos e bactérias"
+            role="tab"
+            id="cap5P40V3TabGram"
+            aria-selected="true"
+            aria-controls="cap5P40V3View"
+            tabindex="0"
+            data-p40v3-target="gram"
           >
-            <img
-              src="../../assets/capitulo-05/imagens/microscopia-bacterioscopia.png"
-              alt="Campo microscópico com leucócitos e bactérias."
-              loading="lazy"
-            />
-            <span class="cap5-p40-ocular__label">Leucócitos e bactérias</span>
+            Reação ao Gram
           </button>
 
           <button
-            class="cap5-p40-ocular"
+            class="cap5-p40v3-tab"
             type="button"
-            data-zoom="../../assets/capitulo-05/imagens/celulas-epiteliais-contaminacao.png"
-            aria-label="Ampliar campo microscópico com predomínio de células epiteliais"
+            role="tab"
+            id="cap5P40V3TabMorfologia"
+            aria-selected="false"
+            aria-controls="cap5P40V3View"
+            tabindex="-1"
+            data-p40v3-target="morfologia"
           >
-            <img
-              src="../../assets/capitulo-05/imagens/celulas-epiteliais-contaminacao.png"
-              alt="Campo microscópico com predomínio de células epiteliais."
-              loading="lazy"
-            />
-            <span class="cap5-p40-ocular__label">Predomínio de células epiteliais</span>
+            Morfologia
           </button>
 
+          <button
+            class="cap5-p40v3-tab"
+            type="button"
+            role="tab"
+            id="cap5P40V3TabArranjo"
+            aria-selected="false"
+            aria-controls="cap5P40V3View"
+            tabindex="-1"
+            data-p40v3-target="arranjo"
+          >
+            Arranjo
+          </button>
+
+          <button
+            class="cap5-p40v3-tab"
+            type="button"
+            role="tab"
+            id="cap5P40V3TabLeucocitos"
+            aria-selected="false"
+            aria-controls="cap5P40V3View"
+            tabindex="-1"
+            data-p40v3-target="leucocitos"
+          >
+            Leucócitos
+          </button>
         </div>
 
-        <figcaption id="cap5-p40-microscope-caption" class="cap5-p40-microscope__caption">
-          A leitura do campo microscópico permite distinguir material representativo de amostras com baixa qualidade, antes mesmo da identificação definitiva da espécie.
-        </figcaption>
-      </figure>
+        <article
+          id="cap5P40V3View"
+          class="cap5-p40v3-view"
+          role="tabpanel"
+          aria-labelledby="cap5P40V3TabGram"
+          aria-live="polite"
+        >
 
-      <p class="cap5-p40-transition">
-        Em situações como hemoculturas positivas, o resultado do Gram costuma ser comunicado imediatamente à equipe clínica. A identificação de cocos Gram-positivos em cachos ou bacilos Gram-negativos fornece orientação preliminar sobre o provável grupo bacteriano envolvido, mesmo antes da identificação definitiva da espécie <sup>2,3</sup>.
-      </p>
+          <figure class="cap5-p40v3-figure">
+            <button
+              class="cap5-p40v3-zoom"
+              type="button"
+              data-zoom="../../assets/capitulo-05/imagens/coloracao-gram.png"
+              aria-label="Ampliar campo microscópico da bacterioscopia"
+            >
+              <img
+                src="../../assets/capitulo-05/imagens/coloracao-gram.png"
+                alt="Campo microscópico demonstrando leucócitos, cocos Gram-positivos e bacilos Gram-negativos"
+                loading="lazy"
+              />
+            </button>
+
+            <figcaption class="cap5-p40v3-caption">
+              Campo microscópico após coloração de Gram, com diferentes componentes bacterianos e celulares.
+            </figcaption>
+          </figure>
+
+          <div class="cap5-p40v3-analysis">
+
+            <span
+              id="cap5P40V3Kicker"
+              class="cap5-p40v3-kicker"
+            >
+              Caracterização inicial
+            </span>
+
+            <h2
+              id="cap5P40V3Title"
+              class="cap5-p40v3-title"
+            >
+  Diferenciação estrutural dos grupos bacterianos
+            </h2>
+
+            <div
+              id="cap5P40V3Body"
+              class="cap5-p40v3-body"
+            >
+              <div class="cap5-p40v3-infoGrid">
+
+                <article class="cap5-p40v3-info">
+                  <span>O que é observado</span>
+                  <p>
+                    A coloração permite distinguir estruturas bacterianas que retêm o cristal violeta daquelas que incorporam o contra-corante.
+                  </p>
+                </article>
+
+                <article class="cap5-p40v3-info">
+                  <span>Informação obtida</span>
+                  <p>
+                    O campo apresenta simultaneamente bactérias com reação Gram-positiva e Gram-negativa.
+                  </p>
+                </article>
+
+                <article class="cap5-p40v3-info">
+                  <span>Valor microbiológico</span>
+                  <p>
+                    Essa diferenciação restringe os grupos bacterianos inicialmente considerados, mas não define a espécie.
+                  </p>
+                </article>
+
+                <article class="cap5-p40v3-info cap5-p40v3-info--key">
+                  <span>Limite interpretativo</span>
+                  <p>
+                    A reação ao Gram deve ser analisada em conjunto com a morfologia, o arranjo e o tipo de amostra.
+                  </p>
+                </article>
+
+              </div>
+            </div>
+
+          </div>
+
+        </article>
+      </section>
 
       <p>
-        Em contextos clínicos específicos, o resultado da bacterioscopia pode ter impacto direto na decisão terapêutica inicial. A identificação de diplococos Gram-negativos em secreção uretral é altamente sugestiva de <em>Neisseria gonorrhoeae</em>, enquanto sua presença no líquido cefalorraquidiano pode indicar infecção por <em>Neisseria meningitidis</em>. Nessas situações, o achado pode justificar início imediato de antibioticoterapia direcionada, embora exames complementares para confirmação etiológica e determinação do perfil de suscetibilidade devam ser realizados <sup>1,2</sup>.
+        Esses achados permitem ao laboratório interpretar não apenas a presença de microrganismos, mas também se o material analisado apresenta características compatíveis com um processo inflamatório e se possui representatividade suficiente para sustentar a continuidade da investigação.
       </p>
+
+      <aside class="cap5-p40v3-questions cap5-p40v3-reveal">
+        <span class="cap5-p40v3-questionsLabel">
+          Antes da identificação do microrganismo, a bacterioscopia permite responder a duas perguntas fundamentais:
+        </span>
+
+        <ol>
+          <li>A amostra é representativa do sítio de infecção?</li>
+          <li>Quais características microbiológicas iniciais podem ser reconhecidas?</li>
+      
+        </ol>
+      </aside>
+
+     
 
     </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p39.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 5 · Página 40 de 89</div>
-  <a class="btn primary" href="p41.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+      <a
+        class="btn"
+        href="p39.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
 
+      <div class="center">
+        Capítulo 5 · Página 40 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p41.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+    </nav>
 
   </main>
 
   <script src="../../js/app.js"></script>
   <script src="../../js/capitulo-05.js"></script>
-
 </body>
 </html>

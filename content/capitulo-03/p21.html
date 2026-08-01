@@ -23,108 +23,214 @@
       <h1 class="page-title">Resistência intrínseca e resistência adquirida</h1>
     </header>
 
-    <section class="prose cap3-reading-flow" aria-label="Texto principal">
+    <section class="prose cap3-reading-flow">
 
       <p>
-        A resistência bacteriana pode ser classificada em dois grandes grupos: fenótipo esperado e adquirida <sup>3,5</sup>.
+        A resistência bacteriana pode ser classificada em dois grandes grupos: resistência intrínseca e resistência adquirida. A resistência intrínseca corresponde ao perfil de suscetibilidade naturalmente esperado para determinada espécie bacteriana e decorre de características estruturais ou fisiológicas inerentes ao microrganismo. Já a resistência adquirida resulta de alterações genéticas, como mutações cromossômicas ou aquisição de genes por transferência horizontal, que levam ao surgimento ou à modificação de mecanismos de resistência <sup>3,4,8,9</sup>.
       </p>
 
-      <section class="cap3-p21-compare" aria-label="Comparação entre resistência intrínseca e resistência adquirida">
+      <section class="cap3-p21-compare" aria-label="Resumo comparativo">
+        <article class="cap3-p21-compareCard cap3-p21-compareCard--intrinsic">
+          <span>Resistência intrínseca</span>
+          <p>Característica esperada da espécie, previsível e independente de exposição prévia ao antibacteriano.</p>
+        </article>
 
-        <p class="cap3-p21-question">
-          Compare os dois padrões: em um caso, a insensibilidade já pertence à espécie bacteriana; no outro, a bactéria modifica seu perfil de suscetibilidade ao adquirir ou selecionar novos mecanismos.
-        </p>
-
-        <div class="cap3-p21-grid">
-
-          <article class="cap3-p21-card">
-            <h2 class="cap3-p21-cardTitle">Resistência intrínseca</h2>
-
-            <figure class="figure cap3-p21-figure">
-              <button
-                class="cap3-zoomTrigger"
-                type="button"
-                data-zoom="../../assets/capitulo-03/imagens/resistencia-intrinseca.png"
-                aria-label="Ampliar imagem de resistência intrínseca"
-              >
-                <img
-                  src="../../assets/capitulo-03/imagens/resistencia-intrinseca.png"
-                  alt="Esquema de resistência intrínseca mostrando insensibilidade natural e previsível, incompatibilidade biológica, barreiras físicas em Gram-negativas e ausência de alvo em Mycoplasma."
-                  loading="lazy"
-                />
-              </button>
-
-              <figcaption class="caption cap3-p21-caption">
-                Na resistência intrínseca, a insensibilidade decorre de propriedades próprias da espécie bacteriana. A imagem sintetiza três ideias centrais: trata-se de um padrão natural e previsível; a ausência de resposta terapêutica decorre de incompatibilidade biológica entre o mecanismo de ação do fármaco e a estrutura do microrganismo; e exemplos clássicos incluem barreiras físicas em bactérias Gram-negativas e ausência de parede celular em <em>Mycoplasma</em>, situação em que antibacterianos dirigidos ao peptidoglicano não encontram alvo para atuar.
-              </figcaption>
-            </figure>
-          </article>
-
-          <article class="cap3-p21-card">
-            <h2 class="cap3-p21-cardTitle">Resistência adquirida</h2>
-
-            <figure class="figure cap3-p21-figure">
-              <button
-                class="cap3-zoomTrigger"
-                type="button"
-                data-zoom="../../assets/capitulo-03/imagens/resistencia-adquirida.png"
-                aria-label="Ampliar imagem de resistência adquirida"
-              >
-                <img
-                  src="../../assets/capitulo-03/imagens/resistencia-adquirida.png"
-                  alt="Esquema de resistência adquirida mostrando mudança de perfil de suscetibilidade, mutação e transferência genética, enzimas inativadoras e pressão seletiva sobre variantes resistentes."
-                  loading="lazy"
-                />
-              </button>
-
-              <figcaption class="caption cap3-p21-caption">
-                Na resistência adquirida, uma bactéria previamente suscetível passa a apresentar mecanismos que reduzem a atividade do antibacteriano. A imagem destaca quatro eixos do processo: mudança de perfil de suscetibilidade, origem genética por mutação ou transferência horizontal, produção de mecanismos efetores como enzimas inativadoras e consolidação do fenótipo resistente sob pressão seletiva. Isso explica por que espécies antes consideradas sensíveis podem exibir perfis variáveis ao longo do tempo e entre diferentes instituições.
-              </figcaption>
-            </figure>
-          </article>
-
-        </div>
+        <article class="cap3-p21-compareCard cap3-p21-compareCard--acquired">
+          <span>Resistência adquirida</span>
+          <p>Alteração presente em determinadas cepas após mutação, aquisição de genes ou modulação da expressão gênica.</p>
+        </article>
       </section>
 
-      <p>
-        A resistência intrínseca corresponde à insensibilidade natural de determinada espécie bacteriana a um antibacteriano específico. Essa característica resulta de propriedades estruturais ou funcionais próprias do microrganismo que impedem que o fármaco alcance seu alvo ou interaja de forma eficaz com ele. Trata-se de uma propriedade inerente à espécie bacteriana, previsível e independente de exposição prévia ao antibacteriano <sup>2</sup>.
-      </p>
+      <section class="cap3-p21-interaction" data-cap3-p21 aria-label="Comparação entre resistência intrínseca e adquirida">
 
-      <p>
-        Reconhecer padrões de resistência intrínseca é essencial para evitar interpretações equivocadas de resultados laboratoriais e escolhas terapêuticas biologicamente inviáveis.
-      </p>
+        <p class="cap3-p21-intro">
+          Selecione um tipo de resistência e observe os mecanismos representados.
+        </p>
 
-      <p>
-        A resistência adquirida, por outro lado, ocorre quando uma bactéria previamente suscetível desenvolve mecanismos capazes de reduzir a eficácia do antibacteriano. Esse processo pode resultar de mutações espontâneas no próprio genoma bacteriano ou da aquisição de material genético proveniente de outros microrganismos, frequentemente por meio de plasmídeos ou outros elementos genéticos móveis <sup>3</sup>.
-      </p>
+        <div class="cap3-p21-tabs" role="tablist" aria-label="Tipos de resistência bacteriana">
+          <button
+            class="cap3-p21-tab is-active"
+            type="button"
+            role="tab"
+            id="cap3P21TabIntrinsic"
+            aria-selected="true"
+            aria-controls="cap3P21PanelIntrinsic"
+            tabindex="0"
+            data-p21-tab="intrinseca"
+          >
+            Resistência intrínseca
+          </button>
 
-      <p>
-        Entre os exemplos mais relevantes está a aquisição de genes que codificam enzimas inativadoras, como as β-lactamases. Essas enzimas hidrolisam o anel β-lactâmico e comprometem a atividade de penicilinas, cefalosporinas e, em alguns casos, carbapenêmicos <sup>5</sup>. Nas últimas décadas, a diversidade estrutural dessas enzimas aumentou significativamente, ampliando o impacto desse mecanismo sobre as opções terapêuticas disponíveis.
-      </p>
+          <button
+            class="cap3-p21-tab"
+            type="button"
+            role="tab"
+            id="cap3P21TabAcquired"
+            aria-selected="false"
+            aria-controls="cap3P21PanelAcquired"
+            tabindex="-1"
+            data-p21-tab="adquirida"
+          >
+            Resistência adquirida
+          </button>
+        </div>
 
-      <p>
-        Além da produção de enzimas, a resistência adquirida pode envolver modificação do alvo molecular, redução da permeabilidade da membrana ou aumento da atividade de bombas de efluxo. Diferentemente da resistência intrínseca, que é característica relativamente estável da espécie bacteriana, a resistência adquirida pode variar conforme o contexto epidemiológico e a pressão seletiva exercida pelo uso de antibacterianos.
-      </p>
+        <section
+          class="cap3-p21-panel is-active"
+          id="cap3P21PanelIntrinsic"
+          role="tabpanel"
+          aria-labelledby="cap3P21TabIntrinsic"
+          data-p21-panel="intrinseca"
+        >
+          <div class="cap3-p21-imageGrid">
 
-      <p>
-        Do ponto de vista clínico e epidemiológico, essa distinção é fundamental. Espécies tradicionalmente descritas como sensíveis podem apresentar perfis de suscetibilidade variáveis ao longo do tempo e entre diferentes instituições, refletindo a dinâmica evolutiva das populações bacterianas sob exposição antimicrobiana.
-      </p>
+            <article class="cap3-p21-animCard">
+              <h2>Baixa permeabilidade ou barreira estrutural</h2>
+              <figure>
+                <button
+                  type="button"
+                  data-zoom="../../assets/capitulo-03/imagens/p21-intrinseca-barreira-a.webp"
+                  aria-label="Ampliar imagem sobre barreira estrutural"
+                >
+                  <img
+                    class="cap3-p21-animImg"
+                    src="../../assets/capitulo-03/imagens/p21-intrinseca-barreira-a.webp"
+                    data-frame-a="../../assets/capitulo-03/imagens/p21-intrinseca-barreira-a.webp"
+                    data-frame-b="../../assets/capitulo-03/imagens/p21-intrinseca-barreira-b.webp"
+                    alt="Representação de barreira estrutural limitando a ação do antibacteriano"
+                    loading="lazy"
+                  />
+                </button>
+              </figure>
 
-      <p>
-        Um exemplo prático ocorre quando uma bactéria historicamente sensível a determinado antibacteriano passa a apresentar resistência no antibiograma. Se a investigação demonstra a presença de β-lactamases adquiridas por transferência genética, não se trata de resistência intrínseca da espécie, mas da incorporação de um novo mecanismo molecular que alterou seu perfil de suscetibilidade <sup>3,6</sup>.
-      </p>
+              <button class="cap3-p21-play" type="button">
+                Observar mecanismo
+              </button>
+            </article>
 
-      <p>
-        Entre os principais mecanismos de resistência adquirida destacam-se mutações com seleção clonal e transferência horizontal de genes, processos que serão discutidos nas seções seguintes.
-      </p>
+            <article class="cap3-p21-animCard">
+              <h2>Ausência do alvo molecular</h2>
+              <figure>
+                <button
+                  type="button"
+                  data-zoom="../../assets/capitulo-03/imagens/p21-intrinseca-alvo-a.webp"
+                  aria-label="Ampliar imagem sobre ausência de alvo"
+                >
+                  <img
+                    class="cap3-p21-animImg"
+                    src="../../assets/capitulo-03/imagens/p21-intrinseca-alvo-a.webp"
+                    data-frame-a="../../assets/capitulo-03/imagens/p21-intrinseca-alvo-a.webp"
+                    data-frame-b="../../assets/capitulo-03/imagens/p21-intrinseca-alvo-b.webp"
+                    alt="Representação de ausência de alvo molecular para ação do antibacteriano"
+                    loading="lazy"
+                  />
+                </button>
+              </figure>
+
+              <button class="cap3-p21-play" type="button">
+                Observar mecanismo
+              </button>
+            </article>
+
+          </div>
+
+          <p class="cap3-p21-explanation">
+            Na resistência intrínseca, determinado antibacteriano apresenta atividade naturalmente ausente ou limitada contra uma espécie bacteriana em razão de características próprias do microrganismo, como ausência do alvo molecular, baixa permeabilidade da membrana celular, expressão constitutiva de mecanismos de defesa ou barreiras estruturais. Esse padrão é previsível, independe da exposição prévia ao fármaco e deve ser considerado na escolha do tratamento <sup>3,8,9</sup>.
+          </p>
+
+          <aside class="cap3-p21-example cap3-p21-example--intrinsic">
+            <strong>Exemplo clínico</strong>
+            <p>
+              <em>Mycoplasma pneumoniae</em> é naturalmente resistente aos β-lactâmicos porque não possui parede celular, estrutura onde esses antibacterianos exercem sua ação. Assim, mesmo na ausência de exposição prévia ao medicamento, penicilinas e cefalosporinas são ineficazes contra esse microrganismo, sendo necessário utilizar antibacterianos que atuem em outros alvos, como macrolídeos ou tetraciclinas <sup>8,9</sup>.
+            </p>
+          </aside>
+        </section>
+
+        <section
+          class="cap3-p21-panel"
+          id="cap3P21PanelAcquired"
+          role="tabpanel"
+          aria-labelledby="cap3P21TabAcquired"
+          data-p21-panel="adquirida"
+          hidden
+        >
+          <div class="cap3-p21-imageGrid">
+
+            <article class="cap3-p21-animCard">
+              <h2>Aquisição de genes por plasmídeo</h2>
+              <figure>
+                <button
+                  type="button"
+                  data-zoom="../../assets/capitulo-03/imagens/p21-adquirida-plasmideo-a.webp"
+                  aria-label="Ampliar imagem sobre aquisição de plasmídeo"
+                >
+                  <img
+                    class="cap3-p21-animImg"
+                    src="../../assets/capitulo-03/imagens/p21-adquirida-plasmideo-a.webp"
+                    data-frame-a="../../assets/capitulo-03/imagens/p21-adquirida-plasmideo-a.webp"
+                    data-frame-b="../../assets/capitulo-03/imagens/p21-adquirida-plasmideo-b.webp"
+                    alt="Representação de aquisição de plasmídeo contendo gene de resistência"
+                    loading="lazy"
+                  />
+                </button>
+              </figure>
+
+              <button class="cap3-p21-play" type="button">
+                Observar mecanismo
+              </button>
+            </article>
+
+            <article class="cap3-p21-animCard">
+              <h2>Produção de β-lactamase</h2>
+              <figure>
+                <button
+                  type="button"
+                  data-zoom="../../assets/capitulo-03/imagens/p21-adquirida-betalactamase-a.webp"
+                  aria-label="Ampliar imagem sobre produção de beta-lactamase"
+                >
+                  <img
+                    class="cap3-p21-animImg"
+                    src="../../assets/capitulo-03/imagens/p21-adquirida-betalactamase-a.webp"
+                    data-frame-a="../../assets/capitulo-03/imagens/p21-adquirida-betalactamase-a.webp"
+                    data-frame-b="../../assets/capitulo-03/imagens/p21-adquirida-betalactamase-b.webp"
+                    alt="Representação de beta-lactamase inativando o antibacteriano"
+                    loading="lazy"
+                  />
+                </button>
+              </figure>
+
+              <button class="cap3-p21-play" type="button">
+                Observar mecanismo
+              </button>
+            </article>
+
+          </div>
+
+          <p class="cap3-p21-explanation">
+            Na resistência adquirida, uma bactéria previamente suscetível passa a apresentar mecanismos capazes de reduzir ou impedir a ação dos antibacterianos. Esse processo pode resultar de mutações no genoma bacteriano, da aquisição de genes de resistência por transferência horizontal ou da modulação da expressão de genes já existentes, modificando o perfil de suscetibilidade da bactéria <sup>3,4,6</sup>.
+          </p>
+
+          <p class="cap3-p21-explanation">
+            Diferentemente da resistência intrínseca, a resistência adquirida não está presente em todas as bactérias de uma espécie, mas apenas nas cepas que desenvolveram ou adquiriram alterações genéticas capazes de conferir resistência <sup>3,4,9</sup>.
+          </p>
+
+          <aside class="cap3-p21-example cap3-p21-example--acquired">
+            <strong>Exemplo clínico</strong>
+            <p>
+              Um paciente internado desenvolve pneumonia causada por <em>Pseudomonas aeruginosa</em>. O antibiograma inicial demonstra sensibilidade à ciprofloxacina, porém, após o tratamento, um novo isolamento revela resistência ao medicamento. Essa alteração pode resultar da seleção de mutantes espontâneos previamente existentes ou da aquisição de genes de resistência durante a evolução da infecção, modificando o perfil de suscetibilidade da bactéria <sup>3,4,9</sup>.
+            </p>
+          </aside>
+        </section>
+
+      </section>
 
     </section>
 
- <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p20.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 3 · Página 21 de 89</div>
-  <a class="btn primary" href="p22.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="p20.html" aria-label="Ir para a página anterior">← Anterior</a>
+      <div class="center">Capítulo 3 · Página 21 de 89</div>
+      <a class="btn primary" href="p22.html" aria-label="Ir para a próxima página">Próxima →</a>
+    </nav>
 
   </main>
 

@@ -3,11 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 6 — Página 57</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -16,97 +21,229 @@
 
 <body class="cap6-page57">
 
-  <main class="page-shell">
+  <main class="page-shell cap6-shell">
 
     <header class="page-header">
-      <div class="chapter">CAPÍTULO 6 - Associação Terapêutica e Consequências do Uso Indiscriminado</div>
-      <h1 class="page-title">Associação</h1>
+
+      <div class="chapter">
+        Capítulo 6 — Associação Terapêutica e Consequências do Uso Indiscriminado
+      </div>
+
+      <h1 class="page-title">
+        Do tratamento empírico ao descalonamento
+      </h1>
+
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <section class="prose cap6-reading-flow">
 
       <p>
-        A associação de antibacterianos também pode ser utilizada com o objetivo de reduzir a probabilidade de surgimento de resistência durante o tratamento. Esse princípio baseia-se na dinâmica populacional das bactérias quando expostas à pressão farmacológica <sup>8,11</sup>.
+        A terapia empírica é iniciada quando o microrganismo causador da
+        infecção ainda é desconhecido. Nessa fase, o tratamento é escolhido com
+        base no provável foco infeccioso, nos agentes etiológicos mais
+        frequentes, na gravidade do quadro clínico e nos fatores de risco para
+        microrganismos resistentes <sup>1,3,5</sup>.
       </p>
 
       <p>
-        Em populações bacterianas extensas, variantes com mutações que conferem menor suscetibilidade a determinado antibacteriano podem existir em baixa frequência antes mesmo do início da terapia. Quando apenas um agente é utilizado, a eliminação das células mais sensíveis pode permitir a expansão dessas variantes, sobretudo se a exposição ao fármaco não for plenamente supressiva <sup>11</sup>.
+        À medida que novas informações clínicas e microbiológicas se tornam
+        disponíveis, o esquema antimicrobiano deve ser reavaliado. Quando o
+        agente etiológico é identificado e seu perfil de suscetibilidade é
+        conhecido, recomenda-se substituir a terapia empírica pelo
+        antibacteriano de menor espectro capaz de tratar adequadamente a
+        infecção.
       </p>
 
       <p>
-        A utilização simultânea de dois antibacterianos com mecanismos de ação distintos pode reduzir a probabilidade de expansão de subpopulações resistentes em cenários específicos, particularmente quando a carga bacteriana é elevada ou quando existe risco conhecido de emergência de resistência durante o tratamento. Para que uma bactéria sobreviva sob exposição combinada, seria necessário que apresentasse mecanismos capazes de reduzir a atividade de ambos os agentes. Quando os alvos moleculares são independentes, a probabilidade estatística dessa adaptação simultânea é menor do que a ocorrência de resistência isolada <sup>8,11</sup>.
+        Essa estratégia é denominada descalonamento
+        (<em>de-escalation</em>) e representa um dos princípios fundamentais do
+        <em>Antimicrobial Stewardship</em> <sup>1,3,5</sup>.
       </p>
 
-      <section class="cap6-p57-stage" data-cap6-p57 aria-label="Resistência durante a terapia">
-        <div class="cap6-p57-stage__inner">
+      <p>
+        O objetivo do descalonamento não é reduzir a intensidade do tratamento,
+        mas direcioná-lo ao microrganismo responsável pela infecção. Essa
+        abordagem reduz a exposição desnecessária aos antimicrobianos, diminui
+        a pressão seletiva para resistência bacteriana, preserva a microbiota e
+        reduz a ocorrência de eventos adversos, sem comprometer a eficácia
+        terapêutica <sup>1,3,5</sup>.
+      </p>
 
-          <div class="cap6-p57-tabs" role="tablist" aria-label="Estratégias de exposição">
-            <button class="cap6-p57-tab" type="button" role="tab" aria-selected="true" data-p57-tab="mono">Monoterapia</button>
-            <button class="cap6-p57-tab" type="button" role="tab" aria-selected="false" data-p57-tab="combo">Terapia combinada</button>
+      <section
+        class="cap6-p57-case cap6-p57-reveal"
+        data-cap6-p57
+        aria-label="Aplicação clínica sobre descalonamento"
+      >
+
+        <div class="cap6-p57-case__head">
+
+          
+
+        </div>
+
+        <div class="cap6-p57-case__scenario">
+
+          <div class="cap6-p57-case__label">
+            Situação
           </div>
 
-          <div class="cap6-p57-panel">
-            <p class="cap6-p57-panel__eyebrow">Dinâmica populacional</p>
-            <h2 class="cap6-p57-panel__title" data-p57-title>Monoterapia</h2>
-            <p class="cap6-p57-panel__lead" data-p57-lead>
-              Quando apenas um antibacteriano é utilizado, subpopulações com menor suscetibilidade a esse agente podem sobreviver e expandir-se se a exposição não for plenamente supressiva.
-            </p>
+          <p>
+            Um paciente com sepse de provável origem abdominal inicia tratamento
+            empírico com cefepime e vancomicina.
+          </p>
 
-            <div class="cap6-p57-visual" aria-hidden="true">
-              <div class="cap6-p57-column">
-                <p class="cap6-p57-column__label">População inicial</p>
-                <div class="cap6-p57-dots" data-p57-initial></div>
-              </div>
+          <p>
+            Após 72 horas, a hemocultura identifica
+            <em>Escherichia coli</em> suscetível ao cefepime, sem crescimento de
+            outros microrganismos. O paciente apresenta evolução clínica
+            favorável.
+          </p>
 
-              <div class="cap6-p57-arrow">→</div>
+        </div>
 
-              <div class="cap6-p57-column">
-                <p class="cap6-p57-column__label">Após exposição</p>
-                <div class="cap6-p57-dots" data-p57-final></div>
-              </div>
-            </div>
+        <div class="cap6-p57-case__question">
 
-            <div class="cap6-p57-legend" aria-hidden="true">
-              <span><i class="cap6-p57-dot cap6-p57-dot--sens"></i> Subpopulação sensível</span>
-              <span><i class="cap6-p57-dot cap6-p57-dot--less"></i> Menor suscetibilidade</span>
-              <span><i class="cap6-p57-dot cap6-p57-dot--multi"></i> Escape sob exposição combinada</span>
-            </div>
+          <strong>
+            Qual princípio orienta a reavaliação do esquema antimicrobiano?
+          </strong>
 
-            <div class="cap6-p57-summary" data-p57-summary>
-              Neste cenário, a pressão seletiva recai sobre um único alvo. Se a exposição for insuficiente para suprimir toda a população, variantes menos suscetíveis podem persistir e tornar-se proporcionalmente mais frequentes.
-            </div>
+          <p>
+            Selecione a interpretação mais adequada.
+          </p>
+
+        </div>
+
+        <div
+          class="cap6-p57-case__options"
+          role="group"
+          aria-label="Alternativas da situação clínica"
+        >
+
+          <button
+            type="button"
+            data-p57-answer="manter"
+          >
+            <span>A</span>
+
+            <span>
+              Manter os dois antibacterianos até o término do tratamento, pois a
+              associação inicial foi necessária.
+            </span>
+          </button>
+
+          <button
+            type="button"
+            data-p57-answer="descalonar"
+          >
+            <span>B</span>
+
+            <span>
+              Direcionar o tratamento para o antibacteriano de menor espectro
+              que permaneça eficaz.
+            </span>
+          </button>
+
+        </div>
+
+        <div
+          class="cap6-p57-case__feedback"
+          data-p57-feedback
+          aria-live="polite"
+        >
+
+          <strong>
+            Analise as novas informações.
+          </strong>
+
+          <p>
+            Considere se a cobertura empírica ampliada ainda possui justificativa
+            microbiológica.
+          </p>
+
+        </div>
+
+      </section>
+
+      <section
+        class="cap6-p57-stewardship cap6-p57-reveal"
+        aria-label="Princípios do gerenciamento de antimicrobianos"
+      >
+
+        <div class="cap6-p57-stewardship__head">
+
+
+          <p>
+            O Programa de Gerenciamento do Uso de Antimicrobianos reúne
+            estratégias destinadas a melhorar os desfechos clínicos e reduzir a
+            emergência de resistência bacteriana <sup>1,3,5</sup>.
+          </p>
+
+        </div>
+
+        <div class="cap6-p57-stewardship__list">
+
+          <div>
+            <span>01</span>
+            <p>Utilizar o antibacteriano adequado.</p>
+          </div>
+
+          <div>
+            <span>02</span>
+            <p>Administrar dose e intervalo apropriados.</p>
+          </div>
+
+          <div>
+            <span>03</span>
+            <p>Limitar a duração ao tempo necessário.</p>
+          </div>
+
+          <div>
+            <span>04</span>
+            <p>Reduzir a exposição antimicrobiana desnecessária.</p>
+          </div>
+
+          <div>
+            <span>05</span>
+            <p>Descalonar quando os dados permitirem direcionar o tratamento.</p>
           </div>
 
         </div>
+
       </section>
 
-      <p>
-        Esse princípio torna-se particularmente relevante em infecções com elevada carga bacteriana ou quando o tratamento exige duração prolongada, sendo a base do racional terapêutico contra patógenos como o <em>Mycobacterium tuberculosis</em> <sup>7</sup>.
-      </p>
+      <aside class="cap6-p57-box cap6-p57-key cap6-p57-reveal">
 
-      <p>
-        Entretanto, essa estratégia possui limites importantes. A associação não impede o surgimento de resistência quando a exposição farmacodinâmica dos antibacterianos permanece abaixo do nível necessário para supressão efetiva da população bacteriana. Subdosagem, intervalos inadequados de administração ou penetração insuficiente no foco infeccioso podem permitir a sobrevivência de subpopulações adaptadas mesmo durante terapia combinada <sup>2,10,11</sup>.
-      </p>
+        O objetivo do tratamento não é manter o maior espectro possível, mas
+        utilizar o esquema mais direcionado capaz de tratar adequadamente a
+        infecção.
 
-      <div class="cap6-p57-highlight">
-        A combinação pode reduzir a probabilidade de expansão de variantes resistentes em contextos específicos, mas não substitui exposição farmacodinâmica adequada nem controle apropriado do foco infeccioso.
-      </div>
-
-      <p>
-        Além disso, a redução da probabilidade de resistência durante o tratamento não corresponde à prevenção absoluta. Elementos genéticos móveis, elevada densidade bacteriana e ambientes com difusão heterogênea de antibacterianos podem favorecer a persistência de variantes adaptadas mesmo sob exposição simultânea a múltiplos agentes <sup>11</sup>.
-      </p>
-
-      <p>
-        Muitos patógenos críticos abrigam múltiplos genes de resistência agrupados em um mesmo plasmídeo, permitindo que a transferência horizontal confira co-resistência simultânea a diferentes classes de fármacos, o que neutraliza o benefício estatístico da associação <sup>7,11</sup>.
-      </p>
+      </aside>
 
     </section>
 
-  <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p56.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 6 · Página 57 de 89</div>
-  <a class="btn primary" href="p58.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+
+      <a
+        class="btn"
+        href="p56.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 6 · Página 57 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p58.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+
+    </nav>
 
   </main>
 

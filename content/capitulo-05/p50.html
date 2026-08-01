@@ -2,12 +2,17 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Capítulo 5 — Página 50</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -19,120 +24,550 @@
   <main class="page-shell">
 
     <header class="page-header">
-      <div class="chapter">Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma</div>
-      <h1 class="page-title">Como ler o antibiograma de forma estruturada</h1>
+      <div class="chapter">
+        Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma
+      </div>
+
+      <h1 class="page-title">
+        AmpC e o grupo CESP
+      </h1>
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <section class="prose cap5-p50-reading">
 
       <p>
-        O antibiograma deve ser interpretado como parte de um laudo microbiológico completo, e não como uma lista independente de antibacterianos. A leitura adequada exige considerar a sequência de informações que compõem o resultado do laboratório.
+        Algumas Enterobacterales possuem genes cromossômicos que codificam β-lactamases AmpC induzíveis. A exposição a determinados β-lactâmicos pode aumentar a expressão da enzima ou selecionar subpopulações com produção estável e elevada, fenômeno denominado desrepressão.
       </p>
 
       <p>
-        Uma abordagem estruturada pode ser organizada em etapas sucessivas:
+        Como consequência, um isolado inicialmente classificado como suscetível pode apresentar resistência durante o tratamento, especialmente em infecções invasivas, com elevada carga bacteriana ou controle inadequado do foco <sup>8</sup>.
       </p>
 
-      <section class="cap5-p50-journey" aria-labelledby="cap5-p50-journey-title">
-        <div class="cap5-p50-journey__head">
-          <h3 id="cap5-p50-journey-title">Sequência de leitura do laudo microbiológico</h3>
-          <p>
-            A interpretação adequada não começa pelas categorias S, I e R. Ela depende de uma ordem de leitura que integra microbiologia, plausibilidade clínica e contexto terapêutico.
+      <p>
+        O mnemônico CESP ajuda a lembrar espécies tradicionalmente associadas à AmpC cromossômica. Entretanto, ele não significa que todas apresentem o mesmo risco de expressão clinicamente significativa.
+      </p>
+
+      <section
+        class="cap5-p50-interaction cap5-p50-reveal"
+        data-cap5-p50
+        aria-label="Classificação das espécies segundo o risco de AmpC clinicamente significativa"
+      >
+
+        <div class="cap5-p50-interactionTop">
+
+          <p class="cap5-p50-instruction">
+            Selecione uma espécie para observar como seu risco de desrepressão modifica a interpretação do antibiograma.
           </p>
+
+          <button
+            class="cap5-p50-mnemonicButton"
+            type="button"
+            data-p50-open-mnemonic
+            aria-label="Abrir explicação do mnemônico CESP"
+            title="Consultar mnemônico CESP"
+          >
+            CESP
+          </button>
+
         </div>
 
-        <div class="cap5-p50-journey__track" role="tablist" aria-label="Etapas da leitura estruturada do antibiograma">
+        <div
+          class="cap5-p50-species"
+          role="tablist"
+          aria-label="Espécies com AmpC cromossômica induzível"
+        >
+
           <button
-            class="cap5-p50-journey__step is-active"
+            class="cap5-p50-speciesButton is-active"
+            type="button"
+            role="tab"
+            id="cap5P50SpeciesEnterobacter"
+            aria-selected="true"
+            aria-controls="cap5P50SpeciesView"
+            tabindex="0"
+            data-p50-species="enterobacter"
+          >
+            <em>Enterobacter cloacae</em> complex
+          </button>
+
+          <button
+            class="cap5-p50-speciesButton"
+            type="button"
+            role="tab"
+            id="cap5P50SpeciesKlebsiella"
+            aria-selected="false"
+            aria-controls="cap5P50SpeciesView"
+            tabindex="-1"
+            data-p50-species="klebsiella"
+          >
+            <em>Klebsiella aerogenes</em>
+          </button>
+
+          <button
+            class="cap5-p50-speciesButton"
+            type="button"
+            role="tab"
+            id="cap5P50SpeciesCitrobacter"
+            aria-selected="false"
+            aria-controls="cap5P50SpeciesView"
+            tabindex="-1"
+            data-p50-species="citrobacter"
+          >
+            <em>Citrobacter freundii</em>
+          </button>
+
+          <button
+            class="cap5-p50-speciesButton"
+            type="button"
+            role="tab"
+            id="cap5P50SpeciesSerratia"
+            aria-selected="false"
+            aria-controls="cap5P50SpeciesView"
+            tabindex="-1"
+            data-p50-species="serratia"
+          >
+            <em>Serratia marcescens</em>
+          </button>
+
+          <button
+            class="cap5-p50-speciesButton"
+            type="button"
+            role="tab"
+            id="cap5P50SpeciesMorganella"
+            aria-selected="false"
+            aria-controls="cap5P50SpeciesView"
+            tabindex="-1"
+            data-p50-species="morganella"
+          >
+            <em>Morganella morganii</em>
+          </button>
+
+          <button
+            class="cap5-p50-speciesButton"
+            type="button"
+            role="tab"
+            id="cap5P50SpeciesProvidencia"
+            aria-selected="false"
+            aria-controls="cap5P50SpeciesView"
+            tabindex="-1"
+            data-p50-species="providencia"
+          >
+            <em>Providencia</em> spp.
+          </button>
+
+        </div>
+
+        <article
+          id="cap5P50SpeciesView"
+          class="cap5-p50-speciesView cap5-p50-speciesView--moderate"
+          role="tabpanel"
+          aria-labelledby="cap5P50SpeciesEnterobacter"
+          aria-live="polite"
+        >
+
+          <div class="cap5-p50-riskHeader">
+
+            <span
+              id="cap5P50RiskBadge"
+              class="cap5-p50-riskBadge"
+            >
+              Risco moderado
+            </span>
+
+            <h2
+              id="cap5P50SpeciesTitle"
+              class="cap5-p50-speciesTitle"
+            >
+              <em>Enterobacter cloacae</em> complex
+            </h2>
+
+            <p
+              id="cap5P50SpeciesIntro"
+              class="cap5-p50-speciesIntro"
+            >
+              Espécie associada a risco moderado de produção clinicamente significativa de AmpC induzível.
+            </p>
+
+          </div>
+
+          <div
+            id="cap5P50SpeciesBody"
+            class="cap5-p50-infoGrid"
+          >
+
+            <article class="cap5-p50-info">
+              <span>O que a identificação informa</span>
+              <p>
+                A espécie possui potencial biológico para aumentar a expressão de AmpC durante a exposição a determinados β-lactâmicos.
+              </p>
+            </article>
+
+            <article class="cap5-p50-info">
+              <span>Risco microbiológico</span>
+              <p>
+                Subpopulações com produção elevada da enzima podem ser selecionadas e passar a predominar durante o tratamento.
+              </p>
+            </article>
+
+            <article class="cap5-p50-info">
+              <span>Quando exige maior cautela</span>
+              <p>
+                Em bacteremias, infecções profundas, elevada carga bacteriana ou controle inadequado do foco.
+              </p>
+            </article>
+
+            <article class="cap5-p50-info cap5-p50-info--key">
+              <span>Como interpretar</span>
+              <p>
+                O resultado inicial S, I ou R deve ser integrado à espécie, ao antibacteriano utilizado e ao contexto clínico.
+              </p>
+            </article>
+
+          </div>
+
+        </article>
+
+      </section>
+
+      <section
+        class="cap5-p50-process cap5-p50-reveal"
+        data-cap5-p50-process
+        aria-labelledby="cap5P50ProcessTitle"
+      >
+
+        <div class="cap5-p50-processHeader">
+
+          <span class="cap5-p50-processEyebrow">
+            Possível evolução durante a terapia
+          </span>
+
+          <h2 id="cap5P50ProcessTitle">
+            Como pode surgir resistência durante o tratamento?
+          </h2>
+
+          <p>
+            Selecione uma etapa para acompanhar a progressão microbiológica.
+          </p>
+
+        </div>
+
+        <div
+          class="cap5-p50-processFlow"
+          role="tablist"
+          aria-label="Etapas da seleção de resistência relacionada à AmpC"
+        >
+
+          <button
+            class="cap5-p50-processStep is-active"
             type="button"
             role="tab"
             aria-selected="true"
-            data-p50-step="1"
+            tabindex="0"
+            data-p50-process="initial"
           >
-            <span class="cap5-p50-journey__n">1</span>
-            <span class="cap5-p50-journey__label">Microrganismo</span>
+            <span>1</span>
+            <strong>Suscetibilidade inicial</strong>
           </button>
 
+          <b aria-hidden="true">→</b>
+
           <button
-            class="cap5-p50-journey__step"
+            class="cap5-p50-processStep"
             type="button"
             role="tab"
             aria-selected="false"
-            data-p50-step="2"
+            tabindex="-1"
+            data-p50-process="exposure"
           >
-            <span class="cap5-p50-journey__n">2</span>
-            <span class="cap5-p50-journey__label">Origem da amostra</span>
+            <span>2</span>
+            <strong>Exposição ao β-lactâmico</strong>
           </button>
 
+          <b aria-hidden="true">→</b>
+
           <button
-            class="cap5-p50-journey__step"
+            class="cap5-p50-processStep"
             type="button"
             role="tab"
             aria-selected="false"
-            data-p50-step="3"
+            tabindex="-1"
+            data-p50-process="selection"
           >
-            <span class="cap5-p50-journey__n">3</span>
-            <span class="cap5-p50-journey__label">Observações</span>
+            <span>3</span>
+            <strong>Seleção da subpopulação</strong>
           </button>
 
+          <b aria-hidden="true">→</b>
+
           <button
-            class="cap5-p50-journey__step"
+            class="cap5-p50-processStep"
             type="button"
             role="tab"
             aria-selected="false"
-            data-p50-step="4"
+            tabindex="-1"
+            data-p50-process="derepression"
           >
-            <span class="cap5-p50-journey__n">4</span>
-            <span class="cap5-p50-journey__label">S / I / R</span>
+            <span>4</span>
+            <strong>Desrepressão</strong>
           </button>
 
+          <b aria-hidden="true">→</b>
+
           <button
-            class="cap5-p50-journey__step"
+            class="cap5-p50-processStep"
             type="button"
             role="tab"
             aria-selected="false"
-            data-p50-step="5"
+            tabindex="-1"
+            data-p50-process="resistance"
           >
-            <span class="cap5-p50-journey__n">5</span>
-            <span class="cap5-p50-journey__label">Contexto clínico</span>
+            <span>5</span>
+            <strong>Resistência emergente</strong>
           </button>
+
         </div>
 
-        <div class="cap5-p50-journey__panel" aria-live="polite">
-          <div class="cap5-p50-journey__eyebrow" id="cap5-p50-eyebrow">Primeiro contexto interpretativo</div>
-          <h3 class="cap5-p50-journey__title" id="cap5-p50-title">1. Identificar o microrganismo isolado</h3>
-          <div class="cap5-p50-journey__text" id="cap5-p50-text">
-            <p>
-              A espécie bacteriana fornece o primeiro contexto interpretativo do resultado. Diferentes bactérias apresentam perfis característicos de suscetibilidade e resistência, incluindo mecanismos de resistência intrínseca <sup>2,10</sup>.
-            </p>
-            <p>
-              A identificação do microrganismo também ajuda a avaliar a plausibilidade clínica do isolamento. Nem todo microrganismo detectado em cultura representa necessariamente o agente responsável pela infecção.
-            </p>
-          </div>
-        </div>
+        <article
+          id="cap5P50ProcessPanel"
+          class="cap5-p50-processPanel"
+          aria-live="polite"
+        >
+
+          <span
+            id="cap5P50ProcessKicker"
+            class="cap5-p50-processKicker"
+          >
+            Etapa inicial
+          </span>
+
+          <h3
+            id="cap5P50ProcessPanelTitle"
+            class="cap5-p50-processPanelTitle"
+          >
+            Expressão basal de AmpC
+          </h3>
+
+          <p
+            id="cap5P50ProcessText"
+            class="cap5-p50-processText"
+          >
+            A população bacteriana pode apresentar expressão basal da enzima e ser inicialmente classificada como suscetível a determinado agente.
+          </p>
+
+        </article>
+
       </section>
 
-      <p>
-        Quando disponível, o valor da concentração inibitória mínima pode fornecer informação adicional, especialmente quando se encontra próximo aos pontos de corte estabelecidos.
-      </p>
+      <section
+        class="cap5-p50-case cap5-p50-reveal"
+        data-cap5-p50-case
+        aria-labelledby="cap5P50CaseTitle"
+      >
 
-      <p>
-        O antibiograma informa o comportamento da bactéria no ambiente laboratorial. A decisão terapêutica depende da integração desse dado com fatores clínicos, como o foco infeccioso, a penetração do antibacteriano no tecido afetado, a presença de biofilme e as características farmacocinéticas do paciente <sup>6,7,8</sup>.
-      </p>
+        <div class="cap5-p50-caseHeader">
+
+          <span class="cap5-p50-caseEyebrow">
+            Aplicação clínica
+          </span>
+
+        </div>
+
+        <div class="cap5-p50-report">
+
+          <span>Hemocultura</span>
+
+          <strong>
+            <em>Enterobacter cloacae</em> complex
+          </strong>
+
+          <p>
+            Ceftriaxona — S
+          </p>
+
+        </div>
+
+        <p class="cap5-p50-caseQuestion">
+          Em uma infecção invasiva, qual interpretação é mais adequada?
+        </p>
+
+        <div
+          class="cap5-p50-caseOptions"
+          role="group"
+          aria-label="Alternativas para interpretação do resultado"
+        >
+
+          <button
+            class="cap5-p50-caseOption"
+            type="button"
+            data-p50-answer="isolated"
+          >
+            <span>A</span>
+
+            <p>
+              O resultado S elimina o risco de resistência durante o tratamento.
+            </p>
+          </button>
+
+          <button
+            class="cap5-p50-caseOption"
+            type="button"
+            data-p50-answer="integrated"
+          >
+            <span>B</span>
+
+            <p>
+              A espécie possui risco moderado de AmpC induzível, e o resultado deve ser integrado ao foco, à gravidade e ao risco de resistência emergente.
+            </p>
+          </button>
+
+          <button
+            class="cap5-p50-caseOption"
+            type="button"
+            data-p50-answer="all"
+          >
+            <span>C</span>
+
+            <p>
+              Todos os β-lactâmicos devem ser considerados automaticamente inativos.
+            </p>
+          </button>
+
+        </div>
+
+        <div
+          id="cap5P50CaseFeedback"
+          class="cap5-p50-caseFeedback"
+          hidden
+          aria-live="polite"
+        ></div>
+
+      </section>
+
+      <section
+        class="cap5-p50-mnemonicMeaning cap5-p50-reveal"
+        aria-label="Limites do mnemônico CESP"
+      >
+
+        <article>
+          <span>O mnemônico informa</span>
+
+          <p>
+            Quais espécies são tradicionalmente associadas à presença de AmpC cromossômica.
+          </p>
+        </article>
+
+        <article>
+          <span>O mnemônico não informa</span>
+
+          <p>
+            Qual é o risco individual de desrepressão clinicamente significativa de cada espécie.
+          </p>
+        </article>
+
+      </section>
+
+      <aside class="cap5-p50-principle cap5-p50-reveal">
+        Diante de uma espécie com AmpC cromossômica, não basta reconhecer sua inclusão no grupo CESP. É necessário considerar o risco específico da espécie, o antibacteriano testado, o sítio da infecção, a carga bacteriana, o controle do foco e a possibilidade de resistência emergente.
+      </aside>
 
     </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p49.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 5 · Página 50 de 89</div>
-  <a class="btn primary" href="p51.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <div
+      class="cap5-p50-mnemonicModal"
+      data-p50-mnemonic-modal
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cap5P50MnemonicTitle"
+    >
 
+      <div
+        class="cap5-p50-modalBackdrop"
+        data-p50-close-mnemonic
+      ></div>
+
+      <div class="cap5-p50-modalDialog">
+
+        <div class="cap5-p50-modalHeader">
+
+          <h2 id="cap5P50MnemonicTitle">
+            Mnemônico CESP
+          </h2>
+
+          <button
+            class="cap5-p50-modalClose"
+            type="button"
+            data-p50-close-mnemonic
+            aria-label="Fechar explicação do mnemônico CESP"
+          >
+            ×
+          </button>
+
+        </div>
+
+        <div class="cap5-p50-mnemonicList">
+
+          <article>
+            <span>C</span>
+            <p><em>Citrobacter freundii</em></p>
+          </article>
+
+          <article>
+            <span>E</span>
+            <p><em>Enterobacter cloacae</em> complex</p>
+          </article>
+
+          <article>
+            <span>S</span>
+            <p><em>Serratia marcescens</em></p>
+          </article>
+
+          <article>
+            <span>P</span>
+            <p><em>Providencia</em> spp.</p>
+          </article>
+
+        </div>
+
+        <p class="cap5-p50-modalNote">
+          <em>Klebsiella aerogenes</em> e <em>Morganella morganii</em> também possuem AmpC cromossômica induzível e podem aparecer em mnemônicos ampliados, como ESCPM.
+        </p>
+
+        <p class="cap5-p50-modalWarning">
+          O mnemônico é um recurso de memória e não representa uma classificação uniforme de risco clínico.
+        </p>
+
+      </div>
+
+    </div>
+
+    <nav class="pager" aria-label="Paginação">
+
+      <a
+        class="btn"
+        href="p49.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 5 · Página 50 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p51.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+
+    </nav>
 
   </main>
 
   <script src="../../js/app.js"></script>
   <script src="../../js/capitulo-05.js"></script>
-
 </body>
 </html>

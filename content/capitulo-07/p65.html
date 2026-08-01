@@ -3,9 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 7 — Página 65</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -17,211 +24,222 @@
 <main class="page-shell">
 
   <header class="page-header">
-    <div class="chapter">Capítulo 7 — Principais Efeitos Adversos por Classe</div>
-    <h1 class="page-title">Inibidores da síntese de ácidos nucleicos</h1>
+    <div class="chapter">
+      Capítulo 7 — Principais Efeitos Adversos por Classe
+    </div>
+
+    <h1 class="page-title">
+      Inibidores da síntese de ácidos nucleicos
+    </h1>
   </header>
 
   <section class="prose cap7-p65">
 
     <p>
-      Os antibacterianos que interferem na síntese de ácidos nucleicos atuam sobre enzimas bacterianas essenciais para a replicação e a estabilidade do DNA, como a DNA girase e a topoisomerase IV. A seletividade terapêutica dessa classe decorre das diferenças estruturais entre essas enzimas bacterianas e suas correspondentes humanas <sup>1,2</sup>.
+      Os antibacterianos que interferem na síntese de ácidos nucleicos atuam sobre enzimas bacterianas essenciais para a replicação e a estabilidade do DNA, principalmente a DNA girase e a topoisomerase IV. Como essas enzimas diferem estruturalmente de suas correspondentes humanas, essa classe apresenta elevada seletividade terapêutica <sup>8,9</sup>.
     </p>
 
     <p>
-      Entre esses fármacos, as fluoroquinolonas representam o grupo mais amplamente utilizado na prática clínica. Embora não inibam de forma significativa as topoisomerases nucleares humanas nas concentrações terapêuticas usuais, evidências experimentais e observacionais sugerem que esses antibacterianos podem interferir em processos celulares relacionados à função mitocondrial e ao equilíbrio redox <sup>3</sup>.
+      Entre esses fármacos, as fluoroquinolonas constituem o grupo mais amplamente utilizado. Embora não inibam de forma significativa as topoisomerases nucleares humanas nas concentrações terapêuticas usuais, evidências experimentais e observacionais sugerem interferência em processos mitocondriais, aumento do estresse oxidativo e alterações relacionadas à matriz extracelular <sup>1</sup>.
     </p>
 
     <p>
-      A mitocôndria, por sua origem evolutiva bacteriana, permanece um ponto potencial de vulnerabilidade. A interferência em processos mitocondriais e o aumento do estresse oxidativo celular são hipóteses que ajudam a explicar parte do perfil de efeitos adversos descrito para essa classe <sup>3</sup>.
+      Esses mecanismos ajudam a compreender manifestações musculoesqueléticas, neurológicas e cardiovasculares observadas em determinados pacientes. O risco não depende apenas do fármaco, mas também da presença de fatores individuais capazes de aumentar a vulnerabilidade do tecido afetado <sup>4,5,9</sup>.
     </p>
 
-    <p class="cap7-p65-intro">
-      Esse raciocínio torna-se mais claro quando se relaciona o possível ponto de vulnerabilidade biológica com a manifestação clínica observada:
-    </p>
+    <figure class="figure cap7-p65-figure cap7-p65-reveal">
 
-    <section class="cap7-p65-pathway" data-cap7-p65 aria-label="Correlação entre vulnerabilidade biológica e manifestações clínicas das fluoroquinolonas">
-      <div class="cap7-p65-selector" role="tablist" aria-label="Domínios clínicos relacionados à toxicidade das fluoroquinolonas">
-        <button
-          class="cap7-p65-chip is-active"
-          type="button"
-          role="tab"
-          aria-selected="true"
-          aria-controls="cap7P65Panel1"
-          id="cap7P65Tab1"
-          data-pathway="mitocondria"
+      <button
+        type="button"
+        class="cap7-p65-figure__zoom"
+        data-zoom="../../assets/capitulo-07/imagens/acidos-nucleicos-fluoroquinolonas.png"
+        aria-label="Ampliar figura sobre mecanismos biológicos e manifestações clínicas das fluoroquinolonas"
+      >
+        <img
+          src="../../assets/capitulo-07/imagens/acidos-nucleicos-fluoroquinolonas.png"
+          alt="Quadro relacionando possíveis mecanismos biológicos das fluoroquinolonas, tecidos mais vulneráveis e manifestações clínicas"
+          loading="lazy"
         >
-          Mitocôndria
-        </button>
+      </button>
 
-        <button
-          class="cap7-p65-chip"
-          type="button"
-          role="tab"
-          aria-selected="false"
-          aria-controls="cap7P65Panel2"
-          id="cap7P65Tab2"
-          data-pathway="tecido"
-          tabindex="-1"
-        >
-          Tecido conjuntivo
-        </button>
+      <figcaption class="caption cap7-p65-caption">
+        Relação entre possíveis mecanismos biológicos, tecidos mais vulneráveis e manifestações clínicas associadas às fluoroquinolonas.
+      </figcaption>
 
-        <button
-          class="cap7-p65-chip"
-          type="button"
-          role="tab"
-          aria-selected="false"
-          aria-controls="cap7P65Panel3"
-          id="cap7P65Tab3"
-          data-pathway="snc"
-          tabindex="-1"
-        >
-          Sistema nervoso
-        </button>
+    </figure>
 
-        <button
-          class="cap7-p65-chip"
-          type="button"
-          role="tab"
-          aria-selected="false"
-          aria-controls="cap7P65Panel4"
-          id="cap7P65Tab4"
-          data-pathway="coracao"
-          tabindex="-1"
-        >
-          Coração
-        </button>
+    <section
+      class="cap7-p65-risk cap7-p65-reveal"
+      data-cap7-p65-risk
+      aria-label="Análise da suscetibilidade clínica às fluoroquinolonas"
+    >
+
+      <div class="cap7-p65-risk__head">
+
+        <span class="cap7-p65-risk__kicker">
+          Aplicação clínica
+        </span>
+
+        <h2>
+          Qual paciente merece maior atenção?
+        </h2>
+
+        <p>
+          Selecione cada perfil para identificar o principal domínio de vulnerabilidade clínica.
+        </p>
+
       </div>
 
-      <div class="cap7-p65-display">
-        <section
-          class="cap7-p65-panel"
-          id="cap7P65Panel1"
-          role="tabpanel"
-          aria-labelledby="cap7P65Tab1"
-          data-panel="mitocondria"
+      <div class="cap7-p65-patients">
+
+        <button
+          type="button"
+          class="cap7-p65-patient is-active"
+          data-p65-patient="baixo"
+          aria-pressed="true"
         >
-          <div class="cap7-p65-stage">
-            <p class="cap7-p65-stageLabel">Vulnerabilidade biológica</p>
-            <p class="cap7-p65-stageText">Interferência em processos mitocondriais e no equilíbrio redox celular</p>
-          </div>
+          <span class="cap7-p65-patient__label">
+            Paciente A
+          </span>
 
-          <div class="cap7-p65-arrow" aria-hidden="true">→</div>
+          <strong>
+            28 anos
+          </strong>
 
-          <div class="cap7-p65-stage">
-            <p class="cap7-p65-stageLabel">Manifestação clínica relacionada</p>
-            <p class="cap7-p65-stageText">Maior probabilidade de toxicidade sistêmica em tecidos metabolicamente vulneráveis</p>
-          </div>
-        </section>
+          <span>
+            Sem comorbidades ou uso concomitante de medicamentos.
+          </span>
+        </button>
 
-        <section
-          class="cap7-p65-panel"
-          id="cap7P65Panel2"
-          role="tabpanel"
-          aria-labelledby="cap7P65Tab2"
-          data-panel="tecido"
-          hidden
+        <button
+          type="button"
+          class="cap7-p65-patient"
+          data-p65-patient="tendao"
+          aria-pressed="false"
         >
-          <div class="cap7-p65-stage">
-            <p class="cap7-p65-stageLabel">Vulnerabilidade biológica</p>
-            <p class="cap7-p65-stageText">Hipóteses de alteração na matriz extracelular e na homeostase do colágeno</p>
-          </div>
+          <span class="cap7-p65-patient__label">
+            Paciente B
+          </span>
 
-          <div class="cap7-p65-arrow" aria-hidden="true">→</div>
+          <strong>
+            69 anos
+          </strong>
 
-          <div class="cap7-p65-stage">
-            <p class="cap7-p65-stageLabel">Manifestação clínica relacionada</p>
-            <p class="cap7-p65-stageText">Tendinite, ruptura de tendão e possível associação com aneurisma ou dissecção de aorta em populações predispostas</p>
-          </div>
-        </section>
+          <span>
+            Uso prolongado de corticosteroide e história de tendinopatia.
+          </span>
+        </button>
 
-        <section
-          class="cap7-p65-panel"
-          id="cap7P65Panel3"
-          role="tabpanel"
-          aria-labelledby="cap7P65Tab3"
-          data-panel="snc"
-          hidden
+        <button
+          type="button"
+          class="cap7-p65-patient"
+          data-p65-patient="qt"
+          aria-pressed="false"
         >
-          <div class="cap7-p65-stage">
-            <p class="cap7-p65-stageLabel">Vulnerabilidade biológica</p>
-            <p class="cap7-p65-stageText">Interferência celular com repercussão neurológica em contextos de suscetibilidade clínica</p>
-          </div>
+          <span class="cap7-p65-patient__label">
+            Paciente C
+          </span>
 
-          <div class="cap7-p65-arrow" aria-hidden="true">→</div>
+          <strong>
+            65 anos
+          </strong>
 
-          <div class="cap7-p65-stage">
-            <p class="cap7-p65-stageLabel">Manifestação clínica relacionada</p>
-            <p class="cap7-p65-stageText">Neuropatia periférica, agitação, insônia ou confusão mental</p>
-          </div>
-        </section>
+          <span>
+            Cardiopatia, hipocalemia e uso de amiodarona.
+          </span>
+        </button>
 
-        <section
-          class="cap7-p65-panel"
-          id="cap7P65Panel4"
-          role="tabpanel"
-          aria-labelledby="cap7P65Tab4"
-          data-panel="coracao"
-          hidden
+        <button
+          type="button"
+          class="cap7-p65-patient"
+          data-p65-patient="neuro"
+          aria-pressed="false"
         >
-          <div class="cap7-p65-stage">
-            <p class="cap7-p65-stageLabel">Vulnerabilidade biológica</p>
-            <p class="cap7-p65-stageText">Interferência em processos elétricos cardíacos, sobretudo quando há fatores predisponentes</p>
-          </div>
+          <span class="cap7-p65-patient__label">
+            Paciente D
+          </span>
 
-          <div class="cap7-p65-arrow" aria-hidden="true">→</div>
+          <strong>
+            75 anos
+          </strong>
 
-          <div class="cap7-p65-stage">
-            <p class="cap7-p65-stageLabel">Manifestação clínica relacionada</p>
-            <p class="cap7-p65-stageText">Prolongamento do intervalo QT e maior risco cardiovascular em cenários selecionados</p>
-          </div>
-        </section>
+          <span>
+            Neuropatia periférica prévia e insuficiência renal.
+          </span>
+        </button>
+
       </div>
+
+      <div
+        class="cap7-p65-result"
+        aria-live="polite"
+      >
+
+        <p
+          class="cap7-p65-result__eyebrow"
+          id="cap7-p65-eyebrow"
+        >
+          Menor vulnerabilidade aparente
+        </p>
+
+        <h3 id="cap7-p65-title">
+          Risco clínico menos evidente
+        </h3>
+
+        <p id="cap7-p65-text">
+          A ausência de fatores predisponentes não elimina a possibilidade de eventos adversos, mas reduz a presença de vulnerabilidades clínicas reconhecíveis no momento da avaliação.
+        </p>
+
+      </div>
+
     </section>
 
-    <p>
-      Clinicamente, as fluoroquinolonas foram associadas a manifestações musculoesqueléticas e neurológicas, incluindo tendinite, ruptura de tendão e neuropatia periférica. Alterações neuropsiquiátricas, como agitação, insônia ou confusão mental também podem ocorrer em determinados contextos clínicos <sup>6,12</sup>.
-    </p>
+    <aside class="cap7-p65-case cap7-p65-reveal">
 
-    <p>
-      Eventos cardiovasculares relacionados ao prolongamento do intervalo QT foram descritos principalmente em pacientes com fatores predisponentes, como distúrbios eletrolíticos ou uso concomitante de medicamentos que também interferem na repolarização cardíaca <sup>2</sup>.
-    </p>
+      <div class="cap7-p65-case__label">
+        🩺 Leitura do caso
+      </div>
 
-    <p>
-      Nos últimos anos, análises observacionais e alertas regulatórios sugeriram possível associação entre o uso de fluoroquinolonas e aumento do risco de aneurisma ou dissecção de aorta em populações predispostas. Embora o mecanismo exato ainda não esteja completamente esclarecido, hipóteses incluem alterações na matriz extracelular vascular e na homeostase do colágeno <sup>7</sup>.
-    </p>
+      <p>
+        Em um paciente idoso, em uso prolongado de corticosteroide, o aparecimento de dor súbita na região do tendão de Aquiles durante tratamento com levofloxacino deve ser interpretado à luz da vulnerabilidade do tecido conjuntivo. O evento não decorre da inibição da DNA girase humana, mas de interações secundárias com processos celulares do hospedeiro.
+      </p>
 
-    <p>
-      Essas observações contribuíram para recomendações regulatórias que restringem o uso dessa classe, em situações nas quais o benefício terapêutico supera claramente os riscos potenciais, particularmente quando existem alternativas eficazes com perfil de segurança mais favorável <sup>6,12</sup>.
-    </p>
+    </aside>
 
-    <p>
-      Além dos efeitos sistêmicos, a ampla atividade das fluoroquinolonas sobre a microbiota intestinal associa-se a maior risco de disbiose e infecção por <em>Clostridioides difficile</em>. A combinação de espectro amplo e elevada biodisponibilidade oral contribui para impacto ecológico significativo <sup>4,5</sup>.
-    </p>
-
-    <p>
-      Do ponto de vista farmacodinâmico, as fluoroquinolonas apresentam atividade bactericida dependente da concentração. Exposições mais elevadas aumentam a eficácia antimicrobiana, mas também podem ampliar o risco de eventos adversos em determinados contextos clínicos <sup>13,14</sup>.
-    </p>
-
-    <p>
-      Pacientes idosos, portadores de doença cardiovascular, usuários de corticosteroides ou com histórico de tendinopatia constituem grupos nos quais a avaliação individual de risco torna-se particularmente importante. Em populações pediátricas, embora eventos musculoesqueléticos tenham sido descritos, a ocorrência de tendinopatia é menos frequente e não representa o principal determinante de risco <sup>6,12</sup>.
-    </p>
-
-    <p class="cap7-p65-closing">
-      A inibição da replicação do DNA bacteriano é um mecanismo altamente eficaz, mas sua proximidade funcional com processos celulares humanos impõe limites ao uso indiscriminado dessa classe.
-    </p>
+    <aside class="cap7-p65-closing cap7-p65-reveal">
+      Nas fluoroquinolonas, a avaliação de segurança depende da integração entre o mecanismo potencial de toxicidade, o tecido vulnerável e os fatores individuais do paciente.
+    </aside>
 
   </section>
 
   <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p64.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 7 · Página 65 de 89</div>
-  <a class="btn primary" href="p66.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+
+    <a
+      class="btn"
+      href="p64.html"
+      aria-label="Ir para a página anterior"
+    >
+      ← Anterior
+    </a>
+
+    <div class="center">
+      Capítulo 7 · Página 65 de 89
+    </div>
+
+    <a
+      class="btn primary"
+      href="p66.html"
+      aria-label="Ir para a próxima página"
+    >
+      Próxima →
+    </a>
+
+  </nav>
 
 </main>
 
 <script src="../../js/app.js"></script>
 <script src="../../js/capitulo-07.js"></script>
+
 </body>
 </html>

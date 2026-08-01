@@ -3,11 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 6 — Página 60</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -16,93 +21,347 @@
 
 <body class="cap6-page60">
 
-  <main class="page-shell">
+  <main class="page-shell cap6-shell">
 
     <header class="page-header">
-      <div class="chapter">CAPÍTULO 6 - Associação Terapêutica e Consequências do Uso Indiscriminado</div>
-      <h1 class="page-title">Quando não associar antibacterianos</h1>
+
+      <div class="chapter">
+        Capítulo 6 — Associação Terapêutica e Consequências do Uso Indiscriminado
+      </div>
+
+      <h1 class="page-title">
+        Consequências do uso indiscriminado de antibacterianos
+      </h1>
+
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <section class="prose cap6-reading-flow">
 
       <p>
-        A decisão de associar antibacterianos deve basear-se em objetivos biológicos claros. Da mesma forma, reconhecer quando não associar faz parte da prescrição racional <sup>1</sup>.
+        Os antibacterianos transformaram o tratamento das doenças infecciosas
+        e reduziram de forma expressiva a mortalidade por infecções bacterianas.
+        Entretanto, seu uso inadequado, desnecessário ou prolongado está
+        associado a consequências importantes para o paciente e para a saúde
+        pública. Cada exposição aos antimicrobianos exerce pressão seletiva
+        sobre a microbiota, favorecendo a sobrevivência e a disseminação de
+        bactérias resistentes <sup>1,7,8</sup>.
       </p>
 
       <p>
-        Em muitos cenários clínicos, a manutenção de dois antibacterianos ocorre mais por inércia terapêutica do que por necessidade microbiológica. Após o início de um esquema empírico ampliado, a ausência de reavaliação sistemática pode levar à continuidade de combinações que não apresentam justificativa biológica <sup>1</sup>.
+        Por esse motivo, a decisão de prescrever um antibacteriano deve
+        considerar não apenas o benefício esperado para tratar a infecção, mas
+        também os riscos relacionados ao paciente e ao impacto ecológico do
+        tratamento <sup>1,7</sup>.
       </p>
 
-      <p>
-        Não há indicação de associação quando o agente etiológico foi identificado e demonstra suscetibilidade inequívoca a um antibacteriano capaz de atingir exposição adequada no foco infeccioso. Quando a monoterapia alcança índices farmacodinâmicos suficientes para suprimir a população bacteriana, a sobreposição de espectros não aumenta proporcionalmente a probabilidade de erradicação <sup>2,8</sup>.
-      </p>
+      <section
+        class="cap6-p60-case cap6-p60-reveal"
+        data-cap6-p60
+        aria-label="Aplicação clínica sobre uso prolongado de antibacterianos"
+      >
 
-      <section class="cap6-p60-stage" data-cap6-p60 aria-label="Avaliação clínica da necessidade de associação">
-        <div class="cap6-p60-stage__inner">
+        <div class="cap6-p60-case__head">
 
-          <div class="cap6-p60-head">
-            <p class="cap6-p60-head__eyebrow">Revisão terapêutica</p>
-            <h2 class="cap6-p60-head__title">A associação ainda se sustenta?</h2>
-            <p class="cap6-p60-head__lead">
-              Selecione os critérios presentes no cenário clínico para avaliar se a manutenção da associação permanece biologicamente justificada.
-            </p>
+       
+
+        </div>
+
+        <div class="cap6-p60-case__scenario">
+
+          <div class="cap6-p60-case__label">
+            Situação
           </div>
 
-          <div class="cap6-p60-grid" role="group" aria-label="Critérios de decisão">
-            <button type="button" class="cap6-p60-card" data-item="sensivel" aria-pressed="false">
-              <span class="cap6-p60-card__kicker">Microbiologia</span>
-              <span class="cap6-p60-card__text">Agente etiológico identificado e sensível</span>
-            </button>
+          <p>
+            Uma paciente de 68 anos foi internada por pneumonia adquirida na
+            comunidade. Após cinco dias de tratamento, apresenta melhora
+            clínica, estabilidade hemodinâmica e resolução da febre.
+          </p>
 
-            <button type="button" class="cap6-p60-card" data-item="mono" aria-pressed="false">
-              <span class="cap6-p60-card__kicker">PK/PD</span>
-              <span class="cap6-p60-card__text">Monoterapia com exposição adequada no foco infeccioso</span>
-            </button>
+          <p>
+            Apesar da evolução favorável, o esquema com meropenem é mantido por
+            mais sete dias “por segurança”, sem nova justificativa clínica ou
+            microbiológica.
+          </p>
 
-            <button type="button" class="cap6-p60-card" data-item="poli" aria-pressed="false">
-              <span class="cap6-p60-card__kicker">Etiologia</span>
-              <span class="cap6-p60-card__text">Há evidência plausível de infecção polimicrobiana</span>
-            </button>
+        </div>
 
-            <button type="button" class="cap6-p60-card" data-item="evolucao" aria-pressed="false">
-              <span class="cap6-p60-card__kicker">Clínica</span>
-              <span class="cap6-p60-card__text">Evolução clínica e laboratorial favorável</span>
-            </button>
-          </div>
+        <div class="cap6-p60-case__question">
 
-          <div class="cap6-p60-decision">
-            <p class="cap6-p60-decision__label">Síntese da decisão</p>
-            <div class="cap6-p60-decision__box" data-result>
-              Selecione os critérios para avaliar a necessidade de manter a associação.
+          <strong>
+            Qual é o principal problema dessa decisão?
+          </strong>
+
+          <p>
+            O benefício terapêutico adicional pode ser pequeno, enquanto a
+            exposição desnecessária continua produzindo efeitos sobre o
+            paciente e sobre sua microbiota.
+          </p>
+
+        </div>
+
+        <button
+          type="button"
+          class="cap6-p60-case__reveal"
+          data-p60-reveal
+          aria-expanded="false"
+          aria-controls="cap6-p60-consequences"
+        >
+          Mostrar consequências
+        </button>
+
+        <div
+          class="cap6-p60-consequences"
+          id="cap6-p60-consequences"
+          data-p60-consequences
+          hidden
+        >
+
+          <article class="cap6-p60-consequence">
+
+            <span class="cap6-p60-consequence__number">
+              01
+            </span>
+
+            <div>
+              <h3>Toxicidade</h3>
+
+              <p>
+                A exposição prolongada aumenta o risco de eventos adversos,
+                incluindo nefrotoxicidade, hepatotoxicidade, reações de
+                hipersensibilidade, neurotoxicidade e outros efeitos relacionados
+                à classe utilizada <sup>1,8</sup>.
+              </p>
             </div>
+
+          </article>
+
+          <article class="cap6-p60-consequence">
+
+            <span class="cap6-p60-consequence__number">
+              02
+            </span>
+
+            <div>
+              <h3>Disbiose</h3>
+
+              <p>
+                A microbiota normal perde diversidade e equilíbrio, reduzindo
+                sua capacidade de proteger o organismo contra a colonização por
+                microrganismos oportunistas e resistentes <sup>1,9</sup>.
+              </p>
+            </div>
+
+          </article>
+
+          <article class="cap6-p60-consequence">
+
+            <span class="cap6-p60-consequence__number">
+              03
+            </span>
+
+            <div>
+              <h3>Infecção por <em>Clostridioides difficile</em></h3>
+
+              <p>
+                A alteração da microbiota intestinal favorece a proliferação de
+                <em>C. difficile</em>, aumentando o risco de diarreia associada
+                aos antibacterianos e colite pseudomembranosa <sup>1</sup>.
+              </p>
+            </div>
+
+          </article>
+
+          <article class="cap6-p60-consequence">
+
+            <span class="cap6-p60-consequence__number">
+              04
+            </span>
+
+            <div>
+              <h3>Seleção de bactérias multirresistentes</h3>
+
+              <p>
+                A eliminação preferencial das bactérias suscetíveis favorece a
+                sobrevivência e a expansão de populações resistentes, ampliando
+                a pressão seletiva sobre a microbiota <sup>1,7,8</sup>.
+              </p>
+            </div>
+
+          </article>
+
+          <div class="cap6-p60-consequences__message">
+
+            A paciente apresentou melhora da pneumonia, mas continuou exposta
+            aos efeitos tóxicos e ecológicos do tratamento.
+
           </div>
 
         </div>
+
       </section>
 
-      <p>
-        A combinação também não se justifica quando não existe evidência plausível de infecção polimicrobiana. A utilização simultânea de dois agentes ativos contra a mesma espécie bacteriana, sem objetivo de sinergismo ou prevenção de resistência em situações específicas, tende apenas a ampliar toxicidade e pressão seletiva <sup>1–3</sup>.
-      </p>
+      <section
+        class="cap6-p60-process cap6-p60-reveal"
+        aria-label="Processo de seleção bacteriana"
+      >
 
-      <p>
-        Outro cenário frequente envolve a tentativa de compensar incerteza diagnóstica persistente. Quando o quadro clínico não é compatível com infecção ativa, ampliar a cobertura antibacteriana não corrige a ausência de diagnóstico definido. Da mesma forma, a associação não substitui intervenções fundamentais, como o controle adequado do foco infeccioso <sup>1</sup>.
-      </p>
+        <div class="cap6-p60-process__head">
 
-      <p>
-        Em pacientes que apresentam evolução clínica favorável, com melhora dos parâmetros clínicos e laboratoriais, a continuidade de combinações iniciais deve ser revisada criticamente. O risco de retirar precocemente um antibacteriano muitas vezes é superestimado, enquanto os efeitos cumulativos da exposição prolongada tendem a ser subestimados <sup>1</sup>.
-      </p>
+          <span>Como ocorre esse processo?</span>
 
-      <div class="cap6-p60-highlight">
-        A racionalidade terapêutica exige reconhecer que a associação antibacteriana constitui uma estratégia específica, e não um padrão rotineiro de tratamento. Quando a monoterapia é suficiente sob critérios microbiológicos, farmacocinéticos e clínicos, sua manutenção representa a decisão tecnicamente mais consistente <sup>1,2</sup>.
-      </div>
+
+        </div>
+
+        <div class="cap6-p60-process__flow">
+
+          <div class="cap6-p60-process__step">
+            <strong>Uso desnecessário ou prolongado</strong>
+            <span>Exposição sem benefício proporcional</span>
+          </div>
+
+          <div class="cap6-p60-process__arrow" aria-hidden="true">
+            ↓
+          </div>
+
+          <div class="cap6-p60-process__step">
+            <strong>Pressão seletiva</strong>
+            <span>A microbiota é exposta ao antibacteriano</span>
+          </div>
+
+          <div class="cap6-p60-process__arrow" aria-hidden="true">
+            ↓
+          </div>
+
+          <div class="cap6-p60-process__step">
+            <strong>Redução das bactérias suscetíveis</strong>
+            <span>As populações mais sensíveis são eliminadas</span>
+          </div>
+
+          <div class="cap6-p60-process__arrow" aria-hidden="true">
+            ↓
+          </div>
+
+          <div class="cap6-p60-process__step cap6-p60-process__step--alert">
+            <strong>Sobrevivência das resistentes</strong>
+            <span>Variantes resistentes encontram menor competição</span>
+          </div>
+
+          <div class="cap6-p60-process__arrow" aria-hidden="true">
+            ↓
+          </div>
+
+          <div class="cap6-p60-process__result">
+            Maior circulação de bactérias multirresistentes
+          </div>
+
+        </div>
+
+      </section>
+
+      <section
+        class="cap6-p60-global cap6-p60-reveal"
+        aria-label="Impacto global da resistência antimicrobiana"
+      >
+
+        <div class="cap6-p60-global__head">
+
+        
+        </div>
+
+        <p>
+          A resistência aos antimicrobianos é uma das principais ameaças à
+          saúde global. Estima-se que, em 2019, a resistência bacteriana tenha
+          contribuído para aproximadamente 4,95 milhões de mortes e tenha sido
+          diretamente responsável por cerca de 1,27 milhão de óbitos em todo o
+          mundo <sup>8</sup>.
+        </p>
+
+        <p>
+          Por esse motivo, organizações internacionais reforçam que o uso
+          racional dos antimicrobianos é uma das principais estratégias para
+          conter a expansão da resistência bacteriana e preservar a eficácia
+          desses medicamentos para as próximas gerações <sup>7</sup>.
+        </p>
+
+      </section>
+
+      <section
+        class="cap6-p60-rational cap6-p60-reveal"
+        aria-label="Princípios do uso racional de antimicrobianos"
+      >
+
+        <div class="cap6-p60-rational__head">
+
+          <span>Uso racional</span>
+
+
+        </div>
+
+        <div class="cap6-p60-rational__list">
+
+          <div>
+            <span>01</span>
+            <p>Prescrever apenas quando houver indicação clínica.</p>
+          </div>
+
+          <div>
+            <span>02</span>
+            <p>Escolher o antibacteriano adequado para o provável agente.</p>
+          </div>
+
+          <div>
+            <span>03</span>
+            <p>Utilizar dose e intervalo apropriados.</p>
+          </div>
+
+          <div>
+            <span>04</span>
+            <p>Limitar a duração ao tempo realmente necessário.</p>
+          </div>
+
+          <div>
+            <span>05</span>
+            <p>Reavaliar diariamente a necessidade de manutenção.</p>
+          </div>
+
+        </div>
+
+      </section>
+
+      <aside class="cap6-p60-box cap6-p60-key cap6-p60-reveal">
+
+        O uso racional consiste em tratar a infecção utilizando apenas a
+        exposição necessária para alcançar a cura, reduzindo eventos adversos,
+        alterações da microbiota e pressão seletiva para resistência.
+
+      </aside>
 
     </section>
 
-  <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p59.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 6 · Página 60 de 89</div>
-  <a class="btn primary" href="p61.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+
+      <a
+        class="btn"
+        href="p59.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 6 · Página 60 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p61.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+
+    </nav>
 
   </main>
 

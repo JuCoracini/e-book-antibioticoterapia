@@ -2,14 +2,17 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
   <title>Capítulo 5 — Página 53</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css"/>
   <link rel="stylesheet" href="../../css/components.css"/>
@@ -21,224 +24,540 @@
   <main class="page-shell cap5-shell">
 
     <header class="page-header">
-      <div>
-        <div class="chapter">Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma</div>
-        <h1 class="page-title">Quiz de revisão</h1>
+
+      <div class="chapter">
+        Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma
       </div>
+
+      <h1 class="page-title">
+        Quiz de revisão
+      </h1>
+
     </header>
 
-    <section class="prose cap5-reading-flow" aria-label="Introdução do Quiz de revisão">
-      <p>
-        As situações a seguir articulam princípios centrais deste capítulo. Em cada cenário, a interpretação adequada exige integrar breakpoints, critérios de suscetibilidade, limites do painel microbiológico e significado clínico do resultado laboratorial.
-      </p>
-    </section>
+    <section
+      class="cap5-p53Quiz"
+      data-cap5-p53
+      aria-label="Quiz de revisão do capítulo 5"
+    >
 
-    <section class="cap5-p53Quiz" data-cap5-p53 aria-label="Quiz de revisão">
-      <div class="cap5-p53Status" aria-live="polite" data-p53-status>
-        <span class="cap5-p53Status__label">Leitura aplicada do capítulo</span>
-        <span class="cap5-p53Status__value">0 de 2 situações confirmadas</span>
+      <!-- STATUS DO QUIZ -->
+
+      <div
+        class="cap5-p53Status"
+        aria-live="polite"
+        data-p53-status
+      >
+
+        <span class="cap5-p53Status__label">
+          Leitura aplicada do capítulo
+        </span>
+
+        <span class="cap5-p53Status__value">
+          0 de 2 situações confirmadas
+        </span>
+
       </div>
 
-      <article class="cap5-p53Question" data-q="1" data-question-state="pending">
+      <!-- =========================================
+           SITUAÇÃO CLÍNICA 1
+           ========================================= -->
+
+      <article
+        class="cap5-p53Question"
+        data-q="1"
+        data-question-state="pending"
+      >
+
         <div class="cap5-p53QuestionHeader">
-          <span class="cap5-p53Kicker">Situação clínica 1</span>
-          <h2 class="cap5-p53QuestionTitle">Interpretação da CIM</h2>
+
+          <span class="cap5-p53Kicker">
+            Situação clínica 1
+          </span>
+
+    
+
         </div>
 
         <p class="cap5-p53Case">
-          Um antibiograma mostra dois antibacterianos classificados como sensíveis para a mesma bactéria isolada. Um deles apresenta CIM menor que o outro. O estudante conclui que o antibacteriano com menor CIM será necessariamente o mais eficaz no tratamento.
+          Uma hemocultura identifica <em>Enterobacter cloacae</em> complex.
+          O antibiograma apresenta resultado sensível ao cefepime. Ao analisar
+          o laudo, um estudante considera suficiente observar apenas a
+          categoria de suscetibilidade apresentada para o antibacteriano.
         </p>
 
         <p class="cap5-p53Prompt">
-          Qual princípio ajuda a explicar por que essa interpretação pode estar incorreta?
+          Qual informação microbiológica também deve ser considerada na
+          interpretação desse resultado?
         </p>
 
-        <div class="cap5-p53Options" role="group" aria-label="Alternativas da situação clínica 1">
-          <button type="button" data-answer="a" data-correct="true">
+        <div
+          class="cap5-p53Options"
+          role="group"
+          aria-label="Alternativas da situação clínica 1"
+        >
+
+          <button
+            type="button"
+            data-answer="a"
+            data-correct="true"
+            aria-pressed="false"
+          >
+
             <span class="cap5-p53Letter">A</span>
-            <span>A interpretação da CIM depende da relação com os breakpoints e da exposição farmacológica alcançada no organismo</span>
+
+            <span>
+              A espécie apresenta potencial para produção de AmpC
+              cromossômica induzível.
+            </span>
+
           </button>
 
-          <button type="button" data-answer="b">
+          <button
+            type="button"
+            data-answer="b"
+            aria-pressed="false"
+          >
+
             <span class="cap5-p53Letter">B</span>
-            <span>A bactéria pode alterar imediatamente seu metabolismo após o início do tratamento</span>
+
+            <span>
+              A identificação da espécie confirma obrigatoriamente a
+              produção de carbapenemase.
+            </span>
+
           </button>
 
-          <button type="button" data-answer="c">
+          <button
+            type="button"
+            data-answer="c"
+            aria-pressed="false"
+          >
+
             <span class="cap5-p53Letter">C</span>
-            <span>A concentração inibitória mínima varia entre diferentes pacientes durante a terapia</span>
+
+            <span>
+              A categoria sensível garante que o perfil de suscetibilidade
+              permanecerá inalterado durante toda a exposição ao
+              antibacteriano.
+            </span>
+
           </button>
 
-          <button type="button" data-answer="d">
+          <button
+            type="button"
+            data-answer="d"
+            aria-pressed="false"
+          >
+
             <span class="cap5-p53Letter">D</span>
-            <span>A categoria “sensível” indica que todos os antibacterianos possuem a mesma potência clínica</span>
+
+            <span>
+              A identificação da espécie não acrescenta informações à
+              interpretação do teste de suscetibilidade.
+            </span>
+
           </button>
+
         </div>
 
         <div class="cap5-p53Actions">
-          <button class="cap5-p53Btn cap5-p53Btn--primary" type="button" data-p53-action="confirm" disabled>
+
+          <button
+            class="cap5-p53Btn cap5-p53Btn--primary"
+            type="button"
+            data-p53-action="confirm"
+            disabled
+          >
             Confirmar interpretação
           </button>
-          <button class="cap5-p53Btn cap5-p53Btn--ghost" type="button" data-p53-action="reset" hidden>
+
+          <button
+            class="cap5-p53Btn cap5-p53Btn--ghost"
+            type="button"
+            data-p53-action="reset"
+            hidden
+          >
             Refazer
           </button>
+
         </div>
 
-        <div class="cap5-p53Feedback" role="region" aria-live="polite"></div>
+        <div
+          class="cap5-p53Feedback"
+          role="region"
+          aria-live="polite"
+        ></div>
 
         <template class="cap5-p53FeedbackMap">
 {
   "a": {
     "type": "correct",
     "title": "Interpretação adequada",
-    "text": "A CIM deve ser interpretada em relação aos breakpoints e às características farmacocinéticas e farmacodinâmicas do antibacteriano. Diferenças pequenas entre valores próximos ao ponto de corte nem sempre possuem relevância clínica <sup>12,13</sup>."
-  },
-  "b": {
-    "type": "error",
-    "title": "Explicação inadequada",
-    "text": "Alterações metabólicas bacterianas podem ocorrer, mas não explicam a interpretação da CIM obtida no teste laboratorial."
-  },
-  "c": {
-    "type": "error",
-    "title": "Conceito incorreto",
-    "text": "A CIM é determinada em condições laboratoriais padronizadas e não varia entre pacientes para um mesmo isolado bacteriano."
-  },
-  "d": {
-    "type": "error",
-    "title": "Raciocínio inadequado",
-    "text": "A categoria “sensível” indica probabilidade microbiológica de inibição sob condições específicas de exposição, mas não estabelece equivalência clínica entre diferentes antibacterianos."
-  }
-}
-        </template>
-      </article>
-
-      <article class="cap5-p53Question" data-q="2" data-question-state="pending">
-        <div class="cap5-p53QuestionHeader">
-          <span class="cap5-p53Kicker">Situação clínica 2</span>
-          <h2 class="cap5-p53QuestionTitle">Leitura do painel microbiológico</h2>
-        </div>
-
-        <p class="cap5-p53Case">
-          Um laudo microbiológico identifica <em>Enterococcus faecalis</em> em cultura clínica. O estudante observa que cefalosporinas não aparecem no painel do antibiograma e interpreta essa ausência como uma falha do laboratório.
-        </p>
-
-        <p class="cap5-p53Prompt">
-          Qual conceito microbiológico explica melhor essa situação?
-        </p>
-
-        <div class="cap5-p53Options" role="group" aria-label="Alternativas da situação clínica 2">
-          <button type="button" data-answer="a" data-correct="true">
-            <span class="cap5-p53Letter">A</span>
-            <span>Algumas bactérias apresentam resistência intrínseca a determinadas classes de antibacterianos</span>
-          </button>
-
-          <button type="button" data-answer="b">
-            <span class="cap5-p53Letter">B</span>
-            <span>O laboratório seleciona antibacterianos aleatoriamente para compor o painel</span>
-          </button>
-
-          <button type="button" data-answer="c">
-            <span class="cap5-p53Letter">C</span>
-            <span>A ausência indica que o teste de sensibilidade não foi realizado corretamente</span>
-          </button>
-
-          <button type="button" data-answer="d">
-            <span class="cap5-p53Letter">D</span>
-            <span>O antibiograma deve incluir todos os antibacterianos disponíveis no mercado</span>
-          </button>
-        </div>
-
-        <div class="cap5-p53Actions">
-          <button class="cap5-p53Btn cap5-p53Btn--primary" type="button" data-p53-action="confirm" disabled>
-            Confirmar interpretação
-          </button>
-          <button class="cap5-p53Btn cap5-p53Btn--ghost" type="button" data-p53-action="reset" hidden>
-            Refazer
-          </button>
-        </div>
-
-        <div class="cap5-p53Feedback" role="region" aria-live="polite"></div>
-
-        <template class="cap5-p53FeedbackMap">
-{
-  "a": {
-    "type": "correct",
-    "title": "Interpretação adequada",
-    "text": "Certas espécies bacterianas possuem resistência intrínseca a determinadas classes de antibacterianos. Os enterococos apresentam resistência intrínseca às cefalosporinas, razão pela qual essa classe geralmente não é incluída no painel de suscetibilidade para esse microrganismo <sup>12</sup>."
+    "text": "<em>Enterobacter cloacae</em> complex apresenta potencial para produção de AmpC cromossômica induzível. A identificação da espécie, portanto, acrescenta uma informação relevante à leitura das categorias apresentadas no antibiograma e das observações complementares do laboratório <sup>1,8,13</sup>."
   },
   "b": {
     "type": "error",
     "title": "Generalização incorreta",
-    "text": "A escolha dos antibacterianos testados segue critérios microbiológicos e normativos definidos por comitês técnicos."
+    "text": "A produção de AmpC cromossômica e a produção de carbapenemases representam mecanismos distintos. Carbapenemases, como KPC, NDM e OXA-48-like, são mecanismos adquiridos e não estão obrigatoriamente presentes em isolados de <em>Enterobacter cloacae</em> complex."
   },
   "c": {
     "type": "error",
-    "title": "Interpretação inadequada",
-    "text": "A ausência de um antibacteriano no painel não indica erro técnico, mas aplicação de critérios metodológicos."
+    "title": "Conclusão excessiva",
+    "text": "A categoria sensível expressa uma interpretação baseada em condições laboratoriais padronizadas e em pontos de corte clínicos. Ela não garante, isoladamente, que o perfil bacteriano permanecerá inalterado durante toda a exposição ao antibacteriano <sup>3,4</sup>."
   },
   "d": {
     "type": "error",
-    "title": "Raciocínio inadequado",
-    "text": "O antibiograma não é um catálogo de todas as opções terapêuticas; ele inclui antibacterianos com interpretação validada para aquela espécie bacteriana."
+    "title": "Interpretação incompleta",
+    "text": "A identificação da espécie é essencial porque diferentes bactérias apresentam resistências intrínsecas, mecanismos adquiridos e observações interpretativas próprias. O antibiograma deve ser lido em conjunto com a identificação bacteriana <sup>1,5,6</sup>."
   }
 }
         </template>
+
       </article>
 
-      <section class="cap5-p53Completion" data-p53-completion hidden aria-live="polite">
-        <div class="cap5-p53Completion__header">
-          <span class="cap5-p53Completion__kicker">Fechamento interpretativo</span>
-          <h2 class="cap5-p53Completion__title">Síntese da leitura crítica do antibiograma</h2>
+      <!-- =========================================
+           SITUAÇÃO CLÍNICA 2
+           ========================================= -->
+
+      <article
+        class="cap5-p53Question"
+        data-q="2"
+        data-question-state="pending"
+      >
+
+        <div class="cap5-p53QuestionHeader">
+
+          <span class="cap5-p53Kicker">
+            Situação clínica 2
+          </span>
+
+        
+
         </div>
 
-        <p class="cap5-p53Completion__text">
-          Ao final deste capítulo, o antibiograma não pode ser lido como um ranking automático de antibacterianos nem como um catálogo completo de opções terapêuticas. Sua interpretação exige articulação entre breakpoints, mecanismos de resistência, limitações metodológicas do painel e integração com o contexto clínico.
+        <p class="cap5-p53Case">
+          O laboratório libera o seguinte resultado microbiológico:
         </p>
+
+        <div
+          class="cap5-p53Report"
+          aria-label="Resultado de hemocultura com identificação e perfil de suscetibilidade"
+        >
+
+          <span class="cap5-p53Report__label">
+            Hemocultura
+          </span>
+
+          <strong>
+            <em>Staphylococcus aureus</em>
+          </strong>
+
+          <span class="cap5-p53Report__mechanism">
+            MRSA
+          </span>
+
+          <div class="cap5-p53Report__results">
+
+            <span>
+              Oxacilina — R
+            </span>
+
+            <span>
+              Vancomicina — S
+            </span>
+
+            <span>
+              Linezolida — S
+            </span>
+
+          </div>
+
+        </div>
+
+        <p class="cap5-p53Prompt">
+          Qual é a interpretação microbiológica mais adequada desse laudo?
+        </p>
+
+        <div
+          class="cap5-p53Options"
+          role="group"
+          aria-label="Alternativas da situação clínica 2"
+        >
+
+          <button
+            type="button"
+            data-answer="a"
+            aria-pressed="false"
+          >
+
+            <span class="cap5-p53Letter">A</span>
+
+            <span>
+              A resistência está restrita à oxacilina e não modifica a
+              interpretação dos demais β-lactâmicos.
+            </span>
+
+          </button>
+
+          <button
+            type="button"
+            data-answer="b"
+            data-correct="true"
+            aria-pressed="false"
+          >
+
+            <span class="cap5-p53Letter">B</span>
+
+            <span>
+              A identificação de MRSA indica um mecanismo de resistência
+              que modifica a interpretação da maioria dos β-lactâmicos.
+            </span>
+
+          </button>
+
+          <button
+            type="button"
+            data-answer="c"
+            aria-pressed="false"
+          >
+
+            <span class="cap5-p53Letter">C</span>
+
+            <span>
+              A suscetibilidade à vancomicina permite desconsiderar a
+              informação de resistência à meticilina.
+            </span>
+
+          </button>
+
+          <button
+            type="button"
+            data-answer="d"
+            aria-pressed="false"
+          >
+
+            <span class="cap5-p53Letter">D</span>
+
+            <span>
+              A sigla MRSA indica que o isolado produz uma β-lactamase
+              de espectro estendido.
+            </span>
+
+          </button>
+
+        </div>
+
+        <div class="cap5-p53Actions">
+
+          <button
+            class="cap5-p53Btn cap5-p53Btn--primary"
+            type="button"
+            data-p53-action="confirm"
+            disabled
+          >
+            Confirmar interpretação
+          </button>
+
+          <button
+            class="cap5-p53Btn cap5-p53Btn--ghost"
+            type="button"
+            data-p53-action="reset"
+            hidden
+          >
+            Refazer
+          </button>
+
+        </div>
+
+        <div
+          class="cap5-p53Feedback"
+          role="region"
+          aria-live="polite"
+        ></div>
+
+        <template class="cap5-p53FeedbackMap">
+{
+  "a": {
+    "type": "error",
+    "title": "Interpretação restrita",
+    "text": "A resistência à meticilina não corresponde apenas à resistência isolada à oxacilina. O fenótipo MRSA modifica a interpretação da maioria dos β-lactâmicos, com exceção de agentes especificamente desenvolvidos para apresentar atividade contra MRSA."
+  },
+  "b": {
+    "type": "correct",
+    "title": "Interpretação adequada",
+    "text": "MRSA corresponde a <em>Staphylococcus aureus</em> resistente à meticilina. Esse fenótipo está relacionado principalmente à produção de uma proteína ligadora de penicilina com baixa afinidade pelos β-lactâmicos, geralmente codificada por <em>mecA</em> ou <em>mecC</em>. A informação deve ser integrada ao perfil de suscetibilidade apresentado no laudo <sup>3,4,6</sup>."
+  },
+  "c": {
+    "type": "error",
+    "title": "Informações complementares",
+    "text": "A suscetibilidade à vancomicina não elimina o significado microbiológico do fenótipo MRSA. O resultado da vancomicina e a resistência à meticilina descrevem aspectos diferentes e complementares do perfil de suscetibilidade."
+  },
+  "d": {
+    "type": "error",
+    "title": "Mecanismo diferente",
+    "text": "ESBL corresponde à produção de β-lactamases de espectro estendido, encontrada principalmente em bacilos Gram-negativos da ordem Enterobacterales. MRSA descreve resistência à meticilina em <em>Staphylococcus aureus</em>."
+  }
+}
+        </template>
+
+      </article>
+
+      <!-- =========================================
+           CONCLUSÃO
+           ========================================= -->
+
+      <section
+        class="cap5-p53Completion"
+        data-p53-completion
+        hidden
+        aria-live="polite"
+      >
+
+        <span class="cap5-p53Completion__kicker">
+          Fechamento do capítulo
+        </span>
+
+        <h2 class="cap5-p53Completion__title">
+          Síntese da interpretação do antibiograma
+        </h2>
+
+        <p class="cap5-p53Completion__text">
+          A leitura do antibiograma não deve se limitar às categorias S, I e R.
+          A interpretação também exige considerar a identificação da espécie,
+          os mecanismos de resistência associados e as observações
+          complementares informadas pelo laboratório.
+        </p>
+
       </section>
 
-      <div class="cap5-p53ClosingBlock">
-        <p>
-          Ao final deste capítulo, o antibiograma deve ser compreendido como instrumento microbiológico de apoio ao raciocínio clínico. Seu valor depende da leitura integrada do laudo, do reconhecimento de seus limites e da capacidade de evitar conclusões simplificadas baseadas em um único dado do teste.
-        </p>
-      </div>
     </section>
 
+    <!-- =========================================
+         REFERÊNCIAS
+         ========================================= -->
+
     <details class="cap5-refBox">
-      <summary>Referências</summary>
+
+      <summary>
+        Referências
+      </summary>
+
       <div class="cap5-refContent">
-        <p>1. Blaser MJ, Cohen JI, Holland SM, editors. <em>Mandell, Douglas, and Bennett’s Principles and Practice of Infectious Diseases</em>. 10th ed. Philadelphia: Elsevier; 2025.</p>
-        <p>2. Murray PR, Rosenthal KS, Pfaller MA. <em>Medical Microbiology</em>. 10th ed. Philadelphia: Elsevier; 2025.</p>
-        <p>3. Agência Nacional de Vigilância Sanitária. <em>Manual de microbiologia clínica para o controle de infecção relacionada à assistência à saúde</em>. Brasília; 2023.</p>
-        <p>4. Calderaro A, Chezzi C. MALDI-TOF MS: A Reliable Tool in the Real Life of the Clinical Microbiology Laboratory. <em>Microorganisms</em>. 2024 Feb 3;12(2):322.</p>
-        <p>5. Kadeřábková N, Mahmood AJS, Mavridou DAI. Antibiotic susceptibility testing using minimum inhibitory concentration (MIC) assays. <em>npj Antimicrobials and Resistance</em>. 2024 Nov 7;2(1):37.</p>
-        <p>6. Brunton LL, Hilal-Dandan R, Knollmann BC, editors. <em>Goodman & Gilman’s The Pharmacological Basis of Therapeutics</em>. 14th ed. New York: McGraw-Hill Education; 2023.</p>
-        <p>7. Ciofu O, Moser C, Jensen PØ, Høiby N. Tolerance and resistance of microbial biofilms. <em>Nat Rev Microbiol</em>. 2022 Oct 3;20(10):621–35.</p>
-        <p>8. Roberts JA, Abdul-Aziz MH, Lipman J, Mouton JW, Vinks AA, Felton TW, et al. Individualised antibiotic dosing for patients who are critically ill: challenges and potential solutions. <em>Lancet Infect Dis</em>. 2014 Jun;14(6):498–509.</p>
-        <p>9. BrCAST – Comitê Brasileiro de Testes de Sensibilidade aos Antimicrobianos. Tabela de pontos de corte clínicos BrCAST–EUCAST [Internet]. 2018 Jul.</p>
-        <p>10. BrCAST – Comitê Brasileiro de Testes de Sensibilidade aos Antimicrobianos. Tabela de pontos de corte clínicos BrCAST para interpretação de CIMs e diâmetros de halo [Internet]. São Paulo; 2025.</p>
-        <p>11. Mareković I, Markanović M, Lešin J, Ćorić M. Vancomycin-Resistant Enterococci: Current Understandings of Resistance in Relation to Transmission and Preventive Strategies. <em>Pathogens</em>. 2024 Nov 5;13(11):966.</p>
-        <p>12. European Committee on Antimicrobial Susceptibility Testing (EUCAST). Clinical breakpoints and interpretation of S, I and R [Internet]. Växjö, Sweden; 2024.</p>
-        <p>13. Mouton JW, Brown DFJ, Apfalter P, Cantón R, Giske CG, Ivanova M, et al. The role of pharmacokinetics/pharmacodynamics in setting clinical MIC breakpoints: the EUCAST approach. <em>Clin Microbiol Infect</em>. 2012 Mar;18(3):E37–45.</p>
-        <p>14. Bush K, Bradford PA. Epidemiology of β-Lactamase-Producing Pathogens. <em>Clin Microbiol Rev</em>. 2020 Mar 18;33(2).</p>
-        <p>15. Tamma PD, Aitken SL, Bonomo RA, Mathers AJ, van Duin D, Clancy CJ. Infectious Diseases Society of America Guidance on the Treatment of Extended-Spectrum β-lactamase Producing Enterobacterales (ESBL-E), Carbapenem-Resistant Enterobacterales (CRE), and <em>Pseudomonas aeruginosa</em> with Difficult-to-Treat Resistance. <em>Clin Infect Dis</em>. 2021 Apr 8;72(7):e169–83.</p>
-        <p>16. Munita JM, Arias CA. Mechanisms of Antibiotic Resistance. <em>Microbiol Spectr</em>. 2016 Mar 25;4(2).</p>
-        <p>17. Arias CA, Murray BE. The rise of the Enterococcus: beyond vancomycin resistance. <em>Nat Rev Microbiol</em>. 2012 Apr 16;10(4):266–78.</p>
+
+        <p>
+          1. Carroll KC, Pfaller MA, Landry ML, McAdam AJ, Richter SS,
+          Patel R, editors. Manual of Clinical Microbiology. 13th ed.
+          Washington, DC: ASM Press; 2023.
+        </p>
+
+        <p>
+          2. Oplustil CP, Zoccoli CM, Tobouti NR, Schaeffer MCS.
+          Procedimentos Básicos em Microbiologia Clínica. 4th ed.
+          São Paulo: Sarvier; 2020.
+        </p>
+
+        <p>
+          3. BrCAST — Comitê Brasileiro de Testes de Sensibilidade aos
+          Antimicrobianos. Tabela de pontos de corte clínicos BrCAST para
+          interpretação de CIM e diâmetros de halo. São Paulo: BrCAST; 2025.
+        </p>
+
+        <p>
+          4. European Committee on Antimicrobial Susceptibility Testing.
+          Clinical breakpoints and guidance documents. Växjö: EUCAST; 2024.
+        </p>
+
+        <p>
+          5. Murray PR, Rosenthal KS, Pfaller MA.
+          Medical Microbiology. 10th ed. Philadelphia: Elsevier; 2025.
+        </p>
+
+        <p>
+          6. Blaser MJ, Cohen JI, Holland SM, editors.
+          Mandell, Douglas, and Bennett’s Principles and Practice of
+          Infectious Diseases. 10th ed. Philadelphia: Elsevier; 2025.
+        </p>
+
+        <p>
+          7. Turnidge J, Paterson DL. Setting and revising antibacterial
+          susceptibility breakpoints. Clin Microbiol Rev.
+          2007;20(3):391–408. doi:10.1128/CMR.00047-06
+        </p>
+
+        <p>
+          8. Tamma PD, Heil EL, Justo JA, Mathers AJ, Satlin MJ,
+          Bonomo RA. Infectious Diseases Society of America 2024 guidance
+          on the treatment of antimicrobial-resistant Gram-negative
+          infections. Clin Infect Dis. 2024.
+          doi:10.1093/cid/ciae403
+        </p>
+
+        <p>
+          9. Tamma PD, Aitken SL, Bonomo RA, Mathers AJ, van Duin D,
+          Clancy CJ. Infectious Diseases Society of America guidance on
+          the treatment of extended-spectrum β-lactamase-producing
+          Enterobacterales, carbapenem-resistant Enterobacterales and
+          <em>Pseudomonas aeruginosa</em> with difficult-to-treat
+          resistance. Clin Infect Dis. 2021;72(7):e169–e183.
+          doi:10.1093/cid/ciaa1478
+        </p>
+
+        <p>
+          10. Bush K, Bradford PA. Epidemiology of β-lactamase-producing
+          pathogens. Clin Microbiol Rev. 2020;33(2).
+          doi:10.1128/CMR.00047-19
+        </p>
+
+        <p>
+          11. Andersson DI, Hughes D. Microbiological effects of sublethal
+          levels of antibiotics. Nat Rev Microbiol.
+          2014;12(7):465–478. doi:10.1038/nrmicro3270
+        </p>
+
+        <p>
+          12. Boattini M, Bianco G, Llorente LI, et al.
+          Enterobacterales carrying chromosomal AmpC β-lactamases in Europe:
+          epidemiology and antimicrobial resistance burden from a cohort
+          of 27 hospitals, 2020–2022. Int J Antimicrob Agents.
+          2024;63(5):107115.
+          doi:10.1016/j.ijantimicag.2024.107115
+        </p>
+
       </div>
+
     </details>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p52.html" aria-label="Ir para a página anterior">← Anterior</a>
+    <!-- PAGINAÇÃO -->
 
-  <div class="center">Capítulo 5 · Página 53 de 89</div>
+    <nav class="pager" aria-label="Paginação">
 
-  <a class="btn primary" href="../capitulo-06/p54.html" aria-label="Ir para a próxima página">
-    Próxima →
-  </a>
-</nav>
+      <a
+        class="btn"
+        href="p52.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 5 · Página 53 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="../capitulo-06/p54.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+
+    </nav>
 
   </main>
 
   <script src="../../js/app.js"></script>
   <script src="../../js/capitulo-05.js"></script>
+
 </body>
 </html>

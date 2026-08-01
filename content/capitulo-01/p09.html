@@ -7,7 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -20,94 +20,164 @@
 
     <header class="page-header">
       <div class="chapter">Capítulo 1 — Fundamentos Conceituais dos Antibacterianos</div>
-      <h1 class="page-title">Profilaxia antibacteriana</h1>
+      <h1 class="page-title">Profilaxia Antibacteriana</h1>
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <section class="prose">
+
       <p>
-        A decisão de iniciar antibacterianos pode ocorrer mesmo antes do estabelecimento de uma infecção, desde que exista risco previsível e bem definido de sua ocorrência. Nessas situações, a intervenção caracteriza-se como profilaxia antibacteriana <sup>23,24</sup>.
+        A profilaxia antibacteriana consiste no uso preventivo de um
+        antibacteriano na ausência de infecção ativa, quando existe risco
+        previsível e bem definido de sua ocorrência. Seu objetivo é reduzir a
+        probabilidade de infecção durante um período específico de exposição ou
+        vulnerabilidade <sup>23,24</sup>.
       </p>
 
       <p>
-        A profilaxia difere da terapia empírica porque não há infecção estabelecida nem suspeita clínica ativa. O que existe é um aumento previsível do risco de exposição bacteriana associado a um evento específico, como um procedimento cirúrgico ou uma condição transitória de imunossupressão. Enquanto a terapia empírica busca tratar uma infecção presumida, a profilaxia tem como objetivo impedir que a infecção se desenvolva <sup>2</sup>.
+        Diferentemente da terapia empírica, a profilaxia não trata uma infecção
+        presumida. Ela é reservada a situações selecionadas, como determinados
+        procedimentos cirúrgicos e períodos de neutropenia profunda e prolongada
+        em pacientes de alto risco <sup>3</sup>.
       </p>
+
     </section>
 
-    <section class="cap1-p09-stage" aria-label="Critérios e indicações da profilaxia antibacteriana" data-cap1-profilaxia>
+    <section class="cap1-p09-stage" data-cap1-prophylaxis aria-label="Interação sobre profilaxia antibacteriana">
       <div class="cap1-p09-stage__inner">
 
-        <div class="cap1-p09-pillars">
-          <article class="cap1-p09-pillar">
-            <h2 class="cap1-p09-pillar__title">Escolha adequada</h2>
-            <p class="cap1-p09-pillar__text">escolha de um antibacteriano ativo contra os patógenos mais prováveis</p>
-          </article>
-
-          <article class="cap1-p09-pillar">
-            <h2 class="cap1-p09-pillar__title">Momento adequado</h2>
-            <p class="cap1-p09-pillar__text">administração no momento adequado antes da exposição bacteriana</p>
-          </article>
-
-          <article class="cap1-p09-pillar">
-            <h2 class="cap1-p09-pillar__title">Concentração tecidual</h2>
-            <p class="cap1-p09-pillar__text">obtenção de concentrações teciduais adequadas durante o procedimento</p>
-          </article>
-        </div>
-
-        <div class="cap1-p09-note">
+        <div class="cap1-p09-head">
+          
           <p>
-            A ausência de qualquer um desses fatores reduz o efeito preventivo e pode transformar a intervenção em uso ineficaz do antibacteriano <sup>23,24</sup>.
+            Analise cada situação e diferencie profilaxia, terapia empírica e uso desnecessário.
           </p>
         </div>
 
-        <div class="cap1-p09-tabs" role="tablist" aria-label="Cenários de uso da profilaxia">
-          <button class="cap1-p09-tab is-active" type="button" role="tab" aria-selected="true" tabindex="0" data-profilaxia-tab="indicacao">
-            Indicação
-          </button>
-          <button class="cap1-p09-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-profilaxia-tab="cirurgia">
-            Cirurgia
-          </button>
-          <button class="cap1-p09-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-profilaxia-tab="neutropenia">
-            Neutropenia
-          </button>
+        <div class="cap1-p09-status" aria-live="polite">
+          <span id="p09Step">Situação 1 de 3</span>
         </div>
 
-        <div class="cap1-p09-panelWrap">
-          <div class="cap1-p09-panel" data-profilaxia-pane="indicacao">
-            <h2 class="cap1-p09-panelTitle">Quando indicar profilaxia</h2>
-            <p>
-              De modo geral, a profilaxia deve ser reservada a situações em que o risco de infecção seja claramente definido e temporário. Em contextos específicos como procedimentos cirúrgicos com risco microbiológico conhecido ou estados transitórios de imunossupressão intensa, a intervenção preventiva pode reduzir a ocorrência de infecções clinicamente relevantes. Fora dessas circunstâncias, o uso preventivo tende a ampliar a exposição desnecessária a antibacterianos <sup>2</sup>.
-            </p>
+        <article class="cap1-p09-card">
+          <h3 id="p09Title">Procedimento cirúrgico com risco definido</h3>
+
+          <div class="cap1-p09-case" id="p09Case">
+            Paciente sem infecção ativa será submetido a procedimento cirúrgico com risco conhecido de infecção do sítio cirúrgico.
           </div>
 
-          <div class="cap1-p09-panel" data-profilaxia-pane="cirurgia" hidden>
-            <h2 class="cap1-p09-panelTitle">Profilaxia em procedimentos cirúrgicos</h2>
+          <p class="cap1-p09-question" id="p09Question">
+            Qual é a melhor conduta?
+          </p>
+
+          <div class="cap1-p09-options" id="p09Options" role="group" aria-label="Alternativas da situação clínica"></div>
+
+          <div class="cap1-p09-feedback" id="p09Feedback" aria-live="polite">
+            <strong>Analise a indicação.</strong>
             <p>
-              Em procedimentos com risco significativo de contaminação entérica, a administração de um antibacteriano ativo contra a microbiota intestinal antes da incisão cirúrgica reduz a incidência de infecção do sítio cirúrgico. Por outro lado, prolongar a profilaxia após o término do procedimento não demonstrou benefício consistente e aumenta a exposição a efeitos adversos e à seleção de resistência. Por essa razão, recomenda-se não estender rotineiramente a profilaxia no período pós-operatório, especialmente em cirurgias limpas ou limpo-contaminadas <sup>23,24</sup>.
+              A decisão deve considerar se há infecção ativa ou apenas risco previsível de infecção.
             </p>
+          </div>
+        </article>
+
+        <div class="cap1-p09-controls">
+          <button type="button" id="p09Prev" disabled>← Situação anterior</button>
+
+          <div class="cap1-p09-dots" aria-hidden="true">
+            <span class="is-active"></span>
+            <span></span>
+            <span></span>
           </div>
 
-          <div class="cap1-p09-panel" data-profilaxia-pane="neutropenia" hidden>
-            <h2 class="cap1-p09-panelTitle">Profilaxia em neutropenia profunda e prolongada</h2>
-            <p>
-              Em pacientes com neutropenia profunda e prolongada, a profilaxia antibacteriana pode reduzir a incidência de bacteremia e de infecções graves. Nesses casos, entretanto, a estratégia deve ser reservada a grupos de alto risco e limitada ao período de neutropenia, com a decisão guiada pelo risco individual do paciente e pelo perfil epidemiológico local <sup>25</sup>.
-            </p>
-          </div>
+          <button type="button" id="p09Next">Próxima situação →</button>
         </div>
+
+        <aside class="cap1-p09-summary" id="p09Summary" hidden>
+          <strong>Princípios da profilaxia antibacteriana</strong>
+
+          <div class="cap1-p09-summaryCards">
+            <div class="cap1-p09-summaryCard cap1-p09-summaryCard--choice">
+              <h4>Escolha adequada</h4>
+              <p>Selecionar antibacteriano ativo contra os microrganismos mais prováveis naquele contexto clínico.</p>
+            </div>
+
+            <div class="cap1-p09-summaryCard cap1-p09-summaryCard--time">
+              <h4>Momento adequado</h4>
+              <p>Garantir concentrações eficazes no período de maior risco de contaminação ou inoculação bacteriana.</p>
+            </div>
+
+            <div class="cap1-p09-summaryCard cap1-p09-summaryCard--duration">
+              <h4>Duração adequada</h4>
+              <p>Limitar o uso ao período de benefício preventivo comprovado, evitando prolongamento desnecessário.</p>
+            </div>
+          </div>
+        </aside>
+
       </div>
     </section>
 
-    <section class="prose" aria-label="Fechamento da página">
-      <p class="cap1-p09-closing">
-        A profilaxia não substitui medidas de controle de infecção e não deve ser prolongada além do período recomendado. Quando utilizada sem indicação adequada, deixa de cumprir função preventiva e passa a contribuir para aumento da pressão seletiva sobre populações bacterianas, com impacto coletivo na resistência antimicrobiana <sup>1,24</sup>.
+    <section class="prose">
+
+      <p>
+        A profilaxia deve ser reservada a situações nas quais o benefício
+        preventivo esteja demonstrado. Sua efetividade depende da escolha do
+        agente, do momento de administração e da limitação ao período de risco
+        <sup>3,15,23,24</sup>.
       </p>
+
+      <h2 class="section-subtitle">Profilaxia cirúrgica</h2>
+
+      <p>
+        Em procedimentos com indicação estabelecida, a profilaxia deve contemplar
+        os microrganismos mais frequentemente relacionados à infecção do sítio
+        cirúrgico e alcançar concentração adequada nos tecidos no momento da
+        incisão <sup>23,24</sup>.
+      </p>
+
+      <p>
+        Em geral, a administração ocorre nos 60 minutos anteriores à incisão.
+        Quando o antibacteriano exige infusão prolongada, como a vancomicina, o
+        início pode ocorrer até 120 minutos antes, conforme o protocolo adotado
+        <sup>23,24</sup>.
+      </p>
+
+      <p>
+        Em muitos procedimentos, uma única dose é suficiente. Quando doses
+        adicionais são indicadas, devem seguir o protocolo específico e, em
+        geral, não se prolongar além de 24 horas. A manutenção desnecessária
+        aumenta efeitos adversos e pressão seletiva sem ampliar o benefício
+        preventivo <sup>24</sup>.
+      </p>
+
+      <h2 class="section-subtitle">Profilaxia na neutropenia</h2>
+
+      <p>
+        A profilaxia pode ser considerada quando se espera neutropenia profunda e
+        prolongada, especialmente contagem absoluta de neutrófilos inferior a
+        100 células/mm³ por mais de sete dias, como pode ocorrer durante o
+        tratamento de neoplasias hematológicas ou após transplante de
+        células-tronco hematopoéticas <sup>25</sup>.
+      </p>
+
+      <p>
+        A decisão deve considerar o risco individual, a duração esperada da
+        neutropenia, resistência local, efeitos adversos, interações
+        medicamentosas e protocolos institucionais. Se surgirem sinais de
+        infecção, o objetivo deixa de ser profilático e passa a ser terapêutico
+        <sup>3,25</sup>.
+      </p>
+
+      <aside class="cap1-p09-closing">
+        Profilaxia não significa tratar antecipadamente qualquer possibilidade de
+        infecção. É uma estratégia preventiva com indicação, momento e duração
+        definidos. Fora desses limites, a exposição aumenta os riscos sem
+        benefício clínico comprovado <sup>15,20</sup>.
+      </aside>
+
     </section>
 
- 
-   <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p08.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 1 · Página 9 de 89</div>
-  <a class="btn primary" href="p10.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="p08.html" aria-label="Ir para a página anterior">← Anterior</a>
+      <div class="center">Capítulo 1 · Página 9 de 89</div>
+      <a class="btn primary" href="p10.html" aria-label="Ir para a próxima página">Próxima →</a>
+    </nav>
 
   </main>
 

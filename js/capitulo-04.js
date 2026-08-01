@@ -1,646 +1,1048 @@
 /* =========================
-   Página 30 — Exposição antimicrobiana e seleção de resistência
+   PÁGINA 30 — EXPOSIÇÃO AO ANTIBACTERIANO E SELEÇÃO DE RESISTÊNCIA
    ========================= */
-(function initCap4Page30() {
+
+(function initCap4Page30(){
   const root = document.querySelector(".cap4-page30");
-  if (!root) return;
+  if(!root) return;
 
   const tabs = Array.from(root.querySelectorAll(".cap4-p30-guide__chip"));
   const eyebrow = root.querySelector("#cap4-p30-eyebrow");
   const title = root.querySelector("#cap4-p30-title");
   const text = root.querySelector("#cap4-p30-text");
 
-  if (!tabs.length || !eyebrow || !title || !text) return;
-
-  const map = {
-    cim: {
-      eyebrow: "Leitura interpretativa",
-      title: "Estar acima da CIM não resolve sozinho o problema seletivo",
-      html: `
+  const content = {
+    cim:{
+      title:"Concentração inibitória mínima",
+      html:`
         <p>
-          A CIM marca o ponto a partir do qual a inibição bacteriana se torna possível no ensaio laboratorial. Mas, do ponto de vista clínico, o risco seletivo não desaparece apenas por ultrapassar esse limiar: ainda pode haver sobrevivência relativa de variantes menos suscetíveis.
+          A CIM representa a menor concentração capaz de inibir o crescimento bacteriano em condições laboratoriais padronizadas.
         </p>
       `
     },
-    cpm: {
-      eyebrow: "Leitura interpretativa",
-      title: "A CPM desloca a análise para o risco de emergência de variantes",
-      html: `
+    cpm:{
+      title:"Concentração de prevenção de mutantes",
+      html:`
         <p>
-          A CPM ajuda a visualizar o nível acima do qual a sobrevivência de subpopulações com menor suscetibilidade relativa se torna menos provável. Ela não define apenas “mais concentração”, mas um patamar com implicações diferentes para contenção seletiva.
+          A CPM representa a concentração acima da qual a sobrevivência de variantes com menor suscetibilidade relativa torna-se menos provável.
         </p>
       `
     },
-    janela: {
-      eyebrow: "Leitura interpretativa",
-      title: "É na faixa intermediária que a seleção se torna clinicamente relevante",
-      html: `
+    janela:{
+      html:`
         <p>
-          A janela de seleção mutante não representa apenas uma zona entre duas linhas. Ela expressa o cenário em que parte da população bacteriana já sofre supressão, mas variantes menos suscetíveis continuam viáveis, favorecendo mudança gradual da composição populacional.
+          A janela de seleção mutante corresponde à faixa entre a CIM e a CPM. Nessa região, bactérias mais suscetíveis tendem a ser inibidas, enquanto variantes menos suscetíveis podem permanecer viáveis.
         </p>
       `
     },
-    curva: {
-      eyebrow: "Leitura interpretativa",
-      title: "O risco depende do tempo de permanência nessa faixa, não só do pico atingido",
-      html: `
+    curva:{
+      html:`
         <p>
-          A curva concentração–tempo mostra que o problema farmacológico não é apenas alcançar uma concentração máxima elevada em algum momento. O ponto decisivo é quanto tempo a exposição permanece em uma faixa que ainda permite pressão seletiva incompleta.
+          O risco de seleção depende do tempo em que a concentração do antibacteriano permanece dentro da janela de seleção mutante, e não apenas do pico alcançado após a administração.
         </p>
       `
     }
   };
 
-  function activate(key) {
-    const item = map[key];
-    if (!item) return;
+  function activate(key){
+    const selected = content[key];
+    if(!selected) return;
 
-    tabs.forEach((tab) => {
+    tabs.forEach(function(tab){
       const active = tab.dataset.p30Step === key;
       tab.classList.toggle("is-active", active);
       tab.setAttribute("aria-selected", active ? "true" : "false");
       tab.tabIndex = active ? 0 : -1;
     });
 
-    eyebrow.textContent = item.eyebrow;
-    title.textContent = item.title;
-    text.innerHTML = item.html;
+    eyebrow.textContent = selected.eyebrow;
+    title.textContent = selected.title;
+    text.innerHTML = selected.html;
   }
 
-  tabs.forEach((tab, index) => {
-    tab.addEventListener("click", () => activate(tab.dataset.p30Step));
+  tabs.forEach(function(tab, index){
+    tab.addEventListener("click", function(){
+      activate(tab.dataset.p30Step);
+    });
 
-    tab.addEventListener("keydown", (event) => {
+    tab.addEventListener("keydown", function(event){
       let nextIndex = index;
 
-      if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+      if(event.key === "ArrowRight" || event.key === "ArrowDown"){
         event.preventDefault();
         nextIndex = (index + 1) % tabs.length;
-        tabs[nextIndex].focus();
-        activate(tabs[nextIndex].dataset.p30Step);
       }
 
-      if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+      if(event.key === "ArrowLeft" || event.key === "ArrowUp"){
         event.preventDefault();
         nextIndex = (index - 1 + tabs.length) % tabs.length;
+      }
+
+      if(event.key === "Home"){
+        event.preventDefault();
+        nextIndex = 0;
+      }
+
+      if(event.key === "End"){
+        event.preventDefault();
+        nextIndex = tabs.length - 1;
+      }
+
+      if(nextIndex !== index){
         tabs[nextIndex].focus();
         activate(tabs[nextIndex].dataset.p30Step);
-      }
-
-      if (event.key === "Home") {
-        event.preventDefault();
-        tabs[0].focus();
-        activate(tabs[0].dataset.p30Step);
-      }
-
-      if (event.key === "End") {
-        event.preventDefault();
-        tabs[tabs.length - 1].focus();
-        activate(tabs[tabs.length - 1].dataset.p30Step);
       }
     });
   });
 
   activate("cim");
+
+  const revealItems = root.querySelectorAll(".cap4-p30-reveal");
+
+  if(!("IntersectionObserver" in window)){
+    revealItems.forEach(function(item){
+      item.classList.add("is-visible");
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold:0.18,
+      rootMargin:"0px 0px -40px 0px"
+    }
+  );
+
+  revealItems.forEach(function(item){
+    observer.observe(item);
+  });
 })();
-
 /* =========================
-   Página 31 — Via de administração
+   PÁGINA 31 — ÍNDICES FARMACODINÂMICOS
    ========================= */
-(function initCap4Page31() {
-  const root = document.querySelector(".cap4-page31");
-  if (!root) return;
 
-  const tabs = Array.from(root.querySelectorAll(".cap4-p31-routes__tab"));
+(function initCap4Page31(){
+  const root = document.querySelector(".cap4-page31");
+  if(!root) return;
+
+  const tabs = Array.from(root.querySelectorAll(".cap4-p31-guide__chip"));
   const eyebrow = root.querySelector("#cap4-p31-eyebrow");
   const title = root.querySelector("#cap4-p31-title");
   const text = root.querySelector("#cap4-p31-text");
 
-  if (!tabs.length || !eyebrow || !title || !text) return;
-
-  const map = {
-    iv: {
-      eyebrow: "Maior previsibilidade da exposição",
-      title: "Via intravenosa",
-      html: `
+  const content = {
+    tempo:{
+      eyebrow:"Tempo acima da CIM",
+      title:"%fT>CIM",
+      html:`
         <p>
-          Na administração intravenosa, o antibacteriano é introduzido diretamente na circulação sistêmica, resultando em biodisponibilidade completa e início imediato de exposição. Nesse cenário, não há etapa de absorção, e a variabilidade associada a esse processo é praticamente eliminada. Como consequência, a concentração plasmática torna-se mais previsível, especialmente em situações clínicas críticas, nas quais a estabilidade da exposição é determinante para o início da resposta terapêutica <sup>10–12</sup>.
+          O efeito depende do tempo em que a concentração livre do antibacteriano permanece acima da CIM.
+        </p>
+        <p>
+          <strong>Principal classe:</strong> β-lactâmicos.
         </p>
       `
     },
-    oral: {
-      eyebrow: "Maior dependência do processo de absorção",
-      title: "Via oral",
-      html: `
+    pico:{
+      eyebrow:"Pico de concentração",
+      title:"Cmax/CIM",
+      html:`
         <p>
-          Por outro lado, na administração por via oral, a concentração sistêmica depende da absorção gastrointestinal, um processo influenciado por múltiplos fatores fisiológicos e clínicos. Condições como pH gástrico, motilidade intestinal, presença de alimentos, integridade da mucosa e interações medicamentosas podem modificar tanto a fração absorvida quanto a velocidade com que o antibacteriano atinge a circulação sistêmica. Como consequência, a biodisponibilidade pode variar entre indivíduos e entre diferentes momentos clínicos no mesmo paciente <sup>10–12</sup>.
+          O efeito depende da magnitude da concentração máxima em relação à CIM.
+        </p>
+        <p>
+          <strong>Principal classe:</strong> aminoglicosídeos.
         </p>
       `
     },
-    parenteral: {
-      eyebrow: "Exposição dependente da perfusão tecidual",
-      title: "Vias intramuscular e subcutânea",
-      html: `
+    auc:{
+      eyebrow:"Exposição total",
+      title:"AUC/CIM",
+      html:`
         <p>
-          Outras vias parenterais, como a administração intramuscular ou subcutânea, apresentam características intermediárias entre a via intravenosa e a via oral. Nesses casos, a absorção ocorre a partir do tecido onde o fármaco é depositado e depende, entre outros fatores, da perfusão local, das propriedades físico-químicas da molécula e das condições clínicas do hospedeiro. Em situações de hipoperfusão tecidual, como em estados de choque, essa absorção pode se tornar imprevisível, aproximando-se de padrões de exposição subótimos <sup>9,10</sup>.
+          O efeito depende da exposição total ao antibacteriano ao longo do tempo.
+        </p>
+        <p>
+          <strong>Principais classes:</strong> fluoroquinolonas, glicopeptídeos e oxazolidinonas.
         </p>
       `
     }
   };
 
-  function activate(key) {
-    const item = map[key];
-    if (!item) return;
+  function activate(key){
+    const selected = content[key];
+    if(!selected) return;
 
-    tabs.forEach((tab) => {
-      const active = tab.dataset.p31Route === key;
+    tabs.forEach(function(tab){
+      const active = tab.dataset.p31Index === key;
       tab.classList.toggle("is-active", active);
       tab.setAttribute("aria-selected", active ? "true" : "false");
       tab.tabIndex = active ? 0 : -1;
     });
 
-    eyebrow.textContent = item.eyebrow;
-    title.textContent = item.title;
-    text.innerHTML = item.html;
+    eyebrow.textContent = selected.eyebrow;
+    title.textContent = selected.title;
+    text.innerHTML = selected.html;
   }
 
-  tabs.forEach((tab, index) => {
-    tab.addEventListener("click", () => activate(tab.dataset.p31Route));
+  tabs.forEach(function(tab, index){
+    tab.addEventListener("click", function(){
+      activate(tab.dataset.p31Index);
+    });
 
-    tab.addEventListener("keydown", (event) => {
+    tab.addEventListener("keydown", function(event){
       let nextIndex = index;
 
-      if (event.key === "ArrowRight" || event.key === "ArrowDown") {
+      if(event.key === "ArrowRight" || event.key === "ArrowDown"){
         event.preventDefault();
         nextIndex = (index + 1) % tabs.length;
-        tabs[nextIndex].focus();
-        activate(tabs[nextIndex].dataset.p31Route);
       }
 
-      if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
+      if(event.key === "ArrowLeft" || event.key === "ArrowUp"){
         event.preventDefault();
         nextIndex = (index - 1 + tabs.length) % tabs.length;
+      }
+
+      if(event.key === "Home"){
+        event.preventDefault();
+        nextIndex = 0;
+      }
+
+      if(event.key === "End"){
+        event.preventDefault();
+        nextIndex = tabs.length - 1;
+      }
+
+      if(nextIndex !== index){
         tabs[nextIndex].focus();
-        activate(tabs[nextIndex].dataset.p31Route);
+        activate(tabs[nextIndex].dataset.p31Index);
       }
+    });
+  });
 
-      if (event.key === "Home") {
-        event.preventDefault();
-        tabs[0].focus();
-        activate(tabs[0].dataset.p31Route);
-      }
+  activate("tempo");
 
-      if (event.key === "End") {
-        event.preventDefault();
-        tabs[tabs.length - 1].focus();
-        activate(tabs[tabs.length - 1].dataset.p31Route);
-      }
+  const revealItems = root.querySelectorAll(".cap4-p31-reveal");
+
+  if(!("IntersectionObserver" in window)){
+    revealItems.forEach(function(item){
+      item.classList.add("is-visible");
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold:0.18,
+      rootMargin:"0px 0px -40px 0px"
+    }
+  );
+
+  revealItems.forEach(function(item){
+    observer.observe(item);
+  });
+})();
+/* =========================
+   PÁGINA 32 — VIA DE ADMINISTRAÇÃO
+   ========================= */
+
+(function initCap4Page32(){
+  const root = document.querySelector(".cap4-page32");
+  if(!root) return;
+
+  const data = {
+    iv:{
+      eyebrow:"Maior previsibilidade da exposição",
+      title:"Via intravenosa",
+      absorption:"Não há etapa de absorção.",
+      bioavailability:"Completa.",
+      exposure:"Mais previsível desde o início do tratamento.",
+      limitation:"Exige acesso venoso e monitoramento compatível com o contexto clínico.",
+      curve:"curve-iv"
+    },
+    oral:{
+      eyebrow:"Maior dependência da absorção gastrointestinal",
+      title:"Via oral",
+      absorption:"Depende da absorção no trato gastrointestinal.",
+      bioavailability:"Variável entre pacientes e contextos clínicos.",
+      exposure:"Pode ser influenciada por alimentos, pH gástrico, motilidade intestinal, mucosa e interações medicamentosas.",
+      limitation:"Pode ser inadequada quando há vômitos, má absorção, instabilidade clínica ou necessidade de exposição imediata.",
+      curve:"curve-oral"
+    },
+    im:{
+      eyebrow:"Absorção dependente da perfusão muscular",
+      title:"Via intramuscular",
+      absorption:"O fármaco precisa ser absorvido a partir do tecido muscular.",
+      bioavailability:"Pode ser boa, mas depende do fármaco e da perfusão local.",
+      exposure:"Geralmente mais lenta que a via intravenosa.",
+      limitation:"Em hipoperfusão ou choque, a absorção pode tornar-se imprevisível.",
+      curve:"curve-im"
+    },
+    sc:{
+      eyebrow:"Absorção dependente do tecido subcutâneo",
+      title:"Via subcutânea",
+      absorption:"O fármaco precisa ser absorvido a partir do tecido subcutâneo.",
+      bioavailability:"Variável conforme perfusão local e propriedades do fármaco.",
+      exposure:"Tende a ser mais gradual, com menor velocidade de entrada sistêmica.",
+      limitation:"Pode ser comprometida em situações de hipoperfusão periférica.",
+      curve:"curve-sc"
+    }
+  };
+
+  const tabs = Array.from(root.querySelectorAll("[data-p32-route]"));
+  const curves = Array.from(root.querySelectorAll(".cap4-p32-miniChart .curve"));
+  const eyebrow = root.querySelector("#cap4-p32-eyebrow");
+  const title = root.querySelector("#cap4-p32-title");
+  const absorption = root.querySelector("#cap4-p32-absorption");
+  const bioavailability = root.querySelector("#cap4-p32-bioavailability");
+  const exposure = root.querySelector("#cap4-p32-exposure");
+  const limitation = root.querySelector("#cap4-p32-limitation");
+
+  function activate(route){
+    const selected = data[route];
+    if(!selected) return;
+
+    tabs.forEach(function(tab){
+      const active = tab.dataset.p32Route === route;
+      tab.classList.toggle("is-active", active);
+      tab.setAttribute("aria-selected", active ? "true" : "false");
+      tab.tabIndex = active ? 0 : -1;
+    });
+
+    curves.forEach(function(curve){
+      curve.classList.toggle("is-active", curve.classList.contains(selected.curve));
+    });
+
+    eyebrow.textContent = selected.eyebrow;
+    title.textContent = selected.title;
+    absorption.textContent = selected.absorption;
+    bioavailability.textContent = selected.bioavailability;
+    exposure.textContent = selected.exposure;
+    limitation.textContent = selected.limitation;
+  }
+
+  tabs.forEach(function(tab){
+    tab.addEventListener("click", function(){
+      activate(tab.dataset.p32Route);
     });
   });
 
   activate("iv");
+
+  const revealItems = root.querySelectorAll(".cap4-p32-reveal");
+
+  if(!("IntersectionObserver" in window)){
+    revealItems.forEach(function(item){
+      item.classList.add("is-visible");
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold:0.18,
+      rootMargin:"0px 0px -40px 0px"
+    }
+  );
+
+  revealItems.forEach(function(item){
+    observer.observe(item);
+  });
 })();
 /* =========================
-   PÁGINA 32
+   PÁGINA 33 — VIA DE ADMINISTRAÇÃO E EXPOSIÇÃO
    ========================= */
 
-/* Sem interação específica.
-   Mantém apenas o comportamento global do app.js */
-/* =========================
-   Página 33 — Via de administração e implicações clínicas na resposta terapêutica
-   ========================= */
-(function initCap4Page33() {
+(function initCap4Page33(){
   const root = document.querySelector(".cap4-page33");
-  if (!root) return;
+  if(!root) return;
 
-  const tabs = Array.from(root.querySelectorAll(".cap4-p33-guide__chip"));
-  const eyebrow = root.querySelector("#cap4-p33-eyebrow");
-  const title = root.querySelector("#cap4-p33-title");
-  const text = root.querySelector("#cap4-p33-text");
+  const revealItems = root.querySelectorAll(".cap4-p33-reveal");
 
-  if (!tabs.length || !eyebrow || !title || !text) return;
-
-  const map = {
-    vo: {
-      eyebrow: "Zona de menor risco farmacocinético",
-      title: "Via oral segura ou transição para VO",
-      html: `
-        <p>
-          Quando a absorção gastrointestinal é previsível e a gravidade clínica é menor, a via oral pode sustentar exposição sistêmica adequada. Nessa situação, o raciocínio não é “oral sempre funciona”, mas que o alvo farmacodinâmico pode ser alcançado sem perda relevante de eficácia.
-        </p>
-      `
-    },
-    monitor: {
-      eyebrow: "Zona de vigilância clínica",
-      title: "Monitoramento clínico rigoroso",
-      html: `
-        <p>
-          Mesmo com absorção previsível, o aumento da gravidade clínica reduz a margem de segurança para depender apenas da estabilidade farmacocinética presumida. Aqui, a decisão exige acompanhamento clínico mais rigoroso, porque pequenas perdas de exposição podem ter impacto terapêutico maior.
-        </p>
-      `
-    },
-    biodisponibilidade: {
-      eyebrow: "Zona de incerteza farmacocinética",
-      title: "Avaliar biodisponibilidade antes de confiar na via oral",
-      html: `
-        <p>
-          Quando a previsibilidade da absorção é baixa, a questão central deixa de ser apenas a escolha entre conforto e praticidade. O ponto decisivo passa a ser se a biodisponibilidade real naquele paciente é suficiente para produzir exposição compatível com eficácia terapêutica.
-        </p>
-      `
-    },
-    iv: {
-      eyebrow: "Zona de maior necessidade de controle da exposição",
-      title: "Uso obrigatório da via intravenosa",
-      html: `
-        <p>
-          Quando a gravidade é alta e a absorção é pouco previsível, a via intravenosa deixa de ser apenas preferível e passa a ser necessária. Nessa situação, reduzir variabilidade e garantir concentração sistêmica inicial adequada é parte central da estratégia terapêutica.
-        </p>
-      `
-    }
-  };
-
-  function activate(key) {
-    const item = map[key];
-    if (!item) return;
-
-    tabs.forEach((tab) => {
-      const active = tab.dataset.p33Zone === key;
-      tab.classList.toggle("is-active", active);
-      tab.setAttribute("aria-selected", active ? "true" : "false");
-      tab.tabIndex = active ? 0 : -1;
+  if(!("IntersectionObserver" in window)){
+    revealItems.forEach(function(item){
+      item.classList.add("is-visible");
     });
+    return;
+  }
 
-    eyebrow.textContent = item.eyebrow;
+  const observer = new IntersectionObserver(
+    function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold:0.18,
+      rootMargin:"0px 0px -40px 0px"
+    }
+  );
+
+  revealItems.forEach(function(item){
+    observer.observe(item);
+  });
+})();
+/* =========================
+   PÁGINA 34 — VIA DE ADMINISTRAÇÃO E RESPOSTA TERAPÊUTICA
+   ========================= */
+
+(function initCap4Page34(){
+  const root = document.querySelector(".cap4-page34");
+  if(!root) return;
+
+  const cases = [
+    {
+      title:"Absorção confiável e baixa gravidade clínica",
+      subtitle:"Analise o contexto clínico e escolha a via que tende a oferecer exposição adequada.",
+      features:[
+        "Pneumonia adquirida na comunidade.",
+        "Paciente estável, sem vômitos.",
+        "Alimentação preservada.",
+        "Antibacteriano com elevada biodisponibilidade oral."
+      ],
+      question:"Qual via tende a proporcionar exposição adequada?",
+      options:[
+        { key:"oral", label:"Via oral" },
+        { key:"iv", label:"Via intravenosa" }
+      ],
+      correct:"oral",
+      feedbackTitle:"Via oral.",
+      feedback:"A absorção gastrointestinal é previsível e a biodisponibilidade é elevada, permitindo exposição sistêmica compatível com eficácia terapêutica."
+    },
+    {
+      title:"Absorção imprevisível em paciente grave",
+      subtitle:"Observe como a condição clínica modifica a previsibilidade da exposição.",
+      features:[
+        "Paciente com sepse.",
+        "Hipotensão e uso de vasopressor.",
+        "Íleo paralítico.",
+        "Risco de absorção gastrointestinal reduzida."
+      ],
+      question:"Qual via proporciona exposição inicial mais previsível?",
+      options:[
+        { key:"oral", label:"Via oral" },
+        { key:"iv", label:"Via intravenosa" }
+      ],
+      correct:"iv",
+      feedbackTitle:"Via intravenosa.",
+      feedback:"A absorção gastrointestinal torna-se imprevisível nesse contexto. A via intravenosa reduz a variabilidade inicial da exposição sistêmica."
+    },
+    {
+      title:"Transição segura após estabilização clínica",
+      subtitle:"Analise se a mudança de via preserva a exposição necessária.",
+      features:[
+        "Paciente internado em tratamento intravenoso há quatro dias.",
+        "Afebril e com melhora clínica.",
+        "Alimentando-se normalmente.",
+        "Opção oral com boa biodisponibilidade."
+      ],
+      question:"É possível considerar transição para via oral?",
+      options:[
+        { key:"sim", label:"Sim" },
+        { key:"nao", label:"Não" }
+      ],
+      correct:"sim",
+      feedbackTitle:"Sim.",
+      feedback:"Quando a estabilidade clínica é alcançada e a absorção gastrointestinal torna-se confiável, a transição para via oral pode preservar a exposição farmacocinética necessária."
+    }
+  ];
+
+  let current = 0;
+
+  const step = root.querySelector("#cap4-p34-step");
+  const title = root.querySelector("#cap4-p34-title");
+  const subtitle = root.querySelector("#cap4-p34-subtitle");
+  const features = root.querySelector("#cap4-p34-features");
+  const question = root.querySelector("#cap4-p34-question");
+  const options = Array.from(root.querySelectorAll("[data-p34-answer]"));
+  const feedback = root.querySelector("#cap4-p34-feedback");
+  const prev = root.querySelector("#cap4-p34-prev");
+  const next = root.querySelector("#cap4-p34-next");
+  const dots = Array.from(root.querySelectorAll(".cap4-p34-dots span"));
+
+  function renderCase(){
+    const item = cases[current];
+
+    step.textContent = "Situação " + (current + 1) + " de " + cases.length;
     title.textContent = item.title;
-    text.innerHTML = item.html;
-  }
+    subtitle.textContent = item.subtitle;
 
-  tabs.forEach((tab, index) => {
-    tab.addEventListener("click", () => activate(tab.dataset.p33Zone));
+    features.innerHTML = item.features.map(function(feature){
+      return "<li>" + feature + "</li>";
+    }).join("");
 
-    tab.addEventListener("keydown", (event) => {
-      let nextIndex = index;
+    question.textContent = item.question;
 
-      if (event.key === "ArrowRight" || event.key === "ArrowDown") {
-        event.preventDefault();
-        nextIndex = (index + 1) % tabs.length;
-        tabs[nextIndex].focus();
-        activate(tabs[nextIndex].dataset.p33Zone);
-      }
-
-      if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
-        event.preventDefault();
-        nextIndex = (index - 1 + tabs.length) % tabs.length;
-        tabs[nextIndex].focus();
-        activate(tabs[nextIndex].dataset.p33Zone);
-      }
-
-      if (event.key === "Home") {
-        event.preventDefault();
-        tabs[0].focus();
-        activate(tabs[0].dataset.p33Zone);
-      }
-
-      if (event.key === "End") {
-        event.preventDefault();
-        tabs[tabs.length - 1].focus();
-        activate(tabs[tabs.length - 1].dataset.p33Zone);
-      }
-    });
-  });
-
-  activate("vo");
-})();
-/* =========================
-   Página 34 — Interação PK/PD
-   ========================= */
-
-(function(){
-
-const buttons = document.querySelectorAll(".p34-btn");
-const title = document.getElementById("p34-title");
-const text = document.getElementById("p34-text");
-
-const content = {
-
-  time: {
-    title: "Como ler a curva para fármacos tempo-dependentes",
-    text: "Observe o intervalo em que a curva permanece acima da CIM. O ponto crítico não é o pico, mas a duração da exposição efetiva ao longo do tempo. Estratégias terapêuticas tendem a prolongar esse tempo, não necessariamente aumentar o pico."
-  },
-
-  peak: {
-    title: "Como interpretar o pico de concentração",
-    text: "Aqui o foco deve estar na altura máxima da curva em relação à CIM. Quanto maior o pico relativo, maior tende a ser a intensidade inicial do efeito antimicrobiano."
-  },
-
-  auc: {
-    title: "Como interpretar a exposição total",
-    text: "Observe a área total sob a curva ao longo do tempo. O efeito antimicrobiano depende da combinação entre intensidade e duração da exposição, e não apenas de um ponto específico da curva."
-  }
-
-};
-
-buttons.forEach(btn => {
-
-  btn.addEventListener("click", () => {
-
-    buttons.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-
-    const mode = btn.dataset.mode;
-
-    title.textContent = content[mode].title;
-    text.textContent = content[mode].text;
-
-  });
-
-});
-
-})();
-(function(){
-
-const buttons = document.querySelectorAll(".p35-btn");
-const text = document.getElementById("p35-text");
-
-const content = {
-
-  plasma: "Concentrações plasmáticas elevadas não garantem eficácia terapêutica se o antibacteriano não conseguir se distribuir adequadamente até o local da infecção.",
-
-  intersticio: "Alterações como edema e inflamação podem modificar a difusão do fármaco e reduzir a concentração efetiva no tecido.",
-
-  celulas: "A penetração intracelular depende das propriedades do fármaco. Antibacterianos hidrofílicos podem ter limitação nesse compartimento.",
-
-  foco: "No foco infeccioso, fatores como necrose, pus e baixa perfusão podem impedir que a concentração atinja níveis terapêuticos adequados."
-
-};
-
-buttons.forEach(btn => {
-
-  btn.addEventListener("click", () => {
-
-    buttons.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-
-    text.textContent = content[btn.dataset.step];
-
-  });
-
-});
-
-})();
-/* =========================
-   Página 36 — Biofilme e microambiente infeccioso
-   ========================= */
-(function initCap4Page36() {
-  const root = document.querySelector(".cap4-page36");
-  if (!root) return;
-
-  const tabs = Array.from(root.querySelectorAll(".cap4-p36-guide__chip"));
-  const eyebrow = root.querySelector("#cap4-p36-eyebrow");
-  const title = root.querySelector("#cap4-p36-title");
-  const text = root.querySelector("#cap4-p36-text");
-
-  if (!tabs.length || !eyebrow || !title || !text) return;
-
-  const map = {
-    superficie: {
-      eyebrow: "Camada de maior contato com o meio externo",
-      title: "Superfície do biofilme",
-      html: `
-        <p>
-          As camadas superficiais estão mais expostas ao antibacteriano e aos componentes da resposta imune. Mesmo assim, a simples presença de concentração externa adequada não garante que essa mesma exposição será reproduzida em toda a estrutura organizada do biofilme.
-        </p>
-      `
-    },
-    intermediaria: {
-      eyebrow: "Zona de queda progressiva da exposição",
-      title: "Camada intermediária",
-      html: `
-        <p>
-          À medida que o fármaco avança pela matriz extracelular, a difusão se torna menos livre e a concentração tende a diminuir. Essa região ajuda a compreender por que a exposição deixa de ser uniforme e passa a formar gradientes dentro da própria estrutura infecciosa.
-        </p>
-      `
-    },
-    profunda: {
-      eyebrow: "Zona de menor atividade metabólica",
-      title: "Camada profunda do biofilme",
-      html: `
-        <p>
-          Nas camadas mais profundas, bactérias frequentemente apresentam metabolismo reduzido e menor taxa de divisão. Mesmo sem resistência genética estável, essa condição pode diminuir a eficácia de antibacterianos que dependem de crescimento bacteriano ativo para exercer seu melhor efeito farmacodinâmico.
-        </p>
-      `
-    },
-    microambiente: {
-      eyebrow: "Condições locais que alteram o comportamento terapêutico",
-      title: "Microambiente infeccioso",
-      html: `
-        <p>
-          pH local, disponibilidade de oxigênio, acúmulo de detritos celulares, perfusão tecidual e organização da matriz modificam simultaneamente a atividade do antibacteriano e a resposta imune do hospedeiro. O problema clínico, portanto, não é apenas estrutural, mas também funcional.
-        </p>
-      `
-    }
-  };
-
-  function activate(key) {
-    const item = map[key];
-    if (!item) return;
-
-    tabs.forEach((tab) => {
-      const active = tab.dataset.p36Step === key;
-      tab.classList.toggle("is-active", active);
-      tab.setAttribute("aria-selected", active ? "true" : "false");
-      tab.tabIndex = active ? 0 : -1;
+    options.forEach(function(button, index){
+      const option = item.options[index];
+      button.dataset.p34Answer = option.key;
+      button.textContent = option.label;
+      button.classList.remove("is-correct", "is-wrong");
     });
 
-    eyebrow.textContent = item.eyebrow;
-    title.textContent = item.title;
-    text.innerHTML = item.html;
-  }
-
-  tabs.forEach((tab, index) => {
-    tab.addEventListener("click", () => activate(tab.dataset.p36Step));
-
-    tab.addEventListener("keydown", (event) => {
-      let nextIndex = index;
-
-      if (event.key === "ArrowRight" || event.key === "ArrowDown") {
-        event.preventDefault();
-        nextIndex = (index + 1) % tabs.length;
-        tabs[nextIndex].focus();
-        activate(tabs[nextIndex].dataset.p36Step);
-      }
-
-      if (event.key === "ArrowLeft" || event.key === "ArrowUp") {
-        event.preventDefault();
-        nextIndex = (index - 1 + tabs.length) % tabs.length;
-        tabs[nextIndex].focus();
-        activate(tabs[nextIndex].dataset.p36Step);
-      }
-
-      if (event.key === "Home") {
-        event.preventDefault();
-        tabs[0].focus();
-        activate(tabs[0].dataset.p36Step);
-      }
-
-      if (event.key === "End") {
-        event.preventDefault();
-        tabs[tabs.length - 1].focus();
-        activate(tabs[tabs.length - 1].dataset.p36Step);
-      }
-    });
-  });
-
-  activate("superficie");
-})();
-/* =========================
-   Página 37 — Interação evolutiva
-   ========================= */
-
-(function(){
-
-const buttons = document.querySelectorAll(".p37-btn");
-const text = document.getElementById("p37-text");
-
-const content = {
-
-  inicio: "Pequenas diferenças de suscetibilidade já estão presentes antes do início da terapia, mesmo quando o microrganismo é classificado como sensível.",
-
-  exposicao: "A eliminação bacteriana não ocorre de forma uniforme e depende da relação entre a concentração alcançada e a suscetibilidade de cada subpopulação.",
-
-  selecao: "Quando a exposição é insuficiente para erradicação completa, bactérias viáveis permanecem sob pressão seletiva, favorecendo adaptação progressiva.",
-
-  predominio: "O resultado final não é apenas sobrevivência bacteriana, mas a alteração da distribuição populacional, com predomínio de variantes menos suscetíveis."
-
-};
-
-buttons.forEach(btn => {
-
-  btn.addEventListener("click", () => {
-
-    buttons.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-
-    text.textContent = content[btn.dataset.step];
-
-  });
-
-});
-
-})();
-/* =========================
-   Página 38 — Quiz de revisão
-   ========================= */
-(function initCap4Page38() {
-  const root = document.querySelector(".cap4-page38");
-  if (!root) return;
-
-  const quiz = root.querySelector("[data-cap4-p38]");
-  const questions = Array.from(root.querySelectorAll(".cap4-p38Question"));
-  const statusValue = root.querySelector("[data-p38-status] .cap4-p38Status__value");
-  const completion = root.querySelector("[data-p38-completion]");
-
-  if (!quiz || !questions.length || !statusValue) return;
-
-  function updateStatus() {
-    const done = questions.filter((q) => q.dataset.questionState === "done").length;
-    statusValue.textContent = `${done} de 2 situações confirmadas`;
-
-    if (completion) {
-      completion.hidden = done !== questions.length;
-    }
-  }
-
-  function renderFeedback(container, payload) {
-    container.hidden = false;
-    container.className = "cap4-p38Feedback";
-    if (payload.type === "error") {
-      container.classList.add("cap4-p38Feedback--error");
-    }
-
-    container.innerHTML = `
-      <p class="cap4-p38Feedback__title">${payload.title}</p>
-      <p class="cap4-p38Feedback__text">${payload.text}</p>
+    feedback.className = "cap4-p34-feedback";
+    feedback.innerHTML = `
+      <strong>Escolha uma opção.</strong>
+      <p>A interpretação deve considerar absorção, biodisponibilidade e gravidade clínica.</p>
     `;
+
+    prev.disabled = current === 0;
+    next.disabled = current === cases.length - 1;
+
+    dots.forEach(function(dot, index){
+      dot.classList.toggle("is-active", index === current);
+    });
   }
 
-  questions.forEach((question) => {
-    const options = Array.from(question.querySelectorAll(".cap4-p38Options button[data-answer]"));
-    const confirmBtn = question.querySelector('[data-p38-action="confirm"]');
-    const resetBtn = question.querySelector('[data-p38-action="reset"]');
-    const feedback = question.querySelector(".cap4-p38Feedback");
-    const feedbackMapEl = question.querySelector(".cap4-p38FeedbackMap");
+  options.forEach(function(button){
+    button.addEventListener("click", function(){
+      const item = cases[current];
+      const answer = button.dataset.p34Answer;
+      const isCorrect = answer === item.correct;
 
-    if (!options.length || !confirmBtn || !resetBtn || !feedback || !feedbackMapEl) return;
-
-    const feedbackMap = JSON.parse(feedbackMapEl.innerHTML.trim());
-    let selected = null;
-
-    feedback.hidden = true;
-
-    function resetQuestion() {
-      selected = null;
-      question.dataset.questionState = "pending";
-
-      options.forEach((btn) => {
-        btn.disabled = false;
-        btn.classList.remove("is-selected", "is-correct", "is-wrong");
+      options.forEach(function(option){
+        option.classList.remove("is-correct", "is-wrong");
       });
 
-      confirmBtn.disabled = true;
-      confirmBtn.hidden = false;
-      resetBtn.hidden = true;
+      button.classList.add(isCorrect ? "is-correct" : "is-wrong");
 
-      feedback.hidden = true;
-      feedback.innerHTML = "";
-      feedback.className = "cap4-p38Feedback";
+      feedback.className = "cap4-p34-feedback " + (isCorrect ? "is-correct" : "is-wrong");
+      feedback.innerHTML = `
+        <strong>${isCorrect ? item.feedbackTitle : "Reavalie a exposição."}</strong>
+        <p>${isCorrect ? item.feedback : "Observe se a absorção é confiável e se a gravidade clínica permite maior variabilidade farmacocinética."}</p>
+      `;
+    });
+  });
 
-      updateStatus();
+  prev.addEventListener("click", function(){
+    if(current > 0){
+      current -= 1;
+      renderCase();
+    }
+  });
+
+  next.addEventListener("click", function(){
+    if(current < cases.length - 1){
+      current += 1;
+      renderCase();
+    }
+  });
+
+  renderCase();
+
+  const revealItems = root.querySelectorAll(".cap4-p34-reveal");
+
+  if(!("IntersectionObserver" in window)){
+    revealItems.forEach(function(item){
+      item.classList.add("is-visible");
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, { threshold:0.18, rootMargin:"0px 0px -40px 0px" });
+
+  revealItems.forEach(function(item){
+    observer.observe(item);
+  });
+})();
+/* =========================
+   PÁGINA 35 — PENETRAÇÃO TECIDUAL E COMPARTIMENTOS INFECCIOSOS
+   ========================= */
+
+(function initCap4Page35(){
+  const root = document.querySelector(".cap4-page35");
+  if(!root) return;
+
+  const revealItems = root.querySelectorAll(".cap4-p35-reveal");
+
+  if(!("IntersectionObserver" in window)){
+    revealItems.forEach(function(item){
+      item.classList.add("is-visible");
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold:0.18,
+      rootMargin:"0px 0px -40px 0px"
+    }
+  );
+
+  revealItems.forEach(function(item){
+    observer.observe(item);
+  });
+})();
+/* =========================
+   PÁGINA 36 — BIOFILME E MICROAMBIENTE INFECCIOSO
+   ========================= */
+
+(function initCap4Page36(){
+  const root = document.querySelector(".cap4-page36");
+  if(!root) return;
+
+  const buttons = Array.from(root.querySelectorAll("[data-p36-answer]"));
+  const feedback = root.querySelector("#cap4-p36-feedback");
+
+  const explanations = {
+    resistencia:{
+      correct:false,
+      title:"Nem sempre há resistência genética.",
+      text:"A persistência da infecção em biofilme pode ocorrer mesmo sem mutações ou aquisição de genes de resistência. O problema central é a organização da população bacteriana em matriz, com menor difusão do fármaco e alterações metabólicas locais."
+    },
+    betalactamase:{
+      correct:false,
+      title:"Esse não é o melhor mecanismo para o caso.",
+      text:"A inativação enzimática pode causar resistência em algumas situações, mas o enunciado destaca um microrganismo suscetível no antibiograma e uma infecção associada a cateter, contexto em que o biofilme é uma explicação mais compatível."
+    },
+    biofilme:{
+      correct:true,
+      title:"Interpretação adequada.",
+      text:"Embora o microrganismo seja suscetível em crescimento livre, a organização em biofilme reduz a difusão do antibacteriano, cria gradientes de concentração e abriga bactérias com menor atividade metabólica. Assim, a resposta clínica pode ser inferior ao esperado mesmo sem resistência genética adquirida."
+    },
+    plasma:{
+      correct:false,
+      title:"A concentração plasmática pode ser adequada.",
+      text:"O problema não precisa estar na concentração plasmática. Em biofilmes, a concentração no foco infeccioso pode ser menor ou heterogênea mesmo quando a exposição sistêmica parece suficiente."
+    }
+  };
+
+  buttons.forEach(function(button){
+    button.addEventListener("click", function(){
+      const key = button.dataset.p36Answer;
+      const result = explanations[key];
+      if(!result || !feedback) return;
+
+      buttons.forEach(function(item){
+        item.classList.remove("is-correct", "is-wrong");
+      });
+
+      button.classList.add(result.correct ? "is-correct" : "is-wrong");
+
+      feedback.className = "cap4-p36-feedback " + (result.correct ? "is-correct" : "is-wrong");
+      feedback.innerHTML = `
+        <strong>${result.title}</strong>
+        <p>${result.text}</p>
+      `;
+    });
+  });
+
+  const revealItems = root.querySelectorAll(".cap4-p36-reveal");
+
+  if(!("IntersectionObserver" in window)){
+    revealItems.forEach(function(item){
+      item.classList.add("is-visible");
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold:0.18,
+      rootMargin:"0px 0px -40px 0px"
+    }
+  );
+
+  revealItems.forEach(function(item){
+    observer.observe(item);
+  });
+})();
+/* =========================
+   PÁGINA 37 — EXPOSIÇÃO ANTIMICROBIANA E DINÂMICA EVOLUTIVA
+   ========================= */
+
+(function initCap4Page37(){
+  const root = document.querySelector(".cap4-page37");
+  if(!root) return;
+
+  const content = {
+    inicial:{
+      eyebrow:"Antes do tratamento",
+      title:"População bacteriana heterogênea",
+      text:"Antes da exposição ao antibacteriano, já existem pequenas diferenças naturais de suscetibilidade entre as bactérias da população."
+    },
+    exposicao:{
+      eyebrow:"Início da exposição",
+      title:"Eliminação preferencial das bactérias mais suscetíveis",
+      text:"A exposição ao antibacteriano não elimina a população de forma uniforme. As bactérias mais suscetíveis tendem a ser removidas primeiro."
+    },
+    selecao:{
+      eyebrow:"Pressão seletiva incompleta",
+      title:"Sobrevivência de variantes menos suscetíveis",
+      text:"Quando a exposição não é suficiente para erradicação completa, variantes menos suscetíveis permanecem viáveis e passam a representar uma fração maior da população residual."
+    },
+    predominio:{
+      eyebrow:"Mudança da composição populacional",
+      title:"Predomínio de variantes menos suscetíveis",
+      text:"Com exposições repetidas ou subótimas, variantes previamente raras podem se tornar predominantes, aumentando o risco de falha microbiológica."
+    }
+  };
+
+  const tabs = Array.from(root.querySelectorAll("[data-p37-step]"));
+  const eyebrow = root.querySelector("#cap4-p37-eyebrow");
+  const title = root.querySelector("#cap4-p37-title");
+  const text = root.querySelector("#cap4-p37-text");
+
+  function activate(step){
+    const selected = content[step];
+    if(!selected || !eyebrow || !title || !text) return;
+
+    tabs.forEach(function(tab){
+      const active = tab.dataset.p37Step === step;
+      tab.classList.toggle("is-active", active);
+      tab.setAttribute("aria-selected", active ? "true" : "false");
+    });
+
+    eyebrow.textContent = selected.eyebrow;
+    title.textContent = selected.title;
+    text.textContent = selected.text;
+  }
+
+  tabs.forEach(function(tab){
+    tab.addEventListener("click", function(){
+      activate(tab.dataset.p37Step);
+    });
+  });
+
+  activate("inicial");
+
+  const revealItems = root.querySelectorAll(".cap4-p37-reveal");
+
+  if(!("IntersectionObserver" in window)){
+    revealItems.forEach(function(item){
+      item.classList.add("is-visible");
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold:0.18,
+      rootMargin:"0px 0px -40px 0px"
+    }
+  );
+
+  revealItems.forEach(function(item){
+    observer.observe(item);
+  });
+})();
+/* =========================
+   PÁGINA 38 — QUIZ DE REVISÃO
+   ========================= */
+
+(function initCap4Page38(){
+  const root = document.querySelector("[data-cap4-p38]");
+
+  if(!root){
+    return;
+  }
+
+  const questions = Array.from(
+    root.querySelectorAll(".cap4-p38Question")
+  );
+
+  const statusValue = root.querySelector(
+    ".cap4-p38Status__value"
+  );
+
+  const completion = root.querySelector(
+    "[data-p38-completion]"
+  );
+
+  function updateStatus(){
+    const confirmedQuestions = questions.filter(function(question){
+      return question.dataset.questionState === "confirmed";
+    }).length;
+
+    if(statusValue){
+      statusValue.textContent =
+        confirmedQuestions +
+        " de " +
+        questions.length +
+        " situações confirmadas";
     }
 
-    options.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        if (question.dataset.questionState === "done") return;
+    if(completion){
+      completion.hidden =
+        confirmedQuestions !== questions.length;
+    }
+  }
 
-        options.forEach((b) => b.classList.remove("is-selected"));
-        btn.classList.add("is-selected");
-        selected = btn.dataset.answer;
-        confirmBtn.disabled = false;
+  function parseFeedbackMap(question){
+    const template = question.querySelector(
+      ".cap4-p38FeedbackMap"
+    );
+
+    if(!template){
+      return {};
+    }
+
+    try{
+      return JSON.parse(
+        template.content.textContent.trim()
+      );
+    }catch(error){
+      console.warn(
+        "Não foi possível interpretar o conteúdo de feedback da página 38.",
+        error
+      );
+
+      return {};
+    }
+  }
+
+  function updateSelectedOption(options, selectedOption){
+    options.forEach(function(option){
+      const isSelected = option === selectedOption;
+
+      option.classList.toggle(
+        "is-selected",
+        isSelected
+      );
+
+      option.setAttribute(
+        "aria-pressed",
+        isSelected ? "true" : "false"
+      );
+    });
+  }
+
+  function clearOptionStates(options){
+    options.forEach(function(option){
+      option.disabled = false;
+
+      option.classList.remove(
+        "is-selected",
+        "is-correct",
+        "is-error"
+      );
+
+      option.setAttribute(
+        "aria-pressed",
+        "false"
+      );
+    });
+  }
+
+  questions.forEach(function(question){
+    const options = Array.from(
+      question.querySelectorAll(
+        ".cap4-p38Options button"
+      )
+    );
+
+    const confirmButton = question.querySelector(
+      '[data-p38-action="confirm"]'
+    );
+
+    const resetButton = question.querySelector(
+      '[data-p38-action="reset"]'
+    );
+
+    const feedback = question.querySelector(
+      ".cap4-p38Feedback"
+    );
+
+    const feedbackMap = parseFeedbackMap(question);
+
+    let selectedAnswer = null;
+
+    options.forEach(function(option){
+      option.addEventListener("click", function(){
+        if(
+          question.dataset.questionState === "confirmed"
+        ){
+          return;
+        }
+
+        selectedAnswer = option.dataset.answer;
+
+        updateSelectedOption(
+          options,
+          option
+        );
+
+        if(confirmButton){
+          confirmButton.disabled = false;
+        }
       });
     });
 
-    confirmBtn.addEventListener("click", () => {
-      if (!selected) return;
+    if(confirmButton){
+      confirmButton.addEventListener("click", function(){
+        if(!selectedAnswer){
+          return;
+        }
 
-      const correctBtn = options.find((btn) => btn.dataset.correct === "true");
-      const selectedBtn = options.find((btn) => btn.dataset.answer === selected);
+        const selectedOption = question.querySelector(
+          '[data-answer="' +
+          selectedAnswer +
+          '"]'
+        );
 
-      options.forEach((btn) => {
-        btn.disabled = true;
-        btn.classList.remove("is-selected");
+        if(!selectedOption){
+          return;
+        }
+
+        const isCorrect =
+          selectedOption.dataset.correct === "true";
+
+        const selectedFeedback =
+          feedbackMap[selectedAnswer];
+
+        options.forEach(function(option){
+          option.disabled = true;
+
+          option.classList.remove(
+            "is-selected"
+          );
+
+          option.setAttribute(
+            "aria-pressed",
+            "false"
+          );
+
+          if(
+            option.dataset.correct === "true"
+          ){
+            option.classList.add(
+              "is-correct"
+            );
+          }
+
+          if(
+            option.dataset.answer === selectedAnswer &&
+            !isCorrect
+          ){
+            option.classList.add(
+              "is-error"
+            );
+          }
+        });
+
+        if(
+          feedback &&
+          selectedFeedback
+        ){
+          const feedbackClass =
+            selectedFeedback.type === "correct"
+              ? "is-correct"
+              : "is-error";
+
+          feedback.className =
+            "cap4-p38Feedback is-visible " +
+            feedbackClass;
+
+          feedback.innerHTML =
+            "<strong>" +
+            selectedFeedback.title +
+            "</strong>" +
+            "<p>" +
+            selectedFeedback.text +
+            "</p>";
+        }
+
+        question.dataset.questionState =
+          "confirmed";
+
+        confirmButton.hidden = true;
+
+        if(resetButton){
+          resetButton.hidden = false;
+          resetButton.focus();
+        }
+
+        updateStatus();
       });
+    }
 
-      if (correctBtn) {
-        correctBtn.classList.add("is-correct");
-      }
+    if(resetButton){
+      resetButton.addEventListener("click", function(){
+        selectedAnswer = null;
 
-      if (selectedBtn && selectedBtn !== correctBtn) {
-        selectedBtn.classList.add("is-wrong");
-      }
+        question.dataset.questionState =
+          "pending";
 
-      const payload = feedbackMap[selected];
-      if (payload) {
-        renderFeedback(feedback, payload);
-      }
+        clearOptionStates(options);
 
-      question.dataset.questionState = "done";
-      confirmBtn.hidden = true;
-      resetBtn.hidden = false;
+        if(feedback){
+          feedback.className =
+            "cap4-p38Feedback";
 
-      updateStatus();
-    });
+          feedback.innerHTML = "";
+        }
 
-    resetBtn.addEventListener("click", resetQuestion);
+        if(confirmButton){
+          confirmButton.hidden = false;
+          confirmButton.disabled = true;
+        }
+
+        resetButton.hidden = true;
+
+        updateStatus();
+
+        if(options[0]){
+          options[0].focus();
+        }
+      });
+    }
   });
 
   updateStatus();

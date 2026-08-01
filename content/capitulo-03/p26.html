@@ -15,118 +15,130 @@
 </head>
 
 <body class="cap3-page26">
-
   <main class="page-shell cap3-shell">
 
     <header class="page-header">
       <div class="chapter">Capítulo 3 — Mecanismos de Resistência Bacteriana</div>
-      <h1 class="page-title">Redução de permeabilidade e bombas de efluxo</h1>
+      <h1 class="page-title">Redução da permeabilidade e bombas de efluxo</h1>
     </header>
 
-    <section class="prose cap3-reading-flow" aria-label="Texto principal">
-
+    <section class="prose cap3-reading-flow">
       <p>
-        A eficácia de um antibacteriano depende não apenas da integridade de seu alvo molecular, mas também da capacidade do fármaco de alcançar concentração intracelular suficiente para exercer efeito biológico. Alterações que reduzem a entrada do antibacteriano na célula bacteriana ou aumentam sua eliminação ativa constituem mecanismos importantes de resistência.
+        Para exercer sua atividade, o antibacteriano precisa alcançar concentração suficiente no local de ação. A bactéria pode reduzir essa concentração por dois mecanismos principais: limitando a entrada do fármaco ou aumentando sua remoção por bombas de efluxo. Esses processos podem atuar isoladamente ou em associação com outros mecanismos de resistência <sup>1,3,4,9</sup>.
       </p>
 
-      <p>
-        Nas bactérias Gram-negativas, a membrana externa representa uma barreira estrutural adicional. A entrada de muitas moléculas antibacterianas ocorre por meio de porinas, proteínas que formam canais hidrofílicos através dos quais pequenas moléculas podem atravessar a membrana.
-      </p>
-
-      <section class="cap3-p26-compare" aria-label="Comparação entre maior e menor permeabilidade bacteriana">
-        <div class="cap3-p26-grid">
-
-          <article class="cap3-p26-card">
-            <h2 class="cap3-p26-cardTitle">Maior entrada do antibacteriano</h2>
-
-            <figure class="figure cap3-p26-figure">
-              <button
-                type="button"
-                data-zoom="../../assets/capitulo-03/imagens/porinas-suscetivel.png"
-                aria-label="Ampliar imagem de bactéria com entrada preservada do antibacteriano"
-              >
-                <img
-                  src="../../assets/capitulo-03/imagens/porinas-suscetivel.png"
-                  alt="Estado suscetível com entrada preservada de antibacteriano através das porinas"
-                  loading="lazy"
-                />
-              </button>
-
-              <figcaption class="caption cap3-p26-caption">
-                <strong>Permeabilidade preservada:</strong> a presença e o funcionamento adequados das porinas favorecem a entrada do antibacteriano, permitindo maior concentração intracelular e melhor acesso ao alvo bacteriano.
-              </figcaption>
-            </figure>
-          </article>
-
-          <article class="cap3-p26-card">
-            <h2 class="cap3-p26-cardTitle">Menor entrada do antibacteriano</h2>
-
-            <figure class="figure cap3-p26-figure">
-              <button
-                type="button"
-                data-zoom="../../assets/capitulo-03/imagens/porinas-resistente.png"
-                aria-label="Ampliar imagem de bactéria com redução de permeabilidade"
-              >
-                <img
-                  src="../../assets/capitulo-03/imagens/porinas-resistente.png"
-                  alt="Estado resistente com redução da entrada de antibacteriano por alterações nas porinas"
-                  loading="lazy"
-                />
-              </button>
-
-              <figcaption class="caption cap3-p26-caption">
-                <strong>Redução de permeabilidade:</strong> alterações quantitativas ou estruturais nas porinas reduzem a entrada do antibacteriano, limitando a concentração intracelular disponível para ação.
-              </figcaption>
-            </figure>
-          </article>
-
-        </div>
+      <section class="cap3-p26-compare" aria-label="Comparação dos mecanismos que reduzem a concentração do antibacteriano">
+        <article><span aria-hidden="true">↓</span><div><strong>Menor entrada</strong><p>Perda ou modificação de porinas limita a passagem pela membrana externa.</p></div></article>
+        <article><span aria-hidden="true">↑</span><div><strong>Maior saída</strong><p>Bombas de efluxo removem ativamente o antibacteriano da célula.</p></div></article>
+        <aside><strong>Resultado comum</strong><p>Menor concentração do fármaco próximo ao alvo bacteriano.</p></aside>
       </section>
 
-      <p>
-        Modificações quantitativas, como redução da expressão de porinas, ou alterações estruturais nesses canais podem diminuir a permeabilidade da membrana. Como consequência, uma quantidade menor de antibacteriano alcança o espaço periplasmático ou o citoplasma bacteriano. Mesmo quando o fármaco permanece ativo e o alvo molecular está preservado, a concentração intracelular pode tornar-se insuficiente para produzir efeito terapêutico <sup>1,9</sup>.
-      </p>
+      <section class="cap3-p26-interaction" data-cap3-p26 aria-labelledby="cap3P26InteractionTitle">
+        <h2 id="cap3P26InteractionTitle">Explore os dois mecanismos</h2>
+        <p class="cap3-p26-instruction">Selecione uma aba e observe como a concentração do antibacteriano é reduzida.</p>
 
-      <p>
-        Outro mecanismo importante envolve as bombas de efluxo. Essas proteínas transmembrana utilizam energia celular para expulsar substâncias potencialmente tóxicas do interior da bactéria, incluindo antibacterianos <sup>9</sup>.
-      </p>
+        <div class="cap3-p26-mainTabs" role="tablist" aria-label="Mecanismos de redução da concentração do antibacteriano">
+          <button class="cap3-p26-mainTab is-active" type="button" role="tab" id="cap3P26TabEntry" aria-selected="true" aria-controls="cap3P26PanelEntry" tabindex="0" data-p26-main-tab="entrada">Menor entrada</button>
+          <button class="cap3-p26-mainTab" type="button" role="tab" id="cap3P26TabEfflux" aria-selected="false" aria-controls="cap3P26PanelEfflux" tabindex="-1" data-p26-main-tab="efluxo">Maior saída</button>
+        </div>
 
-      <p>
-        O aumento da expressão ou da eficiência dessas bombas reduz o tempo de permanência do fármaco no interior celular, diminuindo sua concentração intracelular e, consequentemente, sua atividade antibacteriana.
-      </p>
+        <section class="cap3-p26-mainPanel is-active" id="cap3P26PanelEntry" role="tabpanel" aria-labelledby="cap3P26TabEntry" data-p26-main-panel="entrada">
+          <header class="cap3-p26-panelHeader">
+            <div><span>Redução da permeabilidade</span><h3>Passagem por porinas</h3></div>
+            <p>Em bactérias Gram-negativas, alterações quantitativas ou estruturais das porinas podem limitar a entrada do antibacteriano pela membrana externa <sup>1,3,4,9</sup>.</p>
+          </header>
 
-      <p>
-        Diferentemente da inativação enzimática ou da alteração do alvo molecular, os mecanismos relacionados à concentração intracelular não modificam a estrutura do antibacteriano nem do seu alvo biológico. Em vez disso, interferem na quantidade de fármaco disponível no local de ação.
-      </p>
+          <div class="cap3-p26-stepper" role="tablist" aria-label="Condições das porinas">
+            <button class="is-active" type="button" role="tab" aria-selected="true" data-p26-porin="0"><span>1</span>Preservadas</button>
+            <button type="button" role="tab" aria-selected="false" data-p26-porin="1"><span>2</span>Reduzidas</button>
+            <button type="button" role="tab" aria-selected="false" data-p26-porin="2"><span>3</span>Modificadas</button>
+          </div>
 
-      <p>
-        Por essa razão, alterações de permeabilidade e aumento do efluxo costumam estar associadas a elevações graduais da concentração inibitória mínima (MIC) observadas em testes laboratoriais.
-      </p>
+          <div class="cap3-p26-visualPanel">
+            <figure class="cap3-p26-imageWrap">
+              <button type="button" class="cap3-p26-zoom" data-zoom="../../assets/capitulo-03/imagens/porinas-suscetivel.png" aria-label="Ampliar imagem da condição selecionada">
+                <img class="cap3-p26-stepImage" src="../../assets/capitulo-03/imagens/porinas-suscetivel.png" alt="Porinas preservadas permitindo entrada do antibacteriano" loading="lazy" />
+              </button>
+            </figure>
+            <div class="cap3-p26-visualContent">
+              <h3 class="cap3-p26-stepTitle">Porinas preservadas</h3>
+              <p class="cap3-p26-stepText">As porinas permitem a entrada do antibacteriano e favorecem concentrações adequadas no espaço periplásmico.</p>
+              <div class="cap3-p26-meter" aria-label="Entrada relativa do antibacteriano">
+                <span>Entrada relativa</span>
+                <div class="cap3-p26-meterBar"><i style="--level:100%"></i></div>
+                <strong class="cap3-p26-meterValue">Alta</strong>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      <p>
-        Esses mecanismos raramente atuam de forma isolada. A associação entre produção de β-lactamases e redução da expressão de porinas, por exemplo, pode aumentar substancialmente o grau de resistência observado em determinadas bactérias Gram-negativas.
-      </p>
+        <section class="cap3-p26-mainPanel" id="cap3P26PanelEfflux" role="tabpanel" aria-labelledby="cap3P26TabEfflux" data-p26-main-panel="efluxo" hidden>
+          <header class="cap3-p26-panelHeader">
+            <div><span>Bombas de efluxo</span><h3>Remoção ativa do antibacteriano</h3></div>
+            <p>Essas proteínas transportadoras participam da fisiologia bacteriana, mas sua superexpressão pode reduzir o acúmulo intracelular do fármaco <sup>1,3,4</sup>.</p>
+          </header>
 
-      <p>
-        Além disso, algumas bombas de efluxo apresentam baixa especificidade, sendo capazes de expulsar diferentes classes de antibacterianos. Essa característica contribui para o desenvolvimento de perfis de multirresistência, nos quais um único mecanismo influencia simultaneamente vários grupos farmacológicos.
-      </p>
+          <div class="cap3-p26-effluxChoices" role="tablist" aria-label="Níveis de atividade das bombas de efluxo">
+            <button class="is-active" type="button" role="tab" aria-selected="true" data-p26-efflux="basal">Atividade basal</button>
+            <button type="button" role="tab" aria-selected="false" data-p26-efflux="alta">Superexpressão</button>
+          </div>
 
-      <p>
-        Compreender esses processos é importante na interpretação de resultados laboratoriais nos quais se observa aumento progressivo da MIC sem evidência clara de enzimas inativadoras ou modificação do alvo molecular.
-      </p>
+          <div class="cap3-p26-effluxPanel" data-efflux-state="basal">
+            <figure class="cap3-p26-effluxFigure">
+              <button
+                type="button"
+                class="cap3-p26-effluxZoom"
+                data-zoom="../../assets/capitulo-03/imagens/efluxo-atividade-basal.png"
+                aria-label="Ampliar imagem da atividade basal das bombas de efluxo"
+              >
+                <img
+                  class="cap3-p26-effluxImage"
+                  src="../../assets/capitulo-03/imagens/efluxo-atividade-basal.png"
+                  alt="Atividade basal de bomba de efluxo com maior concentração intracelular de antibacteriano"
+                  loading="lazy"
+                />
+              </button>
 
-      <p>
-        Na prática clínica, esse padrão pode ser observado quando um isolado bacteriano apresenta resistência moderada a diferentes classes de antibacterianos sem identificação de β-lactamases específicas. Nesses casos, investigações adicionais podem demonstrar superexpressão de bombas de efluxo associada à redução da expressão de porinas, resultando em diminuição da concentração intracelular de múltiplos fármacos.
-      </p>
+              <span class="cap3-p26-zoomHint" aria-hidden="true">
+                Clique na figura para ampliar
+              </span>
+            </figure>
+            <div class="cap3-p26-visualContent">
+              <h3 class="cap3-p26-effluxTitle">Atividade fisiológica basal</h3>
+              <p class="cap3-p26-effluxText">A remoção ocorre em intensidade basal, permitindo maior permanência relativa do antibacteriano no interior da célula.</p>
+              <div class="cap3-p26-meter" aria-label="Concentração intracelular relativa">
+                <span>Concentração intracelular</span>
+                <div class="cap3-p26-meterBar"><i class="cap3-p26-effluxLevel" style="--level:75%"></i></div>
+                <strong class="cap3-p26-effluxValue">Maior</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
 
+      <section class="cap3-p26-clinical" aria-labelledby="cap3P26ClinicalTitle">
+        <div>
+          <span>Aplicação clínica</span>
+          <h2 id="cap3P26ClinicalTitle"><em>Pseudomonas aeruginosa</em> e perda de OprD</h2>
+          <p>A redução ou perda da porina OprD está particularmente associada à diminuição da suscetibilidade ao imipenem. A coexistência de bombas de efluxo superexpressas ou β-lactamases pode ampliar o fenótipo de resistência e dificultar o tratamento <sup>1,3,9</sup>.</p>
+        </div>
+        <aside>
+          <strong>Efeito combinado</strong>
+          <p>Menor entrada, maior saída e inativação enzimática podem atuar simultaneamente. O perfil observado no antibiograma resulta da soma desses mecanismos.</p>
+        </aside>
+      </section>
+
+      <aside class="cap3-p26-key">
+        <strong>Para diferenciar</strong>
+        <p>Na redução da permeabilidade, o antibacteriano encontra dificuldade para entrar. No efluxo, ele entra, mas é removido antes de atingir concentração suficiente próximo ao alvo.</p>
+      </aside>
     </section>
 
- <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p25.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 3 · Página 26 de 89</div>
-  <a class="btn primary" href="p27.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
-
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="p25.html" aria-label="Ir para a página anterior">← Anterior</a>
+      <div class="center">Capítulo 3 · Página 26 de 89</div>
+      <a class="btn primary" href="p27.html" aria-label="Ir para a próxima página">Próxima →</a>
+    </nav>
   </main>
 
   <script src="../../js/app.js"></script>

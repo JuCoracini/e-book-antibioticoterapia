@@ -1,99 +1,92 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Capítulo 4 — Página 35</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../../css/base.css">
-  <link rel="stylesheet" href="../../css/components.css">
-  <link rel="stylesheet" href="../../css/capitulo-04.css">
+  <link rel="stylesheet" href="../../css/base.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/capitulo-04.css" />
 </head>
 
 <body class="cap4-page35">
 
-<main class="page-shell">
+  <main class="page-shell cap4-shell">
 
-<header class="page-header">
-  <div class="chapter">Capítulo 4 — Farmacocinética e Farmacodinâmica Aplicadas</div>
-  <h1 class="page-title">Penetração tecidual e compartimentos infecciosos</h1>
-</header>
+    <header class="page-header">
+      <div class="chapter">Capítulo 4 — Farmacocinética e Farmacodinâmica Aplicadas</div>
+      <h1 class="page-title">Penetração tecidual e compartimentos infecciosos</h1>
+    </header>
 
-<section class="prose">
+    <section class="prose cap4-reading-flow">
 
-<p>
-A concentração plasmática de um antibacteriano nem sempre reflete a concentração atingida no foco infeccioso. A atividade terapêutica depende da exposição efetiva no compartimento onde o microrganismo se encontra. Essa distribuição resulta da interação entre propriedades físico-químicas do fármaco, características do tecido envolvido e condições fisiológicas do hospedeiro <sup>8,17</sup>.
-</p>
-
-<!-- BLOCO LATERAL -->
-
-<section class="cap4-p35-split">
-
-  <!-- IMAGEM -->
-  <figure class="cap4-p35-image">
-    <button data-zoom="../../assets/capitulo-04/imagens/penetracao-tecidual-fluxo.png">
-      <img src="../../assets/capitulo-04/imagens/penetracao-tecidual-fluxo.png" alt="Distribuição do antibacteriano até o foco infeccioso">
-    </button>
-  </figure>
-
-  <!-- INTERAÇÃO -->
-  <div class="cap4-p35-side">
-
-    <div class="cap4-p35-controls">
-      <button class="p35-btn active" data-step="plasma">Plasma</button>
-      <button class="p35-btn" data-step="intersticio">Interstício</button>
-      <button class="p35-btn" data-step="celulas">Células</button>
-      <button class="p35-btn" data-step="foco">Foco infeccioso</button>
-    </div>
-
-    <div class="cap4-p35-panel">
-      <p id="p35-text">
-        Concentrações plasmáticas elevadas não garantem eficácia terapêutica se o antibacteriano não conseguir se distribuir adequadamente até o local da infecção.
+      <p>
+        A concentração plasmática de um antibacteriano não corresponde, necessariamente, à concentração alcançada no foco da infecção. A resposta terapêutica depende da exposição efetiva no compartimento onde o microrganismo está localizado, a qual resulta da interação entre as propriedades físico-químicas do fármaco, as características do tecido infectado e as condições fisiopatológicas do hospedeiro <sup>8,12</sup>.
       </p>
-    </div>
 
-  </div>
+      <p>
+        Após atingir a circulação, o antibacteriano precisa atravessar sucessivas barreiras biológicas até alcançar o sítio da infecção. Em cada etapa, fatores relacionados ao fármaco, ao tecido e ao hospedeiro podem reduzir a concentração efetivamente disponível para exercer atividade antibacteriana.
+      </p>
 
-</section>
+      <figure class="figure cap4-p35-figure cap4-p35-reveal">
+        <button
+          type="button"
+          class="cap4-p35-figure__zoom"
+          data-zoom="../../assets/capitulo-04/imagens/penetracao-tecidual-compartimentos.png"
+          aria-label="Ampliar imagem sobre penetração tecidual do antibacteriano"
+        >
+          <img
+            src="../../assets/capitulo-04/imagens/penetracao-tecidual-compartimentos.png"
+            alt="Distribuição do antibacteriano do plasma ao foco infeccioso"
+            loading="lazy"
+          />
+        </button>
 
-<p>
-Após a administração, o antibacteriano distribui-se pelos diferentes compartimentos corporais de acordo com seu volume de distribuição e suas características moleculares. Fármacos predominantemente hidrofílicos tendem a permanecer no espaço extracelular, enquanto moléculas mais lipofílicas atravessam membranas celulares com maior facilidade e alcançam compartimentos intracelulares em maior extensão. Essas diferenças influenciam a concentração efetiva atingida no local da infecção <sup>9,10</sup>.
-</p>
+        <figcaption class="caption cap4-p35-caption">
+          Distribuição esquemática do antibacteriano desde o plasma até o foco infeccioso. A concentração efetiva no sítio da infecção depende da fração livre circulante, da difusão para o interstício, da capacidade de penetração celular e das características locais do tecido infectado.
+        </figcaption>
+      </figure>
 
-<p>
-Alterações fisiopatológicas podem modificar substancialmente esse comportamento. Em estados inflamatórios sistêmicos, como sepse, o aumento da permeabilidade vascular e do volume de distribuição pode reduzir as concentrações plasmáticas iniciais de fármacos hidrofílicos. Em pacientes com depuração renal aumentada, particularmente em contextos críticos, a eliminação acelerada pode reduzir o tempo em que a concentração permanece acima da CIM <sup>7,9</sup>.
-</p>
+      <p>
+        Após a administração, apenas a fração livre do antibacteriano encontra-se disponível para atravessar o endotélio vascular e distribuir-se pelos tecidos. A ligação às proteínas plasmáticas reduz temporariamente a fração capaz de difundir-se para o foco infeccioso, embora o equilíbrio entre as formas livre e ligada seja dinâmico <sup>10,12</sup>.
+      </p>
 
-<p>
-A ligação a proteínas plasmáticas também interfere na exposição efetiva. Apenas a fração livre do antibacteriano está disponível para difusão tecidual e interação com o alvo bacteriano. Reduções na concentração de albumina, comuns em pacientes gravemente enfermos, podem aumentar a fração livre circulante e modificar tanto a distribuição quanto a depuração do fármaco <sup>9</sup>.
-</p>
+      <p>
+        A distribuição para o espaço intersticial depende do fluxo sanguíneo regional, da permeabilidade vascular e das propriedades físico-químicas do fármaco. Em situações como edema, inflamação intensa ou hipoperfusão tecidual, a difusão pode tornar-se heterogênea, reduzindo a concentração disponível em determinadas regiões do tecido infectado <sup>11,19</sup>.
+      </p>
 
-<p>
-A perfusão tecidual constitui outro determinante relevante. Regiões com vascularização comprometida, como áreas necróticas, coleções purulentas ou tecidos com edema significativo, podem receber menor quantidade de antibacteriano, mesmo quando as concentrações plasmáticas aparentam ser adequadas. Essa heterogeneidade de perfusão pode gerar microambientes nos quais a exposição ao fármaco é inferior à observada no plasma <sup>8,17</sup>.
-</p>
+      <p>
+        Em seguida, alguns antibacterianos precisam atravessar membranas celulares para atingir microrganismos localizados no meio intracelular. Essa penetração varia entre as diferentes classes farmacológicas e depende de características como lipofilicidade, grau de ionização, ligação a proteínas e, em alguns casos, da participação de transportadores celulares <sup>8,12</sup>.
+      </p>
 
-<p>
-Barreiras anatômicas específicas também influenciam a penetração. A barreira hematoencefálica, por exemplo, restringe o acesso de diversas moléculas ao sistema nervoso central, na ausência de inflamação. A penetração em tecidos como pulmão, osso, próstata ou cavidades com inflamação crônica varia entre classes farmacológicas e depende da interação entre propriedades moleculares e características locais do tecido <sup>8,17</sup>.
-</p>
+      <p>
+        Mesmo após alcançar o tecido infectado, a concentração do antibacteriano pode permanecer inferior à observada no plasma. Fatores como necrose, coleções purulentas, biofilmes, baixa perfusão e alterações locais de pH dificultam a difusão do fármaco e favorecem a formação de microambientes com exposição reduzida, comprometendo a atividade antibacteriana <sup>11,20,21</sup>.
+      </p>
 
-<p>
-Essas variáveis fazem com que dois pacientes com o mesmo valor de CIM e esquema posológico idêntico possam atingir exposições diferentes no sítio da infecção, modificando a probabilidade de alcançar o índice farmacodinâmico necessário para eficácia terapêutica <sup>9</sup>.
-</p>
+      <p>
+        Essas diferenças explicam por que concentrações plasmáticas aparentemente adequadas nem sempre garantem resposta terapêutica satisfatória. Dois pacientes submetidos ao mesmo esquema posológico podem apresentar exposições distintas no foco infeccioso em razão de diferenças na perfusão tecidual, na distribuição do fármaco, na função renal ou na presença de barreiras anatômicas específicas <sup>9,10</sup>.
+      </p>
 
-</section>
+      <aside class="cap4-p35-box cap4-p35-key cap4-p35-reveal">
+        A eficácia clínica depende da capacidade do antibacteriano de atingir, em quantidade suficiente, o compartimento onde o microrganismo se encontra <sup>1,6</sup>.
+      </aside>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p34.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 4 · Página 35 de 89</div>
-  <a class="btn primary" href="p36.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    </section>
 
-</main>
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="p34.html" aria-label="Ir para a página anterior">← Anterior</a>
+      <div class="center">Capítulo 4 · Página 35 de 89</div>
+      <a class="btn primary" href="p36.html" aria-label="Ir para a próxima página">Próxima →</a>
+    </nav>
 
-<script src="../../js/app.js"></script>
-<script src="../../js/capitulo-04.js"></script>
+  </main>
 
+  <script src="../../js/app.js"></script>
+  <script src="../../js/capitulo-04.js"></script>
 </body>
 </html>

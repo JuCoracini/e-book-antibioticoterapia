@@ -7,8 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -17,70 +16,100 @@
 
 <body class="cap4-page32">
 
-  <main class="page-shell">
+  <main class="page-shell cap4-shell">
 
     <header class="page-header">
       <div class="chapter">Capítulo 4 — Farmacocinética e Farmacodinâmica Aplicadas</div>
-      <h1 class="page-title">Via de administração e determinação da exposição antimicrobiana</h1>
+      <h1 class="page-title">Via de administração</h1>
     </header>
 
-    <section class="prose">
+    <section class="prose cap4-reading-flow">
 
       <p>
-        A exposição efetiva a um antibacteriano não depende exclusivamente da dose administrada, mas também da forma como o fármaco é introduzido no organismo. A via de administração constitui um determinante fundamental da farmacocinética, pois influencia diretamente a velocidade de absorção, a biodisponibilidade sistêmica e a variabilidade da concentração alcançada ao longo do tempo <sup>10,11</sup>.
+        A exposição a um antibacteriano não depende exclusivamente da dose administrada, mas também da forma como o fármaco é introduzido no organismo. A via de administração constitui um determinante fundamental da farmacocinética, pois influencia a velocidade de absorção, a biodisponibilidade e a previsibilidade da exposição sistêmica. Como consequência, uma mesma dose pode produzir perfis de concentração–tempo distintos conforme a via utilizada <sup>12,15,16</sup>.
       </p>
 
       <p>
-        Na administração intravenosa, o antibacteriano é introduzido diretamente na circulação sistêmica, resultando em biodisponibilidade completa e início imediato de exposição. Nesse cenário, a variabilidade associada aos processos de absorção é praticamente eliminada, e a curva concentração-tempo passa a depender predominantemente dos parâmetros de distribuição e eliminação do fármaco <sup>10,12</sup>.
+        Embora todas as vias tenham como objetivo disponibilizar o antibacteriano para ação no organismo, elas diferem quanto à rapidez e à previsibilidade da exposição sistêmica, características que influenciam o comportamento farmacocinético do fármaco.
       </p>
 
-      <!-- FIGURA CENTRAL -->
+      <section class="cap4-p32-guide cap4-p32-reveal" aria-label="Interação sobre vias de administração">
+        <div class="cap4-p32-guide__head">
+         
+          <p>Selecione uma via de administração e observe como ela modifica a exposição ao antibacteriano.</p>
+        </div>
 
-      <figure class="figure cap4-p32-figure">
-        <button
-          class="cap4-p32-figure__zoom"
-          data-zoom="../../assets/capitulo-04/imagens/via-iv-vs-vo.png"
-          aria-label="Ampliar gráfico de comparação entre via intravenosa e via oral"
-        >
-          <img
-            src="../../assets/capitulo-04/imagens/via-iv-vs-vo.png"
-            alt="Curva concentração-tempo comparando via intravenosa e via oral em relação à concentração inibitória mínima."
-          />
-        </button>
+        <div class="cap4-p32-tabs" role="tablist" aria-label="Escolha da via de administração">
+          <button class="is-active" type="button" role="tab" aria-selected="true" data-p32-route="iv">Intravenosa</button>
+          <button type="button" role="tab" aria-selected="false" data-p32-route="oral">Oral</button>
+          <button type="button" role="tab" aria-selected="false" data-p32-route="im">Intramuscular</button>
+          <button type="button" role="tab" aria-selected="false" data-p32-route="sc">Subcutânea</button>
+        </div>
 
-        <figcaption class="caption">
-          A via intravenosa produz elevação rápida e previsível da concentração plasmática, com pico precoce e maior exposição inicial acima da CIM. A via oral, por depender da absorção gastrointestinal, apresenta elevação mais lenta, maior variabilidade e menor previsibilidade na manutenção da concentração acima do limiar necessário para inibição bacteriana.
-        </figcaption>
-      </figure>
+        <div class="cap4-p32-panel">
+          <div class="cap4-p32-miniChart" aria-hidden="true">
+            <svg viewBox="0 0 360 190">
+              <line class="axis" x1="34" y1="156" x2="330" y2="156"></line>
+              <line class="axis" x1="34" y1="156" x2="34" y2="28"></line>
+
+              <path class="curve curve-iv is-active" d="M42 46 C70 58, 105 92, 145 119 C190 146, 250 154, 324 156"></path>
+              <path class="curve curve-oral" d="M42 156 C76 150, 106 100, 145 84 C190 70, 240 120, 324 152"></path>
+              <path class="curve curve-im" d="M42 156 C78 149, 118 104, 166 93 C210 86, 258 124, 324 151"></path>
+              <path class="curve curve-sc" d="M42 156 C86 150, 130 123, 178 109 C230 95, 276 130, 324 153"></path>
+
+              <text x="292" y="176">tempo</text>
+              <text x="12" y="44" transform="rotate(-90 12,44)">concentração</text>
+            </svg>
+          </div>
+
+          <div class="cap4-p32-routeContent">
+            <div class="cap4-p32-eyebrow" id="cap4-p32-eyebrow">Maior previsibilidade da exposição</div>
+            <h3 id="cap4-p32-title">Via intravenosa</h3>
+
+            <dl class="cap4-p32-data">
+              <div>
+                <dt>Absorção</dt>
+                <dd id="cap4-p32-absorption">Não há etapa de absorção.</dd>
+              </div>
+
+              <div>
+                <dt>Biodisponibilidade</dt>
+                <dd id="cap4-p32-bioavailability">Completa.</dd>
+              </div>
+
+              <div>
+                <dt>Exposição</dt>
+                <dd id="cap4-p32-exposure">Mais previsível desde o início do tratamento.</dd>
+              </div>
+
+              <div>
+                <dt>Limitação clínica</dt>
+                <dd id="cap4-p32-limitation">Exige acesso venoso e monitoramento compatível com o contexto clínico.</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
 
       <p>
-        Por outro lado, na administração por via oral, a concentração sistêmica resulta da absorção gastrointestinal, processo sujeito a variabilidade significativa. Fatores como pH gástrico, motilidade intestinal, presença de alimentos, integridade da mucosa e interações medicamentosas podem modificar a fração absorvida e a velocidade com que o antibacteriano atinge a circulação sistêmica. Consequentemente, a biodisponibilidade pode ser reduzida ou tornar-se menos previsível em determinados contextos clínicos <sup>9,11</sup>.
+        A via intravenosa proporciona biodisponibilidade completa e reduz a variabilidade farmacocinética, enquanto a administração oral depende da absorção gastrointestinal e está sujeita a maior variabilidade individual. Nas vias intramuscular e subcutânea, a absorção depende da perfusão local e pode tornar-se imprevisível em pacientes com hipoperfusão ou choque <sup>9,10,12,15,16</sup>.
       </p>
 
-      <p>
-        Essas diferenças não se limitam à quantidade de fármaco absorvida, mas também influenciam a forma da curva concentração-tempo. A velocidade de elevação da concentração plasmática, o tempo necessário para atingir o pico e a manutenção da exposição acima da concentração inibitória mínima (CIM) são diretamente afetados pela via de administração. Como os índices farmacodinâmicos, como %fT&gt;MIC, Cmax/MIC e AUC/MIC, dependem dessa relação entre concentração e tempo, a via utilizada pode modificar a probabilidade de atingir o alvo terapêutico, mesmo quando a dose nominal administrada é semelhante <sup>5,6</sup>.
-      </p>
-
-      <p>
-        A variabilidade interindividual torna-se particularmente relevante na via oral. Alterações fisiológicas ou patológicas, como edema de mucosa intestinal, hipoperfusão esplâncnica, vômitos ou uso concomitante de outros fármacos, podem comprometer a absorção e reduzir a exposição sistêmica. Nesses casos, a concentração plasmática pode permanecer abaixo dos níveis necessários para inibição bacteriana, mantendo o microrganismo sob pressão seletiva sem erradicação completa <sup>1,7</sup>.
-      </p>
-
-      <p>
-        Assim, a via de administração deve ser compreendida como um componente estrutural da exposição antimicrobiana. Ela não representa apenas uma escolha logística, mas um determinante farmacocinético que influencia diretamente a forma como a curva concentração-tempo se posiciona em relação à CIM e, consequentemente, a probabilidade de alcançar os índices farmacodinâmicos associados à eficácia terapêutica <sup>5,10</sup>.
-      </p>
+      <aside class="cap4-p32-box cap4-p32-key cap4-p32-reveal">
+        A via de administração modifica a velocidade e a previsibilidade da exposição ao antibacteriano, influenciando diretamente a curva concentração–tempo e a probabilidade de atingir o alvo farmacodinâmico.
+      </aside>
 
     </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p31.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 4 · Página 32 de 89</div>
-  <a class="btn primary" href="p33.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="p31.html" aria-label="Ir para a página anterior">← Anterior</a>
+      <div class="center">Capítulo 4 · Página 32 de 89</div>
+      <a class="btn primary" href="p33.html" aria-label="Ir para a próxima página">Próxima →</a>
+    </nav>
 
   </main>
 
   <script src="../../js/app.js"></script>
   <script src="../../js/capitulo-04.js"></script>
-
 </body>
 </html>

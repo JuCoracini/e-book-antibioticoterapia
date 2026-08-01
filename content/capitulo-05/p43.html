@@ -3,10 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 5 — Página 43</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -18,83 +24,250 @@
   <main class="page-shell">
 
     <header class="page-header">
-      <div class="chapter">Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma</div>
-      <h1 class="page-title">Identificação bacteriana</h1>
+      <div class="chapter">
+        Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma
+      </div>
+
+      <h1 class="page-title">
+        Identificação bacteriana
+      </h1>
     </header>
 
-    <section class="prose">
+    <section class="prose cap5-p43-reading">
 
       <p>
-        Tradicionalmente, a identificação baseia-se em testes fenotípicos bioquímicos, que avaliam propriedades metabólicas da bactéria. Esses testes investigam a capacidade de fermentar determinados açúcares, produzir enzimas específicas ou utilizar substratos particulares. A combinação desses resultados gera um perfil metabólico característico que permite classificar o microrganismo em determinada espécie ou grupo bacteriano <sup>1,2</sup>.
+        Após a bacterioscopia e o crescimento do microrganismo em meio de cultura, o laboratório realiza a identificação bacteriana. Essa etapa determina qual espécie foi isolada e transforma uma informação inicial baseada na morfologia e na reação ao Gram em um resultado microbiológico mais específico <sup>1,2</sup>.
       </p>
 
-      <figure class="figure cap5-p43-flow">
-        <button
-          type="button"
-          class="cap5-p43-flow__zoom"
-          data-zoom="../../assets/capitulo-05/imagens/fluxo-identificacao-fenotipica.png"
-          aria-label="Ampliar fluxo de identificação fenotípica"
+      <p>
+        O crescimento em cultura fornece pistas importantes, como morfologia das colônias, padrão de hemólise, pigmentação e outras características fenotípicas. Entretanto, esses elementos isoladamente não são suficientes para definir a espécie com precisão, pois microrganismos semelhantes podem apresentar importância clínica, perfil de suscetibilidade e mecanismos de resistência distintos <sup>1,2,5</sup>.
+      </p>
+
+      <p>
+        Em algumas situações, o laboratório identifica apenas um grupo ou complexo bacteriano. Isso ocorre quando espécies intimamente relacionadas apresentam características semelhantes ou quando sua diferenciação não modifica de forma relevante a interpretação do resultado.
+      </p>
+
+      <section
+        class="cap5-p43-interaction cap5-p43-reveal"
+        data-cap5-p43
+        aria-label="Progressão da bacterioscopia para a identificação bacteriana"
+      >
+
+        <p class="cap5-p43-instruction">
+          Selecione um achado inicial para observar o que muda após a identificação da espécie.
+        </p>
+
+        <div
+          class="cap5-p43-tabs"
+          role="tablist"
+          aria-label="Exemplos de identificação bacteriana"
         >
-          <img
-            src="../../assets/capitulo-05/imagens/fluxo-identificacao-fenotipica.png"
-            alt="Fluxo de identificação bacteriana desde características iniciais até testes fenotípicos."
-          />
-        </button>
-        <figcaption class="caption">
-          Características observadas no crescimento direcionam a escolha de testes fenotípicos, que definem o perfil metabólico do microrganismo.
-        </figcaption>
-      </figure>
+          <button
+            class="cap5-p43-tab cap5-p43-tab--negative is-active"
+            type="button"
+            role="tab"
+            id="cap5P43TabNegative"
+            aria-selected="true"
+            aria-controls="cap5P43View"
+            tabindex="0"
+            data-p43-target="negative"
+          >
+            Bacilos Gram-negativos
+          </button>
 
-      <p>
-        Atualmente, muitos laboratórios utilizam sistemas automatizados, que integram múltiplos testes bioquímicos em painéis padronizados e comparam os resultados obtidos com bancos de dados microbiológicos validados. O sistema calcula a probabilidade de correspondência entre o perfil observado e as espécies registradas na base de referência <sup>2,3</sup>.
-      </p>
-
-      <p>
-        Outro método amplamente incorporado à rotina microbiológica é a espectrometria de massa por MALDI-TOF (Matrix-Assisted Laser Desorption/Ionization – Time of Flight). Nesse método, proteínas bacterianas são ionizadas e analisadas de acordo com seu padrão espectral. O perfil obtido é comparado a bibliotecas de referência, permitindo identificação rápida e precisa da maioria das bactérias de relevância clínica <sup>2,4</sup>.
-      </p>
-
-      <!-- INTERAÇÃO -->
-      <section class="cap5-p43-logic">
-        <div class="cap5-p43-logic__controls">
-          <button class="cap5-p43-step is-active" data-step="1">Identificação</button>
-          <button class="cap5-p43-step" data-step="2">Contexto biológico</button>
-          <button class="cap5-p43-step" data-step="3">Interpretação</button>
+          <button
+            class="cap5-p43-tab cap5-p43-tab--positive"
+            type="button"
+            role="tab"
+            id="cap5P43TabPositive"
+            aria-selected="false"
+            aria-controls="cap5P43View"
+            tabindex="-1"
+            data-p43-target="positive"
+          >
+            Cocos Gram-positivos em cachos
+          </button>
         </div>
 
-        <div class="cap5-p43-logic__panel">
-          <p class="cap5-p43-eyebrow">Ponto de partida</p>
-          <h3 class="cap5-p43-title">Definição do agente</h3>
-          <p class="cap5-p43-text">
-            A identificação define o microrganismo isolado e estabelece o nível de precisão microbiológica disponível. Esse dado inicial orienta a interpretação dos resultados subsequentes.
-          </p>
+        <article
+          id="cap5P43View"
+          class="cap5-p43-view cap5-p43-view--negative"
+          role="tabpanel"
+          aria-labelledby="cap5P43TabNegative"
+          aria-live="polite"
+        >
+
+          <div class="cap5-p43-progression">
+
+            <article class="cap5-p43-stage cap5-p43-stage--initial">
+              <span class="cap5-p43-stageLabel">
+                Bacterioscopia
+              </span>
+
+              <strong id="cap5P43Initial">
+                Bacilos Gram-negativos
+              </strong>
+
+              <p>
+                Caracterização morfológica ampla, compatível com diferentes grupos e espécies bacterianas.
+              </p>
+            </article>
+
+            <div class="cap5-p43-arrow" aria-hidden="true">
+              →
+            </div>
+
+            <article class="cap5-p43-stage cap5-p43-stage--identified">
+              <span class="cap5-p43-stageLabel">
+                Identificação
+              </span>
+
+              <strong id="cap5P43Species">
+                <em>Escherichia coli</em>
+              </strong>
+
+              <p>
+                A espécie passa a fornecer contexto microbiológico específico para a interpretação do isolamento.
+              </p>
+            </article>
+
+          </div>
+
+          <div class="cap5-p43-added">
+
+            <span
+              id="cap5P43Kicker"
+              class="cap5-p43-kicker"
+            >
+              O que a identificação acrescenta
+            </span>
+
+            <h2
+              id="cap5P43Title"
+              class="cap5-p43-title"
+            >
+              Redução das incertezas microbiológicas
+            </h2>
+
+            <div
+              id="cap5P43Body"
+              class="cap5-p43-infoGrid"
+            >
+
+              <article class="cap5-p43-info">
+                <span>Relevância clínica</span>
+                <p>
+                  É uma das principais espécies associadas a infecções do trato urinário e bacteremias de origem urinária.
+                </p>
+              </article>
+
+              <article class="cap5-p43-info">
+                <span>Resistência a considerar</span>
+                <p>
+                  Pode apresentar produção de β-lactamases de espectro estendido e outros mecanismos adquiridos.
+                </p>
+              </article>
+
+              <article class="cap5-p43-info">
+                <span>Diferença entre espécies</span>
+                <p>
+                  Seu perfil microbiológico não pode ser extrapolado para <em>Pseudomonas aeruginosa</em> ou <em>Acinetobacter baumannii</em>.
+                </p>
+              </article>
+
+              <article class="cap5-p43-info cap5-p43-info--key">
+                <span>Implicação para o antibiograma</span>
+                <p>
+                  A espécie fornece o contexto necessário para reconhecer resistências intrínsecas e interpretar corretamente os resultados S, I e R.
+                </p>
+              </article>
+
+            </div>
+
+          </div>
+
+        </article>
+      </section>
+
+      <aside class="cap5-p43-context cap5-p43-reveal">
+        <strong>A identificação reduz incertezas, mas não encerra a investigação:</strong> conhecer a espécie permite reconhecer padrões biológicos e mecanismos de resistência frequentemente associados. Entretanto, a escolha do tratamento dirigido depende do teste de suscetibilidade, do sítio da infecção e das características clínicas do paciente.
+      </aside>
+
+      <section class="cap5-p43-meaning cap5-p43-reveal">
+
+        <h2 class="cap5-p43-meaningTitle">
+          Por que identificar a espécie?
+        </h2>
+
+        <div class="cap5-p43-meaningGrid">
+
+          <article>
+            <span>Interpretação do isolamento</span>
+            <p>
+              A relevância clínica de um microrganismo varia conforme a espécie, o tipo de amostra e o contexto do paciente.
+            </p>
+          </article>
+
+          <article>
+            <span>Resistência intrínseca</span>
+            <p>
+              Algumas espécies apresentam resistência natural a determinados antimicrobianos, mesmo antes da análise do antibiograma.
+            </p>
+          </article>
+
+          <article>
+            <span>Mecanismos associados</span>
+            <p>
+              Certas espécies apresentam maior associação com fenótipos como MRSA, ESBL, VRE ou produção de carbapenemases.
+            </p>
+          </article>
+
+          <article>
+            <span>Terapia dirigida</span>
+            <p>
+              A identificação restringe as possibilidades etiológicas e prepara a escolha do tratamento após a liberação da suscetibilidade.
+            </p>
+          </article>
+
         </div>
+
       </section>
 
       <p>
-        Em algumas situações, a identificação pode ser limitada a um grupo ou complexo bacteriano, em vez de uma única espécie. Isso ocorre quando espécies próximas apresentam características fenotípicas muito semelhantes ou quando a diferenciação não possui relevância clínica significativa <sup>2,3</sup>.
+        A identificação bacteriana pode ser realizada por métodos fenotípicos, sistemas automatizados, espectrometria de massas ou técnicas moleculares, conforme a rotina laboratorial e a necessidade diagnóstica.
       </p>
 
-      <p>
-        A definição correta da espécie é um elemento central para a interpretação do antibiograma. Diferentes bactérias apresentam perfis característicos de suscetibilidade e resistência. Algumas possuem resistência intrínseca, uma propriedade natural da espécie que impede a atividade de determinadas classes de antibacterianos <sup>3,9</sup>.
-      </p>
-
-      <p>
-        Nesse sentido, espécies do gênero <em>Enterococcus</em> spp. apresentam resistência intrínseca às cefalosporinas, enquanto <em>Pseudomonas aeruginosa</em> possui baixa suscetibilidade natural a diversos antibacterianos. O reconhecimento da espécie permite antecipar essas limitações e interpretar o painel de suscetibilidade de forma mais adequada <sup>1,10,11</sup>.
-      </p>
+      <aside class="cap5-p43-principle cap5-p43-reveal">
+        A identificação não consiste apenas em atribuir um nome ao microrganismo. Ela transforma um achado morfológico amplo em um resultado microbiológico específico e fornece o contexto necessário para interpretar o antibiograma.
+      </aside>
 
     </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p42.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 5 · Página 43 de 89</div>
-  <a class="btn primary" href="p44.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+      <a
+        class="btn"
+        href="p42.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
 
+      <div class="center">
+        Capítulo 5 · Página 43 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p44.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+    </nav>
 
   </main>
 
   <script src="../../js/app.js"></script>
   <script src="../../js/capitulo-05.js"></script>
-
 </body>
 </html>

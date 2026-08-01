@@ -5,95 +5,112 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Capítulo 4 — Página 34</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../../css/base.css">
-  <link rel="stylesheet" href="../../css/components.css">
-  <link rel="stylesheet" href="../../css/capitulo-04.css">
+  <link rel="stylesheet" href="../../css/base.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/capitulo-04.css" />
 </head>
 
 <body class="cap4-page34">
 
-<main class="page-shell">
+  <main class="page-shell cap4-shell">
 
-<header class="page-header">
-  <div class="chapter">Capítulo 4 — Farmacocinética e Farmacodinâmica Aplicadas</div>
-  <h1 class="page-title">Índices farmacodinâmicos: tempo, concentração e exposição total</h1>
-</header>
+    <header class="page-header">
+      <div class="chapter">Capítulo 4 — Farmacocinética e Farmacodinâmica Aplicadas</div>
+      <h1 class="page-title">Via de administração e implicações clínicas na resposta terapêutica</h1>
+    </header>
 
-<section class="prose">
+    <section class="prose cap4-reading-flow">
 
-<p>
-A atividade antimicrobiana não depende apenas da dose administrada, mas da forma como a exposição ao antibacteriano se distribui ao longo do tempo em relação à suscetibilidade do microrganismo. A análise da curva concentração–tempo em relação ao valor da concentração inibitória mínima (CIM) permite identificar quais parâmetros farmacodinâmicos estão mais associados ao efeito antimicrobiano para cada classe de antibacterianos <sup>6,10</sup>.
-</p>
+      <p>
+        A relação entre a via de administração e a resposta terapêutica vai além da escolha entre administração oral ou intravenosa. A eficácia de um antibacteriano depende da capacidade de atingir exposição adequada no foco infeccioso, o que resulta da interação entre as propriedades farmacocinéticas do fármaco e as condições clínicas do paciente. Assim, a mesma dose pode produzir exposições distintas conforme a confiabilidade da absorção gastrointestinal, a biodisponibilidade e a gravidade da infecção <sup>10,12</sup>.
+      </p>
 
-<p>
-Três índices farmacodinâmicos principais são utilizados para descrever essa relação:
-</p>
+      <p>
+        As situações clínicas apresentadas ilustram como a confiabilidade da absorção gastrointestinal e a gravidade da infecção influenciam a probabilidade de atingir exposição farmacocinética adequada. Esse raciocínio ajuda a compreender por que a mesma via de administração pode ser adequada em um paciente e inadequada em outro, mesmo diante de microrganismos com perfil de suscetibilidade semelhante.
+      </p>
 
-<p>
-%fT&gt;MIC — fração do tempo em que a concentração livre do antibacteriano permanece acima da CIM<br>
-Cmax/MIC — razão entre a concentração máxima alcançada e a CIM<br>
-AUC/MIC — razão entre a área sob a curva de concentração ao longo de 24 horas e a CIM
-</p>
+      <section class="cap4-p34-simulator cap4-p34-reveal" aria-label="Simulador de raciocínio clínico sobre via de administração">
+        <div class="cap4-p34-simHeader">
+          <span id="cap4-p34-step">Situação 1 de 3</span>
+          <h2 id="cap4-p34-title">Absorção confiável e baixa gravidade clínica</h2>
+          <p id="cap4-p34-subtitle">
+            Analise o contexto clínico e escolha a via que tende a oferecer exposição adequada.
+          </p>
+        </div>
 
-<!-- FIGURA + INTERAÇÃO -->
+        <div class="cap4-p34-caseCard">
+          <ul id="cap4-p34-features" class="cap4-p34-features">
+            <li>Pneumonia adquirida na comunidade.</li>
+            <li>Paciente estável, sem vômitos.</li>
+            <li>Alimentação preservada.</li>
+            <li>Antibacteriano com elevada biodisponibilidade oral.</li>
+          </ul>
 
-<section class="cap4-p34-block">
+          <p id="cap4-p34-question" class="cap4-p34-question">
+            Qual via tende a proporcionar exposição adequada?
+          </p>
 
-  <figure class="cap4-p34-figure">
-    <button class="cap4-p34-zoom" data-zoom="../../assets/capitulo-04/imagens/pkpd-curva.png">
-      <img src="../../assets/capitulo-04/imagens/pkpd-curva.png" alt="Curva PK/PD com índices farmacodinâmicos">
-    </button>
-  </figure>
+          <div class="cap4-p34-options" role="group" aria-label="Opções de resposta">
+            <button type="button" data-p34-answer="oral">Via oral</button>
+            <button type="button" data-p34-answer="iv">Via intravenosa</button>
+          </div>
 
-  <div class="cap4-p34-controls">
-    <button class="p34-btn active" data-mode="time">%fT&gt;MIC</button>
-    <button class="p34-btn" data-mode="peak">Cmax/MIC</button>
-    <button class="p34-btn" data-mode="auc">AUC/MIC</button>
-  </div>
+          <div class="cap4-p34-feedback" id="cap4-p34-feedback" aria-live="polite">
+            <strong>Escolha uma opção.</strong>
+            <p>A interpretação deve considerar absorção, biodisponibilidade e gravidade clínica.</p>
+          </div>
+        </div>
 
-  <div class="cap4-p34-panel">
-    <h3 id="p34-title">Como ler a curva para fármacos tempo-dependentes</h3>
-    <p id="p34-text">
-      Observe o intervalo em que a curva permanece acima da CIM. O ponto crítico não é o pico, mas a duração da exposição efetiva ao longo do tempo. Concentrações muito altas, mas por tempo curto, podem ter impacto limitado se a curva cair rapidamente abaixo da CIM.
-    </p>
-  </div>
+        <div class="cap4-p34-controls">
+          <button type="button" id="cap4-p34-prev" disabled>← Situação anterior</button>
+          <div class="cap4-p34-dots" aria-hidden="true">
+            <span class="is-active"></span>
+            <span></span>
+            <span></span>
+          </div>
+          <button type="button" id="cap4-p34-next">Próxima situação →</button>
+        </div>
+      </section>
 
-</section>
+      <p>
+        Quando a absorção gastrointestinal é previsível e o antibacteriano apresenta elevada biodisponibilidade oral, a administração por via oral pode proporcionar exposição sistêmica semelhante à obtida por via intravenosa. Nesses cenários, desde que sejam alcançados os índices farmacocinéticos/farmacodinâmicos (PK/PD) apropriados, a eficácia clínica tende a ser equivalente entre as duas vias <sup>6,7,12</sup>.
+      </p>
 
-<p>
-Esses parâmetros descrevem diferentes padrões de relação entre exposição ao fármaco e resposta microbiológica <sup>5,6</sup>.
-</p>
+      <p>
+        Entretanto, a previsibilidade da absorção diminui em condições como hipoperfusão esplâncnica, edema de mucosa intestinal, vômitos persistentes, diarreia grave ou outras alterações que comprometam a biodisponibilidade. Nessas situações, a exposição sistêmica pode tornar-se insuficiente para atingir os alvos farmacodinâmicos necessários, aumentando o risco de resposta terapêutica inadequada <sup>9,17</sup>.
+      </p>
 
-<p>
-Nos antibacterianos com atividade predominantemente tempo-dependente, o determinante principal da eficácia é o período durante o qual a fração livre do fármaco permanece acima da CIM ao longo do intervalo entre doses (%fT&gt;MIC). O prefixo f indica que apenas a fração não ligada a proteínas plasmáticas está disponível para difusão tecidual e interação com o alvo bacteriano. Nesses fármacos, aumentos expressivos do pico de concentração produzem ganho limitado de efeito quando a concentração já se mantém acima da CIM. Estratégias como redução do intervalo entre doses ou prolongamento do tempo de infusão podem aumentar o tempo de exposição eficaz <sup>15</sup>.
-</p>
+      <p>
+        Em pacientes com infecções graves ou risco elevado de deterioração clínica, pequenas reduções na exposição ao antibacteriano podem ter impacto desproporcional sobre a resposta terapêutica. A administração intravenosa reduz a variabilidade associada ao processo de absorção e permite obtenção mais previsível da concentração plasmática, característica particularmente importante nas fases iniciais do tratamento <sup>12,18</sup>.
+      </p>
 
-<p>
-Em antibacterianos com atividade predominantemente concentração-dependente, a magnitude do pico em relação à CIM correlaciona-se com maior velocidade e intensidade de redução da carga bacteriana. Nesse caso, o índice farmacodinâmico relevante é a razão Cmax/MIC. Quanto maior o pico alcançado em relação ao valor da CIM, maior tende a ser o efeito bactericida inicial. Intervalos maiores entre doses podem ser aceitáveis, desde que o pico de concentração seja suficientemente elevado para atingir o alvo farmacodinâmico <sup>5,16</sup>.
-</p>
+      <p>
+        A via de administração influencia diretamente a forma da curva concentração–tempo e, consequentemente, a probabilidade de atingir os principais índices farmacodinâmicos utilizados para prever eficácia terapêutica, como %fT&gt;CIM, C<sub>max</sub>/CIM e AUC/CIM. Assim, diferenças na absorção e na biodisponibilidade podem modificar o desempenho clínico de um antibacteriano mesmo quando a dose prescrita permanece inalterada <sup>6,7</sup>.
+      </p>
 
-<p>
-Algumas classes apresentam melhor correlação com a exposição total ao longo do tempo, representada pela razão AUC/MIC. Nesse cenário, tanto a intensidade quanto a duração da exposição contribuem para o efeito antimicrobiano. Reduções sustentadas na área sob a curva podem comprometer o índice global, mesmo quando o pico inicial parece adequado <sup>5,6</sup>.
-</p>
+      <p>
+        Quando a exposição permanece abaixo do esperado, a concentração pode não ultrapassar adequadamente a MIC no sítio da infecção. Nessa situação, além da possibilidade de falha terapêutica, aumenta a probabilidade de manutenção de bactérias sob pressão seletiva incompleta, favorecendo a persistência de variantes com menor suscetibilidade <sup>1,5</sup>.
+      </p>
 
-<p>
-A variabilidade interindividual pode modificar esses parâmetros ao alterar volume de distribuição, depuração renal ou hepática e fração livre circulante. Essas mudanças influenciam a forma como a curva concentração–tempo se posiciona em relação à CIM e, consequentemente, a probabilidade de atingir o índice farmacodinâmico necessário para eficácia terapêutica <sup>7,9</sup>.
-</p>
+      <aside class="cap4-p34-box cap4-p34-key cap4-p34-reveal">
+        A escolha da via de administração deve considerar simultaneamente as características do antibacteriano e as condições do paciente. Esse raciocínio permite compreender por que a transição da via intravenosa para a via oral pode ser realizada com segurança quando a estabilidade clínica é alcançada e a absorção gastrointestinal torna-se confiável, preservando a exposição farmacocinética necessária para manutenção da eficácia terapêutica <sup>12,13</sup>.
+      </aside>
 
-</section>
+    </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p33.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 4 · Página 34 de 89</div>
-  <a class="btn primary" href="p35.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="p33.html" aria-label="Ir para a página anterior">← Anterior</a>
+      <div class="center">Capítulo 4 · Página 34 de 89</div>
+      <a class="btn primary" href="p35.html" aria-label="Ir para a próxima página">Próxima →</a>
+    </nav>
 
-</main>
+  </main>
 
-<script src="../../js/app.js"></script>
-<script src="../../js/capitulo-04.js"></script>
-
+  <script src="../../js/app.js"></script>
+  <script src="../../js/capitulo-04.js"></script>
 </body>
 </html>

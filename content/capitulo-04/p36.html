@@ -7,7 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -16,105 +16,117 @@
 
 <body class="cap4-page36">
 
-  <main class="page-shell">
+  <main class="page-shell cap4-shell">
 
     <header class="page-header">
       <div class="chapter">Capítulo 4 — Farmacocinética e Farmacodinâmica Aplicadas</div>
       <h1 class="page-title">Biofilme e microambiente infeccioso</h1>
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <section class="prose cap4-reading-flow">
 
       <p>
-        Nem todas as bactérias envolvidas em um processo infeccioso encontram-se livres no meio líquido. Em diversas condições clínicas, elas organizam-se em comunidades estruturadas aderidas a superfícies biológicas ou artificiais, formando biofilmes. Nesse arranjo, as células bacterianas permanecem envolvidas por uma matriz extracelular composta por polissacarídeos, proteínas e DNA extracelular, criando um microambiente com características próprias <sup>18,19</sup>.
+        Nem todas as bactérias presentes em um processo infeccioso permanecem em suspensão no meio líquido. Em diversas infecções, especialmente aquelas associadas a dispositivos médicos, próteses ou tecidos com inflamação crônica, os microrganismos organizam-se em comunidades estruturadas aderidas a superfícies biológicas ou artificiais, formando biofilmes. Nessa organização, as bactérias permanecem imersas em uma matriz extracelular composta por polissacarídeos, proteínas e DNA extracelular, que modifica a difusão de moléculas e cria um microambiente distinto daquele observado no meio circundante <sup>20,22</sup>.
       </p>
 
-      <section class="cap4-p36-biofilm" aria-labelledby="cap4-p36-biofilm-title">
-        <div class="cap4-p36-biofilm__head">
-          <p class="eyebrow">Leitura estrutural e funcional</p>
-          <h3 id="cap4-p36-biofilm-title" class="cap4-p36-biofilm__title">O biofilme não é apenas uma camada bacteriana: ele reorganiza a exposição ao antibacteriano</h3>
-          <p class="cap4-p36-biofilm__subtitle">
-            A imagem mostra a arquitetura do biofilme. A leitura guiada ajuda a entender por que a resposta terapêutica deixa de depender apenas da concentração plasmática aparentemente adequada.
+      <p>
+        A concentração do antibacteriano não é uniforme em toda a estrutura do biofilme. À medida que o fármaco atravessa a matriz extracelular, sua difusão torna-se progressivamente mais limitada, estabelecendo gradientes de concentração que podem reduzir a exposição das bactérias localizadas nas camadas mais profundas.
+      </p>
+
+      <figure class="figure cap4-p36-figure cap4-p36-reveal">
+        <button
+          type="button"
+          class="cap4-p36-figure__zoom"
+          data-zoom="../../assets/capitulo-04/imagens/biofilme-estrutura.png"
+          aria-label="Ampliar imagem sobre biofilme bacteriano"
+        >
+          <img
+            src="../../assets/capitulo-04/imagens/biofilme-estrutura.png"
+            alt="Estrutura de biofilme bacteriano com camadas superficial, intermediária e profunda"
+            loading="lazy"
+          />
+        </button>
+
+        <figcaption class="caption cap4-p36-caption">
+          Representação esquemática da arquitetura de um biofilme bacteriano. A matriz extracelular dificulta a difusão do antibacteriano e favorece a formação de gradientes de concentração, associados a alterações metabólicas das bactérias e à heterogeneidade do microambiente infeccioso.
+        </figcaption>
+      </figure>
+
+      <section class="cap4-p36-clinical cap4-p36-reveal" aria-label="Interação sobre falha terapêutica em biofilme">
+        <div class="cap4-p36-clinicalHead">
+          
+          <p>
+            Analise a situação e identifique o fator que melhor explica a persistência da infecção.
           </p>
         </div>
 
-        <div class="cap4-p36-biofilm__layout">
+        <div class="cap4-p36-case">
+          <p>
+            Um paciente apresenta infecção associada a um cateter venoso. O antibiograma demonstra que a bactéria é suscetível ao antibacteriano utilizado. Mesmo assim, após vários dias de tratamento, a infecção persiste.
+          </p>
 
-          <figure class="figure cap4-p36-figure">
-            <button
-              type="button"
-              class="cap4-p36-figure__zoom"
-              data-zoom="../../assets/capitulo-04/imagens/biofilme-estrutura.png"
-              aria-label="Ampliar ilustração de biofilme e microambiente infeccioso"
-            >
-              <img
-                src="../../assets/capitulo-04/imagens/biofilme-estrutura.png"
-                alt="Estrutura esquemática de biofilme com matriz extracelular, camadas bacterianas e penetração limitada do antimicrobiano."
-                loading="lazy"
-              />
+          <p class="cap4-p36-question">
+            O que melhor explica essa situação?
+          </p>
+
+          <div class="cap4-p36-options" role="group" aria-label="Alternativas sobre biofilme">
+            <button type="button" data-p36-answer="resistencia">
+              A bactéria adquiriu resistência genética durante o tratamento.
             </button>
-            <figcaption class="caption">
-              A organização em biofilme cria barreiras físicas e funcionais entre a concentração alcançada no meio circundante e a exposição efetiva nas camadas mais profundas da infecção.
-            </figcaption>
-          </figure>
 
-          <div class="cap4-p36-guide" aria-label="Leitura guiada do biofilme">
-            <div class="cap4-p36-guide__controls" role="tablist" aria-label="Aspectos críticos do biofilme">
-              <button class="cap4-p36-guide__chip is-active" type="button" role="tab" aria-selected="true" data-p36-step="superficie">
-                Superfície
-              </button>
-              <button class="cap4-p36-guide__chip" type="button" role="tab" aria-selected="false" data-p36-step="intermediaria">
-                Camada intermediária
-              </button>
-              <button class="cap4-p36-guide__chip" type="button" role="tab" aria-selected="false" data-p36-step="profunda">
-                Camada profunda
-              </button>
-              <button class="cap4-p36-guide__chip" type="button" role="tab" aria-selected="false" data-p36-step="microambiente">
-                Microambiente
-              </button>
-            </div>
+            <button type="button" data-p36-answer="betalactamase">
+              O antibacteriano foi completamente inativado por β-lactamase.
+            </button>
 
-            <div class="cap4-p36-guide__panel" aria-live="polite">
-              <div class="cap4-p36-guide__eyebrow" id="cap4-p36-eyebrow">Camada de maior contato com o meio externo</div>
-              <h3 class="cap4-p36-guide__title" id="cap4-p36-title">Superfície do biofilme</h3>
-              <div class="cap4-p36-guide__text" id="cap4-p36-text">
-                <p>
-                  As camadas superficiais estão mais expostas ao antibacteriano e aos componentes da resposta imune. Mesmo assim, a simples presença de concentração externa adequada não garante que essa mesma exposição será reproduzida em toda a estrutura organizada do biofilme.
-                </p>
-              </div>
-            </div>
+            <button type="button" data-p36-answer="biofilme">
+              O biofilme reduz a exposição efetiva do antibacteriano e abriga bactérias metabolicamente menos ativas.
+            </button>
+
+            <button type="button" data-p36-answer="plasma">
+              O antibacteriano não atingiu concentração plasmática suficiente.
+            </button>
           </div>
 
+          <div class="cap4-p36-feedback" id="cap4-p36-feedback" aria-live="polite">
+            <strong>Escolha uma alternativa.</strong>
+            <p>
+              A resposta deve considerar a diferença entre suscetibilidade em crescimento livre e comportamento bacteriano em biofilme.
+            </p>
+          </div>
         </div>
       </section>
 
       <p>
-        A organização em biofilme modifica a dinâmica de exposição aos antibacterianos. A matriz extracelular pode retardar ou limitar a difusão do fármaco, resultando em gradientes de concentração entre as camadas superficiais e profundas da estrutura. Mesmo quando as concentrações plasmáticas são adequadas, a exposição efetiva no interior do biofilme pode ser inferior à observada no meio circundante <sup>20,21</sup>.
+        A matriz extracelular não constitui apenas uma barreira física. Ela modifica a velocidade de difusão do antibacteriano, favorece a formação de microambientes com diferentes concentrações do fármaco e dificulta que a exposição observada no plasma seja reproduzida nas camadas mais profundas do biofilme <sup>4,22</sup>.
       </p>
 
       <p>
-        Além da barreira física, existe heterogeneidade fisiológica entre as bactérias presentes no biofilme. Células localizadas nas camadas mais profundas frequentemente apresentam metabolismo reduzido e menor taxa de divisão. Como diversos antibacterianos exercem maior atividade contra bactérias em crescimento ativo, essa redução metabólica pode diminuir a eficácia farmacodinâmica, mesmo na ausência de resistência genética estável <sup>18,22</sup>.
+        Além da limitação de difusão, existe importante heterogeneidade fisiológica entre as bactérias presentes no biofilme. As camadas superficiais concentram células metabolicamente mais ativas, enquanto regiões profundas apresentam menor disponibilidade de oxigênio e nutrientes, reduzindo a taxa de crescimento bacteriano. Como diversos antibacterianos exercem maior atividade sobre bactérias em divisão, essa redução metabólica pode diminuir a eficácia do tratamento mesmo na ausência de resistência genética adquirida <sup>20,21</sup>.
       </p>
 
       <p>
-        Dentro do biofilme podem coexistir subpopulações com diferentes estados funcionais, incluindo células metabolicamente ativas, células em fase estacionária e variantes transitórias com maior tolerância à exposição antimicrobiana <sup>19,22</sup>. Essa tolerância fenotípica não corresponde necessariamente à presença de mutações ou genes de resistência, mas pode resultar em menor resposta clínica ao tratamento.
+        Outro aspecto relevante é a presença de populações bacterianas em diferentes estados fisiológicos, incluindo células metabolicamente ativas, células em fase estacionária e variantes persistentes. Essas populações apresentam tolerância fenotípica, caracterizada por menor suscetibilidade transitória ao antibacteriano, distinta da resistência mediada por mutações ou genes de resistência <sup>4,22</sup>.
       </p>
 
       <p>
-        O microambiente infeccioso também pode apresentar variações locais de pH, disponibilidade de oxigênio, perfusão tecidual e acúmulo de detritos celulares. Essas condições influenciam tanto a atividade do antibacteriano quanto a eficácia da resposta imune do hospedeiro <sup>8,18,19,22</sup>.
+        O interior do biofilme apresenta características próprias que influenciam simultaneamente a atividade do antibacteriano e a resposta imune do hospedeiro. Alterações locais de pH, disponibilidade de oxigênio, perfusão tecidual e acúmulo de detritos celulares modificam tanto a difusão quanto a atividade do fármaco, contribuindo para a heterogeneidade da exposição no foco infeccioso <sup>11,23</sup>.
       </p>
 
       <p>
-        Em infecções associadas a dispositivos médicos, próteses ou tecidos com inflamação crônica, a organização em biofilme reduz a previsibilidade da resposta terapêutica baseada exclusivamente em testes de suscetibilidade <em>in vitro</em>. Nesses contextos, a interação entre estrutura do biofilme, microambiente local e exposição ao antibacteriano pode influenciar significativamente a dinâmica da infecção <sup>18,19</sup>.
+        Esses fatores explicam por que testes convencionais de suscetibilidade, realizados com bactérias em crescimento livre (<em>planktonic</em>), nem sempre reproduzem o comportamento observado em infecções associadas a biofilmes. Nesses contextos, a resposta clínica depende não apenas da suscetibilidade intrínseca do microrganismo, mas também da capacidade do antibacteriano de penetrar na matriz extracelular e manter exposição suficiente em todo o biofilme <sup>20,22</sup>.
       </p>
+
+      <aside class="cap4-p36-box cap4-p36-key cap4-p36-reveal">
+        Infecções associadas a biofilmes podem apresentar resposta terapêutica inferior ao esperado porque a suscetibilidade medida em bactérias livres nem sempre reflete a exposição e o comportamento metabólico das bactérias organizadas em matriz.
+      </aside>
 
     </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p35.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 4 · Página 36 de 89</div>
-  <a class="btn primary" href="p37.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="p35.html" aria-label="Ir para a página anterior">← Anterior</a>
+      <div class="center">Capítulo 4 · Página 36 de 89</div>
+      <a class="btn primary" href="p37.html" aria-label="Ir para a próxima página">Próxima →</a>
+    </nav>
 
   </main>
 

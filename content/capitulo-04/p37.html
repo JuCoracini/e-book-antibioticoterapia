@@ -1,93 +1,120 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Capítulo 4 — Página 37</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../../css/base.css">
-  <link rel="stylesheet" href="../../css/components.css">
-  <link rel="stylesheet" href="../../css/capitulo-04.css">
+  <link rel="stylesheet" href="../../css/base.css" />
+  <link rel="stylesheet" href="../../css/components.css" />
+  <link rel="stylesheet" href="../../css/capitulo-04.css" />
 </head>
 
 <body class="cap4-page37">
 
-<main class="page-shell">
+  <main class="page-shell cap4-shell">
 
-<header class="page-header">
-  <div class="chapter">Capítulo 4 — Farmacocinética e Farmacodinâmica Aplicadas</div>
-  <h1 class="page-title">Exposição antimicrobiana e dinâmica evolutiva</h1>
-</header>
+    <header class="page-header">
+      <div class="chapter">Capítulo 4 — Farmacocinética e Farmacodinâmica Aplicadas</div>
+      <h1 class="page-title">Exposição antimicrobiana e dinâmica evolutiva</h1>
+    </header>
 
-<section class="prose">
+    <section class="prose cap4-reading-flow">
 
-<p>
-A exposição ao antibacteriano não apenas reduz a carga bacteriana, mas também modifica a composição relativa da população microbiana residual. A intensidade e a consistência dessa exposição influenciam tanto a velocidade de erradicação bacteriana quanto a probabilidade de que subpopulações com menor suscetibilidade se tornem predominantes ao longo do tratamento <sup>1</sup>.
-</p>
-
-<p>
-Populações bacterianas apresentam variabilidade genética e fenotípica mesmo antes da exposição ao antibacteriano. Quando o tratamento é iniciado, as bactérias mais sensíveis tendem a ser eliminadas com maior rapidez, enquanto variantes com menor suscetibilidade relativa podem persistir. Esse processo altera progressivamente a distribuição de suscetibilidade dentro da população bacteriana <sup>1,3</sup>.
-</p>
-
-<!-- BLOCO VISUAL + INTERAÇÃO -->
-
-<section class="cap4-p37-block">
-
-  <figure class="cap4-p37-image">
-    <button data-zoom="../../assets/capitulo-04/imagens/dinamica-evolutiva.png">
-      <img src="../../assets/capitulo-04/imagens/dinamica-evolutiva.png" alt="Dinâmica evolutiva da população bacteriana sob exposição antimicrobiana">
-    </button>
-  </figure>
-
-  <div class="cap4-p37-interaction">
-
-    <div class="cap4-p37-controls">
-      <button class="p37-btn active" data-step="inicio">População inicial</button>
-      <button class="p37-btn" data-step="exposicao">Início da exposição</button>
-      <button class="p37-btn" data-step="selecao">Seleção progressiva</button>
-      <button class="p37-btn" data-step="predominio">Predomínio final</button>
-    </div>
-
-    <div class="cap4-p37-panel">
-      <p id="p37-text">
-        Pequenas diferenças de suscetibilidade já estão presentes antes do início da terapia, mesmo quando o microrganismo é classificado como sensível.
+      <p>
+        A exposição ao antibacteriano não apenas reduz a carga bacteriana, mas também modifica a composição da população bacteriana residual. A intensidade, a duração e a consistência dessa exposição determinam tanto a probabilidade de erradicação quanto o risco de seleção de variantes com menor suscetibilidade ao longo do tratamento <sup>1,6</sup>.
       </p>
-    </div>
 
-  </div>
+      <p>
+        Mesmo antes do início da terapia, populações bacterianas apresentam variabilidade genética e fenotípica. Durante a exposição ao antibacteriano, as bactérias mais suscetíveis tendem a ser eliminadas primeiro, enquanto variantes naturalmente menos suscetíveis podem permanecer viáveis quando a exposição farmacológica não é suficiente para erradicar toda a população <sup>1,3</sup>.
+      </p>
 
-</section>
+      <p>
+        A figura ilustra como a composição da população bacteriana se modifica ao longo do tratamento. Quando a exposição é adequada para atingir os alvos farmacocinéticos/farmacodinâmicos (PK/PD), a erradicação bacteriana é favorecida. Em contrapartida, exposições subótimas ou oscilantes mantêm pressão seletiva sobre a população residual, aumentando a probabilidade de predomínio de variantes menos suscetíveis.
+      </p>
 
-<p>
-Esse fenômeno torna-se mais provável quando a exposição ao antibacteriano oscila próxima ao limiar farmacodinâmico necessário para inibição bacteriana. Nessa situação, parte da população é suprimida, enquanto outras subpopulações permanecem viáveis. A repetição desse padrão ao longo de ciclos terapêuticos pode deslocar gradualmente a distribuição populacional para valores mais elevados de concentração inibitória mínima <sup>4,5</sup>.
-</p>
+      <figure class="figure cap4-p37-figure cap4-p37-reveal">
+        <button
+          type="button"
+          class="cap4-p37-figure__zoom"
+          data-zoom="../../assets/capitulo-04/imagens/dinamica-evolutiva-exposicao.png"
+          aria-label="Ampliar imagem sobre dinâmica evolutiva durante exposição antimicrobiana"
+        >
+          <img
+            src="../../assets/capitulo-04/imagens/dinamica-evolutiva-exposicao.png"
+            alt="Dinâmica evolutiva da população bacteriana durante a exposição ao antibacteriano"
+            loading="lazy"
+          />
+        </button>
 
-<p>
-A probabilidade desse deslocamento aumenta em cenários de alta carga bacteriana, presença de compartimentos com penetração heterogênea ou variabilidade farmacocinética interindividual. Nessas condições, a concentração efetiva no foco infeccioso pode não refletir a concentração plasmática medida, resultando em exposição subótima em determinados microambientes <sup>9,23</sup>.
-</p>
+        <figcaption class="caption cap4-p37-caption">
+          Representação esquemática da dinâmica evolutiva da população bacteriana durante a exposição ao antibacteriano. A eliminação preferencial das bactérias mais suscetíveis modifica progressivamente a distribuição populacional quando a erradicação não é completa.
+        </figcaption>
+      </figure>
 
-<p>
-Alterações no volume de distribuição, depuração renal acelerada ou diferenças na ligação a proteínas plasmáticas podem reduzir o tempo em que a concentração livre permanece acima da CIM ou diminuir a exposição total ao antibacteriano. Reduções sustentadas nesses parâmetros podem não produzir falha terapêutica imediata, mas alteram gradualmente o ambiente seletivo da população bacteriana <sup>7,9</sup>.
-</p>
+      <section class="cap4-p37-guide cap4-p37-reveal" aria-label="Leitura guiada da dinâmica evolutiva">
+        <div class="cap4-p37-guideHead">
+          
+          <p>
+            Clique nas etapas para acompanhar a sequência evolutiva durante a exposição ao antibacteriano.
+          </p>
+        </div>
 
-<p>
-Assim, a dinâmica evolutiva observada durante o tratamento antimicrobiano resulta da interação entre três elementos principais: exposição farmacológica, heterogeneidade da população bacteriana e condições do microambiente infeccioso. A compreensão desses fatores ajuda a explicar por que esquemas antimicrobianos inadequados podem favorecer a seleção de variantes menos suscetíveis ao longo do tempo <sup>2,5</sup>.
-</p>
+        <div class="cap4-p37-steps" role="tablist" aria-label="Etapas da seleção de variantes">
+          <button type="button" class="is-active" data-p37-step="inicial" role="tab" aria-selected="true">
+            1. População inicial
+          </button>
+          <button type="button" data-p37-step="exposicao" role="tab" aria-selected="false">
+            2. Início da exposição
+          </button>
+          <button type="button" data-p37-step="selecao" role="tab" aria-selected="false">
+            3. Seleção progressiva
+          </button>
+          <button type="button" data-p37-step="predominio" role="tab" aria-selected="false">
+            4. Predomínio
+          </button>
+        </div>
 
-</section>
+        <div class="cap4-p37-panel" aria-live="polite">
+          <div class="cap4-p37-eyebrow" id="cap4-p37-eyebrow">Antes do tratamento</div>
+          <h3 id="cap4-p37-title">População bacteriana heterogênea</h3>
+          <p id="cap4-p37-text">
+            Antes da exposição ao antibacteriano, já existem pequenas diferenças naturais de suscetibilidade entre as bactérias da população.
+          </p>
+        </div>
+      </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p36.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 4 · Página 37 de 89</div>
-  <a class="btn primary" href="p38.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+      <p>
+        A seleção de variantes depende da relação entre a exposição ao antibacteriano e a suscetibilidade da população bacteriana. Quando a concentração efetiva permanece próxima ao limiar farmacodinâmico necessário para inibição bacteriana, parte da população é eliminada, enquanto subpopulações menos suscetíveis continuam expostas à pressão seletiva. Esse fenômeno corresponde ao conceito da janela de seleção mutante, no qual a exposição favorece a sobrevivência relativa dessas variantes <sup>5,6</sup>.
+      </p>
 
-</main>
+      <p>
+        A probabilidade de seleção aumenta em situações nas quais a exposição ao fármaco é reduzida ou heterogênea, como alta carga bacteriana, penetração tecidual limitada, aumento do volume de distribuição, depuração renal acelerada ou variabilidade farmacocinética entre pacientes. Nesses cenários, a concentração alcançada no foco infeccioso pode ser insuficiente para atingir os índices farmacodinâmicos associados à erradicação bacteriana, mesmo quando as concentrações plasmáticas parecem adequadas <sup>9,10,19</sup>.
+      </p>
 
-<script src="../../js/app.js"></script>
-<script src="../../js/capitulo-04.js"></script>
+      <p>
+        Ao longo de exposições repetidas, esse processo pode deslocar gradualmente a distribuição de suscetibilidade da população bacteriana, resultando em aumento progressivo dos valores de concentração inibitória mínima (CIM) e maior probabilidade de falha microbiológica <sup>1,6</sup>.
+      </p>
 
+      <aside class="cap4-p37-box cap4-p37-key cap4-p37-reveal">
+        A resistência não surge porque o antibacteriano induz novas mutações, mas porque a exposição farmacológica atua como um agente seletivo, favorecendo a permanência e a expansão de variantes previamente existentes na população bacteriana. Por esse motivo, a otimização da exposição ao fármaco constitui um dos principais objetivos da farmacocinética e da farmacodinâmica aplicadas à terapia antibacteriana <sup>2,4</sup>.
+      </aside>
+
+    </section>
+
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="p36.html" aria-label="Ir para a página anterior">← Anterior</a>
+      <div class="center">Capítulo 4 · Página 37 de 89</div>
+      <a class="btn primary" href="p38.html" aria-label="Ir para a próxima página">Próxima →</a>
+    </nav>
+
+  </main>
+
+  <script src="../../js/app.js"></script>
+  <script src="../../js/capitulo-04.js"></script>
 </body>
 </html>

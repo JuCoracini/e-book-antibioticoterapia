@@ -1,235 +1,92 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Capítulo 3 — Página 29</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="../../css/base.css"/>
-  <link rel="stylesheet" href="../../css/components.css"/>
-  <link rel="stylesheet" href="../../css/capitulo-03.css"/>
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/capitulo-03.css">
 </head>
 
 <body class="cap3-page29">
-
   <main class="page-shell cap3-shell">
-
     <header class="page-header">
-      <div>
-        <div class="chapter">Capítulo 3 — Mecanismos de Resistência Bacteriana</div>
-        <h1 class="page-title">Quiz de revisão</h1>
-      </div>
+      <div class="chapter">Capítulo 3 — Mecanismos de Resistência Bacteriana</div>
+      <h1 class="page-title">Quiz de revisão</h1>
     </header>
 
-    <section class="prose cap3-reading-flow" aria-label="Introdução do quiz">
-      <p>
-        As situações a seguir articulam mecanismos de resistência bacteriana, padrão microbiológico e implicações clínicas. Em cada cenário, a interpretação adequada depende da relação entre o perfil observado e o mecanismo adaptativo mais provável.
-      </p>
-    </section>
-
     <section class="cap3-p29Quiz" data-cap3-p29 aria-label="Quiz de revisão do capítulo 3">
-
-      <div class="cap3-p29Status" aria-live="polite" data-p29-status>
-        <span class="cap3-p29Status__label">Leitura aplicada do capítulo</span>
-        <span class="cap3-p29Status__value">0 de 2 situações confirmadas</span>
+      <div class="cap3-p29Status" aria-live="polite">
+        <span class="cap3-p29Status__value" data-p29-progress>Situação 1 de 2</span>
+        <div class="cap3-p29Dots" aria-hidden="true">
+          <span class="is-active"></span>
+          <span></span>
+        </div>
       </div>
 
-      <article class="cap3-p29Question" data-q="1" data-question-state="pending">
-        <div class="cap3-p29QuestionHeader">
-          <span class="cap3-p29Kicker">Situação clínica 1</span>
-          <h2 class="cap3-p29QuestionTitle">Inativação enzimática de β-lactâmicos</h2>
-        </div>
-
-        <p class="cap3-p29Case">
-          Um paciente hospitalizado apresenta infecção por <em>Klebsiella pneumoniae</em>. O antibiograma mostra resistência simultânea a diversas cefalosporinas de terceira geração, mas o microrganismo permanece suscetível a uma combinação de β-lactâmico associada a inibidor de β-lactamase.
+      <article class="cap3-p29Question" data-p29-question>
+        <span class="cap3-p29Kicker" data-p29-kicker>Situação clínica 1</span>
+        <p class="cap3-p29Case" data-p29-case>
+          Um paciente hospitalizado apresenta infecção por <em>Klebsiella pneumoniae</em>. O antibiograma demonstra resistência a diferentes cefalosporinas de terceira geração, e um teste fenotípico complementar evidencia restauração da atividade do β-lactâmico na presença de um inibidor de β-lactamase.
         </p>
-
-        <p class="cap3-p29Prompt">
+        <p class="cap3-p29Prompt" data-p29-prompt>
           Qual mecanismo de resistência é mais compatível com esse padrão microbiológico?
         </p>
 
-        <div class="cap3-p29Options" role="group" aria-label="Alternativas da situação clínica 1">
-          <button type="button" data-answer="a">
-            <span class="cap3-p29Letter">A</span>
-            <span>Modificação do alvo ribossomal.</span>
-          </button>
-
-          <button type="button" data-answer="b" data-correct="true">
-            <span class="cap3-p29Letter">B</span>
-            <span>Produção de β-lactamase com atividade contra cefalosporinas.</span>
-          </button>
-
-          <button type="button" data-answer="c">
-            <span class="cap3-p29Letter">C</span>
-            <span>Redução da permeabilidade da membrana bacteriana.</span>
-          </button>
-
-          <button type="button" data-answer="d">
-            <span class="cap3-p29Letter">D</span>
-            <span>Alteração da DNA girase.</span>
-          </button>
-        </div>
+        <div class="cap3-p29Options" role="group" aria-label="Alternativas da situação clínica" data-p29-options></div>
 
         <div class="cap3-p29Actions">
-          <button class="cap3-p29Btn cap3-p29Btn--primary" type="button" data-p29-action="confirm" disabled>
-            Confirmar interpretação
-          </button>
-          <button class="cap3-p29Btn cap3-p29Btn--ghost" type="button" data-p29-action="reset" hidden>
-            Refazer
-          </button>
+          <button class="cap3-p29Btn cap3-p29Btn--primary" type="button" data-p29-confirm disabled>Confirmar análise</button>
+          <button class="cap3-p29Btn cap3-p29Btn--ghost" type="button" data-p29-reset hidden>Rever decisão</button>
         </div>
 
-        <div class="cap3-p29Feedback" role="region" aria-live="polite"></div>
-
-        <template class="cap3-p29FeedbackMap">
-{
-  "a": {
-    "type": "error",
-    "title": "Mecanismo incompatível",
-    "text": "A modificação do alvo ribossomal compromete a atividade de fármacos que atuam sobre a síntese proteica, como macrolídeos, e não explica isoladamente o padrão descrito com cefalosporinas de terceira geração."
-  },
-  "b": {
-    "type": "correct",
-    "title": "Interpretação adequada",
-    "text": "A produção de β-lactamases é um dos mecanismos mais comuns de resistência aos β-lactâmicos. Essas enzimas hidrolisam o anel β-lactâmico e inativam o antibacteriano antes que ele alcance seu alvo molecular. Em alguns casos, a associação com inibidores de β-lactamase pode restaurar parcialmente a atividade do fármaco, o que explica o padrão observado no antibiograma."
-  },
-  "c": {
-    "type": "error",
-    "title": "Hipótese incompleta",
-    "text": "A redução da permeabilidade pode contribuir para resistência a β-lactâmicos, mas o achado de suscetibilidade a uma combinação com inibidor de β-lactamase favorece mais fortemente a hipótese de produção de enzima inativadora."
-  },
-  "d": {
-    "type": "error",
-    "title": "Mecanismo inadequado",
-    "text": "Alterações em DNA girase estão relacionadas principalmente à resistência a fluoroquinolonas. Não correspondem ao padrão de resistência seletiva a cefalosporinas descrito no caso."
-  }
-}
-        </template>
+        <div class="cap3-p29Feedback" role="region" aria-live="polite" data-p29-feedback></div>
       </article>
 
-      <article class="cap3-p29Question" data-q="2" data-question-state="pending">
-        <div class="cap3-p29QuestionHeader">
-          <span class="cap3-p29Kicker">Situação clínica 2</span>
-          <h2 class="cap3-p29QuestionTitle">Resistência cruzada em fluoroquinolonas</h2>
-        </div>
-
-        <p class="cap3-p29Case">
-          Um isolado bacteriano apresenta resistência simultânea a diversas fluoroquinolonas, embora pertença a uma espécie historicamente sensível a essa classe. Estudos laboratoriais demonstram mutação na enzima DNA girase.
-        </p>
-
-        <p class="cap3-p29Prompt">
-          Qual conceito melhor descreve esse fenômeno?
-        </p>
-
-        <div class="cap3-p29Options" role="group" aria-label="Alternativas da situação clínica 2">
-          <button type="button" data-answer="a">
-            <span class="cap3-p29Letter">A</span>
-            <span>Resistência intrínseca.</span>
-          </button>
-
-          <button type="button" data-answer="b" data-correct="true">
-            <span class="cap3-p29Letter">B</span>
-            <span>Resistência cruzada dentro da mesma classe de antibacterianos.</span>
-          </button>
-
-          <button type="button" data-answer="c">
-            <span class="cap3-p29Letter">C</span>
-            <span>Multirresistência associada a múltiplos mecanismos independentes.</span>
-          </button>
-
-          <button type="button" data-answer="d">
-            <span class="cap3-p29Letter">D</span>
-            <span>Resistência causada por transferência horizontal de plasmídeo.</span>
-          </button>
-        </div>
-
-        <div class="cap3-p29Actions">
-          <button class="cap3-p29Btn cap3-p29Btn--primary" type="button" data-p29-action="confirm" disabled>
-            Confirmar interpretação
-          </button>
-          <button class="cap3-p29Btn cap3-p29Btn--ghost" type="button" data-p29-action="reset" hidden>
-            Refazer
-          </button>
-        </div>
-
-        <div class="cap3-p29Feedback" role="region" aria-live="polite"></div>
-
-        <template class="cap3-p29FeedbackMap">
-{
-  "a": {
-    "type": "error",
-    "title": "Classificação inadequada",
-    "text": "A resistência intrínseca é uma característica natural e previsível da espécie bacteriana. No caso descrito, trata-se de uma espécie historicamente sensível que passou a apresentar resistência por alteração adquirida."
-  },
-  "b": {
-    "type": "correct",
-    "title": "Interpretação adequada",
-    "text": "Quando uma única alteração molecular reduz a suscetibilidade a diferentes antibacterianos que compartilham o mesmo alvo molecular, ocorre resistência cruzada. No caso das fluoroquinolonas, mutações na DNA girase ou na topoisomerase IV podem afetar simultaneamente diversos fármacos dessa classe."
-  },
-  "c": {
-    "type": "error",
-    "title": "Conceito excessivo",
-    "text": "A multirresistência implica resistência a múltiplas classes distintas, geralmente associada à combinação de mecanismos. O caso descreve um único mecanismo afetando vários fármacos da mesma classe."
-  },
-  "d": {
-    "type": "error",
-    "title": "Mecanismo não demonstrado",
-    "text": "A questão informa uma mutação em DNA girase, o que aponta para alteração do alvo molecular. Não há dado que sustente transferência horizontal de plasmídeo como mecanismo principal."
-  }
-}
-        </template>
-      </article>
-
-      <section class="cap3-p29Completion" data-p29-completion hidden aria-live="polite">
-        <div class="cap3-p29Completion__header">
-          <span class="cap3-p29Completion__kicker">Fechamento clínico</span>
-          <h2 class="cap3-p29Completion__title">Síntese da interpretação dos mecanismos de resistência</h2>
-        </div>
-
-        <p class="cap3-p29Completion__text" data-p29-completion-text>
-          Ao final deste capítulo, a resistência bacteriana já não pode ser compreendida como simples resultado laboratorial isolado. Sua interpretação depende da relação entre alvo farmacológico, adaptação bacteriana, padrão de suscetibilidade e contexto clínico-epidemiológico.
-        </p>
-      </section>
-
-      <div class="cap3-p29ClosingBlock">
-        <p>
-          Ao final deste capítulo, a resistência bacteriana já não pode ser compreendida como simples resultado laboratorial isolado. Sua interpretação depende da relação entre alvo farmacológico, adaptação bacteriana, padrão de suscetibilidade e contexto clínico-epidemiológico.
-        </p>
+      <div class="cap3-p29Controls">
+        <button type="button" data-p29-prev disabled>← Situação anterior</button>
+        <button type="button" data-p29-next disabled>Próxima situação →</button>
       </div>
     </section>
 
     <details class="cap3-refBox">
-      <summary>Referências</summary>
+      <summary>
+        <div class="cap3-refHeader">
+          <div class="cap3-refText"><strong>Referências</strong></div>
+          <div class="cap3-refAction"></div>
+        </div>
+      </summary>
+
       <div class="cap3-refContent">
-        <p>1. Blair JMA, Webber MA, Baylay AJ, Ogbolu DO, Piddock LJV. Molecular mechanisms of antibiotic resistance. Nat Rev Microbiol. 2015 Jan 1;13(1):42–51. doi:10.1038/nrmicro3380</p>
-        <p>2. Murray PR, Rosenthal KS, Pfaller MA. Medical Microbiology. 10th ed. Philadelphia: Elsevier; 2025.</p>
-        <p>3. Munita JM, Arias CA. Mechanisms of Antibiotic Resistance. Microbiol Spectr. 2016 Mar 25;4(2). doi:10.1128/microbiolspec.VMBF-0016-2015</p>
-        <p>4. Pankey GA, Sabath LD. Clinical Relevance of Bacteriostatic versus Bactericidal Mechanisms of Action in the Treatment of Gram-Positive Bacterial Infections. Clin Infect Dis. 2004 Mar 15;38(6):864–70. doi:10.1086/381972</p>
-        <p>5. Blaser MJ, Cohen JI, Holland SM, editors. Mandell, Douglas, and Bennett’s Principles and Practice of Infectious Diseases. 10th ed. Philadelphia: Elsevier; 2025.</p>
-        <p>6. Bush K, Bradford PA. Epidemiology of β-Lactamase-Producing Pathogens. Clin Microbiol Rev. 2020 Mar 18;33(2). doi:10.1128/CMR.00047-19</p>
-        <p>7. Davies J, Davies D. Origins and Evolution of Antibiotic Resistance. Microbiol Mol Biol Rev. 2010 Sep;74(3):417–33. doi:10.1128/MMBR.00016-10</p>
-        <p>8. Thomas CM, Nielsen KM. Mechanisms of, and Barriers to, Horizontal Gene Transfer between Bacteria. Nat Rev Microbiol. 2005 Sep 1;3(9):711–21. doi:10.1038/nrmicro1234</p>
-        <p>9. Li XZ, Plésiat P, Nikaido H. The Challenge of Efflux-Mediated Antibiotic Resistance in Gram-Negative Bacteria. Clin Microbiol Rev. 2015 Apr;28(2):337–418. doi:10.1128/CMR.00117-14</p>
+        <p>1. Blair JMA, Webber MA, Baylay AJ, Ogbolu DO, Piddock LJV. Molecular mechanisms of antibiotic resistance. Nat Rev Microbiol. 2015;13(1):42–51. doi:10.1038/nrmicro3380.</p>
+        <p>2. Belay WY, Getachew M, Tegegne BA, Teffera ZH, Dagne A, Zeleke TK, et al. Mechanism of antibacterial resistance, strategies and next-generation antimicrobials to contain antimicrobial resistance: a review. Front Pharmacol. 2024;15. doi:10.3389/fphar.2024.1444781.</p>
+        <p>3. Darby EM, Trampari E, Siasat P, Gaya MS, Alav I, Webber MA, et al. Molecular mechanisms of antibiotic resistance revisited. Nat Rev Microbiol. 2023;21(5):280–295. doi:10.1038/s41579-022-00820-y.</p>
+        <p>4. Munita JM, Arias CA. Mechanisms of antibiotic resistance. Microbiol Spectr. 2016;4(2). doi:10.1128/microbiolspec.VMBF-0016-2015.</p>
+        <p>5. Davies J, Davies D. Origins and evolution of antibiotic resistance. Microbiol Mol Biol Rev. 2010;74(3):417–433. doi:10.1128/MMBR.00016-10.</p>
+        <p>6. Thomas CM, Nielsen KM. Mechanisms of, and barriers to, horizontal gene transfer between bacteria. Nat Rev Microbiol. 2005;3(9):711–721. doi:10.1038/nrmicro1234.</p>
+        <p>7. Michaelis C, Grohmann E. Horizontal gene transfer of antibiotic resistance genes in biofilms. Antibiotics. 2023;12(2):328. doi:10.3390/antibiotics12020328.</p>
+        <p>8. Murray PR, Rosenthal KS, Pfaller MA. Medical Microbiology. 10th ed. Philadelphia: Elsevier; 2025.</p>
+        <p>9. Blaser MJ, Cohen JI, Holland SM, editors. Mandell, Douglas, and Bennett’s Principles and Practice of Infectious Diseases. 10th ed. Philadelphia: Elsevier; 2025.</p>
+        <p>10. Bush K, Bradford PA. Epidemiology of β-lactamase-producing pathogens. Clin Microbiol Rev. 2020;33(2). doi:10.1128/CMR.00047-19.</p>
+        <p>11. von Wintersdorff CJH, Penders J, van Niekerk JM, Mills ND, Majumder S, van Alphen LB, et al. Dissemination of antimicrobial resistance in microbial ecosystems through horizontal gene transfer. Front Microbiol. 2016;7. doi:10.3389/fmicb.2016.00173.</p>
+        <p>12. Prescott LM, Willey JM, Sherwood LM, Woolverton CJ. Prescott’s Microbiology. 12th ed. McGraw-Hill; 2023.</p>
+        <p>13. Bush K, Bradford PA. β-Lactams and β-lactamase inhibitors: an overview. Cold Spring Harb Perspect Med. 2016;6(8):a025247. doi:10.1101/cshperspect.a025247.</p>
+        <p>14. Bush K. Past and present perspectives on β-lactamases. Antimicrob Agents Chemother. 2018;62(10). doi:10.1128/AAC.01076-18.</p>
+        <p>15. Magiorakos AP, Srinivasan A, Carey RB, Carmeli Y, Falagas ME, Giske CG, et al. Multidrug-resistant, extensively drug-resistant and pandrug-resistant bacteria: an international expert proposal for interim standard definitions for acquired resistance. Clin Microbiol Infect. 2012;18(3):268–281. doi:10.1111/j.1469-0691.2011.03570.x.</p>
       </div>
     </details>
 
-
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p28.html" aria-label="Ir para a página anterior">← Anterior</a>
-
-  <div class="center">Capítulo 3 · Página 29 de 89</div>
-
-  <a class="btn primary" href="../capitulo-04/p30.html" aria-label="Ir para a próxima página">
-    Próxima →
-  </a>
-</nav>
-
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="p28.html" aria-label="Ir para a página anterior">← Anterior</a>
+      <div class="center">Capítulo 3 · Página 29 de 89</div>
+      <a class="btn primary" href="../capitulo-04/p30.html" aria-label="Ir para a próxima página">Próxima →</a>
+    </nav>
   </main>
 
   <script src="../../js/app.js"></script>

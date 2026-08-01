@@ -3,9 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 7 — Página 64</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -17,66 +24,219 @@
 <main class="page-shell">
 
   <header class="page-header">
-    <div class="chapter">Capítulo 7 — Principais Efeitos Adversos por Classe</div>
-    <h1 class="page-title">Inibidores da síntese proteica</h1>
+    <div class="chapter">
+      Capítulo 7 — Principais Efeitos Adversos por Classe
+    </div>
+
+    <h1 class="page-title">
+      Inibidores da síntese proteica
+    </h1>
   </header>
 
   <section class="prose cap7-p64">
 
     <p>
-      Os antibacterianos que inibem a síntese proteica exploram diferenças estruturais entre os ribossomos bacterianos 70S e os ribossomos citoplasmáticos humanos 80S. Essa distinção é fundamental para a seletividade terapêutica dessa classe. Entretanto, existe um ponto de convergência biologicamente relevante: as mitocôndrias humanas possuem ribossomos funcionalmente semelhantes aos ribossomos bacterianos, refletindo sua origem evolutiva <sup>2,9</sup>.
+      Os antibacterianos que inibem a síntese proteica exploram diferenças estruturais entre os ribossomos bacterianos 70S e os ribossomos citoplasmáticos humanos 80S. Essa distinção explica sua seletividade terapêutica. Entretanto, as mitocôndrias humanas possuem ribossomos 55S com características estruturais e funcionais semelhantes às estruturas bacterianas, refletindo sua origem evolutiva endossimbiótica <sup>9,11</sup>.
     </p>
 
     <p>
-      Essa proximidade explica parte do perfil de toxicidade observado em algumas classes de antibacterianos que atuam na síntese proteica. Quando a exposição é prolongada ou cumulativa, a interferência sobre ribossomos mitocondriais pode comprometer a produção de proteínas envolvidas na fosforilação oxidativa. Tecidos com alta demanda energética ou elevada taxa de renovação celular tornam-se particularmente vulneráveis <sup>3</sup>.
+      Durante exposições prolongadas ou cumulativas, alguns desses fármacos podem interferir na tradução de proteínas mitocondriais essenciais à fosforilação oxidativa. A redução da produção de ATP torna mais vulneráveis os tecidos com elevada demanda energética ou intensa renovação celular <sup>1</sup>.
     </p>
 
     <p>
-      Clinicamente, essa interferência pode se manifestar como alterações hematológicas, neuropatia periférica ou, em situações raras, acidose láctica associada à disfunção mitocondrial <sup>9</sup>.
+      Na prática clínica, essa disfunção pode manifestar-se por mielossupressão, neuropatia periférica, neuropatia óptica e, mais raramente, acidose láctica. A linezolida ilustra esse mecanismo: o risco de anemia e trombocitopenia aumenta sobretudo em tratamentos prolongados, geralmente superiores a duas semanas <sup>11</sup>.
     </p>
 
-    <figure class="figure cap7-p64-figure">
-      <img
-        src="../../assets/capitulo-07/imagens/ribossomos-mitocondrias-toxicidade.png"
-        alt="Esquema destacando medula óssea com alterações hematológicas e sistema nervoso com neuropatia periférica como manifestações relacionadas à toxicidade dos inibidores da síntese proteica"
-        data-zoom
-      />
-      <figcaption class="caption">
-        A interferência em ribossomos mitocondriais pode se expressar clinicamente em tecidos mais vulneráveis, com destaque para alterações hematológicas e neuropatia periférica.
+    <figure class="figure cap7-p64-figure cap7-p64-reveal">
+
+      <button
+        type="button"
+        class="cap7-p64-figure__zoom"
+        data-zoom="../../assets/capitulo-07/imagens/sintese-proteica-toxicidade-mitocondrial.png"
+        aria-label="Ampliar figura sobre toxicidade mitocondrial dos inibidores da síntese proteica"
+      >
+        <img
+          src="../../assets/capitulo-07/imagens/sintese-proteica-toxicidade-mitocondrial.png"
+          alt="Sequência mostrando o alvo ribossomal bacteriano, a semelhança com ribossomos mitocondriais, a interferência na síntese de proteínas mitocondriais, a redução da produção de ATP e as consequências clínicas"
+          loading="lazy"
+        >
+      </button>
+
+      <figcaption class="caption cap7-p64-caption">
+        Relação entre a inibição da síntese proteica bacteriana, a interferência mitocondrial e o comprometimento de tecidos vulneráveis.
       </figcaption>
+
     </figure>
 
-    <p>
-      A toxicidade hematológica relacionada às oxazolidinonas ilustra esse mecanismo. Fármacos como a linezolida podem produzir mielossupressão quando utilizados por períodos prolongados. O risco aumenta geralmente após duas semanas de tratamento e está associado à exposição cumulativa. Na maioria dos casos, o efeito é reversível após a suspensão do medicamento, mas terapias prolongadas exigem monitorização hematológica <sup>9</sup>.
-    </p>
+    <section
+      class="cap7-p64-case cap7-p64-reveal"
+      data-cap7-p64
+      aria-label="Interpretação clínica da toxicidade associada à linezolida"
+    >
 
-    <p>
-      Outras classes que atuam na síntese proteica apresentam padrões distintos de efeitos adversos. As tetraciclinas, por exemplo, podem depositar-se em tecidos calcificados em desenvolvimento, razão pela qual seu uso é restrito em determinadas faixas etárias <sup>2</sup>. Outro grupo, os macrolídeos podem interferir no metabolismo hepático e estão associados ao prolongamento do intervalo QT, especialmente em pacientes com fatores predisponentes ou em uso concomitante de outros fármacos com o mesmo efeito <sup>2</sup>.
-    </p>
+      <div class="cap7-p64-case__header">
+        <span class="cap7-p64-case__kicker">Aplicação clínica</span>
 
-    <p>
-      Eventos neurológicos também podem ocorrer durante exposições prolongadas a alguns antibacterianos dessa classe, sobretudo em pacientes com insuficiência renal ou em uso simultâneo de múltiplas medicações <sup>9</sup>.
-    </p>
+        <p>
+          Um homem de 63 anos permanece internado para tratamento de osteomielite por <em>Staphylococcus aureus</em> resistente à meticilina. Após três semanas de uso de linezolida, apresenta fadiga progressiva, parestesias nos membros inferiores e redução da hemoglobina e das plaquetas.
+        </p>
 
-    <p>
-      De modo geral, os efeitos adversos relacionados aos inibidores da síntese proteica dependem mais da duração da exposição do que de reações imunológicas imediatas. Terapias prolongadas, depuração reduzida do fármaco e reserva funcional limitada do paciente aumentam a probabilidade de toxicidade <sup>2,9</sup>.
-    </p>
+        <p class="cap7-p64-case__instruction">
+          Selecione cada etapa para interpretar a relação entre a exposição ao medicamento e as manifestações clínicas.
+        </p>
+      </div>
 
-    <p class="cap7-p64-closing">
-      O mesmo mecanismo que bloqueia a produção de proteínas bacterianas pode, portanto, interferir em processos celulares humanos quando há proximidade estrutural suficiente entre os sistemas biológicos envolvidos <sup>2,3</sup>.
-    </p>
+      <div
+        class="cap7-p64-tabs"
+        role="tablist"
+        aria-label="Etapas de interpretação do caso clínico"
+      >
+
+        <button
+          type="button"
+          class="cap7-p64-tab is-active"
+          role="tab"
+          id="cap7P64Tab1"
+          aria-controls="cap7P64Panel1"
+          aria-selected="true"
+          data-p64-step="exposicao"
+        >
+          <span class="cap7-p64-tab__number">1</span>
+          Exposição
+        </button>
+
+        <button
+          type="button"
+          class="cap7-p64-tab"
+          role="tab"
+          id="cap7P64Tab2"
+          aria-controls="cap7P64Panel2"
+          aria-selected="false"
+          tabindex="-1"
+          data-p64-step="estrutura"
+        >
+          <span class="cap7-p64-tab__number">2</span>
+          Estrutura afetada
+        </button>
+
+        <button
+          type="button"
+          class="cap7-p64-tab"
+          role="tab"
+          id="cap7P64Tab3"
+          aria-controls="cap7P64Panel3"
+          aria-selected="false"
+          tabindex="-1"
+          data-p64-step="manifestacao"
+        >
+          <span class="cap7-p64-tab__number">3</span>
+          Manifestação clínica
+        </button>
+
+      </div>
+
+      <div class="cap7-p64-panels" aria-live="polite">
+
+        <section
+          class="cap7-p64-panel"
+          id="cap7P64Panel1"
+          role="tabpanel"
+          aria-labelledby="cap7P64Tab1"
+          data-p64-panel="exposicao"
+        >
+          <p class="cap7-p64-panel__label">
+            Dado central do tratamento
+          </p>
+
+          <h2 class="cap7-p64-panel__title">
+            Exposição prolongada
+          </h2>
+
+          <p>
+            O dado mais relevante é a duração do tratamento. A toxicidade mitocondrial está relacionada à exposição cumulativa e se torna mais provável durante terapias prolongadas.
+          </p>
+        </section>
+
+        <section
+          class="cap7-p64-panel"
+          id="cap7P64Panel2"
+          role="tabpanel"
+          aria-labelledby="cap7P64Tab2"
+          data-p64-panel="estrutura"
+          hidden
+        >
+          <p class="cap7-p64-panel__label">
+            Mecanismo biológico
+          </p>
+
+          <h2 class="cap7-p64-panel__title">
+            Ribossomos mitocondriais
+          </h2>
+
+          <p>
+            A linezolida pode interferir na tradução de proteínas mitocondriais necessárias à fosforilação oxidativa, reduzindo a capacidade celular de produzir ATP.
+          </p>
+        </section>
+
+        <section
+          class="cap7-p64-panel"
+          id="cap7P64Panel3"
+          role="tabpanel"
+          aria-labelledby="cap7P64Tab3"
+          data-p64-panel="manifestacao"
+          hidden
+        >
+          <p class="cap7-p64-panel__label">
+            Repercussão clínica
+          </p>
+
+          <h2 class="cap7-p64-panel__title">
+            Tecidos mais vulneráveis
+          </h2>
+
+          <p>
+            A medula óssea, devido à intensa renovação celular, e o sistema nervoso, por sua elevada demanda energética, tornam-se particularmente suscetíveis à redução da função mitocondrial.
+          </p>
+        </section>
+
+      </div>
+
+    </section>
+
+    <aside class="cap7-p64-closing cap7-p64-reveal">
+      Nos inibidores da síntese proteica, a duração da exposição pode ser tão importante quanto a dose administrada. A toxicidade tende a surgir quando a interferência mitocondrial compromete tecidos de alta demanda energética ou renovação contínua.
+    </aside>
 
   </section>
 
   <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p63.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 7 · Página 64 de 89</div>
-  <a class="btn primary" href="p65.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+
+    <a
+      class="btn"
+      href="p63.html"
+      aria-label="Ir para a página anterior"
+    >
+      ← Anterior
+    </a>
+
+    <div class="center">
+      Capítulo 7 · Página 64 de 89
+    </div>
+
+    <a
+      class="btn primary"
+      href="p65.html"
+      aria-label="Ir para a próxima página"
+    >
+      Próxima →
+    </a>
+
+  </nav>
 
 </main>
 
 <script src="../../js/app.js"></script>
 <script src="../../js/capitulo-07.js"></script>
+
 </body>
 </html>

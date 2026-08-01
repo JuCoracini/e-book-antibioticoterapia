@@ -3,90 +3,242 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 2 — Página 17</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
   <link rel="stylesheet" href="../../css/capitulo-02.css" />
 </head>
 
-<body class="cap2-shell cap2-page17">
+<body class="cap2-page17">
 
-  <main class="page-shell">
+  <main class="page-shell cap2-shell">
 
     <header class="page-header">
-      <div class="chapter">Capítulo 2 — Mecanismos de Ação dos Antibacterianos</div>
-      <h1 class="page-title">Inibição do metabolismo do folato</h1>
+      <div class="chapter">
+        Capítulo 2 — Mecanismos de Ação dos Antibacterianos
+      </div>
+
+      <h1 class="page-title">
+        Inibição do metabolismo do folato
+      </h1>
     </header>
 
-    <section class="prose" aria-label="Texto principal">
-      <p>
-        A síntese de nucleotídeos, indispensáveis à formação de DNA e RNA, depende de reações metabólicas que utilizam derivados do folato como cofatores essenciais. Diferentemente das células humanas, que obtêm folato predominantemente por meio da dieta, muitas bactérias precisam sintetizá-lo a partir de precursores simples. Essa distinção metabólica constitui a base biológica da intervenção terapêutica nesse sistema <sup>1,2</sup>.
-      </p>
+    <section class="prose cap2-reading-flow">
 
       <p>
-        Na célula bacteriana, o folato participa de reações de transferência de unidades de um carbono necessárias à síntese de purinas e timidilato, etapas fundamentais para a produção de material genético. A interrupção dessa via metabólica compromete a disponibilidade de nucleotídeos e limita a capacidade replicativa do microrganismo.
-      </p>
-    </section>
-
-    <section class="cap2-p17-flow" data-folato aria-label="Via do folato e bloqueio farmacológico progressivo">
-
-      <p class="cap2-p17-intro">
-        A sequência a seguir mostra como a via do folato é progressivamente bloqueada por diferentes classes de antibacterianos.
+        A síntese de nucleotídeos, indispensáveis à formação de DNA e RNA, depende de reações metabólicas que utilizam derivados do folato como cofatores essenciais. Diferentemente das células humanas, que obtêm folato predominantemente por meio da dieta, muitas bactérias sintetizam folato <em>de novo</em> a partir de precursores simples. Essa diferença metabólica constitui a base da seletividade dos antibacterianos que atuam nessa via <sup>2</sup>.
       </p>
 
-      <figure class="cap2-p17-figure">
-        <button
-          class="cap2-p17-zoom"
-          type="button"
-          data-zoom="../../assets/capitulo-02/imagens/folato-via-geral.png"
-          aria-label="Ampliar imagem da via metabólica bacteriana do folato"
+      <p>
+        Na célula bacteriana, os derivados do tetrahidrofolato (THF) participam da transferência de unidades de um carbono necessárias à síntese de purinas e timidilato. A interrupção dessa via reduz progressivamente a disponibilidade de nucleotídeos e limita a capacidade de crescimento e multiplicação bacteriana <sup>2</sup>.
+      </p>
+
+      <section
+        class="cap2-p17v2-interaction cap2-p17v2-reveal"
+        data-cap2-p17v2
+        data-p17v2-state="via"
+        aria-label="Via bacteriana do folato e ação dos antibacterianos"
+      >
+
+        <p class="cap2-p17v2-intro">
+          Selecione a via geral ou uma estratégia farmacológica para observar onde ocorre o bloqueio e como ele afeta a produção de nucleotídeos.
+        </p>
+
+        <div
+          class="cap2-p17v2-tabs"
+          role="tablist"
+          aria-label="Via do folato e classes farmacológicas"
         >
-          <img
-            id="cap2P17Image"
-            src="../../assets/capitulo-02/imagens/folato-via-geral.png"
-            alt="Via metabólica bacteriana do folato"
-            loading="lazy"
-          />
-        </button>
+          <button
+            class="cap2-p17v2-tab is-active"
+            type="button"
+            role="tab"
+            id="cap2P17V2TabVia"
+            aria-selected="true"
+            aria-controls="cap2P17V2View"
+            tabindex="0"
+            data-p17v2-target="via"
+          >
+            Via do folato
+          </button>
 
-        <figcaption id="cap2P17Caption" class="caption">
-          Via metabólica bacteriana do folato. Clique para ampliar.
-        </figcaption>
-      </figure>
+          <button
+            class="cap2-p17v2-tab"
+            type="button"
+            role="tab"
+            id="cap2P17V2TabSulfonamidas"
+            aria-selected="false"
+            aria-controls="cap2P17V2View"
+            tabindex="-1"
+            data-p17v2-target="sulfonamidas"
+          >
+            Sulfonamidas
+          </button>
 
-      <div class="cap2-p17-controls">
-        <button class="btn ghost" type="button" id="cap2P17Prev" aria-label="Voltar uma etapa">← Etapa</button>
-        <div id="cap2P17Step" class="cap2-p17-step" aria-live="polite"></div>
-        <button class="btn primary" type="button" id="cap2P17Next" aria-label="Avançar uma etapa">Etapa →</button>
-      </div>
+          <button
+            class="cap2-p17v2-tab"
+            type="button"
+            role="tab"
+            id="cap2P17V2TabTrimetoprim"
+            aria-selected="false"
+            aria-controls="cap2P17V2View"
+            tabindex="-1"
+            data-p17v2-target="trimetoprim"
+          >
+            Trimetoprim
+          </button>
 
-      <div class="cap2-p17-panel" aria-live="polite">
-        <h2 id="cap2P17Title" class="cap2-p17-panel__title"></h2>
-        <div id="cap2P17Text" class="cap2-p17-panel__text"></div>
-      </div>
+          <button
+            class="cap2-p17v2-tab"
+            type="button"
+            role="tab"
+            id="cap2P17V2TabAssociacao"
+            aria-selected="false"
+            aria-controls="cap2P17V2View"
+            tabindex="-1"
+            data-p17v2-target="associacao"
+          >
+            SMX–TMP
+          </button>
+        </div>
+
+        <article
+          id="cap2P17V2View"
+          class="cap2-p17v2-view"
+          role="tabpanel"
+          aria-labelledby="cap2P17V2TabVia"
+          aria-live="polite"
+        >
+
+          <figure class="figure cap2-p17v2-figure">
+            <button
+              class="cap2-p17v2-zoom"
+              type="button"
+              data-zoom="../../assets/capitulo-02/imagens/folato-via-geral.png"
+              aria-label="Ampliar imagem da via bacteriana do folato"
+            >
+            <img
+  id="cap2P17V2Image"
+  class="cap2-p17v2-image--via"
+  src="../../assets/capitulo-02/imagens/folato-via-geral.png"
+  alt="Via metabólica bacteriana de síntese do folato"
+  loading="lazy"
+/>
+            </button>
+
+            <span class="cap2-p17v2-zoomHint" aria-hidden="true">
+              Clique na figura para ampliar
+            </span>
+
+            <figcaption
+              id="cap2P17V2Caption"
+              class="caption cap2-p17v2-caption"
+            >
+              Via metabólica bacteriana de síntese do folato.
+            </figcaption>
+          </figure>
+
+          <div class="cap2-p17v2-summary">
+
+            <div class="cap2-p17v2-summaryHeader">
+              <span
+                id="cap2P17V2Kicker"
+                class="cap2-p17v2-kicker"
+              >
+                Via metabólica
+              </span>
+
+              <h2
+                id="cap2P17V2Title"
+                class="cap2-p17v2-title"
+              >
+                Produção de folato e síntese de nucleotídeos
+              </h2>
+            </div>
+
+            <div
+              id="cap2P17V2Body"
+              class="cap2-p17v2-body"
+            >
+              <div class="cap2-p17v2-infoGrid">
+
+                <article class="cap2-p17v2-info">
+                  <span>Precursor inicial</span>
+                  <p>
+                    O PABA participa das etapas iniciais da síntese bacteriana do folato.
+                  </p>
+                </article>
+
+                <article class="cap2-p17v2-info">
+                  <span>Intermediário metabólico</span>
+                  <p>
+                    O ácido di-hidrofólico (DHF) é formado antes da etapa de redução enzimática.
+                  </p>
+                </article>
+
+                <article class="cap2-p17v2-info">
+                  <span>Cofator funcional</span>
+                  <p>
+                    O ácido tetrahidrofólico (THF) fornece unidades de um carbono para reações biossintéticas.
+                  </p>
+                </article>
+
+                <article class="cap2-p17v2-info cap2-p17v2-info--result">
+                  <span>Resultado biológico</span>
+                  <p>
+                    A via sustenta a produção de purinas, timidilato e, consequentemente, de DNA e RNA.
+                  </p>
+                </article>
+
+              </div>
+            </div>
+
+          </div>
+
+        </article>
+      </section>
+
+      <aside class="cap2-p17v2-selectivity cap2-p17v2-reveal">
+        Muitas bactérias dependem da síntese endógena do folato, enquanto as células humanas obtêm esse composto principalmente da dieta. Essa diferença permite a inibição preferencial da via bacteriana.
+      </aside>
+
+      <aside class="cap2-p17v2-response cap2-p17v2-reveal">
+        <strong>Resposta microbiológica:</strong> sulfonamidas e trimetoprim, quando utilizados isoladamente, apresentam efeito predominantemente bacteriostático em muitas bactérias suscetíveis. A associação sulfametoxazol–trimetoprim promove bloqueio sequencial da via e pode apresentar atividade bactericida, embora esse comportamento varie conforme a espécie bacteriana e as condições experimentais <sup>2,4,13</sup>.
+      </aside>
 
     </section>
 
-    <section class="prose" aria-label="Fechamento do texto">
-      <p>
-        A inibição do metabolismo do folato compromete principalmente a multiplicação bacteriana, ao reduzir a disponibilidade de precursores necessários à replicação do material genético. Diferentemente dos agentes que atuam diretamente sobre estruturas físicas da célula, o bloqueio metabólico produz impacto progressivo, dependente da redução intracelular de cofatores essenciais.
-      </p>
+    <nav class="pager" aria-label="Paginação">
+      <a
+        class="btn"
+        href="p16.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
 
-      <p>
-        Em modelos laboratoriais controlados, esses fármacos costumam apresentar efeito predominantemente bacteriostático quando usados isoladamente, embora a associação sulfametoxazol–trimetoprim possa apresentar efeito bactericida em determinados contextos microbiológicos <sup>4</sup>.
-      </p>
-    </section>
+      <div class="center">
+        Capítulo 2 · Página 17 de 89
+      </div>
 
- <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p16.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 2 · Página 17 de 89</div>
-  <a class="btn primary" href="p18.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+      <a
+        class="btn primary"
+        href="p18.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+    </nav>
 
   </main>
 

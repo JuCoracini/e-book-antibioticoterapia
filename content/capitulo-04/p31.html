@@ -7,7 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -16,112 +16,103 @@
 
 <body class="cap4-page31">
 
-  <main class="page-shell">
+  <main class="page-shell cap4-shell">
 
     <header class="page-header">
       <div class="chapter">Capítulo 4 — Farmacocinética e Farmacodinâmica Aplicadas</div>
-      <h1 class="page-title">Via de administração</h1>
+      <h1 class="page-title">Índices farmacodinâmicos: tempo, concentração e exposição total</h1>
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <section class="prose cap4-reading-flow">
 
       <p>
-        A exposição efetiva a um antibacteriano não depende exclusivamente da dose administrada, mas também da forma como o fármaco é introduzido no organismo. A via de administração constitui um determinante inicial da farmacocinética, pois influencia diretamente a velocidade com que a concentração sistêmica é alcançada, a previsibilidade dessa exposição e, em determinados casos, a própria extensão da biodisponibilidade do fármaco <sup>10–12</sup>.
+        A atividade dos antibacterianos não depende apenas da dose administrada, mas da forma como a exposição ao fármaco se relaciona com a suscetibilidade do microrganismo ao longo do tempo. Essa interação é descrita pelos principais índices farmacocinéticos/farmacodinâmicos (PK/PD), que correlacionam a curva concentração–tempo com a concentração inibitória mínima (CIM) e permitem prever a probabilidade de sucesso terapêutico para diferentes classes de antibacterianos <sup>6,7,12</sup>.
       </p>
 
-      <section class="cap4-p31-panorama" aria-labelledby="cap4-p31-panorama-title">
-        <div class="cap4-p31-panorama__head">
-          <p class="eyebrow">Modelo conceitual</p>
-          <h3 id="cap4-p31-panorama-title" class="cap4-p31-panorama__title">A via interfere na forma como a exposição sistêmica se constrói</h3>
-          <p class="cap4-p31-panorama__subtitle">
-            A dose administrada não se traduz automaticamente na mesma curva de exposição. O caminho de entrada do fármaco modifica a rapidez, a previsibilidade e a consistência com que a concentração sistêmica é alcançada.
-          </p>
+      <p>
+       Diferentes classes de antibacterianos dependem de aspectos distintos da curva concentração–tempo para exercer sua atividade. Em alguns casos, o fator predominante é o tempo durante o qual a concentração permanece acima da CIM; em outros, a intensidade do pico de concentração ou a exposição total ao longo do intervalo de tratamento.
+      </p>
+
+      <figure class="figure cap4-p31-figure cap4-p31-reveal">
+        <button
+          type="button"
+          class="cap4-p31-figure__zoom"
+          data-zoom="../../assets/capitulo-04/imagens/indices-pkpd-curva.png"
+          aria-label="Ampliar figura dos índices PK/PD"
+        >
+          <img
+            src="../../assets/capitulo-04/imagens/indices-pkpd-curva.png"
+            alt="Curva concentração-tempo destacando os índices %fT acima da CIM, Cmax sobre CIM e AUC sobre CIM"
+            loading="lazy"
+          />
+        </button>
+
+        <figcaption class="caption cap4-p31-caption">
+          Representação esquemática da curva concentração–tempo destacando os principais índices farmacocinéticos/farmacodinâmicos: %fT&gt;CIM, C<sub>max</sub>/CIM e AUC/CIM, e sua associação com diferentes padrões de atividade antibacteriana.
+        </figcaption>
+      </figure>
+
+      <section class="cap4-p31-guide cap4-p31-reveal" aria-label="Leitura prática da curva PK/PD">
+        <div class="cap4-p31-guide__head">
+          
+          <p>Observe qual aspecto da exposição é mais importante para cada padrão de atividade antibacteriana.</p>
         </div>
 
-        <figure class="figure cap4-p31-figure">
-          <button
-            type="button"
-            class="cap4-p31-figure__zoom"
-            data-zoom="../../assets/capitulo-04/imagens/via-panorama.png"
-            aria-label="Ampliar figura sobre dose, via de administração e exposição efetiva sistêmica"
-          >
-            <img
-              src="../../assets/capitulo-04/imagens/via-panorama.png"
-              alt="Esquema mostrando que dose administrada e via de administração determinam a exposição efetiva sistêmica."
-              loading="lazy"
-            />
-          </button>
-          <figcaption class="caption">
-            A exposição efetiva resulta da dose administrada, mas é fortemente modulada pela via de administração, que condiciona a forma como a curva concentração–tempo se estabelece.
-          </figcaption>
-        </figure>
-      </section>
-
-      <section class="cap4-p31-routes" aria-labelledby="cap4-p31-routes-title">
-        <div class="cap4-p31-routes__head">
-          <p class="eyebrow">Comparação clínica</p>
-          <h3 id="cap4-p31-routes-title" class="cap4-p31-routes__title">Como cada via modifica a exposição antimicrobiana</h3>
-          <p class="cap4-p31-routes__subtitle">
-            A diferença entre as vias não é apenas logística. Ela altera o comportamento farmacocinético inicial e, com isso, modifica a qualidade da exposição antimicrobiana.
-          </p>
-        </div>
-
-        <div class="cap4-p31-routes__controls" role="tablist" aria-label="Vias de administração">
-          <button
-            class="cap4-p31-routes__tab is-active"
-            type="button"
-            role="tab"
-            aria-selected="true"
-            data-p31-route="iv"
-          >
-            Intravenosa
+        <div class="cap4-p31-guide__controls" role="tablist" aria-label="Índices farmacodinâmicos">
+          <button class="cap4-p31-guide__chip is-active" type="button" role="tab" aria-selected="true" data-p31-index="tempo">
+            %fT&gt;CIM
           </button>
 
-          <button
-            class="cap4-p31-routes__tab"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            data-p31-route="oral"
-          >
-            Oral
+          <button class="cap4-p31-guide__chip" type="button" role="tab" aria-selected="false" data-p31-index="pico">
+            C<sub>max</sub>/CIM
           </button>
 
-          <button
-            class="cap4-p31-routes__tab"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            data-p31-route="parenteral"
-          >
-            Intramuscular / Subcutânea
+          <button class="cap4-p31-guide__chip" type="button" role="tab" aria-selected="false" data-p31-index="auc">
+            AUC/CIM
           </button>
         </div>
 
-        <div class="cap4-p31-routes__panel" aria-live="polite">
-          <div class="cap4-p31-routes__eyebrow" id="cap4-p31-eyebrow">Maior previsibilidade da exposição</div>
-          <h3 class="cap4-p31-routes__panelTitle" id="cap4-p31-title">Via intravenosa</h3>
-          <div class="cap4-p31-routes__text" id="cap4-p31-text">
+        <div class="cap4-p31-guide__panel" aria-live="polite">
+          <div class="cap4-p31-guide__eyebrow" id="cap4-p31-eyebrow">Tempo acima da CIM</div>
+          <h3 class="cap4-p31-guide__title" id="cap4-p31-title">%fT&gt;CIM</h3>
+          <div class="cap4-p31-guide__text" id="cap4-p31-text">
             <p>
-              Na administração intravenosa, o antibacteriano é introduzido diretamente na circulação sistêmica, resultando em biodisponibilidade completa e início imediato de exposição. Nesse cenário, não há etapa de absorção, e a variabilidade associada a esse processo é praticamente eliminada. Como consequência, a concentração plasmática torna-se mais previsível, especialmente em situações clínicas críticas, nas quais a estabilidade da exposição é determinante para o início da resposta terapêutica <sup>10–12</sup>.
+              O efeito depende do tempo em que a concentração livre do antibacteriano permanece acima da CIM.
+            </p>
+            <p>
+              <strong>Principal classe:</strong> β-lactâmicos.
             </p>
           </div>
         </div>
       </section>
 
       <p>
-        Dessa forma, a via de administração deve ser compreendida como um componente estrutural da exposição antimicrobiana. Ela estabelece as condições iniciais sob as quais a concentração sistêmica será alcançada, influenciando a rapidez, a previsibilidade e a consistência dessa exposição ao longo do tempo. Esses elementos condicionam o comportamento farmacocinético do antibacteriano e definem o cenário para sua relação com a atividade antimicrobiana no contexto clínico específico <sup>10–12</sup>.
+        Os antibacterianos tempo-dependentes, como os β-lactâmicos, apresentam melhor resposta quando a fração livre do fármaco permanece acima da CIM durante parte significativa do intervalo entre doses. Nesses medicamentos, aumentos expressivos da concentração máxima costumam produzir benefício adicional limitado após a concentração exceder adequadamente esse limiar. Assim, estratégias que prolongam o tempo de exposição podem favorecer o alcance do alvo farmacodinâmico <sup>7,13</sup>.
+      </p>
+
+      <p>
+        Nos antibacterianos concentração-dependentes, representados classicamente pelos aminoglicosídeos, a intensidade do efeito bactericida relaciona-se principalmente com a magnitude da concentração máxima em relação à CIM. Quanto maior essa relação, maior tende a ser a velocidade inicial de redução da carga bacteriana <sup>6,14</sup>.
+      </p>
+
+      <p>
+        Algumas classes, como as fluoroquinolonas, os glicopeptídeos e as oxazolidinonas, apresentam melhor correlação entre eficácia e exposição total ao fármaco, representada pela razão AUC/CIM. Nesse cenário, tanto a intensidade quanto a duração da exposição contribuem para o efeito antimicrobiano, tornando a área sob a curva o principal parâmetro farmacodinâmico <sup>6–8</sup>.
+      </p>
+
+      <aside class="cap4-p31-box cap4-p31-key cap4-p31-reveal">
+        Embora esses índices sejam apresentados separadamente para fins didáticos, eles representam diferentes formas de interpretar a mesma curva concentração–tempo. O índice predominante varia conforme o mecanismo de ação e as características farmacodinâmicas de cada classe de antibacterianos <sup>12</sup>.
+      </aside>
+
+      <p>
+        Alterações farmacocinéticas, como aumento do volume de distribuição, modificações da depuração renal ou hepática e mudanças na fração livre do fármaco, podem alterar a curva concentração–tempo e reduzir a probabilidade de atingir o alvo PK/PD associado à eficácia terapêutica, mesmo quando a dose administrada permanece inalterada <sup>9,10</sup>.
       </p>
 
     </section>
 
- <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p30.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 4 · Página 31 de 89</div>
-  <a class="btn primary" href="p32.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
-
-
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="p30.html" aria-label="Ir para a página anterior">← Anterior</a>
+      <div class="center">Capítulo 4 · Página 31 de 89</div>
+      <a class="btn primary" href="p32.html" aria-label="Ir para a próxima página">Próxima →</a>
+    </nav>
 
   </main>
 

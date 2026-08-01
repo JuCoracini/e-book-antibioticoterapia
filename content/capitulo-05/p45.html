@@ -3,11 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 5 — Página 45</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -19,137 +24,240 @@
   <main class="page-shell">
 
     <header class="page-header">
-      <div class="chapter">Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma</div>
-      <h1 class="page-title">Teste de sensibilidade</h1>
+      <div class="chapter">
+        Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma
+      </div>
+
+      <h1 class="page-title">
+        Teste de suscetibilidade aos antimicrobianos
+      </h1>
     </header>
 
-    <section class="prose" aria-label="Texto principal">
-
-      <p class="eyebrow center-note">Microdiluição em caldo e determinação da CIM</p>
+    <section class="prose cap5-p45-reading">
 
       <p>
-        Outro método amplamente utilizado é a microdiluição em caldo, que permite determinar a concentração inibitória mínima (CIM).
+        Até este ponto, o laboratório já respondeu a uma pergunta fundamental: qual bactéria foi isolada? O passo seguinte é avaliar como esse microrganismo se comporta diante dos antibacterianos disponíveis.
       </p>
 
       <p>
-        Nesse procedimento, a bactéria é exposta a concentrações progressivamente crescentes do antibacteriano em meio líquido, organizadas em diluições seriadas, geralmente em progressão de base dois.
+        Para isso, realiza-se o teste de suscetibilidade aos antimicrobianos, conhecido na prática clínica como antibiograma. O exame avalia a resposta da bactéria a diferentes antibacterianos em condições laboratoriais rigorosamente padronizadas, permitindo estimar a probabilidade de inibição do crescimento bacteriano <sup>1,3</sup>.
       </p>
 
-      <section class="cap5-p45-cim" aria-labelledby="cap5-p45-cim-title">
-        <div class="cap5-p45-cim__head">
-          <h3 id="cap5-p45-cim-title">Onde o crescimento deixa de ser visível</h3>
+      <p>
+        O antibiograma não mede diretamente a eficácia clínica de um tratamento. Seu resultado representa o comportamento do microrganismo em um ambiente experimental controlado e deve ser interpretado em conjunto com a espécie identificada, o foco da infecção e as características do paciente <sup>2,6</sup>.
+      </p>
+
+      
+
+      <h2 class="cap5-p45-sectionTitle">
+        Por que o antibiograma demora?
+      </h2>
+
+      <p>
+        O teste não é realizado diretamente na amostra clínica. Após o isolamento e a identificação, a bactéria precisa ser novamente exposta a concentrações padronizadas de diferentes antibacterianos. Em seguida, é necessário aguardar um novo período de incubação para observar seu crescimento ou sua inibição.
+      </p>
+
+      <p>
+        Esse processo geralmente exige cerca de 18 a 24 horas adicionais, embora o tempo possa variar conforme o microrganismo, o método empregado e a rotina do laboratório <sup>2</sup>. Enquanto o resultado não está disponível, o tratamento permanece, em geral, empírico.
+      </p>
+
+      <section
+        class="cap5-p45-tempo cap5-p45-reveal"
+        data-cap5-p45-tempo
+        aria-labelledby="cap5P45TempoTitle"
+      >
+
+        <div class="cap5-p45-tempoHead">
+          <span class="cap5-p45-tempoEyebrow">
+            Exemplo de incubação
+          </span>
+
+
           <p>
-            Na microdiluição, o ponto interpretativo central é identificar a menor concentração em que o crescimento visível deixa de ocorrer nas condições do ensaio.
+            Selecione um tempo para acompanhar a resposta bacteriana durante um teste de difusão em disco.
           </p>
         </div>
 
-        <div class="cap5-p45-cim__controls" role="tablist" aria-label="Leitura visual da microdiluição">
+        <div
+          class="cap5-p45-controls"
+          role="tablist"
+          aria-label="Evolução temporal da difusão em disco"
+        >
           <button
-            class="cap5-p45-cim__tab is-active"
+            class="cap5-p45-tempoButton is-active"
             type="button"
             role="tab"
             aria-selected="true"
-            data-cim-view="crescimento"
+            tabindex="0"
+            data-p45-tempo="0"
           >
-            Crescimento visível
+            0 h
           </button>
 
           <button
-            class="cap5-p45-cim__tab"
+            class="cap5-p45-tempoButton"
             type="button"
             role="tab"
             aria-selected="false"
-            data-cim-view="inibicao"
+            tabindex="-1"
+            data-p45-tempo="6"
           >
-            Inibição do crescimento
+            6 h
+          </button>
+
+          <button
+            class="cap5-p45-tempoButton"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            tabindex="-1"
+            data-p45-tempo="12"
+          >
+            12 h
+          </button>
+
+          <button
+            class="cap5-p45-tempoButton"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            tabindex="-1"
+            data-p45-tempo="18"
+          >
+            18 h
+          </button>
+
+          <button
+            class="cap5-p45-tempoButton"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            tabindex="-1"
+            data-p45-tempo="24"
+          >
+            24 h
           </button>
         </div>
 
-        <div class="cap5-p45-cim__stage">
-          <figure class="cap5-p45-cim__figure">
-            <button
-              class="cap5-p45-cim__zoom"
-              type="button"
-              data-zoom="../../assets/capitulo-05/imagens/cim-crescimento.png"
-              aria-label="Ampliar imagem da sequência de microdiluição"
-            >
-              <img
-                id="cap5-p45-cim-image"
-                src="../../assets/capitulo-05/imagens/cim-crescimento.png"
-                alt="Sequência de poços com crescimento visível em diferentes concentrações."
-                loading="lazy"
-              />
-            </button>
+        <figure class="cap5-p45-figure">
 
-            <figcaption id="cap5-p45-cim-caption" class="cap5-p45-cim__caption">
-              Nas menores concentrações ainda há crescimento visível nos poços, indicando que a bactéria segue se multiplicando nas condições do ensaio.
-            </figcaption>
-          </figure>
+          <button
+            id="cap5P45Zoom"
+            class="cap5-p45-figureZoom"
+            type="button"
+            data-zoom="../../assets/capitulo-05/imagens/difusao-disco-0h.png"
+            aria-label="Ampliar imagem da difusão em disco no tempo inicial"
+          >
+            <img
+              id="cap5P45TempoImage"
+              src="../../assets/capitulo-05/imagens/difusao-disco-0h.png"
+              alt="Placa de difusão em disco no tempo inicial"
+              loading="lazy"
+            />
+          </button>
 
-          <aside class="cap5-p45-cim__panel" aria-live="polite">
-            <span id="cap5-p45-cim-eyebrow" class="cap5-p45-cim__eyebrow">Leitura inicial</span>
-            <h3 id="cap5-p45-cim-panel-title" class="cap5-p45-cim__title">Crescimento visível</h3>
-            <p id="cap5-p45-cim-panel-text" class="cap5-p45-cim__text">
-              Enquanto há turvação ou crescimento detectável nos poços, a concentração testada ainda não corresponde ao ponto de inibição visível considerado para a determinação da CIM.
-            </p>
-          </aside>
-        </div>
-      </section>
+          <figcaption
+            id="cap5P45TempoCaption"
+            class="cap5-p45-figureCaption"
+            aria-live="polite"
+          >
+            Tempo inicial: os discos foram posicionados, mas ainda não ocorreu crescimento bacteriano suficiente para leitura.
+          </figcaption>
 
-      <p>
-        Após incubação, avalia-se a presença de crescimento bacteriano em cada concentração testada. A CIM corresponde à menor concentração do antibacteriano capaz de impedir o crescimento visível da bactéria nas condições do ensaio <sup>2,5</sup>.
-      </p>
+        </figure>
 
-      <p>
-        Diferentemente da difusão em disco, a microdiluição fornece um valor quantitativo direto, expresso como concentração do antibacteriano.
-      </p>
+        <div
+          id="cap5P45TempoNote"
+          class="cap5-p45-tempoNote"
+          aria-live="polite"
+        >
+          <strong>O que está acontecendo?</strong>
 
-      <p>
-        É importante reconhecer que a ausência de crescimento visível não significa necessariamente morte bacteriana completa. O teste mede a inibição do crescimento detectável nas condições laboratoriais estabelecidas <sup>2,5</sup>.
-      </p>
-
-      <section class="cap5-p45-standard" aria-labelledby="cap5-p45-standard-title">
-        <div class="cap5-p45-standard__head">
-          <h3 id="cap5-p45-standard-title">Padronização do teste</h3>
           <p>
-            Para que os resultados sejam comparáveis e interpretáveis, diversos parâmetros são rigorosamente padronizados:
+            O antibacteriano começa a difundir-se no meio, mas o resultado ainda não pode ser interpretado.
           </p>
         </div>
 
-        <ul class="cap5-p45-list">
-          <li>concentração do inóculo bacteriano</li>
-          <li>composição do meio de cultura</li>
-          <li>pH e concentração de cátions</li>
-          <li>temperatura e tempo de incubação</li>
-          <li>critérios de leitura do resultado</li>
-        </ul>
-
-        <div class="cap5-p45-standard__closing">
-          Halo ou CIM são valores microbiológicos mensuráveis produzidos em ambiente laboratorial padronizado. O valor obtido, por si só, ainda não define a categoria interpretativa final.
-        </div>
       </section>
 
-      <p>
-        Pequenas variações nesses fatores podem modificar o valor da CIM. Por essa razão, os testes seguem protocolos técnicos estabelecidos por comitês especializados em testes de suscetibilidade.
-      </p>
+      <aside class="cap5-p45-meaning cap5-p45-reveal">
+        O laboratório precisa aguardar tempo suficiente para que o crescimento bacteriano e a ação do antibacteriano produzam um padrão mensurável. Uma leitura precoce não permite classificar adequadamente o isolado.
+      </aside>
 
-      <p class="cap5-p45-closing">
-        Independentemente do método utilizado, o teste de sensibilidade gera um dado microbiológico mensurável. Esse valor isolado, entretanto, não define por si só se a bactéria será classificada como sensível ou resistente. Para que isso ocorra, o resultado deve ser interpretado à luz de critérios específicos previamente estabelecidos.
-      </p>
+      <section
+        class="cap5-p45-practice cap5-p45-reveal"
+        aria-labelledby="cap5P45PracticeTitle"
+      >
+
+        <h2 id="cap5P45PracticeTitle">
+          Na prática
+        </h2>
+
+        <div class="cap5-p45-days">
+
+          <article>
+            <span>Dia 1</span>
+            <strong>Investigação inicial</strong>
+            <p>
+              Coleta de hemoculturas e início da antibioticoterapia empírica.
+            </p>
+          </article>
+
+          <b aria-hidden="true">→</b>
+
+          <article>
+            <span>Dia 2</span>
+            <strong>Resultado preliminar</strong>
+            <p>
+              Hemocultura positiva e identificação de <em>Escherichia coli</em>.
+            </p>
+          </article>
+
+          <b aria-hidden="true">→</b>
+
+          <article>
+            <span>Dia 3</span>
+            <strong>Antibiograma disponível</strong>
+            <p>
+              Reavaliação da terapia e possível manutenção, ajuste ou descalonamento.
+            </p>
+          </article>
+
+        </div>
+
+      </section>
+
+      <aside class="cap5-p45-principle cap5-p45-reveal">
+        O resultado do antibiograma é disponibilizado depois da identificação porque depende de uma nova etapa. Até sua liberação, a conduta deve ser reavaliada continuamente com base na evolução clínica e nas informações microbiológicas já disponíveis.
+      </aside>
 
     </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p44.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 5 · Página 45 de 89</div>
-  <a class="btn primary" href="p46.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+      <a
+        class="btn"
+        href="p44.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
 
+      <div class="center">
+        Capítulo 5 · Página 45 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p46.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+    </nav>
 
   </main>
 
   <script src="../../js/app.js"></script>
   <script src="../../js/capitulo-05.js"></script>
-
 </body>
 </html>

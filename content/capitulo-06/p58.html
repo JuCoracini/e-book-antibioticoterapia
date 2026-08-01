@@ -3,11 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 6 — Página 58</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -16,128 +21,359 @@
 
 <body class="cap6-page58">
 
-<main class="page-shell">
+  <main class="page-shell cap6-shell">
 
-<header class="page-header">
-  <div class="chapter">CAPÍTULO 6 - Associação Terapêutica e Consequências do Uso Indiscriminado</div>
-  <h1 class="page-title">Associação</h1>
-</header>
+    <header class="page-header">
 
-<section class="prose">
-
-<p>
-A associação de antibacterianos não corrige falhas estruturais de exposição farmacológica. Quando a concentração alcançada no foco infeccioso é insuficiente para atingir o índice farmacodinâmico necessário, a adição de um segundo agente não transforma um regime inadequado em eficaz <sup>2,10</sup>.
-</p>
-
-<p>
-A atividade antimicrobiana depende da relação entre concentração do fármaco e suscetibilidade bacteriana no compartimento onde o microrganismo se encontra. Se o primeiro antibacteriano não atinge níveis adequados por subdosagem, intervalo de administração inadequado, aumento da depuração ou penetração tecidual limitada, a população bacteriana permanece apenas parcialmente exposta <sup>2,10</sup>.
-</p>
-
-<p>
-Nesse cenário, a simples adição de outro antibacteriano pode ampliar a pressão seletiva sem garantir erradicação consistente do patógeno <sup>10</sup>.
-</p>
-
-<section class="cap6-p58-stage" data-cap6-p58>
-  <div class="cap6-p58-stage__inner">
-
-    <div class="cap6-p58-tabs">
-      <button class="cap6-p58-tab" data-p58-tab="subexp">Exposição insuficiente</button>
-      <button class="cap6-p58-tab" data-p58-tab="add">Adicionar outro agente</button>
-      <button class="cap6-p58-tab" data-p58-tab="opt">Otimizar o regime</button>
-    </div>
-
-    <div class="cap6-p58-panel">
-      <p class="cap6-p58-panel__eyebrow">Raciocínio PK/PD</p>
-      <h2 class="cap6-p58-panel__title" data-p58-title></h2>
-      <p class="cap6-p58-panel__lead" data-p58-lead></p>
-
-      <div class="cap6-p58-visual">
-        <div class="cap6-p58-curveBox">
-          <div class="cap6-p58-curveBox__header">Concentração no foco infeccioso</div>
-
-          <div class="cap6-p58-plot">
-            <div class="cap6-p58-plot__threshold cap6-p58-plot__threshold--target">
-              <span>Alvo farmacodinâmico</span>
-            </div>
-
-            <div class="cap6-p58-plot__threshold cap6-p58-plot__threshold--tox">
-              <span>Limiar de toxicidade</span>
-            </div>
-
-            <svg class="cap6-p58-plot__svg" viewBox="0 0 640 250">
-              <path class="cap6-p58-grid" d="M60 30H610 M60 85H610 M60 140H610 M60 195H610" />
-              <path class="cap6-p58-axis" d="M60 210H610 M60 25V210" />
-              <path class="cap6-p58-curve" data-p58-curve></path>
-            </svg>
-          </div>
-
-          <div class="cap6-p58-plot__labels">
-            <span>Início</span>
-            <span>Tempo</span>
-          </div>
-        </div>
-
-        <div class="cap6-p58-focus">
-          <div class="cap6-p58-focus__title">Foco infeccioso</div>
-          <div class="cap6-p58-focus__card">
-            <div class="cap6-p58-focus__row">
-              <span>Exposição local</span>
-              <span data-p58-badge></span>
-            </div>
-            <div class="cap6-p58-focus__row">
-              <span>Pressão seletiva</span>
-              <span data-p58-pressure></span>
-            </div>
-            <div class="cap6-p58-focus__row">
-              <span>Controle</span>
-              <span data-p58-control></span>
-            </div>
-          </div>
-        </div>
+      <div class="chapter">
+        Capítulo 6 — Associação Terapêutica e Consequências do Uso Indiscriminado
       </div>
 
-      <div class="cap6-p58-summary" data-p58-summary></div>
-    </div>
+      <h1 class="page-title">
+        Associação para prevenir resistência
+      </h1>
 
-  </div>
-</section>
+    </header>
 
-<p>
-Esse fenômeno torna-se particularmente relevante em pacientes críticos. Alterações fisiológicas associadas à sepse ou à disfunção orgânica podem modificar de maneira significativa parâmetros farmacocinéticos, como volume de distribuição e depuração renal, alterando a curva concentração–tempo do antibacteriano administrado <sup>10</sup>.
-</p>
+    <section class="prose cap6-reading-flow">
 
-<p>
-Nessas situações, a impressão de intensificação terapêutica por meio da associação pode mascarar o problema central, que é a exposição farmacológica insuficiente do regime inicial <sup>10</sup>.
-</p>
+      <p>
+        Um dos objetivos da associação de antibacterianos é reduzir a
+        probabilidade de seleção de microrganismos resistentes durante o
+        tratamento. Entretanto, esse benefício está restrito a situações
+        específicas e não justifica o uso rotineiro de terapia combinada para a
+        maioria das infecções bacterianas <sup>1,3,5</sup>.
+      </p>
 
-<p>
-O mesmo raciocínio se aplica a infecções nas quais existem barreiras físicas à difusão do fármaco. Coleções não drenadas, perfusão tecidual heterogênea, necrose ou presença de material protético podem impedir que concentrações adequadas do antibacteriano alcancem o local onde as bactérias estão presentes <sup>1,10</sup>.
-</p>
+      <p>
+        O exemplo clássico é o tratamento da tuberculose, em que diferentes
+        fármacos são administrados simultaneamente para impedir a seleção de
+        mutantes naturalmente resistentes. Estratégias semelhantes também são
+        utilizadas em algumas infecções virais e fúngicas, mas são pouco
+        frequentes na maioria das infecções bacterianas agudas <sup>1,6</sup>.
+      </p>
 
-<div class="cap6-p58-highlight">
-A combinação farmacológica não substitui o controle adequado do foco infeccioso nem supera barreiras estruturais à penetração do fármaco.
-</div>
+      <p>
+        Nas infecções bacterianas comuns, a prevenção da resistência depende
+        principalmente da escolha do antibacteriano adequado, da dose correta,
+        da duração apropriada do tratamento, do controle do foco infeccioso e
+        do uso racional dos antimicrobianos, e não simplesmente da associação
+        de múltiplos fármacos <sup>1,3,5</sup>.
+      </p>
 
-<p>
-Quando dois antibacterianos são administrados simultaneamente em níveis limítrofes de exposição, o resultado pode ser apenas o prolongamento da fase de pressão seletiva intermediária, favorecendo a sobrevivência de subpopulações bacterianas menos suscetíveis <sup>10,11</sup>.
-</p>
+      <section
+        class="cap6-p58-cases cap6-p58-reveal"
+        data-cap6-p58
+        aria-label="Aplicação clínica sobre associação e resistência"
+      >
+        <div class="cap6-p58-cases__head">
 
-<p>
-Por essa razão, antes de considerar a associação como estratégia de intensificação terapêutica, é necessário avaliar se o regime inicial está corretamente ajustado quanto à dose, intervalo e via de administração, preferencialmente com o uso de estratégias de monitoramento terapêutico de fármacos (TDM) e individualização posológica para garantir que os alvos farmacodinâmicos sejam efetivamente alcançados <sup>2,10</sup>.
-</p>
+        </div>
 
-</section>
+        <article
+          class="cap6-p58-case"
+          data-p58-case="tuberculose"
+        >
 
-  <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p57.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 6 · Página 58 de 89</div>
-  <a class="btn primary" href="p59.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+          <div class="cap6-p58-case__label">
+            Situação 1
+          </div>
 
-</main>
+          <h3>
+            Tratamento da tuberculose
+          </h3>
 
-<script src="../../js/app.js"></script>
-<script src="../../js/capitulo-06.js"></script>
+          <p>
+            Um paciente inicia tratamento para tuberculose com múltiplos
+            fármacos administrados simultaneamente.
+          </p>
+
+          <div class="cap6-p58-case__question">
+
+            <strong>
+              Nesse contexto, a associação possui um objetivo específico
+              relacionado à prevenção de resistência?
+            </strong>
+
+          </div>
+
+          <div
+            class="cap6-p58-case__options"
+            role="group"
+            aria-label="Resposta da situação sobre tuberculose"
+          >
+
+            <button
+              type="button"
+              data-p58-case-answer="tuberculose-sim"
+            >
+              <span>A</span>
+              <span>Sim.</span>
+            </button>
+
+            <button
+              type="button"
+              data-p58-case-answer="tuberculose-nao"
+            >
+              <span>B</span>
+              <span>Não.</span>
+            </button>
+
+          </div>
+
+          <div
+            class="cap6-p58-case__feedback"
+            data-p58-feedback="tuberculose"
+            aria-live="polite"
+          >
+
+            <strong>
+              Analise a finalidade da combinação.
+            </strong>
+
+            <p>
+              Considere o risco de seleção de mutantes naturalmente resistentes
+              durante um tratamento prolongado.
+            </p>
+
+          </div>
+
+        </article>
+
+        <article
+          class="cap6-p58-case"
+          data-p58-case="itu"
+        >
+
+          <div class="cap6-p58-case__label">
+            Situação 2
+          </div>
+
+          <h3>
+            Infecção urinária com agente identificado
+          </h3>
+
+          <p>
+            A urocultura identifica um único microrganismo suscetível a um
+            antibacteriano apropriado. O paciente apresenta evolução clínica
+            favorável.
+          </p>
+
+          <div class="cap6-p58-case__question">
+
+            <strong>
+              Acrescentar um segundo antibacteriano reduz automaticamente a
+              emergência de resistência?
+            </strong>
+
+          </div>
+
+          <div
+            class="cap6-p58-case__options"
+            role="group"
+            aria-label="Resposta da situação sobre infecção urinária"
+          >
+
+            <button
+              type="button"
+              data-p58-case-answer="itu-sim"
+            >
+              <span>A</span>
+              <span>Sim.</span>
+            </button>
+
+            <button
+              type="button"
+              data-p58-case-answer="itu-nao"
+            >
+              <span>B</span>
+              <span>Não.</span>
+            </button>
+
+          </div>
+
+          <div
+            class="cap6-p58-case__feedback"
+            data-p58-feedback="itu"
+            aria-live="polite"
+          >
+
+            <strong>
+              Avalie se existe um objetivo adicional.
+            </strong>
+
+            <p>
+              A presença de um único agente suscetível costuma permitir
+              tratamento direcionado com monoterapia adequada.
+            </p>
+
+          </div>
+
+        </article>
+
+      </section>
+
+      <section
+        class="cap6-p58-not-indicated cap6-p58-reveal"
+        aria-label="Situações em que a associação geralmente não está indicada"
+      >
+
+        <div class="cap6-p58-not-indicated__head">
+
+         
+
+          <p>
+            Após a identificação do agente etiológico, a combinação deve ser
+            simplificada quando não existe justificativa microbiológica ou
+            clínica para sua manutenção.
+          </p>
+
+        </div>
+
+        <div class="cap6-p58-not-indicated__list">
+
+          <article>
+
+            <span>01</span>
+
+            <div>
+
+              <h3>
+                Agente etiológico identificado
+              </h3>
+
+              <p>
+                Quando a cultura identifica um único microrganismo suscetível e
+                existe um antibacteriano apropriado, múltiplos agentes raramente
+                oferecem benefício adicional <sup>1,3</sup>.
+              </p>
+
+            </div>
+
+          </article>
+
+          <article>
+
+            <span>02</span>
+
+            <div>
+
+              <h3>
+                Ausência de infecção polimicrobiana
+              </h3>
+
+              <p>
+                Se a infecção é causada por um único agente, não há necessidade
+                de ampliar a cobertura para microrganismos que não participam
+                do processo infeccioso <sup>3,5</sup>.
+              </p>
+
+            </div>
+
+          </article>
+
+          <article>
+
+            <span>03</span>
+
+            <div>
+
+              <h3>
+                Duplicação de espectro
+              </h3>
+
+              <p>
+                A sobreposição de atividade geralmente não aumenta a eficácia
+                clínica e pode elevar toxicidade, custos e pressão seletiva
+                <sup>1,3,5</sup>.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+      <section
+        class="cap6-p58-principles cap6-p58-reveal"
+        aria-label="Princípios para prevenção de resistência"
+      >
+
+        <div class="cap6-p58-principles__head">
+
+          <span>Nas infecções bacterianas comuns</span>
+
+          <h2>
+            A prevenção da resistência depende principalmente de:
+          </h2>
+
+        </div>
+
+        <div class="cap6-p58-principles__grid">
+
+          <div>
+            <span>01</span>
+            <p>Escolher um antibacteriano ativo e apropriado.</p>
+          </div>
+
+          <div>
+            <span>02</span>
+            <p>Utilizar dose e intervalo adequados.</p>
+          </div>
+
+          <div>
+            <span>03</span>
+            <p>Limitar a duração ao tempo necessário.</p>
+          </div>
+
+          <div>
+            <span>04</span>
+            <p>Controlar adequadamente o foco infeccioso.</p>
+          </div>
+
+        </div>
+
+      </section>
+
+      <aside class="cap6-p58-box cap6-p58-key cap6-p58-reveal">
+
+        Mais antibacterianos não significam, necessariamente, menor risco de
+        resistência ou maior eficácia clínica.
+
+      </aside>
+
+    </section>
+
+    <nav class="pager" aria-label="Paginação">
+
+      <a
+        class="btn"
+        href="p57.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 6 · Página 58 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p59.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+
+    </nav>
+
+  </main>
+
+  <script src="../../js/app.js"></script>
+  <script src="../../js/capitulo-06.js"></script>
 
 </body>
 </html>

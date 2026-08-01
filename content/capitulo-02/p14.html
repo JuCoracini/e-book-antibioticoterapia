@@ -3,138 +3,256 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 2 — Página 14</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
   <link rel="stylesheet" href="../../css/capitulo-02.css" />
 </head>
 
-<body class="cap2-shell cap2-page14">
+<body class="cap2-page14">
 
-  <main class="page-shell">
+  <main class="page-shell cap2-shell">
 
     <header class="page-header">
-      <div class="chapter">Capítulo 2 — Mecanismos de Ação dos Antibacterianos</div>
-      <h1 class="page-title">Ação sobre a membrana citoplasmática</h1>
+      <div class="chapter">
+        Capítulo 2 — Mecanismos de Ação dos Antibacterianos
+      </div>
+
+      <h1 class="page-title">
+        Ação sobre a membrana citoplasmática
+      </h1>
     </header>
 
-    <section class="prose" aria-label="Texto principal">
-      <p>
-        A membrana citoplasmática bacteriana é uma estrutura essencial para a manutenção da viabilidade celular. Constituída por uma bicamada fosfolipídica com proteínas associadas, ela regula o transporte de substâncias, mantém o gradiente eletroquímico transmembrana e participa de processos fundamentais de geração de energia associados à síntese de ATP <sup>1</sup>.
-      </p>
+    <section class="prose cap2-reading-flow">
 
       <p>
-        A integridade dessa estrutura é indispensável para a homeostase celular. Alterações significativas na organização da membrana comprometem rapidamente o equilíbrio iônico, o potencial elétrico e a capacidade metabólica da bactéria. Diferentemente dos mecanismos que interferem na síntese de macromoléculas, os fármacos que atuam na membrana exercem efeito direto sobre a integridade estrutural da célula bacteriana.
-      </p>
-    </section>
-
-    <section class="cap2-p14-stage" data-cap2-membrane aria-label="Mecanismo de ação sobre a membrana citoplasmática">
-
-      <p class="cap2-p14-intro">
-        Selecione a estrutura ou a classe farmacológica para observar como a integridade da membrana é comprometida e como isso se traduz em perda funcional da célula bacteriana.
+        A membrana citoplasmática bacteriana é uma estrutura essencial para a manutenção da viabilidade celular. Constituída por uma bicamada fosfolipídica com proteínas associadas, regula o transporte seletivo de substâncias, mantém o gradiente eletroquímico transmembrana e participa da geração de energia por meio da força próton-motriz, indispensável para a síntese de ATP e outros processos metabólicos essenciais <sup>1–3</sup>.
       </p>
 
-      <div class="cap2-p14-tabs" role="tablist" aria-label="Mecanismo de ação sobre a membrana citoplasmática">
-        <button
-          class="cap2-p14-tab is-active"
-          type="button"
-          role="tab"
-          id="cap2P14TabMembrana"
-          aria-selected="true"
-          aria-controls="cap2P14Panel"
-          tabindex="0"
-          data-membrane-drug="membrana"
-        >
-          Membrana
-        </button>
+      <p>
+        A integridade dessa estrutura é indispensável para a homeostase celular. Alterações importantes na organização da membrana comprometem rapidamente o equilíbrio iônico, o potencial elétrico transmembrana e a capacidade metabólica da bactéria. Diferentemente dos antibacterianos que interferem na síntese de macromoléculas, os agentes que atuam sobre a membrana exercem efeito direto sobre sua integridade estrutural e funcional <sup>1–3</sup>.
+      </p>
 
-        <button
-          class="cap2-p14-tab"
-          type="button"
-          role="tab"
-          id="cap2P14TabPolimixina"
-          aria-selected="false"
-          aria-controls="cap2P14Panel"
-          tabindex="-1"
-          data-membrane-drug="polimixina"
-        >
-          Polimixina
-        </button>
-
-        <button
-          class="cap2-p14-tab"
-          type="button"
-          role="tab"
-          id="cap2P14TabDaptomicina"
-          aria-selected="false"
-          aria-controls="cap2P14Panel"
-          tabindex="-1"
-          data-membrane-drug="daptomicina"
-        >
-          Daptomicina
-        </button>
-      </div>
-
-      <div
-        id="cap2P14Panel"
-        class="cap2-p14-board"
-        role="tabpanel"
-        aria-labelledby="cap2P14TabMembrana"
+      <section
+        class="cap2-p14v2-interaction cap2-p14v2-reveal"
+        data-cap2-p14v2
+        data-p14v2-state="membrana"
+        aria-label="Ação dos antibacterianos sobre a membrana bacteriana"
       >
-        <figure class="cap2-p14-figure">
+
+        <p class="cap2-p14v2-intro">
+          Selecione a estrutura ou a classe farmacológica para observar o mecanismo e sua repercussão funcional.
+        </p>
+
+        <div
+          class="cap2-p14v2-tabs"
+          role="tablist"
+          aria-label="Estrutura e classes farmacológicas"
+        >
           <button
-            class="cap2-p14-zoom"
+            class="cap2-p14v2-tab is-active"
             type="button"
-            data-zoom="../../assets/capitulo-02/imagens/membrana-citoplasmatica.png"
-            aria-label="Ampliar imagem da membrana citoplasmática bacteriana"
+            role="tab"
+            id="cap2P14V2TabMembrana"
+            aria-selected="true"
+            aria-controls="cap2P14V2View"
+            tabindex="0"
+            data-p14v2-target="membrana"
           >
-            <img
-              id="cap2P14Image"
-              src="../../assets/capitulo-02/imagens/membrana-citoplasmatica.png"
-              alt="Estrutura da membrana citoplasmática bacteriana"
-              loading="lazy"
-            />
+            Membrana
           </button>
 
-          <figcaption id="cap2P14Caption" class="caption">
-            Estrutura da membrana citoplasmática bacteriana. Clique para ampliar.
-          </figcaption>
-        </figure>
+          <button
+            class="cap2-p14v2-tab"
+            type="button"
+            role="tab"
+            id="cap2P14V2TabPolimixinas"
+            aria-selected="false"
+            aria-controls="cap2P14V2View"
+            tabindex="-1"
+            data-p14v2-target="polimixinas"
+          >
+            Polimixinas
+          </button>
 
-        <div class="cap2-p14-controls">
-          <button class="btn ghost" type="button" id="cap2P14Prev" aria-label="Voltar uma etapa">← Etapa</button>
-          <div id="cap2P14Step" class="cap2-p14-step" aria-live="polite"></div>
-          <button class="btn primary" type="button" id="cap2P14Next" aria-label="Avançar uma etapa">Etapa →</button>
+          <button
+            class="cap2-p14v2-tab"
+            type="button"
+            role="tab"
+            id="cap2P14V2TabDaptomicina"
+            aria-selected="false"
+            aria-controls="cap2P14V2View"
+            tabindex="-1"
+            data-p14v2-target="daptomicina"
+          >
+            Daptomicina
+          </button>
         </div>
 
-        <div class="cap2-p14-panel" aria-live="polite">
-          <h2 id="cap2P14Title" class="cap2-p14-panel__title">Funções essenciais da membrana citoplasmática</h2>
-          <div id="cap2P14Text" class="cap2-p14-panel__body"></div>
-        </div>
+        <article
+          id="cap2P14V2View"
+          class="cap2-p14v2-view"
+          role="tabpanel"
+          aria-labelledby="cap2P14V2TabMembrana"
+          aria-live="polite"
+        >
+
+          <figure class="figure cap2-p14v2-figure">
+            <button
+              class="cap2-p14v2-zoom"
+              type="button"
+              data-zoom="../../assets/capitulo-02/imagens/membrana-citoplasmatica.png"
+              aria-label="Ampliar imagem da membrana citoplasmática bacteriana"
+            >
+              <img
+                id="cap2P14V2Image"
+                src="../../assets/capitulo-02/imagens/membrana-citoplasmatica.png"
+                alt="Estrutura da membrana citoplasmática bacteriana"
+                loading="lazy"
+              />
+            </button>
+
+            <span class="cap2-p14v2-zoomHint" aria-hidden="true">
+              Clique na figura para ampliar
+            </span>
+
+            <figcaption
+              id="cap2P14V2Caption"
+              class="caption cap2-p14v2-caption"
+            >
+              Estrutura da membrana citoplasmática bacteriana.
+            </figcaption>
+          </figure>
+
+          <div
+            class="cap2-p14v2-controls"
+            data-p14v2-controls
+            hidden
+          >
+            <button
+              class="cap2-p14v2-control"
+              type="button"
+              data-p14v2-action="prev"
+            >
+              ← Anterior
+            </button>
+
+            <span
+              class="cap2-p14v2-counter"
+              data-p14v2-counter
+              aria-live="polite"
+            ></span>
+
+            <button
+              class="cap2-p14v2-control"
+              type="button"
+              data-p14v2-action="next"
+            >
+              Próxima →
+            </button>
+          </div>
+
+          <div class="cap2-p14v2-summary">
+
+            <div class="cap2-p14v2-summaryHeader">
+              <span
+                id="cap2P14V2Kicker"
+                class="cap2-p14v2-kicker"
+              >
+                Estrutura fisiológica
+              </span>
+
+              <h2
+                id="cap2P14V2Title"
+                class="cap2-p14v2-title"
+              >
+                Funções essenciais da membrana citoplasmática
+              </h2>
+            </div>
+
+            <div
+              id="cap2P14V2Body"
+              class="cap2-p14v2-body"
+            >
+              <div class="cap2-p14v2-infoGrid">
+
+                <article class="cap2-p14v2-info">
+                  <span>Função de barreira</span>
+                  <p>
+                    Controla a entrada e a saída de substâncias entre o citoplasma e o meio extracelular.
+                  </p>
+                </article>
+
+                <article class="cap2-p14v2-info">
+                  <span>Equilíbrio eletroquímico</span>
+                  <p>
+                    Mantém gradientes iônicos e o potencial elétrico necessário ao funcionamento celular.
+                  </p>
+                </article>
+
+                <article class="cap2-p14v2-info">
+                  <span>Produção de energia</span>
+                  <p>
+                    Abriga sistemas associados à força próton-motriz, à respiração celular e à síntese de ATP.
+                  </p>
+                </article>
+
+                <article class="cap2-p14v2-info cap2-p14v2-info--result">
+                  <span>Implicação farmacológica</span>
+                  <p>
+                    Sua desorganização compromete rapidamente a homeostase e a viabilidade da bactéria.
+                  </p>
+                </article>
+
+              </div>
+            </div>
+
+          </div>
+
+        </article>
+      </section>
+
+      <aside class="cap2-p14v2-comparison cap2-p14v2-reveal">
+        <strong>Comparação dos mecanismos:</strong> nas polimixinas, predomina o aumento da permeabilidade e a perda da função de barreira. Na daptomicina, o evento central é a despolarização da membrana citoplasmática. Apesar das diferenças, ambos os mecanismos interrompem rapidamente funções essenciais e produzem efeito bactericida.
+      </aside>
+
+      <aside class="cap2-p14v2-toxicity cap2-p14v2-reveal">
+        <strong>Seletividade e toxicidade:</strong> como as membranas bacterianas e eucarióticas compartilham princípios estruturais, os antibacterianos que atuam diretamente sobre essa estrutura apresentam seletividade mais limitada. Essa característica contribui para a nefrotoxicidade associada às polimixinas e para a miotoxicidade relacionada à daptomicina <sup>2,8,9</sup>.
+      </aside>
+
+    </section>
+
+    <nav class="pager" aria-label="Paginação">
+      <a
+        class="btn"
+        href="p13.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 2 · Página 14 de 89
       </div>
 
-    </section>
-
-    <section class="prose" aria-label="Fechamento do texto">
-      <p>
-        A desorganização da membrana favorece o extravasamento de componentes intracelulares e compromete o gradiente iônico necessário à manutenção metabólica. A perda da integridade estrutural e do equilíbrio eletroquímico resulta em colapso funcional rápido da célula bacteriana.
-      </p>
-
-      <p>
-        Em modelos laboratoriais controlados, esses fármacos estão geralmente associados a efeito bactericida. Entretanto, como a integridade das membranas celulares depende de princípios estruturais semelhantes em células bacterianas e eucarióticas, a seletividade desses agentes é limitada, o que contribui para o potencial de toxicidade observado em algumas dessas classes <sup>2</sup>.
-      </p>
-    </section>
-
- <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p13.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 2 · Página 14 de 89</div>
-  <a class="btn primary" href="p15.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+      <a
+        class="btn primary"
+        href="p15.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+    </nav>
 
   </main>
 

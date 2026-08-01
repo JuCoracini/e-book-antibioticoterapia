@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../../css/base.css"/>
   <link rel="stylesheet" href="../../css/components.css"/>
@@ -21,224 +21,136 @@
   <main class="page-shell cap1-shell">
 
     <header class="page-header">
-      <div>
-        <div class="chapter">Capítulo 1 — Fundamentos Conceituais dos Antibacterianos</div>
-        <h1 class="page-title">Quiz de revisão</h1>
-      </div>
+      <div class="chapter">Capítulo 1 — Fundamentos Conceituais dos Antibacterianos</div>
+      <h1 class="page-title">Quiz de revisão</h1>
     </header>
 
-    <section class="prose cap1-reading-flow" aria-label="Introdução do Quiz de revisão">
-     
-    </section>
+    <section
+      class="cap1-p10Quiz"
+      data-cap1-p10
+      aria-label="Quiz de revisão do capítulo 1"
+    >
 
-    <section class="cap1-p10Quiz" data-cap1-p10 aria-label="Quiz de revisão">
-      <div class="cap1-p10Status" aria-live="polite" data-p10-status>
-        <span class="cap1-p10Status__label">Leitura aplicada do capítulo</span>
-        <span class="cap1-p10Status__value">0 de 2 situações confirmadas</span>
+      <div class="cap1-p10Status" aria-live="polite">
+        <span class="cap1-p10Status__value" data-p10-progress>
+          Situação 1 de 3
+        </span>
+
+        <div class="cap1-p10Dots" aria-hidden="true">
+          <span class="is-active"></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
 
-      <article class="cap1-p10Question" data-q="1" data-question-state="pending">
-        <div class="cap1-p10QuestionHeader">
-          <span class="cap1-p10Kicker">Situação clínica 1</span>
-          <h2 class="cap1-p10QuestionTitle">Interpretação de achado microbiológico</h2>
-        </div>
+      <article class="cap1-p10Question" data-p10-question>
+        <span class="cap1-p10Kicker" data-p10-kicker>
+          Situação clínica 1
+        </span>
 
-        <p class="cap1-p10Case">
-          Um paciente de 68 anos internado por insuficiência cardíaca descompensada apresenta hemocultura positiva para <em>Staphylococcus</em> coagulase-negativo em apenas um dos frascos coletados. Ele não apresenta febre, não há sinais clínicos de infecção sistêmica e os exames laboratoriais não indicam resposta inflamatória significativa.
+        <p class="cap1-p10Case" data-p10-case>
+          Paciente de 68 anos apresenta hemocultura positiva para
+          <em>Staphylococcus</em> coagulase-negativo em apenas um frasco. Não há
+          febre, sinais de infecção sistêmica ou resposta inflamatória
+          significativa.
         </p>
 
-        <p class="cap1-p10Prompt">
-          Qual é a interpretação mais adequada desse achado microbiológico?
+        <p class="cap1-p10Prompt" data-p10-prompt>
+          Qual interpretação melhor integra os dados apresentados?
         </p>
 
-        <div class="cap1-p10Options" role="group" aria-label="Alternativas da situação clínica 1">
-          <button type="button" data-answer="a">
-            <span class="cap1-p10Letter">A</span>
-            <span>O crescimento em cultura confirma infecção ativa e justifica antibioticoterapia imediata.</span>
-          </button>
-
-          <button type="button" data-answer="b" data-correct="true">
-            <span class="cap1-p10Letter">B</span>
-            <span>A interpretação de culturas deve considerar o contexto clínico, pois a presença de microrganismos pode representar colonização ou contaminação e não necessariamente infecção. </span>
-          </button>
-
-          <button type="button" data-answer="c">
-            <span class="cap1-p10Letter">C</span>
-            <span>A presença de bactéria em hemocultura, mesmo em um único frasco, define infecção sistêmica.</span>
-          </button>
-
-          <button type="button" data-answer="d">
-            <span class="cap1-p10Letter">D</span>
-            <span>A decisão deve basear-se predominantemente no resultado microbiológico, independentemente da avaliação clínica.</span>
-          </button>
-        </div>
+        <div
+          class="cap1-p10Options"
+          role="group"
+          aria-label="Alternativas da situação clínica"
+          data-p10-options
+        ></div>
 
         <div class="cap1-p10Actions">
-          <button class="cap1-p10Btn cap1-p10Btn--primary" type="button" data-p10-action="confirm" disabled>
-            Confirmar interpretação
+          <button
+            class="cap1-p10Btn cap1-p10Btn--primary"
+            type="button"
+            data-p10-confirm
+            disabled
+          >
+            Confirmar análise
           </button>
-          <button class="cap1-p10Btn cap1-p10Btn--ghost" type="button" data-p10-action="reset" hidden>
-            Refazer
+
+          <button
+            class="cap1-p10Btn cap1-p10Btn--ghost"
+            type="button"
+            data-p10-reset
+            hidden
+          >
+            Rever decisão
           </button>
         </div>
 
-        <div class="cap1-p10Feedback" role="region" aria-live="polite"></div>
-
-        <template class="cap1-p10FeedbackMap">
-{
-  "a": {
-    "type": "error",
-    "title": "Interpretação inadequada",
-    "text": "Cultura positiva isoladamente não confirma infecção ativa. Neste contexto, tratar automaticamente aumentaria o risco de exposição desnecessária a antibacterianos."
-  },
-  "b": {
-    "type": "correct",
-    "title": "Interpretação adequada",
-    "text": "O crescimento em um único frasco, sem síndrome inflamatória e sem sinais clínicos compatíveis, torna contaminação mais provável que bacteremia verdadeira. A microbiologia precisa ser interpretada em conjunto com o quadro clínico."
-  },
-  "c": {
-    "type": "error",
-    "title": "Generalização incorreta",
-    "text": "Hemocultura positiva não equivale, por si só, a infecção sistêmica. O significado do isolamento depende da coerência com o sítio infeccioso, do contexto clínico e do padrão do crescimento microbiológico. Por exemplo, o isolamento de <em>Staphylococcus</em> coagulase-negativo em um único frasco, em paciente sem sinais clínicos de infecção, frequentemente representa contaminação durante a coleta e não bacteremia verdadeira."
-  },
-  "d": {
-    "type": "error",
-    "title": "Raciocínio incompleto",
-    "text": "A decisão não deve se apoiar predominantemente no laboratório. Em antibioticoterapia, o dado microbiológico ganha valor quando integrado à avaliação clínica do paciente."
-  }
-}
-        </template>
+        <div
+          class="cap1-p10Feedback"
+          role="region"
+          aria-live="polite"
+          data-p10-feedback
+        ></div>
       </article>
 
-      <article class="cap1-p10Question" data-q="2" data-question-state="pending">
-        <div class="cap1-p10QuestionHeader">
-          <span class="cap1-p10Kicker">Situação clínica 2</span>
-          <h2 class="cap1-p10QuestionTitle">Classificação da estratégia terapêutica</h2>
-        </div>
+      <div class="cap1-p10Controls">
+        <button type="button" data-p10-prev disabled>
+          ← Situação anterior
+        </button>
 
-        <p class="cap1-p10Case">
-          Um paciente é internado com suspeita de pneumonia bacteriana grave. Culturas são coletadas na admissão e um antibacteriano é iniciado antes da identificação do microrganismo causador. Após alguns dias, os resultados microbiológicos identificam o patógeno e seu perfil de suscetibilidade.
-        </p>
-
-        <p class="cap1-p10Prompt">
-          Como deve ser classificada a conduta inicial adotada nesse cenário?
-        </p>
-
-        <div class="cap1-p10Options" role="group" aria-label="Alternativas da situação clínica 2">
-          <button type="button" data-answer="a">
-            <span class="cap1-p10Letter">A</span>
-            <span>Terapia dirigida, porque a conduta já considera o resultado de suscetibilidade.</span>
-          </button>
-
-          <button type="button" data-answer="b">
-            <span class="cap1-p10Letter">B</span>
-            <span>Profilaxia antibacteriana, porque o objetivo inicial é evitar progressão do quadro.</span>
-          </button>
-
-          <button type="button" data-answer="c" data-correct="true">
-            <span class="cap1-p10Letter">C</span>
-            <span>Terapia empírica, porque o tratamento foi iniciado com base na probabilidade etiológica e na gravidade clínica antes da identificação do patógeno.</span>
-          </button>
-
-          <button type="button" data-answer="d">
-            <span class="cap1-p10Letter">D</span>
-            <span>Terapia de supressão microbiológica, porque a prioridade é reduzir a microbiota respiratória do paciente.</span>
-          </button>
-        </div>
-
-        <div class="cap1-p10Actions">
-          <button class="cap1-p10Btn cap1-p10Btn--primary" type="button" data-p10-action="confirm" disabled>
-            Confirmar interpretação
-          </button>
-          <button class="cap1-p10Btn cap1-p10Btn--ghost" type="button" data-p10-action="reset" hidden>
-            Refazer
-          </button>
-        </div>
-
-        <div class="cap1-p10Feedback" role="region" aria-live="polite"></div>
-
-        <template class="cap1-p10FeedbackMap">
-{
-  "a": {
-    "type": "error",
-    "title": "Classificação inadequada",
-    "text": "Terapia dirigida pressupõe identificação microbiológica e interpretação do perfil de suscetibilidade. Esse não é o ponto de partida do caso."
-  },
-  "b": {
-    "type": "error",
-    "title": "Erro conceitual",
-    "text": "Profilaxia é usada quando não há infecção estabelecida nem suspeita clínica ativa. Aqui há quadro infeccioso presumido e necessidade de tratamento."
-  },
-  "c": {
-    "type": "correct",
-    "title": "Classificação adequada",
-    "text": "A conduta inicial é terapia empírica. Em infecção grave presumida, o antibacteriano é iniciado antes da identificação do patógeno, com base na síndrome clínica, na gravidade e na probabilidade etiológica. Depois, o esquema deve ser reavaliado à luz dos dados microbiológicos."
-  },
-  "d": {
-    "type": "error",
-    "title": "Conceito incorreto",
-    "text": "O objetivo não é reduzir microbiota respiratória, mas tratar uma infecção presumida com risco de deterioração clínica enquanto os resultados microbiológicos ainda não estão disponíveis."
-  }
-}
-        </template>
-      </article>
-
-      <section class="cap1-p10Completion" data-p10-completion hidden aria-live="polite">
-        <div class="cap1-p10Completion__header">
-          <span class="cap1-p10Completion__kicker">Fechamento clínico</span>
-          <h2 class="cap1-p10Completion__title">Síntese da tomada de decisão em antibioticoterapia</h2>
-        </div>
-
-        <p class="cap1-p10Completion__text" data-p10-completion-text>
-          Ao final do capítulo, a decisão de usar um antibacteriano já não pode ser entendida como simples resposta a uma cultura positiva ou a um diagnóstico inespecífico. Ela depende de reconhecer quando há infecção ativa, distinguir tratamento de profilaxia e definir se a conduta inicial deve ser empírica ou posteriormente dirigida.
-        </p>
-      </section>
-
-      <div class="cap1-p10ClosingBlock">
-        <p>
-          A decisão de usar um antibacteriano depende de reconhecer quando há infecção ativa, distinguir tratamento de profilaxia e definir se a conduta inicial deve ser empírica ou posteriormente dirigida.
-        </p>
+        <button type="button" data-p10-next disabled>
+          Próxima situação →
+        </button>
       </div>
+
     </section>
 
     <details class="cap1-refBox">
-      <summary>Referências</summary>
+      <summary>
+        <div class="cap1-refHeader">
+          <div class="cap1-refText">
+            <strong>Referências</strong>
+          </div>
+
+          <div class="cap1-refAction"></div>
+        </div>
+      </summary>
+
       <div class="cap1-refContent">
-        <p>1. Murray CJL, Ikuta KS, Sharara F, Swetschinski L, Robles Aguilar G, Gray A, et al. Global burden of bacterial antimicrobial resistance in 2019: a systematic analysis. The Lancet. 2022 Feb;399(10325):629–55. doi:10.1016/S0140-6736(21)02724-0</p>
-        <p>2. Blaser MJ, Cohen JI, Holland SM, editors. Mandell, Douglas, and Bennett’s Principles and Practice of Infectious Diseases. 10th ed. Philadelphia: Elsevier; 2025.</p>
-        <p>3. Blair JMA, Webber MA, Baylay AJ, Ogbolu DO, Piddock LJ V. Molecular mechanisms of antibiotic resistance. Nat Rev Microbiol. 2015 Jan 1;13(1):42–51. doi:10.1038/nrmicro3380</p>
-        <p>4. Hutchings MI, Truman AW, Wilkinson B. Antibiotics: past, present and future. Curr Opin Microbiol. 2019 Oct;51:72–80. doi:10.1016/j.mib.2019.10.008</p>
-        <p>5. Murray PR, Rosenthal KS, Pfaller MA. Medical Microbiology. 10th ed. Philadelphia: Elsevier; 2025.</p>
-        <p>6. Brunton LL, Hilal-Dandan R, Knollmann BC, editors. Goodman & Gilman’s The Pharmacological Basis of Therapeutics. 14th ed. New York: McGraw-Hill Education; 2023. 1419 p.</p>
-        <p>7. Aminov RI. A Brief History of the Antibiotic Era: Lessons Learned and Challenges for the Future. Front Microbiol. 2010;1. doi:10.3389/fmicb.2010.134</p>
+        <p>1. Hutchings MI, Truman AW, Wilkinson B. Antibiotics: past, present and future. Curr Opin Microbiol. 2019 Oct;51:72–80. doi:10.1016/j.mib.2019.10.008</p>
+        <p>2. Aminov RI. A Brief History of the Antibiotic Era: Lessons Learned and Challenges for the Future. Front Microbiol. 2010;1. doi:10.3389/fmicb.2010.134</p>
+        <p>3. Blaser MJ, Cohen JI, Holland SM, editors. Mandell, Douglas, and Bennett’s Principles and Practice of Infectious Diseases. 10th ed. Philadelphia: Elsevier; 2025.</p>
+        <p>4. Brunton LL, Hilal-Dandan R, Knollmann BC, editors. Goodman & Gilman’s The Pharmacological Basis of Therapeutics. 14th ed. New York: McGraw-Hill Education; 2023. 1419 p.</p>
+        <p>5. Blair JMA, Webber MA, Baylay AJ, Ogbolu DO, Piddock LJ V. Molecular mechanisms of antibiotic resistance. Nat Rev Microbiol. 2015 Jan 1;13(1):42–51. doi:10.1038/nrmicro3380</p>
+        <p>6. Murray PR, Rosenthal KS, Pfaller MA. Medical Microbiology. 10th ed. Philadelphia: Elsevier; 2025.</p>
+        <p>7. Katzung BG, Trevor AJ. Basic &amp; clinical pharmacology. 14th ed. Katzung BG, Trevor AJ, editors. New York: McGraw-Hill; 2018.</p>
         <p>8. Arias CA, Murray BE. The rise of the Enterococcus: beyond vancomycin resistance. Nat Rev Microbiol. 2012 Apr 16;10(4):266–78. doi:10.1038/nrmicro2761</p>
         <p>9. Mareković I, Markanović M, Lešin J, Ćorić M. Vancomycin-Resistant Enterococci: Current Understandings of Resistance in Relation to Transmission and Preventive Strategies. Pathogens. 2024 Nov 5;13(11):966. doi:10.3390/pathogens13110966</p>
-        <p>10. BrCAST – Comitê Brasileiro de Testes de Sensibilidade aos Antimicrobianos. Tabela de pontos de corte clínicos BrCAST–EUCAST [Internet]. 2018 Jul [cited 2025 May 2]. Report. Available from: https://brcast.org.br/wp-content/uploads/2022/07/Tabela-pontos-de-corte-cli%CC%81nicos-BrCAST-30-julho-2018.pdf</p>
-        <p>11. Brasil. Ministério da Saúde. Secretaria de Vigilância em Saúde. Portaria no 64, de 11 de dezembro de 2018 [Internet]. Brasília; 2018 [cited 2025 Sep 19]. Report. Available from: https://bvs.saude.gov.br/bvs/saudelegis/svs/2018/prt0064_14_12_2018.html</p>
-        <p>12. BrCAST – Comitê Brasileiro de Testes de Sensibilidade aos Antimicrobianos. Tabela de pontos de corte clínicos BrCAST para interpretação de CIMs e diâmetros de halo [Internet]. São Paulo; 2025 [cited 2025 Feb 19]. Report. Available from: https://brcast.org.br</p>
-        <p>13. Katzung BG, Trevor AJ. Basic & clinical pharmacology. 14th ed. Katzung BG, Trevor AJ, editors. New York: McGraw-Hill; 2018.</p>
-        <p>14. Rang HP, Ritter JM, Flower RJ, Henderson G. Rang & Dale’s Pharmacology. 9th ed. Rang HP, Ritter JM, Flower RJ, Henderson G, editors. London: Elsevier; 2019.</p>
-        <p>15. Craig WA. State‐of‐the‐Art Clinical Article: Pharmacokinetic/Pharmacodynamic Parameters: Rationale for Antibacterial Dosing of Mice and Men. Clinical Infectious Diseases. 1998 Jan;26(1):1–10. doi:10.1086/516284</p>
-        <p>16. Nielsen EI, Friberg LE. Pharmacokinetic-Pharmacodynamic Modeling of Antibacterial Drugs. Pharmacol Rev. 2013 Jul;65(3):1053–90. doi:10.1124/pr.111.005769</p>
-        <p>17. Palmer ME, Andrews LJ, Abbey TC, Dahlquist AE, Wenzler E. The importance of pharmacokinetics and pharmacodynamics in antimicrobial drug development and their influence on the success of agents developed to combat resistant gram negative pathogens: A review. Front Pharmacol. 2022 Jul 25;13. doi:10.3389/fphar.2022.888079</p>
-        <p>18. Fishbein SRS, Mahmud B, Dantas G. Antibiotic perturbations to the gut microbiome. Nat Rev Microbiol. 2023 Dec 25;21(12):772–88. doi:10.1038/s41579-023-00933-y</p>
-        <p>19. Nicolle LE, Gupta K, Bradley SF, Colgan R, DeMuri GP, Drekonja D, et al. Clinical Practice Guideline for the Management of Asymptomatic Bacteriuria: 2019 Update by the Infectious Diseases Society of America. Clinical Infectious Diseases. 2019 May 2;68(10):e83–110. doi:10.1093/cid/ciy1121</p>
-        <p>20. Barlam TF, Cosgrove SE, Abbo LM, MacDougall C, Schuetz AN, Septimus EJ, et al. Implementing an Antibiotic Stewardship Program: Guidelines by the Infectious Diseases Society of America and the Society for Healthcare Epidemiology of America. Clinical Infectious Diseases. 2016 May 15;62(10):e51–77. doi:10.1093/cid/ciw118</p>
-        <p>21. Evans L, Rhodes A, Alhazzani W, Antonelli M, Coopersmith CM, French C, et al. Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2021. Crit Care Med. 2021 Nov 14;49(11):e1063–143. doi:10.1097/CCM.0000000000005337</p>
-        <p>22. De Waele JJ, Schouten J, Beovic B, Tabah A, Leone M. Antimicrobial de-escalation as part of antimicrobial stewardship in intensive care: no simple answers to simple questions—a viewpoint of experts. Intensive Care Med. 2020 Feb 5;46(2):236–44. doi:10.1007/s00134-019-05871-z</p>
+        <p>10. BrCAST – Comitê Brasileiro de Testes de Sensibilidade aos Antimicrobianos. Tabela de pontos de corte clínicos BrCAST–EUCAST [Internet]. 2018 Jul [cited 2025 May 2]. Available from: https://brcast.org.br/wp-content/uploads/2022/07/Tabela-pontos-de-corte-cli%CC%81nicos-BrCAST-30-julho-2018.pdf</p>
+        <p>11. BrCAST – Comitê Brasileiro de Testes de Sensibilidade aos Antimicrobianos. Tabela de pontos de corte clínicos BrCAST para interpretação de CIMs e diâmetros de halo [Internet]. São Paulo; 2025 [cited 2025 Feb 19]. Available from: https://brcast.org.br</p>
+        <p>12. Craig WA. State‐of‐the-Art Clinical Article: Pharmacokinetic/Pharmacodynamic Parameters: Rationale for Antibacterial Dosing of Mice and Men. Clinical Infectious Diseases. 1998 Jan;26(1):1–10. doi:10.1086/516284</p>
+        <p>13. Nielsen EI, Friberg LE. Pharmacokinetic-Pharmacodynamic Modeling of Antibacterial Drugs. Pharmacol Rev. 2013 Jul;65(3):1053–90. doi:10.1124/pr.111.005769</p>
+        <p>14. Palmer ME, Andrews LJ, Abbey TC, Dahlquist AE, Wenzler E. The importance of pharmacokinetics and pharmacodynamics in antimicrobial drug development and their influence on the success of agents developed to combat resistant gram negative pathogens: A review. Front Pharmacol. 2022 Jul 25;13. doi:10.3389/fphar.2022.888079</p>
+        <p>15. Barlam TF, Cosgrove SE, Abbo LM, MacDougall C, Schuetz AN, Septimus EJ, et al. Implementing an Antibiotic Stewardship Program: Guidelines by the Infectious Diseases Society of America and the Society for Healthcare Epidemiology of America. Clinical Infectious Diseases. 2016 May 15;62(10):e51–77. doi:10.1093/cid/ciw118</p>
+        <p>16. De Waele JJ, Schouten J, Beovic B, Tabah A, Leone M. Antimicrobial de-escalation as part of antimicrobial stewardship in intensive care: no simple answers to simple questions—a viewpoint of experts. Intensive Care Med. 2020 Feb 5;46(2):236–44. doi:10.1007/s00134-019-05871-z</p>
+        <p>17. Rang HP, Ritter JM, Flower RJ, Henderson G. Rang &amp; Dale’s Pharmacology. 9th ed. Rang HP, Ritter JM, Flower RJ, Henderson G, editors. London: Elsevier; 2019.</p>
+        <p>18. Rybak MJ, Le J, Lodise TP, Levine DP, Bradley JS, Liu C, et al. Therapeutic monitoring of vancomycin for serious methicillin-resistant Staphylococcus aureus infections: A revised consensus guideline and review. American Journal of Health-System Pharmacy. 2020 May 19;77(11):835–64. doi:10.1093/ajhp/zxaa036</p>
+        <p>19. European Committee on Antimicrobial Susceptibility Testing (EUCAST). Clinical breakpoints and interpretation of S, I and R [Internet]. Växjö, Sweden; 2024. Available from: https://www.eucast.org</p>
+        <p>20. Fishbein SRS, Mahmud B, Dantas G. Antibiotic perturbations to the gut microbiome. Nat Rev Microbiol. 2023 Dec 25;21(12):772–88. doi:10.1038/s41579-023-00933-y</p>
+        <p>21. Nicolle LE, Gupta K, Bradley SF, Colgan R, DeMuri GP, Drekonja D, et al. Clinical Practice Guideline for the Management of Asymptomatic Bacteriuria: 2019 Update by the Infectious Diseases Society of America. Clinical Infectious Diseases. 2019 May 2;68(10):e83–110. doi:10.1093/cid/ciy1121</p>
+        <p>22. Prescott HC, Antonelli M, Alhazzani W, Møller MH, Alshamsi F, Azevedo LCP, et al. Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2026. Crit Care Med. 2026 Mar 23. doi:10.1097/CCM.0000000000007075</p>
         <p>23. Bratzler DW, Dellinger EP, Olsen KM, Perl TM, Auwaerter PG, Bolon MK, et al. Clinical practice guidelines for antimicrobial prophylaxis in surgery. American Journal of Health-System Pharmacy. 2013 Feb 1;70(3):195–283. doi:10.2146/ajhp120568</p>
         <p>24. World Health Organization. Global guidelines for the prevention of surgical site infection. 2nd ed. Geneva: World Health Organization; 2018. 184 p.</p>
-        <p>25. Taplitz RA, Kennedy EB, Bow EJ, Crews J, Gleason C, Hawley DK, et al. Antimicrobial Prophylaxis for Adult Patients With Cancer-Related Immunosuppression: ASCO and IDSA Clinical Practice Guideline Update. Journal of Clinical Oncology. 2018 Oct 20;36(30):3043–54. doi:10.1200/JCO.18.00374.</p>
+        <p>25. Taplitz RA, Kennedy EB, Bow EJ, Crews J, Gleason C, Hawley DK, et al. Antimicrobial Prophylaxis for Adult Patients With Cancer-Related Immunosuppression: ASCO and IDSA Clinical Practice Guideline Update. Journal of Clinical Oncology. 2018 Oct 20;36(30):3043–54. doi:10.1200/JCO.18.00374</p>
       </div>
     </details>
 
-
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p09.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 1 · Página 10 de 89</div>
-  <a class="btn primary" href="../capitulo-02/p11.html" aria-label="Ir para a próxima página">
-    Próxima →   </a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="p09.html" aria-label="Ir para a página anterior">← Anterior</a>
+      <div class="center">Capítulo 1 · Página 10 de 89</div>
+      <a class="btn primary" href="../capitulo-02/p11.html" aria-label="Ir para a próxima página">Próxima →</a>
+    </nav>
 
   </main>
 

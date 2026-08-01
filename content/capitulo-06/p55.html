@@ -3,11 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 6 — Página 55</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -16,110 +21,329 @@
 
 <body class="cap6-page55">
 
-  <main class="page-shell">
+  <main class="page-shell cap6-shell">
 
     <header class="page-header">
-      <div class="chapter">CAPÍTULO 6 - Associação Terapêutica e Consequências do Uso Indiscriminado</div>
-      <h1 class="page-title">Interações entre antibacterianos</h1>
+
+      <div class="chapter">
+        Capítulo 6 — Associação Terapêutica e Consequências do Uso Indiscriminado
+      </div>
+
+      <h1 class="page-title">
+        Como dois antibacterianos podem interagir
+      </h1>
+
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <section class="prose cap6-reading-flow">
 
       <p>
-        Quando dois antibacterianos são utilizados simultaneamente, a interação entre eles pode modificar o comportamento da população bacteriana exposta. Essas interações são tradicionalmente classificadas em sinergismo, efeito aditivo, indiferença ou antagonismo, dependendo do resultado produzido pela combinação <sup>1,2,8</sup>.
+        Quando dois antibacterianos são utilizados simultaneamente, a interação
+        entre eles pode modificar a atividade antimicrobiana esperada.
+        Dependendo dos mecanismos de ação dos fármacos e do microrganismo
+        envolvido, a combinação pode aumentar, manter ou reduzir sua eficácia
+        <sup>1,2,4</sup>.
       </p>
 
       <p>
-        O sinergismo ocorre quando a atividade antimicrobiana observada com a combinação de dois fármacos é superior àquela obtida com cada agente isoladamente. Nesse caso, a ação de um antibacteriano favorece ou potencializa a atividade do outro <sup>2,8</sup>.
+        Essas interações são classificadas em sinergismo, efeito aditivo,
+        indiferença e antagonismo. Esses conceitos são definidos principalmente
+        em estudos <em>in vitro</em> e nem sempre se traduzem em benefício
+        clínico. Portanto, a demonstração de sinergismo laboratorial,
+        isoladamente, não constitui indicação para terapia combinada
+        <sup>1,2,4</sup>.
       </p>
 
-      <p>
-        Esse fenômeno pode surgir quando um fármaco altera estruturas bacterianas que facilitam a ação do segundo agente. A interferência na parede celular, por exemplo, pode aumentar a penetração de moléculas que atuam em alvos intracelulares. Em outras situações, a combinação bloqueia etapas sequenciais de uma mesma via metabólica, reduzindo a capacidade de adaptação bacteriana <sup>2</sup>.
-      </p>
+      <section
+        class="cap6-p55-case cap6-p55-reveal"
+        data-cap6-p55
+        aria-label="Aplicação clínica sobre interação entre antibacterianos"
+      >
 
-      <section class="cap6-p55-stage" data-cap6-p55 aria-label="Comparação entre tipos de interação">
-        <div class="cap6-p55-stage__inner">
+        <div class="cap6-p55-case__head">
 
-          <div class="cap6-p55-tabs" role="tablist" aria-label="Tipos de interação entre antibacterianos">
-            <button class="cap6-p55-tab" type="button" role="tab" aria-selected="true" data-p55-tab="sinergismo">Sinergismo</button>
-            <button class="cap6-p55-tab" type="button" role="tab" aria-selected="false" data-p55-tab="aditivo">Efeito aditivo</button>
-            <button class="cap6-p55-tab" type="button" role="tab" aria-selected="false" data-p55-tab="indiferenca">Indiferença</button>
-            <button class="cap6-p55-tab" type="button" role="tab" aria-selected="false" data-p55-tab="antagonismo">Antagonismo</button>
+         
+
+        </div>
+
+        <div class="cap6-p55-case__scenario">
+
+          <div class="cap6-p55-case__label">
+            Situação
           </div>
 
-          <div class="cap6-p55-panel">
-            <p class="cap6-p55-panel__eyebrow">Comparação conceitual</p>
-            <h2 class="cap6-p55-panel__title" data-p55-title>Sinergismo</h2>
-            <p class="cap6-p55-panel__lead" data-p55-lead>
-              A combinação produz atividade antimicrobiana superior à obtida com cada antibacteriano isoladamente.
+          <p>
+            Em um estudo laboratorial, a combinação de dois antibacterianos
+            apresenta atividade superior à observada com cada agente
+            isoladamente.
+          </p>
+
+          <p>
+            O resultado é descrito como sinergismo.
+          </p>
+
+        </div>
+
+        <div class="cap6-p55-case__question">
+
+          <strong>
+            Esse achado, isoladamente, é suficiente para indicar terapia
+            combinada na prática clínica?
+          </strong>
+
+          <p>
+            Selecione a interpretação mais adequada.
+          </p>
+
+        </div>
+
+        <div
+          class="cap6-p55-case__options"
+          role="group"
+          aria-label="Alternativas da situação clínica"
+        >
+
+          <button
+            type="button"
+            data-p55-answer="suficiente"
+          >
+            <span>A</span>
+
+            <span>
+              Sim. A demonstração de sinergismo laboratorial comprova que a
+              associação deve ser utilizada.
+            </span>
+          </button>
+
+          <button
+            type="button"
+            data-p55-answer="contexto"
+          >
+            <span>B</span>
+
+            <span>
+              Não. O achado deve ser interpretado junto às evidências clínicas
+              e à indicação específica da combinação.
+            </span>
+          </button>
+
+        </div>
+
+        <div
+          class="cap6-p55-case__feedback"
+          data-p55-feedback
+          aria-live="polite"
+        >
+
+          <strong>
+            Analise o significado clínico do resultado.
+          </strong>
+
+          <p>
+            Uma interação demonstrada em laboratório nem sempre produz benefício
+            relevante para o paciente.
+          </p>
+
+        </div>
+
+      </section>
+
+      <section
+        class="cap6-p55-types cap6-p55-reveal"
+        aria-label="Tipos de interação entre antibacterianos"
+      >
+
+        <div class="cap6-p55-types__head">
+
+          <span>Tipos de interação</span>
+
+
+        </div>
+
+        <div class="cap6-p55-types__list">
+
+          <article>
+
+            <span>01</span>
+
+            <div>
+
+              <h3>Sinergismo</h3>
+
+              <p>
+                A combinação apresenta atividade superior à esperada para os
+                agentes isolados. Ocorre em situações específicas e bem
+                estabelecidas.
+              </p>
+
+              <small>
+                Exemplo: ampicilina associada à ceftriaxona em situações
+                específicas de endocardite por
+                <em>Enterococcus faecalis</em>.
+              </small>
+
+            </div>
+
+          </article>
+
+          <article>
+
+            <span>02</span>
+
+            <div>
+
+              <h3>Efeito aditivo</h3>
+
+              <p>
+                A atividade da combinação corresponde aproximadamente à soma dos
+                efeitos individuais, sem potencialização relevante.
+              </p>
+
+              <small>
+                Geralmente não representa benefício clínico demonstrado em
+                relação à monoterapia adequada.
+              </small>
+
+            </div>
+
+          </article>
+
+          <article>
+
+            <span>03</span>
+
+            <div>
+
+              <h3>Indiferença</h3>
+
+              <p>
+                A associação não modifica significativamente a atividade quando
+                comparada ao agente mais ativo utilizado isoladamente.
+              </p>
+
+              <small>
+                É o comportamento mais frequentemente observado entre as
+                associações utilizadas na prática.
+              </small>
+
+            </div>
+
+          </article>
+
+          <article>
+
+            <span>04</span>
+
+            <div>
+
+              <h3>Antagonismo</h3>
+
+              <p>
+                Um antibacteriano reduz a atividade do outro, diminuindo o efeito
+                esperado da combinação.
+              </p>
+
+              <small>
+                Sua relevância clínica é limitada para a maioria das associações
+                utilizadas atualmente.
+              </small>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+      <section
+        class="cap6-p55-practice cap6-p55-reveal"
+        aria-label="Aplicação prática das interações"
+      >
+
+        <div class="cap6-p55-practice__head">
+
+          <span>Na prática clínica</span>
+
+         
+
+        </div>
+
+        <div class="cap6-p55-practice__list">
+
+          <div>
+            <span>01</span>
+
+            <p>
+              O sinergismo possui utilidade em indicações específicas e
+              sustentadas por evidências.
             </p>
+          </div>
 
-            <div class="cap6-p55-bars" aria-hidden="true">
-              <div class="cap6-p55-bars__row">
-                <span class="cap6-p55-bars__label">Antibacteriano A</span>
-                <div class="cap6-p55-bars__track">
-                  <div class="cap6-p55-bars__fill cap6-p55-bars__fill--a" data-p55-bar-a></div>
-                </div>
-              </div>
+          <div>
+            <span>02</span>
 
-              <div class="cap6-p55-bars__row">
-                <span class="cap6-p55-bars__label">Antibacteriano B</span>
-                <div class="cap6-p55-bars__track">
-                  <div class="cap6-p55-bars__fill cap6-p55-bars__fill--b" data-p55-bar-b></div>
-                </div>
-              </div>
+            <p>
+              O efeito aditivo raramente modifica a decisão quando a monoterapia
+              adequada já é suficiente.
+            </p>
+          </div>
 
-              <div class="cap6-p55-bars__row cap6-p55-bars__row--combo">
-                <span class="cap6-p55-bars__label">Combinação</span>
-                <div class="cap6-p55-bars__track">
-                  <div class="cap6-p55-bars__fill cap6-p55-bars__fill--combo" data-p55-bar-combo></div>
-                </div>
-              </div>
-            </div>
+          <div>
+            <span>03</span>
 
-            <div class="cap6-p55-summary" data-p55-summary>
-              A ação de um agente favorece ou potencializa a atividade do outro, podendo acelerar a redução da carga bacteriana em contextos específicos.
-            </div>
+            <p>
+              A indiferença mostra que acrescentar outro agente pode não produzir
+              ganho microbiológico relevante.
+            </p>
+          </div>
+
+          <div>
+            <span>04</span>
+
+            <p>
+              O antagonismo deve ser interpretado no contexto da combinação e
+              de sua relevância clínica.
+            </p>
           </div>
 
         </div>
+
       </section>
 
-      <p>
-        Na prática contemporânea, o sinergismo tem sido explorado de forma estratégica para superar mecanismos complexos de resistência. Um exemplo atual é a associação de ceftazidima-avibactam ao aztreonam para tratar infecções por enterobactérias produtoras de metalo-beta-lactamases, ou a terapia tripla utilizando imipenem e sulbactam-durlobactam, que demonstra atividade sinérgica contra cepas resistentes de <em>Acinetobacter baumannii</em> <sup>9</sup>.
-      </p>
+      <aside class="cap6-p55-box cap6-p55-key cap6-p55-reveal">
 
-      <p>
-        Em determinadas circunstâncias, o sinergismo pode acelerar a redução da carga bacteriana ou diminuir a probabilidade de sobrevivência de subpopulações parcialmente menos suscetíveis. Entretanto, o sinergismo demonstrado em experimentos laboratoriais não se traduz automaticamente em benefício clínico consistente. A magnitude do efeito depende da concentração efetivamente alcançada no foco infeccioso, da densidade bacteriana inicial e do estado metabólico das células presentes <sup>1,2,10</sup>.
-      </p>
+        A decisão de associar antibacterianos deve ser baseada em evidências
+        clínicas e em um objetivo terapêutico definido, e não apenas no
+        resultado de estudos laboratoriais de interação.
 
-      <p>
-        Outra possibilidade é o efeito aditivo, no qual a combinação produz resultado equivalente à soma das atividades individuais de cada antibacteriano. Nesse cenário, não há interação biológica relevante entre os agentes, e o efeito observado reflete apenas a contribuição independente de cada fármaco <sup>1,2</sup>.
-      </p>
-
-      <p>
-        Também pode ocorrer indiferença, situação em que a associação não altera de forma significativa a resposta obtida com monoterapia adequada. A presença de dois agentes ativos não modifica substancialmente a dinâmica infecciosa <sup>1,2</sup>.
-      </p>
-
-      <p>
-        Por fim, existe a possibilidade de antagonismo farmacológico. Esse fenômeno ocorre quando a ação de um antibacteriano interfere no mecanismo necessário para a atividade do outro, reduzindo a eficácia global da combinação. Um exemplo clássico descrito em modelos experimentais envolve a combinação de agentes bacteriostáticos que reduzem a taxa de divisão bacteriana com antibacterianos cuja atividade depende de crescimento celular ativo <sup>2,8</sup>.
-      </p>
-
-      <div class="cap6-p55-highlight">
-        Associação antibacteriana não é sinônimo automático de maior eficácia. O comportamento observado depende do tipo de interação, da exposição atingida no sítio infeccioso e das características biológicas da população bacteriana.
-      </div>
-
-      <p>
-        Na prática clínica contemporânea, antagonismo relevante é menos frequente do que se supunha com base em modelos experimentais antigos. Ainda assim, o conceito ilustra que associação antibacteriana não é sinônimo automático de maior eficácia <sup>1,8</sup>.
-      </p>
+      </aside>
 
     </section>
 
-  <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p54.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 6 · Página 55 de 89</div>
-  <a class="btn primary" href="p56.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+
+      <a
+        class="btn"
+        href="p54.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 6 · Página 55 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p56.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+
+    </nav>
 
   </main>
 

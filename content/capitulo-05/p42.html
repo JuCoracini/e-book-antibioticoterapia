@@ -3,10 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 5 — Página 42</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -18,102 +24,357 @@
   <main class="page-shell">
 
     <header class="page-header">
-      <div class="chapter">Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma</div>
-      <h1 class="page-title">Identificação bacteriana</h1>
+      <div class="chapter">
+        Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma
+      </div>
+
+      <h1 class="page-title">
+        Gram-positivas e Gram-negativas
+      </h1>
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <section class="prose cap5-p42-reading">
 
       <p>
-        Após o crescimento do microrganismo em meio de cultura e a avaliação morfológica inicial, o laboratório realiza a identificação bacteriana. Essa etapa define o agente isolado e estabelece o contexto biológico necessário para interpretar corretamente o teste de suscetibilidade <sup>1,2</sup>.
+        A coloração de Gram reflete diferenças estruturais importantes do envelope bacteriano. Essas diferenças influenciam a entrada dos antibacterianos, os mecanismos de resistência e o comportamento microbiológico de cada grupo bacteriano <sup>2,5</sup>.
       </p>
-
-      <figure class="figure cap5-p42-culture">
-        <button
-          type="button"
-          class="cap5-p42-culture__zoom"
-          data-zoom="../../assets/capitulo-05/imagens/cultura-agar-sangue.png"
-          aria-label="Ampliar imagem de cultura bacteriana em ágar sangue"
-        >
-          <img
-            src="../../assets/capitulo-05/imagens/cultura-agar-sangue.png"
-            alt="Placa de ágar sangue com crescimento bacteriano."
-            loading="lazy"
-          />
-        </button>
-        <figcaption class="caption">
-          O crescimento em meio de cultura torna visíveis características fenotípicas iniciais que orientam a etapa seguinte da identificação.
-        </figcaption>
-      </figure>
 
       <p>
-        A identificação pode começar por características observadas no próprio crescimento bacteriano. Aspectos como morfologia das colônias, padrão de hemólise em ágar sangue, pigmentação e odor característico podem fornecer indícios iniciais sobre o grupo bacteriano envolvido. Essas informações orientam a escolha dos testes adicionais necessários para confirmar a identificação <sup>1,2</sup>.
+        Portanto, o resultado da bacterioscopia não informa apenas uma cor. Ele oferece uma caracterização estrutural inicial que ajuda a restringir os grupos bacterianos prováveis e a organizar o raciocínio terapêutico enquanto a identificação e o antibiograma permanecem em processamento.
       </p>
 
-      <section class="cap5-p42-reading" aria-labelledby="cap5-p42-reading-title">
-        <div class="cap5-p42-reading__head">
-          <p class="eyebrow">Leitura inicial da colônia</p>
-          <h2 id="cap5-p42-reading-title" class="cap5-p42-reading__title">O que o laboratório observa primeiro</h2>
-          <p class="cap5-p42-reading__subtitle">
-            A imagem não entrega a identificação sozinha, mas organiza os indícios fenotípicos que direcionam os próximos testes.
+      <section
+        class="cap5-p42-envelope cap5-p42-reveal"
+        data-cap5-p42-envelope
+        aria-label="Comparação entre os envelopes de bactérias Gram-positivas e Gram-negativas"
+      >
+
+        <div class="cap5-p42-envelopeTop">
+
+          <p class="cap5-p42-instruction">
+            Selecione um grupo para observar sua organização estrutural e suas implicações microbiológicas.
           </p>
+
+          <button
+            class="cap5-p42-tableButton"
+            type="button"
+            data-p42-open-table
+            aria-label="Abrir tabela comparativa"
+            aria-haspopup="dialog"
+            title="Comparação rápida"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <rect x="4" y="5" width="16" height="14" rx="2"></rect>
+              <path d="M4 10h16M10 5v14"></path>
+            </svg>
+          </button>
+
         </div>
 
-        <div class="cap5-p42-reading__layout">
-          <figure class="cap5-p42-reading__figure">
+        <div
+          class="cap5-p42-envelopeTabs"
+          role="tablist"
+          aria-label="Grupos bacterianos"
+        >
+          <button
+            class="cap5-p42-envelopeTab is-active"
+            type="button"
+            role="tab"
+            id="cap5P42TabPositive"
+            aria-selected="true"
+            aria-controls="cap5P42EnvelopeView"
+            tabindex="0"
+            data-p42-envelope-target="positive"
+          >
+            Gram-positivas
+          </button>
+
+          <button
+            class="cap5-p42-envelopeTab"
+            type="button"
+            role="tab"
+            id="cap5P42TabNegative"
+            aria-selected="false"
+            aria-controls="cap5P42EnvelopeView"
+            tabindex="-1"
+            data-p42-envelope-target="negative"
+          >
+            Gram-negativas
+          </button>
+        </div>
+
+        <article
+          id="cap5P42EnvelopeView"
+          class="cap5-p42-envelopeView"
+          role="tabpanel"
+          aria-labelledby="cap5P42TabPositive"
+          aria-live="polite"
+        >
+
+          <figure class="cap5-p42-envelopeFigure">
             <button
+              id="cap5P42EnvelopeZoom"
+              class="cap5-p42-envelopeZoom"
               type="button"
-              class="cap5-p42-reading__zoom"
-              data-zoom="../../assets/capitulo-05/imagens/caracteristicas-colonia.png"
-              aria-label="Ampliar imagem da colônia em ágar sangue"
+              data-zoom="../../assets/capitulo-05/imagens/gram-positivo1.png"
+              aria-label="Ampliar estrutura de bactéria Gram-positiva"
             >
               <img
-                src="../../assets/capitulo-05/imagens/caracteristicas-colonia.png"
-                alt="Colônia bacteriana em ágar sangue."
+                id="cap5P42EnvelopeImage"
+                src="../../assets/capitulo-05/imagens/gram-positivo1.png"
+                alt="Representação do envelope celular de bactéria Gram-positiva"
                 loading="lazy"
               />
             </button>
+
+            <figcaption
+              id="cap5P42EnvelopeCaption"
+              class="cap5-p42-envelopeCaption"
+            >
+              Organização do envelope celular de uma bactéria Gram-positiva.
+            </figcaption>
           </figure>
 
-          <div class="cap5-p42-reading__side">
-            <div class="cap5-p42-reading__controls" role="tablist" aria-label="Aspectos iniciais da colônia">
-              <button class="cap5-p42-chip is-active" type="button" role="tab" aria-selected="true" data-p42-view="morfologia">
-                Morfologia
-              </button>
-              <button class="cap5-p42-chip" type="button" role="tab" aria-selected="false" data-p42-view="hemolise">
-                Hemólise
-              </button>
-              <button class="cap5-p42-chip" type="button" role="tab" aria-selected="false" data-p42-view="pigmentacao">
-                Pigmentação
-              </button>
-              <button class="cap5-p42-chip" type="button" role="tab" aria-selected="false" data-p42-view="odor">
-                Odor
-              </button>
+          <div class="cap5-p42-envelopeAnalysis">
+
+            <span
+              id="cap5P42EnvelopeKicker"
+              class="cap5-p42-kicker"
+            >
+              Implicação estrutural
+            </span>
+
+            <h2
+              id="cap5P42EnvelopeTitle"
+              class="cap5-p42-envelopeTitle"
+            >
+              Parede celular como alvo terapêutico
+            </h2>
+
+            <div
+              id="cap5P42EnvelopeBody"
+              class="cap5-p42-envelopeBody"
+            >
+              <div class="cap5-p42-infoGrid">
+
+                <article class="cap5-p42-info">
+                  <span>Entrada dos antibacterianos</span>
+                  <p>
+                    A ausência de membrana externa elimina uma importante barreira adicional à penetração de diversas moléculas.
+                  </p>
+                </article>
+
+                <article class="cap5-p42-info">
+                  <span>Alvo farmacológico</span>
+                  <p>
+                    A síntese do peptidoglicano constitui um alvo relevante para β-lactâmicos e glicopeptídeos.
+                  </p>
+                </article>
+
+                <article class="cap5-p42-info">
+                  <span>Interpretação do Gram</span>
+                  <p>
+                    O resultado orienta inicialmente para grupos bacterianos com organização estrutural distinta das Gram-negativas.
+                  </p>
+                </article>
+
+                <article class="cap5-p42-info cap5-p42-info--key">
+                  <span>Limite clínico</span>
+                  <p>
+                    A reação Gram-positiva não permite prever isoladamente a suscetibilidade do microrganismo.
+                  </p>
+                </article>
+
+              </div>
             </div>
 
-            <div class="cap5-p42-reading__panel" aria-live="polite">
-              <p id="cap5-p42-panel-eyebrow" class="cap5-p42-reading__eyebrow">Traço estrutural inicial</p>
-              <h3 id="cap5-p42-panel-title" class="cap5-p42-reading__panel-title">Morfologia da colônia</h3>
-              <p id="cap5-p42-panel-text" class="cap5-p42-reading__panel-text">
-                O tamanho, o contorno das bordas, a superfície, a elevação e a consistência da colônia podem sugerir padrões característicos de determinados grupos bacterianos e orientar a continuidade da investigação.
-              </p>
-            </div>
           </div>
-        </div>
+
+        </article>
       </section>
 
-      <p>
-        Tradicionalmente, a identificação baseia-se em testes fenotípicos bioquímicos, que avaliam propriedades metabólicas da bactéria. Esses testes investigam, por exemplo, a capacidade de fermentar determinados açúcares, produzir enzimas específicas ou utilizar substratos particulares. A combinação desses resultados gera um perfil metabólico característico que permite classificar o microrganismo em determinada espécie ou grupo bacteriano <sup>1,2</sup>.
-      </p>
+      <aside class="cap5-p42-inference cap5-p42-reveal">
+        <span class="cap5-p42-inferenceLabel">
+          O que já pode ser inferido?
+        </span>
 
-    </section>
+        <div class="cap5-p42-inferenceGrid">
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p41.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 5 · Página 42 de 89</div>
-  <a class="btn primary" href="p43.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+          <article>
+            <strong>“Bacilos Gram-negativos”</strong>
 
+            <p>
+              Indica um grupo que possui membrana externa e cuja entrada de muitos antimicrobianos pode depender de porinas. A interpretação também deve considerar mecanismos como β-lactamases periplasmáticas, redução da permeabilidade e bombas de efluxo.
+            </p>
+          </article>
+
+          <article>
+            <strong>“Cocos Gram-positivos em cachos”</strong>
+
+            <p>
+              Direciona inicialmente a investigação para o gênero <em>Staphylococcus</em>, mas ainda não diferencia espécie, relevância clínica ou perfil de suscetibilidade.
+            </p>
+          </article>
+
+        </div>
+
+        <p class="cap5-p42-inferenceLimit">
+          O resultado orienta a cobertura empírica, mas não permite definir a terapia definitiva.
+        </p>
+      </aside>
+
+
+      <section
+        class="cap5-p42-quiz cap5-p42-reveal"
+        data-cap5-p42-quiz
+        aria-labelledby="cap5P42QuizTitle"
+      >
+
+        <div class="cap5-p42-quizHeader">
+    
+
+          <span
+            id="cap5P42QuizCounter"
+            class="cap5-p42-quizCounter"
+          >
+            Situação 1 de 4
+          </span>
+        </div>
+
+        <article
+          id="cap5P42QuizCase"
+          class="cap5-p42-quizCase"
+          aria-live="polite"
+        >
+
+          <div
+            id="cap5P42QuizContext"
+            class="cap5-p42-quizContext"
+          >
+            <p>
+              Um homem é internado com sepse de provável origem urinária. Após 12 horas de incubação, a hemocultura torna-se positiva.
+            </p>
+
+            <span class="cap5-p42-labResult">
+              Bacilos Gram-negativos
+            </span>
+          </div>
+
+          <h3
+            id="cap5P42QuizQuestion"
+            class="cap5-p42-quizQuestion"
+          >
+            Qual conclusão microbiológica pode ser feita neste momento?
+          </h3>
+
+          <div
+            id="cap5P42QuizOptions"
+            class="cap5-p42-quizOptions"
+          ></div>
+
+          <div
+            id="cap5P42QuizFeedback"
+            class="cap5-p42-quizFeedback"
+            hidden
+            aria-live="polite"
+          ></div>
+
+        </article>
+
+        <div class="cap5-p42-quizNavigation">
+
+          <button
+            id="cap5P42QuizPrev"
+            class="cap5-p42-quizNav"
+            type="button"
+            disabled
+          >
+            ← Situação anterior
+          </button>
+
+          <div
+            id="cap5P42QuizDots"
+            class="cap5-p42-quizDots"
+            aria-label="Progresso das situações clínicas"
+          ></div>
+
+          <button
+            id="cap5P42QuizNext"
+            class="cap5-p42-quizNav"
+            type="button"
+          >
+            Próxima situação →
+          </button>
+
+        </div>
+  
+
+    <div
+      class="cap5-p42-tableModal"
+      data-p42-table-modal
+      hidden
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="cap5P42TableTitle"
+    >
+
+      <div
+        class="cap5-p42-tableBackdrop"
+        data-p42-close-table
+      ></div>
+
+      <div class="cap5-p42-tableDialog">
+
+        <div class="cap5-p42-tableHeader">
+          <h2 id="cap5P42TableTitle">
+            Comparação estrutural
+          </h2>
+
+          <button
+            class="cap5-p42-tableClose"
+            type="button"
+            data-p42-close-table
+            aria-label="Fechar tabela comparativa"
+          >
+            ×
+          </button>
+        </div>
+
+        <figure class="cap5-p42-tableFigure">
+          <img
+            src="../../assets/capitulo-05/imagens/tabela-comparativa-gram.png"
+            alt="Tabela comparativa entre bactérias Gram-positivas e Gram-negativas"
+          />
+        </figure>
+
+      </div>
+    </div>
+
+    <nav class="pager" aria-label="Paginação">
+      <a
+        class="btn"
+        href="p41.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 5 · Página 42 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p43.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+    </nav>
 
   </main>
 

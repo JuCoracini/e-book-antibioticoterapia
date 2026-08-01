@@ -1,128 +1,137 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Capítulo 3 — Página 27</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../../css/base.css" />
-  <link rel="stylesheet" href="../../css/components.css" />
-  <link rel="stylesheet" href="../../css/capitulo-03.css" />
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/capitulo-03.css">
 </head>
 
 <body class="cap3-page27">
-
   <main class="page-shell cap3-shell">
-
     <header class="page-header">
       <div class="chapter">Capítulo 3 — Mecanismos de Resistência Bacteriana</div>
-      <h1 class="page-title">Relação entre mecanismo de ação e resistência</h1>
+      <h1 class="page-title">Resistência cruzada</h1>
     </header>
 
-    <section class="prose cap3-reading-flow" aria-label="Texto principal">
-
+    <section class="prose cap3-reading-flow">
       <p>
-        Os mecanismos de resistência bacteriana não surgem de forma aleatória. Em muitos casos, eles se relacionam diretamente com o modo pelo qual o antibacteriano exerce sua atividade. Compreender o mecanismo de ação do fármaco permite antecipar quais adaptações bacterianas são biologicamente mais prováveis diante da pressão seletiva exercida pelos antibacterianos <sup>1,3</sup>.
+        Os diferentes mecanismos de resistência bacteriana podem produzir padrões distintos de suscetibilidade aos antibacterianos. Em algumas situações, um único mecanismo de resistência reduz a atividade de diversos fármacos pertencentes à mesma classe, fenômeno denominado resistência cruzada <sup>1,3,4,9</sup>.
       </p>
 
       <p>
-        Antibacterianos que atuam na síntese da parede celular, por exemplo, podem ter sua atividade comprometida pela produção de β-lactamases ou por modificações nas proteínas ligadoras de penicilina (PBPs). Já fármacos que dependem da integridade de enzimas envolvidas na replicação do DNA, como DNA girase ou topoisomerase IV, podem perder eficácia quando mutações alteram essas estruturas.
+        A resistência cruzada ocorre quando diferentes antibacterianos compartilham o mesmo alvo molecular, mecanismo de ação semelhante ou estrutura química relacionada. Como consequência, mesmo medicamentos aos quais a bactéria nunca foi exposta podem apresentar atividade reduzida <sup>1,3,4</sup>.
       </p>
 
-      <p>
-        De maneira semelhante, antibacterianos que interferem na síntese proteica podem ser afetados por modificações estruturais nos ribossomos bacterianos ou por mecanismos que reduzem a concentração intracelular do fármaco, como bombas de efluxo.
-      </p>
+      <aside class="cap3-p27-case" aria-labelledby="cap3P27CaseTitle">
+        <div class="cap3-p27-caseIcon" aria-hidden="true">+</div>
+        <div>
+          <h2 id="cap3P27CaseTitle">Caso clínico</h2>
+          <p>
+            Paciente com pielonefrite por <em>Escherichia coli</em>. O antibiograma mostrou resistência à ciprofloxacina. O paciente nunca utilizou levofloxacina. Mesmo assim, o laboratório também relatou resistência à levofloxacina. Como isso é possível?
+          </p>
+        </div>
+      </aside>
 
-      <figure class="figure cap3-p27-figure" aria-label="Correspondência entre ataque farmacológico, alvo e adaptação bacteriana">
-        <button
-          class="cap3-p27-spotlight"
-          id="cap3P27Spotlight"
-          type="button"
-          aria-describedby="cap3P27Hint cap3P27Progress"
-          aria-label="Avançar destaque do raciocínio entre ataque, alvo e defesa bacteriana"
-        >
-          <img
-            src="../../assets/capitulo-03/imagens/correspondencia-tatica.png"
-            alt="Esquema mostrando a sequência entre ataque farmacológico, alvo biológico e adaptação bacteriana"
-            loading="lazy"
-          />
-
-          <span class="cap3-p27-mask"></span>
-          <span class="cap3-p27-focus cap3-p27-focus--1" aria-hidden="true"></span>
-          <span class="cap3-p27-focus cap3-p27-focus--2" aria-hidden="true"></span>
-          <span class="cap3-p27-focus cap3-p27-focus--3" aria-hidden="true"></span>
-        </button>
-
-        <figcaption class="caption cap3-p27-caption">
-          <strong>Correspondência tática:</strong> o mecanismo de resistência tende a guardar relação com o ponto em que o antibacteriano atua. Clique na imagem para percorrer a sequência: ataque farmacológico, alvo biológico e adaptação bacteriana correspondente.
-        </figcaption>
-
-        <div class="cap3-p27-progress" id="cap3P27Progress" aria-live="polite">
-          <span class="cap3-p27-progress__dot is-active"></span>
-          <span class="cap3-p27-progress__dot"></span>
-          <span class="cap3-p27-progress__dot"></span>
-          <span class="cap3-p27-progress__label">Etapa 1 de 3</span>
+      <section class="cap3-p27-interaction" aria-labelledby="cap3P27InteractionTitle">
+        <div class="cap3-p27-interactionHead">
+          <div>
+            <span class="cap3-p27-eyebrow">Interprete o caso</span>
+            <h2 id="cap3P27InteractionTitle">Relacione o padrão ao mecanismo</h2>
+          </div>
+          <span class="cap3-p27-progress" aria-live="polite">Etapa 1 de 2</span>
         </div>
 
-        <p class="cap3-p27-hint" id="cap3P27Hint">
-          Clique para percorrer a sequência: ataque → alvo → adaptação.
-        </p>
-      </figure>
+        <div class="cap3-p27-results" aria-label="Resultados do antibiograma">
+          <div class="cap3-p27-organism"><em>E. coli</em></div>
+          <div class="cap3-p27-resultRow">
+            <span>Ciprofloxacina</span>
+            <strong class="cap3-p27-r">R</strong>
+          </div>
+          <div class="cap3-p27-resultRow">
+            <span>Levofloxacina</span>
+            <strong class="cap3-p27-r">R</strong>
+          </div>
+        </div>
+
+        <fieldset class="cap3-p27-question">
+          <legend>Qual explicação interpreta melhor os dois resultados?</legend>
+
+          <label class="cap3-p27-option">
+            <input type="radio" name="cap3P27Answer" value="exposicao">
+            <span class="cap3-p27-marker">A</span>
+            <span>A levofloxacina só poderia apresentar resistência após exposição prévia do paciente.</span>
+          </label>
+
+          <label class="cap3-p27-option">
+            <input type="radio" name="cap3P27Answer" value="cruzada">
+            <span class="cap3-p27-marker">B</span>
+            <span>Um mecanismo que afeta alvos compartilhados pelas fluoroquinolonas pode reduzir a atividade de ambos os fármacos.</span>
+          </label>
+
+          <label class="cap3-p27-option">
+            <input type="radio" name="cap3P27Answer" value="independente">
+            <span class="cap3-p27-marker">C</span>
+            <span>Os resultados não podem estar relacionados porque correspondem a antibacterianos diferentes.</span>
+          </label>
+        </fieldset>
+
+        <div class="cap3-p27-actions">
+          <button type="button" class="cap3-p27-confirm" disabled>Confirmar interpretação</button>
+          <button type="button" class="cap3-p27-reset" hidden>Rever resposta</button>
+        </div>
+
+        <div class="cap3-p27-feedback" aria-live="polite" hidden></div>
+
+        <div class="cap3-p27-mechanism" hidden>
+          <div class="cap3-p27-mechanismTrack" aria-label="Sequência do mecanismo de resistência cruzada">
+            <article>
+              <span>1</span>
+              <strong>Alvo compartilhado</strong>
+              <p>DNA girase e topoisomerase IV.</p>
+            </article>
+            <i aria-hidden="true">→</i>
+            <article>
+              <span>2</span>
+              <strong>Alteração do alvo</strong>
+              <p>A afinidade das fluoroquinolonas pode diminuir.</p>
+            </article>
+            <i aria-hidden="true">→</i>
+            <article>
+              <span>3</span>
+              <strong>Atividade reduzida</strong>
+              <p>Mais de um fármaco da classe pode ser afetado.</p>
+            </article>
+          </div>
+
+          <p class="cap3-p27-caution">
+            <strong>Na prática:</strong> resistência cruzada não significa que todos os fármacos da classe terão obrigatoriamente a mesma categoria. Cada resultado deve ser interpretado segundo o antibiograma e os pontos de corte vigentes.
+          </p>
+        </div>
+      </section>
 
       <p>
-        Essa relação entre alvo farmacológico e adaptação bacteriana confere certa previsibilidade biológica ao fenômeno da resistência. Embora diferentes mecanismos possam coexistir, frequentemente existe correspondência entre o ponto de ação do antibacteriano e o tipo de mecanismo adaptativo desenvolvido pela bactéria <sup>5</sup>.
+        Esse fenômeno é frequentemente observado nas fluoroquinolonas. Mutações na DNA girase ou na topoisomerase IV podem comprometer simultaneamente a atividade de ciprofloxacina, levofloxacina e moxifloxacina. Da mesma forma, a metilação do rRNA 23S pode reduzir a suscetibilidade a diferentes macrolídeos por alterar o mesmo alvo molecular <sup>3,4,9</sup>.
       </p>
 
-      <p>
-        Do ponto de vista clínico, compreender essa relação amplia a capacidade de interpretar o perfil de suscetibilidade observado no antibiograma. Quando um microrganismo apresenta resistência a determinado grupo farmacológico, o conhecimento do mecanismo de ação do antibacteriano permite inferir quais processos adaptativos podem estar envolvidos.
-      </p>
-
-      <p>
-        Esse raciocínio não substitui os testes laboratoriais utilizados para caracterizar o mecanismo de resistência, mas contribui para integrar a interpretação microbiológica ao contexto clínico.
-      </p>
-
-      <figure class="figure cap3-p27-matrixFigure">
-        <button
-          type="button"
-          data-zoom="../../assets/capitulo-03/imagens/matriz-correspondencia.png"
-          aria-label="Ampliar matriz de correspondência entre mecanismo de ação e resistência"
-        >
-          <img
-            src="../../assets/capitulo-03/imagens/matriz-correspondencia.png"
-            alt="Tabela resumindo a correspondência entre alvo biológico, ação do fármaco e adaptação bacteriana esperada"
-            loading="lazy"
-          />
-        </button>
-
-        <figcaption class="caption cap3-p27-matrixCaption">
-          <strong>Matriz de correspondência tática:</strong> a natureza do alvo farmacológico ajuda a antecipar os mecanismos de resistência biologicamente mais prováveis.
-        </figcaption>
-      </figure>
-
-      <p>
-        Além disso, diferentes mecanismos podem atuar de forma combinada. A associação entre produção de enzimas inativadoras e redução da permeabilidade da membrana, por exemplo, pode elevar significativamente o grau de resistência observado. De maneira semelhante, bombas de efluxo podem ampliar o impacto de mutações que alteram o alvo molecular.
-      </p>
-
-      <p>
-        Essa interação entre mecanismos explica por que algumas bactérias desenvolvem resistência extensa a múltiplas classes de antibacterianos, mesmo quando cada adaptação isoladamente produziria efeito mais limitado.
-      </p>
-
-      <p>
-        Assim, compreender a relação entre mecanismo de ação e resistência permite interpretar o antibiograma de forma mais crítica e entender como diferentes adaptações bacterianas podem influenciar a resposta ao tratamento.
-      </p>
-
+      <aside class="cap3-p27-summary">
+        <strong>Para lembrar</strong>
+        <span>Um único mecanismo pode reduzir a atividade de diferentes antibacterianos relacionados, inclusive de um medicamento que nunca foi utilizado pelo paciente.</span>
+      </aside>
     </section>
 
- <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p26.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 3 · Página 27 de 89</div>
-  <a class="btn primary" href="p28.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
-
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="p26.html" aria-label="Ir para a página anterior">← Anterior</a>
+      <div class="center">Capítulo 3 · Página 27 de 89</div>
+      <a class="btn primary" href="p28.html" aria-label="Ir para a próxima página">Próxima →</a>
+    </nav>
   </main>
 
   <script src="../../js/app.js"></script>

@@ -3,146 +3,287 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 2 — Página 18</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
   <link rel="stylesheet" href="../../css/capitulo-02.css" />
 </head>
 
-<body class="cap2-shell cap2-page18">
+<body class="cap2-page18">
 
-  <main class="page-shell">
+  <main class="page-shell cap2-shell">
 
     <header class="page-header">
-      <div class="chapter">Capítulo 2 — Mecanismos de Ação dos Antibacterianos</div>
-      <h1 class="page-title">Bactericida e bacteriostático</h1>
+      <div class="chapter">
+        Capítulo 2 — Mecanismos de Ação dos Antibacterianos
+      </div>
+
+      <h1 class="page-title">
+        Atividade bactericida e bacteriostática
+      </h1>
     </header>
 
-    <section class="prose" aria-label="Texto principal">
-      <p>
-        A distinção entre agentes bactericidas e bacteriostáticos descreve o padrão quantitativo de resposta da população bacteriana após exposição a um antibacteriano. Em microbiologia experimental, essa classificação costuma basear-se na variação do número de bactérias viáveis ao longo do tempo, frequentemente medida por contagem de unidades formadoras de colônia (UFC). Em muitos contextos, considera-se bactericida a redução de pelo menos 3 log10 de UFC/mL em relação ao inóculo inicial <sup>4</sup>. Entretanto, essa distinção não é absoluta, pois o comportamento bactericida ou bacteriostático pode variar conforme a concentração do fármaco.
-      </p>
+    <section class="prose cap2-reading-flow">
 
       <p>
-        Os fármacos bactericidas promovem redução significativa da população bacteriana viável, enquanto os agentes bacteriostáticos inibem a multiplicação bacteriana sem necessariamente provocar morte imediata das células. Essa diferenciação descreve um padrão microbiológico de resposta e não determina, isoladamente, maior ou menor eficácia terapêutica.
-      </p>
-    </section>
-
-    <section class="cap2-p18-stage" data-cap2-response aria-label="Comparação entre resposta bacteriostática e bactericida">
-
-      <p class="cap2-p18-intro">
-        Selecione um padrão de resposta para observar a representação visual correspondente e sua interpretação microbiológica.
+        A distinção entre agentes bactericidas e bacteriostáticos descreve o padrão de resposta da população bacteriana após a exposição a um antibacteriano. Em microbiologia experimental, essa classificação é baseada na variação do número de bactérias viáveis ao longo do tempo, geralmente determinada por contagem de unidades formadoras de colônia (UFC).
       </p>
 
-      <div class="cap2-p18-tabs" role="tablist" aria-label="Comparação entre bacteriostático e bactericida">
-        <button
-          class="cap2-p18-tab is-active"
-          type="button"
-          role="tab"
-          id="cap2P18TabBacteriostatico"
-          aria-selected="true"
-          aria-controls="cap2P18Panel"
-          tabindex="0"
-          data-response-tab="bacteriostatico"
-        >
-          Bacteriostático
-        </button>
+      <p>
+        Convencionalmente, considera-se bactericida o antibacteriano capaz de promover redução igual ou superior a 3 log<sub>10</sub> UFC/mL, correspondente a 99,9% do inóculo inicial, após período padronizado de exposição. Entretanto, essa classificação não é absoluta e pode variar conforme o microrganismo, o fármaco e as condições do ensaio <sup>14–16</sup>.
+      </p>
 
-        <button
-          class="cap2-p18-tab"
-          type="button"
-          role="tab"
-          id="cap2P18TabBactericida"
-          aria-selected="false"
-          aria-controls="cap2P18Panel"
-          tabindex="-1"
-          data-response-tab="bactericida"
-        >
-          Bactericida
-        </button>
-      </div>
+      <p>
+        Essa distinção representa um comportamento microbiológico observado em condições experimentais e, isoladamente, não determina maior ou menor eficácia clínica <sup>5</sup>.
+      </p>
 
-      <div
-        id="cap2P18Panel"
-        class="cap2-p18-board"
-        role="tabpanel"
-        aria-labelledby="cap2P18TabBacteriostatico"
+      <section
+        class="cap2-p18v2-interaction cap2-p18v2-reveal"
+        data-cap2-p18v2
+        data-p18v2-state="bacteriostatico"
+        aria-label="Comparação entre resposta bacteriostática e bactericida"
       >
-        <figure class="cap2-p18-figure">
+
+        <p class="cap2-p18v2-intro">
+          Selecione um padrão de resposta para observar sua representação e sua interpretação microbiológica.
+        </p>
+
+        <div
+          class="cap2-p18v2-tabs"
+          role="tablist"
+          aria-label="Padrões de resposta aos antibacterianos"
+        >
           <button
-            class="cap2-p18-zoom"
+            class="cap2-p18v2-tab is-active"
             type="button"
-            data-zoom="../../assets/capitulo-02/imagens/bacteriostatico-resposta-populacional.png"
-            aria-label="Ampliar imagem de resposta bacteriostática"
+            role="tab"
+            id="cap2P18V2TabBacteriostatico"
+            aria-selected="true"
+            aria-controls="cap2P18V2View"
+            tabindex="0"
+            data-p18v2-target="bacteriostatico"
           >
-            <img
-              id="cap2P18Image"
-              src="../../assets/capitulo-02/imagens/bacteriostatico-resposta-populacional.png"
-              alt="Representação visual de resposta bacteriostática"
-              loading="lazy"
-            />
+            Bacteriostático
           </button>
 
-          <figcaption id="cap2P18Caption" class="caption">
-            Representação visual de resposta bacteriostática. Clique para ampliar.
-          </figcaption>
-        </figure>
-
-        <div class="cap2-p18-panel" aria-live="polite">
-          <h2 id="cap2P18Title" class="cap2-p18-panel__title">Bacteriostático</h2>
-          <div id="cap2P18Text" class="cap2-p18-panel__text"></div>
+          <button
+            class="cap2-p18v2-tab"
+            type="button"
+            role="tab"
+            id="cap2P18V2TabBactericida"
+            aria-selected="false"
+            aria-controls="cap2P18V2View"
+            tabindex="-1"
+            data-p18v2-target="bactericida"
+          >
+            Bactericida
+          </button>
         </div>
-      </div>
 
-      <figure class="cap2-p18-graph">
+        <article
+          id="cap2P18V2View"
+          class="cap2-p18v2-view"
+          role="tabpanel"
+          aria-labelledby="cap2P18V2TabBacteriostatico"
+          aria-live="polite"
+        >
+
+          <figure class="figure cap2-p18v2-figure">
+            <button
+              class="cap2-p18v2-zoom"
+              type="button"
+              data-zoom="../../assets/capitulo-02/imagens/bacteriostatico-resposta-populacional.png"
+              aria-label="Ampliar representação da resposta bacteriostática"
+            >
+              <img
+                id="cap2P18V2Image"
+                src="../../assets/capitulo-02/imagens/bacteriostatico-resposta-populacional.png"
+                alt="Representação do comportamento bacteriostático de uma população bacteriana"
+                loading="lazy"
+              />
+            </button>
+
+            <span class="cap2-p18v2-zoomHint" aria-hidden="true">
+              Clique na figura para ampliar
+            </span>
+
+            <figcaption
+              id="cap2P18V2Caption"
+              class="caption cap2-p18v2-caption"
+            >
+              Representação do padrão de resposta bacteriostática.
+            </figcaption>
+          </figure>
+
+          <div class="cap2-p18v2-summary">
+
+            <div class="cap2-p18v2-summaryHeader">
+              <span
+                id="cap2P18V2Kicker"
+                class="cap2-p18v2-kicker"
+              >
+                Padrão populacional
+              </span>
+
+              <h2
+                id="cap2P18V2Title"
+                class="cap2-p18v2-title"
+              >
+                Inibição da multiplicação bacteriana
+              </h2>
+            </div>
+
+            <div
+              id="cap2P18V2Body"
+              class="cap2-p18v2-body"
+            >
+              <div class="cap2-p18v2-infoGrid">
+
+                <article class="cap2-p18v2-info">
+                  <span>Interpretação microbiológica</span>
+                  <p>
+                    A expansão da população é interrompida ou significativamente reduzida durante a exposição.
+                  </p>
+                </article>
+
+                <article class="cap2-p18v2-info">
+                  <span>Classes frequentemente associadas</span>
+                  <p>
+                    Tetraciclinas, macrolídeos, lincosamidas, oxazolidinonas e sulfonamidas.
+                  </p>
+                </article>
+
+                <article class="cap2-p18v2-info">
+                  <span>Dependência experimental</span>
+                  <p>
+                    O comportamento pode variar conforme a concentração, a espécie bacteriana e o tempo de exposição.
+                  </p>
+                </article>
+
+                <article class="cap2-p18v2-info cap2-p18v2-info--result">
+                  <span>Importância clínica</span>
+                  <p>
+                    Atividade bacteriostática não significa menor eficácia terapêutica.
+                  </p>
+                </article>
+
+              </div>
+            </div>
+
+          </div>
+
+        </article>
+      </section>
+
+      <div class="cap2-p18v2-comparisonRow cap2-p18v2-reveal">
+
+      <figure class="figure cap2-p18v2-comparisonFigure">
         <button
-          class="cap2-p18-zoom"
+          class="cap2-p18v2-zoom"
           type="button"
           data-zoom="../../assets/capitulo-02/imagens/grafico-bactericida-bacteriostatico.png"
-          aria-label="Ampliar gráfico comparativo entre bactericida e bacteriostático"
+          aria-label="Ampliar gráfico comparativo entre resposta bactericida e bacteriostática"
         >
           <img
             src="../../assets/capitulo-02/imagens/grafico-bactericida-bacteriostatico.png"
-            alt="Gráfico comparando crescimento sem intervenção, resposta bacteriostática e resposta bactericida"
+            alt="Gráfico comparando crescimento bacteriano sem tratamento, resposta bacteriostática e resposta bactericida"
             loading="lazy"
           />
         </button>
 
-        <figcaption class="caption">
-          Comparação entre crescimento sem intervenção, estabilização bacteriostática e queda progressiva bactericida. Clique para ampliar.
+        <span class="cap2-p18v2-zoomHint" aria-hidden="true">
+          Clique no gráfico para ampliar
+        </span>
+
+        <figcaption class="caption cap2-p18v2-comparisonCaption">
+          Comparação entre crescimento bacteriano sem tratamento, estabilização da população durante exposição a um agente bacteriostático e redução progressiva durante exposição a um agente bactericida.
         </figcaption>
       </figure>
 
+      <aside class="cap2-p18v2-clinical">
+        <strong>Interpretação clínica:</strong> atividade bactericida não deve ser entendida como sinônimo de superioridade terapêutica. Em muitas infecções, agentes bactericidas e bacteriostáticos apresentam eficácia clínica semelhante quando empregados adequadamente. O resultado depende também do foco infeccioso, do estado imunológico do paciente, da suscetibilidade bacteriana e da exposição ao fármaco <sup>5</sup>.
+      </aside>
+
+      </div>
+
+      <section
+        class="cap2-p18v2-factors cap2-p18v2-reveal"
+        aria-labelledby="cap2P18FactorsTitle"
+      >
+        <h2 id="cap2P18FactorsTitle" class="cap2-p18v2-factorsTitle">
+          Fatores que podem modificar o padrão observado
+        </h2>
+
+        <div class="cap2-p18v2-factorsGrid">
+
+          <article class="cap2-p18v2-factor">
+            <strong>Concentração e tempo</strong>
+            <p>
+              A intensidade e a duração da exposição modificam a interação entre o fármaco e o alvo bacteriano.
+            </p>
+          </article>
+
+          <article class="cap2-p18v2-factor">
+            <strong>Densidade do inóculo</strong>
+            <p>
+              Populações elevadas podem reduzir a atividade aparente de alguns antibacterianos.
+            </p>
+          </article>
+
+          <article class="cap2-p18v2-factor">
+            <strong>Fase de crescimento</strong>
+            <p>
+              Células em multiplicação ativa tendem a responder melhor a mecanismos dependentes de crescimento.
+            </p>
+          </article>
+
+          <article class="cap2-p18v2-factor">
+            <strong>Ambiente e biofilme</strong>
+            <p>
+              pH, oxigênio, composição do meio e biofilmes podem alterar penetração, estabilidade e atividade do fármaco.
+            </p>
+          </article>
+
+        </div>
+
+        <p class="cap2-p18v2-factorsClosing">
+          Por isso, a classificação bactericida ou bacteriostática deve ser interpretada como um padrão experimental dependente do contexto, e não como uma propriedade imutável do antibacteriano <sup>14,16,18–21</sup>.
+        </p>
+      </section>
+
     </section>
 
-    <section class="prose" aria-label="Texto de fechamento">
-      <p>
-        O comportamento bactericida ou bacteriostático pode variar conforme a concentração do fármaco, a densidade bacteriana, a fase de crescimento e as condições ambientais, fatores que modificam a interação entre o antibacteriano e seu alvo molecular <sup>4</sup>.
-      </p>
+    <nav class="pager" aria-label="Paginação">
+      <a
+        class="btn"
+        href="p17.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
 
-      <p>
-        Inóculos bacterianos elevados podem reduzir a atividade aparente do fármaco, fenômeno associado à maior disponibilidade de alvos, à limitação de penetração do antibacteriano ou à presença de subpopulações bacterianas metabolicamente menos ativas.
-      </p>
+      <div class="center">
+        Capítulo 2 · Página 18 de 89
+      </div>
 
-      <p>
-        A fase de crescimento bacteriano também influencia a resposta ao tratamento. Bactérias em multiplicação ativa tendem a ser mais suscetíveis a agentes que interferem em processos dependentes de replicação, enquanto células em fase estacionária podem apresentar resposta menos pronunciada.
-      </p>
-
-      <p>
-        Além disso, condições ambientais como pH, disponibilidade de oxigênio, composição do meio e formação de biofilme podem modificar a atividade dos antibacterianos, alterando sua capacidade de penetrar na célula ou de interagir com o alvo molecular.
-      </p>
-    </section>
-
- <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p17.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 2 · Página 18 de 89</div>
-  <a class="btn primary" href="p19.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+      <a
+        class="btn primary"
+        href="p19.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+    </nav>
 
   </main>
 

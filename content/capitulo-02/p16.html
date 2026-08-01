@@ -3,144 +3,245 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 2 — Página 16</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
   <link rel="stylesheet" href="../../css/capitulo-02.css" />
 </head>
 
-<body class="cap2-shell cap2-page16">
+<body class="cap2-page16">
 
-  <main class="page-shell">
+  <main class="page-shell cap2-shell">
 
     <header class="page-header">
-      <div class="chapter">Capítulo 2 — Mecanismos de Ação dos Antibacterianos</div>
-      <h1 class="page-title">Inibição da síntese de ácidos nucleicos</h1>
+      <div class="chapter">
+        Capítulo 2 — Mecanismos de Ação dos Antibacterianos
+      </div>
+
+      <h1 class="page-title">
+        Ação dos antibacterianos sobre os ácidos nucleicos
+      </h1>
     </header>
 
-    <section class="prose" aria-label="Texto principal">
-      <p>
-        A manutenção e a replicação do material genético são processos essenciais para a sobrevivência bacteriana. O cromossomo bacteriano, geralmente circular e localizado no nucleoide, precisa ser continuamente replicado para permitir a divisão celular e transcrito para garantir a produção de proteínas necessárias ao metabolismo e à regulação celular <sup>1</sup>.
-      </p>
+    <section class="prose cap2-reading-flow">
 
       <p>
-        Durante a replicação do DNA, a separação das fitas da dupla hélice gera tensão estrutural à frente da forquilha replicativa. Essa tensão é controlada por enzimas especializadas, como a DNA girase e a topoisomerase IV, responsáveis por regular o superenrolamento do DNA e permitir a progressão adequada da duplicação cromossômica. A interferência nessas enzimas compromete a estabilidade da molécula de DNA e impede sua replicação adequada <sup>2</sup>.
+        A manutenção e a expressão do material genético são processos essenciais para a sobrevivência e a multiplicação bacteriana. O cromossomo bacteriano, geralmente circular e localizado na região do nucleoide, precisa ser replicado para permitir a divisão celular e transcrito para garantir a produção das proteínas necessárias ao metabolismo, à adaptação e à regulação celular <sup>1,3</sup>.
       </p>
 
       <p>
-        Além da replicação, a transcrição do DNA em RNA constitui uma etapa central da expressão gênica bacteriana. A RNA polimerase sintetiza RNA mensageiro a partir do molde de DNA, possibilitando a produção de proteínas necessárias ao funcionamento celular. A inibição dessa enzima impede a formação de novos RNAs funcionais e interrompe indiretamente a síntese proteica <sup>1</sup>.
-      </p>
-    </section>
-
-    <section class="cap2-p16-stage" data-cap2-nucleic aria-label="Replicação, transcrição e interferência farmacológica nos ácidos nucleicos">
-
-      <p class="cap2-p16-intro">
-        Selecione o processo geral ou uma classe farmacológica para visualizar como a replicação ou a transcrição bacteriana são comprometidas.
+        Durante a replicação do DNA, a separação das fitas da dupla hélice gera tensão torsional à frente da forquilha replicativa. Essa tensão é controlada principalmente pela DNA girase e pela topoisomerase IV, que regulam o superenrolamento do DNA e contribuem para a progressão da replicação e para a segregação adequada dos cromossomos-filhos <sup>2,12</sup>.
       </p>
 
-      <div class="cap2-p16-tabs" role="tablist" aria-label="Síntese de ácidos nucleicos">
-        <button
-          class="cap2-p16-tab is-active"
-          type="button"
-          role="tab"
-          id="cap2P16TabProcesso"
-          aria-selected="true"
-          aria-controls="cap2P16Panel"
-          tabindex="0"
-          data-nucleic-tab="processo"
-        >
-          Processo
-        </button>
+      <p>
+        A transcrição representa outra etapa central da expressão gênica. Nesse processo, a RNA polimerase bacteriana utiliza o DNA como molde para sintetizar moléculas de RNA, incluindo o RNA mensageiro necessário à produção de proteínas essenciais. A inibição dessa enzima interrompe a formação de novos RNAs funcionais e compromete indiretamente a síntese proteica <sup>1,2</sup>.
+      </p>
 
-        <button
-          class="cap2-p16-tab"
-          type="button"
-          role="tab"
-          id="cap2P16TabFluoroquinolonas"
-          aria-selected="false"
-          aria-controls="cap2P16Panel"
-          tabindex="-1"
-          data-nucleic-tab="fluoroquinolonas"
-        >
-          Fluoroquinolonas
-        </button>
-
-        <button
-          class="cap2-p16-tab"
-          type="button"
-          role="tab"
-          id="cap2P16TabRifamicinas"
-          aria-selected="false"
-          aria-controls="cap2P16Panel"
-          tabindex="-1"
-          data-nucleic-tab="rifamicinas"
-        >
-          Rifamicinas
-        </button>
-
-        <button
-          class="cap2-p16-tab"
-          type="button"
-          role="tab"
-          id="cap2P16TabNitroimidazois"
-          aria-selected="false"
-          aria-controls="cap2P16Panel"
-          tabindex="-1"
-          data-nucleic-tab="nitroimidazois"
-        >
-          Nitroimidazóis
-        </button>
-      </div>
-
-      <div
-        id="cap2P16Panel"
-        class="cap2-p16-board"
-        role="tabpanel"
-        aria-labelledby="cap2P16TabProcesso"
+      <section
+        class="cap2-p16v2-interaction cap2-p16v2-reveal"
+        data-cap2-p16v2
+        data-p16v2-state="processo"
+        aria-label="Replicação, transcrição e ação dos antibacterianos sobre os ácidos nucleicos"
       >
-        <figure class="cap2-p16-figure">
+
+        <p class="cap2-p16v2-intro">
+          Selecione o processo geral ou uma classe farmacológica para observar como a replicação, a transcrição ou a integridade do DNA bacteriano são comprometidas.
+        </p>
+
+        <div
+          class="cap2-p16v2-tabs"
+          role="tablist"
+          aria-label="Processos e classes farmacológicas relacionadas aos ácidos nucleicos"
+        >
           <button
-            class="cap2-p16-zoom"
+            class="cap2-p16v2-tab is-active"
             type="button"
-            data-zoom="../../assets/capitulo-02/imagens/acidos-nucleicos-processo.png"
-            aria-label="Ampliar imagem da síntese de ácidos nucleicos"
+            role="tab"
+            id="cap2P16V2TabProcesso"
+            aria-selected="true"
+            aria-controls="cap2P16V2View"
+            tabindex="0"
+            data-p16v2-target="processo"
           >
-            <img
-              id="cap2P16Image"
-              src="../../assets/capitulo-02/imagens/acidos-nucleicos-processo.png"
-              alt="Etapas gerais da replicação e transcrição do DNA bacteriano"
-              loading="lazy"
-            />
+            Processo geral
           </button>
 
-          <figcaption id="cap2P16Caption" class="caption">
-            Etapas gerais da replicação e transcrição do DNA bacteriano. Clique para ampliar.
-          </figcaption>
-        </figure>
+          <button
+            class="cap2-p16v2-tab"
+            type="button"
+            role="tab"
+            id="cap2P16V2TabFluoro"
+            aria-selected="false"
+            aria-controls="cap2P16V2View"
+            tabindex="-1"
+            data-p16v2-target="fluoroquinolonas"
+          >
+            Fluoroquinolonas
+          </button>
 
-        <div class="cap2-p16-panel" aria-live="polite">
-          <h2 id="cap2P16Title" class="cap2-p16-panel__title">Processo geral</h2>
-          <div id="cap2P16Text" class="cap2-p16-panel__text"></div>
+          <button
+            class="cap2-p16v2-tab"
+            type="button"
+            role="tab"
+            id="cap2P16V2TabRifamicinas"
+            aria-selected="false"
+            aria-controls="cap2P16V2View"
+            tabindex="-1"
+            data-p16v2-target="rifamicinas"
+          >
+            Rifamicinas
+          </button>
+
+          <button
+            class="cap2-p16v2-tab"
+            type="button"
+            role="tab"
+            id="cap2P16V2TabNitro"
+            aria-selected="false"
+            aria-controls="cap2P16V2View"
+            tabindex="-1"
+            data-p16v2-target="nitroimidazois"
+          >
+            Nitroimidazóis
+          </button>
         </div>
+
+        <article
+          id="cap2P16V2View"
+          class="cap2-p16v2-view"
+          role="tabpanel"
+          aria-labelledby="cap2P16V2TabProcesso"
+          aria-live="polite"
+        >
+
+          <figure class="figure cap2-p16v2-figure">
+            <button
+              class="cap2-p16v2-zoom"
+              type="button"
+              data-zoom="../../assets/capitulo-02/imagens/acidos-nucleicos-processo.png"
+              aria-label="Ampliar imagem dos processos gerais de replicação e transcrição bacteriana"
+            >
+              <img
+                id="cap2P16V2Image"
+                src="../../assets/capitulo-02/imagens/acidos-nucleicos-processo.png"
+                alt="Etapas gerais da replicação e da transcrição do material genético bacteriano"
+                loading="lazy"
+              />
+            </button>
+
+            <span class="cap2-p16v2-zoomHint" aria-hidden="true">
+              Clique na figura para ampliar
+            </span>
+
+            <figcaption
+              id="cap2P16V2Caption"
+              class="caption cap2-p16v2-caption"
+            >
+              Processos gerais de replicação do DNA e transcrição do RNA bacteriano.
+            </figcaption>
+          </figure>
+
+          <div class="cap2-p16v2-summary">
+
+            <div class="cap2-p16v2-summaryHeader">
+              <span
+                id="cap2P16V2Kicker"
+                class="cap2-p16v2-kicker"
+              >
+                Fluxo da informação genética
+              </span>
+
+              <h2
+                id="cap2P16V2Title"
+                class="cap2-p16v2-title"
+              >
+                Replicação do DNA e transcrição do RNA
+              </h2>
+            </div>
+
+            <div
+              id="cap2P16V2Body"
+              class="cap2-p16v2-body"
+            >
+              <div class="cap2-p16v2-infoGrid">
+
+                <article class="cap2-p16v2-info">
+                  <span>Replicação</span>
+                  <p>
+                    Duplica o cromossomo bacteriano antes da divisão celular.
+                  </p>
+                </article>
+
+                <article class="cap2-p16v2-info">
+                  <span>Controle topológico</span>
+                  <p>
+                    A DNA girase e a topoisomerase IV regulam a tensão e o superenrolamento do DNA.
+                  </p>
+                </article>
+
+                <article class="cap2-p16v2-info">
+                  <span>Transcrição</span>
+                  <p>
+                    A RNA polimerase converte a informação do DNA em moléculas de RNA funcionais.
+                  </p>
+                </article>
+
+                <article class="cap2-p16v2-info cap2-p16v2-info--result">
+                  <span>Importância biológica</span>
+                  <p>
+                    Esses processos sustentam a divisão, a expressão gênica e a adaptação bacteriana.
+                  </p>
+                </article>
+
+              </div>
+            </div>
+
+          </div>
+
+        </article>
+      </section>
+
+      <aside class="cap2-p16v2-comparison cap2-p16v2-reveal">
+        <strong>Etapas distintas, resultado comum:</strong> as fluoroquinolonas comprometem a replicação e a integridade do DNA; as rifamicinas bloqueiam a transcrição; e os nitroimidazóis produzem metabólitos reativos que danificam diretamente o DNA. Apesar das diferenças, todas reduzem a capacidade da bactéria de manter e expressar sua informação genética.
+      </aside>
+
+      <aside class="cap2-p16v2-response cap2-p16v2-reveal">
+        <strong>Resposta microbiológica:</strong> a interrupção da replicação, da transcrição ou da integridade do DNA compromete funções centrais da célula bacteriana. Essas classes estão frequentemente associadas a efeito bactericida, embora a intensidade da resposta dependa do fármaco, da espécie bacteriana, da concentração e das condições do foco infeccioso <sup>1,2</sup>.
+      </aside>
+
+    </section>
+
+    <nav class="pager" aria-label="Paginação">
+      <a
+        class="btn"
+        href="p15.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 2 · Página 16 de 89
       </div>
-    </section>
 
-    <section class="prose" aria-label="Fechamento do texto">
-      <p>
-        A interrupção da replicação ou da transcrição compromete diretamente a capacidade de perpetuação bacteriana. A perda da integridade do material genético interfere em processos centrais da organização celular e pode levar à redução significativa da sobrevivência bacteriana.
-      </p>
-    </section>
-
- <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p15.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 2 · Página 16 de 89</div>
-  <a class="btn primary" href="p17.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+      <a
+        class="btn primary"
+        href="p17.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+    </nav>
 
   </main>
 

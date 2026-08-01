@@ -2,10 +2,17 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
+
   <title>Capítulo 1 — Página 2</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -17,39 +24,212 @@
   <main class="page-shell cap1-shell">
 
     <header class="page-header">
-      <div class="chapter">Capítulo 1 — Fundamentos Conceituais dos Antibacterianos</div>
-      <h1 class="page-title">Marcos Históricos da Antibioticoterapia</h1>
+      <div class="chapter">
+        Capítulo 1 — Fundamentos Conceituais dos Antibacterianos
+      </div>
+
+      <h1 class="page-title">
+        Marcos Históricos da Antibioticoterapia
+      </h1>
     </header>
 
     <section class="prose">
 
       <p>
-        A história da antibioticoterapia mostra um padrão recorrente no qual a introdução de novos antibacterianos costuma ser seguida, após intervalos variáveis, pelo surgimento de resistência bacteriana sob pressão seletiva. Cada nova classe altera o ambiente microbiológico e favorece a expansão de variantes bacterianas capazes de sobreviver à exposição aos fármacos <sup>4</sup>.
+        A evolução da antibioticoterapia foi marcada pela descoberta de novos
+        fármacos, pela ampliação das possibilidades terapêuticas e pelo
+        reconhecimento progressivo da resistência bacteriana. Os marcos a seguir
+        mostram como a pesquisa científica, a produção em escala, a vigilância
+        microbiológica e a padronização laboratorial passaram a integrar a
+        história dos antibacterianos <sup>1,2,5</sup>.
       </p>
 
-      <div class="timeline">
-        <button class="timeline-item active" data-year="1928">1928</button>
-        <button class="timeline-item" data-year="1935">1935</button>
-        <button class="timeline-item" data-year="1940">1940–1943</button>
-        <button class="timeline-item" data-year="1943">1943–1960</button>
-        <button class="timeline-item" data-year="1961">1961</button>
-        <button class="timeline-item" data-year="1988">1988</button>
-        <button class="timeline-item" data-year="2018">2018</button>
+      <section
+       class="cap1-p02-timeline"
+       aria-label="Linha do tempo dos marcos históricos da antibioticoterapia"
+      >
+
+        <div class="cap1-p02-timeline__head">
+          
+
+
+          <p>
+            Explore os marcos em sequência ou selecione um período específico.
+          </p>
+        </div>
+
+        <div
+          class="timeline"
+          role="tablist"
+          aria-label="Marcos históricos da antibioticoterapia"
+        >
+
+          <button
+            class="timeline-item active"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="timelineContent"
+            id="timelineTab1928"
+            data-year="1928"
+data-type="advance"
+          >
+            1928
+          </button>
+
+          <button
+            class="timeline-item"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="timelineContent"
+            id="timelineTab1935"
+            data-year="1935"
+            tabindex="-1"
+data-type="advance"
+          >
+            1935
+          </button>
+
+          <button
+            class="timeline-item"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="timelineContent"
+            id="timelineTab1940"
+            data-year="1940"
+            tabindex="-1"
+data-type="advance"
+          >
+            1940–1943
+          </button>
+
+          <button
+            class="timeline-item"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="timelineContent"
+            id="timelineTab1943"
+            data-year="1943"
+            tabindex="-1"
+data-type="advance"
+          >
+            1943–1960
+          </button>
+
+          <button
+            class="timeline-item"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="timelineContent"
+            id="timelineTab1961"
+            data-year="1961"
+            tabindex="-1"
+data-type="resistance"
+          >
+            1961
+          </button>
+
+          <button
+            class="timeline-item"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="timelineContent"
+            id="timelineTab1988"
+            data-year="1988"
+            tabindex="-1"
+data-type="resistance"
+          >
+            1988
+          </button>
+
+          <button
+            class="timeline-item"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="timelineContent"
+            id="timelineTab2018"
+            data-year="2018"
+            tabindex="-1"
+data-type="advance"
+          >
+            2018
+          </button>
+
+        </div>
+
+        <div
+          class="timeline-progress"
+          aria-hidden="true"
+        >
+          <span id="timelineProgressFill"></span>
+        </div>
+
+        <div
+          class="timeline-content"
+          id="timelineContent"
+          role="tabpanel"
+          aria-labelledby="timelineTab1928"
+          aria-live="polite"
+          aria-atomic="true"
+        ></div>
+
+        <div
+          class="cap1-p02-sequence"
+          aria-label="Síntese da evolução histórica"
+        >
+          <span>Descoberta</span>
+          <span aria-hidden="true">→</span>
+          <span>Aplicação clínica</span>
+          <span aria-hidden="true">→</span>
+          <span>Expansão das classes</span>
+          <span aria-hidden="true">→</span>
+          <span>Resistência</span>
+          <span aria-hidden="true">→</span>
+          <span>Padronização</span>
+        </div>
+
+      </section>
+
+      <div class="cap1-p02-closing">
+        A trajetória histórica mostra que a preservação da eficácia dos
+        antibacterianos depende da integração entre inovação terapêutica,
+        vigilância microbiológica, interpretação padronizada dos testes de
+        suscetibilidade e uso racional desses medicamentos
+        <sup>15,16</sup>.
       </div>
-
-      <div class="timeline-content" id="timelineContent"></div>
-
-      <p>
-        A sustentabilidade da terapêutica antibacteriana depende não apenas do desenvolvimento de novos fármacos, mas também da vigilância microbiológica contínua e do uso criterioso dos agentes disponíveis.
-      </p>
 
     </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p01.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 1 · Página 2 de 89</div>
-  <a class="btn primary" href="p03.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav
+      class="pager"
+      aria-label="Paginação"
+    >
+      <a
+        class="btn"
+        href="p01.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 1 · Página 2 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p03.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+    </nav>
 
   </main>
 

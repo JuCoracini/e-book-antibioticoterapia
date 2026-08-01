@@ -1,94 +1,334 @@
 <!doctype html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
   <title>Capítulo 8 — Página 73</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
 
-  <link rel="stylesheet" href="../../css/base.css" />
-  <link rel="stylesheet" href="../../css/components.css" />
-  <link rel="stylesheet" href="../../css/capitulo-08.css" />
+  <link rel="stylesheet" href="../../css/base.css">
+  <link rel="stylesheet" href="../../css/components.css">
+  <link rel="stylesheet" href="../../css/capitulo-08.css">
 </head>
 
 <body class="cap8-page73">
+
   <main class="page-shell">
+
     <header class="page-header">
-      <div class="chapter">Capítulo 8 — Antibioticoterapia nas Principais Infecções</div>
-      <h1 class="page-title">Bacteremia e sepse</h1>
+
+      <div class="chapter">
+        Capítulo 8 — Antibioticoterapia nas Principais Infecções
+      </div>
+
+      <h1 class="page-title">
+        Bacteremia e sepse
+      </h1>
+
     </header>
 
-    <section class="prose">
-      <p>A bacteremia e a sepse representam situações em que a decisão sobre antibioticoterapia é guiada simultaneamente pela urgência clínica e pela incerteza etiológica. A presença de disfunção orgânica associada à suspeita de infecção caracteriza um cenário no qual o tempo até o início de terapia antimicrobiana eficaz influencia diretamente o prognóstico <sup>5</sup>.</p>
+    <section
+      class="prose"
+      aria-label="Bacteremia, sepse e evolução da terapia antimicrobiana"
+    >
 
-      <p>Nessas condições, o raciocínio clínico deve ser aplicado com maior sensibilidade ao risco. A identificação do foco provável da infecção orienta a escolha inicial do espectro antimicrobiano <sup>2,5</sup>.</p>
+      <p>
+        A bacteremia e a sepse representam situações em que a decisão
+        sobre antibioticoterapia é guiada simultaneamente pela urgência
+        clínica e pela incerteza etiológica. A presença de disfunção
+        orgânica associada à suspeita de infecção caracteriza um cenário
+        no qual o tempo até o início de terapia antimicrobiana eficaz
+        influencia diretamente o prognóstico<sup>5</sup>.
+      </p>
+
+      <p>
+        Nessas condições, o raciocínio clínico deve ser aplicado com
+        maior sensibilidade ao risco. A identificação do foco provável
+        da infecção orienta a escolha inicial do espectro
+        antimicrobiano<sup>2,5</sup>.
+      </p>
 
       <figure class="cap8-p73-figure figure">
+
         <div class="cap8-p73-figure__wrap">
+
           <img
             src="../../assets/capitulo-08/imagens/de-escalonamento-sepse.png"
             alt="Representação temporal do de-escalonamento antimicrobiano entre hora zero, 24 a 48 horas e 72 horas ou mais."
             data-zoom
-          />
+          >
+
         </div>
+
         <figcaption class="caption">
-          A ampliação empírica inicial deve ser reavaliada progressivamente à medida que novas informações clínicas e microbiológicas se tornam disponíveis.
+          A ampliação empírica inicial deve ser reavaliada
+          progressivamente à medida que novas informações clínicas e
+          microbiológicas se tornam disponíveis.
         </figcaption>
+
       </figure>
 
-      <section class="cap8-p73-timeline" data-p73-timeline aria-label="Evolução temporal da conduta antimicrobiana na sepse">
-        <p class="cap8-p73-lead">Em um paciente com suspeita de sepse, a conduta antimicrobiana deve mudar conforme o tempo clínico e a qualidade das informações disponíveis.</p>
+      <section
+        class="cap8-p73-timeline"
+        aria-labelledby="p73-timeline-title"
+        data-p73-timeline
+      >
 
-        <div class="cap8-p73-tabs" role="tablist" aria-label="Fases do raciocínio clínico">
-          <button class="cap8-p73-tab is-active" type="button" role="tab" aria-selected="true" data-phase="hora-zero">Hora Zero</button>
-          <button class="cap8-p73-tab" type="button" role="tab" aria-selected="false" data-phase="24-48h">24–48h</button>
-          <button class="cap8-p73-tab" type="button" role="tab" aria-selected="false" data-phase="72h">72h+</button>
+        <header class="cap8-p73-timeline-head">
+
+         
+
+          <p>
+            Explore como a conduta deve mudar conforme o tempo clínico
+            e a qualidade das informações disponíveis.
+          </p>
+
+        </header>
+
+        <div
+          class="cap8-p73-tabs"
+          role="tablist"
+          aria-label="Fases do raciocínio clínico"
+        >
+
+          <button
+            id="p73-tab-hora-zero"
+            class="cap8-p73-tab cap8-p73-tab--zero is-active"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="p73-phase-panel"
+            tabindex="0"
+            data-phase="hora-zero"
+          >
+            Hora Zero
+          </button>
+
+          <button
+            id="p73-tab-24-48h"
+            class="cap8-p73-tab cap8-p73-tab--review"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="p73-phase-panel"
+            tabindex="-1"
+            data-phase="24-48h"
+          >
+            24–48h
+          </button>
+
+          <button
+            id="p73-tab-72h"
+            class="cap8-p73-tab cap8-p73-tab--directed"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="p73-phase-panel"
+            tabindex="-1"
+            data-phase="72h"
+          >
+            72h+
+          </button>
+
         </div>
 
-        <div class="cap8-p73-stage" aria-hidden="true">
+        <div
+          class="cap8-p73-stage"
+          aria-hidden="true"
+        >
+
           <div class="cap8-p73-stage__track">
-            <span class="cap8-p73-stage__segment is-active" data-segment="hora-zero"></span>
-            <span class="cap8-p73-stage__segment" data-segment="24-48h"></span>
-            <span class="cap8-p73-stage__segment" data-segment="72h"></span>
+
+            <span
+              class="cap8-p73-stage__segment is-active"
+              data-segment="hora-zero"
+            ></span>
+
+            <span
+              class="cap8-p73-stage__segment"
+              data-segment="24-48h"
+            ></span>
+
+            <span
+              class="cap8-p73-stage__segment"
+              data-segment="72h"
+            ></span>
+
           </div>
+
         </div>
 
-        <div class="cap8-p73-panel" data-p73-panel>
-          <p class="cap8-p73-kicker" data-p73-kicker>Hora Zero</p>
-          <h2 class="cap8-p73-subtitle" data-p73-title>Prioridade é não atrasar cobertura adequada</h2>
+        <div
+          id="p73-phase-panel"
+          class="cap8-p73-panel"
+          role="tabpanel"
+          aria-labelledby="p73-tab-hora-zero"
+          aria-live="polite"
+          data-p73-panel
+        >
+
+          <p
+            class="cap8-p73-kicker"
+            data-p73-kicker
+          >
+            Hora Zero
+          </p>
+
+          <h2
+            class="cap8-p73-subtitle"
+            data-p73-title
+          >
+            Prioridade é não atrasar cobertura adequada
+          </h2>
 
           <div class="cap8-p73-body">
-            <p class="cap8-p73-text" data-p73-text>Em pacientes com suspeita de sepse e disfunção orgânica, a prioridade é iniciar prontamente terapia antimicrobiana empírica adequada. Nessa fase, a urgência clínica predomina sobre a precisão etiológica, e o risco de inadequação terapêutica precoce pesa diretamente no prognóstico.</p>
+
+            <p
+              class="cap8-p73-text"
+              data-p73-text
+            >
+              Em pacientes com suspeita de sepse e disfunção orgânica,
+              a prioridade é iniciar prontamente terapia antimicrobiana
+              empírica adequada. Nessa fase, a urgência clínica
+              predomina sobre a precisão etiológica, e o risco de
+              inadequação terapêutica precoce pesa diretamente no
+              prognóstico.
+            </p>
 
             <div class="cap8-p73-meta">
-              <p><strong>Foco da decisão:</strong> <span data-p73-focus>Reduzir rapidamente o risco de tratamento inicial inadequado.</span></p>
-              <p><strong>Erro comum:</strong> <span data-p73-risk>Subestimar a gravidade do quadro e atrasar a cobertura empírica nas primeiras horas.</span></p>
+
+              <div
+                class="cap8-p73-meta-item cap8-p73-meta-item--focus"
+              >
+
+                <strong>
+                  Foco da decisão
+                </strong>
+
+                <p data-p73-focus>
+                  Reduzir rapidamente o risco de tratamento inicial
+                  inadequado.
+                </p>
+
+              </div>
+
+              <div
+                class="cap8-p73-meta-item cap8-p73-meta-item--risk"
+              >
+
+                <strong>
+                  Erro comum
+                </strong>
+
+                <p data-p73-risk>
+                  Subestimar a gravidade do quadro e atrasar a
+                  cobertura empírica nas primeiras horas.
+                </p>
+
+              </div>
+
             </div>
+
           </div>
+
         </div>
+
       </section>
 
-      <p>A probabilidade etiológica é modulada por fatores relacionados ao paciente e ao contexto assistencial, como internação recente, uso prévio de antibacterianos, presença de cateteres vasculares ou urinários e o perfil epidemiológico local de resistência bacteriana <sup>3,4</sup>.</p>
+      <h2 class="cap8-p73-section-divider">
 
-      <p>Em pacientes com instabilidade clínica ou disfunção orgânica significativa, a cobertura antimicrobiana inicial deve ser mais abrangente, com o objetivo de reduzir o risco de inadequação terapêutica precoce. Em quadros como choque séptico, a falha em instituir terapia antimicrobiana adequada nas primeiras horas de evolução associa-se a piores desfechos clínicos <sup>5</sup>.</p>
+        <span aria-hidden="true"></span>
 
-      <p>Entretanto, a ampliação inicial do espectro não deve ser mantida indefinidamente. A terapia antimicrobiana deve ser reavaliada à medida que novas informações clínicas e microbiológicas se tornam disponíveis, permitindo o estreitamento do espectro conforme apropriado <sup>3,6</sup>.</p>
+        Do risco inicial à terapia direcionada
 
-      <p>Nesse contexto, as hemoculturas assumem papel central na identificação do agente etiológico. Quando um microrganismo é isolado e seu perfil de suscetibilidade é conhecido, o ajuste terapêutico permite direcionar o tratamento ao patógeno identificado e reduzir a exposição desnecessária a antibacterianos de amplo espectro <sup>3,8</sup>.</p>
+        <span aria-hidden="true"></span>
 
-      <p>Também é importante reconhecer que nem todo quadro com febre, taquicardia e alterações laboratoriais corresponde necessariamente a sepse bacteriana. Processos inflamatórios não infecciosos, eventos tromboembólicos e outras condições sistêmicas podem mimetizar apresentações clínicas semelhantes <sup>5</sup>.</p>
+      </h2>
+
+      <p>
+        A probabilidade etiológica é modulada por fatores relacionados
+        ao paciente e ao contexto assistencial, como internação recente,
+        uso prévio de antibacterianos, presença de cateteres vasculares
+        ou urinários e o perfil epidemiológico local de resistência
+        bacteriana<sup>3,4</sup>.
+      </p>
+
+      <p>
+        Em pacientes com instabilidade clínica ou disfunção orgânica
+        significativa, a cobertura antimicrobiana inicial deve ser mais
+        abrangente, com o objetivo de reduzir o risco de inadequação
+        terapêutica precoce. Em quadros como choque séptico, a falha em
+        instituir terapia antimicrobiana adequada nas primeiras horas
+        de evolução associa-se a piores desfechos
+        clínicos<sup>5</sup>.
+      </p>
+
+      <p>
+        Entretanto, a ampliação inicial do espectro não deve ser
+        mantida indefinidamente. A terapia antimicrobiana deve ser
+        reavaliada à medida que novas informações clínicas e
+        microbiológicas se tornam disponíveis, permitindo o
+        estreitamento do espectro conforme apropriado<sup>3,6</sup>.
+      </p>
+
+      <p>
+        Nesse contexto, as hemoculturas assumem papel central na
+        identificação do agente etiológico. Quando um microrganismo é
+        isolado e seu perfil de suscetibilidade é conhecido, o ajuste
+        terapêutico permite direcionar o tratamento ao patógeno
+        identificado e reduzir a exposição desnecessária a
+        antibacterianos de amplo espectro<sup>3,8</sup>.
+      </p>
+
+      <p>
+        Também é importante reconhecer que nem todo quadro com febre,
+        taquicardia e alterações laboratoriais corresponde
+        necessariamente a sepse bacteriana. Processos inflamatórios não
+        infecciosos, eventos tromboembólicos e outras condições
+        sistêmicas podem mimetizar apresentações clínicas
+        semelhantes<sup>5</sup>.
+      </p>
+
     </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p72.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 8 · Página 73 de 89</div>
-  <a class="btn primary" href="p74.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+
+      <a
+        class="btn"
+        href="p72.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 8 · Página 73 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p74.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+
+    </nav>
 
   </main>
 
   <script src="../../js/app.js"></script>
   <script src="../../js/capitulo-08.js"></script>
+
 </body>
 </html>

@@ -7,7 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -16,105 +16,69 @@
 
 <body class="cap4-page33">
 
-  <main class="page-shell">
+  <main class="page-shell cap4-shell">
 
     <header class="page-header">
       <div class="chapter">Capítulo 4 — Farmacocinética e Farmacodinâmica Aplicadas</div>
-      <h1 class="page-title">Via de administração e implicações clínicas na resposta terapêutica</h1>
+      <h1 class="page-title">Via de administração e determinação da exposição ao antibacteriano</h1>
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <section class="prose cap4-reading-flow">
 
       <p>
-        A relação entre via de administração e exposição antimicrobiana adquire relevância clínica quando se considera que a eficácia do tratamento depende da concentração efetivamente alcançada no foco infeccioso. Mesmo na presença de um microrganismo classificado como suscetível, a falha em atingir níveis adequados de exposição pode comprometer a resposta terapêutica <sup>8,13</sup>.
+        A exposição a um antibacteriano não depende exclusivamente da dose administrada, mas também da forma como o fármaco é introduzido no organismo. A via de administração constitui um determinante fundamental da farmacocinética, pois influencia a velocidade de absorção, a biodisponibilidade sistêmica e a variabilidade da concentração alcançada ao longo do tempo <sup>12,15</sup>.
       </p>
 
       <p>
-        Em condições clínicas nas quais a absorção é previsível e a biodisponibilidade do fármaco é elevada, a administração por via oral pode resultar em exposições sistêmicas semelhantes às obtidas por via intravenosa. Nesses cenários, a escolha da via não implica necessariamente diferença na eficácia, desde que os parâmetros farmacocinéticos permitam atingir os índices farmacodinâmicos desejados <sup>6,10</sup>.
+        A figura compara, de forma esquemática, as curvas concentração–tempo obtidas após a administração da mesma dose por via intravenosa e por via oral. As diferenças observadas refletem as características de absorção de cada via e demonstram como a exposição sistêmica pode variar mesmo quando a dose administrada é idêntica.
+      </p>
+
+      <figure class="figure cap4-p33-figure cap4-p33-reveal">
+        <button
+          type="button"
+          class="cap4-p33-figure__zoom"
+          data-zoom="../../assets/capitulo-04/imagens/iv-vo-curvas.png"
+          aria-label="Ampliar figura comparando via intravenosa e via oral"
+        >
+          <img
+            src="../../assets/capitulo-04/imagens/iv-vo-curvas.png"
+            alt="Curvas concentração-tempo comparando administração intravenosa e oral da mesma dose"
+            loading="lazy"
+          />
+        </button>
+
+        <figcaption class="caption cap4-p33-caption">
+          Comparação esquemática das curvas concentração–tempo após administração intravenosa e oral da mesma dose de um antibacteriano. As curvas ilustram diferenças no pico de concentração (C<sub>max</sub>), no tempo para atingi-lo (T<sub>max</sub>) e na permanência da concentração acima da concentração inibitória mínima (CIM).
+        </figcaption>
+      </figure>
+
+      <p>
+        Na administração intravenosa, o antibacteriano alcança imediatamente a circulação sistêmica, eliminando a etapa de absorção e proporcionando biodisponibilidade completa. Como consequência, a exposição inicial apresenta menor variabilidade e passa a depender principalmente dos processos de distribuição e eliminação do fármaco <sup>12,16</sup>.
       </p>
 
       <p>
-        Entretanto, em situações de maior gravidade clínica ou de instabilidade fisiológica, a previsibilidade da absorção torna-se limitada. Estados como sepse, choque ou alterações hemodinâmicas significativas podem comprometer a perfusão do trato gastrointestinal e reduzir a absorção de fármacos administrados por via oral. Nesses contextos, a utilização da via intravenosa permite reduzir a variabilidade da exposição e garantir que a concentração plasmática inicial atinja rapidamente níveis compatíveis com atividade antimicrobiana <sup>7,9,14</sup>.
-      </p>
-
-      <section class="cap4-p33-matrix" aria-labelledby="cap4-p33-matrix-title">
-        <div class="cap4-p33-matrix__head">
-          <p class="eyebrow">Integração clínica</p>
-          <h3 id="cap4-p33-matrix-title" class="cap4-p33-matrix__title">A escolha da via depende da gravidade e da previsibilidade da absorção</h3>
-          <p class="cap4-p33-matrix__subtitle">
-            A matriz organiza visualmente o problema clínico: quanto maior o risco de progressão da infecção e menor a previsibilidade da absorção gastrointestinal, menor a segurança de depender da via oral como estratégia inicial.
-          </p>
-        </div>
-
-        <figure class="figure cap4-p33-figure">
-          <button
-            type="button"
-            class="cap4-p33-figure__zoom"
-            data-zoom="../../assets/capitulo-04/imagens/matriz-decisao-via-administracao.png"
-            aria-label="Ampliar matriz clínica de decisão da via de administração"
-          >
-            <img
-              src="../../assets/capitulo-04/imagens/matriz-decisao-via-administracao.png"
-              alt="Matriz clínica relacionando previsibilidade da absorção gastrointestinal e risco de progressão da infecção para orientar o uso de via oral ou intravenosa."
-              loading="lazy"
-            />
-          </button>
-          <figcaption class="caption">
-            A escolha da via de administração não depende apenas do fármaco, mas da interação entre a previsibilidade da absorção e o risco de progressão da infecção. Em cenários de baixa gravidade e absorção previsível, a via oral pode ser adequada; à medida que a gravidade aumenta ou a absorção se torna incerta, a via intravenosa torna-se necessária para garantir exposição eficaz e reduzir variabilidade.
-          </figcaption>
-        </figure>
-
-        <div class="cap4-p33-guide" aria-label="Leitura guiada da matriz">
-          <div class="cap4-p33-guide__controls" role="tablist" aria-label="Quadrantes da matriz de decisão">
-            <button class="cap4-p33-guide__chip is-active" type="button" role="tab" aria-selected="true" data-p33-zone="vo">
-              VO seguro / transição
-            </button>
-            <button class="cap4-p33-guide__chip" type="button" role="tab" aria-selected="false" data-p33-zone="monitor">
-              Monitoramento rigoroso
-            </button>
-            <button class="cap4-p33-guide__chip" type="button" role="tab" aria-selected="false" data-p33-zone="biodisponibilidade">
-              Avaliar biodisponibilidade
-            </button>
-            <button class="cap4-p33-guide__chip" type="button" role="tab" aria-selected="false" data-p33-zone="iv">
-              Uso obrigatório IV
-            </button>
-          </div>
-
-          <div class="cap4-p33-guide__panel" aria-live="polite">
-            <div class="cap4-p33-guide__eyebrow" id="cap4-p33-eyebrow">Zona de menor risco farmacocinético</div>
-            <h3 class="cap4-p33-guide__title" id="cap4-p33-title">Via oral segura ou transição para VO</h3>
-            <div class="cap4-p33-guide__text" id="cap4-p33-text">
-              <p>
-                Quando a absorção gastrointestinal é previsível e a gravidade clínica é menor, a via oral pode sustentar exposição sistêmica adequada. Nessa situação, o raciocínio não é “oral sempre funciona”, mas que o alvo farmacodinâmico pode ser alcançado sem perda relevante de eficácia.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <p>
-        A escolha da via também influencia a velocidade de início da ação terapêutica. Em infecções com alta carga bacteriana ou risco de progressão rápida, atrasos na obtenção de concentrações eficazes podem permitir a persistência e multiplicação do microrganismo. A administração intravenosa, ao proporcionar elevação imediata da concentração plasmática, pode reduzir esse intervalo crítico e aumentar a probabilidade de controle inicial da infecção <sup>5,7</sup>.
+        Na administração oral, por outro lado, a concentração sistêmica resulta da absorção gastrointestinal. Esse processo pode ser influenciado por fatores como pH gástrico, motilidade intestinal, presença de alimentos, integridade da mucosa e interações medicamentosas, tornando a exposição mais variável entre pacientes e em diferentes condições clínicas <sup>10,15</sup>.
       </p>
 
       <p>
-        Outro aspecto relevante é a possibilidade de discordância entre a classificação microbiológica e a resposta clínica. Um microrganismo classificado como suscetível no antibiograma pode não responder ao tratamento se a exposição alcançada no organismo não for suficiente para ultrapassar a CIM no sítio infeccioso. Nesses casos, a limitação não está na atividade intrínseca do fármaco, mas na incapacidade de atingir concentrações adequadas, frequentemente influenciada pela via de administração e por fatores farmacocinéticos associados <sup>8,13</sup>.
+        Essas diferenças farmacocinéticas têm repercussão direta sobre a farmacodinâmica dos antibacterianos. A velocidade de absorção, a biodisponibilidade e o perfil da curva concentração–tempo influenciam a probabilidade de atingir os principais índices PK/PD, como %fT&gt;CIM, C<sub>max</sub>/CIM e AUC/CIM, utilizados para prever a eficácia dos diferentes grupos de antibacterianos <sup>6,7</sup>.
       </p>
 
       <p>
-        Além disso, a escolha inadequada da via pode contribuir para manutenção da exposição em níveis subótimos, favorecendo a permanência de bactérias em faixas próximas à janela de seleção mutante. Esse cenário pode não resultar em falha terapêutica imediata, mas aumenta a probabilidade de seleção de subpopulações com menor suscetibilidade ao longo do tratamento <sup>1,4</sup>.
+        A variabilidade da absorção torna-se particularmente relevante em pacientes com alterações fisiológicas ou patológicas, como hipoperfusão esplâncnica, edema de mucosa intestinal, vômitos persistentes, diarreia intensa ou interações medicamentosas que reduzam a absorção. Nessas situações, a exposição sistêmica pode tornar-se inferior à esperada, comprometendo o alcance dos alvos farmacocinéticos e farmacodinâmicos necessários para atividade antibacteriana adequada <sup>9,10</sup>.
       </p>
 
-      <p>
-        Dessa forma, a via de administração deve ser integrada à avaliação farmacocinética e farmacodinâmica do tratamento antimicrobiano. Sua escolha influencia não apenas a concentração alcançada, mas também a velocidade, a previsibilidade e a consistência da exposição ao fármaco. Esses elementos, por sua vez, determinam a posição da curva concentração-tempo em relação à CIM e a probabilidade de atingir o efeito antimicrobiano desejado no contexto clínico específico <sup>5,6</sup>.
-      </p>
+      <aside class="cap4-p33-box cap4-p33-key cap4-p33-reveal">
+        A escolha da via de administração determina a exposição ao antibacteriano e deve ser considerada em conjunto com as propriedades farmacocinéticas do fármaco e as condições clínicas do paciente para compreender como a concentração será estabelecida ao longo do tempo <sup>6,12</sup>.
+      </aside>
 
     </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p32.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 4 · Página 33 de 89</div>
-  <a class="btn primary" href="p34.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="p32.html" aria-label="Ir para a página anterior">← Anterior</a>
+      <div class="center">Capítulo 4 · Página 33 de 89</div>
+      <a class="btn primary" href="p34.html" aria-label="Ir para a próxima página">Próxima →</a>
+    </nav>
 
   </main>
 

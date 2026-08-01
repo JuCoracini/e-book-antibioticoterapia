@@ -2,12 +2,26 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
+
   <title>Capítulo 1 — Página 5</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -19,56 +33,157 @@
   <main class="page-shell cap1-shell">
 
     <header class="page-header">
-      <div class="chapter">Capítulo 1 — Fundamentos Conceituais dos Antibacterianos</div>
-      <h1 class="page-title">Janela Terapêutica</h1>
+
+      <div class="chapter">
+        Capítulo 1 — Fundamentos Conceituais dos Antibacterianos
+      </div>
+
+      <h1 class="page-title">
+        Janela Terapêutica
+      </h1>
+
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <section
+      class="prose"
+      aria-label="Introdução à janela terapêutica"
+    >
+
       <p>
-        Embora os antibacterianos apresentem afinidade por estruturas bacterianas, sua eficácia depende da concentração alcançada no organismo e no sítio da infecção. Exposição insuficiente pode comprometer o controle do microrganismo, enquanto níveis excessivos aumentam o risco de toxicidade. Assim, a toxicidade seletiva possui também uma dimensão quantitativa: o tratamento torna-se eficaz quando a concentração do fármaco é suficiente para inibir ou eliminar a bactéria sem ultrapassar níveis associados ao aumento da toxicidade para o hospedeiro <sup>13,14</sup>.
+        A eficácia dos antibacterianos depende da exposição alcançada no
+        organismo e, principalmente, no sítio da infecção. Exposição insuficiente
+        pode comprometer o controle do microrganismo, enquanto níveis excessivos
+        aumentam a probabilidade de efeitos adversos
+        <sup>4,7</sup>.
       </p>
 
       <p>
-        Concentrações inferiores às necessárias podem permitir a persistência da infecção e favorecer a seleção de variantes bacterianas com menor suscetibilidade ao antibacteriano. Por outro lado, exposições excessivas aumentam a probabilidade de efeitos adversos relacionados ao fármaco <sup>3</sup>.
+        A janela terapêutica corresponde ao intervalo de exposição em que o
+        medicamento tende a produzir benefício clínico com segurança relativa.
+        Esse intervalo situa-se entre o nível mínimo necessário para obter efeito
+        terapêutico e o nível a partir do qual aumenta a probabilidade de
+        toxicidade
+        <sup>4</sup>.
       </p>
 
-      <p>
-        O conceito de janela terapêutica refere-se ao intervalo de exposição no qual o medicamento tende a ser simultaneamente eficaz e relativamente seguro. Esse intervalo corresponde ao espaço entre a concentração mínima necessária para produzir efeito terapêutico e os níveis a partir dos quais aumenta a probabilidade de toxicidade <sup>13</sup>.
-      </p>
-
-      <p>
-        Fármacos com ampla janela terapêutica apresentam maior margem de segurança, pois existe maior distância entre a concentração eficaz e o limiar de toxicidade. Os medicamentos com janela terapêutica estreita possuem intervalo menor entre eficácia e toxicidade, o que exige maior cautela na prescrição e, em algumas situações, monitoramento das concentrações plasmáticas. Exemplos clássicos incluem os aminoglicosídeos, associados a nefrotoxicidade e ototoxicidade, e a vancomicina, cuja exposição excessiva pode aumentar o risco de lesão renal <sup>14</sup>.
-      </p>
-
-      <p class="cap1-p05-intro">
-        A figura a seguir sintetiza a relação entre exposição ao antibacteriano e janela terapêutica.
-      </p>
     </section>
 
-    <section class="cap1-p05-stage" data-cap1-window aria-label="Figura interativa sobre janela terapêutica">
+    <section
+      class="cap1-p05-stage"
+      data-cap1-window
+      aria-label="Comparação interativa dos níveis de exposição ao antibacteriano"
+    >
+
       <div class="cap1-p05-stage__inner">
 
-        <div class="cap1-p05-visual__controls" role="tablist" aria-label="Cenários de exposição ao antibacteriano">
-          <button class="cap1-p05-visual__tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-window-tab="low">Baixa exposição</button>
-          <button class="cap1-p05-visual__tab" type="button" role="tab" aria-selected="true" tabindex="0" data-window-tab="ok">Exposição terapêutica</button>
-          <button class="cap1-p05-visual__tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-window-tab="high">Exposição excessiva</button>
+        <div class="cap1-p05-visual__head">
+
+
+          <p>
+            Selecione um cenário e compare a curva com os limites da janela
+            terapêutica.
+          </p>
+
+        </div>
+
+        <div
+          class="cap1-p05-visual__controls"
+          role="tablist"
+          aria-label="Cenários de exposição ao antibacteriano"
+        >
+
+          <button
+            class="cap1-p05-visual__tab"
+            type="button"
+            role="tab"
+            id="cap1P05TabLow"
+            aria-selected="false"
+            aria-controls="cap1P05Panel"
+            tabindex="-1"
+            data-window-tab="low"
+          >
+            <span aria-hidden="true">↓</span>
+            Baixa exposição
+          </button>
+
+          <button
+            class="cap1-p05-visual__tab is-active"
+            type="button"
+            role="tab"
+            id="cap1P05TabOk"
+            aria-selected="true"
+            aria-controls="cap1P05Panel"
+            tabindex="0"
+            data-window-tab="ok"
+          >
+            <span aria-hidden="true">●</span>
+            Faixa terapêutica
+          </button>
+
+          <button
+            class="cap1-p05-visual__tab"
+            type="button"
+            role="tab"
+            id="cap1P05TabHigh"
+            aria-selected="false"
+            aria-controls="cap1P05Panel"
+            tabindex="-1"
+            data-window-tab="high"
+          >
+            <span aria-hidden="true">↑</span>
+            Exposição excessiva
+          </button>
+
         </div>
 
         <figure class="cap1-p05-figure">
-          <svg class="cap1-p05-visual__svg" viewBox="0 0 1200 760" aria-labelledby="cap1P05Title cap1P05Desc" role="img">
-            <title id="cap1P05Title">Relação entre concentração do antibacteriano e janela terapêutica</title>
-            <desc id="cap1P05Desc">Figura interativa com três cenários: baixa exposição, exposição terapêutica e exposição excessiva.</desc>
+
+          <svg
+            class="cap1-p05-visual__svg"
+            viewBox="0 0 1320 760"
+            role="img"
+            aria-labelledby="cap1P05Title cap1P05Desc"
+          >
+
+            <title id="cap1P05Title">
+              Relação entre concentração do antibacteriano e janela terapêutica
+            </title>
+
+            <desc id="cap1P05Desc" data-window-svg-desc>
+              Figura interativa com três cenários: baixa exposição, faixa
+              terapêutica e exposição excessiva.
+            </desc>
 
             <defs>
-              <linearGradient id="cap1P05Band" x1="0" x2="0" y1="0" y2="1">
-                <stop offset="0%" stop-color="#dff6f1" />
-                <stop offset="100%" stop-color="#eef9f7" />
+              <linearGradient
+                id="cap1P05Band"
+                x1="0"
+                x2="0"
+                y1="0"
+                y2="1"
+              >
+                <stop
+                  offset="0%"
+                  stop-color="#dff6f1"
+                />
+
+                <stop
+                  offset="100%"
+                  stop-color="#eef9f7"
+                />
               </linearGradient>
             </defs>
 
-            <rect x="0" y="0" width="1200" height="760" fill="#ffffff" />
+           <rect
+  x="0"
+  y="0"
+  width="1320"
+  height="760"
+  fill="#ffffff"
+/>
 
             <g transform="translate(120,52)">
+
               <g class="cap1-p05-grid">
                 <line x1="0" y1="580" x2="840" y2="580"></line>
                 <line x1="0" y1="470" x2="840" y2="470"></line>
@@ -77,11 +192,32 @@
                 <line x1="0" y1="140" x2="840" y2="140"></line>
               </g>
 
-              <rect x="0" y="250" width="840" height="220" class="cap1-p05-windowBand"></rect>
+              <rect
+                x="0"
+                y="250"
+                width="840"
+                height="220"
+                class="cap1-p05-windowBand"
+              ></rect>
 
               <g class="cap1-p05-thresholds">
-                <line x1="0" y1="470" x2="840" y2="470" class="is-effective"></line>
-                <line x1="0" y1="250" x2="840" y2="250" class="is-toxic"></line>
+
+                <line
+                  x1="0"
+                  y1="470"
+                  x2="840"
+                  y2="470"
+                  class="is-effective"
+                ></line>
+
+                <line
+                  x1="0"
+                  y1="250"
+                  x2="840"
+                  y2="250"
+                  class="is-toxic"
+                ></line>
+
               </g>
 
               <g class="cap1-p05-axis">
@@ -89,82 +225,211 @@
                 <line x1="0" y1="580" x2="860" y2="580"></line>
               </g>
 
-              <text x="-66" y="318" class="cap1-p05-axisLabel cap1-p05-axisLabel--y" transform="rotate(-90 -66 318)">Concentração</text>
-              <text x="360" y="665" class="cap1-p05-axisLabel">Tempo</text>
+              <text
+                x="-66"
+                y="318"
+                class="cap1-p05-axisLabel cap1-p05-axisLabel--y"
+                transform="rotate(-90 -66 318)"
+              >
+                Exposição ao antibacteriano
+              </text>
 
-              <text x="856" y="255" class="cap1-p05-lineLabel cap1-p05-lineLabel--toxic">Limiar de toxicidade</text>
-              <text x="856" y="475" class="cap1-p05-lineLabel cap1-p05-lineLabel--effective">Limiar eficaz</text>
+              <text
+                x="360"
+                y="665"
+                class="cap1-p05-axisLabel"
+              >
+                Tempo
+              </text>
 
-              <text x="270" y="380" class="cap1-p05-windowLabel">Janela terapêutica</text>
+              <text
+                x="856"
+                y="255"
+                class="cap1-p05-lineLabel cap1-p05-lineLabel--toxic"
+              >
+                Limiar de toxicidade
+              </text>
 
-              <text x="856" y="152" class="cap1-p05-zone cap1-p05-zone--high">maior risco de toxicidade</text>
-              <text x="856" y="365" class="cap1-p05-zone cap1-p05-zone--ok">faixa de eficácia e segurança relativa</text>
-              <text x="856" y="542" class="cap1-p05-zone cap1-p05-zone--low">exposição insuficiente</text>
+              <text
+                x="856"
+                y="475"
+                class="cap1-p05-lineLabel cap1-p05-lineLabel--effective"
+              >
+                Limiar mínimo eficaz
+              </text>
 
-              <g class="cap1-p05-scene" data-window-scene="low">
+              <text
+  x="420"
+  y="372"
+  text-anchor="middle"
+  class="cap1-p05-windowLabel"
+>
+  Janela terapêutica
+</text>
+
+              <text
+                x="856"
+                y="152"
+                class="cap1-p05-zone cap1-p05-zone--high"
+              >
+                Maior probabilidade de toxicidade
+              </text>
+
+              <text
+                x="856"
+                y="365"
+                class="cap1-p05-zone cap1-p05-zone--ok"
+              >
+                Faixa terapêutica
+              </text>
+
+              <text
+                x="856"
+                y="542"
+                class="cap1-p05-zone cap1-p05-zone--low"
+              >
+                Exposição insuficiente
+              </text>
+
+              <g
+                class="cap1-p05-scene"
+                data-window-scene="low"
+              >
                 <path
                   class="cap1-p05-curve cap1-p05-curve--low"
-                  d="M 20 560 C 120 542, 220 518, 320 496 C 420 476, 520 455, 620 438 C 710 425, 780 417, 820 414">
-                </path>
-                <circle class="cap1-p05-point cap1-p05-point--low" cx="760" cy="418" r="6"></circle>
+                  d="M 20 560 C 130 548, 240 526, 350 510 C 470 492, 600 496, 710 508 C 760 513, 795 518, 820 522"
+                ></path>
               </g>
 
-              <g class="cap1-p05-scene is-active" data-window-scene="ok">
+              <g
+                class="cap1-p05-scene is-active"
+                data-window-scene="ok"
+              >
                 <path
                   class="cap1-p05-curve cap1-p05-curve--ok"
-                  d="M 20 548 C 95 520, 170 455, 245 378 C 310 312, 382 282, 452 298 C 528 316, 600 358, 675 402 C 738 436, 790 452, 820 462">
-                </path>
-                <circle class="cap1-p05-point cap1-p05-point--ok" cx="560" cy="334" r="6"></circle>
+                  d="M 20 548 C 95 520, 170 455, 245 378 C 310 312, 382 282, 452 298 C 528 316, 600 358, 675 402 C 738 436, 790 452, 820 462"
+                ></path>
               </g>
 
-              <g class="cap1-p05-scene" data-window-scene="high">
+              <g
+                class="cap1-p05-scene"
+                data-window-scene="high"
+              >
                 <path
                   class="cap1-p05-curve cap1-p05-curve--high"
-                  d="M 20 550 C 85 500, 145 386, 210 230 C 255 126, 315 92, 378 132 C 448 178, 520 284, 600 366 C 680 448, 758 505, 820 534">
-                </path>
-                <circle class="cap1-p05-point cap1-p05-point--high" cx="310" cy="106" r="6"></circle>
+                  d="M 20 550 C 85 500, 145 386, 210 230 C 255 126, 315 92, 378 132 C 448 178, 520 284, 600 366 C 680 448, 758 505, 820 534"
+                ></path>
               </g>
+
             </g>
+
           </svg>
 
           <figcaption class="cap1-p05-caption">
-            Relação entre concentração do antibacteriano e resposta biológica, destacando a janela terapêutica.
-          </figcaption>
+  Representação esquemática da relação entre a exposição ao antibacteriano,
+  o efeito terapêutico e o aumento da probabilidade de toxicidade.
+</figcaption>
+
         </figure>
 
-        <div class="cap1-p05-feedback cap1-p05-feedback--ok" data-window-feedback aria-live="polite">
-          <h2 class="cap1-p05-feedback__state" data-window-state>Exposição terapêutica</h2>
-          <p class="cap1-p05-feedback__text" data-window-text>
-            Neste cenário, a concentração do antibacteriano ultrapassa o nível mínimo necessário para efeito terapêutico e permanece abaixo do limiar em que a toxicidade se torna mais provável.
+        <div
+          class="cap1-p05-feedback cap1-p05-feedback--ok"
+          id="cap1P05Panel"
+          role="tabpanel"
+          aria-labelledby="cap1P05TabOk"
+          aria-live="polite"
+          aria-atomic="true"
+          data-window-feedback
+        >
+
+          <h3
+            class="cap1-p05-feedback__state"
+            data-window-state
+          >
+            Faixa terapêutica
+          </h3>
+
+          <p
+            class="cap1-p05-feedback__text"
+            data-window-text
+          >
+            A concentração permanece entre o limiar de eficácia e o limiar
+            associado ao aumento da toxicidade, favorecendo o efeito terapêutico
+            com segurança relativa.
           </p>
+
         </div>
+
       </div>
+
     </section>
 
-    <section class="prose" aria-label="Continuação do texto">
+    <section
+      class="prose"
+      aria-label="Aspectos complementares"
+    >
+
       <p>
-        A concentração alcançada no organismo não depende apenas da dose administrada, mas também do percurso que o fármaco percorre após sua administração. Processos farmacocinéticos como a absorção, distribuição, metabolismo e eliminação influenciam diretamente a concentração sanguínea do antibiótico e, consequentemente, o equilíbrio entre eficácia e segurança <sup>13</sup>.
+        Fármacos com janela terapêutica ampla apresentam maior margem entre a
+        exposição eficaz e os níveis associados à toxicidade. Medicamentos com
+        janela terapêutica estreita possuem menor margem de segurança e podem
+        exigir maior cautela na definição da dose e, em determinadas situações,
+        monitoramento terapêutico. Aminoglicosídeos e vancomicina são exemplos
+        relevantes no contexto da antibioticoterapia
+        <sup>4,18</sup>.
       </p>
 
       <p>
-        Outro aspecto relevante é a forma como a exposição ao antibacteriano se distribui ao longo do tempo. A relação entre concentração do fármaco e atividade antimicrobiana é frequentemente descrita por parâmetros farmacocinético-farmacodinâmicos. Para alguns antibacterianos, a eficácia depende principalmente do período em que a concentração permanece acima da concentração inibitória mínima (CIM). Para outros, o efeito terapêutico se correlaciona mais fortemente com a concentração máxima alcançada ou com a exposição total ao medicamento ao longo do tempo. Esses parâmetros são frequentemente expressos por índices como o tempo acima da CIM (T&gt;MIC), a razão entre concentração máxima e CIM (Cmax/MIC) e a razão entre área sob a curva e CIM (AUC/MIC) <sup>15,16</sup>.
+        A exposição alcançada não depende apenas da dose administrada. Absorção,
+        distribuição, metabolismo e eliminação determinam o comportamento do
+        fármaco ao longo do tempo e sua chegada ao sítio da infecção. Esses
+        conceitos serão aprofundados no capítulo de farmacocinética e
+        farmacodinâmica
+        <sup>4</sup>.
       </p>
 
       <p>
-        Manter o antibacteriano dentro da janela terapêutica constitui um requisito importante para o sucesso do tratamento. Ainda assim, uma exposição adequada não garante, isoladamente, eficácia clínica. O desfecho terapêutico também depende da atividade intrínseca do fármaco contra o microrganismo responsável pela infecção e da interação entre as propriedades farmacológicas do medicamento, as características do patógeno e as condições clínicas do paciente <sup>2,16</sup>.
+        Permanecer dentro da janela terapêutica é importante, mas não garante,
+        isoladamente, o sucesso clínico. O desfecho também depende da atividade do
+        antibacteriano contra o microrganismo, da presença de mecanismos de
+        resistência, da penetração no sítio da infecção e das condições clínicas
+        do paciente
+        <sup>3,19</sup>.
       </p>
+
     </section>
 
+    <nav
+      class="pager"
+      aria-label="Paginação"
+    >
 
-   <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p04.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 1 · Página 5 de 89</div>
-  <a class="btn primary" href="p06.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+      <a
+        class="btn"
+        href="p04.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 1 · Página 5 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p06.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+
+    </nav>
 
   </main>
 
   <script src="../../js/app.js"></script>
   <script src="../../js/capitulo-01.js"></script>
+
 </body>
 </html>

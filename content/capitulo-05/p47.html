@@ -3,11 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 5 — Página 47</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -19,96 +24,286 @@
   <main class="page-shell">
 
     <header class="page-header">
-      <div class="chapter">Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma</div>
-      <h1 class="page-title">Observações do laudo que modificam a interpretação</h1>
+      <div class="chapter">
+        Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma
+      </div>
+
+      <h1 class="page-title">
+        Como o laboratório interpreta o antibiograma
+      </h1>
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <section class="prose cap5-p47-reading">
 
       <p>
-        Além das categorias interpretativas do antibiograma, o laudo microbiológico pode incluir observações adicionais relacionadas a mecanismos específicos de resistência bacteriana. Essas informações não substituem o resultado do teste de sensibilidade, mas podem modificar a forma como o painel de antibacterianos deve ser interpretado.
+        Os testes de suscetibilidade fornecem um valor laboratorial, que pode corresponder ao diâmetro do halo de inibição ou à concentração inibitória mínima. Esses valores, isoladamente, não permitem concluir se a bactéria é sensível ou resistente.
       </p>
 
       <p>
-        Essas observações correspondem à identificação de mecanismos de resistência ou fenótipos específicos que não são completamente capturados apenas pelas categorias S, I ou R. Sua presença indica que o laboratório reconheceu um comportamento biológico capaz de interferir na atividade de determinadas classes de antibacterianos, mesmo quando o resultado isolado do teste sugere suscetibilidade <sup>3,10,12</sup>.
+        Para adquirir significado clínico, o resultado é comparado aos pontos de corte clínicos, denominados <em>breakpoints</em>, definidos para cada combinação entre bactéria, antibacteriano e, em algumas situações, sítio da infecção <sup>3,4</sup>.
       </p>
 
       <p>
-        Entre os mecanismos mais frequentemente relatados na prática clínica estão as β-lactamases de espectro estendido (ESBL). Essas enzimas são produzidas por algumas bactérias da ordem Enterobacterales e possuem capacidade de hidrolisar diversas penicilinas e cefalosporinas de amplo espectro. A detecção desse mecanismo modifica a interpretação de parte do painel de β-lactâmicos de acordo com as regras interpretativas adotadas pelo sistema normativo do laboratório <sup>10,14,15</sup>.
+        Os <em>breakpoints</em> integram dados microbiológicos, farmacocinéticos, farmacodinâmicos e evidências clínicas. Essa comparação transforma o valor obtido no teste em uma categoria interpretativa: Sensível (S), Sensível, aumentando exposição (I) ou Resistente (R) <sup>3,4,7</sup>.
       </p>
 
-      <section class="cap5-p47-esbl" aria-labelledby="cap5-p47-esbl-title">
-        <div class="cap5-p47-esbl__head">
-          <h3 id="cap5-p47-esbl-title">Quando o próprio laudo já orienta a interpretação</h3>
+      <figure class="cap5-p47-mainFigure cap5-p47-reveal">
+
+        <button
+          class="cap5-p47-mainZoom"
+          type="button"
+          data-zoom="../../assets/capitulo-05/imagens/breakpoints-sir.png"
+          aria-label="Ampliar fluxograma de interpretação do antibiograma"
+        >
+          <img
+            src="../../assets/capitulo-05/imagens/breakpoints-sir.png"
+            alt="Fluxograma mostrando a comparação entre halo ou MIC, breakpoints e categorias S, I e R"
+            loading="lazy"
+          />
+        </button>
+
+        <figcaption>
+          O valor obtido no teste é comparado aos <em>breakpoints</em> para gerar a categoria interpretativa.
+        </figcaption>
+
+      </figure>
+
+      <section
+        class="cap5-p47-interaction cap5-p47-reveal"
+        data-cap5-p47
+        aria-labelledby="cap5P47InteractionTitle"
+      >
+
+        <div class="cap5-p47-interactionHeader">
+
+          <span class="cap5-p47-eyebrow">
+            Situação de interpretação
+          </span>
+
+          <h2 id="cap5P47InteractionTitle">
+            O que fazer diante de um resultado I?
+          </h2>
+
           <p>
-            Na presença de ESBL, o laboratório não está apenas descrevendo um achado microbiológico. Ele está informando um mecanismo que modifica a leitura de parte do painel.
+            O antibiograma apresenta: <strong>Cefepima — I: Sensível, aumentando exposição.</strong>
           </p>
+
         </div>
 
-        <div class="cap5-p47-esbl__controls" role="tablist" aria-label="Interpretação da ESBL no laudo">
+        <div
+          class="cap5-p47-options"
+          role="group"
+          aria-label="Alternativas para interpretação da categoria I"
+        >
+
           <button
-            class="cap5-p47-esbl__tab is-active"
+            class="cap5-p47-option"
             type="button"
-            role="tab"
-            aria-selected="true"
-            data-p47-step="mecanismo"
+            data-p47-option="discard"
           >
-            Mecanismo detectado
+            <span>A</span>
+
+            <p>
+              O antibacteriano deve ser descartado porque o resultado equivale à resistência.
+            </p>
           </button>
 
           <button
-            class="cap5-p47-esbl__tab"
+            class="cap5-p47-option"
             type="button"
-            role="tab"
-            aria-selected="false"
-            data-p47-step="laudo"
+            data-p47-option="uncertain"
           >
-            Leitura do laudo
+            <span>B</span>
+
+            <p>
+              O resultado é indefinido e não permite qualquer decisão terapêutica.
+            </p>
           </button>
+
+          <button
+            class="cap5-p47-option"
+            type="button"
+            data-p47-option="exposure"
+          >
+            <span>C</span>
+
+            <p>
+              O antibacteriano pode ser considerado, desde que seja possível alcançar a exposição recomendada.
+            </p>
+          </button>
+
         </div>
 
-        <div class="cap5-p47-esbl__stage">
-          <figure class="cap5-p47-esbl__figure">
-            <button
-              class="cap5-p47-esbl__zoom"
-              type="button"
-              id="cap5-p47-zoom"
-              data-zoom="../../assets/capitulo-05/imagens/esbl-mecanismo.png"
-              aria-label="Ampliar imagem relacionada à ESBL"
-            >
-              <img
-                id="cap5-p47-image"
-                src="../../assets/capitulo-05/imagens/esbl-mecanismo.png"
-                alt="Esquema ilustrativo do mecanismo de produção de ESBL."
-                loading="lazy"
-              />
-            </button>
-            <figcaption id="cap5-p47-caption" class="cap5-p47-esbl__caption">
-              ESBL. A presença do mecanismo modifica a leitura de parte dos β-lactâmicos no antibiograma.
-            </figcaption>
-          </figure>
+        <div
+          id="cap5P47Feedback"
+          class="cap5-p47-feedback"
+          hidden
+          aria-live="polite"
+        ></div>
 
-          <aside class="cap5-p47-esbl__panel" aria-live="polite">
-            <div class="cap5-p47-esbl__eyebrow" id="cap5-p47-eyebrow">Mecanismo reconhecido pelo laboratório</div>
-            <h3 class="cap5-p47-esbl__title" id="cap5-p47-title">ESBL detectada</h3>
-            <p class="cap5-p47-esbl__text" id="cap5-p47-text">
-              A identificação de ESBL no laudo indica que o laboratório reconheceu um mecanismo capaz de interferir na atividade de diversos β-lactâmicos. A interpretação do painel não deve ser feita de forma isolada, porque parte dos resultados já está condicionada por esse achado.
+      </section>
+
+      <aside class="cap5-p47-confusion cap5-p47-reveal">
+
+        <span class="cap5-p47-confusionLabel">
+          Por que ainda existe confusão?
+        </span>
+
+        <strong>
+          I não significa “quase resistente”.
+        </strong>
+
+        <p>
+          A letra I foi historicamente associada ao termo “intermediário”, frequentemente entendido como resultado incerto ou próximo da resistência. Na definição atual, I significa <strong>Sensível, aumentando exposição</strong>. Portanto, S e I representam categorias de suscetibilidade, mas exigem regimes de exposição diferentes.
+        </p>
+
+      </aside>
+
+      <section
+        class="cap5-p47-categories cap5-p47-reveal"
+        aria-labelledby="cap5P47CategoriesTitle"
+      >
+
+        <h2 id="cap5P47CategoriesTitle">
+          O que cada categoria informa
+        </h2>
+
+        <div class="cap5-p47-categoryGrid">
+
+          <article class="cap5-p47-category cap5-p47-category--s">
+
+            <span class="cap5-p47-categoryLetter">
+              S
+            </span>
+
+            <strong>
+              Sensível
+            </strong>
+
+            <p>
+              Existe elevada probabilidade de sucesso terapêutico com o regime de exposição padrão recomendado.
             </p>
 
-            <div class="cap5-p47-esbl__note" id="cap5-p47-note">
-              Quando o mecanismo é identificado, o laudo deixa de ser apenas descritivo e passa a orientar a interpretação clínica.
-            </div>
-          </aside>
+          </article>
+
+          <article class="cap5-p47-category cap5-p47-category--i">
+
+            <span class="cap5-p47-categoryLetter">
+              I
+            </span>
+
+            <strong>
+              Sensível, aumentando exposição
+            </strong>
+
+            <p>
+              Existe elevada probabilidade de sucesso, desde que a exposição ao antibacteriano seja aumentada de forma validada.
+            </p>
+
+          </article>
+
+          <article class="cap5-p47-category cap5-p47-category--r">
+
+            <span class="cap5-p47-categoryLetter">
+              R
+            </span>
+
+            <strong>
+              Resistente
+            </strong>
+
+            <p>
+              Existe elevada probabilidade de falha terapêutica, mesmo com aumento da exposição ao antibacteriano.
+            </p>
+
+          </article>
+
         </div>
+
       </section>
+
+      <section
+        class="cap5-p47-exposure cap5-p47-reveal"
+        aria-labelledby="cap5P47ExposureTitle"
+      >
+
+        <h2 id="cap5P47ExposureTitle">
+          Como a exposição pode ser aumentada?
+        </h2>
+
+        <div class="cap5-p47-exposureGrid">
+
+          <article>
+            <span>Dose</span>
+
+            <p>
+              Utilização de uma dose maior quando prevista em regimes validados.
+            </p>
+          </article>
+
+          <article>
+            <span>Intervalo</span>
+
+            <p>
+              Redução do intervalo entre administrações, conforme o perfil farmacológico.
+            </p>
+          </article>
+
+          <article>
+            <span>Infusão</span>
+
+            <p>
+              Infusão prolongada ou contínua para determinados β-lactâmicos.
+            </p>
+          </article>
+
+          <article>
+            <span>Sítio da infecção</span>
+
+            <p>
+              Uso em locais nos quais o fármaco alcança concentrações elevadas, como a urina.
+            </p>
+          </article>
+
+        </div>
+
+        <p class="cap5-p47-exposureWarning">
+          A categoria I não autoriza ajustes posológicos improvisados. A exposição deve seguir regimes validados para o antibacteriano, o microrganismo e o sítio da infecção.
+        </p>
+
+      </section>
+
+      <aside class="cap5-p47-practice cap5-p47-reveal">
+       Antes de descartar um resultado I, verifique se existe regime de exposição aumentada recomendado e se ele pode ser aplicado com segurança ao paciente.
+      </aside>
+
+      <aside class="cap5-p47-principle cap5-p47-reveal">
+        S e I indicam suscetibilidade, mas com exigências distintas de exposição. R indica alta probabilidade de falha terapêutica mesmo quando se tenta aumentar a exposição ao antibacteriano.
+      </aside>
 
     </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p46.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 5 · Página 47 de 89</div>
-  <a class="btn primary" href="p48.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+      <a
+        class="btn"
+        href="p46.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 5 · Página 47 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p48.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+    </nav>
 
   </main>
 

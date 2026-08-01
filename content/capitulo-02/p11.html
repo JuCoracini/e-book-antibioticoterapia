@@ -3,32 +3,47 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 2 — Página 11</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
   <link rel="stylesheet" href="../../css/capitulo-02.css" />
 </head>
 
-<body class="cap2-shell cap2-page11">
-  <main class="page-shell">
+<body class="cap2-page11">
+
+  <main class="page-shell cap2-shell">
+
     <header class="page-header">
       <div class="chapter">Capítulo 2 — Mecanismos de Ação dos Antibacterianos</div>
       <h1 class="page-title">Alvos celulares dos antibacterianos</h1>
     </header>
 
-    <section class="prose">
+    <section class="prose cap2-reading-flow">
+
       <p>
-        A atividade dos antibacterianos decorre da interferência seletiva em estruturas e processos indispensáveis à sobrevivência e à multiplicação bacteriana <sup>1,2</sup>. Cada classe farmacológica interage com um alvo molecular específico, e essa interação determina diferenças no espectro de ação, no perfil de segurança, no comportamento microbiológico e no potencial de desenvolvimento de resistência.
+        A atividade dos antibacterianos resulta da interferência seletiva em
+        estruturas e processos essenciais para a sobrevivência ou multiplicação
+        das bactérias <sup>1,2</sup>. As classes podem ser organizadas de acordo
+        com seu alvo celular predominante, cuja interação influencia o espectro
+        de ação, o perfil de segurança, a resposta microbiológica e os mecanismos
+        pelos quais a resistência pode se desenvolver.
       </p>
 
       <p>
-        A possibilidade de intervenção terapêutica resulta das diferenças estruturais e funcionais entre células bacterianas e células humanas, permitindo que determinados componentes bacterianos sejam atingidos preferencialmente, com preservação relativa das estruturas análogas do hospedeiro <sup>3</sup>.
+        Essa seletividade é possível porque bactérias e células humanas
+        apresentam diferenças estruturais e funcionais exploráveis
+        terapeuticamente. Assim, determinados componentes bacterianos podem ser
+        atingidos preferencialmente, com preservação relativa das estruturas do
+        hospedeiro <sup>3</sup>.
       </p>
 
-      <figure class="cap2-p11-figure figure">
+      <figure class="figure cap2-p11-figure cap2-p11-reveal">
         <button
           class="cap2-p11-zoom"
           type="button"
@@ -37,140 +52,84 @@
         >
           <img
             src="../../assets/capitulo-02/imagens/alvos-celulares-bacteria.png"
-            alt="Representação esquemática dos principais alvos celulares dos antibacterianos na bactéria, incluindo parede celular, ribossomos 70S, ácidos nucleicos, síntese do folato e membrana citoplasmática"
+            alt="Representação esquemática dos principais alvos celulares dos antibacterianos na bactéria"
+            loading="lazy"
           />
+
+          <span class="cap2-p11-zoomHint" aria-hidden="true">
+            Ampliar figura
+          </span>
         </button>
 
         <figcaption class="caption cap2-p11-caption">
-          Representação esquemática dos principais alvos celulares dos antibacterianos na bactéria, incluindo parede celular, ribossomos 70S, ácidos nucleicos, síntese do folato e membrana citoplasmática. Clique na imagem para ampliar.
+          Representação esquemática dos principais alvos celulares dos antibacterianos na bactéria.
         </figcaption>
       </figure>
 
-      <p>
-        Entre os principais alvos celulares explorados pelos antibacterianos encontram-se a parede celular bacteriana, composta por peptidoglicano; os ribossomos bacterianos do tipo 70S, responsáveis pela síntese proteica; as enzimas envolvidas na replicação e na transcrição do DNA; a via metabólica da síntese de folato e a membrana citoplasmática bacteriana.
-      </p>
-
-      <p>
-        Esses sistemas participam de funções essenciais da célula bacteriana, incluindo manutenção da estabilidade estrutural, produção de proteínas, replicação do material genético e metabolismo energético.
-      </p>
-
-      <section class="cap2-targets" aria-labelledby="cap2TargetsTitle" data-cap2-targets>
-        <h2 id="cap2TargetsTitle" class="cap2-targets-title">
-          A relevância clínica de cada alvo depende do tipo de função bacteriana comprometida quando esse sistema é inibido.
-        </h2>
-
-        <p class="cap2-targets-intro">
-          Selecione um alvo para observar como a inibição se traduz em perda funcional da célula bacteriana e qual padrão de resposta tende a ser esperado.
+      <section class="cap2-p11-interaction cap2-p11-reveal" data-cap2-p11 aria-label="Interação sobre alvos celulares dos antibacterianos">
+        <p class="cap2-p11-instruction">
+          Selecione um alvo para relacionar a função afetada, a consequência
+          celular e a tendência da resposta microbiológica.
         </p>
 
-        <div
-          class="cap2-targets-buttons"
-          role="tablist"
-          aria-label="Alvos celulares dos antibacterianos"
-        >
-          <button
-            class="btn is-active"
-            type="button"
-            role="tab"
-            id="cap2TargetTabParede"
-            aria-selected="true"
-            aria-controls="cap2TargetPanel"
-            data-target="parede"
-          >
+        <div class="cap2-p11-tabs" role="tablist" aria-label="Selecione o alvo celular">
+          <button class="cap2-p11-tab is-active" type="button" role="tab" id="cap2P11TabParede" aria-selected="true" aria-controls="cap2P11Panel" tabindex="0" data-p11-target="parede">
             Parede celular
           </button>
 
-          <button
-            class="btn"
-            type="button"
-            role="tab"
-            id="cap2TargetTabRibossomo"
-            aria-selected="false"
-            aria-controls="cap2TargetPanel"
-            tabindex="-1"
-            data-target="ribossomo"
-          >
-            Ribossomo
+          <button class="cap2-p11-tab" type="button" role="tab" id="cap2P11TabRibossomo" aria-selected="false" aria-controls="cap2P11Panel" tabindex="-1" data-p11-target="ribossomo">
+            Ribossomo 70S
           </button>
 
-          <button
-            class="btn"
-            type="button"
-            role="tab"
-            id="cap2TargetTabDNA"
-            aria-selected="false"
-            aria-controls="cap2TargetPanel"
-            tabindex="-1"
-            data-target="dna"
-          >
+          <button class="cap2-p11-tab" type="button" role="tab" id="cap2P11TabDna" aria-selected="false" aria-controls="cap2P11Panel" tabindex="-1" data-p11-target="dna">
             DNA/RNA
           </button>
 
-          <button
-            class="btn"
-            type="button"
-            role="tab"
-            id="cap2TargetTabFolato"
-            aria-selected="false"
-            aria-controls="cap2TargetPanel"
-            tabindex="-1"
-            data-target="folato"
-          >
+          <button class="cap2-p11-tab" type="button" role="tab" id="cap2P11TabFolato" aria-selected="false" aria-controls="cap2P11Panel" tabindex="-1" data-p11-target="folato">
             Folato
           </button>
 
-          <button
-            class="btn"
-            type="button"
-            role="tab"
-            id="cap2TargetTabMembrana"
-            aria-selected="false"
-            aria-controls="cap2TargetPanel"
-            tabindex="-1"
-            data-target="membrana"
-          >
+          <button class="cap2-p11-tab" type="button" role="tab" id="cap2P11TabMembrana" aria-selected="false" aria-controls="cap2P11Panel" tabindex="-1" data-p11-target="membrana">
             Membrana
           </button>
         </div>
 
-        <div
-          id="cap2TargetPanel"
-          class="cap2-targets-panel"
-          role="tabpanel"
-          aria-labelledby="cap2TargetTabParede"
-        >
-          <p id="cap2TargetPanelTitle" class="cap2-targets-panel__title"></p>
-          <div id="cap2TargetPanelBody" class="cap2-targets-panel__body"></div>
-        </div>
+        <article class="cap2-p11-panel" id="cap2P11Panel" role="tabpanel" aria-labelledby="cap2P11TabParede" aria-live="polite" aria-atomic="true">
+          <div class="cap2-p11-panelHeader">
+            <span class="cap2-p11-panelKicker" data-p11-kicker>Alvo selecionado</span>
+            <h2 class="cap2-p11-panelTitle" data-p11-title>Parede celular</h2>
+          </div>
+
+          <div class="cap2-p11-grid">
+            <div class="cap2-p11-card">
+              <span>Função bacteriana afetada</span>
+              <p data-p11-function>Síntese e remodelamento do peptidoglicano.</p>
+            </div>
+
+            <div class="cap2-p11-card">
+              <span>Consequência celular</span>
+              <p data-p11-consequence>Perda progressiva da integridade estrutural e da resistência ao estresse osmótico.</p>
+            </div>
+
+            <div class="cap2-p11-card cap2-p11-card--response">
+              <span>Tendência da resposta microbiológica</span>
+              <p data-p11-response>Frequentemente bactericida, especialmente em bactérias em crescimento ativo.</p>
+            </div>
+          </div>
+        </article>
       </section>
 
-      <p>
-        Com base nesses alvos celulares, os mecanismos de ação dos antibacterianos podem ser organizados em cinco categorias principais:
-      </p>
+      <aside class="cap2-p11-box cap2-p11-key cap2-p11-reveal">
+        Embora o alvo celular influencie o padrão de resposta microbiológica, o efeito bactericida ou bacteriostático também depende da espécie bacteriana, da concentração do fármaco, da carga bacteriana e das condições do hospedeiro <sup>1,5</sup>.
+      </aside>
 
-      <ul class="cap2-list">
-        <li>inibição da síntese da parede celular</li>
-        <li>inibição da síntese proteica</li>
-        <li>interferência na síntese de ácidos nucleicos</li>
-        <li>inibição do metabolismo do folato</li>
-        <li>ação sobre a membrana citoplasmática</li>
-      </ul>
-
-      <p>
-        Essa organização relaciona o alvo molecular ao processo biológico afetado, estabelecendo uma estrutura lógica para o estudo das diferentes classes farmacológicas <sup>1</sup>.
-      </p>
-
-      <p>
-        A natureza do alvo influencia o padrão de resposta microbiológica observado após a exposição ao antibacteriano.
-      </p>
     </section>
 
- <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="../capitulo-01/p10.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 2 · Página 11 de 89</div>
-  <a class="btn primary" href="p12.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
-
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="../capitulo-01/p10.html" aria-label="Ir para a página anterior">← Anterior</a>
+      <div class="center">Capítulo 2 · Página 11 de 89</div>
+      <a class="btn primary" href="p12.html" aria-label="Ir para a próxima página">Próxima →</a>
+    </nav>
 
   </main>
 

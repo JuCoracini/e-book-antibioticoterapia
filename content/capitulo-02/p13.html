@@ -3,138 +3,192 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 2 — Página 13</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
   <link rel="stylesheet" href="../../css/capitulo-02.css" />
 </head>
 
-<body class="cap2-shell cap2-page13">
-  <main class="page-shell">
+<body class="cap2-page13">
+
+  <main class="page-shell cap2-shell">
 
     <header class="page-header">
       <div class="chapter">Capítulo 2 — Mecanismos de Ação dos Antibacterianos</div>
       <h1 class="page-title">Inibição da síntese da parede celular</h1>
     </header>
 
-    <section class="prose" aria-label="Texto principal">
-      <p>
-        A parede celular bacteriana é uma estrutura essencial para a manutenção da forma, da resistência mecânica e da estabilidade osmótica da célula. Seu principal componente é o peptidoglicano, uma rede tridimensional formada por cadeias alternadas de N-acetilglicosamina (NAG) e N-acetilmurâmico (NAM), interligadas por pontes peptídicas que conferem rigidez estrutural <sup>1</sup>.
-      </p>
+    <section class="prose cap2-reading-flow">
 
       <p>
-        A síntese do peptidoglicano depende de etapas coordenadas e de enzimas específicas, como as transpeptidases, também chamadas proteínas ligadoras de penicilina (PBPs), responsáveis pelas etapas finais de ligação cruzada da parede celular <sup>2</sup>.
+        A parede celular bacteriana é uma estrutura essencial para a manutenção da forma, da resistência mecânica e da estabilidade osmótica da célula. Seu principal componente é o peptidoglicano, uma rede tridimensional formada por cadeias alternadas de N-acetilglicosamina (NAG) e N-acetilmurâmico (NAM), interligadas por cadeias peptídicas que, após a formação de ligações cruzadas, conferem rigidez estrutural à parede celular <sup>1,3</sup>.
       </p>
 
       <p>
-        A integridade dessa rede estrutural é fundamental para que a bactéria resista à pressão osmótica interna. Alterações na síntese do peptidoglicano comprometem progressivamente a estabilidade da parede celular e podem levar à ruptura da célula bacteriana.
-      </p>
-    </section>
-
-    <section class="cap2-p13-stage" data-cap2-wall aria-label="Síntese do peptidoglicano e interferência farmacológica">
-      <p class="cap2-p13-intro">
-        Selecione uma das abas para visualizar o processo normal de síntese da parede celular ou a forma como diferentes antibacterianos interferem nesse mecanismo.
+        A síntese do peptidoglicano ocorre por etapas sequenciais e depende da atuação coordenada de diferentes enzimas. Entre elas destacam-se as proteínas ligadoras de penicilina (PBPs), envolvidas nas etapas finais de maturação da parede celular, especialmente na formação das ligações cruzadas entre cadeias peptídicas adjacentes <sup>2,6</sup>.
       </p>
 
-      <div class="cap2-p13-tabs" role="tablist" aria-label="Mecanismos relacionados à parede celular">
-        <button
-          class="cap2-p13-tab is-active"
-          type="button"
-          role="tab"
-          id="cap2P13TabSintese"
-          aria-selected="true"
-          aria-controls="cap2P13Panel"
-          tabindex="0"
-          data-wall-tab="sintese"
-        >
-          Síntese do peptidoglicano
-        </button>
+      <p>
+        Quando esse processo é interrompido, a parede recém-formada perde progressivamente sua resistência mecânica. A bactéria torna-se incapaz de suportar adequadamente a pressão osmótica intracelular, favorecendo a lise, sobretudo durante as fases de crescimento ativo.
+      </p>
 
-        <button
-          class="cap2-p13-tab"
-          type="button"
-          role="tab"
-          id="cap2P13TabBeta"
-          aria-selected="false"
-          aria-controls="cap2P13Panel"
-          tabindex="-1"
-          data-wall-tab="beta"
-        >
-          β-lactâmicos
-        </button>
-
-        <button
-          class="cap2-p13-tab"
-          type="button"
-          role="tab"
-          id="cap2P13TabGlico"
-          aria-selected="false"
-          aria-controls="cap2P13Panel"
-          tabindex="-1"
-          data-wall-tab="glico"
-        >
-          Glicopeptídeos
-        </button>
-      </div>
-
-      <div
-        id="cap2P13Panel"
-        class="cap2-p13-board"
-        role="tabpanel"
-        aria-labelledby="cap2P13TabSintese"
+      <section
+        class="cap2-p13-interaction cap2-p13-reveal"
+        data-cap2-wall
+        data-wall-state="sintese"
+        aria-label="Síntese do peptidoglicano e ação dos antibacterianos"
       >
-        <figure class="cap2-p13-figure">
+
+        <p class="cap2-p13-intro">
+          Selecione uma das abas para comparar a síntese normal do peptidoglicano com a ação dos β-lactâmicos e dos glicopeptídeos.
+        </p>
+
+        <div
+          class="cap2-p13-tabs"
+          role="tablist"
+          aria-label="Processos relacionados à parede celular"
+        >
           <button
-            class="cap2-p13-zoom"
+            class="cap2-p13-tab is-active"
             type="button"
-            data-zoom="../../assets/capitulo-02/imagens/sintese-peptidoglicano.png"
-            aria-label="Ampliar imagem da síntese do peptidoglicano"
+            role="tab"
+            id="cap2P13TabSintese"
+            aria-selected="true"
+            aria-controls="cap2P13Panel"
+            tabindex="0"
+            data-wall-tab="sintese"
           >
-            <img
-              id="cap2P13Image"
-              src="../../assets/capitulo-02/imagens/sintese-peptidoglicano.png"
-              alt="Etapas da síntese do peptidoglicano na parede celular bacteriana"
-              loading="lazy"
-            />
+            Síntese normal
           </button>
 
-          <figcaption id="cap2P13Caption" class="caption">
-            Etapas da síntese do peptidoglicano na parede celular bacteriana. 
-          </figcaption>
-        </figure>
+          <button
+            class="cap2-p13-tab"
+            type="button"
+            role="tab"
+            id="cap2P13TabBeta"
+            aria-selected="false"
+            aria-controls="cap2P13Panel"
+            tabindex="-1"
+            data-wall-tab="beta"
+          >
+            β-lactâmicos
+          </button>
 
-        <div class="cap2-p13-panel" aria-live="polite">
-          <h2 id="cap2P13Title" class="cap2-p13-panel__title">
-            Etapas da síntese do peptidoglicano
-          </h2>
-
-          <div id="cap2P13Body" class="cap2-p13-panel__body">
-            <p>1) Formação dos precursores no citoplasma: unidades de NAG e NAM são sintetizadas e associadas a pequenas cadeias peptídicas, formando precursores solúveis.</p>
-            <p>2) Transporte através da membrana citoplasmática: os precursores são transportados para a face externa da membrana por meio de um carreador lipídico denominado bactoprenol.</p>
-            <p>3) Incorporação à parede existente: as novas subunidades são adicionadas à rede de peptidoglicano por reações de transglicosilação, ampliando a estrutura da parede celular.</p>
-            <p>4) Formação das ligações cruzadas: as PBPs catalisam a reação de transpeptidação, formando pontes entre cadeias peptídicas adjacentes, conferindo resistência mecânica à parede celular.</p>
-            <p><strong>Implicação clínica:</strong> antibacterianos que atuam nessa etapa tendem a ser mais eficazes em bactérias em crescimento ativo.</p>
-          </div>
+          <button
+            class="cap2-p13-tab"
+            type="button"
+            role="tab"
+            id="cap2P13TabGlico"
+            aria-selected="false"
+            aria-controls="cap2P13Panel"
+            tabindex="-1"
+            data-wall-tab="glico"
+          >
+            Glicopeptídeos
+          </button>
         </div>
-      </div>
+
+        <article
+          id="cap2P13Panel"
+          class="cap2-p13-panel"
+          role="tabpanel"
+          aria-labelledby="cap2P13TabSintese"
+          aria-live="polite"
+        >
+
+          <figure class="figure cap2-p13-figure">
+            <button
+              class="cap2-p13-zoom"
+              type="button"
+              data-zoom="../../assets/capitulo-02/imagens/sintese-peptidoglicano.png"
+              aria-label="Ampliar imagem da síntese normal do peptidoglicano"
+            >
+              <img
+                id="cap2P13Image"
+                src="../../assets/capitulo-02/imagens/sintese-peptidoglicano.png"
+                alt="Etapas da síntese do peptidoglicano na parede celular bacteriana"
+                loading="lazy"
+              />
+            </button>
+
+            <span class="cap2-p13-zoomHint" aria-hidden="true">
+              Clique na figura para ampliar
+            </span>
+
+            <figcaption id="cap2P13Caption" class="caption cap2-p13-caption">
+              Etapas da síntese do peptidoglicano na parede celular bacteriana.
+            </figcaption>
+          </figure>
+
+          <div class="cap2-p13-summary">
+            <div class="cap2-p13-summaryHeader">
+              <span id="cap2P13Kicker" class="cap2-p13-kicker">
+                Processo fisiológico
+              </span>
+
+              <h2 id="cap2P13Title" class="cap2-p13-title">
+                Formação e maturação da parede celular
+              </h2>
+            </div>
+
+            <div id="cap2P13Body" class="cap2-p13-body">
+
+              <div class="cap2-p13-infoGrid">
+                <article class="cap2-p13-infoItem">
+                  <span>Função do processo</span>
+                  <p>Produzir e renovar continuamente a rede de peptidoglicano da parede celular.</p>
+                </article>
+
+                <article class="cap2-p13-infoItem">
+                  <span>Resultado estrutural</span>
+                  <p>Formação de uma estrutura rígida, capaz de manter a forma bacteriana e resistir à pressão osmótica.</p>
+                </article>
+
+                <article class="cap2-p13-infoItem">
+                  <span>Importância biológica</span>
+                  <p>Permite crescimento, divisão celular e manutenção da integridade mecânica da bactéria.</p>
+                </article>
+
+                <article class="cap2-p13-infoItem cap2-p13-infoItem--result">
+                  <span>Implicação farmacológica</span>
+                  <p>As etapas finais desse processo constituem alvos importantes para β-lactâmicos e glicopeptídeos.</p>
+                </article>
+              </div>
+
+            </div>
+          </div>
+
+        </article>
+      </section>
+
+      <aside class="cap2-p13-key cap2-p13-reveal">
+        <strong>Toxicidade seletiva:</strong> o peptidoglicano é exclusivo das bactérias e não está presente nas células humanas. Essa diferença permite que os antibacterianos que atuam sobre a parede celular atinjam preferencialmente a bactéria, com relativa preservação das estruturas do hospedeiro <sup>2,3</sup>.
+      </aside>
+
+      <aside class="cap2-p13-clinical cap2-p13-reveal">
+        Como a síntese do peptidoglicano ocorre principalmente durante o crescimento bacteriano, os antibacterianos que atuam nesse alvo tendem a apresentar maior atividade contra bactérias em multiplicação ativa. O efeito final também depende da espécie bacteriana, da atividade das autolisinas e das condições do foco infeccioso <sup>1,2</sup>.
+      </aside>
+
     </section>
 
-    <section class="prose" aria-label="Fechamento do texto">
-      <p>
-        A perda progressiva da integridade do peptidoglicano compromete a capacidade da bactéria de resistir à pressão osmótica interna, podendo resultar em lise celular, especialmente durante fases de crescimento ativo <sup>4</sup>.
-      </p>
-    </section>
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="p12.html" aria-label="Ir para a página anterior">
+        ← Anterior
+      </a>
 
- <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p12.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 2 · Página 13 de 89</div>
-  <a class="btn primary" href="p14.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+      <div class="center">Capítulo 2 · Página 13 de 89</div>
+
+      <a class="btn primary" href="p14.html" aria-label="Ir para a próxima página">
+        Próxima →
+      </a>
+    </nav>
 
   </main>
 

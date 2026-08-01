@@ -7,7 +7,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -20,130 +20,156 @@
 
     <header class="page-header">
       <div class="chapter">Capítulo 1 — Fundamentos Conceituais dos Antibacterianos</div>
-      <h1 class="page-title">Terapia empírica e terapia dirigida</h1>
+      <h1 class="page-title">Terapia Empírica e Terapia Dirigida</h1>
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <section class="prose">
+
       <p>
-        Uma vez estabelecida a presença de infecção ativa com base em critérios clínicos, a escolha do tratamento passa a considerar três elementos principais: o provável agente etiológico, o perfil epidemiológico local e as características individuais do paciente. Nesse momento, o foco deixa de ser a indicação do tratamento e passa a ser a seleção da estratégia terapêutica mais apropriada <sup>2,20</sup>.
+        Uma vez reconhecida a presença provável ou confirmada de infecção ativa,
+        a escolha do tratamento considera a síndrome clínica, os agentes
+        etiológicos prováveis, a gravidade, a epidemiologia local e as
+        características individuais do paciente <sup>3,15</sup>.
       </p>
 
       <p>
-        Essa decisão pode ocorrer antes ou depois da identificação microbiológica do patógeno, correspondendo a duas abordagens complementares da prática clínica, a terapia empírica e a terapia dirigida.
+        Quando o agente ainda não foi identificado, utiliza-se a terapia
+        empírica. Após a obtenção de informações microbiológicas, o tratamento
+        pode ser direcionado e ajustado de acordo com os achados clínicos e
+        laboratoriais.
+      </p>
+
+      <h2 class="section-subtitle">Terapia empírica</h2>
+
+      <p>
+        A terapia empírica é iniciada antes da identificação definitiva do
+        agente etiológico. Sua escolha deve oferecer cobertura adequada aos
+        microrganismos mais prováveis, considerando o sítio da infecção, a
+        gravidade e os padrões locais de resistência <sup>3,15</sup>.
       </p>
 
       <p>
-        A terapia empírica é iniciada quando o microrganismo causador da infecção ainda não foi identificado. Nessa situação, a escolha do antibacteriano baseia-se na probabilidade etiológica, considerando a síndrome clínica apresentada, a gravidade do quadro, o perfil epidemiológico local e os padrões de resistência bacteriana observados na instituição ou na comunidade <sup>2,20</sup>.
+        Em infecções graves, especialmente sepse e choque séptico, recomenda-se
+        coletar culturas antes da antibioticoterapia, desde que isso não provoque
+        atraso significativo. O tratamento empírico deve ser iniciado
+        precocemente e reavaliado assim que novas informações estiverem
+        disponíveis <sup>22</sup>.
       </p>
 
-      <p>
-        Em situações de maior gravidade clínica, como sepse ou choque séptico, recomenda-se iniciar antibacterianos o mais precocemente possível após a coleta adequada de culturas. O início oportuno da antibioticoterapia está associado a melhores desfechos clínicos em pacientes com infecção grave, nos quais o atraso terapêutico pode aumentar significativamente o risco de mortalidade <sup>21</sup>.
-      </p>
-
-      <p>
-        Nesses cenários, o risco de progressão rápida da infecção costuma ser maior do que o risco potencial associado à utilização inicial de um esquema antimicrobiano com cobertura mais ampla.
-      </p>
     </section>
 
-    <section class="cap1-p08-stage" aria-label="Fluxo de reavaliação da terapia empírica" data-cap1-therapy>
+    <section class="cap1-p08-stage" data-cap1-therapy aria-label="Interação sobre terapia empírica e terapia dirigida">
       <div class="cap1-p08-stage__inner">
 
+        <div class="cap1-p08-head">
+          
+          <p>Acompanhe o caso e analise a decisão clínica em cada etapa.</p>
+        </div>
+
         <div class="cap1-p08-flow" aria-hidden="true">
-          <div class="cap1-p08-flowStep">
-            <div class="cap1-p08-flowNode cap1-p08-flowNode--root">
-              <strong>Suspeita clínica de infecção</strong>
-            </div>
-          </div>
-
-          <div class="cap1-p08-flowArrow">↓</div>
-
-          <div class="cap1-p08-flowStep">
-            <div class="cap1-p08-flowNode">
-              <strong>Coleta adequada de culturas</strong>
-            </div>
-          </div>
-
-          <div class="cap1-p08-flowArrow">↓</div>
-
-          <div class="cap1-p08-flowStep">
-            <div class="cap1-p08-flowNode cap1-p08-flowNode--empiric">
-              <strong>Início da terapia empírica</strong>
-            </div>
-          </div>
-
-          <div class="cap1-p08-flowArrow">↓</div>
-
-          <div class="cap1-p08-flowStep">
-            <div class="cap1-p08-flowNode cap1-p08-flowNode--review">
-              <strong>Reavaliação em 48–72 horas</strong>
-            </div>
-          </div>
+          <div class="cap1-p08-flowStep is-active" data-p08-flow="0">Suspeita clínica</div>
+          <div class="cap1-p08-flowArrow">→</div>
+          <div class="cap1-p08-flowStep" data-p08-flow="1">Culturas</div>
+          <div class="cap1-p08-flowArrow">→</div>
+          <div class="cap1-p08-flowStep" data-p08-flow="2">Terapia empírica</div>
+          <div class="cap1-p08-flowArrow">→</div>
+          <div class="cap1-p08-flowStep" data-p08-flow="3">Reavaliação</div>
         </div>
 
-        <div class="cap1-p08-tabs" role="tablist" aria-label="Possíveis decisões após reavaliação">
-          <button class="cap1-p08-tab is-active" type="button" role="tab" aria-selected="true" tabindex="0" data-therapy-tab="manter">
-            Manter
-          </button>
-          <button class="cap1-p08-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-therapy-tab="descalonar">
-            Descalonar
-          </button>
-          <button class="cap1-p08-tab" type="button" role="tab" aria-selected="false" tabindex="-1" data-therapy-tab="suspender">
-            Suspender
-          </button>
+        <article class="cap1-p08-card">
+          <div class="cap1-p08-stepBadge" id="p08Step">Etapa 1 de 4</div>
+          <h3 id="p08Title">Suspeita clínica de infecção grave</h3>
+
+          <div class="cap1-p08-case" id="p08Case">
+            Paciente idoso é internado com pneumonia adquirida na comunidade, febre, dispneia e instabilidade hemodinâmica.
+          </div>
+
+          <p class="cap1-p08-question" id="p08Question">
+            Qual é o próximo passo?
+          </p>
+
+          <div class="cap1-p08-options" id="p08Options" role="group" aria-label="Alternativas da etapa"></div>
+
+          <div class="cap1-p08-feedback" id="p08Feedback" aria-live="polite">
+            <strong>Analise o momento clínico.</strong>
+            <p>A decisão deve considerar gravidade clínica, coleta de culturas e possibilidade de reavaliação posterior.</p>
+          </div>
+        </article>
+
+        <div class="cap1-p08-controls">
+          <button type="button" id="p08Prev" disabled>← Etapa anterior</button>
+          <div class="cap1-p08-dots" aria-hidden="true">
+            <span class="is-active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <button type="button" id="p08Next">Próxima etapa →</button>
         </div>
 
-        <div class="cap1-p08-panelWrap">
-          <div class="cap1-p08-panel" data-therapy-pane="manter">
-            <h2 class="cap1-p08-panelTitle">Manter o esquema inicial</h2>
-            <p>
-              A manutenção do esquema inicial é apropriada quando a evolução clínica e os dados microbiológicos disponíveis permanecem compatíveis com a escolha terapêutica adotada <sup>2,20</sup>.
-            </p>
-          </div>
+        <aside class="cap1-p08-summary" id="p08Summary" hidden>
+          <strong>Possíveis decisões após reavaliação</strong>
 
-          <div class="cap1-p08-panel" data-therapy-pane="descalonar" hidden>
-            <h2 class="cap1-p08-panelTitle">Descalonar o tratamento</h2>
-            <p>
-              A reavaliação pode resultar no descalonamento do tratamento, substituindo o antibacteriano inicial por um agente de espectro mais restrito direcionado ao patógeno identificado.
-            </p>
-            <p>
-              O descalonamento antimicrobiano constitui uma estratégia importante de stewardship, pois permite reduzir a pressão seletiva sobre populações bacterianas e limitar a exposição desnecessária a antibacterianos de amplo espectro <sup>20,22</sup>.
-            </p>
-          </div>
+          <div class="cap1-p08-summaryCards">
+            <div class="cap1-p08-summaryCard cap1-p08-summaryCard--keep">
+              <h4>Manter</h4>
+              <p>O esquema inicial permanece adequado enquanto os dados são acompanhados.</p>
+            </div>
 
-          <div class="cap1-p08-panel" data-therapy-pane="suspender" hidden>
-            <h2 class="cap1-p08-panelTitle">Suspender a terapia</h2>
-            <p>
-              A reavaliação também pode resultar na suspensão da terapia, quando a hipótese de infecção não se confirma após reavaliação clínica e laboratorial.
-            </p>
-            <p>
-              Essa decisão faz parte da prescrição racional, pois evita exposição desnecessária a antimicrobianos quando a hipótese diagnóstica inicial não se sustenta.
-            </p>
+            <div class="cap1-p08-summaryCard cap1-p08-summaryCard--direct">
+              <h4>Direcionar</h4>
+              <p>O tratamento é ajustado ao agente identificado e ao perfil de suscetibilidade.</p>
+            </div>
+
+            <div class="cap1-p08-summaryCard cap1-p08-summaryCard--deescalate">
+              <h4>Descalonar</h4>
+              <p>Agente identificado e suscetível a antibacteriano de menor espectro.</p>
+            </div>
+
+            <div class="cap1-p08-summaryCard cap1-p08-summaryCard--stop">
+              <h4>Suspender</h4>
+              <p>Hipótese de infecção descartada após integração clínico-laboratorial.</p>
+            </div>
           </div>
-        </div>
+        </aside>
 
       </div>
     </section>
 
-    <section class="prose" aria-label="Continuação do texto">
+    <section class="prose">
+
+      <h2 class="section-subtitle">Terapia dirigida</h2>
+
       <p>
-        A terapia dirigida ocorre após a identificação do agente etiológico e a análise do perfil de suscetibilidade antimicrobiana. Nesse momento, a escolha do antibacteriano passa a basear-se em dados microbiológicos objetivos, permitindo direcionar o tratamento ao patógeno isolado <sup>2,5</sup>.
+        A terapia dirigida é estabelecida após a identificação do agente e a
+        interpretação de seu perfil de suscetibilidade. A escolha considera não
+        apenas o resultado microbiológico, mas também o sítio da infecção, a
+        penetração do medicamento, a exposição necessária, as funções renal e
+        hepática, alergias, segurança e possibilidade de tratamento por via oral
+        <sup>3,6</sup>.
       </p>
 
       <p>
-        Esse ajuste costuma permitir a utilização de antibacterianos de espectro mais restrito, reduzindo a exposição desnecessária a antimicrobianos, limitando potenciais efeitos adversos e diminuindo a pressão seletiva associada ao uso de antibacterianos de amplo espectro <sup>22</sup>.
+        Quando clinicamente apropriado, deve-se optar por um esquema mais
+        direcionado e de menor espectro que mantenha eficácia no sítio da
+        infecção. Essa estratégia reduz exposição desnecessária, efeitos adversos
+        e pressão seletiva <sup>16,20</sup>.
       </p>
 
-      <p class="cap1-p08-closing">
-        Um exemplo dessa dinâmica pode ser observado em um paciente idoso internado com pneumonia adquirida na comunidade associada a instabilidade hemodinâmica. Inicialmente, são coletadas culturas e instituída antibioticoterapia empírica com cobertura ampliada. Caso os resultados microbiológicos identifiquem posteriormente <em>Streptococcus pneumoniae</em> suscetível à penicilina, o esquema terapêutico pode ser ajustado para um antibacteriano de espectro mais restrito direcionado ao patógeno isolado <sup>2</sup>.
-      </p>
+      <aside class="cap1-p08-clinical">
+        Terapia empírica e terapia dirigida são etapas complementares. A primeira
+        permite tratar precocemente uma infecção provável; a segunda transforma
+        os novos dados clínicos e microbiológicos em uma decisão de manter,
+        direcionar, descalonar ou suspender o tratamento.
+      </aside>
+
     </section>
 
- 
-   <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p07.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 1 · Página 8 de 89</div>
-  <a class="btn primary" href="p09.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="p07.html">← Anterior</a>
+      <div class="center">Capítulo 1 · Página 8 de 89</div>
+      <a class="btn primary" href="p09.html">Próxima →</a>
+    </nav>
 
   </main>
 

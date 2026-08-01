@@ -3,146 +3,235 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 2 — Página 15</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
   <link rel="stylesheet" href="../../css/capitulo-02.css" />
 </head>
 
-<body class="cap2-shell cap2-page15">
-  <main class="page-shell">
+<body class="cap2-page15">
+
+  <main class="page-shell cap2-shell">
 
     <header class="page-header">
-      <div class="chapter">Capítulo 2 — Mecanismos de Ação dos Antibacterianos</div>
-      <h1 class="page-title">Inibição da síntese proteica</h1>
+      <div class="chapter">
+        Capítulo 2 — Mecanismos de Ação dos Antibacterianos
+      </div>
+
+      <h1 class="page-title">
+        Inibição da síntese proteica
+      </h1>
     </header>
 
-    <section class="prose" aria-label="Texto principal">
-      <p>
-        A síntese proteica é um processo essencial para a manutenção estrutural, metabólica e regulatória da célula bacteriana. Esse processo ocorre nos ribossomos do tipo 70S, formados pelas subunidades 30S e 50S, responsáveis pela tradução do RNA mensageiro em cadeias polipeptídicas funcionais <sup>1</sup>.
-      </p>
+    <section class="prose cap2-reading-flow">
 
       <p>
-        Durante a tradução, o ribossomo coordena a leitura sequencial do RNA mensageiro e a incorporação ordenada de aminoácidos transportados por RNAs transportadores, permitindo a formação de proteínas necessárias à sobrevivência e à multiplicação bacteriana.
+        A síntese proteica é essencial para a manutenção estrutural, metabólica e regulatória da célula bacteriana. Esse processo ocorre nos ribossomos bacterianos do tipo 70S, constituídos pelas subunidades 30S e 50S, responsáveis pela tradução do RNA mensageiro (RNAm) em proteínas funcionais <sup>1,2</sup>.
       </p>
 
       <p>
-        Diversas classes de antibacterianos exercem sua ação ao se ligarem seletivamente às subunidades ribossomais bacterianas, interferindo em etapas específicas desse processo. Alguns fármacos atuam predominantemente sobre a subunidade 30S, enquanto outros se ligam à subunidade 50S, comprometendo a progressão adequada da tradução <sup>2</sup>.
+        Durante a tradução, o ribossomo coordena a leitura sequencial do RNAm e a incorporação ordenada de aminoácidos transportados pelos RNAs transportadores (tRNAs). As proteínas formadas participam do metabolismo, do crescimento, da divisão celular e da adaptação da bactéria ao ambiente <sup>3</sup>.
       </p>
 
       <p>
-        A consequência dessa interferência é a redução da produção de proteínas essenciais, afetando progressivamente a capacidade da bactéria de manter seu metabolismo, reparar estruturas celulares e sustentar a multiplicação.
+        Diversas classes de antibacterianos ligam-se seletivamente às subunidades ribossomais bacterianas e interferem em etapas específicas da tradução. Alguns atuam predominantemente sobre a subunidade 30S, enquanto outros se ligam à subunidade 50S, comprometendo a produção de proteínas essenciais <sup>2,11</sup>.
       </p>
 
       <p>
-        Em modelos experimentais padronizados, muitos inibidores da síntese proteica demonstram efeito predominantemente bacteriostático. Entretanto, essa associação não é universal: os aminoglicosídeos constituem exemplo importante de inibidores da síntese proteica geralmente associados a efeito bactericida <sup>4</sup>.
-      </p>
-    </section>
-
-    <section class="cap2-p15-stage" data-cap2-p15 aria-label="Processo normal e alvos ribossomais dos antibacterianos">
-      <p class="cap2-p15-intro">
-        Selecione uma das abas para comparar o processo traducional normal com a interferência farmacológica sobre as subunidades 30S e 50S.
+        Muitos inibidores da síntese proteica apresentam efeito predominantemente bacteriostático. Os aminoglicosídeos constituem uma exceção importante, pois também provocam erros na leitura do RNAm e formação de proteínas defeituosas, contribuindo para seu efeito bactericida <sup>1,5</sup>.
       </p>
 
-      <div class="cap2-p15-tabs" role="tablist" aria-label="Comparação da síntese proteica bacteriana">
-        <button
-          class="cap2-p15-tab is-active"
-          type="button"
-          role="tab"
-          id="cap2P15TabNormal"
-          aria-selected="true"
-          aria-controls="cap2P15Panel"
-          tabindex="0"
-          data-p15-tab="normal"
-        >
-          Processo normal
-        </button>
-
-        <button
-          class="cap2-p15-tab"
-          type="button"
-          role="tab"
-          id="cap2P15Tab30S"
-          aria-selected="false"
-          aria-controls="cap2P15Panel"
-          tabindex="-1"
-          data-p15-tab="30s"
-        >
-          Ação na 30S
-        </button>
-
-        <button
-          class="cap2-p15-tab"
-          type="button"
-          role="tab"
-          id="cap2P15Tab50S"
-          aria-selected="false"
-          aria-controls="cap2P15Panel"
-          tabindex="-1"
-          data-p15-tab="50s"
-        >
-          Ação na 50S
-        </button>
-      </div>
-
-      <div
-        id="cap2P15Panel"
-        class="cap2-p15-board"
-        role="tabpanel"
-        aria-labelledby="cap2P15TabNormal"
+      <section
+        class="cap2-p15v2-interaction cap2-p15v2-reveal"
+        data-cap2-p15v2
+        data-p15v2-state="normal"
+        aria-label="Síntese proteica bacteriana e interferência farmacológica"
       >
-        <figure class="cap2-p15-figure cap2-p15-figure--hero">
+
+        <p class="cap2-p15v2-intro">
+          Selecione uma das abas para comparar a tradução bacteriana normal com a interferência farmacológica sobre as subunidades 30S e 50S.
+        </p>
+
+        <div
+          class="cap2-p15v2-tabs"
+          role="tablist"
+          aria-label="Processos relacionados à síntese proteica"
+        >
           <button
-            class="cap2-p15-zoom"
+            class="cap2-p15v2-tab is-active"
             type="button"
-            data-zoom="../../assets/capitulo-02/imagens/cap02-p15-normal.png"
-            aria-label="Ampliar imagem do processo normal da síntese proteica bacteriana"
+            role="tab"
+            id="cap2P15V2TabNormal"
+            aria-selected="true"
+            aria-controls="cap2P15V2View"
+            tabindex="0"
+            data-p15v2-target="normal"
           >
-            <img
-              id="cap2P15Image"
-              src="../../assets/capitulo-02/imagens/cap02-p15-normal.png"
-              alt="Síntese proteica bacteriana em condições normais"
-              loading="lazy"
-            />
+            Tradução normal
           </button>
 
-          <figcaption id="cap2P15Caption" class="caption">
-            Processo normal da síntese proteica bacteriana. Clique para ampliar.
-          </figcaption>
-        </figure>
+          <button
+            class="cap2-p15v2-tab"
+            type="button"
+            role="tab"
+            id="cap2P15V2Tab30S"
+            aria-selected="false"
+            aria-controls="cap2P15V2View"
+            tabindex="-1"
+            data-p15v2-target="30s"
+          >
+            Subunidade 30S
+          </button>
 
-        <div class="cap2-p15-panel" aria-live="polite">
-          <h2 id="cap2P15Title" class="cap2-p15-panel__title">
-            Processo normal da tradução bacteriana
-          </h2>
-
-          <div id="cap2P15Body" class="cap2-p15-panel__body">
-            <p>
-              No processo fisiológico, a subunidade 30S reconhece o RNA mensageiro e posiciona o tRNA iniciador. Em seguida, a subunidade 50S se associa ao complexo, permitindo a entrada sequencial de novos tRNAs, a formação das ligações peptídicas e a elongação ordenada da cadeia polipeptídica.
-            </p>
-            <p>
-              Esse fluxo contínuo explica por que a síntese proteica depende da integridade funcional das duas subunidades ribossomais bacterianas.
-            </p>
-          </div>
+          <button
+            class="cap2-p15v2-tab"
+            type="button"
+            role="tab"
+            id="cap2P15V2Tab50S"
+            aria-selected="false"
+            aria-controls="cap2P15V2View"
+            tabindex="-1"
+            data-p15v2-target="50s"
+          >
+            Subunidade 50S
+          </button>
         </div>
-      </div>
-    </section>
 
-    <section class="prose" aria-label="Fechamento do texto">
-      <p>
-        A interrupção da síntese proteica compromete progressivamente a produção de enzimas, proteínas estruturais e regulatórias necessárias à viabilidade bacteriana. Como consequência, a célula perde capacidade de adaptação metabólica e de multiplicação, o que explica o efeito antimicrobiano associado a essas classes <sup>2,4</sup>.
-      </p>
+        <article
+          id="cap2P15V2View"
+          class="cap2-p15v2-view"
+          role="tabpanel"
+          aria-labelledby="cap2P15V2TabNormal"
+          aria-live="polite"
+        >
+
+          <figure class="figure cap2-p15v2-figure">
+            <button
+              class="cap2-p15v2-zoom"
+              type="button"
+              data-zoom="../../assets/capitulo-02/imagens/cap02-p15-normal.png"
+              aria-label="Ampliar imagem da síntese proteica bacteriana normal"
+            >
+              <img
+                id="cap2P15V2Image"
+                src="../../assets/capitulo-02/imagens/cap02-p15-normal.png"
+                alt="Processo normal da síntese proteica bacteriana"
+                loading="lazy"
+              />
+            </button>
+
+            <span class="cap2-p15v2-zoomHint" aria-hidden="true">
+              Clique na figura para ampliar
+            </span>
+
+            <figcaption
+              id="cap2P15V2Caption"
+              class="caption cap2-p15v2-caption"
+            >
+              Processo normal da síntese proteica bacteriana.
+            </figcaption>
+          </figure>
+
+          <div class="cap2-p15v2-summary">
+
+            <div class="cap2-p15v2-summaryHeader">
+              <span
+                id="cap2P15V2Kicker"
+                class="cap2-p15v2-kicker"
+              >
+                Processo fisiológico
+              </span>
+
+              <h2
+                id="cap2P15V2Title"
+                class="cap2-p15v2-title"
+              >
+                Atuação coordenada das subunidades 30S e 50S
+              </h2>
+            </div>
+
+            <div
+              id="cap2P15V2Body"
+              class="cap2-p15v2-body"
+            >
+              <div class="cap2-p15v2-infoGrid">
+
+                <article class="cap2-p15v2-info">
+                  <span>Função do processo</span>
+                  <p>
+                    Converter a informação codificada no RNAm em uma cadeia de aminoácidos organizada.
+                  </p>
+                </article>
+
+                <article class="cap2-p15v2-info">
+                  <span>Papel da subunidade 30S</span>
+                  <p>
+                    Reconhecer o RNAm, posicionar os tRNAs e assegurar a leitura adequada dos códons.
+                  </p>
+                </article>
+
+                <article class="cap2-p15v2-info">
+                  <span>Papel da subunidade 50S</span>
+                  <p>
+                    Catalisar a formação das ligações peptídicas e permitir a elongação da cadeia polipeptídica.
+                  </p>
+                </article>
+
+                <article class="cap2-p15v2-info cap2-p15v2-info--result">
+                  <span>Importância biológica</span>
+                  <p>
+                    A produção contínua de proteínas sustenta o metabolismo, o crescimento e a adaptação bacteriana.
+                  </p>
+                </article>
+
+              </div>
+            </div>
+
+          </div>
+
+        </article>
+      </section>
+
+      <aside class="cap2-p15v2-response cap2-p15v2-reveal">
+        <strong>Resposta microbiológica:</strong> a redução da síntese proteica compromete progressivamente o metabolismo e a multiplicação bacteriana. Por isso, muitas classes apresentam efeito predominantemente bacteriostático, embora o padrão final dependa do fármaco, da concentração e da espécie bacteriana <sup>1,5</sup>.
+      </aside>
+
+      <aside class="cap2-p15v2-exception cap2-p15v2-reveal">
+        <strong>Exceção importante:</strong> os aminoglicosídeos atuam sobre a subunidade 30S, provocam erros na leitura do RNAm e favorecem a produção de proteínas anormais. A incorporação dessas proteínas à membrana contribui para alterações de permeabilidade e para o efeito bactericida da classe <sup>1,5</sup>.
+      </aside>
+
     </section>
 
     <nav class="pager" aria-label="Paginação">
-      <a class="btn" href="p14.html" aria-label="Ir para a página anterior">← Anterior</a>
-      <div class="center">Capítulo 2 · Página 15 de 89</div>
-      <a class="btn primary" href="p16.html" aria-label="Ir para a próxima página">Próxima →</a>
+      <a
+        class="btn"
+        href="p14.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 2 · Página 15 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p16.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
     </nav>
 
   </main>

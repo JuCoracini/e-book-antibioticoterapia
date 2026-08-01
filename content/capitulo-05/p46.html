@@ -3,11 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 5 — Página 46</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -19,144 +24,284 @@
   <main class="page-shell">
 
     <header class="page-header">
-      <div class="chapter">Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma</div>
-      <h1 class="page-title">Breakpoints e categorias interpretativas</h1>
+      <div class="chapter">
+        Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma
+      </div>
+
+      <h1 class="page-title">
+        Como interpretar um antibiograma
+      </h1>
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <section class="prose cap5-p46-reading">
 
       <p>
-        O diâmetro do halo observado na difusão em disco ou o valor da concentração inibitória mínima obtido na microdiluição representam medidas laboratoriais da atividade do antibacteriano contra a bactéria testada. Esses valores, isoladamente, não indicam se o microrganismo deve ser considerado sensível ou resistente.
+        Os resultados do antibiograma podem ser apresentados de formas diferentes, conforme a metodologia utilizada e o formato de liberação adotado pelo laboratório. Independentemente da apresentação, o objetivo é estimar se o crescimento da bactéria pode ser inibido com exposições compatíveis com o uso clínico do antibacteriano.
       </p>
 
       <p>
-        Para que o resultado possa ser interpretado, ele precisa ser comparado a pontos de corte previamente estabelecidos, denominados breakpoints <sup>10,12</sup>.
+        Em muitos laudos, o clínico recebe diretamente a categoria interpretativa: Sensível (S), Sensível, aumentando exposição (I) ou Resistente (R). Em outros, o laboratório informa também um resultado quantitativo, como a concentração inibitória mínima, ou MIC <sup>3,4</sup>.
       </p>
 
-      <p>
-        O breakpoint é um limite interpretativo definido para combinações específicas entre microrganismo, antibacteriano e método de teste, utilizado para transformar um valor microbiológico mensurável, como halo de inibição ou CIM, em uma categoria interpretativa padronizada. A partir dessa comparação, o laboratório classifica o resultado como Sensível (S), Sensível, aumentando exposição (I) ou Resistente (R) <sup>2,10,12</sup>.
-      </p>
+      <figure class="cap5-p46-reportFigure cap5-p46-reveal">
 
-      <section class="cap5-p46-flow" aria-labelledby="cap5-p46-flow-title">
-        <div class="cap5-p46-flow__head">
-          <h3 id="cap5-p46-flow-title">Como o valor laboratorial se transforma em categoria interpretativa</h3>
-          <p>
-            Halo e CIM são medidas microbiológicas. O significado interpretativo surge apenas quando esses valores são comparados aos breakpoints definidos para aquela combinação entre microrganismo, antibacteriano e método de teste.
-          </p>
-        </div>
+        <button
+          class="cap5-p46-reportZoom"
+          type="button"
+          data-zoom="../../assets/capitulo-05/imagens/laudo-sir-mic.png"
+          aria-label="Ampliar comparação entre laudo com categorias S, I e R e laudo com MIC"
+        >
+          <img
+            src="../../assets/capitulo-05/imagens/laudo-sir-mic.png"
+            alt="Comparação entre um laudo com categorias interpretativas e um laudo com valores de MIC"
+            loading="lazy"
+          />
+        </button>
 
-        <div class="cap5-p46-flow__track" aria-hidden="true">
-          <article class="cap5-p46-flow__node">
-            <span class="cap5-p46-flow__eyebrow">Valor obtido no teste</span>
-            <h4>Halo ou CIM</h4>
-          </article>
+        <figcaption>
+          Exemplos de apresentação do antibiograma: categoria interpretativa isolada ou acompanhada do valor da MIC.
+        </figcaption>
 
-          <div class="cap5-p46-flow__arrow">→</div>
+      </figure>
 
-          <article class="cap5-p46-flow__node cap5-p46-flow__node--highlight">
-            <span class="cap5-p46-flow__eyebrow">Etapa interpretativa</span>
-            <h4>Breakpoint</h4>
-          </article>
+      <aside class="cap5-p46-reportNote cap5-p46-reveal">
+        <strong>Atenção:</strong> quando o laudo apresenta apenas S, I ou R, isso não significa que o laboratório não realizou uma medição. O valor de halo ou MIC pode ter sido obtido internamente e convertido na categoria interpretativa antes da liberação do resultado.
+      </aside>
 
-          <div class="cap5-p46-flow__arrow">→</div>
+      <section
+        class="cap5-p46-interaction cap5-p46-reveal"
+        data-cap5-p46
+        aria-label="Comparação entre disco-difusão e determinação da MIC"
+      >
 
-          <article class="cap5-p46-flow__node">
-            <span class="cap5-p46-flow__eyebrow">Resultado final</span>
-            <h4>S / I / R</h4>
-          </article>
-        </div>
-      </section>
+        <p class="cap5-p46-instruction">
+          Selecione um método para observar o que é medido e como o resultado se transforma em uma categoria interpretativa.
+        </p>
 
-      <p>
-        Esses pontos de corte são definidos por comitês técnicos especializados em testes de suscetibilidade antimicrobiana, como CLSI e EUCAST. A definição dos breakpoints considera a integração de diferentes tipos de evidência <sup>13</sup>:
-      </p>
+        <div
+          class="cap5-p46-tabs"
+          role="tablist"
+          aria-label="Métodos do teste de suscetibilidade"
+        >
 
-      <ul class="cap5-p46-list">
-        <li>distribuição das CIM observadas na população bacteriana</li>
-        <li>características farmacocinéticas e farmacodinâmicas do antibacteriano</li>
-        <li>dados clínicos disponíveis sobre eficácia terapêutica</li>
-      </ul>
-
-      <p>
-        Os breakpoints são específicos para cada combinação entre microrganismo e antibacteriano. Um mesmo valor de CIM pode receber interpretações diferentes dependendo da espécie bacteriana analisada. Da mesma forma, os critérios aplicados ao método de difusão em disco não são os mesmos utilizados para valores de CIM <sup>10,12</sup>.
-      </p>
-
-      <p>
-        Após a aplicação desses critérios interpretativos, o resultado passa a ser expresso nas categorias padronizadas do antibiograma <sup>10,12</sup>.
-      </p>
-
-      <section class="cap5-p46-categories" aria-labelledby="cap5-p46-categories-title">
-        <div class="cap5-p46-categories__head">
-          <h3 id="cap5-p46-categories-title">Categorias interpretativas</h3>
-          <p>
-            O “I” não significa ausência de atividade. Ele indica que a probabilidade de sucesso terapêutico é mantida desde que a exposição ao antibacteriano seja aumentada.
-          </p>
-        </div>
-
-        <div class="cap5-p46-bar" role="tablist" aria-label="Categorias interpretativas">
           <button
-            class="cap5-p46-bar__tab is-active is-s"
+            class="cap5-p46-tab is-active"
             type="button"
             role="tab"
+            id="cap5P46TabDisco"
             aria-selected="true"
-            data-p46-tab="s"
+            aria-controls="cap5P46View"
+            tabindex="0"
+            data-p46-target="disco"
           >
-            S
+            Disco-difusão
           </button>
 
           <button
-            class="cap5-p46-bar__tab is-i"
+            class="cap5-p46-tab"
             type="button"
             role="tab"
+            id="cap5P46TabMic"
             aria-selected="false"
-            data-p46-tab="i"
+            aria-controls="cap5P46View"
+            tabindex="-1"
+            data-p46-target="mic"
           >
-            I
+            MIC
           </button>
 
-          <button
-            class="cap5-p46-bar__tab is-r"
-            type="button"
-            role="tab"
-            aria-selected="false"
-            data-p46-tab="r"
-          >
-            R
-          </button>
         </div>
 
-        <div class="cap5-p46-panel" aria-live="polite">
-          <div class="cap5-p46-panel__top">
-            <span id="cap5-p46-panel-pill" class="cap5-p46-panel__pill cap5-p46-panel__pill--s">Categoria padrão</span>
-            <h3 id="cap5-p46-panel-title" class="cap5-p46-panel__title">Sensível (S)</h3>
+        <article
+          id="cap5P46View"
+          class="cap5-p46-view"
+          role="tabpanel"
+          aria-labelledby="cap5P46TabDisco"
+          aria-live="polite"
+        >
+
+          <div class="cap5-p46-methodHeader">
+
+            <span
+              id="cap5P46Kicker"
+              class="cap5-p46-kicker"
+            >
+              Medida em milímetros
+            </span>
+
+            <h2
+              id="cap5P46Title"
+              class="cap5-p46-title"
+            >
+              Diâmetro do halo de inibição
+            </h2>
+
+            <p
+              id="cap5P46Intro"
+              class="cap5-p46-methodIntro"
+            >
+              O laboratório mede a zona sem crescimento bacteriano formada ao redor do disco impregnado com antibacteriano.
+            </p>
+
           </div>
 
-          <p id="cap5-p46-panel-text" class="cap5-p46-panel__text">
-            Indica que o valor obtido no teste está dentro da faixa associada a alta probabilidade de sucesso terapêutico quando o antibacteriano é utilizado em regimes posológicos padrão e quando a exposição no sítio de infecção é adequada.
-          </p>
-        </div>
+          <div
+            id="cap5P46Flow"
+            class="cap5-p46-resultFlow"
+          >
+
+            <article>
+              <span>1</span>
+              <strong>Valor medido</strong>
+              <p>Halo de 28 mm.</p>
+            </article>
+
+            <b aria-hidden="true">→</b>
+
+            <article>
+              <span>2</span>
+              <strong>Breakpoint aplicável</strong>
+              <p>Exemplo didático: S ≥ 25 mm.</p>
+            </article>
+
+            <b aria-hidden="true">→</b>
+
+            <article class="cap5-p46-resultFlowFinal">
+              <span>3</span>
+              <strong>Categoria liberada</strong>
+              <p>Sensível.</p>
+            </article>
+
+          </div>
+
+          <div
+            id="cap5P46Body"
+            class="cap5-p46-infoGrid"
+          >
+
+            <article class="cap5-p46-info">
+              <span>O que o método fornece</span>
+              <p>
+                Uma medida quantitativa indireta da atividade antimicrobiana, expressa pelo diâmetro do halo.
+              </p>
+            </article>
+
+            <article class="cap5-p46-info">
+              <span>Como interpretar</span>
+              <p>
+                O diâmetro deve ser comparado ao breakpoint específico da combinação entre bactéria e antibacteriano.
+              </p>
+            </article>
+
+            <article class="cap5-p46-info">
+              <span>Vantagem prática</span>
+              <p>
+                É um método padronizado, acessível e amplamente utilizado na rotina microbiológica.
+              </p>
+            </article>
+
+            <article class="cap5-p46-info cap5-p46-info--key">
+              <span>Limite interpretativo</span>
+              <p>
+                Um halo grande ou pequeno não possui significado isolado sem o critério interpretativo correspondente.
+              </p>
+            </article>
+
+          </div>
+
+        </article>
+
       </section>
 
-      <p>
-        É importante reconhecer que essas categorias não representam propriedades absolutas da bactéria. Elas correspondem à aplicação de critérios interpretativos padronizados sobre um valor obtido no teste laboratorial <sup>2,13</sup>.
-      </p>
+      <section
+        class="cap5-p46-comparison cap5-p46-reveal"
+        aria-labelledby="cap5P46ComparisonTitle"
+      >
 
-      <p class="cap5-p46-closing">
-        Quando o resultado do teste se encontra próximo ao breakpoint, pequenas variações metodológicas podem alterar a categoria final atribuída. Essa mudança não necessariamente reflete modificação biológica relevante do microrganismo, mas sim a aplicação do critério interpretativo ao valor observado<sup>2,12</sup>.
-      </p>
+        <h2
+          id="cap5P46ComparisonTitle"
+          class="cap5-p46-comparisonTitle"
+        >
+          Diferença prática entre os métodos
+        </h2>
+
+        <div class="cap5-p46-comparisonGrid">
+
+          <article>
+            <span class="cap5-p46-comparisonTag">
+              Disco-difusão
+            </span>
+
+            <strong>Mede halo em milímetros</strong>
+
+            <p>
+              Fornece uma medida indireta da suscetibilidade e utiliza breakpoints de diâmetro.
+            </p>
+          </article>
+
+          <article>
+            <span class="cap5-p46-comparisonTag cap5-p46-comparisonTag--mic">
+              MIC
+            </span>
+
+            <strong>Mede concentração em mg/L</strong>
+
+            <p>
+              Fornece diretamente a menor concentração que impede o crescimento visível e utiliza breakpoints de MIC.
+            </p>
+          </article>
+
+        </div>
+
+        <p class="cap5-p46-comparisonClosing">
+          Quando corretamente padronizados e interpretados com breakpoints válidos, os dois métodos podem conduzir à mesma categoria S, I ou R.
+        </p>
+
+      </section>
+
+      <aside class="cap5-p46-error cap5-p46-reveal">
+
+        <span class="cap5-p46-errorLabel">
+          Erro frequente
+        </span>
+
+        <strong>
+          MIC menor não significa antibacteriano melhor.
+        </strong>
+
+        <p>
+          Valores absolutos de MIC não devem ser usados para comparar diretamente antibacterianos diferentes. Cada fármaco possui potência, exposição farmacológica e breakpoint próprios. A comparação válida ocorre entre a MIC e o breakpoint do mesmo antibacteriano para aquela bactéria <sup>3,4,7</sup>.
+        </p>
+
+     
 
     </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p45.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 5 · Página 46 de 89</div>
-  <a class="btn primary" href="p47.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+      <a
+        class="btn"
+        href="p45.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 5 · Página 46 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p47.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+    </nav>
 
   </main>
 
   <script src="../../js/app.js"></script>
   <script src="../../js/capitulo-05.js"></script>
-
 </body>
 </html>

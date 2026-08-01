@@ -20,70 +20,83 @@
       <h1 class="page-title">Infecções urinárias</h1>
     </header>
 
-    <section class="prose">
+    <section class="prose" aria-label="Infecções urinárias e interpretação da urocultura">
 
-      <p>As infecções do trato urinário constituem uma das causas mais frequentes de prescrição de antibacterianos tanto na comunidade quanto no ambiente hospitalar. Apesar dessa frequência, poucas condições ilustram de forma tão clara a importância de integrar achados laboratoriais ao contexto clínico <sup>3,8</sup>.</p>
+      <p>As infecções do trato urinário constituem uma das causas mais frequentes de prescrição de antibacterianos tanto na comunidade quanto no ambiente hospitalar. Apesar dessa frequência, poucas condições ilustram de forma tão clara a importância de integrar achados laboratoriais ao contexto clínico<sup>3,8</sup>.</p>
 
-      <p>Os agentes mais frequentemente associados às infecções urinárias comunitárias são bacilos Gram-negativos de origem intestinal, especialmente <em>Escherichia coli</em>. Em contextos hospitalares, a presença de cateter vesical, internação recente ou exposição prévia a antibacterianos aumenta a probabilidade de microrganismos resistentes ou de flora bacteriana mais diversa <sup>1,2,4</sup>.</p>
+      <p>Os agentes mais frequentemente associados às infecções urinárias comunitárias são bacilos Gram-negativos de origem intestinal, especialmente <em>Escherichia coli</em>. Em contextos hospitalares, a presença de cateter vesical, internação recente ou exposição prévia a antibacterianos aumenta a probabilidade de microrganismos resistentes ou de flora bacteriana mais diversa<sup>1,2,4</sup>.</p>
 
-      <p>O elemento central da decisão terapêutica não é o resultado isolado da urocultura, mas a presença de quadro clínico compatível com infecção urinária. Sintomas como disúria, polaciúria, urgência miccional, dor supra púbica ou lombar e, em alguns casos, sinais de comprometimento sistêmico orientam a probabilidade de infecção ativa <sup>7,8</sup>.</p>
+      <p>O elemento central da decisão terapêutica não é o resultado isolado da urocultura, mas a presença de quadro clínico compatível com infecção urinária. Sintomas como disúria, polaciúria, urgência miccional, dor suprapúbica ou lombar e, em alguns casos, sinais de comprometimento sistêmico orientam a probabilidade de infecção ativa<sup>7,8</sup>.</p>
 
-      <!-- INTERAÇÃO -->
-      <section class="cap8-p71-sim" data-p71-sim>
+      <section class="cap8-p71-sim" aria-labelledby="p71-sim-title" data-p71-sim>
+        <header class="cap8-p71-sim-head">
+          <p class="cap8-p71-kicker">Integração clínico-laboratorial</p>
+          
+          <p>A interpretação do resultado depende da coerência com o quadro clínico.</p>
+        </header>
 
-        <p class="cap8-p71-lead">
-          A interpretação da urocultura depende da coerência com o quadro clínico.
-        </p>
+        <article class="cap8-p71-case" aria-label="Caso clínico">
+          <div class="cap8-p71-case-top">
+            <span class="cap8-p71-case-label">Caso clínico</span>
+            <span class="cap8-p71-profile">Paciente idoso institucionalizado</span>
+          </div>
 
-        <p class="cap8-p71-case">
-          Paciente idoso institucionalizado, sem sintomas urinários, com urocultura positiva para <em>Escherichia coli</em>.
-        </p>
+          <div class="cap8-p71-evidence">
+            <div class="cap8-p71-evidence-item cap8-p71-evidence-item--clinical">
+              <span>Dados clínicos</span>
+              <strong>Sem sintomas urinários</strong>
+            </div>
 
-        <div class="cap8-p71-options">
-          <button class="cap8-p71-option" data-choice="infeccao">
-            Infecção urinária → iniciar antibacteriano
-          </button>
+            <div class="cap8-p71-evidence-item cap8-p71-evidence-item--lab">
+              <span>Urocultura</span>
+              <strong>Positiva para <em>Escherichia coli</em></strong>
+            </div>
+          </div>
+        </article>
 
-          <button class="cap8-p71-option" data-choice="colonizacao">
-            Colonização bacteriana → não tratar
-          </button>
+        <fieldset class="cap8-p71-question">
+          <legend>Qual é a interpretação mais consistente?</legend>
 
-          <button class="cap8-p71-option" data-choice="inconclusivo">
-            Achado inconclusivo → repetir exame
-          </button>
-        </div>
+          <div class="cap8-p71-options">
+            <button class="cap8-p71-option" type="button" aria-pressed="false" data-choice="infeccao">Infecção urinária → iniciar antibacteriano</button>
+            <button class="cap8-p71-option" type="button" aria-pressed="false" data-choice="colonizacao">Colonização bacteriana → não tratar</button>
+            <button class="cap8-p71-option" type="button" aria-pressed="false" data-choice="inconclusivo">Achado inconclusivo → repetir exame</button>
+          </div>
+        </fieldset>
 
-        <div class="cap8-p71-feedback"></div>
+        <div class="cap8-p71-feedback" role="status" aria-live="polite"></div>
 
         <div class="cap8-p71-consequence" hidden>
-          <button class="btn ghost" data-consequence>
-            O que acontece se tratar?
-          </button>
-
-          <div class="cap8-p71-result"></div>
+          <button class="btn ghost cap8-p71-consequence-btn" type="button" aria-expanded="false" aria-controls="p71-result" data-consequence>Examinar o risco de tratar</button>
+          <div id="p71-result" class="cap8-p71-result" role="status" aria-live="polite"></div>
         </div>
-
       </section>
 
-      <p>A simples detecção de bacteriúria, especialmente em idosos institucionalizados ou pacientes com cateter urinário, não equivale necessariamente a doença infecciosa estabelecida. A bacteriúria assintomática corresponde à colonização bacteriana do trato urinário e, na maioria das situações, não requer tratamento antibacteriano <sup>7</sup>.</p>
+      <h2 class="cap8-p71-section-divider">
+        <span aria-hidden="true"></span>
+        Da bacteriúria ao tratamento dirigido
+        <span aria-hidden="true"></span>
+      </h2>
 
-      <p>O tratamento desnecessário da bacteriúria assintomática pode produzir consequências relevantes, incluindo exposição desnecessária a antibacterianos, alterações da microbiota e seleção de cepas bacterianas mais resistentes. Por essa razão, a decisão terapêutica deve basear-se na coerência entre sintomas clínicos, achados laboratoriais e contexto do paciente <sup>3,9</sup>.</p>
+      <p>A simples detecção de bacteriúria, especialmente em idosos institucionalizados ou pacientes com cateter urinário, não equivale necessariamente a doença infecciosa estabelecida. A bacteriúria assintomática corresponde à colonização bacteriana do trato urinário e, na maioria das situações, não requer tratamento antibacteriano<sup>7</sup>.</p>
 
-      <p>Quando a síndrome clínica é compatível com infecção urinária, a escolha inicial do espectro antimicrobiano deve considerar fatores individuais de risco para resistência bacteriana e o perfil epidemiológico local <sup>3,4</sup>.</p>
+      <p>O tratamento desnecessário da bacteriúria assintomática pode produzir consequências relevantes, incluindo exposição desnecessária a antibacterianos, alterações da microbiota e seleção de cepas bacterianas mais resistentes. Por essa razão, a decisão terapêutica deve basear-se na coerência entre sintomas clínicos, achados laboratoriais e contexto do paciente<sup>3,9</sup>.</p>
 
-      <p>Em infecções não complicadas, na ausência de comorbidades relevantes ou exposições recentes ao sistema de saúde, a probabilidade de microrganismos multirresistentes é geralmente baixa, não havendo justificativa para ampliação desnecessária do espectro antimicrobiano <sup>3</sup>.</p>
+      <p>Quando a síndrome clínica é compatível com infecção urinária, a escolha inicial do espectro antimicrobiano deve considerar fatores individuais de risco para resistência bacteriana e o perfil epidemiológico local<sup>3,4</sup>.</p>
 
-      <p>Em contraste, hospitalização recente, uso prévio de antibacterianos ou presença de dispositivos urinários podem modificar o perfil etiológico esperado e exigir abordagem terapêutica distinta <sup>3,4</sup>.</p>
+      <p>Em infecções não complicadas, na ausência de comorbidades relevantes ou exposições recentes ao sistema de saúde, a probabilidade de microrganismos multirresistentes é geralmente baixa, não havendo justificativa para ampliação desnecessária do espectro antimicrobiano<sup>3</sup>.</p>
 
-      <p>A urocultura desempenha papel importante no ajuste do tratamento, principalmente em infecções complicadas ou hospitalares. Quando o agente identificado apresenta suscetibilidade a antibacteriano de espectro mais restrito, o estreitamento terapêutico permite reduzir o impacto ecológico sem comprometer a eficácia clínica <sup>3,6</sup>.</p>
+      <p>Em contraste, hospitalização recente, uso prévio de antibacterianos ou presença de dispositivos urinários podem modificar o perfil etiológico esperado e exigir abordagem terapêutica distinta<sup>3,4</sup>.</p>
+
+      <p>A urocultura desempenha papel importante no ajuste do tratamento, principalmente em infecções complicadas ou hospitalares. Quando o agente identificado apresenta suscetibilidade a antibacteriano de espectro mais restrito, o estreitamento terapêutico permite reduzir o impacto ecológico sem comprometer a eficácia clínica<sup>3,6</sup>.</p>
 
     </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p70.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 8 · Página 71 de 89</div>
-  <a class="btn primary" href="p72.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
+      <a class="btn" href="p70.html" aria-label="Ir para a página anterior">← Anterior</a>
+      <div class="center">Capítulo 8 · Página 71 de 89</div>
+      <a class="btn primary" href="p72.html" aria-label="Ir para a próxima página">Próxima →</a>
+    </nav>
 
   </main>
 

@@ -3,11 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>Capítulo 5 — Página 48</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -19,117 +24,330 @@
   <main class="page-shell">
 
     <header class="page-header">
-      <div class="chapter">Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma</div>
-      <h1 class="page-title">Observações do laudo que modificam a interpretação</h1>
+      <div class="chapter">
+        Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma
+      </div>
+
+      <h1 class="page-title">
+        Observações do laudo microbiológico
+      </h1>
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <section class="prose cap5-p48-reading">
 
       <p>
-        Outro mecanismo relevante envolve a produção de β-lactamases do tipo AmpC. Essas enzimas podem estar presentes de forma cromossômica em determinadas espécies bacterianas e apresentar expressão induzível durante a exposição a alguns antibacterianos. Espécies dos gêneros <em>Enterobacter</em>, <em>Citrobacter</em>, <em>Serratia</em>, <em>Providencia</em> e <em>Morganella</em> são classicamente associadas a esse mecanismo. A identificação dessas bactérias já indica a possibilidade de produção de AmpC e influencia a interpretação do painel de suscetibilidade <sup>14,15</sup>.
+        Após identificar a bactéria e interpretar o teste de suscetibilidade, o laboratório pode acrescentar observações complementares ao laudo microbiológico. Essas informações indicam mecanismos de resistência, fenótipos específicos ou características microbiológicas capazes de modificar a leitura do antibiograma e a escolha do tratamento <sup>1,3,4,6</sup>.
       </p>
 
       <p>
-        Entre os mecanismos que comprometem a atividade de carbapenêmicos estão as carbapenemases, enzimas capazes de hidrolisar antibacterianos dessa classe. Essas enzimas incluem diferentes grupos, como KPC, metalo-β-lactamases, por exemplo NDM, VIM ou IMP, e variantes do tipo OXA. Sua presença costuma estar associada a perfis de resistência mais amplos e possui relevância clínica e epidemiológica importante <sup>14,15</sup>.
+        Duas bactérias podem apresentar categorias aparentemente semelhantes para determinados antibacterianos, mas a presença de um mecanismo de resistência pode alterar a probabilidade de sucesso terapêutico. Por isso, o antibiograma não deve ser interpretado apenas pela coluna S, I e R <sup>3,4</sup>.
       </p>
 
-      <section class="cap5-p48-compare" aria-labelledby="cap5-p48-compare-title">
-        <div class="cap5-p48-compare__head">
-          <h3 id="cap5-p48-compare-title">Como o interno deve pensar diante dessas observações</h3>
-          <p>
-            No grupo CESP, o risco interpretativo depende da espécie identificada e da possibilidade de indução de AmpC. Nas carbapenemases, o próprio padrão de resistência já sugere comprometimento relevante da atividade dos carbapenêmicos.
-          </p>
-        </div>
+      <p>
+        Entre as observações mais relevantes estão ESBL, AmpC, carbapenemases, resistência à meticilina em <em>Staphylococcus aureus</em> e resistência à vancomicina em <em>Enterococcus </em> spp. Essas informações devem ser analisadas em conjunto com a espécie, o sítio da infecção, o perfil de suscetibilidade e as características clínicas do paciente <sup>4,8,9</sup>.
+      </p>
 
-        <div class="cap5-p48-compare__controls" role="tablist" aria-label="Leitura interpretativa do laudo">
+      <section
+        class="cap5-p48-interaction cap5-p48-reveal"
+        data-cap5-p48
+        aria-label="Interpretação das observações de resistência no laudo microbiológico"
+      >
+
+        <p class="cap5-p48-instruction">
+          Selecione uma observação do laudo para compreender o que ela representa e como modifica a interpretação do antibiograma.
+        </p>
+
+        <div
+          class="cap5-p48-tabs"
+          role="tablist"
+          aria-label="Observações de resistência"
+        >
+
           <button
-            class="cap5-p48-compare__tab is-active"
+            class="cap5-p48-tab is-active"
             type="button"
             role="tab"
+            id="cap5P48TabEsbl"
             aria-selected="true"
-            data-p48-step="cesp"
+            aria-controls="cap5P48View"
+            tabindex="0"
+            data-p48-target="esbl"
           >
-            Grupo CESP
+            ESBL
           </button>
 
           <button
-            class="cap5-p48-compare__tab"
+            class="cap5-p48-tab"
             type="button"
             role="tab"
+            id="cap5P48TabAmpc"
             aria-selected="false"
-            data-p48-step="carbapenemase"
+            aria-controls="cap5P48View"
+            tabindex="-1"
+            data-p48-target="ampc"
           >
-            Carbapenemase
+            AmpC
           </button>
+
+          <button
+            class="cap5-p48-tab"
+            type="button"
+            role="tab"
+            id="cap5P48TabCarbapenemases"
+            aria-selected="false"
+            aria-controls="cap5P48View"
+            tabindex="-1"
+            data-p48-target="carbapenemases"
+          >
+            Carbapenemases
+          </button>
+
+          <button
+            class="cap5-p48-tab"
+            type="button"
+            role="tab"
+            id="cap5P48TabMrsa"
+            aria-selected="false"
+            aria-controls="cap5P48View"
+            tabindex="-1"
+            data-p48-target="mrsa"
+          >
+            MRSA
+          </button>
+
+          <button
+            class="cap5-p48-tab"
+            type="button"
+            role="tab"
+            id="cap5P48TabVre"
+            aria-selected="false"
+            aria-controls="cap5P48View"
+            tabindex="-1"
+            data-p48-target="vre"
+          >
+            VRE
+          </button>
+
         </div>
 
-        <div class="cap5-p48-compare__grid">
-          <figure class="cap5-p48-card is-active" data-p48-card="cesp">
-            <button
-              class="cap5-p48-card__zoom"
-              type="button"
-              data-zoom="../../assets/capitulo-05/imagens/cesp-ampc-disco.png"
-              aria-label="Ampliar imagem representativa do grupo CESP"
-            >
-              <img
-                src="../../assets/capitulo-05/imagens/cesp-ampc-disco.png"
-                alt="Placa de difusão em disco representativa de situação compatível com risco interpretativo no grupo CESP."
-                loading="lazy"
-              />
-            </button>
-            <figcaption class="cap5-p48-card__caption">
-              Grupo CESP. O ponto decisivo não está apenas no halo observado, mas na espécie identificada e no risco de indução de AmpC.
-            </figcaption>
-          </figure>
+        <article
+          id="cap5P48View"
+          class="cap5-p48-view"
+          role="tabpanel"
+          aria-labelledby="cap5P48TabEsbl"
+          aria-live="polite"
+        >
 
-          <figure class="cap5-p48-card" data-p48-card="carbapenemase">
-            <button
-              class="cap5-p48-card__zoom"
-              type="button"
-              data-zoom="../../assets/capitulo-05/imagens/carbapenemase-disco.png"
-              aria-label="Ampliar imagem representativa de carbapenemase"
-            >
-              <img
-                src="../../assets/capitulo-05/imagens/carbapenemase-disco.png"
-                alt="Placa de difusão em disco representativa de perfil sugestivo de carbapenemase."
-                loading="lazy"
-              />
-            </button>
-            <figcaption class="cap5-p48-card__caption">
-              Carbapenemase. O padrão de resistência já sugere perda importante de atividade dos carbapenêmicos.
-            </figcaption>
-          </figure>
-        </div>
+          <div class="cap5-p48-header">
 
-        <div class="cap5-p48-compare__panel" aria-live="polite">
-          <div class="cap5-p48-compare__eyebrow" id="cap5-p48-eyebrow">Risco interpretativo dependente da espécie</div>
-          <h3 class="cap5-p48-compare__title" id="cap5-p48-title">Grupo CESP e possibilidade de AmpC induzível</h3>
-          <p class="cap5-p48-compare__text" id="cap5-p48-text">
-            Em espécies do grupo CESP, a simples identificação bacteriana já informa a possibilidade de produção de AmpC. Nesses casos, um resultado aparentemente favorável no antibiograma não deve ser lido de forma ingênua, porque a exposição a alguns β-lactâmicos pode induzir expressão enzimática durante o tratamento e comprometer a atividade do fármaco.
-          </p>
-          <div class="cap5-p48-compare__note" id="cap5-p48-note">
-            O ponto central não é apenas se o halo parece adequado, mas se a espécie identificada permite confiar nessa leitura sem considerar o risco de indução.
+            <span
+              id="cap5P48Kicker"
+              class="cap5-p48-kicker"
+            >
+              β-lactamase de espectro estendido
+            </span>
+
+            <h2
+              id="cap5P48Title"
+              class="cap5-p48-title"
+            >
+              ESBL
+            </h2>
+
+            <p
+              id="cap5P48Intro"
+              class="cap5-p48-intro"
+            >
+              Indica produção de enzimas capazes de hidrolisar diferentes β-lactâmicos, especialmente penicilinas, cefalosporinas de amplo espectro e aztreonam.
+            </p>
+
           </div>
-        </div>
+
+          <div
+            id="cap5P48Body"
+            class="cap5-p48-infoGrid"
+          >
+
+            <article class="cap5-p48-info">
+              <span>Onde é mais relevante</span>
+              <p>
+                Principalmente em Enterobacterales, como <em>Escherichia coli</em> e <em>Klebsiella pneumoniae</em>.
+              </p>
+            </article>
+
+            <article class="cap5-p48-info">
+              <span>O que modifica no painel</span>
+              <p>
+                A leitura dos β-lactâmicos deve considerar o mecanismo informado e os pontos de corte vigentes para a espécie.
+              </p>
+            </article>
+
+            <article class="cap5-p48-info">
+              <span>Impacto clínico</span>
+              <p>
+                Pode modificar significativamente a escolha terapêutica, especialmente em infecções invasivas.
+              </p>
+            </article>
+
+            <article class="cap5-p48-info cap5-p48-info--key">
+              <span>Cuidado de interpretação</span>
+              <p>
+                A presença de ESBL não deve ser analisada isoladamente: é necessário integrar foco infeccioso, gravidade e perfil completo de suscetibilidade.
+              </p>
+            </article>
+
+          </div>
+
+        </article>
+
       </section>
 
-      <p class="cap5-p48-closing">
-        Essas observações não representam apenas um detalhe microbiológico adicional. Elas alteram a forma como o laudo deve ser interpretado e reforçam que a leitura do antibiograma depende da integração entre identificação bacteriana, mecanismos de resistência e categorias de suscetibilidade.
-      </p>
+     
+
+      <section
+        class="cap5-p48-case cap5-p48-reveal"
+        data-cap5-p48-case
+        aria-labelledby="cap5P48CaseTitle"
+      >
+
+        <div class="cap5-p48-caseHeader">
+
+          <span class="cap5-p48-caseEyebrow">
+            Aplicação clínica
+          </span>
+
+          <h2 id="cap5P48CaseTitle">
+            Como interpretar o laudo?
+          </h2>
+
+        </div>
+
+        <div class="cap5-p48-report">
+
+          <span>Laudo microbiológico</span>
+
+          <strong>
+            <em>Escherichia coli</em>
+          </strong>
+
+          <p>
+            ESBL positiva
+          </p>
+
+          <ul>
+            <li>Ceftriaxona — R</li>
+            <li>Meropenem — S</li>
+            <li>Ciprofloxacino — R</li>
+          </ul>
+
+        </div>
+
+        <h3 class="cap5-p48-question">
+          Qual é a forma mais adequada de iniciar a interpretação desse resultado?
+        </h3>
+
+        <div
+          class="cap5-p48-options"
+          role="group"
+          aria-label="Alternativas de interpretação do laudo"
+        >
+
+          <button
+            class="cap5-p48-option"
+            type="button"
+            data-p48-answer="mic"
+          >
+            <span>A</span>
+
+            <p>
+              Escolher automaticamente o antibacteriano que apresentar a menor MIC.
+            </p>
+          </button>
+
+          <button
+            class="cap5-p48-option"
+            type="button"
+            data-p48-answer="ignore"
+          >
+            <span>B</span>
+
+            <p>
+              Ignorar a informação de ESBL e considerar apenas as letras S e R.
+            </p>
+          </button>
+
+          <button
+            class="cap5-p48-option"
+            type="button"
+            data-p48-answer="integrate"
+          >
+            <span>C</span>
+
+            <p>
+              Integrar espécie, mecanismo de resistência, foco infeccioso, gravidade e perfil completo de suscetibilidade.
+            </p>
+          </button>
+
+          <button
+            class="cap5-p48-option"
+            type="button"
+            data-p48-answer="automatic"
+          >
+            <span>D</span>
+
+            <p>
+              Considerar que toda bactéria ESBL positiva exige obrigatoriamente o mesmo tratamento.
+            </p>
+          </button>
+
+        </div>
+
+        <div
+          id="cap5P48Feedback"
+          class="cap5-p48-feedback"
+          hidden
+          aria-live="polite"
+        ></div>
+
+      </section>
+
+      <aside class="cap5-p48-alert cap5-p48-reveal">
+        A presença de um mecanismo de resistência não deve ser ignorada, mas também não substitui a análise do antibiograma. A observação fornece contexto para compreender o painel e reconhecer resultados que exigem maior cautela.
+      </aside>
+
+      <aside class="cap5-p48-principle cap5-p48-reveal">
+        Uma observação de resistência modifica o contexto do antibiograma. A decisão terapêutica deve integrar espécie identificada, mecanismo informado, categorias S/I/R, foco infeccioso, exposição possível e características clínicas do paciente.
+      </aside>
 
     </section>
 
- <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p47.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 5 · Página 48 de 89</div>
-  <a class="btn primary" href="p49.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav class="pager" aria-label="Paginação">
 
+      <a
+        class="btn"
+        href="p47.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 5 · Página 48 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p49.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+
+    </nav>
 
   </main>
 
   <script src="../../js/app.js"></script>
   <script src="../../js/capitulo-05.js"></script>
-
 </body>
 </html>

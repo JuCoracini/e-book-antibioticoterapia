@@ -1,0 +1,351 @@
+/* =========================
+   BUSCA GLOBAL DO E-BOOK
+   ========================= */
+
+.ebook-search-button{
+  position: fixed;
+  right: 22px;
+  top: 22px;
+  z-index: 9000;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  padding: 9px 14px;
+
+  border: 1px solid rgba(15,42,68,.14);
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.96);
+  color: var(--azul-escuro, #0f2a44);
+
+  font-family: var(--font-ui, Arial, sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(15,42,68,.12);
+}
+
+.ebook-search-button:hover{
+  border-color: rgba(22,138,173,.5);
+  color: var(--verde-oceano, #0e7490);
+}
+
+.ebook-search-panel[hidden]{
+  display: none !important;
+}
+
+.ebook-search-panel{
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+}
+
+.ebook-search-panel__backdrop{
+  position: absolute;
+  inset: 0;
+
+  background: rgba(8,15,25,.58);
+  backdrop-filter: blur(3px);
+}
+
+.ebook-search-panel__dialog{
+  position: relative;
+  z-index: 1;
+
+  width: min(92vw, 680px);
+  max-height: 84vh;
+
+  margin: 7vh auto;
+  padding: 24px;
+
+  overflow: auto;
+
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 18px 55px rgba(0,0,0,.22);
+}
+
+.ebook-search-panel__header{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+
+  margin-bottom: 20px;
+}
+
+.ebook-search-panel__title{
+  margin: 0;
+
+  font-family: var(--font-display, Georgia, serif);
+  font-size: 25px;
+  line-height: 1.2;
+
+  color: var(--azul-escuro, #0f2a44);
+}
+
+.ebook-search-panel__close{
+  width: 34px;
+  height: 34px;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #eef2f5;
+  color: var(--azul-escuro, #0f2a44);
+
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.ebook-search-form{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 9px;
+}
+
+.ebook-search-input{
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+
+  padding: 8px 13px;
+
+  border: 1px solid rgba(15,42,68,.18);
+  border-radius: 10px;
+
+  color: #26384a;
+  background: #ffffff;
+
+  font-family: var(--font-ui, Arial, sans-serif);
+  font-size: 14px;
+}
+
+.ebook-search-input:focus{
+  border-color: var(--azul-turquesa, #168aad);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(22,138,173,.12);
+}
+
+.ebook-search-submit{
+  min-width: 88px;
+  height: 42px;
+
+  padding: 8px 15px;
+
+  border: 0;
+  border-radius: 10px;
+
+  background: var(--azul-turquesa, #168aad);
+  color: #ffffff;
+
+  font-family: var(--font-ui, Arial, sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.ebook-search-submit:hover{
+  background: var(--verde-oceano, #0e7490);
+}
+
+.ebook-search-status{
+  min-height: 20px;
+  margin: 12px 0;
+
+  font-family: var(--font-ui, Arial, sans-serif);
+  font-size: 12px;
+  line-height: 1.5;
+
+  color: #667085;
+}
+
+.ebook-search-results{
+  display: grid;
+  gap: 10px;
+}
+
+.ebook-search-result{
+  display: block;
+
+  padding: 13px 14px;
+
+  border: 1px solid rgba(15,42,68,.09);
+  border-radius: 12px;
+
+  background: #ffffff;
+  color: inherit;
+
+  text-decoration: none;
+
+  transition:
+    transform .18s ease,
+    border-color .18s ease,
+    background .18s ease;
+}
+
+.ebook-search-result:hover{
+  transform: translateY(-1px);
+  border-color: rgba(22,138,173,.38);
+  background: rgba(22,138,173,.025);
+}
+
+.ebook-search-result__meta{
+  display: block;
+  margin-bottom: 4px;
+
+  font-family: var(--font-ui, Arial, sans-serif);
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+
+  color: var(--verde-oceano, #0e7490);
+}
+
+.ebook-search-result__title{
+  display: block;
+
+  font-family: var(--font-ui, Arial, sans-serif);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.45;
+
+  color: var(--azul-escuro, #0f2a44);
+}
+
+.ebook-search-result__count{
+  display: block;
+  margin-top: 5px;
+
+  font-family: var(--font-ui, Arial, sans-serif);
+  font-size: 11px;
+
+  color: #667085;
+}
+
+/* Palavra encontrada */
+
+mark.ebook-search-highlight{
+  padding: 1px 2px;
+
+  border-radius: 3px;
+
+  background: #ffe66b;
+  color: inherit;
+
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+mark.ebook-search-highlight.is-active{
+  background: #ffb703;
+  outline: 2px solid rgba(210,120,0,.32);
+  outline-offset: 2px;
+}
+
+/* Barra de navegação entre ocorrências */
+
+.ebook-search-navigation[hidden]{
+  display: none !important;
+}
+
+.ebook-search-navigation{
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  z-index: 9500;
+
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 8px 10px;
+
+  border: 1px solid rgba(15,42,68,.12);
+  border-radius: 12px;
+
+  background: rgba(255,255,255,.98);
+  box-shadow: 0 8px 24px rgba(15,42,68,.16);
+}
+
+.ebook-search-navigation__term{
+  max-width: 210px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  font-family: var(--font-ui, Arial, sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+
+  color: var(--azul-escuro, #0f2a44);
+}
+
+.ebook-search-navigation__counter{
+  font-family: var(--font-ui, Arial, sans-serif);
+  font-size: 11px;
+
+  color: #667085;
+}
+
+.ebook-search-navigation__button{
+  min-width: 31px;
+  height: 29px;
+
+  padding: 3px 8px;
+
+  border: 1px solid rgba(15,42,68,.14);
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: var(--azul-escuro, #0f2a44);
+
+  font-family: var(--font-ui, Arial, sans-serif);
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+.ebook-search-navigation__button:hover{
+  border-color: var(--azul-turquesa, #168aad);
+}
+
+@media (max-width: 760px){
+
+  .ebook-search-button{
+    top: 12px;
+    right: 12px;
+  }
+
+  .ebook-search-panel__dialog{
+    width: calc(100% - 24px);
+    max-height: 88vh;
+    margin: 6vh auto;
+    padding: 18px;
+  }
+
+  .ebook-search-form{
+    grid-template-columns: 1fr;
+  }
+
+  .ebook-search-submit{
+    width: 100%;
+  }
+
+  .ebook-search-navigation{
+    top: 8px;
+    width: calc(100% - 16px);
+    justify-content: center;
+  }
+
+}

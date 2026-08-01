@@ -2,12 +2,26 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
+
   <title>Capítulo 1 — Página 3</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
 
   <link rel="stylesheet" href="../../css/base.css" />
   <link rel="stylesheet" href="../../css/components.css" />
@@ -17,129 +31,605 @@
 <body class="cap1-page3">
 
   <main class="page-shell cap1-shell">
+
     <header class="page-header">
-      <div class="chapter">Capítulo 1 — Fundamentos Conceituais dos Antibacterianos</div>
-      <h1 class="page-title">Bases Conceituais da Antibioticoterapia</h1>
+
+      <div class="chapter">
+        Capítulo 1 — Fundamentos Conceituais dos Antibacterianos
+      </div>
+
+      <h1 class="page-title">
+        Bases Conceituais da Antibioticoterapia
+      </h1>
+
     </header>
 
-    <section class="prose">
+    <section
+      class="prose"
+      aria-label="Introdução"
+    >
+
       <p>
-        A compreensão dos princípios que estruturam a terapêutica antimicrobiana é fundamental para interpretar os mecanismos de ação, o espectro de atividade e os limites biológicos dos antibacterianos utilizados no tratamento das infecções bacterianas. Esses conceitos orientam a escolha terapêutica e permitem compreender os efeitos microbiológicos associados ao uso de antibacterianos, especialmente em um contexto global marcado pelo aumento da resistência bacteriana <sup>2,5</sup>.
+        A precisão terminológica é importante para compreender o campo da
+        antibioticoterapia e reconhecer o alcance de cada conceito.
+        Antimicrobianos, antibacterianos e antibióticos são termos frequentemente
+        utilizados como equivalentes, embora não apresentem exatamente o mesmo
+        significado. Diferenciá-los permite identificar com maior clareza o alvo
+        microbiológico e a origem dos agentes empregados no tratamento das
+        infecções <sup>3,4,6</sup>.
       </p>
 
       <p>
-        A precisão terminológica assume papel importante nesse contexto porque, na prática clínica, o termo antibiótico é frequentemente utilizado de forma ampla para designar qualquer medicamento empregado contra infecções bacterianas. Embora esse uso seja comum no cotidiano médico, ele pode gerar confusão quanto às diferenças conceituais entre as diversas classes de fármacos <sup>6</sup>.
+        Na prática clínica, o termo antibiótico é amplamente utilizado para
+        designar medicamentos empregados contra infecções bacterianas.
+        Entretanto, antibacteriano é o termo mais preciso quando se deseja
+        especificar a atividade contra bactérias, enquanto antimicrobiano abrange
+        também agentes ativos contra outros grupos de microrganismos
+        <sup>4,6</sup>.
       </p>
 
-      <section class="tree-wrap" aria-label="Árvore conceitual dos antibacterianos">
-        <div class="tree-top">
-          <button class="tree-node tree-node--top is-active" type="button" data-tree-target="antimicrobianos">
-            <span class="tree-node__title">Antimicrobianos</span>
-          </button>
-        </div>
-
-        <div class="tree-line tree-line--v"></div>
-        <div class="tree-middle">
-          <button class="tree-node tree-node--middle" type="button" data-tree-target="antibacterianos">
-            <span class="tree-node__title">Antibacterianos</span>
-          </button>
-        </div>
-
-        <div class="tree-line tree-line--v"></div>
-        <div class="tree-line tree-line--h"></div>
-
-        <div class="tree-branches">
-          <button class="tree-card" type="button" data-tree-target="naturais">
-            <img src="../../assets/capitulo-01/imagens/naturais.png" alt="Agentes naturais">
-            <span class="tree-card__title">Naturais</span>
-          </button>
-
-          <button class="tree-card" type="button" data-tree-target="semissinteticos">
-            <img src="../../assets/capitulo-01/imagens/semissinteticos.png" alt="Agentes semissintéticos">
-            <span class="tree-card__title">Semissintéticos</span>
-          </button>
-
-          <button class="tree-card" type="button" data-tree-target="sinteticos">
-            <img src="../../assets/capitulo-01/imagens/sinteticos.png" alt="Agentes sintéticos">
-            <span class="tree-card__title">Sintéticos</span>
-          </button>
-        </div>
-
-        <div class="tree-panel" id="treePanel" aria-live="polite">
-          <div class="tree-panel__content" data-tree-pane="antimicrobianos">
-            <p>
-              Os antimicrobianos são substâncias capazes de inibir o crescimento ou provocar a morte de microrganismos. Esse grupo inclui fármacos ativos contra bactérias, fungos, vírus e parasitas. Trata-se, portanto, de um termo abrangente, que não especifica necessariamente qual grupo de microrganismos constitui o alvo do tratamento <sup>5</sup>.
-            </p>
-            <p>
-              Todo antibacteriano é um antimicrobiano, mas nem todo antimicrobiano atua contra bactérias. Essa distinção é relevante porque bactérias, vírus, fungos e parasitas apresentam estruturas celulares e processos metabólicos distintos, o que exige abordagens terapêuticas específicas.
-            </p>
-          </div>
-
-          <div class="tree-panel__content" data-tree-pane="antibacterianos" hidden>
-            <p>
-              Os antibacterianos correspondem ao subgrupo de antimicrobianos que atuam especificamente contra bactérias. O uso desse termo torna mais claro o alvo microbiológico da terapia e reduz ambiguidades quando se discute o tratamento das infecções bacterianas <sup>2,5</sup>.
-            </p>
-            <p>
-              O termo antibiótico possui origem histórica mais restrita. Inicialmente, era utilizado para designar substâncias produzidas por microrganismos capazes de inibir o crescimento de outros microrganismos, conceito associado às observações pioneiras de Alexander Fleming. Com o desenvolvimento da química medicinal, o termo passou a incluir também moléculas modificadas ou sintetizadas em laboratório. Ainda assim, sua definição original permanece associada a substâncias de origem biológica, razão pela qual, em contextos acadêmicos, o termo antibacteriano costuma ser preferido quando se busca maior precisão conceitual <sup>4</sup>.
-            </p>
-            <p>
-              Os antibacterianos podem ser classificados, de acordo com sua origem, em naturais, semissintéticos e sintéticos. Essa classificação não possui apenas valor descritivo. As modificações estruturais realizadas durante o desenvolvimento farmacológico podem alterar propriedades relevantes do fármaco, como estabilidade química, absorção, distribuição tecidual, espectro de atividade e suscetibilidade à degradação por enzimas bacterianas, como as β-lactamases <sup>6</sup>.
-            </p>
-          </div>
-
-          <div class="tree-panel__content" data-tree-pane="naturais" hidden>
-            <p>
-              Os agentes naturais são substâncias produzidas por microrganismos, como bactérias e fungos, capazes de inibir ou destruir outras bactérias. No ambiente natural, a produção desses compostos integra interações competitivas entre microrganismos, funcionando como estratégia ecológica de sobrevivência <sup>4</sup>.
-            </p>
-            <p>
-              A penicilina G, produzida por fungos do gênero <em>Penicillium sp.</em>, foi um dos primeiros agentes eficazes no tratamento de infecções bacterianas graves e modificou significativamente o prognóstico de doenças como pneumonias bacterianas e infecções invasivas causadas por espécies do gênero Streptococcus <sup>5</sup>.
-            </p>
-          </div>
-
-          <div class="tree-panel__content" data-tree-pane="semissinteticos" hidden>
-            <p>
-              Os agentes semissintéticos derivam de moléculas naturais que posteriormente passam por modificações químicas planejadas em laboratório. Essas alterações estruturais são realizadas com o objetivo de otimizar propriedades farmacológicas importantes, como estabilidade, absorção, distribuição tecidual ou ampliação do espectro de atividade <sup>6</sup>.
-            </p>
-            <p>
-              Nos β-lactâmicos, por exemplo, modificações na cadeia lateral podem aumentar a estabilidade frente às β-lactamases ou melhorar a absorção por via oral. A amoxicilina constitui um exemplo clássico dessa estratégia, resultante de modificações estruturais que ampliaram sua utilidade clínica em comparação com a penicilina original, em decorrência de ampliação de seu espectro de ação.
-            </p>
-          </div>
-
-          <div class="tree-panel__content" data-tree-pane="sinteticos" hidden>
-            <p>
-              Os agentes sintéticos são desenvolvidos integralmente em laboratório por meio de síntese química. Seu desenvolvimento geralmente parte do conhecimento de alvos moleculares bacterianos essenciais para a sobrevivência ou multiplicação do microrganismo. Esse conhecimento orienta o desenho racional de moléculas capazes de interagir com esses alvos <sup>6</sup>.
-            </p>
-            <p>
-              As quinolonas e a associação sulfametoxazol–trimetoprim ilustram essa abordagem. As quinolonas atuam sobre enzimas envolvidas na replicação do DNA bacteriano, especialmente a DNA girase e a topoisomerase IV, enquanto o sulfametoxazol–trimetoprim bloqueia etapas sequenciais da via metabólica de síntese do ácido fólico <sup>2</sup>.
-            </p>
-            <p>
-              O termo quimioterapia antibacteriana refere-se ao uso de substâncias químicas capazes de exercer toxicidade seletiva contra bactérias no organismo humano. Historicamente, a expressão destacava a capacidade do agente terapêutico de atingir o microrganismo preservando, em maior medida, as células do hospedeiro <sup>6</sup>.
-            </p>
-            <p>
-              Na prática clínica atual, esse termo é menos utilizado, em parte porque pode ser confundido com a quimioterapia oncológica. Assim, prefere-se empregar as expressões terapia antibacteriana ou antibioticoterapia, embora o princípio da toxicidade seletiva continue sendo a base conceitual desse tipo de tratamento.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <p>
-        A atividade dos antibacterianos depende da interação com estruturas ou processos específicos da célula bacteriana. Entre os principais alvos encontram-se componentes da parede celular, ribossomos bacterianos do tipo 70S, enzimas envolvidas na replicação do DNA e etapas essenciais de vias metabólicas bacterianas <sup>5,6</sup>.
-      </p>
-
-      <p>
-        A exploração dessas diferenças estruturais e bioquímicas entre bactérias e células humanas constitui o fundamento biológico que permite o uso clínico dos antibacterianos.
-      </p>
     </section>
 
-   <nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p02.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 1 · Página 3 de 89</div>
-  <a class="btn primary" href="p04.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <section
+      class="cap1-p03-stage"
+      data-cap1-concepts
+      aria-label="Relação conceitual entre antimicrobianos, antibacterianos e sua origem"
+    >
+
+      <div class="cap1-p03-stage__inner">
+
+        <div class="cap1-p03-head">
+
+
+                   <p>
+            Selecione cada categoria para visualizar sua definição, sua origem
+            e exemplos representativos.
+          </p>
+
+        </div>
+
+        <div
+          class="cap1-p03-tree"
+          role="tablist"
+          aria-label="Categorias conceituais"
+        >
+
+          <div class="cap1-p03-level cap1-p03-level--top">
+
+            <button
+              class="cap1-p03-node cap1-p03-node--primary is-active is-guided"
+              type="button"
+              role="tab"
+              id="cap1P03TabAntimicrobianos"
+              aria-selected="true"
+              aria-controls="cap1P03PaneAntimicrobianos"
+              tabindex="0"
+              data-concept-tab="antimicrobianos"
+            >
+              <span class="cap1-p03-node__eyebrow">
+                Grupo mais amplo
+              </span>
+
+              <strong>
+                Antimicrobianos
+              </strong>
+            </button>
+
+          </div>
+
+          <div
+            class="cap1-p03-connector cap1-p03-connector--vertical"
+            aria-hidden="true"
+          ></div>
+
+          <div class="cap1-p03-level cap1-p03-level--middle">
+
+            <button
+              class="cap1-p03-node cap1-p03-node--secondary"
+              type="button"
+              role="tab"
+              id="cap1P03TabAntibacterianos"
+              aria-selected="false"
+              aria-controls="cap1P03PaneAntibacterianos"
+              tabindex="-1"
+              data-concept-tab="antibacterianos"
+            >
+              <span class="cap1-p03-node__eyebrow">
+                Subgrupo
+              </span>
+
+              <strong>
+                Antibacterianos
+              </strong>
+            </button>
+
+          </div>
+
+          <div
+            class="cap1-p03-branch"
+            aria-hidden="true"
+          >
+            <span class="cap1-p03-branch__vertical"></span>
+            <span class="cap1-p03-branch__horizontal"></span>
+          </div>
+
+          <div class="cap1-p03-originGrid">
+
+            <button
+              class="cap1-p03-originCard"
+              type="button"
+              role="tab"
+              id="cap1P03TabNaturais"
+              aria-selected="false"
+              aria-controls="cap1P03PaneNaturais"
+              tabindex="-1"
+              data-concept-tab="naturais"
+            >
+
+              <span class="cap1-p03-originCard__visual">
+                <img
+                  src="../../assets/capitulo-01/imagens/naturais.png"
+                  alt=""
+                  loading="lazy"
+                />
+              </span>
+
+              <span class="cap1-p03-originCard__content">
+                <strong>
+                  Naturais
+                </strong>
+
+                <small>
+                  Produzidos por microrganismos
+                </small>
+              </span>
+
+            </button>
+
+            <button
+              class="cap1-p03-originCard"
+              type="button"
+              role="tab"
+              id="cap1P03TabSemissinteticos"
+              aria-selected="false"
+              aria-controls="cap1P03PaneSemissinteticos"
+              tabindex="-1"
+              data-concept-tab="semissinteticos"
+            >
+
+              <span class="cap1-p03-originCard__visual">
+                <img
+                  src="../../assets/capitulo-01/imagens/semissinteticos.png"
+                  alt=""
+                  loading="lazy"
+                />
+              </span>
+
+              <span class="cap1-p03-originCard__content">
+                <strong>
+                  Semissintéticos
+                </strong>
+
+                <small>
+                  Moléculas naturais modificadas
+                </small>
+              </span>
+
+            </button>
+
+            <button
+              class="cap1-p03-originCard"
+              type="button"
+              role="tab"
+              id="cap1P03TabSinteticos"
+              aria-selected="false"
+              aria-controls="cap1P03PaneSinteticos"
+              tabindex="-1"
+              data-concept-tab="sinteticos"
+            >
+
+              <span class="cap1-p03-originCard__visual">
+                <img
+                  src="../../assets/capitulo-01/imagens/sinteticos.png"
+                  alt=""
+                  loading="lazy"
+                />
+              </span>
+
+              <span class="cap1-p03-originCard__content">
+                <strong>
+                  Sintéticos
+                </strong>
+
+                <small>
+                  Obtidos por síntese química
+                </small>
+              </span>
+
+            </button>
+
+          </div>
+
+        </div>
+
+        <div
+          class="cap1-p03-panel"
+          data-concept-panel
+          aria-live="polite"
+          aria-atomic="true"
+        >
+
+          <article
+            class="cap1-p03-pane is-active"
+            id="cap1P03PaneAntimicrobianos"
+            role="tabpanel"
+            aria-labelledby="cap1P03TabAntimicrobianos"
+            data-concept-pane="antimicrobianos"
+          >
+
+            <span class="cap1-p03-pane__kicker">
+              Grupo abrangente
+            </span>
+
+            <h3>
+              Antimicrobianos
+            </h3>
+
+            <div class="cap1-p03-contentBlock">
+
+              <strong class="cap1-p03-contentLabel">
+                Definição
+              </strong>
+
+              <p>
+                Os antimicrobianos constituem um grupo amplo de substâncias
+                capazes de inibir o crescimento ou provocar a morte de
+                microrganismos. Incluem agentes ativos contra bactérias, fungos,
+                vírus e parasitas e, portanto, não especificam necessariamente
+                qual grupo de microrganismos representa o alvo terapêutico
+                <sup>6</sup>.
+              </p>
+
+            </div>
+
+            <div class="cap1-p03-contentBlock">
+
+              <strong class="cap1-p03-contentLabel">
+                Relação conceitual
+              </strong>
+
+              <p>
+                Todo antibacteriano é um antimicrobiano, porém nem todo
+                antimicrobiano atua contra bactérias. A distinção é relevante
+                porque bactérias, vírus, fungos e parasitas apresentam estruturas,
+                metabolismo e mecanismos de replicação distintos.
+              </p>
+
+            </div>
+
+            </article>
+
+          <article
+            class="cap1-p03-pane"
+            id="cap1P03PaneAntibacterianos"
+            role="tabpanel"
+            aria-labelledby="cap1P03TabAntibacterianos"
+            data-concept-pane="antibacterianos"
+            hidden
+          >
+
+            <span class="cap1-p03-pane__kicker">
+              Atividade contra bactérias
+            </span>
+
+            <h3>
+              Antibacterianos
+            </h3>
+
+            <div class="cap1-p03-contentBlock">
+
+              <strong class="cap1-p03-contentLabel">
+                Definição
+              </strong>
+
+              <p>
+                Os antibacterianos atuam especificamente contra bactérias. O
+                emprego desse termo torna mais claro o alvo microbiológico da
+                terapia e reduz ambiguidades ao discutir o tratamento das
+                infecções bacterianas
+                <sup>3,6</sup>.
+              </p>
+
+            </div>
+
+            <div class="cap1-p03-contentBlock">
+
+              <strong class="cap1-p03-contentLabel">
+                Antibiótico e antibacteriano
+              </strong>
+
+              <p>
+                Historicamente, o termo antibiótico designava substâncias
+                produzidas por microrganismos capazes de inibir outros
+                microrganismos. Com o desenvolvimento da química medicinal, seu
+                uso foi ampliado e passou a incluir também moléculas
+                semissintéticas e sintéticas. Atualmente, na prática clínica,
+                antibiótico é frequentemente utilizado como sinônimo de
+                antibacteriano; em contextos científicos, antibacteriano é mais
+                preciso quando se deseja especificar a atividade contra bactérias
+                <sup>1,4</sup>.
+              </p>
+
+            </div>
+
+            <div class="cap1-p03-contentBlock">
+
+              <strong class="cap1-p03-contentLabel">
+                Classificação quanto à origem
+              </strong>
+
+              <p>
+                Os antibacterianos podem ser classificados em naturais,
+                semissintéticos e sintéticos. Essa classificação possui finalidade
+                predominantemente descritiva, pois as propriedades farmacológicas
+                dependem principalmente da estrutura química da molécula e das
+                modificações introduzidas durante seu desenvolvimento
+                <sup>4</sup>.
+              </p>
+
+            </div>
+
+          </article>
+
+          <article
+            class="cap1-p03-pane"
+            id="cap1P03PaneNaturais"
+            role="tabpanel"
+            aria-labelledby="cap1P03TabNaturais"
+            data-concept-pane="naturais"
+            hidden
+          >
+
+            <span class="cap1-p03-pane__kicker">
+              Origem biológica
+            </span>
+
+            <h3>
+              Antibacterianos naturais
+            </h3>
+
+            <div class="cap1-p03-contentBlock">
+
+              <strong class="cap1-p03-contentLabel">
+                Definição
+              </strong>
+
+              <p>
+                Os antibacterianos naturais são substâncias produzidas por
+                microrganismos, principalmente fungos e bactérias, capazes de
+                inibir ou eliminar outras bactérias. Na natureza, esses compostos
+                participam das interações ecológicas entre microrganismos e podem
+                conferir vantagem competitiva aos organismos produtores
+                <sup>1</sup>.
+              </p>
+
+            </div>
+
+            <div class="cap1-p03-contentBlock">
+
+              <strong class="cap1-p03-contentLabel">
+                Exemplo representativo
+              </strong>
+
+              <p>
+                A penicilina G, derivada de substâncias produzidas por fungos do
+                gênero <em>Penicillium</em>, foi um dos primeiros antibacterianos
+                utilizados com eficácia no tratamento de infecções bacterianas
+                graves
+                <sup>3</sup>.
+              </p>
+
+            </div>
+
+            <div class="cap1-p03-example">
+              <strong>Exemplo</strong>
+              <span>Penicilina G</span>
+            </div>
+
+          </article>
+
+          <article
+            class="cap1-p03-pane"
+            id="cap1P03PaneSemissinteticos"
+            role="tabpanel"
+            aria-labelledby="cap1P03TabSemissinteticos"
+            data-concept-pane="semissinteticos"
+            hidden
+          >
+
+            <span class="cap1-p03-pane__kicker">
+              Modificação química
+            </span>
+
+            <h3>
+              Antibacterianos semissintéticos
+            </h3>
+
+            <div class="cap1-p03-contentBlock">
+
+              <strong class="cap1-p03-contentLabel">
+                Definição
+              </strong>
+
+              <p>
+                Os antibacterianos semissintéticos derivam de moléculas naturais
+                posteriormente modificadas por síntese química. Essas alterações
+                estruturais procuram otimizar propriedades como estabilidade,
+                absorção, distribuição tecidual, resistência à degradação
+                enzimática ou espectro de atividade
+                <sup>4</sup>.
+              </p>
+
+            </div>
+
+            <div class="cap1-p03-contentBlock">
+
+              <strong class="cap1-p03-contentLabel">
+                Relevância das modificações
+              </strong>
+
+              <p>
+                Nos β-lactâmicos, por exemplo, modificações estruturais podem
+                melhorar a absorção por via oral, alterar o espectro de atividade
+                ou aumentar a estabilidade diante de determinadas β-lactamases,
+                dependendo da molécula desenvolvida.
+              </p>
+
+            </div>
+
+            <div
+              class="cap1-p03-path"
+              aria-label="Molécula natural, seguida de modificação química e propriedade farmacológica otimizada"
+            >
+              <span>Molécula natural</span>
+              <span aria-hidden="true">→</span>
+              <span>Modificação química</span>
+              <span aria-hidden="true">→</span>
+              <span>Propriedade otimizada</span>
+            </div>
+
+          </article>
+
+          <article
+            class="cap1-p03-pane"
+            id="cap1P03PaneSinteticos"
+            role="tabpanel"
+            aria-labelledby="cap1P03TabSinteticos"
+            data-concept-pane="sinteticos"
+            hidden
+          >
+
+            <span class="cap1-p03-pane__kicker">
+              Síntese química integral
+            </span>
+
+            <h3>
+              Antibacterianos sintéticos
+            </h3>
+
+            <div class="cap1-p03-contentBlock">
+
+              <strong class="cap1-p03-contentLabel">
+                Definição
+              </strong>
+
+              <p>
+                Os antibacterianos sintéticos são obtidos integralmente por
+                síntese química. Seu desenvolvimento pode basear-se no
+                conhecimento de alvos moleculares essenciais para a sobrevivência
+                ou multiplicação bacteriana
+                <sup>4</sup>.
+              </p>
+
+            </div>
+
+            <div class="cap1-p03-contentBlock">
+
+              <strong class="cap1-p03-contentLabel">
+                Exemplos
+              </strong>
+
+              <p>
+                As quinolonas interferem em enzimas envolvidas na replicação do
+                DNA bacteriano. Sulfametoxazol e trimetoprim bloqueiam etapas
+                sequenciais da síntese do ácido fólico, produzindo uma ação
+                combinada sobre essa via metabólica
+                <sup>3</sup>.
+              </p>
+
+            </div>
+
+            <div class="cap1-p03-examplesGrid">
+
+              <div>
+                <strong>Quinolonas</strong>
+                <span>Replicação do DNA bacteriano</span>
+              </div>
+
+              <div>
+                <strong>Sulfametoxazol-trimetoprim</strong>
+                <span>Síntese do ácido fólico</span>
+              </div>
+
+            </div>
+
+            <div class="cap1-p03-note">
+
+              <strong>
+                Quimioterapia antibacteriana
+              </strong>
+
+              <p>
+                O termo refere-se ao uso de substâncias químicas capazes de
+                interferir preferencialmente em estruturas ou processos
+                bacterianos, preservando relativamente as células do hospedeiro.
+                Embora seja menos utilizado atualmente, esse conceito permanece
+                associado ao fundamento farmacológico da toxicidade seletiva
+                <sup>4</sup>.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="prose" aria-label="Fechamento">
+      <aside class="cap1-p03-closing">
+        As diferenças estruturais e bioquímicas entre as bactérias e as células
+        humanas permitem que determinados fármacos atuem preferencialmente sobre
+        o microrganismo, com menor efeito sobre o hospedeiro. Esse princípio,
+        denominado toxicidade seletiva, será explorado na próxima página
+        <sup>4,17</sup>.
+      </aside>
+
+    </section>
+
+    <nav
+      class="pager"
+      aria-label="Paginação"
+    >
+
+      <a
+        class="btn"
+        href="p02.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 1 · Página 3 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p04.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+
+    </nav>
 
   </main>
 
   <script src="../../js/app.js"></script>
   <script src="../../js/capitulo-01.js"></script>
+
 </body>
 </html>
