@@ -1,169 +1,1125 @@
 <!doctype html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Capítulo 10 — Página 84</title>
+  <meta charset="utf-8">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
-  <link rel="stylesheet" href="../../css/base.css" />
-  <link rel="stylesheet" href="../../css/components.css" />
-  <link rel="stylesheet" href="../../css/capitulo-10.css" />
+  <title>
+    Capítulo 10 — Simulação 2: ESBL
+  </title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../../css/base.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../../css/components.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../../css/capitulo-10.css"
+  >
 </head>
 
 <body class="cap10-page84">
 
   <main class="page-shell">
 
+    <!-- CABEÇALHO -->
+
     <header class="page-header">
-      <div class="chapter">Capítulo 10 — Simulação Clínica Integrada</div>
-      <h1 class="page-title">Simulação 1 — Reavaliar e ajustar</h1>
+
+      <div class="chapter">
+        Capítulo 10 — Simulação Clínica Integrada em Antibioticoterapia
+      </div>
+
+      <h1 class="page-title">
+        Simulação 2 — Alerta do laboratório: ESBL
+      </h1>
+
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <!-- SIMULAÇÃO -->
 
-      <p>
-        Nas horas seguintes, o paciente mantém instabilidade clínica.
-      </p>
+    <section
+      class="cap10-p84-simulation"
+      data-cap10-p84
+      aria-labelledby="cap10P84SimulationTitle"
+    >
 
-      <p>
-        Posteriormente, tornam-se disponíveis novos dados microbiológicos, incluindo a identificação do agente infeccioso e informações sobre seu perfil de resistência.
-      </p>
+      <h2
+        class="sr-only"
+        id="cap10P84SimulationTitle"
+      >
+        Simulação clínica sobre Escherichia coli produtora de ESBL
+      </h2>
 
-      <p>
-        Nesse momento, a decisão deixa de ser baseada apenas em probabilidade etiológica e passa a incorporar evidência microbiológica direta.
-      </p>
+      <!-- PROGRESSO -->
 
-      <p>
-        A questão central já não é apenas ampliar ou não o espectro, mas compreender se a estratégia em uso corresponde ao microrganismo identificado e ao risco microbiológico real.
-      </p>
+      <div
+        class="cap10-p84-progress"
+        aria-label="Progresso da simulação"
+      >
 
-    </section>
+        <div
+          class="cap10-p84-progress__item is-active"
+          data-p84-progress="1"
+        >
+          <span>1</span>
+          <small>Cenário</small>
+        </div>
 
-    <section class="cap10-p84-context" aria-label="Contexto clínico da decisão">
-      <p class="cap10-p84-context__line">
-        Você iniciou terapia empírica com base na probabilidade clínica e gravidade.
-      </p>
-    </section>
+        <div
+          class="cap10-p84-progress__line"
+          aria-hidden="true"
+        ></div>
 
-    <section class="cap10-p84-sim" data-cap10-p84>
+        <div
+          class="cap10-p84-progress__item"
+          data-p84-progress="2"
+        >
+          <span>2</span>
+          <small>Laudo</small>
+        </div>
 
-      <div class="cap10-p84-step is-active" data-p84-step="1">
+        <div
+          class="cap10-p84-progress__line"
+          aria-hidden="true"
+        ></div>
 
-        <p class="cap10-p84-question">
-          Diante desses novos dados, qual movimento representa melhor o raciocínio em antibioticoterapia?
-        </p>
+        <div
+          class="cap10-p84-progress__item"
+          data-p84-progress="3"
+        >
+          <span>3</span>
+          <small>Integração</small>
+        </div>
 
-        <div class="cap10-p84-options">
-          <button class="cap10-p84-option" type="button" data-p84-choice="manter">
-            <strong>Manter conduta inicial</strong>
-            <span>Preserva a estratégia empírica sem integração dos novos dados microbiológicos.</span>
-            <em class="cap10-p84-optionTag cap10-p84-optionTag--warning">Risco de erro persistente</em>
-          </button>
+        <div
+          class="cap10-p84-progress__line"
+          aria-hidden="true"
+        ></div>
 
-          <button class="cap10-p84-option cap10-p84-option--recommended" type="button" data-p84-choice="ajustar">
-            <strong>Ajustar conforme microbiologia</strong>
-            <span>Integra a identificação do agente e o perfil de resistência ao raciocínio terapêutico.</span>
-            <em class="cap10-p84-optionTag cap10-p84-optionTag--success">Decisão mais adequada</em>
-          </button>
-
-          <button class="cap10-p84-option" type="button" data-p84-choice="ampliar">
-            <strong>Ampliar espectro</strong>
-            <span>Aumenta a cobertura sem direcionamento microbiológico específico.</span>
-            <em class="cap10-p84-optionTag cap10-p84-optionTag--error">Exposição desnecessária</em>
-          </button>
+        <div
+          class="cap10-p84-progress__item"
+          data-p84-progress="4"
+        >
+          <span>4</span>
+          <small>Debriefing</small>
         </div>
 
       </div>
 
-      <div class="cap10-p84-step" data-p84-step="2" hidden>
+      <!-- =================================================
+           ETAPA 1 — CONTEXTO CLÍNICO
+           ================================================= -->
 
-        <div class="cap10-p84-feedback" id="cap10P84Feedback"></div>
+      <div
+        class="cap10-p84-stage is-active"
+        data-p84-stage="1"
+      >
 
-        <button class="cap10-p84-next" type="button" data-p84-next="3">
-          Continuar
-        </button>
+        <div class="cap10-p84-stage__heading">
 
-      </div>
+          <span class="cap10-p84-stage__eyebrow">
+            Entrada no cenário
+          </span>
 
-      <div class="cap10-p84-step" data-p84-step="3" hidden>
+          <h2>
+            Um resultado microbiológico acaba de chegar
+          </h2>
 
-        <p>
-          Após a incorporação dos novos dados, a decisão terapêutica passa a exigir coerência entre o microrganismo identificado, o perfil de resistência e a estratégia antimicrobiana adotada.
+        </div>
+
+        <article
+          class="cap10-p84-patient"
+          aria-label="Apresentação da paciente"
+        >
+
+          <div class="cap10-p84-patient__header">
+
+            <div
+              class="cap10-p84-patient__avatar"
+              aria-hidden="true"
+            >
+              62
+            </div>
+
+            <div>
+
+              <span>
+                Paciente
+              </span>
+
+              <strong>
+                Mulher, 62 anos
+              </strong>
+
+              <small>
+                Diabetes mellitus tipo 2
+              </small>
+
+            </div>
+
+          </div>
+
+          <div class="cap10-p84-patient__body">
+
+            <p>
+              A paciente foi internada com febre, calafrios, disúria
+              e dor lombar à direita. O exame de urina demonstrou
+              leucocitúria, e uma amostra para urocultura foi coletada
+              antes do início da antibioticoterapia.
+            </p>
+
+            <p>
+              Durante a visita à enfermaria, o laboratório comunica
+              que a identificação bacteriana e o teste de suscetibilidade
+              estão disponíveis.
+            </p>
+
+          </div>
+
+          <dl class="cap10-p84-patient__data">
+
+            <div>
+              <dt>Temperatura inicial</dt>
+              <dd>38,6 °C</dd>
+            </div>
+
+            <div>
+              <dt>Pressão arterial</dt>
+              <dd>108/68 mmHg</dd>
+            </div>
+
+            <div>
+              <dt>Exame de urina</dt>
+              <dd>Leucocitúria</dd>
+            </div>
+
+            <div>
+              <dt>Amostra</dt>
+              <dd>Urina</dd>
+            </div>
+
+          </dl>
+
+        </article>
+
+        <aside
+          class="cap10-p84-mission"
+          aria-label="Missão do estudante"
+        >
+
+          <span class="cap10-p84-mission__label">
+            Sua missão
+          </span>
+
+          <p>
+            Interpretar o significado do mecanismo ESBL, compreender
+            as categorias apresentadas no antibiograma e reconhecer
+            quais informações ainda precisam ser integradas ao laudo.
+          </p>
+
+        </aside>
+
+        <p class="cap10-p84-fictional">
+          Caso clínico e laudo simplificado elaborados para fins educacionais.
         </p>
 
-        <p>
-          Também surge uma nova questão: quando o tratamento já é microbiologicamente compatível com o quadro, faz sentido manter automaticamente esquemas muito amplos até o final?
-        </p>
+        <div class="cap10-p84-actions">
 
-        <p class="cap10-p84-question">
-          Qual princípio deve orientar essa reavaliação?
-        </p>
-
-        <div class="cap10-p84-options">
-          <button class="cap10-p84-option" type="button" data-p84-choice="permanecer-amplo">
-            <strong>Manter o espectro mais amplo disponível</strong>
-            <span>Preserva a máxima cobertura, mesmo sem reavaliar proporcionalidade.</span>
-            <em class="cap10-p84-optionTag cap10-p84-optionTag--warning">Segurança aparente</em>
+          <button
+            class="cap10-p84-button cap10-p84-button--primary"
+            type="button"
+            data-p84-next="2"
+          >
+            Abrir resultado
+            <span aria-hidden="true">→</span>
           </button>
 
-          <button class="cap10-p84-option cap10-p84-option--recommended" type="button" data-p84-choice="reavaliar-espectro">
-            <strong>Reavaliar a proporcionalidade do espectro</strong>
-            <span>Ajusta a estratégia conforme suscetibilidade, evolução clínica e risco real.</span>
-            <em class="cap10-p84-optionTag cap10-p84-optionTag--success">Princípio racional</em>
-          </button>
-
-          <button class="cap10-p84-option" type="button" data-p84-choice="associar">
-            <strong>Associar novos agentes</strong>
-            <span>Acrescenta fármacos sem relação definida com o perfil microbiológico identificado.</span>
-            <em class="cap10-p84-optionTag cap10-p84-optionTag--error">Escalada sem critério</em>
-          </button>
         </div>
 
       </div>
 
-      <div class="cap10-p84-step" data-p84-step="4" hidden>
+      <!-- =================================================
+           ETAPA 2 — LAUDO MICROBIOLÓGICO
+           ================================================= -->
 
-        <div class="cap10-p84-feedback" id="cap10P84FeedbackFinal"></div>
+      <div
+        class="cap10-p84-stage"
+        data-p84-stage="2"
+        hidden
+      >
 
-        <button class="cap10-p84-next" type="button" data-p84-next="5">
-          Continuar
-        </button>
+        <div class="cap10-p84-stage__heading">
+
+          <span class="cap10-p84-stage__eyebrow">
+            Alerta do laboratório
+          </span>
+
+          <h2>
+            Identificação e suscetibilidade
+          </h2>
+
+        </div>
+
+        <!-- LAUDO -->
+
+        <article
+          class="cap10-p84-report"
+          aria-labelledby="cap10P84ReportTitle"
+        >
+
+          <div class="cap10-p84-report__header">
+
+            <div>
+
+              <span>
+                Microbiologia
+              </span>
+
+              <h3 id="cap10P84ReportTitle">
+                Urocultura
+              </h3>
+
+            </div>
+
+            <span class="cap10-p84-report__status">
+              Resultado liberado
+            </span>
+
+          </div>
+
+          <div class="cap10-p84-report__identification">
+
+            <div>
+
+              <span>
+                Microrganismo identificado
+              </span>
+
+              <strong>
+                <em>Escherichia coli</em>
+              </strong>
+
+            </div>
+
+            <div>
+
+              <span>
+                Informação adicional
+              </span>
+
+              <strong>
+                Produtora de ESBL
+              </strong>
+
+            </div>
+
+          </div>
+
+          <div class="cap10-p84-report__mechanism">
+
+            <span>
+              ESBL
+            </span>
+
+            <p>
+              β-lactamase de espectro estendido detectada por
+              metodologia laboratorial.
+            </p>
+
+          </div>
+
+          <!-- ANTIBIOGRAMA SIMPLIFICADO -->
+
+          <div class="cap10-p84-report__table-wrap">
+
+            <table class="cap10-p84-report__table">
+
+              <caption>
+                Perfil de suscetibilidade simplificado para fins educacionais
+              </caption>
+
+              <thead>
+
+                <tr>
+                  <th scope="col">
+                    Antibacteriano
+                  </th>
+
+                  <th scope="col">
+                    Categoria
+                  </th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>
+                    Ampicilina
+                  </td>
+
+                  <td>
+                    <span class="cap10-p84-category cap10-p84-category--r">
+                      R
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Cefotaxima
+                  </td>
+
+                  <td>
+                    <span class="cap10-p84-category cap10-p84-category--r">
+                      R
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Ceftazidima
+                  </td>
+
+                  <td>
+                    <span class="cap10-p84-category cap10-p84-category--r">
+                      R
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Ciprofloxacino
+                  </td>
+
+                  <td>
+                    <span class="cap10-p84-category cap10-p84-category--r">
+                      R
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Gentamicina
+                  </td>
+
+                  <td>
+                    <span class="cap10-p84-category cap10-p84-category--i">
+                      I
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Amicacina
+                  </td>
+
+                  <td>
+                    <span class="cap10-p84-category cap10-p84-category--s">
+                      S
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Meropenem
+                  </td>
+
+                  <td>
+                    <span class="cap10-p84-category cap10-p84-category--s">
+                      S
+                    </span>
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <!-- LEGENDA S I R -->
+
+          <div
+            class="cap10-p84-legend"
+            aria-label="Significado das categorias de suscetibilidade"
+          >
+
+            <button
+              type="button"
+              data-p84-legend="s"
+            >
+              <span class="cap10-p84-category cap10-p84-category--s">
+                S
+              </span>
+
+              <small>
+                Suscetível
+              </small>
+            </button>
+
+            <button
+              type="button"
+              data-p84-legend="i"
+            >
+              <span class="cap10-p84-category cap10-p84-category--i">
+                I
+              </span>
+
+              <small>
+                Suscetível, aumentando a exposição
+              </small>
+            </button>
+
+            <button
+              type="button"
+              data-p84-legend="r"
+            >
+              <span class="cap10-p84-category cap10-p84-category--r">
+                R
+              </span>
+
+              <small>
+                Resistente
+              </small>
+            </button>
+
+          </div>
+
+          <div
+            class="cap10-p84-legend-feedback"
+            id="cap10P84LegendFeedback"
+            aria-live="polite"
+            hidden
+          ></div>
+
+        </article>
+
+        <!-- CONSULTA AO E-BOOK -->
+
+        <aside
+          class="cap10-p84-consult"
+          aria-label="Conteúdos para consulta"
+        >
+
+          <div class="cap10-p84-consult__heading">
+
+            <span aria-hidden="true">
+              ↗
+            </span>
+
+            <div>
+
+              <strong>
+                Consulte se precisar
+              </strong>
+
+              <small>
+                Retome os fundamentos antes de interpretar.
+              </small>
+
+            </div>
+
+          </div>
+
+          <div class="cap10-p84-consult__links">
+
+            <a
+              href="../capitulo-03/p20.html"
+              target="_blank"
+              rel="noopener"
+            >
+              Resistência adquirida
+            </a>
+
+            <a
+              href="../capitulo-05/p39.html"
+              target="_blank"
+              rel="noopener"
+            >
+              Antibiograma
+            </a>
+
+            <a
+              href="../capitulo-05/p39.html"
+              target="_blank"
+              rel="noopener"
+            >
+              ESBL
+            </a>
+
+          </div>
+
+        </aside>
+
+        <!-- INTERPRETAÇÃO DO MECANISMO -->
+
+        <div class="cap10-p84-question-block">
+
+          <div class="cap10-p84-preceptor">
+
+            <span class="cap10-p84-preceptor__label">
+              Pergunta do preceptor
+            </span>
+
+            <p>
+              O que a identificação de ESBL acrescenta à interpretação
+              do perfil apresentado?
+            </p>
+
+          </div>
+
+          <div
+            class="cap10-p84-options"
+            aria-label="Possibilidades de interpretação"
+          >
+
+            <button
+              class="cap10-p84-option"
+              type="button"
+              data-p84-question="mechanism"
+              data-p84-choice="intrinseca"
+            >
+
+              <strong>
+                Interpretação A
+              </strong>
+
+              <span>
+                Representa uma característica intrínseca presente em
+                todas as cepas de <em>Escherichia coli</em>.
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p84-option"
+              type="button"
+              data-p84-question="mechanism"
+              data-p84-choice="enzimatica"
+            >
+
+              <strong>
+                Interpretação B
+              </strong>
+
+              <span>
+                Indica um mecanismo adquirido de resistência enzimática
+                que ajuda a explicar parte do perfil observado para
+                determinados β-lactâmicos.
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p84-option"
+              type="button"
+              data-p84-question="mechanism"
+              data-p84-choice="total"
+            >
+
+              <strong>
+                Interpretação C
+              </strong>
+
+              <span>
+                Significa que o microrganismo é resistente a todos os
+                antibacterianos, independentemente do resultado
+                individual apresentado no laudo.
+              </span>
+
+            </button>
+
+          </div>
+
+          <div
+            class="cap10-p84-feedback"
+            id="cap10P84MechanismFeedback"
+            aria-live="polite"
+            hidden
+          ></div>
+
+        </div>
+
+        <div class="cap10-p84-actions">
+
+          <button
+            class="cap10-p84-button cap10-p84-button--secondary"
+            type="button"
+            data-p84-next="1"
+          >
+            ← Voltar
+          </button>
+
+          <button
+            class="cap10-p84-button cap10-p84-button--primary"
+            id="cap10P84ContinueToIntegration"
+            type="button"
+            data-p84-next="3"
+            hidden
+          >
+            Integrar ao caso
+            <span aria-hidden="true">→</span>
+          </button>
+
+        </div>
 
       </div>
 
-      <div class="cap10-p84-step" data-p84-step="5" hidden>
+      <!-- =================================================
+           ETAPA 3 — INTEGRAÇÃO CLÍNICO-LABORATORIAL
+           ================================================= -->
 
-        <p class="cap10-p84-final">
-          A decisão em antibioticoterapia evolui à medida que a incerteza diminui.
-        </p>
+      <div
+        class="cap10-p84-stage"
+        data-p84-stage="3"
+        hidden
+      >
 
-        <p class="cap10-p84-final-sub">
-          A estimativa inicial de risco orienta a estratégia empírica, mas a identificação microbiológica deve reorientar a interpretação do tratamento em curso.
-        </p>
+        <div class="cap10-p84-stage__heading">
 
-        <p class="cap10-p84-final-sub">
-          Manter automaticamente decisões iniciais ou ampliar indiscriminadamente o espectro não substitui adequação terapêutica.
-        </p>
+          <span class="cap10-p84-stage__eyebrow">
+            Integração clínico-laboratorial
+          </span>
 
-        <div class="cap10-p84-insight" id="cap10P84Insight">
-          A decisão inicial em antibioticoterapia é sempre provisória. A qualidade da conduta depende da capacidade de reavaliar e ajustar o tratamento conforme novos dados clínicos e microbiológicos se tornam disponíveis.
+          <h2>
+            O laudo é uma parte do raciocínio
+          </h2>
+
         </div>
 
-        <p class="cap10-p84-highlight">
-          Em antibioticoterapia racional, iniciar, reinterpretar e ajustar são partes da mesma decisão.
-        </p>
+        <div class="cap10-p84-integration">
+
+          <div class="cap10-p84-integration__report">
+
+            <span>
+              O laboratório informa
+            </span>
+
+            <strong>
+              <em>Escherichia coli</em> produtora de ESBL
+            </strong>
+
+            <small>
+              Com categorias S, I e R para diferentes agentes
+            </small>
+
+          </div>
+
+          <div
+            class="cap10-p84-integration__plus"
+            aria-hidden="true"
+          >
+            +
+          </div>
+
+          <div class="cap10-p84-integration__context">
+
+            <span>
+              O caso clínico informa
+            </span>
+
+            <strong>
+              Provável foco urinário e características da paciente
+            </strong>
+
+            <small>
+              Manifestações, gravidade, função renal e evolução
+            </small>
+
+          </div>
+
+        </div>
+
+        <aside
+          class="cap10-p84-consult"
+          aria-label="Conteúdos para consulta"
+        >
+
+          <div class="cap10-p84-consult__heading">
+
+            <span aria-hidden="true">
+              ↗
+            </span>
+
+            <div>
+
+              <strong>
+                Consulte se precisar
+              </strong>
+
+              <small>
+                Relacione suscetibilidade, exposição e segurança.
+              </small>
+
+            </div>
+
+          </div>
+
+          <div class="cap10-p84-consult__links">
+
+            <a
+              href="../capitulo-04/p30.html"
+              target="_blank"
+              rel="noopener"
+            >
+              PK/PD
+            </a>
+
+            <a
+              href="../capitulo-04/p30.html"
+              target="_blank"
+              rel="noopener"
+            >
+              Penetração no foco
+            </a>
+
+            <a
+              href="../capitulo-07/p62.html"
+              target="_blank"
+              rel="noopener"
+            >
+              Efeitos adversos
+            </a>
+
+          </div>
+
+        </aside>
+
+        <div class="cap10-p84-question-block">
+
+          <div class="cap10-p84-preceptor">
+
+            <span class="cap10-p84-preceptor__label">
+              Pergunta do preceptor
+            </span>
+
+            <p>
+              Uma categoria “S” apresentada no antibiograma é suficiente,
+              isoladamente, para compreender toda a situação?
+            </p>
+
+          </div>
+
+          <div
+            class="cap10-p84-options"
+            aria-label="Possibilidades de interpretação"
+          >
+
+            <button
+              class="cap10-p84-option"
+              type="button"
+              data-p84-question="integration"
+              data-p84-choice="suficiente"
+            >
+
+              <strong>
+                Interpretação A
+              </strong>
+
+              <span>
+                Sim. A categoria “S” define sozinha a adequação do
+                agente, independentemente do provável foco, da exposição
+                e das características da paciente.
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p84-option"
+              type="button"
+              data-p84-question="integration"
+              data-p84-choice="integrar"
+            >
+
+              <strong>
+                Interpretação B
+              </strong>
+
+              <span>
+                Não. O resultado precisa ser integrado ao provável foco,
+                à gravidade, à função renal, à exposição alcançável,
+                à toxicidade e aos demais dados clínicos.
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p84-option"
+              type="button"
+              data-p84-question="integration"
+              data-p84-choice="ignorar"
+            >
+
+              <strong>
+                Interpretação C
+              </strong>
+
+              <span>
+                Não. A presença de ESBL invalida todas as categorias
+                de suscetibilidade apresentadas pelo laboratório.
+              </span>
+
+            </button>
+
+          </div>
+
+          <div
+            class="cap10-p84-feedback"
+            id="cap10P84IntegrationFeedback"
+            aria-live="polite"
+            hidden
+          ></div>
+
+        </div>
+
+        <div class="cap10-p84-actions">
+
+          <button
+            class="cap10-p84-button cap10-p84-button--secondary"
+            type="button"
+            data-p84-next="2"
+          >
+            ← Voltar
+          </button>
+
+          <button
+            class="cap10-p84-button cap10-p84-button--primary"
+            id="cap10P84ContinueToDebrief"
+            type="button"
+            data-p84-next="4"
+            hidden
+          >
+            Ver debriefing
+            <span aria-hidden="true">→</span>
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- =================================================
+           ETAPA 4 — DEBRIEFING
+           ================================================= -->
+
+      <div
+        class="cap10-p84-stage"
+        data-p84-stage="4"
+        hidden
+      >
+
+        <div class="cap10-p84-stage__heading">
+
+          <span class="cap10-p84-stage__eyebrow">
+            Debriefing
+          </span>
+
+          <h2>
+            O que esta simulação demonstrou?
+          </h2>
+
+        </div>
+
+        <div class="cap10-p84-concepts">
+
+          <article>
+
+            <span class="cap10-p84-concepts__number">
+              1
+            </span>
+
+            <div>
+
+              <h3>
+                Microrganismo
+              </h3>
+
+              <p>
+                A identificação informa qual bactéria foi recuperada
+                na amostra analisada.
+              </p>
+
+            </div>
+
+          </article>
+
+          <article>
+
+            <span class="cap10-p84-concepts__number">
+              2
+            </span>
+
+            <div>
+
+              <h3>
+                Mecanismo
+              </h3>
+
+              <p>
+                ESBL indica resistência enzimática adquirida e ajuda
+                a explicar parte do perfil fenotípico.
+              </p>
+
+            </div>
+
+          </article>
+
+          <article>
+
+            <span class="cap10-p84-concepts__number">
+              3
+            </span>
+
+            <div>
+
+              <h3>
+                Suscetibilidade
+              </h3>
+
+              <p>
+                As categorias S, I e R devem ser interpretadas
+                individualmente conforme os critérios laboratoriais.
+              </p>
+
+            </div>
+
+          </article>
+
+          <article>
+
+            <span class="cap10-p84-concepts__number">
+              4
+            </span>
+
+            <div>
+
+              <h3>
+                Contexto clínico
+              </h3>
+
+              <p>
+                Provável foco, gravidade, hospedeiro, exposição e
+                segurança completam a interpretação.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+        <div class="cap10-p84-debrief">
+
+          <h3>
+            Integração do raciocínio
+          </h3>
+
+          <p>
+            O mecanismo ESBL não deve ser confundido com resistência
+            intrínseca da espécie nem interpretado como resistência
+            obrigatória a todos os antibacterianos. Ele representa
+            uma informação adicional que auxilia na compreensão do
+            perfil observado.
+          </p>
+
+          <p>
+            Da mesma forma, uma categoria de suscetibilidade não deve
+            ser analisada isoladamente. A interpretação exige articulação
+            entre microbiologia, provável foco infeccioso, características
+            do hospedeiro, PK/PD, toxicidade e evolução clínica.
+          </p>
+
+        </div>
+
+        <div class="cap10-p84-essential">
+
+          <span>
+            Ideia essencial
+          </span>
+
+          <p>
+            O antibiograma orienta o raciocínio, mas não substitui a
+            integração entre o resultado laboratorial e o contexto
+            clínico do paciente.
+          </p>
+
+        </div>
+
+        <div class="cap10-p84-actions">
+
+          <button
+            class="cap10-p84-button cap10-p84-button--secondary"
+            type="button"
+            data-p84-restart
+          >
+            ↻ Refazer simulação
+          </button>
+
+          <a
+            class="cap10-p84-button cap10-p84-button--primary"
+            href="p85.html"
+          >
+            Próxima simulação
+            <span aria-hidden="true">→</span>
+          </a>
+
+        </div>
 
       </div>
 
     </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p83.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 10 · Página 84 de 89</div>
-  <a class="btn primary" href="p85.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <!-- PAGINAÇÃO -->
+
+    <nav
+      class="pager"
+      aria-label="Paginação"
+    >
+
+      <a
+        class="btn"
+        href="p83.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 10 · Página 84 de 88
+      </div>
+
+      <a
+        class="btn primary"
+        href="p85.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+
+    </nav>
 
   </main>
 
@@ -171,4 +1127,5 @@
   <script src="../../js/capitulo-10.js"></script>
 
 </body>
+
 </html>

@@ -1,169 +1,1081 @@
 <!doctype html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Capítulo 10 — Página 86</title>
+  <meta charset="utf-8">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
-  <link rel="stylesheet" href="../../css/base.css" />
-  <link rel="stylesheet" href="../../css/components.css" />
-  <link rel="stylesheet" href="../../css/capitulo-10.css" />
+  <title>
+    Capítulo 10 — Simulação 4: cultura positiva significa infecção?
+  </title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../../css/base.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../../css/components.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../../css/capitulo-10.css"
+  >
 </head>
 
 <body class="cap10-page86">
 
   <main class="page-shell">
 
+    <!-- CABEÇALHO -->
+
     <header class="page-header">
-      <div class="chapter">Capítulo 10 — Simulação Clínica Integrada</div>
-      <h1 class="page-title">Simulação 3 — Tratar infecção, não colonização</h1>
+
+      <div class="chapter">
+        Capítulo 10 — Simulação Clínica Integrada em Antibioticoterapia
+      </div>
+
+      <h1 class="page-title">
+        Simulação 4 — Cultura positiva significa infecção?
+      </h1>
+
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <!-- SIMULAÇÃO -->
 
-      <p>
-        Mulher, 83 anos, residente em instituição de longa permanência, sem queixas urinárias. A cuidadora relata apenas odor mais intenso da urina e discreta sonolência nos últimos dias.
-      </p>
+    <section
+      class="cap10-p86-simulation"
+      data-cap10-p86
+      aria-labelledby="cap10P86SimulationTitle"
+    >
 
-      <p>
-        Ao exame clínico, encontra-se afebril, com sinais vitais estáveis, sem dor lombar, sem disúria e sem urgência miccional.
-      </p>
+      <h2
+        class="sr-only"
+        id="cap10P86SimulationTitle"
+      >
+        Simulação sobre interpretação de urocultura positiva
+      </h2>
 
-      <p>
-        Um exame de urina foi solicitado previamente, e a urocultura demonstra crescimento bacteriano significativo.
-      </p>
+      <!-- PROGRESSO -->
 
-      <p>
-        A questão central neste cenário não é o resultado laboratorial isolado, mas a coerência entre o achado microbiológico e a presença — ou ausência — de síndrome clínica compatível com infecção urinária.
-      </p>
+      <div
+        class="cap10-p86-progress"
+        aria-label="Progresso da simulação"
+      >
 
-    </section>
+        <div
+          class="cap10-p86-progress__item is-active"
+          data-p86-progress="1"
+        >
+          <span>1</span>
+          <small>Situação</small>
+        </div>
 
-    <section class="cap10-p86-context" aria-label="Contexto clínico da decisão">
-      <p class="cap10-p86-context__line">
-        O caso exige distinguir colonização microbiológica de infecção clinicamente plausível antes de transformar um achado laboratorial em indicação terapêutica.
-      </p>
-    </section>
+        <div
+          class="cap10-p86-progress__line"
+          aria-hidden="true"
+        ></div>
 
-    <section class="cap10-p86-sim" data-cap10-p86>
+        <div
+          class="cap10-p86-progress__item"
+          data-p86-progress="2"
+        >
+          <span>2</span>
+          <small>Laboratório</small>
+        </div>
 
-      <div class="cap10-p86-step is-active" data-p86-step="1">
+        <div
+          class="cap10-p86-progress__line"
+          aria-hidden="true"
+        ></div>
 
-        <p class="cap10-p86-question">
-          Diante desse cenário, qual estratégia melhor representa o raciocínio esperado?
-        </p>
+        <div
+          class="cap10-p86-progress__item"
+          data-p86-progress="3"
+        >
+          <span>3</span>
+          <small>Contexto</small>
+        </div>
 
-        <div class="cap10-p86-options">
-          <button class="cap10-p86-option" type="button" data-p86-choice="tratar">
-            <strong>Prescrever antibacteriano com base na cultura</strong>
-            <span>Transforma crescimento bacteriano em indicação terapêutica sem confirmação sindrômica.</span>
-            <em class="cap10-p86-optionTag cap10-p86-optionTag--error">Risco de tratar colonização</em>
-          </button>
+        <div
+          class="cap10-p86-progress__line"
+          aria-hidden="true"
+        ></div>
 
-          <button class="cap10-p86-option" type="button" data-p86-choice="repetir">
-            <strong>Repetir a urocultura antes de decidir</strong>
-            <span>Mantém o foco no exame, sem resolver a ausência de síndrome clínica compatível.</span>
-            <em class="cap10-p86-optionTag cap10-p86-optionTag--warning">Desvio para novo laudo</em>
-          </button>
-
-          <button class="cap10-p86-option cap10-p86-option--recommended" type="button" data-p86-choice="avaliar">
-            <strong>Avaliar cuidadosamente a presença de sintomas antes de tratar</strong>
-            <span>Integra microbiologia ao quadro clínico antes de indicar antibacteriano.</span>
-            <em class="cap10-p86-optionTag cap10-p86-optionTag--success">Princípio mais adequado</em>
-          </button>
+        <div
+          class="cap10-p86-progress__item"
+          data-p86-progress="4"
+        >
+          <span>4</span>
+          <small>Integração</small>
         </div>
 
       </div>
 
-      <div class="cap10-p86-step" data-p86-step="2" hidden>
+      <!-- =================================================
+           ETAPA 1 — SITUAÇÃO
+           ================================================= -->
 
-        <div class="cap10-p86-feedback" id="cap10P86Feedback"></div>
+      <div
+        class="cap10-p86-stage is-active"
+        data-p86-stage="1"
+      >
 
-        <button class="cap10-p86-next" type="button" data-p86-next="3">
-          Continuar
-        </button>
+        <div class="cap10-p86-stage__heading">
 
-      </div>
+          <span class="cap10-p86-stage__eyebrow">
+            Novo caso · paciente diferente
+          </span>
 
-      <div class="cap10-p86-step" data-p86-step="3" hidden>
+          <h2>
+            Um resultado chega durante a visita
+          </h2>
 
-        <p>
-          Na ausência de disúria, urgência miccional, febre, dor lombar ou sinais sistêmicos compatíveis, a probabilidade de infecção urinária ativa permanece baixa.
+          <p>
+            Antes de interpretar o laudo, reconheça a pergunta clínica
+            que precisa ser respondida.
+          </p>
+
+        </div>
+
+        <article class="cap10-p86-case-card">
+
+          <div class="cap10-p86-case-card__header">
+
+            <span
+              class="cap10-p86-case-card__letter"
+              aria-hidden="true"
+            >
+              C
+            </span>
+
+            <div>
+
+              <span class="cap10-p86-case-card__label">
+                Paciente C
+              </span>
+
+              <h3>
+                Quarto dia de hospitalização
+              </h3>
+
+            </div>
+
+          </div>
+
+          <div class="cap10-p86-case-card__body">
+
+            <p>
+              Mulher de 76 anos está hospitalizada após correção cirúrgica
+              de fratura de fêmur. Utilizou cateter vesical durante o
+              período perioperatório, retirado há aproximadamente 48 horas.
+            </p>
+
+            <p>
+              Durante a visita, a equipe informa que a urina apresentava
+              odor forte. Uma amostra foi encaminhada ao laboratório e o
+              resultado da urocultura acaba de ser liberado.
+            </p>
+
+          </div>
+
+          <div class="cap10-p86-case-card__status">
+
+            <div>
+
+              <span>Motivo da internação</span>
+
+              <strong>
+                Pós-operatório ortopédico
+              </strong>
+
+            </div>
+
+            <div>
+
+              <span>Informação disponível</span>
+
+              <strong>
+                Urocultura positiva
+              </strong>
+
+            </div>
+
+            <div>
+
+              <span>Questão central</span>
+
+              <strong>
+                Significado do achado
+              </strong>
+
+            </div>
+
+          </div>
+
+        </article>
+
+        <aside class="cap10-p86-mission">
+
+          <span
+            class="cap10-p86-mission__icon"
+            aria-hidden="true"
+          >
+            ?
+          </span>
+
+          <div>
+
+            <span class="cap10-p86-mission__label">
+              Sua missão
+            </span>
+
+            <p>
+              Analise o resultado microbiológico, identifique as
+              informações clínicas necessárias e diferencie presença
+              bacteriana de infecção clinicamente sustentada.
+            </p>
+
+          </div>
+
+        </aside>
+
+        <p class="cap10-p86-fictional">
+          Caso clínico e resultados laboratoriais simplificados para fins educacionais.
         </p>
 
-        <p>
-          Em idosos institucionalizados, a bacteriúria assintomática é frequente e frequentemente representa colonização estável do trato urinário.
-        </p>
+        <div class="cap10-p86-actions">
 
-        <p class="cap10-p86-question">
-          O que esse cenário exige do profissional?
-        </p>
-
-        <div class="cap10-p86-options">
-          <button class="cap10-p86-option" type="button" data-p86-choice="laboratorio">
-            <strong>Basear a decisão apenas no número de colônias</strong>
-            <span>Substitui a interpretação clínica por um critério laboratorial isolado.</span>
-            <em class="cap10-p86-optionTag cap10-p86-optionTag--error">Reducionismo laboratorial</em>
+          <button
+            class="cap10-p86-button cap10-p86-button--primary"
+            type="button"
+            data-p86-next="2"
+          >
+            Abrir o resultado
+            <span aria-hidden="true">→</span>
           </button>
 
-          <button class="cap10-p86-option cap10-p86-option--recommended" type="button" data-p86-choice="sindrome">
-            <strong>Integrar o achado microbiológico à síndrome clínica</strong>
-            <span>Relaciona o crescimento bacteriano à presença real de doença infecciosa.</span>
-            <em class="cap10-p86-optionTag cap10-p86-optionTag--success">Leitura mais coerente</em>
-          </button>
-
-          <button class="cap10-p86-option" type="button" data-p86-choice="idade">
-            <strong>Prescrever por precaução devido à idade avançada</strong>
-            <span>Usa idade como justificativa terapêutica sem síndrome clínica compatível.</span>
-            <em class="cap10-p86-optionTag cap10-p86-optionTag--warning">Precaução sem critério</em>
-          </button>
         </div>
 
       </div>
 
-      <div class="cap10-p86-step" data-p86-step="4" hidden>
+      <!-- =================================================
+           ETAPA 2 — LABORATÓRIO
+           ================================================= -->
 
-        <div class="cap10-p86-feedback" id="cap10P86FeedbackFinal"></div>
+      <div
+        class="cap10-p86-stage"
+        data-p86-stage="2"
+        hidden
+      >
 
-        <button class="cap10-p86-next" type="button" data-p86-next="5">
-          Continuar
-        </button>
+        <div class="cap10-p86-stage__heading">
+
+          <span class="cap10-p86-stage__eyebrow">
+            Alerta do laboratório
+          </span>
+
+          <h2>
+            O que o resultado realmente demonstra?
+          </h2>
+
+          <p>
+            Diferencie o que foi identificado na amostra daquilo que ainda
+            depende de correlação clínica.
+          </p>
+
+        </div>
+
+        <article
+          class="cap10-p86-report"
+          aria-labelledby="cap10P86ReportTitle"
+        >
+
+          <div class="cap10-p86-report__header">
+
+            <div>
+
+              <span class="cap10-p86-report__label">
+                Microbiologia
+              </span>
+
+              <h3 id="cap10P86ReportTitle">
+                Urina de jato médio
+              </h3>
+
+            </div>
+
+            <span class="cap10-p86-report__badge">
+              Resultado liberado
+            </span>
+
+          </div>
+
+          <div class="cap10-p86-report__body">
+
+            <div class="cap10-p86-report__organism">
+
+              <span>Microrganismo identificado</span>
+
+              <strong>
+                <em>Escherichia coli</em>
+              </strong>
+
+              <small>
+                Crescimento ≥ 10<sup>5</sup> UFC/mL
+              </small>
+
+            </div>
+
+            <div class="cap10-p86-report__table-wrap">
+
+              <table class="cap10-p86-report__table">
+
+                <caption class="sr-only">
+                  Resultados do exame de urina e da urocultura
+                </caption>
+
+                <thead>
+
+                  <tr>
+                    <th scope="col">Análise</th>
+                    <th scope="col">Resultado</th>
+                    <th scope="col">O que informa</th>
+                  </tr>
+
+                </thead>
+
+                <tbody>
+
+                  <tr>
+                    <td>Leucócitos</td>
+
+                    <td>
+                      <span class="cap10-p86-result cap10-p86-result--alert">
+                        30 por campo
+                      </span>
+                    </td>
+
+                    <td>
+                      Presença de resposta inflamatória na amostra
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>Nitrito</td>
+
+                    <td>
+                      <span class="cap10-p86-result cap10-p86-result--positive">
+                        Positivo
+                      </span>
+                    </td>
+
+                    <td>
+                      Atividade de bactéria redutora de nitrato
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td>Urocultura</td>
+
+                    <td>
+                      <span class="cap10-p86-result cap10-p86-result--culture">
+                        Positiva
+                      </span>
+                    </td>
+
+                    <td>
+                      Identificação e quantificação bacteriana
+                    </td>
+                  </tr>
+
+                </tbody>
+
+              </table>
+
+            </div>
+
+          </div>
+
+          <div class="cap10-p86-clues">
+
+            <span class="cap10-p86-clues__label">
+              Explore os achados
+            </span>
+
+            <div class="cap10-p86-clues__buttons">
+
+              <button
+                type="button"
+                data-p86-clue="piuria"
+                aria-pressed="false"
+              >
+                O que a piúria demonstra?
+              </button>
+
+              <button
+                type="button"
+                data-p86-clue="cultura"
+                aria-pressed="false"
+              >
+                O que a cultura demonstra?
+              </button>
+
+            </div>
+
+            <div
+              class="cap10-p86-clue-feedback"
+              id="cap10P86ClueFeedback"
+              aria-live="polite"
+              hidden
+            ></div>
+
+          </div>
+
+        </article>
+
+        <!-- CONSULTA AO E-BOOK -->
+
+        <aside
+          class="cap10-p86-consult"
+          aria-label="Orientação para consulta ao e-book"
+        >
+
+          <div class="cap10-p86-consult__heading">
+
+            <span aria-hidden="true">
+              ↗
+            </span>
+
+            <div>
+
+              <strong>
+                Consulte se precisar
+              </strong>
+
+              <small>
+                Utilize a busca do e-book para retomar estes conceitos.
+              </small>
+
+            </div>
+
+          </div>
+
+          <div class="cap10-p86-consult__topics">
+
+            <span>
+              Colonização × infecção
+            </span>
+
+            <span>
+              Interpretação de amostras
+            </span>
+
+            <span>
+              Urocultura
+            </span>
+
+          </div>
+
+        </aside>
+
+        <!-- PRIMEIRA QUESTÃO -->
+
+        <div class="cap10-p86-question-block">
+
+          <div class="cap10-p86-preceptor">
+
+            <span class="cap10-p86-preceptor__label">
+              Pergunta do preceptor
+            </span>
+
+            <p>
+              Com as informações apresentadas até aqui, qual é a
+              interpretação mais adequada?
+            </p>
+
+          </div>
+
+          <div
+            class="cap10-p86-options"
+            aria-label="Possibilidades de interpretação"
+          >
+
+            <button
+              class="cap10-p86-option"
+              type="button"
+              data-p86-question="laboratorio"
+              data-p86-choice="confirma"
+            >
+
+              <strong>
+                Interpretação A
+              </strong>
+
+              <span>
+                O crescimento ≥ 10<sup>5</sup> UFC/mL confirma,
+                isoladamente, uma infecção urinária.
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p86-option"
+              type="button"
+              data-p86-question="laboratorio"
+              data-p86-choice="integrar"
+            >
+
+              <strong>
+                Interpretação B
+              </strong>
+
+              <span>
+                O laudo confirma bacteriúria, mas seu significado depende
+                dos sintomas, dos sinais clínicos e do contexto da coleta.
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p86-option"
+              type="button"
+              data-p86-question="laboratorio"
+              data-p86-choice="piuria"
+            >
+
+              <strong>
+                Interpretação C
+              </strong>
+
+              <span>
+                A presença de piúria é suficiente para diferenciar
+                colonização de infecção.
+              </span>
+
+            </button>
+
+          </div>
+
+          <div
+            class="cap10-p86-feedback"
+            id="cap10P86LabFeedback"
+            aria-live="polite"
+            hidden
+          ></div>
+
+        </div>
+
+        <div class="cap10-p86-actions">
+
+          <button
+            class="cap10-p86-button cap10-p86-button--secondary"
+            type="button"
+            data-p86-next="1"
+          >
+            ← Voltar
+          </button>
+
+          <button
+            class="cap10-p86-button cap10-p86-button--primary"
+            id="cap10P86ContinueToContext"
+            type="button"
+            data-p86-next="3"
+            hidden
+          >
+            Verificar o contexto
+            <span aria-hidden="true">→</span>
+          </button>
+
+        </div>
 
       </div>
 
-      <div class="cap10-p86-step" data-p86-step="5" hidden>
+      <!-- =================================================
+           ETAPA 3 — CONTEXTO CLÍNICO
+           ================================================= -->
 
-        <p class="cap10-p86-final">
-          O resultado laboratorial isolado não define doença.
-        </p>
+      <div
+        class="cap10-p86-stage"
+        data-p86-stage="3"
+        hidden
+      >
 
-        <p class="cap10-p86-final-sub">
-          A mesma bactéria pode representar colonização estável em um contexto e infecção verdadeira em outro.
-        </p>
+        <div class="cap10-p86-stage__heading">
 
-        <p class="cap10-p86-final-sub">
-          A interpretação racional depende da coerência entre microbiologia e síndrome clínica.
-        </p>
+          <span class="cap10-p86-stage__eyebrow">
+            Retorno à paciente
+          </span>
 
-        <div class="cap10-p86-insight" id="cap10P86Insight">
-          Em antibioticoterapia racional, o dado microbiológico precisa ser interpretado dentro de um quadro clínico plausível. Tratar crescimento bacteriano sem síndrome compatível é transformar presença de microrganismo em doença sem base suficiente.
+          <h2>
+            Os dados clínicos modificam a interpretação
+          </h2>
+
+          <p>
+            Agora, examine as informações que não estavam presentes no
+            alerta inicial do laboratório.
+          </p>
+
         </div>
 
-        <p class="cap10-p86-highlight">
-          Em antibioticoterapia, o alvo não é o laudo isolado: é a infecção clinicamente plausível.
-        </p>
+        <div class="cap10-p86-context">
+
+          <div class="cap10-p86-context__header">
+
+            <span aria-hidden="true">
+              +
+            </span>
+
+            <div>
+
+              <span>
+                Verificação à beira-leito
+              </span>
+
+              <strong>
+                Informações clínicas disponíveis
+              </strong>
+
+            </div>
+
+          </div>
+
+          <div class="cap10-p86-context__grid">
+
+            <article>
+
+              <span class="cap10-p86-context__icon">
+                36,7
+              </span>
+
+              <div>
+
+                <h3>
+                  Sem febre
+                </h3>
+
+                <p>
+                  Temperatura de 36,7 °C e sinais vitais estáveis.
+                </p>
+
+              </div>
+
+            </article>
+
+            <article>
+
+              <span class="cap10-p86-context__icon">
+                −
+              </span>
+
+              <div>
+
+                <h3>
+                  Sem sintomas urinários
+                </h3>
+
+                <p>
+                  Nega disúria, urgência, aumento da frequência e dor
+                  suprapúbica.
+                </p>
+
+              </div>
+
+            </article>
+
+            <article>
+
+              <span class="cap10-p86-context__icon">
+                −
+              </span>
+
+              <div>
+
+                <h3>
+                  Sem dor lombar
+                </h3>
+
+                <p>
+                  Não apresenta dor em flanco ou desconforto à
+                  punho-percussão lombar.
+                </p>
+
+              </div>
+
+            </article>
+
+            <article>
+
+              <span class="cap10-p86-context__icon">
+                C
+              </span>
+
+              <div>
+
+                <h3>
+                  Exposição recente a cateter
+                </h3>
+
+                <p>
+                  O cateter vesical foi retirado aproximadamente
+                  48 horas antes da coleta.
+                </p>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </div>
+
+        <aside class="cap10-p86-reasoning">
+
+          <span
+            class="cap10-p86-reasoning__icon"
+            aria-hidden="true"
+          >
+            ↔
+          </span>
+
+          <div>
+
+            <strong>
+              Integre, não some resultados
+            </strong>
+
+            <p>
+              Piúria, nitrito e crescimento bacteriano descrevem a amostra.
+              A classificação clínica depende da relação desses achados com
+              sinais, sintomas, hospedeiro e circunstâncias da coleta.
+            </p>
+
+          </div>
+
+        </aside>
+
+        <!-- SEGUNDA QUESTÃO -->
+
+        <div class="cap10-p86-question-block">
+
+          <div class="cap10-p86-preceptor">
+
+            <span class="cap10-p86-preceptor__label">
+              Nova pergunta do preceptor
+            </span>
+
+            <p>
+              Após integrar o laudo aos dados da paciente, qual síntese
+              apresenta o raciocínio mais consistente?
+            </p>
+
+          </div>
+
+          <div
+            class="cap10-p86-options"
+            aria-label="Possibilidades de síntese"
+          >
+
+            <button
+              class="cap10-p86-option"
+              type="button"
+              data-p86-question="contexto"
+              data-p86-choice="infeccao"
+            >
+
+              <strong>
+                Síntese A
+              </strong>
+
+              <span>
+                O resultado quantitativo confirma uma infecção,
+                independentemente da apresentação clínica.
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p86-option"
+              type="button"
+              data-p86-question="contexto"
+              data-p86-choice="bacteriuria"
+            >
+
+              <strong>
+                Síntese B
+              </strong>
+
+              <span>
+                Há bacteriúria sem manifestações clínicas atribuíveis ao
+                trato urinário; o resultado não comprova, isoladamente,
+                uma infecção sintomática.
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p86-option"
+              type="button"
+              data-p86-question="contexto"
+              data-p86-choice="contaminacao"
+            >
+
+              <strong>
+                Síntese C
+              </strong>
+
+              <span>
+                A ausência de sintomas confirma que a amostra foi
+                contaminada durante a coleta.
+              </span>
+
+            </button>
+
+          </div>
+
+          <div
+            class="cap10-p86-feedback"
+            id="cap10P86ContextFeedback"
+            aria-live="polite"
+            hidden
+          ></div>
+
+        </div>
+
+        <div class="cap10-p86-actions">
+
+          <button
+            class="cap10-p86-button cap10-p86-button--secondary"
+            type="button"
+            data-p86-next="2"
+          >
+            ← Voltar ao laudo
+          </button>
+
+          <button
+            class="cap10-p86-button cap10-p86-button--primary"
+            id="cap10P86ContinueToDebrief"
+            type="button"
+            data-p86-next="4"
+            hidden
+          >
+            Integrar os conceitos
+            <span aria-hidden="true">→</span>
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- =================================================
+           ETAPA 4 — INTEGRAÇÃO
+           ================================================= -->
+
+      <div
+        class="cap10-p86-stage"
+        data-p86-stage="4"
+        hidden
+      >
+
+        <div class="cap10-p86-stage__heading">
+
+          <span class="cap10-p86-stage__eyebrow">
+            Debriefing
+          </span>
+
+          <h2>
+            Três níveis orientam a interpretação
+          </h2>
+
+          <p>
+            O resultado laboratorial ganha significado quando é relacionado
+            ao paciente e à pergunta clínica.
+          </p>
+
+        </div>
+
+        <div class="cap10-p86-layers">
+
+          <article>
+
+            <span class="cap10-p86-layers__number">
+              1
+            </span>
+
+            <div>
+
+              <span class="cap10-p86-layers__label">
+                Amostra
+              </span>
+
+              <h3>
+                Achado microbiológico
+              </h3>
+
+              <p>
+                A cultura identifica e quantifica o microrganismo presente
+                na amostra analisada.
+              </p>
+
+            </div>
+
+          </article>
+
+          <article>
+
+            <span class="cap10-p86-layers__number">
+              2
+            </span>
+
+            <div>
+
+              <span class="cap10-p86-layers__label">
+                Paciente
+              </span>
+
+              <h3>
+                Evidência clínica
+              </h3>
+
+              <p>
+                Sintomas, sinais, gravidade e características do hospedeiro
+                ajudam a estabelecer a relevância do achado.
+              </p>
+
+            </div>
+
+          </article>
+
+          <article>
+
+            <span class="cap10-p86-layers__number">
+              3
+            </span>
+
+            <div>
+
+              <span class="cap10-p86-layers__label">
+                Integração
+              </span>
+
+              <h3>
+                Significado do resultado
+              </h3>
+
+              <p>
+                O raciocínio relaciona a microbiologia à apresentação
+                clínica e às circunstâncias da coleta.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+        <div class="cap10-p86-debrief">
+
+          <span class="cap10-p86-debrief__label">
+            O que este caso ensina
+          </span>
+
+          <h3>
+            Presença bacteriana e infecção não são sinônimos
+          </h3>
+
+          <p>
+            A bacteriúria descreve a presença de bactérias na urina.
+            Quando não existem sinais ou sintomas atribuíveis ao trato
+            urinário, o achado pode ser compatível com bacteriúria
+            assintomática.
+          </p>
+
+          <p>
+            A ausência de manifestações clínicas também não confirma,
+            automaticamente, contaminação. A interpretação exige considerar
+            a qualidade da amostra, o contexto do paciente e a coerência
+            entre os diferentes dados disponíveis.
+          </p>
+
+        </div>
+
+        <aside class="cap10-p86-essential">
+
+          <strong>
+            Ideia essencial:
+          </strong>
+
+          <span>
+            o laboratório descreve o que foi encontrado na amostra;
+            o raciocínio clínico determina o significado desse achado
+            para o paciente.
+          </span>
+
+        </aside>
+
+        <div class="cap10-p86-actions">
+
+          <button
+            class="cap10-p86-button cap10-p86-button--secondary"
+            type="button"
+            data-p86-restart
+          >
+            ↻ Reiniciar
+          </button>
+
+          <a
+            class="cap10-p86-button cap10-p86-button--primary"
+            href="p87.html"
+          >
+            Próxima simulação
+            <span aria-hidden="true">→</span>
+          </a>
+
+        </div>
 
       </div>
 
     </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p85.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 10 · Página 86 de 89</div>
-  <a class="btn primary" href="p87.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <!-- PAGINAÇÃO -->
+
+    <nav
+      class="pager"
+      aria-label="Paginação"
+    >
+
+      <a
+        class="btn"
+        href="p85.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 10 · Página 86 de 88
+      </div>
+
+      <a
+        class="btn primary"
+        href="p87.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+
+    </nav>
 
   </main>
 
@@ -171,4 +1083,5 @@
   <script src="../../js/capitulo-10.js"></script>
 
 </body>
+
 </html>

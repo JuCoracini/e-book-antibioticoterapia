@@ -1,159 +1,1429 @@
 <!doctype html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Capítulo 10 — Página 88</title>
+  <meta charset="utf-8">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
-  <link rel="stylesheet" href="../../css/base.css" />
-  <link rel="stylesheet" href="../../css/components.css" />
-  <link rel="stylesheet" href="../../css/capitulo-10.css" />
+  <title>
+    Capítulo 10 — Desafio final: resistência não prescreve
+  </title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../../css/base.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../../css/components.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../../css/capitulo-10.css"
+  >
 </head>
 
 <body class="cap10-page88">
 
   <main class="page-shell">
 
+    <!-- CABEÇALHO -->
+
     <header class="page-header">
-      <div class="chapter">Capítulo 10 — Simulação Clínica Integrada em Antibioticoterapia</div>
-      <h1 class="page-title">Síntese da decisão em antibioticoterapia</h1>
+
+      <div class="chapter">
+        Capítulo 10 — Simulação Clínica Integrada em Antibioticoterapia
+      </div>
+
+      <h1 class="page-title">
+        Desafio final — O antibiograma não decide sozinho
+      </h1>
+
     </header>
 
-    <section class="prose" aria-label="Introdução da síntese">
+    <!-- SIMULAÇÃO -->
 
-      <p>
-        As simulações apresentadas neste capítulo não foram construídas para fornecer respostas prontas, mas para evidenciar a natureza dinâmica da decisão clínica em antibioticoterapia.
-      </p>
+    <section
+      class="cap10-p88-simulation"
+      data-cap10-p88
+      aria-labelledby="cap10P88SimulationTitle"
+    >
 
-      <p>
-        Em cada cenário, a conduta inicial foi tomada em um contexto de incerteza. A escolha do tratamento baseou-se na probabilidade etiológica estimada a partir da síndrome clínica, da gravidade da apresentação, das características do hospedeiro e do contexto epidemiológico. À medida que novos dados se tornaram disponíveis — evolução clínica, resultados microbiológicos e perfil de suscetibilidade — a decisão precisou ser reavaliada.
-      </p>
+      <h2
+        class="sr-only"
+        id="cap10P88SimulationTitle"
+      >
+        Desafio integrado sobre Gram-negativos multirresistentes
+      </h2>
 
-      <p>
-        Esse movimento contínuo constitui o núcleo da prática racional em antibioticoterapia.
-      </p>
+      <!-- PROGRESSO -->
 
-      <p class="cap10-p88-intro">
-        O fluxograma a seguir reúne, em sequência lógica, os principais movimentos decisórios discutidos ao longo deste capítulo.
-      </p>
+      <div
+        class="cap10-p88-progress"
+        aria-label="Progresso do desafio"
+      >
 
-    </section>
+        <div
+          class="cap10-p88-progress__item is-active"
+          data-p88-progress="1"
+        >
+          <span>1</span>
+          <small>Alertas</small>
+        </div>
 
-    <section class="cap10-p88-flow" data-cap10-p88-flow aria-label="Fluxograma de decisão em antibioticoterapia">
+        <div
+          class="cap10-p88-progress__line"
+          aria-hidden="true"
+        ></div>
 
-      <div class="cap10-p88-flow__head">
-        <p class="cap10-p88-flow__eyebrow">Síntese operacional</p>
-        <h2 class="cap10-p88-flow__title">Como pensar a decisão em antibioticoterapia</h2>
-        <p class="cap10-p88-flow__subtitle">
-          O objetivo não é memorizar um algoritmo rígido, mas visualizar a sequência de perguntas clínicas que organiza uma prescrição racional.
-        </p>
-      </div>
+        <div
+          class="cap10-p88-progress__item"
+          data-p88-progress="2"
+        >
+          <span>2</span>
+          <small>Interpretar</small>
+        </div>
 
-      <div class="cap10-p88-flowchart">
+        <div
+          class="cap10-p88-progress__line"
+          aria-hidden="true"
+        ></div>
 
-        <button class="cap10-p88-node is-active" type="button" data-p88-node="plausibilidade">
-          <span class="cap10-p88-node__step">1</span>
-          <span class="cap10-p88-node__label">Há plausibilidade de infecção bacteriana?</span>
-        </button>
+        <div
+          class="cap10-p88-progress__item"
+          data-p88-progress="3"
+        >
+          <span>3</span>
+          <small>Integrar</small>
+        </div>
 
-        <span class="cap10-p88-arrow" aria-hidden="true">↓</span>
+        <div
+          class="cap10-p88-progress__line"
+          aria-hidden="true"
+        ></div>
 
-        <button class="cap10-p88-node" type="button" data-p88-node="gravidade">
-          <span class="cap10-p88-node__step">2</span>
-          <span class="cap10-p88-node__label">Qual é a gravidade do quadro e a vulnerabilidade do hospedeiro?</span>
-        </button>
-
-        <span class="cap10-p88-arrow" aria-hidden="true">↓</span>
-
-        <button class="cap10-p88-node" type="button" data-p88-node="inicio">
-          <span class="cap10-p88-node__step">3</span>
-          <span class="cap10-p88-node__label">É necessário iniciar antibacteriano agora?</span>
-        </button>
-
-        <span class="cap10-p88-arrow" aria-hidden="true">↓</span>
-
-        <button class="cap10-p88-node" type="button" data-p88-node="cobertura">
-          <span class="cap10-p88-node__step">4</span>
-          <span class="cap10-p88-node__label">Que cobertura inicial é proporcional ao risco microbiológico real?</span>
-        </button>
-
-        <span class="cap10-p88-arrow" aria-hidden="true">↓</span>
-
-        <button class="cap10-p88-node" type="button" data-p88-node="dados">
-          <span class="cap10-p88-node__step">5</span>
-          <span class="cap10-p88-node__label">Quais novos dados clínicos e microbiológicos surgiram?</span>
-        </button>
-
-        <span class="cap10-p88-arrow" aria-hidden="true">↓</span>
-
-        <button class="cap10-p88-node" type="button" data-p88-node="reavaliacao">
-          <span class="cap10-p88-node__step">6</span>
-          <span class="cap10-p88-node__label">A estratégia precisa ser mantida, ajustada, simplificada ou suspensa?</span>
-        </button>
-
-        <span class="cap10-p88-arrow" aria-hidden="true">↓</span>
-
-        <button class="cap10-p88-node" type="button" data-p88-node="impacto">
-          <span class="cap10-p88-node__step">7</span>
-          <span class="cap10-p88-node__label">Qual é o impacto individual e coletivo da decisão tomada?</span>
-        </button>
+        <div
+          class="cap10-p88-progress__item"
+          data-p88-progress="4"
+        >
+          <span>4</span>
+          <small>Concluir</small>
+        </div>
 
       </div>
 
-      <div class="cap10-p88-panel" aria-live="polite">
-        <p class="cap10-p88-panel__eyebrow" id="cap10P88FlowEyebrow">Pergunta decisória em foco</p>
-        <h3 class="cap10-p88-panel__title" id="cap10P88FlowTitle">Há plausibilidade de infecção bacteriana?</h3>
-        <p class="cap10-p88-panel__text" id="cap10P88FlowText">
-          A decisão não começa no antibacteriano. Ela começa na interpretação clínica do caso. Antes de prescrever, é necessário perguntar se há coerência entre síndrome apresentada, achados clínicos e possibilidade real de infecção bacteriana ativa.
+      <!-- =================================================
+           ETAPA 1 — TRÊS ALERTAS
+           ================================================= -->
+
+      <div
+        class="cap10-p88-stage is-active"
+        data-p88-stage="1"
+      >
+
+        <div class="cap10-p88-stage__heading">
+
+          <span class="cap10-p88-stage__eyebrow">
+            Três pacientes · três alertas
+          </span>
+
+          <h2>
+            O laboratório liga para a equipe
+          </h2>
+
+          <p>
+            Cada resultado restringe possibilidades, mas nenhum deles
+            apresenta sozinho uma estratégia completa.
+          </p>
+
+        </div>
+
+        <div class="cap10-p88-alert-preview">
+
+          <!-- PACIENTE E -->
+
+          <article>
+
+            <div class="cap10-p88-alert-preview__header">
+
+              <span class="cap10-p88-alert-preview__letter">
+                E
+              </span>
+
+              <span class="cap10-p88-alert-preview__status">
+                Alerta 1
+              </span>
+
+            </div>
+
+            <span class="cap10-p88-alert-preview__sample">
+              Secreção traqueal
+            </span>
+
+            <h3>
+              <em>Acinetobacter baumannii</em> complex
+            </h3>
+
+            <p>
+              Resistência aos carbapenêmicos identificada no painel inicial.
+            </p>
+
+          </article>
+
+          <!-- PACIENTE F -->
+
+          <article>
+
+            <div class="cap10-p88-alert-preview__header">
+
+              <span class="cap10-p88-alert-preview__letter">
+                F
+              </span>
+
+              <span class="cap10-p88-alert-preview__status">
+                Alerta 2
+              </span>
+
+            </div>
+
+            <span class="cap10-p88-alert-preview__sample">
+              Hemocultura
+            </span>
+
+            <h3>
+              <em>Klebsiella pneumoniae</em>
+            </h3>
+
+            <p>
+              Gene de KPC detectado e apenas amicacina classificada como S
+              no painel apresentado.
+            </p>
+
+          </article>
+
+          <!-- PACIENTE G -->
+
+          <article>
+
+            <div class="cap10-p88-alert-preview__header">
+
+              <span class="cap10-p88-alert-preview__letter">
+                G
+              </span>
+
+              <span class="cap10-p88-alert-preview__status">
+                Alerta 3
+              </span>
+
+            </div>
+
+            <span class="cap10-p88-alert-preview__sample">
+              Hemocultura
+            </span>
+
+            <h3>
+              <em>Pseudomonas aeruginosa</em>
+            </h3>
+
+            <p>
+              Teste fenotípico sugestivo de produção de
+              metalo-β-lactamase.
+            </p>
+
+          </article>
+
+        </div>
+
+        <aside class="cap10-p88-central-question">
+
+          <span
+            class="cap10-p88-central-question__icon"
+            aria-hidden="true"
+          >
+            ?
+          </span>
+
+          <div>
+
+            <span class="cap10-p88-central-question__label">
+              A pergunta que chega com os alertas
+            </span>
+
+            <p>
+              “Devemos pensar em uma droga, polimixina ou associação?”
+            </p>
+
+          </div>
+
+        </aside>
+
+        <aside class="cap10-p88-mission">
+
+          <strong>
+            Sua missão:
+          </strong>
+
+          <span>
+            interpretar o que cada alerta informa, reconhecer seus limites
+            e identificar quais dados ainda precisam entrar no raciocínio.
+          </span>
+
+        </aside>
+
+        <p class="cap10-p88-fictional">
+          Casos e laudos simplificados elaborados para fins educacionais.
+          Não representam recomendação terapêutica.
         </p>
-        <p class="cap10-p88-panel__impact" id="cap10P88FlowImpact">
-          Quando essa etapa é negligenciada, aumenta o risco de tratar colonização, contaminação ou quadros não bacterianos como se fossem infecção verdadeira.
-        </p>
+
+        <div class="cap10-p88-actions">
+
+          <button
+            class="cap10-p88-button cap10-p88-button--primary"
+            type="button"
+            data-p88-next="2"
+          >
+            Examinar os alertas
+            <span aria-hidden="true">→</span>
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- =================================================
+           ETAPA 2 — INTERPRETAÇÃO DOS ALERTAS
+           ================================================= -->
+
+      <div
+        class="cap10-p88-stage"
+        data-p88-stage="2"
+        hidden
+      >
+
+        <div class="cap10-p88-stage__heading">
+
+          <span class="cap10-p88-stage__eyebrow">
+            Central de microbiologia
+          </span>
+
+          <h2>
+            Leia um alerta por vez
+          </h2>
+
+          <p>
+            Observe o que o laudo demonstra e qual pergunta permanece
+            aberta em cada paciente.
+          </p>
+
+        </div>
+
+        <!-- ABAS DOS ALERTAS -->
+
+        <div
+          class="cap10-p88-alert-tabs"
+          role="tablist"
+          aria-label="Alertas microbiológicos"
+        >
+
+          <button
+            class="cap10-p88-alert-tab is-active"
+            id="cap10P88TabCrab"
+            type="button"
+            role="tab"
+            aria-selected="true"
+            aria-controls="cap10P88PanelCrab"
+            data-p88-alert="crab"
+          >
+            <span>Paciente E</span>
+            <strong>CRAB</strong>
+          </button>
+
+          <button
+            class="cap10-p88-alert-tab"
+            id="cap10P88TabKpc"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="cap10P88PanelKpc"
+            data-p88-alert="kpc"
+            tabindex="-1"
+          >
+            <span>Paciente F</span>
+            <strong>KPC</strong>
+          </button>
+
+          <button
+            class="cap10-p88-alert-tab"
+            id="cap10P88TabMbl"
+            type="button"
+            role="tab"
+            aria-selected="false"
+            aria-controls="cap10P88PanelMbl"
+            data-p88-alert="mbl"
+            tabindex="-1"
+          >
+            <span>Paciente G</span>
+            <strong>MBL?</strong>
+          </button>
+
+        </div>
+
+        <div class="cap10-p88-alert-panels">
+
+          <!-- ALERTA CRAB -->
+
+          <article
+            class="cap10-p88-alert-panel is-active"
+            id="cap10P88PanelCrab"
+            role="tabpanel"
+            aria-labelledby="cap10P88TabCrab"
+            data-p88-alert-panel="crab"
+          >
+
+            <div class="cap10-p88-alert-panel__header">
+
+              <div>
+
+                <span class="cap10-p88-alert-panel__eyebrow">
+                  Paciente E · secreção traqueal
+                </span>
+
+                <h3>
+                  <em>Acinetobacter baumannii</em> complex
+                </h3>
+
+              </div>
+
+              <span class="cap10-p88-alert-panel__badge">
+                Resistência aos carbapenêmicos
+              </span>
+
+            </div>
+
+            <div class="cap10-p88-alert-panel__body">
+
+              <div class="cap10-p88-mini-report">
+
+                <div>
+
+                  <span>Meropenem</span>
+
+                  <strong class="cap10-p88-result cap10-p88-result--r">
+                    R
+                  </strong>
+
+                </div>
+
+                <div>
+
+                  <span>Imipenem</span>
+
+                  <strong class="cap10-p88-result cap10-p88-result--r">
+                    R
+                  </strong>
+
+                </div>
+
+                <div>
+
+                  <span>Ciprofloxacino</span>
+
+                  <strong class="cap10-p88-result cap10-p88-result--r">
+                    R
+                  </strong>
+
+                </div>
+
+                <div>
+
+                  <span>Amicacina</span>
+
+                  <strong class="cap10-p88-result cap10-p88-result--r">
+                    R
+                  </strong>
+
+                </div>
+
+              </div>
+
+              <div class="cap10-p88-alert-panel__reading">
+
+                <span>O laudo informa</span>
+
+                <p>
+                  O isolado apresenta resistência aos carbapenêmicos e
+                  opções limitadas no painel inicial.
+                </p>
+
+              </div>
+
+              <div class="cap10-p88-alert-panel__question">
+
+                <span>A pergunta que permanece</span>
+
+                <p>
+                  O crescimento em secreção traqueal representa infecção
+                  ativa, colonização das vias respiratórias ou outro
+                  contexto que precisa ser esclarecido?
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- ALERTA KPC -->
+
+          <article
+            class="cap10-p88-alert-panel"
+            id="cap10P88PanelKpc"
+            role="tabpanel"
+            aria-labelledby="cap10P88TabKpc"
+            data-p88-alert-panel="kpc"
+            hidden
+          >
+
+            <div class="cap10-p88-alert-panel__header">
+
+              <div>
+
+                <span class="cap10-p88-alert-panel__eyebrow">
+                  Paciente F · hemocultura
+                </span>
+
+                <h3>
+                  <em>Klebsiella pneumoniae</em>
+                </h3>
+
+              </div>
+
+              <span class="cap10-p88-alert-panel__badge">
+                KPC detectada
+              </span>
+
+            </div>
+
+            <div class="cap10-p88-alert-panel__body">
+
+              <div class="cap10-p88-mini-report">
+
+                <div>
+
+                  <span>Meropenem</span>
+
+                  <strong class="cap10-p88-result cap10-p88-result--r">
+                    R
+                  </strong>
+
+                </div>
+
+                <div>
+
+                  <span>Cefepima</span>
+
+                  <strong class="cap10-p88-result cap10-p88-result--r">
+                    R
+                  </strong>
+
+                </div>
+
+                <div>
+
+                  <span>Ciprofloxacino</span>
+
+                  <strong class="cap10-p88-result cap10-p88-result--r">
+                    R
+                  </strong>
+
+                </div>
+
+                <div>
+
+                  <span>Amicacina</span>
+
+                  <strong class="cap10-p88-result cap10-p88-result--s">
+                    S
+                  </strong>
+
+                </div>
+
+              </div>
+
+              <div class="cap10-p88-alert-panel__reading">
+
+                <span>O laudo informa</span>
+
+                <p>
+                  Há uma Enterobacterales produtora de KPC. No painel
+                  simplificado apresentado, apenas a amicacina foi
+                  classificada como S.
+                </p>
+
+              </div>
+
+              <div class="cap10-p88-alert-panel__question">
+
+                <span>A pergunta que permanece</span>
+
+                <p>
+                  A categoria S, isoladamente, responde se a exposição
+                  será adequada no foco, se há segurança para o paciente
+                  ou se o painel precisa ser ampliado?
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+          <!-- ALERTA MBL -->
+
+          <article
+            class="cap10-p88-alert-panel"
+            id="cap10P88PanelMbl"
+            role="tabpanel"
+            aria-labelledby="cap10P88TabMbl"
+            data-p88-alert-panel="mbl"
+            hidden
+          >
+
+            <div class="cap10-p88-alert-panel__header">
+
+              <div>
+
+                <span class="cap10-p88-alert-panel__eyebrow">
+                  Paciente G · hemocultura
+                </span>
+
+                <h3>
+                  <em>Pseudomonas aeruginosa</em>
+                </h3>
+
+              </div>
+
+              <span class="cap10-p88-alert-panel__badge">
+                MBL sugestiva
+              </span>
+
+            </div>
+
+            <div class="cap10-p88-alert-panel__body">
+
+              <div class="cap10-p88-mini-report">
+
+                <div>
+
+                  <span>Meropenem</span>
+
+                  <strong class="cap10-p88-result cap10-p88-result--r">
+                    R
+                  </strong>
+
+                </div>
+
+                <div>
+
+                  <span>Imipenem</span>
+
+                  <strong class="cap10-p88-result cap10-p88-result--r">
+                    R
+                  </strong>
+
+                </div>
+
+                <div>
+
+                  <span>Ceftazidima</span>
+
+                  <strong class="cap10-p88-result cap10-p88-result--r">
+                    R
+                  </strong>
+
+                </div>
+
+                <div>
+
+                  <span>Cefepima</span>
+
+                  <strong class="cap10-p88-result cap10-p88-result--r">
+                    R
+                  </strong>
+
+                </div>
+
+              </div>
+
+              <div class="cap10-p88-phenotypic-test">
+
+                <span>Teste complementar</span>
+
+                <strong>
+                  Sinergismo observado na presença de EDTA
+                </strong>
+
+                <p>
+                  Resultado fenotípico sugestivo de produção de
+                  metalo-β-lactamase. Confirmação molecular pendente.
+                </p>
+
+              </div>
+
+              <div class="cap10-p88-alert-panel__question">
+
+                <span>A pergunta que permanece</span>
+
+                <p>
+                  Qual é o mecanismo confirmado, quais agentes foram
+                  adequadamente testados e como o provável foco modifica
+                  a interpretação do painel?
+                </p>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+        <div class="cap10-p88-alert-counter">
+
+          <span>
+            Alertas examinados
+          </span>
+
+          <strong
+            id="cap10P88AlertCounter"
+            aria-live="polite"
+          >
+            1 de 3
+          </strong>
+
+        </div>
+
+        <!-- QUESTÃO DE INTERPRETAÇÃO -->
+
+        <div class="cap10-p88-question-block">
+
+          <div class="cap10-p88-preceptor">
+
+            <span class="cap10-p88-preceptor__label">
+              Pergunta do preceptor
+            </span>
+
+            <p>
+              Qual conclusão pode ser aplicada aos três alertas?
+            </p>
+
+          </div>
+
+          <div
+            class="cap10-p88-options"
+            aria-label="Possibilidades de interpretação"
+          >
+
+            <button
+              class="cap10-p88-option"
+              type="button"
+              data-p88-question="alertas"
+              data-p88-choice="prescreve"
+            >
+
+              <strong>
+                Interpretação A
+              </strong>
+
+              <span>
+                A identificação do mecanismo de resistência define
+                automaticamente uma estratégia terapêutica específica.
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p88-option"
+              type="button"
+              data-p88-question="alertas"
+              data-p88-choice="restricoes"
+            >
+
+              <strong>
+                Interpretação B
+              </strong>
+
+              <span>
+                O laboratório demonstra mecanismos e restrições, mas a
+                estratégia depende da integração com dados clínicos,
+                farmacológicos e de segurança.
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p88-option"
+              type="button"
+              data-p88-question="alertas"
+              data-p88-choice="unico-s"
+            >
+
+              <strong>
+                Interpretação C
+              </strong>
+
+              <span>
+                Quando apenas um agente é classificado como S, ele deve
+                ser automaticamente utilizado de forma isolada.
+              </span>
+
+            </button>
+
+          </div>
+
+          <div
+            class="cap10-p88-feedback"
+            id="cap10P88AlertFeedback"
+            aria-live="polite"
+            hidden
+          ></div>
+
+        </div>
+
+        <div class="cap10-p88-actions">
+
+          <button
+            class="cap10-p88-button cap10-p88-button--secondary"
+            type="button"
+            data-p88-next="1"
+          >
+            ← Voltar
+          </button>
+
+          <button
+            class="cap10-p88-button cap10-p88-button--primary"
+            id="cap10P88ContinueToIntegration"
+            type="button"
+            data-p88-next="3"
+            hidden
+          >
+            Integrar os dados
+            <span aria-hidden="true">→</span>
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- =================================================
+           ETAPA 3 — DADOS PARA A DECISÃO
+           ================================================= -->
+
+      <div
+        class="cap10-p88-stage"
+        data-p88-stage="3"
+        hidden
+      >
+
+        <div class="cap10-p88-stage__heading">
+
+          <span class="cap10-p88-stage__eyebrow">
+            Antes de comparar estratégias
+          </span>
+
+          <h2>
+            O que ainda precisa entrar no raciocínio?
+          </h2>
+
+          <p>
+            Selecione os cinco eixos necessários antes de discutir
+            monoterapia, associação ou uso de agentes de maior toxicidade.
+          </p>
+
+        </div>
+
+        <aside class="cap10-p88-decision-question">
+
+          <span
+            class="cap10-p88-decision-question__icon"
+            aria-hidden="true"
+          >
+            ?
+          </span>
+
+          <div>
+
+            <span>
+              Uma droga? Polimixina? Associação?
+            </span>
+
+            <p>
+              A pergunta é pertinente, mas não pode ser respondida apenas
+              com o nome da bactéria ou com a contagem de resultados R.
+            </p>
+
+          </div>
+
+        </aside>
+
+        <div class="cap10-p88-factors">
+
+          <div class="cap10-p88-factors__header">
+
+            <div>
+
+              <span>
+                Construa a análise
+              </span>
+
+              <strong>
+                Eixos da decisão
+              </strong>
+
+            </div>
+
+            <div
+              class="cap10-p88-factors__counter"
+              id="cap10P88FactorCounter"
+              aria-live="polite"
+            >
+              0 de 5
+            </div>
+
+          </div>
+
+          <div
+            class="cap10-p88-factor-grid"
+            aria-label="Fatores para integração"
+          >
+
+            <button
+              class="cap10-p88-factor"
+              type="button"
+              data-p88-factor="infeccao"
+              data-p88-essential="true"
+              aria-pressed="false"
+            >
+
+              <span class="cap10-p88-factor__number">
+                1
+              </span>
+
+              <span class="cap10-p88-factor__content">
+
+                <strong>
+                  Infecção e amostra
+                </strong>
+
+                <small>
+                  Relevância clínica, qualidade da amostra e possibilidade
+                  de colonização.
+                </small>
+
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p88-factor"
+              type="button"
+              data-p88-factor="foco"
+              data-p88-essential="true"
+              aria-pressed="false"
+            >
+
+              <span class="cap10-p88-factor__number">
+                2
+              </span>
+
+              <span class="cap10-p88-factor__content">
+
+                <strong>
+                  Foco e gravidade
+                </strong>
+
+                <small>
+                  Local da infecção, extensão, estabilidade e necessidade
+                  de controle do foco.
+                </small>
+
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p88-factor"
+              type="button"
+              data-p88-factor="microbiologia"
+              data-p88-essential="true"
+              aria-pressed="false"
+            >
+
+              <span class="cap10-p88-factor__number">
+                3
+              </span>
+
+              <span class="cap10-p88-factor__content">
+
+                <strong>
+                  Microbiologia completa
+                </strong>
+
+                <small>
+                  MIC, método utilizado, painel ampliado e confirmação do
+                  mecanismo.
+                </small>
+
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p88-factor"
+              type="button"
+              data-p88-factor="pkpd"
+              data-p88-essential="true"
+              aria-pressed="false"
+            >
+
+              <span class="cap10-p88-factor__number">
+                4
+              </span>
+
+              <span class="cap10-p88-factor__content">
+
+                <strong>
+                  Exposição e PK/PD
+                </strong>
+
+                <small>
+                  Possibilidade de alcançar exposição adequada no provável
+                  foco infeccioso.
+                </small>
+
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p88-factor"
+              type="button"
+              data-p88-factor="seguranca"
+              data-p88-essential="true"
+              aria-pressed="false"
+            >
+
+              <span class="cap10-p88-factor__number">
+                5
+              </span>
+
+              <span class="cap10-p88-factor__content">
+
+                <strong>
+                  Segurança e evidências
+                </strong>
+
+                <small>
+                  Função renal, toxicidade, interações, evidências e
+                  recursos disponíveis.
+                </small>
+
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p88-factor cap10-p88-factor--shortcut"
+              type="button"
+              data-p88-factor="atalho"
+              data-p88-essential="false"
+              aria-pressed="false"
+            >
+
+              <span class="cap10-p88-factor__number">
+                !
+              </span>
+
+              <span class="cap10-p88-factor__content">
+
+                <strong>
+                  Atalho pelo nome
+                </strong>
+
+                <small>
+                  Escolher uma estratégia somente porque a bactéria é
+                  conhecida como multirresistente.
+                </small>
+
+              </span>
+
+            </button>
+
+          </div>
+
+          <div
+            class="cap10-p88-factor-feedback"
+            id="cap10P88FactorFeedback"
+            aria-live="polite"
+            hidden
+          ></div>
+
+        </div>
+
+        <aside
+          class="cap10-p88-consult"
+          aria-label="Conteúdos para consulta"
+        >
+
+          <div class="cap10-p88-consult__heading">
+
+            <span aria-hidden="true">
+              ↗
+            </span>
+
+            <div>
+
+              <strong>
+                Consulte o e-book se precisar
+              </strong>
+
+              <small>
+                Utilize a busca para retomar os fundamentos.
+              </small>
+
+            </div>
+
+          </div>
+
+          <div class="cap10-p88-consult__topics">
+
+            <span>Colonização × infecção</span>
+            <span>Antibiograma e MIC</span>
+            <span>Mecanismos de resistência</span>
+            <span>PK/PD e penetração</span>
+            <span>Associação terapêutica</span>
+            <span>Efeitos adversos</span>
+
+          </div>
+
+        </aside>
+
+        <div class="cap10-p88-actions">
+
+          <button
+            class="cap10-p88-button cap10-p88-button--secondary"
+            type="button"
+            data-p88-next="2"
+          >
+            ← Voltar aos alertas
+          </button>
+
+          <button
+            class="cap10-p88-button cap10-p88-button--primary"
+            id="cap10P88ContinueToDebrief"
+            type="button"
+            data-p88-next="4"
+            hidden
+          >
+            Concluir o desafio
+            <span aria-hidden="true">→</span>
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- =================================================
+           ETAPA 4 — DEBRIEFING FINAL
+           ================================================= -->
+
+      <div
+        class="cap10-p88-stage"
+        data-p88-stage="4"
+        hidden
+      >
+
+        <div class="cap10-p88-stage__heading">
+
+          <span class="cap10-p88-stage__eyebrow">
+            Debriefing final
+          </span>
+
+          <h2>
+            O mecanismo restringe, mas não prescreve
+          </h2>
+
+          <p>
+            Releia o principal aprendizado deixado por cada alerta.
+          </p>
+
+        </div>
+
+        <div class="cap10-p88-case-lessons">
+
+          <article>
+
+            <span class="cap10-p88-case-lessons__letter">
+              E
+            </span>
+
+            <div>
+
+              <span class="cap10-p88-case-lessons__label">
+                CRAB
+              </span>
+
+              <h3>
+                Primeiro, confirme a relevância clínica
+              </h3>
+
+              <p>
+                Um isolado respiratório pode representar diferentes
+                relações com o hospedeiro. O perfil de resistência não
+                substitui a avaliação de infecção.
+              </p>
+
+            </div>
+
+          </article>
+
+          <article>
+
+            <span class="cap10-p88-case-lessons__letter">
+              F
+            </span>
+
+            <div>
+
+              <span class="cap10-p88-case-lessons__label">
+                KPC
+              </span>
+
+              <h3>
+                A categoria S não escolhe sozinha
+              </h3>
+
+              <p>
+                Suscetibilidade laboratorial precisa ser relacionada à
+                exposição, ao foco, à segurança e às alternativas
+                adequadamente testadas.
+              </p>
+
+            </div>
+
+          </article>
+
+          <article>
+
+            <span class="cap10-p88-case-lessons__letter">
+              G
+            </span>
+
+            <div>
+
+              <span class="cap10-p88-case-lessons__label">
+                MBL sugestiva
+              </span>
+
+              <h3>
+                Fenótipo sugestivo não é confirmação definitiva
+              </h3>
+
+              <p>
+                O resultado com EDTA orienta a investigação do mecanismo,
+                mas deve ser interpretado com o método utilizado, o painel
+                completo e, quando disponível, a confirmação.
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+        <div class="cap10-p88-reasoning-path">
+
+          <div class="cap10-p88-reasoning-path__header">
+
+            <span>
+              Processo integrado
+            </span>
+
+            <h3>
+              Da amostra à estratégia
+            </h3>
+
+          </div>
+
+          <div class="cap10-p88-reasoning-path__steps">
+
+            <article>
+
+              <span>1</span>
+
+              <div>
+
+                <strong>
+                  Validar
+                </strong>
+
+                <p>
+                  Há infecção e o isolado é clinicamente relevante?
+                </p>
+
+              </div>
+
+            </article>
+
+            <article>
+
+              <span>2</span>
+
+              <div>
+
+                <strong>
+                  Interpretar
+                </strong>
+
+                <p>
+                  O que o mecanismo e o teste de suscetibilidade demonstram?
+                </p>
+
+              </div>
+
+            </article>
+
+            <article>
+
+              <span>3</span>
+
+              <div>
+
+                <strong>
+                  Integrar
+                </strong>
+
+                <p>
+                  Qual exposição é possível no foco e quais riscos existem?
+                </p>
+
+              </div>
+
+            </article>
+
+            <article>
+
+              <span>4</span>
+
+              <div>
+
+                <strong>
+                  Fundamentar
+                </strong>
+
+                <p>
+                  Quais evidências sustentam a estratégia considerada?
+                </p>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </div>
+
+        <aside class="cap10-p88-final-message">
+
+          <span class="cap10-p88-final-message__label">
+            Encerramento do capítulo
+          </span>
+
+          <p>
+            A decisão em antibioticoterapia não nasce de uma resposta
+            isolada. Ela resulta da integração entre paciente, provável
+            foco infeccioso, microbiologia, exposição, segurança,
+            evidências e reavaliação.
+          </p>
+
+        </aside>
+
+        <blockquote class="cap10-p88-essential">
+
+          O mecanismo de resistência restringe possibilidades, mas não
+          prescreve o tratamento.
+
+        </blockquote>
+
+        <div class="cap10-p88-actions">
+
+          <button
+            class="cap10-p88-button cap10-p88-button--secondary"
+            type="button"
+            data-p88-restart
+          >
+            ↻ Reiniciar desafio
+          </button>
+
+          <a
+            class="cap10-p88-button cap10-p88-button--primary"
+            href="../final/sobre-os-autores.html"
+          >
+            Encerrar o e-book
+            <span aria-hidden="true">→</span>
+          </a>
+
+        </div>
+
       </div>
 
     </section>
 
-    <section class="prose" aria-label="Síntese final">
+    <!-- PAGINAÇÃO -->
 
-      <p>
-        Iniciar antibacterianos quando há risco significativo de infecção grave é fundamental para reduzir a probabilidade de inadequação terapêutica precoce. Da mesma forma, ajustar o tratamento quando o agente etiológico é identificado ou quando a probabilidade de infecção diminui representa aplicação consistente dos princípios discutidos ao longo deste livro.
-      </p>
+    <nav
+      class="pager"
+      aria-label="Paginação"
+    >
 
-      <p>
-        A manutenção automática de decisões iniciais, sem integração de novos dados clínicos e laboratoriais, transforma uma estratégia provisória em erro persistente.
-      </p>
+      <a
+        class="btn"
+        href="p87.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
 
-      <p>
-        A antibioticoterapia não se resume à escolha de um fármaco. Ela resulta da integração entre microbiologia, farmacologia, fisiopatologia e contexto clínico.
-      </p>
+      <div class="center">
+        Capítulo 10 · Página 88 de 88
+      </div>
 
-      <p>
-        Cada prescrição exerce impacto não apenas sobre o paciente individual, mas também sobre o ecossistema microbiológico no qual ele está inserido. O uso inadequado de antibacterianos contribui para a seleção de microrganismos resistentes e compromete a eficácia futura dessas terapias.
-      </p>
+      <a
+        class="btn primary"
+        href="../final/sobre-os-autores.html"
+        aria-label="Ir para a página sobre os autores"
+      >
+        Próxima →
+      </a>
 
-      <p>
-        A competência em antibioticoterapia manifesta-se quando o profissional reconhece que decidir não é um ato isolado, mas um processo que envolve iniciar, observar, interpretar, ajustar e, sempre que possível, simplificar.
-      </p>
-
-      <p class="cap10-p88-closing">
-        A prática clínica continuará a apresentar incertezas. O objetivo da formação médica não é eliminá-las, mas aprender a administrá-las com método, conhecimento científico e responsabilidade coletiva.
-      </p>
-
-    </section>
-
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p87.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 10 · Página 88 de 88</div>
-<a class="btn primary" href="../final/sobre-os-autores.html" aria-label="Ir para a página sobre os autores">Próxima →</a>
-</nav>
-
-
+    </nav>
 
   </main>
 
   <script src="../../js/app.js"></script>
   <script src="../../js/capitulo-10.js"></script>
+
 </body>
+
 </html>

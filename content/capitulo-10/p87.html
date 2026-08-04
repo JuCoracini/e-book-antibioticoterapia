@@ -1,173 +1,1052 @@
 <!doctype html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Capítulo 10 — Página 87</title>
+  <meta charset="utf-8">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
-  <link rel="stylesheet" href="../../css/base.css" />
-  <link rel="stylesheet" href="../../css/components.css" />
-  <link rel="stylesheet" href="../../css/capitulo-10.css" />
+  <title>
+    Capítulo 10 — Simulação 5: alta segura
+  </title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../../css/base.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../../css/components.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../../css/capitulo-10.css"
+  >
 </head>
 
 <body class="cap10-page87">
 
   <main class="page-shell">
 
+    <!-- CABEÇALHO -->
+
     <header class="page-header">
-      <div class="chapter">Capítulo 10 — Simulação Clínica Integrada</div>
-      <h1 class="page-title">Simulação 4 — Tempo e ajuste responsável</h1>
+
+      <div class="chapter">
+        Capítulo 10 — Simulação Clínica Integrada em Antibioticoterapia
+      </div>
+
+      <h1 class="page-title">
+        Simulação 5 — Alta segura: o paciente compreendeu?
+      </h1>
+
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <!-- SIMULAÇÃO -->
 
-      <p>
-        Homem, 55 anos, em acompanhamento por doença hematológica, encontra-se em período de neutropenia profunda após tratamento recente.
-      </p>
+    <section
+      class="cap10-p87-simulation"
+      data-cap10-p87
+      aria-labelledby="cap10P87SimulationTitle"
+    >
 
-      <p>
-        Evolui com febre, taquicardia e sinais de risco infeccioso sistêmico, sem foco clínico evidente ao exame inicial.
-      </p>
+      <h2
+        class="sr-only"
+        id="cap10P87SimulationTitle"
+      >
+        Simulação sobre comunicação segura na alta hospitalar
+      </h2>
 
-      <p>
-        Culturas são coletadas imediatamente.
-      </p>
+      <!-- PROGRESSO -->
 
-      <p>
-        Neste cenário, a ausência de um foco infeccioso definido não reduz a probabilidade de bacteremia. A decisão inicial precisa considerar o risco do atraso terapêutico em um hospedeiro altamente vulnerável.
-      </p>
+      <div
+        class="cap10-p87-progress"
+        aria-label="Progresso da simulação"
+      >
 
-    </section>
+        <div
+          class="cap10-p87-progress__item is-active"
+          data-p87-progress="1"
+        >
+          <span>1</span>
+          <small>Encontro</small>
+        </div>
 
-    <section class="cap10-p87-context" aria-label="Contexto clínico da decisão">
-      <p class="cap10-p87-context__line">
-        Em um hospedeiro de alto risco, o tempo de início da cobertura adequada tem peso decisivo. Depois, a persistência febril precisa ser reinterpretada com critério e não apenas com ampliação automática.
-      </p>
-    </section>
+        <div
+          class="cap10-p87-progress__line"
+          aria-hidden="true"
+        ></div>
 
-    <section class="cap10-p87-sim" data-cap10-p87>
+        <div
+          class="cap10-p87-progress__item"
+          data-p87-progress="2"
+        >
+          <span>2</span>
+          <small>Responder</small>
+        </div>
 
-      <div class="cap10-p87-step is-active" data-p87-step="1">
+        <div
+          class="cap10-p87-progress__line"
+          aria-hidden="true"
+        ></div>
 
-        <p class="cap10-p87-question">
-          Diante desse contexto, qual princípio deve orientar a decisão inicial?
-        </p>
+        <div
+          class="cap10-p87-progress__item"
+          data-p87-progress="3"
+        >
+          <span>3</span>
+          <small>Orientar</small>
+        </div>
 
-        <div class="cap10-p87-options">
-          <button class="cap10-p87-option" type="button" data-p87-choice="aguardar">
-            <strong>Aguardar os resultados microbiológicos</strong>
-            <span>Posterga a estratégia terapêutica até que a confirmação laboratorial esteja disponível.</span>
-            <em class="cap10-p87-optionTag cap10-p87-optionTag--error">Risco de atraso crítico</em>
-          </button>
+        <div
+          class="cap10-p87-progress__line"
+          aria-hidden="true"
+        ></div>
 
-          <button class="cap10-p87-option cap10-p87-option--recommended" type="button" data-p87-choice="iniciar">
-            <strong>Iniciar prontamente cobertura adequada após a coleta</strong>
-            <span>Reconhece que a vulnerabilidade do hospedeiro reduz a tolerância ao atraso terapêutico.</span>
-            <em class="cap10-p87-optionTag cap10-p87-optionTag--success">Conduta mais adequada</em>
-          </button>
-
-          <button class="cap10-p87-option" type="button" data-p87-choice="observar">
-            <strong>Observar por mais algumas horas antes de decidir</strong>
-            <span>Adia a intervenção em um contexto de alto risco sistêmico.</span>
-            <em class="cap10-p87-optionTag cap10-p87-optionTag--warning">Espera clinicamente arriscada</em>
-          </button>
+        <div
+          class="cap10-p87-progress__item"
+          data-p87-progress="4"
+        >
+          <span>4</span>
+          <small>Confirmar</small>
         </div>
 
       </div>
 
-      <div class="cap10-p87-step" data-p87-step="2" hidden>
+      <!-- =================================================
+           ETAPA 1 — ENCONTRO
+           ================================================= -->
 
-        <div class="cap10-p87-feedback" id="cap10P87Feedback"></div>
+      <div
+        class="cap10-p87-stage is-active"
+        data-p87-stage="1"
+      >
 
-        <button class="cap10-p87-next" type="button" data-p87-next="3">
-          Continuar
-        </button>
+        <div class="cap10-p87-stage__heading">
 
-      </div>
+          <span class="cap10-p87-stage__eyebrow">
+            Novo caso · momento da alta
+          </span>
 
-      <div class="cap10-p87-step" data-p87-step="3" hidden>
+          <h2>
+            A prescrição está pronta. A orientação também está?
+          </h2>
 
-        <p>
-          Após 48 horas de tratamento, o paciente permanece febril, porém mantém estabilidade clínica e não surgem novos sinais de deterioração.
+          <p>
+            Observe o que o paciente diz antes de iniciar sua explicação.
+          </p>
+
+        </div>
+
+        <article class="cap10-p87-case-card">
+
+          <div class="cap10-p87-case-card__header">
+
+            <span
+              class="cap10-p87-case-card__letter"
+              aria-hidden="true"
+            >
+              D
+            </span>
+
+            <div>
+
+              <span class="cap10-p87-case-card__label">
+                Paciente D
+              </span>
+
+              <h3>
+                Preparação para a alta hospitalar
+              </h3>
+
+            </div>
+
+          </div>
+
+          <div class="cap10-p87-case-card__body">
+
+            <p>
+              Homem de 48 anos está clinicamente estável após melhora
+              de um quadro infeccioso. A equipe já definiu a continuidade
+              do tratamento por via oral em casa.
+            </p>
+
+            <p>
+              A prescrição foi entregue, mas o paciente ainda não recebeu
+              uma orientação estruturada sobre o uso seguro do medicamento.
+            </p>
+
+          </div>
+
+          <div class="cap10-p87-case-card__status">
+
+            <div>
+
+              <span>Situação atual</span>
+
+              <strong>
+                Alta hospitalar
+              </strong>
+
+            </div>
+
+            <div>
+
+              <span>Estratégia definida</span>
+
+              <strong>
+                Continuidade por via oral
+              </strong>
+
+            </div>
+
+            <div>
+
+              <span>Desafio</span>
+
+              <strong>
+                Comunicação e segurança
+              </strong>
+
+            </div>
+
+          </div>
+
+        </article>
+
+        <!-- FALA DO PACIENTE -->
+
+        <blockquote class="cap10-p87-patient-speech">
+
+          <span
+            class="cap10-p87-patient-speech__avatar"
+            aria-hidden="true"
+          >
+            D
+          </span>
+
+          <div>
+
+            <span class="cap10-p87-patient-speech__label">
+              Paciente
+            </span>
+
+            <p>
+              “Quando eu estiver me sentindo melhor, posso parar de tomar?
+              Pensei em guardar os comprimidos que sobrarem para usar se
+              isso acontecer novamente.”
+            </p>
+
+          </div>
+
+        </blockquote>
+
+        <aside class="cap10-p87-mission">
+
+          <span
+            class="cap10-p87-mission__icon"
+            aria-hidden="true"
+          >
+            ?
+          </span>
+
+          <div>
+
+            <span class="cap10-p87-mission__label">
+              Sua missão
+            </span>
+
+            <p>
+              Reconheça as dúvidas do paciente, organize uma orientação
+              compreensível e confirme o que ele entendeu antes da alta.
+            </p>
+
+          </div>
+
+        </aside>
+
+        <p class="cap10-p87-fictional">
+          Caso clínico elaborado para fins educacionais.
         </p>
 
-        <p>
-          As culturas permanecem negativas até o momento.
-        </p>
+        <div class="cap10-p87-actions">
 
-        <p>
-          Agora, a questão já não é apenas quando iniciar, mas como interpretar a persistência da febre em um paciente com neutropenia profunda.
-        </p>
-
-        <p class="cap10-p87-question">
-          Qual leitura é mais coerente com esse momento do caso?
-        </p>
-
-        <div class="cap10-p87-options">
-          <button class="cap10-p87-option" type="button" data-p87-choice="falha-automatica">
-            <strong>Febre persistente confirma falha terapêutica</strong>
-            <span>Transforma a persistência febril isolada em indicação automática de escalada do espectro.</span>
-            <em class="cap10-p87-optionTag cap10-p87-optionTag--warning">Interpretação precipitada</em>
+          <button
+            class="cap10-p87-button cap10-p87-button--primary"
+            type="button"
+            data-p87-next="2"
+          >
+            Iniciar a conversa
+            <span aria-hidden="true">→</span>
           </button>
 
-          <button class="cap10-p87-option cap10-p87-option--recommended" type="button" data-p87-choice="reavaliar-contexto">
-            <strong>Interpretar a febre junto da evolução clínica global</strong>
-            <span>Integra estabilidade, microbiologia disponível e contexto do hospedeiro antes de mudar a estratégia.</span>
-            <em class="cap10-p87-optionTag cap10-p87-optionTag--success">Leitura mais coerente</em>
-          </button>
-
-          <button class="cap10-p87-option" type="button" data-p87-choice="associar-rotina">
-            <strong>Associar múltiplos agentes de rotina</strong>
-            <span>Acrescenta cobertura sem novo achado clínico ou microbiológico que a sustente.</span>
-            <em class="cap10-p87-optionTag cap10-p87-optionTag--error">Exposição excessiva</em>
-          </button>
         </div>
 
       </div>
 
-      <div class="cap10-p87-step" data-p87-step="4" hidden>
+      <!-- =================================================
+           ETAPA 2 — PRIMEIRA RESPOSTA
+           ================================================= -->
 
-        <div class="cap10-p87-feedback" id="cap10P87FeedbackFinal"></div>
+      <div
+        class="cap10-p87-stage"
+        data-p87-stage="2"
+        hidden
+      >
 
-        <button class="cap10-p87-next" type="button" data-p87-next="5">
-          Continuar
-        </button>
+        <div class="cap10-p87-stage__heading">
+
+          <span class="cap10-p87-stage__eyebrow">
+            Primeira resposta
+          </span>
+
+          <h2>
+            Como iniciar essa orientação?
+          </h2>
+
+          <p>
+            A forma como a conversa começa pode facilitar ou dificultar
+            a participação do paciente.
+          </p>
+
+        </div>
+
+        <div class="cap10-p87-conversation">
+
+          <div class="cap10-p87-conversation__patient">
+
+            <span aria-hidden="true">
+              D
+            </span>
+
+            <p>
+              “Se eu melhorar antes, acho que não preciso continuar.
+              Posso guardar o restante, não posso?”
+            </p>
+
+          </div>
+
+          <div
+            class="cap10-p87-conversation__prompt"
+            aria-hidden="true"
+          >
+            Sua resposta
+          </div>
+
+        </div>
+
+        <div class="cap10-p87-question-block">
+
+          <div class="cap10-p87-preceptor">
+
+            <span class="cap10-p87-preceptor__label">
+              Escolha uma forma de iniciar
+            </span>
+
+            <p>
+              Qual resposta favorece uma comunicação mais clara,
+              respeitosa e segura?
+            </p>
+
+          </div>
+
+          <div
+            class="cap10-p87-options"
+            aria-label="Possibilidades de resposta"
+          >
+
+            <button
+              class="cap10-p87-option"
+              type="button"
+              data-p87-question="resposta"
+              data-p87-choice="ordem"
+            >
+
+              <strong>
+                Resposta A
+              </strong>
+
+              <span>
+                “Não pode fazer isso. Basta seguir exatamente o que está
+                escrito na receita.”
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p87-option"
+              type="button"
+              data-p87-question="resposta"
+              data-p87-choice="tecnica"
+            >
+
+              <strong>
+                Resposta B
+              </strong>
+
+              <span>
+                “A interrupção modifica a exposição farmacocinética e
+                farmacodinâmica e pode favorecer pressão seletiva.”
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p87-option"
+              type="button"
+              data-p87-question="resposta"
+              data-p87-choice="dialogo"
+            >
+
+              <strong>
+                Resposta C
+              </strong>
+
+              <span>
+                “É importante conversarmos sobre isso. Posso explicar
+                por quanto tempo o medicamento foi prescrito e por que
+                você não deve alterar ou reutilizar o tratamento por
+                conta própria?”
+              </span>
+
+            </button>
+
+          </div>
+
+          <div
+            class="cap10-p87-feedback"
+            id="cap10P87ResponseFeedback"
+            aria-live="polite"
+            hidden
+          ></div>
+
+        </div>
+
+        <div class="cap10-p87-actions">
+
+          <button
+            class="cap10-p87-button cap10-p87-button--secondary"
+            type="button"
+            data-p87-next="1"
+          >
+            ← Voltar
+          </button>
+
+          <button
+            class="cap10-p87-button cap10-p87-button--primary"
+            id="cap10P87ContinueToOrientation"
+            type="button"
+            data-p87-next="3"
+            hidden
+          >
+            Organizar a orientação
+            <span aria-hidden="true">→</span>
+          </button>
+
+        </div>
 
       </div>
 
-      <div class="cap10-p87-step" data-p87-step="5" hidden>
+      <!-- =================================================
+           ETAPA 3 — ORGANIZAÇÃO DA ORIENTAÇÃO
+           ================================================= -->
 
-        <p class="cap10-p87-final">
-          Em cenários de alto risco, iniciar precocemente é essencial. Ampliar automaticamente depois, não.
-        </p>
+      <div
+        class="cap10-p87-stage"
+        data-p87-stage="3"
+        hidden
+      >
 
-        <p class="cap10-p87-final-sub">
-          A febre em neutropenia profunda exige resposta rápida, mas a persistência febril isolada não substitui a reavaliação clínica estruturada.
-        </p>
+        <div class="cap10-p87-stage__heading">
 
-        <p class="cap10-p87-final-sub">
-          A decisão racional combina tempo de início adequado, cobertura proporcional ao risco e reinterpretação contínua diante da evolução e dos dados microbiológicos.
-        </p>
+          <span class="cap10-p87-stage__eyebrow">
+            Construção da orientação
+          </span>
 
-        <div class="cap10-p87-insight" id="cap10P87Insight">
-          Urgência inicial e precisão subsequente não são princípios opostos. Em antibioticoterapia racional, a rapidez do início precisa ser acompanhada pela capacidade de reavaliar sem transformar febre persistente em gatilho automático para escalada terapêutica.
+          <h2>
+            O que não pode faltar nessa conversa?
+          </h2>
+
+          <p>
+            Selecione os quatro temas essenciais para uma orientação
+            segura antes da alta.
+          </p>
+
         </div>
 
-        <p class="cap10-p87-highlight">
-          Em antibioticoterapia, urgência inicial e precisão subsequente precisam caminhar juntas.
-        </p>
+        <div class="cap10-p87-orientation">
+
+          <div class="cap10-p87-orientation__header">
+
+            <div>
+
+              <span class="cap10-p87-orientation__label">
+                Sua seleção
+              </span>
+
+              <strong>
+                Temas essenciais
+              </strong>
+
+            </div>
+
+            <div
+              class="cap10-p87-orientation__counter"
+              id="cap10P87TopicCounter"
+              aria-live="polite"
+            >
+              0 de 4
+            </div>
+
+          </div>
+
+          <div
+            class="cap10-p87-topic-grid"
+            aria-label="Temas para orientação"
+          >
+
+            <button
+              class="cap10-p87-topic"
+              type="button"
+              data-p87-topic="finalidade"
+              data-p87-essential="true"
+              aria-pressed="false"
+            >
+
+              <span class="cap10-p87-topic__number">
+                1
+              </span>
+
+              <span class="cap10-p87-topic__content">
+
+                <strong>
+                  Finalidade
+                </strong>
+
+                <small>
+                  Explicar por que o medicamento foi prescrito.
+                </small>
+
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p87-topic"
+              type="button"
+              data-p87-topic="uso"
+              data-p87-essential="true"
+              aria-pressed="false"
+            >
+
+              <span class="cap10-p87-topic__number">
+                2
+              </span>
+
+              <span class="cap10-p87-topic__content">
+
+                <strong>
+                  Forma de uso
+                </strong>
+
+                <small>
+                  Reforçar horários, intervalo e duração definidos.
+                </small>
+
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p87-topic"
+              type="button"
+              data-p87-topic="seguranca"
+              data-p87-essential="true"
+              aria-pressed="false"
+            >
+
+              <span class="cap10-p87-topic__number">
+                3
+              </span>
+
+              <span class="cap10-p87-topic__content">
+
+                <strong>
+                  Segurança
+                </strong>
+
+                <small>
+                  Abordar eventos adversos e sinais de alerta.
+                </small>
+
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p87-topic"
+              type="button"
+              data-p87-topic="duvidas"
+              data-p87-essential="true"
+              aria-pressed="false"
+            >
+
+              <span class="cap10-p87-topic__number">
+                4
+              </span>
+
+              <span class="cap10-p87-topic__content">
+
+                <strong>
+                  Dúvidas práticas
+                </strong>
+
+                <small>
+                  Orientar sobre esquecimentos, sobras e compartilhamento.
+                </small>
+
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p87-topic cap10-p87-topic--extra"
+              type="button"
+              data-p87-topic="mecanismo"
+              data-p87-essential="false"
+              aria-pressed="false"
+            >
+
+              <span class="cap10-p87-topic__number">
+                5
+              </span>
+
+              <span class="cap10-p87-topic__content">
+
+                <strong>
+                  Detalhamento molecular
+                </strong>
+
+                <small>
+                  Explicar minuciosamente o mecanismo bioquímico do fármaco.
+                </small>
+
+              </span>
+
+            </button>
+
+          </div>
+
+          <div
+            class="cap10-p87-topic-feedback"
+            id="cap10P87TopicFeedback"
+            aria-live="polite"
+            hidden
+          ></div>
+
+        </div>
+
+        <!-- CONSULTA AO E-BOOK -->
+
+        <aside
+          class="cap10-p87-consult"
+          aria-label="Orientação para consulta ao e-book"
+        >
+
+          <div class="cap10-p87-consult__heading">
+
+            <span aria-hidden="true">
+              ↗
+            </span>
+
+            <div>
+
+              <strong>
+                Consulte se precisar
+              </strong>
+
+              <small>
+                Utilize a busca do e-book para retomar os conceitos.
+              </small>
+
+            </div>
+
+          </div>
+
+          <div class="cap10-p87-consult__topics">
+
+            <span>
+              Comunicação clínica
+            </span>
+
+            <span>
+              Adesão ao tratamento
+            </span>
+
+            <span>
+              Eventos adversos
+            </span>
+
+            <span>
+              Uso racional
+            </span>
+
+          </div>
+
+        </aside>
+
+        <aside class="cap10-p87-reminder">
+
+          <span
+            class="cap10-p87-reminder__icon"
+            aria-hidden="true"
+          >
+            i
+          </span>
+
+          <div>
+
+            <strong>
+              Linguagem proporcional
+            </strong>
+
+            <p>
+              O paciente não precisa receber todas as informações
+              científicas disponíveis. Ele precisa compreender aquilo
+              que é necessário para utilizar o medicamento com segurança.
+            </p>
+
+          </div>
+
+        </aside>
+
+        <div class="cap10-p87-actions">
+
+          <button
+            class="cap10-p87-button cap10-p87-button--secondary"
+            type="button"
+            data-p87-next="2"
+          >
+            ← Voltar à conversa
+          </button>
+
+          <button
+            class="cap10-p87-button cap10-p87-button--primary"
+            id="cap10P87ContinueToTeachBack"
+            type="button"
+            data-p87-next="4"
+            hidden
+          >
+            Confirmar a compreensão
+            <span aria-hidden="true">→</span>
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- =================================================
+           ETAPA 4 — CONFIRMAÇÃO DA COMPREENSÃO
+           ================================================= -->
+
+      <div
+        class="cap10-p87-stage"
+        data-p87-stage="4"
+        hidden
+      >
+
+        <div class="cap10-p87-stage__heading">
+
+          <span class="cap10-p87-stage__eyebrow">
+            Encerramento da conversa
+          </span>
+
+          <h2>
+            Explicar não garante que o paciente compreendeu
+          </h2>
+
+          <p>
+            Escolha a forma mais adequada de confirmar a compreensão.
+          </p>
+
+        </div>
+
+        <div class="cap10-p87-teachback">
+
+          <div class="cap10-p87-teachback__header">
+
+            <span aria-hidden="true">
+              ↻
+            </span>
+
+            <div>
+
+              <span>
+                Confirmação da compreensão
+              </span>
+
+              <strong>
+                Técnica de retorno da informação
+              </strong>
+
+            </div>
+
+          </div>
+
+          <p>
+            Você concluiu a orientação. Antes da alta, precisa verificar
+            como o paciente compreendeu as informações apresentadas.
+          </p>
+
+        </div>
+
+        <div class="cap10-p87-question-block">
+
+          <div class="cap10-p87-preceptor">
+
+            <span class="cap10-p87-preceptor__label">
+              Última decisão
+            </span>
+
+            <p>
+              Qual pergunta permite avaliar melhor a compreensão
+              sem constranger o paciente?
+            </p>
+
+          </div>
+
+          <div
+            class="cap10-p87-options"
+            aria-label="Formas de confirmar a compreensão"
+          >
+
+            <button
+              class="cap10-p87-option"
+              type="button"
+              data-p87-question="teachback"
+              data-p87-choice="entendeu"
+            >
+
+              <strong>
+                Pergunta A
+              </strong>
+
+              <span>
+                “Você entendeu tudo o que eu expliquei?”
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p87-option"
+              type="button"
+              data-p87-question="teachback"
+              data-p87-choice="prova"
+            >
+
+              <strong>
+                Pergunta B
+              </strong>
+
+              <span>
+                “Repita exatamente as instruções para eu verificar
+                se você prestou atenção.”
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p87-option"
+              type="button"
+              data-p87-question="teachback"
+              data-p87-choice="confirmar"
+            >
+
+              <strong>
+                Pergunta C
+              </strong>
+
+              <span>
+                “Para eu confirmar se expliquei de forma clara,
+                pode me contar como você utilizará o medicamento
+                quando estiver em casa?”
+              </span>
+
+            </button>
+
+          </div>
+
+          <div
+            class="cap10-p87-feedback"
+            id="cap10P87TeachBackFeedback"
+            aria-live="polite"
+            hidden
+          ></div>
+
+        </div>
+
+        <!-- DEBRIEFING -->
+
+        <div
+          class="cap10-p87-debrief"
+          id="cap10P87Debrief"
+          hidden
+        >
+
+          <span class="cap10-p87-debrief__label">
+            Debriefing
+          </span>
+
+          <h3>
+            A comunicação também faz parte da segurança terapêutica
+          </h3>
+
+          <div class="cap10-p87-debrief__steps">
+
+            <article>
+
+              <span>1</span>
+
+              <div>
+
+                <strong>
+                  Escutar
+                </strong>
+
+                <p>
+                  Identifique dúvidas, expectativas e interpretações
+                  equivocadas.
+                </p>
+
+              </div>
+
+            </article>
+
+            <article>
+
+              <span>2</span>
+
+              <div>
+
+                <strong>
+                  Orientar
+                </strong>
+
+                <p>
+                  Priorize informações úteis, linguagem clara e
+                  oportunidades para perguntas.
+                </p>
+
+              </div>
+
+            </article>
+
+            <article>
+
+              <span>3</span>
+
+              <div>
+
+                <strong>
+                  Confirmar
+                </strong>
+
+                <p>
+                  Peça ao paciente que explique, com suas próprias
+                  palavras, como realizará o cuidado em casa.
+                </p>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </div>
+
+        <aside
+          class="cap10-p87-essential"
+          id="cap10P87Essential"
+          hidden
+        >
+
+          <strong>
+            Ideia essencial:
+          </strong>
+
+          <span>
+            a orientação não termina quando o profissional para de falar;
+            ela termina quando há evidências de que o paciente compreendeu.
+          </span>
+
+        </aside>
+
+        <div
+          class="cap10-p87-actions"
+          id="cap10P87FinalActions"
+          hidden
+        >
+
+          <button
+            class="cap10-p87-button cap10-p87-button--secondary"
+            type="button"
+            data-p87-restart
+          >
+            ↻ Reiniciar
+          </button>
+
+          <a
+            class="cap10-p87-button cap10-p87-button--primary"
+            href="p88.html"
+          >
+            Ir ao desafio final
+            <span aria-hidden="true">→</span>
+          </a>
+
+        </div>
 
       </div>
 
     </section>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p86.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 10 · Página 87 de 89</div>
-  <a class="btn primary" href="p88.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <!-- PAGINAÇÃO -->
+
+    <nav
+      class="pager"
+      aria-label="Paginação"
+    >
+
+      <a
+        class="btn"
+        href="p86.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 10 · Página 87 de 88
+      </div>
+
+      <a
+        class="btn primary"
+        href="p88.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+
+    </nav>
 
   </main>
 
@@ -175,4 +1054,5 @@
   <script src="../../js/capitulo-10.js"></script>
 
 </body>
+
 </html>

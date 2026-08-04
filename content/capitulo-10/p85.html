@@ -1,174 +1,1306 @@
 <!doctype html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Capítulo 10 — Página 85</title>
+  <meta charset="utf-8">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
-  <link rel="stylesheet" href="../../css/base.css" />
-  <link rel="stylesheet" href="../../css/components.css" />
-  <link rel="stylesheet" href="../../css/capitulo-10.css" />
+  <title>
+    Capítulo 10 — Simulação 3: resistência em Gram-positivos
+  </title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../../css/base.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../../css/components.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../../css/capitulo-10.css"
+  >
 </head>
 
 <body class="cap10-page85">
 
   <main class="page-shell">
 
+    <!-- CABEÇALHO -->
+
     <header class="page-header">
-      <div class="chapter">Capítulo 10 — Simulação Clínica Integrada</div>
-      <h1 class="page-title">Simulação 2 — Cobrir, reavaliar e simplificar</h1>
+
+      <div class="chapter">
+        Capítulo 10 — Simulação Clínica Integrada em Antibioticoterapia
+      </div>
+
+      <h1 class="page-title">
+        Simulação 3 — Resistência em Gram-positivos
+      </h1>
+
     </header>
 
-    <section class="prose" aria-label="Texto principal">
+    <!-- SIMULAÇÃO -->
 
-      <p>
-        Mulher, 61 anos, internada por infecção urinária complicada, evolui com febre persistente, calafrios, hipotensão e sinais de gravidade clínica.
-      </p>
+    <section
+      class="cap10-p85-simulation"
+      data-cap10-p85
+      aria-labelledby="cap10P85SimulationTitle"
+    >
 
-      <p>
-        Culturas são coletadas. Diante do risco inicial, opta-se por uma estratégia antimicrobiana ampliada, com o objetivo de aumentar a probabilidade de cobertura ativa precoce.
-      </p>
+      <h2
+        class="sr-only"
+        id="cap10P85SimulationTitle"
+      >
+        Simulação sobre MRSA, MLSB induzível e VRE
+      </h2>
 
-      <p>
-        Após as primeiras 24 horas, a paciente apresenta melhora hemodinâmica parcial.
-      </p>
+      <!-- PROGRESSO -->
 
-      <p>
-        Em seguida, tornam-se disponíveis dados microbiológicos que identificam o agente infeccioso e demonstram suscetibilidade ao tratamento já em uso, sem evidência de mecanismo relevante de resistência.
-      </p>
+      <div
+        class="cap10-p85-progress"
+        aria-label="Progresso da simulação"
+      >
 
-      <p>
-        Neste momento, a questão central já não é apenas cobertura inicial, mas a proporcionalidade da estratégia mantida ao longo do tempo.
-      </p>
+        <div
+          class="cap10-p85-progress__item is-active"
+          data-p85-progress="1"
+        >
+          <span>1</span>
+          <small>Apresentação</small>
+        </div>
 
-    </section>
+        <div
+          class="cap10-p85-progress__line"
+          aria-hidden="true"
+        ></div>
 
-    <section class="cap10-p85-context" aria-label="Contexto clínico da decisão">
-      <p class="cap10-p85-context__line">
-        Você iniciou cobertura ampliada em um cenário grave. Agora a decisão depende de reinterpretar risco microbiológico, benefício clínico e custo terapêutico.
-      </p>
-    </section>
+        <div
+          class="cap10-p85-progress__item"
+          data-p85-progress="2"
+        >
+          <span>2</span>
+          <small>Paciente A</small>
+        </div>
 
-    <section class="cap10-p85-sim" data-cap10-p85>
+        <div
+          class="cap10-p85-progress__line"
+          aria-hidden="true"
+        ></div>
 
-      <div class="cap10-p85-step is-active" data-p85-step="1">
+        <div
+          class="cap10-p85-progress__item"
+          data-p85-progress="3"
+        >
+          <span>3</span>
+          <small>Paciente B</small>
+        </div>
 
-        <p class="cap10-p85-question">
-          Diante da estabilização parcial e da suscetibilidade confirmada, qual princípio deve orientar a reavaliação?
-        </p>
+        <div
+          class="cap10-p85-progress__line"
+          aria-hidden="true"
+        ></div>
 
-        <div class="cap10-p85-options">
-          <button class="cap10-p85-option" type="button" data-p85-choice="manter-associacao">
-            <strong>Manter automaticamente toda a estratégia inicial</strong>
-            <span>Preserva o esquema ampliado sem reinterpretar o novo cenário microbiológico.</span>
-            <em class="cap10-p85-optionTag cap10-p85-optionTag--warning">Persistência automática</em>
-          </button>
-
-          <button class="cap10-p85-option cap10-p85-option--recommended" type="button" data-p85-choice="simplificar">
-            <strong>Reavaliar a necessidade de simplificar a estratégia</strong>
-            <span>Integra melhora clínica, suscetibilidade conhecida e proporcionalidade do espectro.</span>
-            <em class="cap10-p85-optionTag cap10-p85-optionTag--success">Princípio mais adequado</em>
-          </button>
-
-          <button class="cap10-p85-option" type="button" data-p85-choice="ampliar-precaucao">
-            <strong>Ampliar ainda mais a cobertura por precaução</strong>
-            <span>Aumenta exposição antimicrobiana sem novo fundamento microbiológico.</span>
-            <em class="cap10-p85-optionTag cap10-p85-optionTag--error">Escalada desnecessária</em>
-          </button>
+        <div
+          class="cap10-p85-progress__item"
+          data-p85-progress="4"
+        >
+          <span>4</span>
+          <small>Comparação</small>
         </div>
 
       </div>
 
-      <div class="cap10-p85-step" data-p85-step="2" hidden>
+      <!-- =================================================
+           ETAPA 1 — APRESENTAÇÃO
+           ================================================= -->
 
-        <div class="cap10-p85-feedback" id="cap10P85Feedback"></div>
+      <div
+        class="cap10-p85-stage is-active"
+        data-p85-stage="1"
+      >
 
-        <button class="cap10-p85-next" type="button" data-p85-next="3">
-          Continuar
-        </button>
+        <div class="cap10-p85-stage__heading">
 
-      </div>
+          <span class="cap10-p85-stage__eyebrow">
+            Reunião com a microbiologia
+          </span>
 
-      <div class="cap10-p85-step" data-p85-step="3" hidden>
+          <h2>
+            Dois pacientes, três mecanismos de resistência
+          </h2>
 
-        <p>
-          Nos dias seguintes, a paciente mantém melhora clínica, mas surgem sinais de toxicidade relacionados à exposição prolongada ao esquema inicialmente utilizado.
+        </div>
+
+        <div class="cap10-p85-opening">
+
+          <p>
+            Durante uma discussão entre a equipe clínica e o laboratório
+            de microbiologia, são apresentados resultados de
+            <strong>dois pacientes diferentes</strong>.
+          </p>
+
+          <p>
+            O objetivo não é escolher um tratamento, mas compreender
+            o significado dos marcadores laboratoriais e relacioná-los
+            aos mecanismos de ação e resistência já estudados.
+          </p>
+
+        </div>
+
+        <div
+          class="cap10-p85-patients-preview"
+          aria-label="Pacientes da simulação"
+        >
+
+          <article>
+
+            <span class="cap10-p85-patients-preview__letter">
+              A
+            </span>
+
+            <div>
+
+              <small>
+                Paciente A
+              </small>
+
+              <strong>
+                <em>Staphylococcus aureus</em>
+              </strong>
+
+              <p>
+                MRSA e fenótipo MLS<sub>B</sub> induzível
+              </p>
+
+            </div>
+
+          </article>
+
+          <article>
+
+            <span class="cap10-p85-patients-preview__letter">
+              B
+            </span>
+
+            <div>
+
+              <small>
+                Paciente B
+              </small>
+
+              <strong>
+                <em>Enterococcus faecium</em>
+              </strong>
+
+              <p>
+                VRE com mecanismo VanA
+              </p>
+
+            </div>
+
+          </article>
+
+        </div>
+
+        <aside
+          class="cap10-p85-mission"
+          aria-label="Missão do estudante"
+        >
+
+          <span class="cap10-p85-mission__label">
+            Sua missão
+          </span>
+
+          <p>
+            Analisar separadamente os dois laudos, identificar os
+            mecanismos envolvidos e comparar como diferentes alterações
+            celulares produzem resistência aos antibacterianos.
+          </p>
+
+        </aside>
+
+        <p class="cap10-p85-fictional">
+          Casos clínicos e laudos simplificados elaborados para fins educacionais.
         </p>
 
-        <p>
-          A situação deixa de ser um problema de cobertura empírica e passa a exigir balanço entre eficácia, toxicidade e impacto ecológico.
-        </p>
+        <div class="cap10-p85-actions">
 
-        <p class="cap10-p85-question">
-          Qual leitura é mais coerente com esse momento do caso?
-        </p>
-
-        <div class="cap10-p85-options">
-          <button class="cap10-p85-option" type="button" data-p85-choice="cobertura-eterna">
-            <strong>Estratégia ampla deve ser mantida sempre</strong>
-            <span>Transforma gravidade inicial em justificativa permanente para exposição ampliada.</span>
-            <em class="cap10-p85-optionTag cap10-p85-optionTag--warning">Segurança aparente</em>
+          <button
+            class="cap10-p85-button cap10-p85-button--primary"
+            type="button"
+            data-p85-next="2"
+          >
+            Analisar paciente A
+            <span aria-hidden="true">→</span>
           </button>
 
-          <button class="cap10-p85-option cap10-p85-option--recommended" type="button" data-p85-choice="ajuste-proporcional">
-            <strong>Ajustar quando o risco real diminui e os danos aumentam</strong>
-            <span>Reinterpreta a estratégia conforme evolução clínica, toxicidade e risco microbiológico atual.</span>
-            <em class="cap10-p85-optionTag cap10-p85-optionTag--success">Leitura mais coerente</em>
-          </button>
-
-          <button class="cap10-p85-option" type="button" data-p85-choice="duplicar-seguranca">
-            <strong>Associação prolongada oferece segurança adicional</strong>
-            <span>Presume benefício contínuo mesmo sem novo ganho microbiológico demonstrado.</span>
-            <em class="cap10-p85-optionTag cap10-p85-optionTag--error">Exposição excessiva</em>
-          </button>
         </div>
 
       </div>
 
-      <div class="cap10-p85-step" data-p85-step="4" hidden>
+      <!-- =================================================
+           ETAPA 2 — PACIENTE A
+           MRSA E MLSB INDUZÍVEL
+           ================================================= -->
 
-        <div class="cap10-p85-feedback" id="cap10P85FeedbackFinal"></div>
+      <div
+        class="cap10-p85-stage"
+        data-p85-stage="2"
+        hidden
+      >
 
-        <button class="cap10-p85-next" type="button" data-p85-next="5">
-          Continuar
-        </button>
+        <div class="cap10-p85-stage__heading">
+
+          <span class="cap10-p85-stage__eyebrow">
+            Paciente A
+          </span>
+
+          <h2>
+            MRSA e resistência induzível
+          </h2>
+
+        </div>
+
+        <!-- CONTEXTO DO PACIENTE A -->
+
+        <article
+          class="cap10-p85-case-card cap10-p85-case-card--a"
+          aria-label="Contexto clínico do paciente A"
+        >
+
+          <div class="cap10-p85-case-card__header">
+
+            <span class="cap10-p85-case-card__letter">
+              A
+            </span>
+
+            <div>
+
+              <small>
+                Paciente A
+              </small>
+
+              <strong>
+                Homem, 54 anos
+              </strong>
+
+              <span>
+                Infecção de ferida operatória
+              </span>
+
+            </div>
+
+          </div>
+
+          <div class="cap10-p85-case-card__body">
+
+            <p>
+              No quinto dia após um procedimento cirúrgico, o paciente
+              apresenta hiperemia, dor e drenagem purulenta na ferida.
+              Uma amostra da secreção é encaminhada ao laboratório.
+            </p>
+
+            <p>
+              A cultura identifica <em>Staphylococcus aureus</em>.
+              O teste de suscetibilidade apresenta resistência à
+              cefoxitina e um resultado que exige investigação adicional
+              para clindamicina.
+            </p>
+
+          </div>
+
+        </article>
+
+        <!-- LAUDO DO PACIENTE A -->
+
+        <article
+          class="cap10-p85-report"
+          aria-labelledby="cap10P85ReportATitle"
+        >
+
+          <div class="cap10-p85-report__header">
+
+            <div>
+
+              <span>
+                Laudo microbiológico
+              </span>
+
+              <h3 id="cap10P85ReportATitle">
+                Paciente A
+              </h3>
+
+            </div>
+
+            <span class="cap10-p85-report__badge">
+              Cultura de secreção
+            </span>
+
+          </div>
+
+          <div class="cap10-p85-report__organism">
+
+            <span>
+              Microrganismo identificado
+            </span>
+
+            <strong>
+              <em>Staphylococcus aureus</em>
+            </strong>
+
+          </div>
+
+          <div class="cap10-p85-report__table-wrap">
+
+            <table class="cap10-p85-report__table">
+
+              <caption>
+                Resultados selecionados para fins educacionais
+              </caption>
+
+              <thead>
+
+                <tr>
+                  <th scope="col">
+                    Teste
+                  </th>
+
+                  <th scope="col">
+                    Resultado
+                  </th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>
+                    Cefoxitina
+                  </td>
+
+                  <td>
+                    <span class="cap10-p85-result cap10-p85-result--r">
+                      R
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Eritromicina
+                  </td>
+
+                  <td>
+                    <span class="cap10-p85-result cap10-p85-result--r">
+                      R
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Clindamicina — leitura inicial
+                  </td>
+
+                  <td>
+                    <span class="cap10-p85-result cap10-p85-result--s">
+                      S
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Teste D
+                  </td>
+
+                  <td>
+                    <span class="cap10-p85-result cap10-p85-result--alert">
+                      Positivo
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Clindamicina — interpretação final
+                  </td>
+
+                  <td>
+                    <span class="cap10-p85-result cap10-p85-result--r">
+                      R
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Linezolida
+                  </td>
+
+                  <td>
+                    <span class="cap10-p85-result cap10-p85-result--s">
+                      S
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Tetraciclina
+                  </td>
+
+                  <td>
+                    <span class="cap10-p85-result cap10-p85-result--s">
+                      S
+                    </span>
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <!-- MARCADORES INTERATIVOS -->
+
+          <div
+            class="cap10-p85-markers"
+            aria-label="Elementos do laudo para explorar"
+          >
+
+            <button
+              type="button"
+              data-p85-marker="cefoxitina"
+            >
+              <span>
+                1
+              </span>
+
+              <div>
+
+                <strong>
+                  Cefoxitina resistente
+                </strong>
+
+                <small>
+                  Explore o marcador de MRSA
+                </small>
+
+              </div>
+            </button>
+
+            <button
+              type="button"
+              data-p85-marker="teste-d"
+            >
+              <span>
+                2
+              </span>
+
+              <div>
+
+                <strong>
+                  Teste D positivo
+                </strong>
+
+                <small>
+                  Explore o fenótipo MLS<sub>B</sub>
+                </small>
+
+              </div>
+            </button>
+
+          </div>
+
+          <div
+            class="cap10-p85-marker-feedback"
+            id="cap10P85MarkerFeedback"
+            aria-live="polite"
+            hidden
+          ></div>
+
+        </article>
+
+        <!-- CONSULTA -->
+
+        <aside
+          class="cap10-p85-consult"
+          aria-label="Conteúdos para consulta"
+        >
+
+          <div class="cap10-p85-consult__heading">
+
+            <span aria-hidden="true">
+              ↗
+            </span>
+
+            <div>
+
+              <strong>
+                Consulte se precisar
+              </strong>
+
+              <small>
+                Retome mecanismos de ação e resistência.
+              </small>
+
+            </div>
+
+          </div>
+
+          <div class="cap10-p85-consult__links">
+
+            <a
+              href="../capitulo-02/p11.html"
+              target="_blank"
+              rel="noopener"
+            >
+              Parede celular
+            </a>
+
+            <a
+              href="../capitulo-02/p11.html"
+              target="_blank"
+              rel="noopener"
+            >
+              Síntese proteica
+            </a>
+
+            <a
+              href="../capitulo-03/p20.html"
+              target="_blank"
+              rel="noopener"
+            >
+              Resistência adquirida
+            </a>
+
+          </div>
+
+        </aside>
+
+        <!-- QUESTÃO DO PACIENTE A -->
+
+        <div class="cap10-p85-question-block">
+
+          <div class="cap10-p85-preceptor">
+
+            <span class="cap10-p85-preceptor__label">
+              Pergunta do preceptor
+            </span>
+
+            <p>
+              MRSA e fenótipo MLS<sub>B</sub> induzível representam o
+              mesmo mecanismo de resistência?
+            </p>
+
+          </div>
+
+          <div
+            class="cap10-p85-options"
+            aria-label="Possibilidades de interpretação"
+          >
+
+            <button
+              class="cap10-p85-option"
+              type="button"
+              data-p85-question="patient-a"
+              data-p85-choice="mesmo"
+            >
+
+              <strong>
+                Interpretação A
+              </strong>
+
+              <span>
+                Sim. A resistência à cefoxitina e o teste D positivo
+                representam uma única alteração na parede celular.
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p85-option"
+              type="button"
+              data-p85-question="patient-a"
+              data-p85-choice="distintos"
+            >
+
+              <strong>
+                Interpretação B
+              </strong>
+
+              <span>
+                Não. A resistência à meticilina e o fenótipo
+                MLS<sub>B</sub> envolvem mecanismos distintos que podem
+                coexistir na mesma bactéria.
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p85-option"
+              type="button"
+              data-p85-question="patient-a"
+              data-p85-choice="teste-d-mrsa"
+            >
+
+              <strong>
+                Interpretação C
+              </strong>
+
+              <span>
+                Não. O teste D confirma resistência à meticilina, enquanto
+                a cefoxitina investiga resistência induzível à clindamicina.
+              </span>
+
+            </button>
+
+          </div>
+
+          <div
+            class="cap10-p85-feedback"
+            id="cap10P85PatientAFeedback"
+            aria-live="polite"
+            hidden
+          ></div>
+
+        </div>
+
+        <div class="cap10-p85-actions">
+
+          <button
+            class="cap10-p85-button cap10-p85-button--secondary"
+            type="button"
+            data-p85-next="1"
+          >
+            ← Voltar
+          </button>
+
+          <button
+            class="cap10-p85-button cap10-p85-button--primary"
+            id="cap10P85ContinueToPatientB"
+            type="button"
+            data-p85-next="3"
+            hidden
+          >
+            Analisar paciente B
+            <span aria-hidden="true">→</span>
+          </button>
+
+        </div>
 
       </div>
 
-      <div class="cap10-p85-step" data-p85-step="5" hidden>
+      <!-- =================================================
+           ETAPA 3 — PACIENTE B
+           VRE / VanA
+           ================================================= -->
 
-        <p class="cap10-p85-final">
-          A estratégia inicial pode ser adequada. A manutenção automática, não.
-        </p>
+      <div
+        class="cap10-p85-stage"
+        data-p85-stage="3"
+        hidden
+      >
 
-        <p class="cap10-p85-final-sub">
-          Cobertura empírica ampliada pode ser proporcional no início de quadros graves, mas deve ser reinterpretada à medida que surgem dados microbiológicos e clínicos.
-        </p>
+        <div class="cap10-p85-stage__heading">
 
-        <p class="cap10-p85-final-sub">
-          Quando a suscetibilidade é conhecida e o risco microbiológico diminui, manter exposições desnecessárias amplia toxicidade e impacto ecológico sem benefício proporcional.
-        </p>
+          <span class="cap10-p85-stage__eyebrow">
+            Paciente B
+          </span>
 
-        <div class="cap10-p85-insight" id="cap10P85Insight">
-          Descalonar não significa enfraquecer o tratamento. Significa alinhar a intensidade terapêutica ao risco real, reduzindo dano desnecessário sem perder eficácia.
+          <h2>
+            VRE e modificação do alvo
+          </h2>
+
         </div>
 
-        <p class="cap10-p85-highlight">
-          Em antibioticoterapia racional, descalonar não significa tratar menos: significa tratar com mais precisão.
-        </p>
+        <!-- CONTEXTO DO PACIENTE B -->
+
+        <article
+          class="cap10-p85-case-card cap10-p85-case-card--b"
+          aria-label="Contexto clínico do paciente B"
+        >
+
+          <div class="cap10-p85-case-card__header">
+
+            <span class="cap10-p85-case-card__letter">
+              B
+            </span>
+
+            <div>
+
+              <small>
+                Paciente B
+              </small>
+
+              <strong>
+                Mulher, 71 anos
+              </strong>
+
+              <span>
+                Febre durante internação prolongada
+              </span>
+
+            </div>
+
+          </div>
+
+          <div class="cap10-p85-case-card__body">
+
+            <p>
+              A paciente apresenta febre durante internação prolongada.
+              Hemoculturas são coletadas, e o laboratório identifica
+              <em>Enterococcus faecium</em>.
+            </p>
+
+            <p>
+              O teste de suscetibilidade demonstra resistência à
+              vancomicina, e a investigação complementar detecta o
+              determinante de resistência <em>vanA</em>.
+            </p>
+
+          </div>
+
+        </article>
+
+        <!-- LAUDO DO PACIENTE B -->
+
+        <article
+          class="cap10-p85-report"
+          aria-labelledby="cap10P85ReportBTitle"
+        >
+
+          <div class="cap10-p85-report__header">
+
+            <div>
+
+              <span>
+                Laudo microbiológico
+              </span>
+
+              <h3 id="cap10P85ReportBTitle">
+                Paciente B
+              </h3>
+
+            </div>
+
+            <span class="cap10-p85-report__badge">
+              Hemocultura
+            </span>
+
+          </div>
+
+          <div class="cap10-p85-report__organism">
+
+            <span>
+              Microrganismo identificado
+            </span>
+
+            <strong>
+              <em>Enterococcus faecium</em>
+            </strong>
+
+          </div>
+
+          <div class="cap10-p85-vre">
+
+            <div>
+
+              <span>
+                Fenótipo
+              </span>
+
+              <strong>
+                VRE
+              </strong>
+
+              <small>
+                Enterococo resistente à vancomicina
+              </small>
+
+            </div>
+
+            <div>
+
+              <span>
+                Determinante detectado
+              </span>
+
+              <strong>
+                <em>vanA</em>
+              </strong>
+
+              <small>
+                Mecanismo adquirido
+              </small>
+
+            </div>
+
+          </div>
+
+          <div class="cap10-p85-report__table-wrap">
+
+            <table class="cap10-p85-report__table">
+
+              <caption>
+                Resultados selecionados para fins educacionais
+              </caption>
+
+              <thead>
+
+                <tr>
+                  <th scope="col">
+                    Antibacteriano
+                  </th>
+
+                  <th scope="col">
+                    Categoria
+                  </th>
+                </tr>
+
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>
+                    Ampicilina
+                  </td>
+
+                  <td>
+                    <span class="cap10-p85-result cap10-p85-result--r">
+                      R
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Vancomicina
+                  </td>
+
+                  <td>
+                    <span class="cap10-p85-result cap10-p85-result--r">
+                      R
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Teicoplanina
+                  </td>
+
+                  <td>
+                    <span class="cap10-p85-result cap10-p85-result--r">
+                      R
+                    </span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    Linezolida
+                  </td>
+
+                  <td>
+                    <span class="cap10-p85-result cap10-p85-result--s">
+                      S
+                    </span>
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+          <button
+            class="cap10-p85-van-button"
+            type="button"
+            data-p85-marker="vana"
+          >
+
+            <span>
+              VanA
+            </span>
+
+            <div>
+
+              <strong>
+                Explorar o mecanismo
+              </strong>
+
+              <small>
+                Observe como a alteração do alvo interfere na ação
+                dos glicopeptídeos.
+              </small>
+
+            </div>
+
+          </button>
+
+          <div
+            class="cap10-p85-marker-feedback"
+            id="cap10P85VanFeedback"
+            aria-live="polite"
+            hidden
+          ></div>
+
+        </article>
+
+        <!-- CONSULTA -->
+
+        <aside
+          class="cap10-p85-consult"
+          aria-label="Conteúdos para consulta"
+        >
+
+          <div class="cap10-p85-consult__heading">
+
+            <span aria-hidden="true">
+              ↗
+            </span>
+
+            <div>
+
+              <strong>
+                Consulte se precisar
+              </strong>
+
+              <small>
+                Relacione o mecanismo ao alvo dos glicopeptídeos.
+              </small>
+
+            </div>
+
+          </div>
+
+          <div class="cap10-p85-consult__links">
+
+            <a
+              href="../capitulo-02/p11.html"
+              target="_blank"
+              rel="noopener"
+            >
+              Parede celular
+            </a>
+
+            <a
+              href="../capitulo-02/p11.html"
+              target="_blank"
+              rel="noopener"
+            >
+              Glicopeptídeos
+            </a>
+
+            <a
+              href="../capitulo-03/p20.html"
+              target="_blank"
+              rel="noopener"
+            >
+              Modificação do alvo
+            </a>
+
+          </div>
+
+        </aside>
+
+        <!-- QUESTÃO DO PACIENTE B -->
+
+        <div class="cap10-p85-question-block">
+
+          <div class="cap10-p85-preceptor">
+
+            <span class="cap10-p85-preceptor__label">
+              Pergunta do preceptor
+            </span>
+
+            <p>
+              Como o mecanismo VanA reduz a atividade da vancomicina?
+            </p>
+
+          </div>
+
+          <div
+            class="cap10-p85-options"
+            aria-label="Possibilidades de interpretação"
+          >
+
+            <button
+              class="cap10-p85-option"
+              type="button"
+              data-p85-question="patient-b"
+              data-p85-choice="enzima"
+            >
+
+              <strong>
+                Interpretação A
+              </strong>
+
+              <span>
+                O mecanismo produz uma enzima que destrói diretamente
+                a molécula da vancomicina.
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p85-option"
+              type="button"
+              data-p85-question="patient-b"
+              data-p85-choice="precursor"
+            >
+
+              <strong>
+                Interpretação B
+              </strong>
+
+              <span>
+                O mecanismo modifica o precursor da parede celular,
+                reduzindo a afinidade da vancomicina pelo seu alvo.
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p85-option"
+              type="button"
+              data-p85-question="patient-b"
+              data-p85-choice="ribossomo"
+            >
+
+              <strong>
+                Interpretação C
+              </strong>
+
+              <span>
+                O mecanismo altera a subunidade ribossômica e impede
+                a ligação da vancomicina ao ribossomo bacteriano.
+              </span>
+
+            </button>
+
+          </div>
+
+          <div
+            class="cap10-p85-feedback"
+            id="cap10P85PatientBFeedback"
+            aria-live="polite"
+            hidden
+          ></div>
+
+        </div>
+
+        <div class="cap10-p85-actions">
+
+          <button
+            class="cap10-p85-button cap10-p85-button--secondary"
+            type="button"
+            data-p85-next="2"
+          >
+            ← Voltar
+          </button>
+
+          <button
+            class="cap10-p85-button cap10-p85-button--primary"
+            id="cap10P85ContinueToComparison"
+            type="button"
+            data-p85-next="4"
+            hidden
+          >
+            Comparar mecanismos
+            <span aria-hidden="true">→</span>
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- =================================================
+           ETAPA 4 — COMPARAÇÃO E DEBRIEFING
+           ================================================= -->
+
+      <div
+        class="cap10-p85-stage"
+        data-p85-stage="4"
+        hidden
+      >
+
+        <div class="cap10-p85-stage__heading">
+
+          <span class="cap10-p85-stage__eyebrow">
+            Debriefing
+          </span>
+
+          <h2>
+            Três mecanismos, diferentes consequências
+          </h2>
+
+        </div>
+
+        <div class="cap10-p85-comparison">
+
+          <article>
+
+            <span class="cap10-p85-comparison__label">
+              MRSA
+            </span>
+
+            <h3>
+              Modificação da PBP
+            </h3>
+
+            <p>
+              A produção de PBP2a reduz a afinidade pelos β-lactâmicos
+              e está geralmente associada a <em>mecA</em> ou
+              <em>mecC</em>.
+            </p>
+
+          </article>
+
+          <article>
+
+            <span class="cap10-p85-comparison__label">
+              MLS<sub>B</sub>
+            </span>
+
+            <h3>
+              Modificação ribossômica
+            </h3>
+
+            <p>
+              A alteração do alvo ribossômico pode produzir resistência
+              induzível à clindamicina, evidenciada pelo teste D.
+            </p>
+
+          </article>
+
+          <article>
+
+            <span class="cap10-p85-comparison__label">
+              VRE/VanA
+            </span>
+
+            <h3>
+              Modificação do precursor
+            </h3>
+
+            <p>
+              A substituição de D-Ala-D-Ala por D-Ala-D-Lac reduz a
+              afinidade dos glicopeptídeos pelo alvo.
+            </p>
+
+          </article>
+
+        </div>
+
+        <div class="cap10-p85-debrief">
+
+          <h3>
+            Integração do raciocínio
+          </h3>
+
+          <p>
+            MRSA, MLS<sub>B</sub> induzível e VRE não representam um
+            único fenômeno. Os resultados laboratoriais revelam
+            alterações distintas na PBP, no ribossomo e no precursor
+            da parede celular.
+          </p>
+
+          <p>
+            Reconhecer o mecanismo ajuda a compreender o antibiograma,
+            mas não permite escolher automaticamente um tratamento.
+            Provável foco, tipo de amostra, gravidade, características
+            do paciente, exposição, toxicidade e validade dos pontos
+            de corte ainda precisam ser considerados.
+          </p>
+
+        </div>
+
+        <div class="cap10-p85-essential">
+
+          <span>
+            Ideia essencial
+          </span>
+
+          <p>
+            Um mesmo microrganismo pode reunir mais de um mecanismo de
+            resistência. Interpretar corretamente o laudo exige separar
+            espécie, fenótipo, mecanismo e categoria de suscetibilidade.
+          </p>
+
+        </div>
+
+        <div class="cap10-p85-actions">
+
+          <button
+            class="cap10-p85-button cap10-p85-button--secondary"
+            type="button"
+            data-p85-restart
+          >
+            ↻ Refazer simulação
+          </button>
+
+          <a
+            class="cap10-p85-button cap10-p85-button--primary"
+            href="p86.html"
+          >
+            Próxima simulação
+            <span aria-hidden="true">→</span>
+          </a>
+
+        </div>
 
       </div>
 
     </section>
 
+    <!-- PAGINAÇÃO -->
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p84.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 10 · Página 85 de 89</div>
-  <a class="btn primary" href="p86.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+    <nav
+      class="pager"
+      aria-label="Paginação"
+    >
+
+      <a
+        class="btn"
+        href="p84.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 10 · Página 85 de 88
+      </div>
+
+      <a
+        class="btn primary"
+        href="p86.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+
+    </nav>
 
   </main>
 
@@ -176,4 +1308,5 @@
   <script src="../../js/capitulo-10.js"></script>
 
 </body>
+
 </html>

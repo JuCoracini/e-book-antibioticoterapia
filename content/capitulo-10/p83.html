@@ -1,106 +1,890 @@
 <!doctype html>
 <html lang="pt-br">
+
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta charset="utf-8">
 
-<title>Capítulo 10 — Simulação Clínica Integrada</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+  <title>
+    Capítulo 10 — Simulação Clínica Integrada em Antibioticoterapia
+  </title>
 
-<link rel="stylesheet" href="../../css/base.css"/>
-<link rel="stylesheet" href="../../css/components.css"/>
-<link rel="stylesheet" href="../../css/capitulo-10.css"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../../css/base.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../../css/components.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="../../css/capitulo-10.css"
+  >
 </head>
 
 <body class="cap10-page83">
 
-<main class="page-shell">
+  <main class="page-shell">
 
-<header class="page-header">
-<div class="chapter">Capítulo 10 — Simulação Clínica Integrada</div>
-<h1 class="page-title">Simulação 1 — Processo decisório contínuo</h1>
-</header>
+    <!-- CABEÇALHO -->
 
-<section class="prose">
+    <header class="page-header">
 
-<p>
-Homem, 68 anos, previamente hígido, procura atendimento com quadro de febre, tosse produtiva e dispneia há três dias. Ao exame, apresenta frequência respiratória aumentada, saturação de oxigênio reduzida e crepitações em base pulmonar direita.
-</p>
+      <div class="chapter">
+        Capítulo 10 — Simulação Clínica Integrada em Antibioticoterapia
+      </div>
 
-<p>
-Não há identificação microbiológica disponível no momento da avaliação inicial. A decisão terapêutica precisa ser tomada antes da confirmação etiológica, com base na probabilidade clínica de infecção bacteriana e na gravidade do quadro<sup>7</sup>.
-</p>
+      <h1 class="page-title">
+        Simulação 1 — Decisões diante de novos dados
+      </h1>
 
-</section>
+    </header>
 
-<!-- PAINEL CLÍNICO -->
+    <!-- SIMULAÇÃO -->
 
-<section class="cap10-clinical-panel">
+    <section
+      class="cap10-p83-simulation"
+      data-cap10-p83
+      aria-labelledby="cap10P83SimulationTitle"
+    >
 
-<div class="chip">Idade: 68 anos</div>
-<div class="chip">Síndrome: Respiratória</div>
-<div class="chip critical">Gravidade: Moderada/Alta</div>
-<div class="chip">Microbiologia: Indisponível</div>
+      <h2
+        class="sr-only"
+        id="cap10P83SimulationTitle"
+      >
+        Simulação clínica sobre reavaliação da antibioticoterapia
+      </h2>
 
-</section>
+      <!-- PROGRESSO -->
 
-<!-- TRILHO -->
+      <div
+        class="cap10-p83-progress"
+        aria-label="Progresso da simulação"
+      >
 
-<section class="cap10-track">
-<div id="track"></div>
-</section>
+        <div
+          class="cap10-p83-progress__item is-active"
+          data-p83-progress="1"
+        >
+          <span>1</span>
+          <small>Cenário</small>
+        </div>
 
-<!-- ETAPA -->
+        <div
+          class="cap10-p83-progress__line"
+          aria-hidden="true"
+        ></div>
 
-<section class="cap10-game">
+        <div
+          class="cap10-p83-progress__item"
+          data-p83-progress="2"
+        >
+          <span>2</span>
+          <small>Admissão</small>
+        </div>
 
-<div class="step active" data-step="1">
+        <div
+          class="cap10-p83-progress__line"
+          aria-hidden="true"
+        ></div>
 
-<p class="question">
-Qual estratégia inicial melhor representa o raciocínio esperado?
-</p>
+        <div
+          class="cap10-p83-progress__item"
+          data-p83-progress="3"
+        >
+          <span>3</span>
+          <small>Evolução</small>
+        </div>
 
-<div class="cards">
+        <div
+          class="cap10-p83-progress__line"
+          aria-hidden="true"
+        ></div>
 
-<div class="card" data-choice="aguardar">
-<h3>Aguardar confirmação</h3>
-<p>Evita decisão precoce sem dados microbiológicos</p>
-<span class="risk warning">Risco de atraso terapêutico</span>
-</div>
+        <div
+          class="cap10-p83-progress__item"
+          data-p83-progress="4"
+        >
+          <span>4</span>
+          <small>Síntese</small>
+        </div>
 
-<div class="card" data-choice="amplo">
-<h3>Ampliar espectro</h3>
-<p>Busca cobertura máxima independente do contexto</p>
-<span class="risk error">Exposição desproporcional</span>
-</div>
+      </div>
 
-<div class="card correct" data-choice="empirico">
-<h3>Terapia empírica</h3>
-<p>Integra probabilidade etiológica e gravidade</p>
-<span class="risk ok">Estratégia inicial adequada</span>
-</div>
+      <!-- =================================================
+           ETAPA 1 — ENTRADA NO CENÁRIO
+           ================================================= -->
 
-</div>
+      <div
+        class="cap10-p83-stage is-active"
+        data-p83-stage="1"
+      >
 
-</div>
+        <div class="cap10-p83-stage__heading">
 
-<div class="feedback" id="feedback"></div>
+          <span class="cap10-p83-stage__eyebrow">
+            Entrada no cenário
+          </span>
 
-<button class="next" id="nextBtn" hidden>Continuar</button>
+          <h2>
+            Você está na enfermaria de Clínica Médica
+          </h2>
 
-</section>
+        </div>
 
-<nav class="pager" aria-label="Paginação">
-  <a class="btn" href="p82.html" aria-label="Ir para a página anterior">← Anterior</a>
-  <div class="center">Capítulo 10 · Página 83 de 89</div>
-  <a class="btn primary" href="p84.html" aria-label="Ir para a próxima página">Próxima →</a>
-</nav>
+        <div class="cap10-p83-scene">
 
-</main>
+          <div
+            class="cap10-p83-scene__icon"
+            aria-hidden="true"
+          >
+            01
+          </div>
 
-<script src="../../js/app.js"></script>
-<script src="../../js/capitulo-10.js"></script>
+          <div class="cap10-p83-scene__content">
+
+            <p>
+              Durante a visita, o preceptor apresenta um paciente
+              internado há 48 horas por provável infecção respiratória.
+              A equipe deseja revisar a evolução e compreender como as
+              informações disponíveis atualmente modificam o raciocínio
+              construído no momento da admissão.
+            </p>
+
+            <p>
+              Você deverá acompanhar os dois momentos do caso, consultar
+              os conteúdos do <em>e-book</em> quando necessário e
+              comparar a qualidade das informações disponíveis.
+            </p>
+
+          </div>
+
+        </div>
+
+        <aside
+          class="cap10-p83-mission"
+          aria-label="Missão do estudante"
+        >
+
+          <span class="cap10-p83-mission__label">
+            Sua missão
+          </span>
+
+          <p>
+            Identificar como a evolução clínica e os resultados
+            microbiológicos modificam a interpretação da decisão
+            inicialmente construída em um contexto de incerteza.
+          </p>
+
+        </aside>
+
+        <p class="cap10-p83-fictional">
+          Caso clínico fictício elaborado para fins educacionais.
+        </p>
+
+        <div class="cap10-p83-actions">
+
+          <button
+            class="cap10-p83-button cap10-p83-button--primary"
+            type="button"
+            data-p83-next="2"
+          >
+            Entrar na visita
+            <span aria-hidden="true">→</span>
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- =================================================
+           ETAPA 2 — MOMENTO DA ADMISSÃO
+           ================================================= -->
+
+      <div
+        class="cap10-p83-stage"
+        data-p83-stage="2"
+        hidden
+      >
+
+        <div class="cap10-p83-stage__heading">
+
+          <span class="cap10-p83-stage__eyebrow">
+            Momento 1 · Admissão
+          </span>
+
+          <h2>
+            Informações disponíveis inicialmente
+          </h2>
+
+        </div>
+
+        <article
+          class="cap10-p83-patient"
+          aria-label="Apresentação inicial do paciente"
+        >
+
+          <div class="cap10-p83-patient__identity">
+
+            <div
+              class="cap10-p83-patient__avatar"
+              aria-hidden="true"
+            >
+              68
+            </div>
+
+            <div>
+
+              <span>
+                Paciente
+              </span>
+
+              <strong>
+                Homem, 68 anos
+              </strong>
+
+              <small>
+                Sem comorbidades relevantes conhecidas
+              </small>
+
+            </div>
+
+          </div>
+
+          <div class="cap10-p83-patient__summary">
+
+            <p>
+              Apresenta febre, tosse produtiva e dispneia há três dias.
+              Ao exame, observam-se aumento da frequência respiratória,
+              redução da saturação de oxigênio e crepitações em base
+              pulmonar direita.
+            </p>
+
+            <p>
+              A radiografia de tórax evidencia consolidação em base
+              direita. Não há relato de internação recente nem de uso
+              recente de antibacterianos.
+            </p>
+
+          </div>
+
+          <dl class="cap10-p83-data">
+
+            <div>
+              <dt>Temperatura</dt>
+              <dd>38,7 °C</dd>
+            </div>
+
+            <div>
+              <dt>Frequência respiratória</dt>
+              <dd>30 irpm</dd>
+            </div>
+
+            <div>
+              <dt>Pressão arterial</dt>
+              <dd>102/64 mmHg</dd>
+            </div>
+
+            <div>
+              <dt>Saturação de O₂</dt>
+              <dd>89% em ar ambiente</dd>
+            </div>
+
+          </dl>
+
+        </article>
+
+        <div class="cap10-p83-context">
+
+          <span>
+            Contexto inicial
+          </span>
+
+          <p>
+            No momento da admissão, não havia identificação
+            microbiológica disponível. A equipe iniciou terapia
+            empírica considerando a apresentação clínica, o provável
+            foco infeccioso, a gravidade e as características do
+            paciente.
+          </p>
+
+        </div>
+
+        <!-- CONSULTA AO E-BOOK -->
+
+        <aside
+          class="cap10-p83-consult"
+          aria-label="Conteúdos para consulta"
+        >
+
+          <div class="cap10-p83-consult__heading">
+
+            <span aria-hidden="true">
+              ↗
+            </span>
+
+            <div>
+
+              <strong>
+                Consulte se precisar
+              </strong>
+
+              <small>
+                Os conteúdos serão abertos em uma nova guia.
+              </small>
+
+            </div>
+
+          </div>
+
+          <div class="cap10-p83-consult__links">
+
+            <a
+              href="../capitulo-01/p09.html"
+              target="_blank"
+              rel="noopener"
+            >
+              Terapia empírica e dirigida
+            </a>
+
+            <a
+              href="../capitulo-01/p06.html"
+              target="_blank"
+              rel="noopener"
+            >
+              Espectro de ação
+            </a>
+
+            <a
+              href="../capitulo-05/p39.html"
+              target="_blank"
+              rel="noopener"
+            >
+              Microbiologia
+            </a>
+
+          </div>
+
+        </aside>
+
+        <!-- PRIMEIRO MOMENTO DE ANÁLISE -->
+
+        <div class="cap10-p83-question-block">
+
+          <div class="cap10-p83-preceptor">
+
+            <span class="cap10-p83-preceptor__label">
+              Pergunta do preceptor
+            </span>
+
+            <p>
+              Como você explicaria o raciocínio utilizado pela equipe
+              no momento da admissão?
+            </p>
+
+          </div>
+
+          <div
+            class="cap10-p83-options"
+            aria-label="Possibilidades de interpretação"
+          >
+
+            <button
+              class="cap10-p83-option"
+              type="button"
+              data-p83-question="initial"
+              data-p83-choice="aguardar"
+            >
+
+              <strong>
+                Interpretação A
+              </strong>
+
+              <span>
+                Sem identificação microbiológica, ainda não havia
+                informações suficientes para construir uma análise
+                fundamentada.
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p83-option"
+              type="button"
+              data-p83-question="initial"
+              data-p83-choice="integrar"
+            >
+
+              <strong>
+                Interpretação B
+              </strong>
+
+              <span>
+                Mesmo diante da incerteza etiológica, os dados clínicos,
+                o provável foco e a gravidade permitiam construir uma
+                avaliação inicial provisória.
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p83-option"
+              type="button"
+              data-p83-question="initial"
+              data-p83-choice="idade"
+            >
+
+              <strong>
+                Interpretação C
+              </strong>
+
+              <span>
+                A idade do paciente era o principal elemento necessário
+                para fundamentar a avaliação inicial.
+              </span>
+
+            </button>
+
+          </div>
+
+          <div
+            class="cap10-p83-feedback"
+            id="cap10P83InitialFeedback"
+            aria-live="polite"
+            hidden
+          ></div>
+
+        </div>
+
+        <div class="cap10-p83-actions">
+
+          <button
+            class="cap10-p83-button cap10-p83-button--secondary"
+            type="button"
+            data-p83-next="1"
+          >
+            ← Voltar
+          </button>
+
+          <button
+            class="cap10-p83-button cap10-p83-button--primary"
+            id="cap10P83ContinueToEvolution"
+            type="button"
+            data-p83-next="3"
+            hidden
+          >
+            Ver evolução
+            <span aria-hidden="true">→</span>
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- =================================================
+           ETAPA 3 — EVOLUÇÃO
+           ================================================= -->
+
+      <div
+        class="cap10-p83-stage"
+        data-p83-stage="3"
+        hidden
+      >
+
+        <div class="cap10-p83-stage__heading">
+
+          <span class="cap10-p83-stage__eyebrow">
+            Momento 2 · Após 48 horas
+          </span>
+
+          <h2>
+            Novas informações estão disponíveis
+          </h2>
+
+        </div>
+
+        <div class="cap10-p83-evolution">
+
+          <article class="cap10-p83-evolution__card">
+
+            <span class="cap10-p83-evolution__label">
+              Evolução clínica
+            </span>
+
+            <ul>
+              <li>Redução da febre;</li>
+              <li>melhora da dispneia;</li>
+              <li>melhora da oxigenação;</li>
+              <li>estabilidade hemodinâmica.</li>
+            </ul>
+
+          </article>
+
+          <article class="cap10-p83-evolution__card">
+
+            <span class="cap10-p83-evolution__label">
+              Microbiologia
+            </span>
+
+            <p>
+              A cultura identifica
+              <em>Streptococcus pneumoniae</em>.
+            </p>
+
+            <p>
+              O teste de suscetibilidade não evidencia resistência
+              ao antibacteriano utilizado.
+            </p>
+
+          </article>
+
+        </div>
+
+        <aside
+          class="cap10-p83-consult"
+          aria-label="Conteúdos para consulta"
+        >
+
+          <div class="cap10-p83-consult__heading">
+
+            <span aria-hidden="true">
+              ↗
+            </span>
+
+            <div>
+
+              <strong>
+                Consulte se precisar
+              </strong>
+
+              <small>
+                Relacione os novos dados aos conceitos já estudados.
+              </small>
+
+            </div>
+
+          </div>
+
+          <div class="cap10-p83-consult__links">
+
+            <a
+              href="../capitulo-01/p09.html"
+              target="_blank"
+              rel="noopener"
+            >
+              Terapia dirigida
+            </a>
+
+            <a
+              href="../capitulo-03/p20.html"
+              target="_blank"
+              rel="noopener"
+            >
+              Resistência bacteriana
+            </a>
+
+            <a
+              href="../capitulo-05/p39.html"
+              target="_blank"
+              rel="noopener"
+            >
+              Teste de suscetibilidade
+            </a>
+
+          </div>
+
+        </aside>
+
+        <!-- SEGUNDO MOMENTO DE ANÁLISE -->
+
+        <div class="cap10-p83-question-block">
+
+          <div class="cap10-p83-preceptor">
+
+            <span class="cap10-p83-preceptor__label">
+              Pergunta do preceptor
+            </span>
+
+            <p>
+              O que mudou na qualidade das informações disponíveis
+              desde a admissão?
+            </p>
+
+          </div>
+
+          <div
+            class="cap10-p83-options"
+            aria-label="Possibilidades de interpretação"
+          >
+
+            <button
+              class="cap10-p83-option"
+              type="button"
+              data-p83-question="evolution"
+              data-p83-choice="definitiva"
+            >
+
+              <strong>
+                Interpretação A
+              </strong>
+
+              <span>
+                A avaliação inicial tornou-se definitiva porque o
+                paciente apresentou melhora clínica.
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p83-option"
+              type="button"
+              data-p83-question="evolution"
+              data-p83-choice="reinterpretar"
+            >
+
+              <strong>
+                Interpretação B
+              </strong>
+
+              <span>
+                A evolução clínica, a identificação do microrganismo
+                e o teste de suscetibilidade reduziram a incerteza e
+                permitem reinterpretar a estratégia inicial.
+              </span>
+
+            </button>
+
+            <button
+              class="cap10-p83-option"
+              type="button"
+              data-p83-question="evolution"
+              data-p83-choice="desconsiderar"
+            >
+
+              <strong>
+                Interpretação C
+              </strong>
+
+              <span>
+                Como houve melhora clínica, os resultados
+                microbiológicos deixaram de contribuir para a
+                análise do tratamento.
+              </span>
+
+            </button>
+
+          </div>
+
+          <div
+            class="cap10-p83-feedback"
+            id="cap10P83EvolutionFeedback"
+            aria-live="polite"
+            hidden
+          ></div>
+
+        </div>
+
+        <div class="cap10-p83-actions">
+
+          <button
+            class="cap10-p83-button cap10-p83-button--secondary"
+            type="button"
+            data-p83-next="2"
+          >
+            ← Voltar
+          </button>
+
+          <button
+            class="cap10-p83-button cap10-p83-button--primary"
+            id="cap10P83ContinueToDebrief"
+            type="button"
+            data-p83-next="4"
+            hidden
+          >
+            Ver síntese
+            <span aria-hidden="true">→</span>
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- =================================================
+           ETAPA 4 — DEBRIEFING
+           ================================================= -->
+
+      <div
+        class="cap10-p83-stage"
+        data-p83-stage="4"
+        hidden
+      >
+
+        <div class="cap10-p83-stage__heading">
+
+          <span class="cap10-p83-stage__eyebrow">
+            Debriefing
+          </span>
+
+          <h2>
+            O que esta simulação demonstrou?
+          </h2>
+
+        </div>
+
+        <div class="cap10-p83-comparison">
+
+          <article>
+
+            <span>
+              Na admissão
+            </span>
+
+            <h3>
+              Decisão sob incerteza
+            </h3>
+
+            <p>
+              A análise apoiava-se na apresentação clínica, no provável
+              foco infeccioso, na gravidade, nas características do
+              paciente e no contexto epidemiológico.
+            </p>
+
+          </article>
+
+          <div
+            class="cap10-p83-comparison__arrow"
+            aria-hidden="true"
+          >
+            →
+          </div>
+
+          <article>
+
+            <span>
+              Após 48 horas
+            </span>
+
+            <h3>
+              Decisão com novas evidências
+            </h3>
+
+            <p>
+              A evolução clínica, a identificação do microrganismo e
+              o teste de suscetibilidade acrescentaram informações que
+              não estavam disponíveis inicialmente.
+            </p>
+
+          </article>
+
+        </div>
+
+        <div class="cap10-p83-debrief">
+
+          <h3>
+            Integração do raciocínio
+          </h3>
+
+          <p>
+            Uma decisão pode ser coerente com as informações disponíveis
+            no momento inicial e, ainda assim, precisar ser revista
+            posteriormente. Reavaliar não significa necessariamente que
+            a primeira análise estava errada, mas reconhecer que a
+            qualidade e a quantidade das informações mudaram.
+          </p>
+
+          <p>
+            A antibioticoterapia racional exige interpretação contínua.
+            Dados clínicos, microbiológicos e farmacológicos não devem
+            ser analisados isoladamente, mas integrados ao longo da
+            evolução do paciente<sup>7</sup>.
+          </p>
+
+        </div>
+
+        <div class="cap10-p83-essential">
+
+          <span>
+            Ideia essencial
+          </span>
+
+          <p>
+            A decisão inicial é provisória. Sua qualidade depende tanto
+            dos fundamentos utilizados no início quanto da capacidade
+            de incorporar criticamente as novas informações.
+          </p>
+
+        </div>
+
+        <div class="cap10-p83-actions">
+
+          <button
+            class="cap10-p83-button cap10-p83-button--secondary"
+            type="button"
+            data-p83-restart
+          >
+            ↻ Refazer simulação
+          </button>
+
+          <a
+            class="cap10-p83-button cap10-p83-button--primary"
+            href="p84.html"
+          >
+            Próxima simulação
+            <span aria-hidden="true">→</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PAGINAÇÃO -->
+
+    <nav
+      class="pager"
+      aria-label="Paginação"
+    >
+
+      <a
+        class="btn"
+        href="p82.html"
+        aria-label="Ir para a página anterior"
+      >
+        ← Anterior
+      </a>
+
+      <div class="center">
+        Capítulo 10 · Página 83 de 89
+      </div>
+
+      <a
+        class="btn primary"
+        href="p84.html"
+        aria-label="Ir para a próxima página"
+      >
+        Próxima →
+      </a>
+
+    </nav>
+
+  </main>
+
+  <script src="../../js/app.js"></script>
+  <script src="../../js/capitulo-10.js"></script>
 
 </body>
+
 </html>
