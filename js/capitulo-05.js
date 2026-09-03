@@ -5,6 +5,7 @@
 
 (function initCap5Page39V2(){
   const root = document.querySelector("[data-cap5-p39v2]");
+
   if(!root) return;
 
   const tabs = Array.from(
@@ -29,83 +30,77 @@
   const states = {
     gram:{
       tabId:"cap5P39V2TabGram",
-      label:"Informação liberada",
-      result:"Cocos Gram-positivos em cachos.",
-      body:`
-        <article class="cap5-p39v2-analysis">
-          <span>O que permite inferir</span>
-          <p>O achado sugere a presença de cocos Gram-positivos com arranjo compatível com grupos como <em>Staphylococcus</em>.</p>
-        </article>
 
-        <article class="cap5-p39v2-analysis cap5-p39v2-analysis--limit">
-          <span>O que ainda não permite concluir</span>
-          <p>A coloração de Gram não determina a espécie, o perfil de suscetibilidade nem confirma, isoladamente, que o achado representa infecção verdadeira.</p>
-        </article>
+      result:
+        "Cocos Gram-positivos em cachos nos dois frascos.",
 
-        <article class="cap5-p39v2-analysis">
-          <span>Repercussão clínica</span>
-          <p>A informação pode orientar a avaliação inicial e a cobertura empírica, mas deve ser correlacionada ao tipo de amostra, ao quadro clínico e ao risco epidemiológico.</p>
-        </article>
+      question:
+        "Considerando que o paciente já iniciou antibioticoterapia empírica, qual é a conduta mais adequada diante desse resultado preliminar?",
 
-        <article class="cap5-p39v2-analysis cap5-p39v2-analysis--key">
-          <span>Ponto de interpretação</span>
-          <p>Quanto mais precoce o resultado, menor sua especificidade. A interpretação deve respeitar os limites de cada etapa.</p>
-        </article>
-      `
+      options:[
+        "Manter o esquema inicialmente prescrito até a identificação da espécie, pois a bacterioscopia fornece apenas informações sobre a morfologia e o arranjo bacteriano.",
+
+        "Redirecionar o esquema para cocos Gram-positivos, considerando a concordância entre o resultado dos dois frascos, a presença do cateter e a instabilidade clínica.",
+
+        "Revisar se o esquema iniciado contempla o grupo bacteriano sugerido e os fatores de risco do paciente, ajustando-o caso seja identificada possível falha de cobertura, sem restringir o tratamento apenas com base na bacterioscopia."
+      ],
+
+      correct:2,
+
+      nextLabel:
+        "Continuar para Identificação →",
+
+      feedback:
+        "A bacterioscopia deve levar à revisão da cobertura empírica, mas não determina sozinha a manutenção ou a modificação do tratamento. O achado sugere estafilococos, porém ainda não define a espécie, a fonte da infecção ou o perfil de suscetibilidade."
     },
 
     identificacao:{
       tabId:"cap5P39V2TabIdentificacao",
-      label:"Informação liberada",
-      result:"Microrganismo identificado: Staphylococcus aureus.",
-      body:`
-        <article class="cap5-p39v2-analysis">
-          <span>O que permite inferir</span>
-          <p>A identificação aumenta a precisão microbiológica e permite relacionar o isolamento aos padrões biológicos e epidemiológicos esperados para a espécie.</p>
-        </article>
 
-        <article class="cap5-p39v2-analysis cap5-p39v2-analysis--limit">
-          <span>O que ainda não permite concluir</span>
-          <p>A identificação isolada não informa quais antimicrobianos apresentam maior probabilidade de atividade nem diferencia automaticamente infecção, colonização ou contaminação.</p>
-        </article>
+      result:
+        "Microrganismo identificado nos dois frascos: <em>Staphylococcus aureus</em>.",
 
-        <article class="cap5-p39v2-analysis">
-          <span>Repercussão clínica</span>
-          <p>O resultado permite revisar a hipótese etiológica e reavaliar a terapia empírica, considerando a amostra, o sítio infeccioso e a relevância clínica do microrganismo.</p>
-        </article>
+      question:
+        "Como essa identificação deve modificar a interpretação do caso?",
 
-        <article class="cap5-p39v2-analysis cap5-p39v2-analysis--key">
-          <span>Ponto de interpretação</span>
-          <p>A espécie identificada fornece contexto para o antibiograma, pois diferentes microrganismos apresentam resistências intrínsecas e padrões esperados distintos.</p>
-        </article>
-      `
+      options:[
+        "A presença do cateter, associada à identificação nos dois frascos, permite atribuir a ele a origem da infecção e concentrar a investigação nesse dispositivo.",
+
+        "O isolamento deve ser considerado clinicamente relevante e levar à investigação da bacteremia e de suas possíveis fontes, incluindo o cateter, sem definir a origem apenas pelo resultado da hemocultura.",
+
+        "Como o microrganismo pode colonizar a pele e os dois frascos pertencem à mesma coleta, o resultado deve permanecer como possível contaminação até a confirmação em uma nova amostra."
+      ],
+
+      correct:1,
+
+      nextLabel:
+        "Continuar para Suscetibilidade →",
+
+      feedback:
+        "O isolamento de <em>Staphylococcus aureus</em> em hemocultura deve ser valorizado como clinicamente relevante. O cateter é uma fonte possível, mas sua presença não confirma a origem da bacteremia. Essa definição exige integração com a avaliação clínica e outros dados da investigação."
     },
 
     suscetibilidade:{
       tabId:"cap5P39V2TabSuscetibilidade",
-      label:"Informação liberada",
-      result:"Perfil de suscetibilidade disponibilizado nas categorias S, I e R.",
-      body:`
-        <article class="cap5-p39v2-analysis">
-          <span>O que permite inferir</span>
-          <p>O teste estima a probabilidade de atividade microbiológica dos antimicrobianos avaliados quando utilizados com exposição adequada.</p>
-        </article>
 
-        <article class="cap5-p39v2-analysis cap5-p39v2-analysis--limit">
-          <span>O que ainda não permite concluir</span>
-          <p>Uma categoria “Sensível” não garante sucesso clínico, pois o ensaio não reproduz integralmente o sítio da infecção, a perfusão, o biofilme, a carga bacteriana ou a resposta imunológica.</p>
-        </article>
+      result:
+        "Perfil disponível: antibacteriano A — I; antibacteriano B — S; antibacteriano C — R <sup>3,4</sup>.",
 
-        <article class="cap5-p39v2-analysis">
-          <span>Repercussão clínica</span>
-          <p>O resultado permite direcionar ou ajustar o tratamento, considerando dose, intervalo, via de administração, função renal, penetração no foco e necessidade de controle da fonte.</p>
-        </article>
+      question:
+        "Como esse perfil deve ser utilizado para direcionar o tratamento?",
 
-        <article class="cap5-p39v2-analysis cap5-p39v2-analysis--key">
-          <span>Ponto de interpretação</span>
-          <p>O antibiograma não substitui o raciocínio clínico. Ele qualifica a decisão terapêutica quando interpretado em conjunto com o paciente e o foco infeccioso.</p>
-        </article>
-      `
+      options:[
+        "Priorizar o antibacteriano B, pois a categoria S indica maior atividade que a categoria I e justifica sua escolha mesmo quando apresenta espectro mais amplo.",
+
+        "Manter o esquema empírico sem modificações até observar a evolução clínica, pois o teste realizado in vitro não reproduz todas as condições presentes no paciente.",
+
+        "Considerar A e B como opções suscetíveis, avaliando a exposição necessária, o espectro, o local da infecção e as características do paciente, sem interpretar S como automaticamente superior a I."
+      ],
+
+      correct:2,
+
+      feedback:
+        "As categorias S e I indicam suscetibilidade: S com esquema de exposição padrão e I quando há aumento da exposição. A categoria R indica alta probabilidade de falha mesmo com maior exposição. O perfil permite direcionar o tratamento, mas a escolha também deve considerar o espectro, o local da infecção, as características do paciente, o controle do foco e a evolução clínica."
     }
   };
 
@@ -113,273 +108,14 @@
 
   function render(target){
     const state = states[target];
-    if(!state) return;
 
-    currentTarget = target;
-
-    tabs.forEach(function(tab){
-      const active = tab.dataset.p39v2Target === target;
-
-      tab.classList.toggle("is-active", active);
-
-      tab.setAttribute(
-        "aria-selected",
-        active ? "true" : "false"
-      );
-
-      tab.setAttribute(
-        "tabindex",
-        active ? "0" : "-1"
-      );
-    });
-
-    view.setAttribute("aria-labelledby", state.tabId);
-    resultLabel.textContent = state.label;
-    resultText.innerHTML = state.result;
-    body.innerHTML = state.body;
-  }
-
-  tabs.forEach(function(tab, index){
-    tab.addEventListener("click", function(){
-      render(tab.dataset.p39v2Target);
-    });
-
-    tab.addEventListener("keydown", function(event){
-      let nextIndex = null;
-
-      if(
-        event.key === "ArrowRight" ||
-        event.key === "ArrowDown"
-      ){
-        nextIndex = (index + 1) % tabs.length;
-      }
-
-      if(
-        event.key === "ArrowLeft" ||
-        event.key === "ArrowUp"
-      ){
-        nextIndex =
-          (index - 1 + tabs.length) % tabs.length;
-      }
-
-      if(event.key === "Home"){
-        nextIndex = 0;
-      }
-
-      if(event.key === "End"){
-        nextIndex = tabs.length - 1;
-      }
-
-      if(nextIndex === null) return;
-
-      event.preventDefault();
-
-      tabs[nextIndex].focus();
-
-      render(
-        tabs[nextIndex].dataset.p39v2Target
-      );
-    });
-  });
-
-  render(currentTarget);
-
-  const revealItems = document.querySelectorAll(
-    ".cap5-page39 .cap5-p39v2-reveal"
-  );
-
-  if(!("IntersectionObserver" in window)){
-    revealItems.forEach(function(item){
-      item.classList.add("is-visible");
-    });
-
-    return;
-  }
-
-  const observer = new IntersectionObserver(
-    function(entries){
-      entries.forEach(function(entry){
-        if(!entry.isIntersecting) return;
-
-        entry.target.classList.add("is-visible");
-        observer.unobserve(entry.target);
-      });
-    },
-    {
-      threshold:.16,
-      rootMargin:"0px 0px -35px 0px"
-    }
-  );
-
-  revealItems.forEach(function(item){
-    observer.observe(item);
-  });
-})();
-/* =========================
-   CAPÍTULO 5 — PÁGINA 40
-   INTERPRETAÇÃO DA BACTERIOSCOPIA
-   ========================= */
-
-(function initCap5Page40V3(){
-  const root = document.querySelector("[data-cap5-p40v3]");
-  if(!root) return;
-
-  const tabs = Array.from(
-    root.querySelectorAll("[data-p40v3-target]")
-  );
-
-  const view = root.querySelector("#cap5P40V3View");
-  const kicker = root.querySelector("#cap5P40V3Kicker");
-  const title = root.querySelector("#cap5P40V3Title");
-  const body = root.querySelector("#cap5P40V3Body");
-
-  if(
-    !tabs.length ||
-    !view ||
-    !kicker ||
-    !title ||
-    !body
-  ){
-    return;
-  }
-
-  const states = {
-    gram:{
-      tabId:"cap5P40V3TabGram",
-      kicker:"Caracterização inicial",
-      
-      body:`
-        <div class="cap5-p40v3-infoGrid">
-
-          <article class="cap5-p40v3-info">
-            <span>O que é observado</span>
-            <p>A coloração permite distinguir estruturas bacterianas que retêm o cristal violeta daquelas que incorporam o contra-corante.</p>
-          </article>
-
-          <article class="cap5-p40v3-info">
-            <span>Informação obtida</span>
-            <p>O campo apresenta simultaneamente bactérias com reação Gram-positiva e Gram-negativa.</p>
-          </article>
-
-          <article class="cap5-p40v3-info">
-            <span>Valor microbiológico</span>
-            <p>Essa diferenciação restringe os grupos bacterianos inicialmente considerados, mas não define a espécie.</p>
-          </article>
-
-          <article class="cap5-p40v3-info cap5-p40v3-info--key">
-            <span>Limite interpretativo</span>
-            <p>A reação ao Gram deve ser analisada em conjunto com a morfologia, o arranjo e o tipo de amostra.</p>
-          </article>
-
-        </div>
-      `
-    },
-
-    morfologia:{
-      tabId:"cap5P40V3TabMorfologia",
-      kicker:"Forma bacteriana",
-      
-      body:`
-        <div class="cap5-p40v3-infoGrid">
-
-          <article class="cap5-p40v3-info">
-            <span>O que é observado</span>
-            <p>A forma das células permite classificá-las inicialmente como cocos, bacilos, cocobacilos ou outras morfologias.</p>
-          </article>
-
-          <article class="cap5-p40v3-info">
-            <span>Achado no campo</span>
-            <p>Observam-se estruturas bacterianas arredondadas e estruturas alongadas, correspondentes a cocos e bacilos.</p>
-          </article>
-
-          <article class="cap5-p40v3-info">
-            <span>Valor microbiológico</span>
-            <p>A morfologia reduz o conjunto de grupos bacterianos possíveis e organiza a investigação subsequente.</p>
-          </article>
-
-          <article class="cap5-p40v3-info cap5-p40v3-info--key">
-            <span>Limite interpretativo</span>
-            <p>Diferentes espécies podem compartilhar a mesma forma, por isso a morfologia não estabelece a identificação definitiva.</p>
-          </article>
-
-        </div>
-      `
-    },
-
-    arranjo:{
-      tabId:"cap5P40V3TabArranjo",
-      kicker:"Organização celular",
-      
-      body:`
-        <div class="cap5-p40v3-infoGrid">
-
-          <article class="cap5-p40v3-info">
-            <span>O que é observado</span>
-            <p>O arranjo descreve como as células permanecem organizadas após a divisão bacteriana.</p>
-          </article>
-
-          <article class="cap5-p40v3-info">
-            <span>Achado no campo</span>
-            <p>Os cocos aparecem predominantemente em agrupamentos semelhantes a cachos.</p>
-          </article>
-
-          <article class="cap5-p40v3-info">
-            <span>Grupo sugerido</span>
-            <p>Cocos Gram-positivos em cachos são compatíveis com bactérias do gênero <em>Staphylococcus</em>.</p>
-          </article>
-
-          <article class="cap5-p40v3-info cap5-p40v3-info--key">
-            <span>Limite interpretativo</span>
-            <p>O padrão orienta a suspeita microbiológica, mas a identificação do gênero e da espécie depende de testes adicionais.</p>
-          </article>
-
-        </div>
-      `
-    },
-
-    leucocitos:{
-      tabId:"cap5P40V3TabLeucocitos",
-      kicker:"Resposta do hospedeiro",
-     
-      body:`
-        <div class="cap5-p40v3-infoGrid">
-
-          <article class="cap5-p40v3-info">
-            <span>O que é observado</span>
-            <p>A presença e a quantidade de leucócitos refletem a resposta inflamatória presente no material clínico.</p>
-          </article>
-
-          <article class="cap5-p40v3-info">
-            <span>Achado no campo</span>
-            <p>Há predomínio de neutrófilos, compatível com resposta inflamatória aguda.</p>
-          </article>
-
-          <article class="cap5-p40v3-info">
-            <span>Valor da amostra</span>
-            <p>A associação entre leucócitos e bactérias pode aumentar a representatividade microbiológica do material, conforme o tipo de amostra.</p>
-          </article>
-
-          <article class="cap5-p40v3-info cap5-p40v3-info--key">
-            <span>Limite interpretativo</span>
-            <p>A presença de leucócitos não confirma isoladamente infecção bacteriana e deve ser correlacionada ao contexto clínico e ao sítio de coleta.</p>
-          </article>
-
-        </div>
-      `
-    }
-  };
-
-  let currentTarget = "gram";
-
-  function render(target){
-    const state = states[target];
     if(!state) return;
 
     currentTarget = target;
 
     tabs.forEach(function(tab){
       const active =
-        tab.dataset.p40v3Target === target;
+        tab.dataset.p39v2Target === target;
 
       tab.classList.toggle(
         "is-active",
@@ -402,69 +138,255 @@
       state.tabId
     );
 
-    kicker.textContent = state.kicker;
-    title.textContent = state.title;
-    body.innerHTML = state.body;
+    resultLabel.textContent =
+      "Informação liberada";
+
+    resultText.innerHTML =
+      state.result;
+
+    body.innerHTML = `
+      <p class="cap5-p39v2-questionTitle">
+        ${state.question}
+      </p>
+
+      <div
+        class="cap5-p39v2-options"
+        role="group"
+        aria-label="Opções de resposta"
+      >
+        ${state.options.map(
+          function(option, optionIndex){
+            return `
+              <button
+                type="button"
+                class="cap5-p39v2-option"
+                data-option="${optionIndex}"
+              >
+                <span>
+                  ${String.fromCharCode(
+                    65 + optionIndex
+                  )}
+                </span>
+
+                ${option}
+              </button>
+            `;
+          }
+        ).join("")}
+      </div>
+
+      <div
+        class="cap5-p39v2-feedback"
+        aria-live="polite"
+      ></div>
+    `;
+
+    const optionButtons = Array.from(
+      body.querySelectorAll("[data-option]")
+    );
+
+    const feedback = body.querySelector(
+      ".cap5-p39v2-feedback"
+    );
+
+    optionButtons.forEach(function(button){
+      button.addEventListener(
+        "click",
+        function(){
+          const selected = Number(
+            button.dataset.option
+          );
+
+          const isCorrect =
+            selected === state.correct;
+
+          optionButtons.forEach(
+            function(item){
+              item.disabled = true;
+
+              if(
+                Number(item.dataset.option) ===
+                state.correct
+              ){
+                item.classList.add(
+                  "is-correct"
+                );
+              }
+            }
+          );
+
+          button.classList.add(
+            isCorrect
+              ? "is-correct"
+              : "is-incorrect"
+          );
+
+          feedback.className =
+            `cap5-p39v2-feedback ${
+              isCorrect
+                ? "is-success"
+                : "is-attention"
+            }`;
+
+          const finalMessage = `
+            <strong class="cap5-p39v2-complete">
+              Análise concluída: cada novo resultado
+              permitiu revisar a decisão anterior, mas
+              o laudo permaneceu integrado ao quadro
+              clínico.
+            </strong>
+          `;
+
+          const nextContent =
+            target !== "suscetibilidade"
+              ? `
+                <button
+                  type="button"
+                  class="cap5-p39v2-continue"
+                >
+                  ${state.nextLabel}
+                </button>
+              `
+              : finalMessage;
+
+          feedback.innerHTML = isCorrect
+            ? `
+              <strong>Muito bem.</strong>
+              ${state.feedback}
+              ${nextContent}
+            `
+            : `
+              <strong>Reavalie o raciocínio.</strong>
+              A alternativa escolhida não integra
+              todos os dados disponíveis.
+              ${state.feedback}
+              ${nextContent}
+            `;
+
+          const continueButton =
+            feedback.querySelector(
+              ".cap5-p39v2-continue"
+            );
+
+          if(continueButton){
+            continueButton.addEventListener(
+              "click",
+              function(){
+                const currentIndex =
+                  tabs.findIndex(
+                    function(tab){
+                      return (
+                        tab.dataset.p39v2Target ===
+                        target
+                      );
+                    }
+                  );
+
+                const nextTab =
+                  tabs[currentIndex + 1];
+
+                nextTab.disabled = false;
+
+                nextTab.classList.add(
+                  "is-unlocked"
+                );
+
+                render(
+                  nextTab.dataset.p39v2Target
+                );
+
+                nextTab.focus();
+              }
+            );
+          }
+        }
+      );
+    });
   }
 
   tabs.forEach(function(tab, index){
+    tab.addEventListener(
+      "click",
+      function(){
+        if(tab.disabled) return;
 
-    tab.addEventListener("click", function(){
-      render(tab.dataset.p40v3Target);
-    });
-
-    tab.addEventListener("keydown", function(event){
-      let nextIndex = null;
-
-      if(
-        event.key === "ArrowRight" ||
-        event.key === "ArrowDown"
-      ){
-        nextIndex =
-          (index + 1) % tabs.length;
+        render(
+          tab.dataset.p39v2Target
+        );
       }
+    );
 
-      if(
-        event.key === "ArrowLeft" ||
-        event.key === "ArrowUp"
-      ){
-        nextIndex =
-          (index - 1 + tabs.length) %
-          tabs.length;
+    tab.addEventListener(
+      "keydown",
+      function(event){
+        let nextIndex = null;
+
+        if(
+          event.key === "ArrowRight" ||
+          event.key === "ArrowDown"
+        ){
+          nextIndex =
+            (index + 1) % tabs.length;
+        }
+
+        if(
+          event.key === "ArrowLeft" ||
+          event.key === "ArrowUp"
+        ){
+          nextIndex =
+            (
+              index - 1 + tabs.length
+            ) % tabs.length;
+        }
+
+        if(event.key === "Home"){
+          nextIndex = 0;
+        }
+
+        if(event.key === "End"){
+          nextIndex =
+            tabs.length - 1;
+        }
+
+        if(
+          nextIndex === null ||
+          tabs[nextIndex].disabled
+        ){
+          return;
+        }
+
+        event.preventDefault();
+
+        tabs[nextIndex].focus();
+
+        render(
+          tabs[nextIndex]
+            .dataset.p39v2Target
+        );
       }
-
-      if(event.key === "Home"){
-        nextIndex = 0;
-      }
-
-      if(event.key === "End"){
-        nextIndex = tabs.length - 1;
-      }
-
-      if(nextIndex === null) return;
-
-      event.preventDefault();
-
-      tabs[nextIndex].focus();
-
-      render(
-        tabs[nextIndex].dataset.p40v3Target
-      );
-    });
-
+    );
   });
 
   render(currentTarget);
 
   const revealItems =
     document.querySelectorAll(
-      ".cap5-page40 .cap5-p40v3-reveal"
+      ".cap5-page39 .cap5-p39v2-reveal"
     );
 
-  if(!("IntersectionObserver" in window)){
-    revealItems.forEach(function(item){
-      item.classList.add("is-visible");
-    });
+  if(
+    !(
+      "IntersectionObserver"
+      in window
+    )
+  ){
+    revealItems.forEach(
+      function(item){
+        item.classList.add(
+          "is-visible"
+        );
+      }
+    );
 
     return;
   }
@@ -472,52 +394,366 @@
   const observer =
     new IntersectionObserver(
       function(entries){
+        entries.forEach(
+          function(entry){
+            if(
+              !entry.isIntersecting
+            ){
+              return;
+            }
 
-        entries.forEach(function(entry){
-          if(!entry.isIntersecting) return;
+            entry.target.classList.add(
+              "is-visible"
+            );
 
-          entry.target.classList.add(
-            "is-visible"
-          );
-
-          observer.unobserve(entry.target);
-        });
-
+            observer.unobserve(
+              entry.target
+            );
+          }
+        );
       },
       {
-        threshold:.14,
-        rootMargin:"0px 0px -35px 0px"
+        threshold:.16,
+        rootMargin:
+          "0px 0px -35px 0px"
       }
     );
 
-  revealItems.forEach(function(item){
-    observer.observe(item);
+  revealItems.forEach(
+    function(item){
+      observer.observe(item);
+    }
+  );
+})();
+/* =========================
+   CAPÍTULO 5 — PÁGINA 40
+   ATIVIDADE: BACTERIOSCOPIA
+   ========================= */
+
+(function initCap5Page40() {
+  const root = document.querySelector("[data-cap5-p40v4]");
+
+  if (!root) {
+    return;
+  }
+
+  const options = Array.from(
+    root.querySelectorAll(".cap5-p40v4-option")
+  );
+
+  const inputs = Array.from(
+    root.querySelectorAll(
+      '.cap5-p40v4-option input[type="checkbox"]'
+    )
+  );
+
+  const checkButton = root.querySelector("[data-p40v4-check]");
+  const resetButton = root.querySelector("[data-p40v4-reset]");
+  const alertBox = root.querySelector("[data-p40v4-alert]");
+  const feedback = root.querySelector("[data-p40v4-feedback]");
+  const feedbackIcon = root.querySelector(
+    "[data-p40v4-feedback-icon]"
+  );
+  const feedbackTitle = root.querySelector(
+    "[data-p40v4-feedback-title]"
+  );
+  const feedbackText = root.querySelector(
+    "[data-p40v4-feedback-text]"
+  );
+  const report = root.querySelector("[data-p40v4-report]");
+  const limits = root.querySelector("[data-p40v4-limits]");
+
+  if (
+    !options.length ||
+    !inputs.length ||
+    !checkButton ||
+    !resetButton ||
+    !alertBox ||
+    !feedback ||
+    !feedbackIcon ||
+    !feedbackTitle ||
+    !feedbackText ||
+    !report ||
+    !limits
+  ) {
+    return;
+  }
+
+  /*
+   * Informações que podem ser adequadamente descritas
+   * pela bacterioscopia apresentada.
+   */
+  const correctValues = new Set([
+    "cocos",
+    "bacilos",
+    "leucocitos"
+  ]);
+
+  function updateSelectedState() {
+    options.forEach(function (option) {
+      const input = option.querySelector(
+        'input[type="checkbox"]'
+      );
+
+      option.classList.toggle(
+        "is-selected",
+        input.checked
+      );
+    });
+
+    alertBox.hidden = true;
+  }
+
+  function clearResultClasses() {
+    options.forEach(function (option) {
+      option.classList.remove(
+        "is-selected",
+        "is-correct",
+        "is-incorrect",
+        "is-missed",
+        "is-locked"
+      );
+    });
+  }
+
+  function checkAnswers() {
+    const selectedInputs = inputs.filter(function (input) {
+      return input.checked;
+    });
+
+    if (!selectedInputs.length) {
+      alertBox.hidden = false;
+      alertBox.focus?.();
+      return;
+    }
+
+    alertBox.hidden = true;
+
+    let selectedCorrect = 0;
+    let selectedIncorrect = 0;
+    let missedCorrect = 0;
+
+    options.forEach(function (option) {
+      const input = option.querySelector(
+        'input[type="checkbox"]'
+      );
+
+      const shouldBeSelected = correctValues.has(
+        input.value
+      );
+
+      option.classList.remove("is-selected");
+
+      if (input.checked && shouldBeSelected) {
+        option.classList.add("is-correct");
+        selectedCorrect += 1;
+      }
+
+      if (input.checked && !shouldBeSelected) {
+        option.classList.add("is-incorrect");
+        selectedIncorrect += 1;
+      }
+
+      if (!input.checked && shouldBeSelected) {
+        option.classList.add("is-missed");
+        missedCorrect += 1;
+      }
+
+      option.classList.add("is-locked");
+      input.disabled = true;
+    });
+
+    const complete =
+      selectedCorrect === correctValues.size &&
+      selectedIncorrect === 0 &&
+      missedCorrect === 0;
+
+    feedback.classList.remove(
+      "is-complete",
+      "is-partial"
+    );
+
+    if (complete) {
+      feedback.classList.add("is-complete");
+      feedbackIcon.textContent = "✓";
+      feedbackTitle.textContent =
+        "Descrição construída adequadamente";
+
+      feedbackText.textContent =
+        "Você diferenciou os achados que podem ser descritos pela bacterioscopia das conclusões que dependem de outras etapas da investigação microbiológica.";
+    } else {
+      feedback.classList.add("is-partial");
+      feedbackIcon.textContent = "!";
+      feedbackTitle.textContent =
+        "Revise o alcance da bacterioscopia";
+
+      if (
+        selectedIncorrect > 0 &&
+        missedCorrect > 0
+      ) {
+        feedbackText.textContent =
+          "Algumas informações observáveis não foram selecionadas e algumas conclusões escolhidas ultrapassam o que esse exame permite afirmar. Compare sua seleção com a descrição possível e com os limites do método.";
+      } else if (selectedIncorrect > 0) {
+        feedbackText.textContent =
+          "Você reconheceu os principais achados, mas selecionou conclusões que dependem da cultura, da identificação ou da correlação com o tipo de amostra e o contexto clínico.";
+      } else {
+        feedbackText.textContent =
+          "As opções selecionadas estão adequadas, mas outras informações observáveis também poderiam constar na descrição da bacterioscopia.";
+      }
+    }
+
+    /*
+     * A descrição e os limites aparecem mesmo quando
+     * a resposta não está completa, pois fazem parte
+     * do feedback formativo da atividade.
+     */
+    report.hidden = false;
+    limits.hidden = false;
+    feedback.hidden = false;
+
+    checkButton.hidden = true;
+    resetButton.hidden = false;
+
+    feedback.focus();
+  }
+
+  function resetActivity() {
+    clearResultClasses();
+
+    inputs.forEach(function (input) {
+      input.checked = false;
+      input.disabled = false;
+    });
+
+    alertBox.hidden = true;
+    feedback.hidden = true;
+    report.hidden = true;
+    limits.hidden = true;
+
+    feedback.classList.remove(
+      "is-complete",
+      "is-partial"
+    );
+
+    feedbackIcon.textContent = "";
+    feedbackTitle.textContent = "";
+    feedbackText.textContent = "";
+
+    checkButton.hidden = false;
+    resetButton.hidden = true;
+
+    const firstInput = inputs[0];
+
+    if (firstInput) {
+      firstInput.focus();
+    }
+  }
+
+  inputs.forEach(function (input) {
+    input.addEventListener(
+      "change",
+      updateSelectedState
+    );
   });
 
-})();
+  checkButton.addEventListener(
+    "click",
+    checkAnswers
+  );
 
+  resetButton.addEventListener(
+    "click",
+    resetActivity
+  );
+
+  /*
+   * Exibe os blocos da página quando entram
+   * na área visível da tela.
+   */
+  const revealItems = document.querySelectorAll(
+    ".cap5-page40 .cap5-p40v3-reveal"
+  );
+
+  if (!("IntersectionObserver" in window)) {
+    revealItems.forEach(function (item) {
+      item.classList.add("is-visible");
+    });
+
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        entry.target.classList.add("is-visible");
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.12,
+      rootMargin: "0px 0px -30px 0px"
+    }
+  );
+
+  revealItems.forEach(function (item) {
+    observer.observe(item);
+  });
+})();
 /* =========================
    CAPÍTULO 5 — PÁGINA 41
    COLORAÇÃO DE GRAM
    ========================= */
 
-(function initCap5Page41V3(){
-  const root = document.querySelector("[data-cap5-p41v3]");
-  if(!root) return;
-
-  const tabs = Array.from(
-    root.querySelectorAll("[data-p41v3-target]")
+(function initCap5Page41V4() {
+  const root = document.querySelector(
+    "[data-cap5-p41v4]"
   );
 
-  const view = root.querySelector("#cap5P41V3View");
-  const image = root.querySelector("#cap5P41V3Image");
-  const caption = root.querySelector("#cap5P41V3Caption");
-  const kicker = root.querySelector("#cap5P41V3Kicker");
-  const title = root.querySelector("#cap5P41V3Title");
-  const body = root.querySelector("#cap5P41V3Body");
-  const zoomButton = root.querySelector("#cap5P41V3Zoom");
+  if (!root) {
+    return;
+  }
 
-  if(
+  const tabs = Array.from(
+    root.querySelectorAll("[data-p41v4-target]")
+  );
+
+  const view = root.querySelector(
+    "#cap5P41V4View"
+  );
+
+  const image = root.querySelector(
+    "#cap5P41V4Image"
+  );
+
+  const caption = root.querySelector(
+    "#cap5P41V4Caption"
+  );
+
+  const kicker = root.querySelector(
+    "#cap5P41V4Kicker"
+  );
+
+  const title = root.querySelector(
+    "#cap5P41V4Title"
+  );
+
+  const body = root.querySelector(
+    "#cap5P41V4Body"
+  );
+
+  const zoom = root.querySelector(
+    "#cap5P41V4Zoom"
+  );
+
+  const finalResults = root.querySelector(
+    "[data-p41v4-results]"
+  );
+
+  if (
     !tabs.length ||
     !view ||
     !image ||
@@ -525,194 +761,203 @@
     !kicker ||
     !title ||
     !body ||
-    !zoomButton
-  ){
+    !zoom
+  ) {
     return;
   }
 
+  function createInformationGrid(
+    event,
+    gramPositive,
+    gramNegative,
+    meaning
+  ) {
+    return `
+      <div class="cap5-p41v4-infoGrid">
+
+        <article class="cap5-p41v4-info">
+          <span>O que acontece</span>
+          <p>${event}</p>
+        </article>
+
+        <article class="cap5-p41v4-info">
+          <span>Gram-positivas</span>
+          <p>${gramPositive}</p>
+        </article>
+
+        <article class="cap5-p41v4-info">
+          <span>Gram-negativas</span>
+          <p>${gramNegative}</p>
+        </article>
+
+        <article
+          class="cap5-p41v4-info cap5-p41v4-info--key"
+        >
+          <span>Por que isso importa?</span>
+          <p>${meaning}</p>
+        </article>
+
+      </div>
+    `;
+  }
+
   const states = {
-    fixacao:{
-      tabId:"cap5P41V3TabFixacao",
-      image:"../../assets/capitulo-05/imagens/fixacao.png",
-      alt:"Etapa de fixação da amostra na coloração de Gram",
-      caption:"Preparação e fixação do material clínico na lâmina.",
-      kicker:"Etapa preparatória",
-      title:"Fixação da amostra",
-      body:`
-        <div class="cap5-p41v3-infoGrid">
+    fixacao: {
+      tabId: "cap5P41V4TabFixacao",
 
-          <article class="cap5-p41v3-info">
-            <span>Função da etapa</span>
-            <p>Promover a aderência do material à lâmina e preservar a morfologia bacteriana.</p>
-          </article>
+      image:
+        "../../assets/capitulo-05/imagens/fixacao.png",
 
-          <article class="cap5-p41v3-info">
-            <span>Gram-positivas</span>
-            <p>Ainda não apresentam diferenciação cromática.</p>
-          </article>
+      alt:
+        "Etapa de fixação da amostra na coloração de Gram",
 
-          <article class="cap5-p41v3-info">
-            <span>Gram-negativas</span>
-            <p>Ainda não apresentam diferenciação cromática.</p>
-          </article>
+      caption:
+        "Preparação e fixação do material na lâmina.",
 
-          <article class="cap5-p41v3-info cap5-p41v3-info--key">
-            <span>Ponto-chave</span>
-            <p>A etapa prepara a amostra para receber os reagentes, sem diferenciar os grupos bacterianos.</p>
-          </article>
+      kicker:
+        "Etapa preparatória",
 
-        </div>
-      `
+      title:
+        "Fixação da amostra",
+
+      body: createInformationGrid(
+        "O material é fixado à lâmina para permanecer aderido durante a coloração.",
+        "Ainda não apresentam diferenciação pela cor.",
+        "Ainda não apresentam diferenciação pela cor.",
+        "Uma fixação inadequada pode causar perda de material ou alterar a morfologia observada."
+      )
     },
 
-    cristal:{
-      tabId:"cap5P41V3TabCristal",
-      image:"../../assets/capitulo-05/imagens/cristal-violeta.png",
-      alt:"Aplicação do cristal violeta na coloração de Gram",
-      caption:"Aplicação do corante primário sobre as bactérias.",
-      kicker:"Corante primário",
-      title:"Aplicação do cristal violeta",
-      body:`
-        <div class="cap5-p41v3-infoGrid">
+    cristal: {
+      tabId: "cap5P41V4TabCristal",
 
-          <article class="cap5-p41v3-info">
-            <span>Função da etapa</span>
-            <p>Penetrar nas células bacterianas e conferir coloração violácea inicial.</p>
-          </article>
+      image:
+        "../../assets/capitulo-05/imagens/cristal-violeta.png",
 
-          <article class="cap5-p41v3-info">
-            <span>Gram-positivas</span>
-            <p>Adquirem coloração violácea.</p>
-          </article>
+      alt:
+        "Aplicação do cristal violeta na coloração de Gram",
 
-          <article class="cap5-p41v3-info">
-            <span>Gram-negativas</span>
-            <p>Também adquirem coloração violácea.</p>
-          </article>
+      caption:
+        "Aplicação do corante primário.",
 
-          <article class="cap5-p41v3-info cap5-p41v3-info--key">
-            <span>Ponto-chave</span>
-            <p>O cristal violeta penetra nos dois grupos; ainda não ocorre diferenciação.</p>
-          </article>
+      kicker:
+        "Corante primário",
 
-        </div>
-      `
+      title:
+        "Aplicação do cristal violeta",
+
+      body: createInformationGrid(
+        "O cristal violeta penetra nas células bacterianas e produz uma coloração violeta inicial.",
+        "Ficam violetas.",
+        "Também ficam violetas.",
+        "Neste momento, os dois grupos apresentam a mesma cor; a diferenciação ainda não ocorreu."
+      )
     },
 
-    lugol:{
-      tabId:"cap5P41V3TabLugol",
-      image:"../../assets/capitulo-05/imagens/lugol.png",
-      alt:"Aplicação do lugol na coloração de Gram",
-      caption:"Formação do complexo cristal violeta–iodo no interior das bactérias.",
-      kicker:"Mordente",
-      title:"Formação do complexo cristal violeta–iodo",
-      body:`
-        <div class="cap5-p41v3-infoGrid">
+    lugol: {
+      tabId: "cap5P41V4TabLugol",
 
-          <article class="cap5-p41v3-info">
-            <span>Função da etapa</span>
-            <p>Atuar como mordente e formar um complexo maior e menos difusível com o cristal violeta.</p>
-          </article>
+      image:
+        "../../assets/capitulo-05/imagens/lugol.png",
 
-          <article class="cap5-p41v3-info">
-            <span>Gram-positivas</span>
-            <p>Permanecem violáceas, com o complexo formado no interior celular.</p>
-          </article>
+      alt:
+        "Aplicação do Lugol na coloração de Gram",
 
-          <article class="cap5-p41v3-info">
-            <span>Gram-negativas</span>
-            <p>Também permanecem violáceas, com o complexo presente no interior celular.</p>
-          </article>
+      caption:
+        "Formação do complexo cristal violeta–iodo.",
 
-          <article class="cap5-p41v3-info cap5-p41v3-info--key">
-            <span>Ponto-chave</span>
-            <p>O lugol estabiliza o corante, preparando a diferenciação que ocorrerá na descoloração.</p>
-          </article>
+      kicker:
+        "Mordente",
 
-        </div>
-      `
+      title:
+        "Aplicação do Lugol",
+
+      body: createInformationGrid(
+        "O iodo atua como mordente e forma o complexo cristal violeta–iodo no interior das células.",
+        "Permanecem violetas.",
+        "Também permanecem violetas.",
+        "O complexo será retido de maneira diferente pelos dois grupos durante a descoloração."
+      )
     },
 
-    alcool:{
-      tabId:"cap5P41V3TabAlcool",
-      image:"../../assets/capitulo-05/imagens/alcool-acetona.png",
-      alt:"Descoloração com álcool ou álcool-acetona na coloração de Gram",
-      caption:"Etapa crítica de diferenciação entre bactérias Gram-positivas e Gram-negativas.",
-      kicker:"Etapa crítica",
-      title:"Descoloração com álcool ou álcool-acetona",
-      body:`
-        <div class="cap5-p41v3-infoGrid">
+    alcool: {
+      tabId: "cap5P41V4TabAlcool",
 
-          <article class="cap5-p41v3-info">
-            <span>Função da etapa</span>
-            <p>Promover a remoção seletiva do complexo cristal violeta–iodo.</p>
-          </article>
+      image:
+        "../../assets/capitulo-05/imagens/alcool-acetona.png",
 
-          <article class="cap5-p41v3-info">
-            <span>Gram-positivas</span>
-            <p>A camada espessa de peptidoglicano sofre desidratação e retém o complexo, mantendo a cor violácea.</p>
-          </article>
+      alt:
+        "Etapa de descoloração na coloração de Gram",
 
-          <article class="cap5-p41v3-info">
-            <span>Gram-negativas</span>
-            <p>A membrana externa é desorganizada e o complexo é removido através da fina camada de peptidoglicano, deixando a célula incolor.</p>
-          </article>
+      caption:
+        "Etapa crítica da diferenciação.",
 
-          <article class="cap5-p41v3-info cap5-p41v3-info--key">
-            <span>Ponto-chave</span>
-            <p>Esta é a principal etapa de diferenciação entre bactérias Gram-positivas e Gram-negativas.</p>
-          </article>
+      kicker:
+        "Etapa crítica",
 
-        </div>
-      `
+      title:
+        "Descoloração",
+
+      body: createInformationGrid(
+        "O agente descolorante remove seletivamente o complexo cristal violeta–iodo.",
+        "Retêm o complexo e permanecem violetas.",
+        "Perdem o complexo e ficam temporariamente incolores.",
+        "Excesso ou insuficiência de descoloração pode produzir uma reação ao Gram diferente da esperada."
+      )
     },
 
-    safranina:{
-      tabId:"cap5P41V3TabSafranina",
-      image:"../../assets/capitulo-05/imagens/safranina.png",
-      alt:"Aplicação da safranina na etapa final da coloração de Gram",
-      caption:"Resultado da aplicação do contra-corante.",
-      kicker:"Contra-corante",
-      title:"Aplicação da safranina",
-      body:`
-        <div class="cap5-p41v3-infoGrid">
+    safranina: {
+      tabId: "cap5P41V4TabSafranina",
 
-          <article class="cap5-p41v3-info">
-            <span>Função da etapa</span>
-            <p>Corar as bactérias que perderam o corante primário durante a descoloração.</p>
-          </article>
+      image:
+        "../../assets/capitulo-05/imagens/safranina.png",
 
-          <article class="cap5-p41v3-info">
-            <span>Gram-positivas</span>
-            <p>Permanecem azul-arroxeadas devido à retenção do complexo cristal violeta–iodo.</p>
-          </article>
+      alt:
+        "Aplicação da safranina na coloração de Gram",
 
-          <article class="cap5-p41v3-info">
-            <span>Gram-negativas</span>
-            <p>Incorporam a safranina e adquirem coloração rosada.</p>
-          </article>
+      caption:
+        "Aplicação do contra-corante e resultado final.",
 
-          <article class="cap5-p41v3-info cap5-p41v3-info--key">
-            <span>Ponto-chave</span>
-            <p>O contra-corante torna visíveis as bactérias Gram-negativas que haviam ficado incolores.</p>
-          </article>
+      kicker:
+        "Contra-corante",
 
-        </div>
-      `
+      title:
+        "Aplicação da safranina",
+
+      body: createInformationGrid(
+        "A safranina cora as bactérias que ficaram incolores após a descoloração.",
+        "Permanecem violetas; a cor mais intensa do cristal violeta predomina.",
+        "Adquirem coloração rosada.",
+        "A cor final fornece uma caracterização inicial, mas não identifica a espécie bacteriana."
+      )
     }
   };
 
   let transitionTimer = null;
 
-  function render(target){
+  function updateFinalResults(target) {
+    if (!finalResults) {
+      return;
+    }
+
+    finalResults.hidden = target !== "safranina";
+  }
+
+  function renderStage(target) {
     const state = states[target];
-    if(!state) return;
 
-    tabs.forEach(function(tab){
+    if (!state) {
+      return;
+    }
+
+    tabs.forEach(function (tab) {
       const active =
-        tab.dataset.p41v3Target === target;
+        tab.dataset.p41v4Target === target;
 
-      tab.classList.toggle("is-active", active);
+      tab.classList.toggle(
+        "is-active",
+        active
+      );
 
       tab.setAttribute(
         "aria-selected",
@@ -730,116 +975,663 @@
       state.tabId
     );
 
+    updateFinalResults(target);
+
     window.clearTimeout(transitionTimer);
     image.classList.add("is-changing");
 
-    transitionTimer = window.setTimeout(function(){
-      image.src = state.image;
-      image.alt = state.alt;
+    transitionTimer = window.setTimeout(
+      function () {
+        image.src = state.image;
+        image.alt = state.alt;
 
-      caption.textContent = state.caption;
-      kicker.textContent = state.kicker;
-      title.textContent = state.title;
-      body.innerHTML = state.body;
+        caption.textContent = state.caption;
+        kicker.textContent = state.kicker;
+        title.textContent = state.title;
+        body.innerHTML = state.body;
 
-      zoomButton.dataset.zoom = state.image;
+        zoom.dataset.zoom = state.image;
 
-      zoomButton.setAttribute(
-        "aria-label",
-        "Ampliar imagem: " + state.title
-      );
+        zoom.setAttribute(
+          "aria-label",
+          "Ampliar imagem: " + state.title
+        );
 
-      image.classList.remove("is-changing");
-    }, 140);
+        image.classList.remove("is-changing");
+      },
+      120
+    );
   }
 
-  tabs.forEach(function(tab, index){
-
-    tab.addEventListener("click", function(){
-      render(tab.dataset.p41v3Target);
-    });
-
-    tab.addEventListener("keydown", function(event){
-      let nextIndex = null;
-
-      if(
-        event.key === "ArrowRight" ||
-        event.key === "ArrowDown"
-      ){
-        nextIndex = (index + 1) % tabs.length;
-      }
-
-      if(
-        event.key === "ArrowLeft" ||
-        event.key === "ArrowUp"
-      ){
-        nextIndex =
-          (index - 1 + tabs.length) % tabs.length;
-      }
-
-      if(event.key === "Home"){
-        nextIndex = 0;
-      }
-
-      if(event.key === "End"){
-        nextIndex = tabs.length - 1;
-      }
-
-      if(nextIndex === null) return;
-
-      event.preventDefault();
-
-      tabs[nextIndex].focus();
-
-      render(
-        tabs[nextIndex].dataset.p41v3Target
+  tabs.forEach(function (tab, index) {
+    tab.addEventListener("click", function () {
+      renderStage(
+        tab.dataset.p41v4Target
       );
     });
 
+    tab.addEventListener(
+      "keydown",
+      function (event) {
+        let nextIndex = null;
+
+        if (
+          event.key === "ArrowRight" ||
+          event.key === "ArrowDown"
+        ) {
+          nextIndex =
+            (index + 1) % tabs.length;
+        }
+
+        if (
+          event.key === "ArrowLeft" ||
+          event.key === "ArrowUp"
+        ) {
+          nextIndex =
+            (index - 1 + tabs.length) %
+            tabs.length;
+        }
+
+        if (event.key === "Home") {
+          nextIndex = 0;
+        }
+
+        if (event.key === "End") {
+          nextIndex = tabs.length - 1;
+        }
+
+        if (nextIndex === null) {
+          return;
+        }
+
+        event.preventDefault();
+
+        tabs[nextIndex].focus();
+
+        renderStage(
+          tabs[nextIndex].dataset.p41v4Target
+        );
+      }
+    );
   });
 
-  render("fixacao");
+  renderStage("fixacao");
+})();
 
-  const revealItems =
-    document.querySelectorAll(
-      ".cap5-page41 .cap5-p41v3-reveal"
+/* =========================
+   ABERTURA DAS INTERFERÊNCIAS
+   ========================= */
+
+(function initCap5Page41Disclosure() {
+  const root = document.querySelector(
+    "[data-cap5-p41v4-interferences]"
+  );
+
+  if (!root) {
+    return;
+  }
+
+  const openButton = root.querySelector(
+    "[data-p41v4-open-interferences]"
+  );
+
+  const content = root.querySelector(
+    "[data-p41v4-interferences-content]"
+  );
+
+  if (!openButton || !content) {
+    return;
+  }
+
+  const buttonStatus =
+    openButton.querySelector("span");
+
+  openButton.addEventListener(
+    "click",
+    function () {
+      const expanded =
+        openButton.getAttribute(
+          "aria-expanded"
+        ) === "true";
+
+      openButton.setAttribute(
+        "aria-expanded",
+        expanded ? "false" : "true"
+      );
+
+      content.hidden = expanded;
+
+      if (buttonStatus) {
+        buttonStatus.textContent = expanded
+          ? "Ver interferências →"
+          : "Ocultar ↑";
+      }
+
+      if (!expanded) {
+        content.setAttribute(
+          "tabindex",
+          "-1"
+        );
+
+        content.focus({
+          preventScroll: true
+        });
+
+        content.removeAttribute("tabindex");
+      }
+    }
+  );
+})();
+
+/* =========================
+   INTERFERÊNCIAS DA COLORAÇÃO
+   ========================= */
+
+(function initCap5Page41Interferences() {
+  const root = document.querySelector(
+    "[data-cap5-p41v4-interferences]"
+  );
+
+  if (!root) {
+    return;
+  }
+
+  const tabs = Array.from(
+    root.querySelectorAll(
+      "[data-p41v4-interference]"
+    )
+  );
+
+  const view = root.querySelector(
+    "#cap5P41V4InterferenceView"
+  );
+
+  const effect = root.querySelector(
+    "#cap5P41V4InterferenceEffect"
+  );
+
+  const meaning = root.querySelector(
+    "#cap5P41V4InterferenceMeaning"
+  );
+
+  if (
+    !tabs.length ||
+    !view ||
+    !effect ||
+    !meaning
+  ) {
+    return;
+  }
+
+  const states = {
+    excesso: {
+      tabId:
+        "cap5P41V4IntTabExcesso",
+
+      effect:
+        "Bactérias Gram-positivas podem perder o complexo cristal violeta–iodo e aparecer rosadas.",
+
+      meaning:
+        "O resultado pode sugerir incorretamente uma reação Gram-negativa."
+    },
+
+    insuficiente: {
+      tabId:
+        "cap5P41V4IntTabInsuficiente",
+
+      effect:
+        "Bactérias Gram-negativas podem não perder completamente o complexo e permanecer violetas.",
+
+      meaning:
+        "O resultado pode sugerir incorretamente uma reação Gram-positiva."
+    },
+
+    espesso: {
+      tabId:
+        "cap5P41V4IntTabEspesso",
+
+      effect:
+        "A passagem dos reagentes e a descoloração podem ocorrer de forma irregular, com sobreposição de estruturas.",
+
+      meaning:
+        "A cor e a morfologia tornam-se mais difíceis de interpretar com segurança."
+    },
+
+    alteradas: {
+      tabId:
+        "cap5P41V4IntTabAlteradas",
+
+      effect:
+        "Células danificadas, expostas a antibacterianos ou provenientes de culturas envelhecidas podem apresentar coloração irregular ou Gram-variável.",
+
+      meaning:
+        "A reação observada pode não corresponder ao padrão habitualmente esperado para o microrganismo."
+    },
+
+    artefatos: {
+      tabId:
+        "cap5P41V4IntTabArtefatos",
+
+      effect:
+        "Precipitados de corante e outros materiais podem produzir estruturas semelhantes a bactérias.",
+
+      meaning:
+        "Um artefato pode ser interpretado como microrganismo se a lâmina não for avaliada cuidadosamente."
+    }
+  };
+
+  function renderInterference(target) {
+    const state = states[target];
+
+    if (!state) {
+      return;
+    }
+
+    tabs.forEach(function (tab) {
+      const active =
+        tab.dataset.p41v4Interference ===
+        target;
+
+      tab.classList.toggle(
+        "is-active",
+        active
+      );
+
+      tab.setAttribute(
+        "aria-selected",
+        active ? "true" : "false"
+      );
+
+      tab.setAttribute(
+        "tabindex",
+        active ? "0" : "-1"
+      );
+    });
+
+    view.setAttribute(
+      "aria-labelledby",
+      state.tabId
     );
 
-  if(!("IntersectionObserver" in window)){
-    revealItems.forEach(function(item){
-      item.classList.add("is-visible");
+    effect.textContent = state.effect;
+    meaning.textContent = state.meaning;
+  }
+
+  tabs.forEach(function (tab, index) {
+    tab.addEventListener("click", function () {
+      renderInterference(
+        tab.dataset.p41v4Interference
+      );
+    });
+
+    tab.addEventListener(
+      "keydown",
+      function (event) {
+        let nextIndex = null;
+
+        if (
+          event.key === "ArrowRight" ||
+          event.key === "ArrowDown"
+        ) {
+          nextIndex =
+            (index + 1) % tabs.length;
+        }
+
+        if (
+          event.key === "ArrowLeft" ||
+          event.key === "ArrowUp"
+        ) {
+          nextIndex =
+            (index - 1 + tabs.length) %
+            tabs.length;
+        }
+
+        if (event.key === "Home") {
+          nextIndex = 0;
+        }
+
+        if (event.key === "End") {
+          nextIndex = tabs.length - 1;
+        }
+
+        if (nextIndex === null) {
+          return;
+        }
+
+        event.preventDefault();
+
+        tabs[nextIndex].focus();
+
+        renderInterference(
+          tabs[nextIndex].dataset
+            .p41v4Interference
+        );
+      }
+    );
+  });
+
+  renderInterference("excesso");
+})();
+
+/* =========================
+   ABERTURA DA SITUAÇÃO
+   ========================= */
+
+(function initCap5Page41ChallengeDisclosure() {
+  const root = document.querySelector(
+    "[data-cap5-p41v4-interferences]"
+  );
+
+  if (!root) {
+    return;
+  }
+
+  const openButton = root.querySelector(
+    "[data-p41v4-open-challenge]"
+  );
+
+  const challenge = root.querySelector(
+    "[data-p41v4-challenge]"
+  );
+
+  if (!openButton || !challenge) {
+    return;
+  }
+
+  openButton.addEventListener(
+    "click",
+    function () {
+      const expanded =
+        openButton.getAttribute(
+          "aria-expanded"
+        ) === "true";
+
+      openButton.setAttribute(
+        "aria-expanded",
+        expanded ? "false" : "true"
+      );
+
+      challenge.hidden = expanded;
+
+      openButton.textContent = expanded
+        ? "Aplicar em uma situação"
+        : "Ocultar situação ↑";
+
+      if (!expanded) {
+        challenge.setAttribute(
+          "tabindex",
+          "-1"
+        );
+
+        challenge.focus({
+          preventScroll: true
+        });
+
+        challenge.removeAttribute("tabindex");
+      }
+    }
+  );
+})();
+
+/* =========================
+   QUESTÃO APLICADA
+   ========================= */
+
+(function initCap5Page41Challenge() {
+  const root = document.querySelector(
+    "[data-cap5-p41v4-interferences]"
+  );
+
+  if (!root) {
+    return;
+  }
+
+  const options = Array.from(
+    root.querySelectorAll(
+      '.cap5-p41v4-option input[type="radio"]'
+    )
+  );
+
+  const checkButton = root.querySelector(
+    "[data-p41v4-check]"
+  );
+
+  const resetButton = root.querySelector(
+    "[data-p41v4-reset]"
+  );
+
+  const alertBox = root.querySelector(
+    "[data-p41v4-alert]"
+  );
+
+  const feedback = root.querySelector(
+    "[data-p41v4-feedback]"
+  );
+
+  const feedbackTitle = root.querySelector(
+    "[data-p41v4-feedback-title]"
+  );
+
+  const feedbackText = root.querySelector(
+    "[data-p41v4-feedback-text]"
+  );
+
+  const takeaway = document.querySelector(
+    "[data-p41v4-takeaway]"
+  );
+
+  if (
+    !options.length ||
+    !checkButton ||
+    !resetButton ||
+    !alertBox ||
+    !feedback ||
+    !feedbackTitle ||
+    !feedbackText
+  ) {
+    return;
+  }
+
+  options.forEach(function (input) {
+    input.addEventListener(
+      "change",
+      function () {
+        alertBox.hidden = true;
+
+        options.forEach(function (item) {
+          const label = item.closest(
+            ".cap5-p41v4-option"
+          );
+
+          if (!label) {
+            return;
+          }
+
+          label.classList.toggle(
+            "is-selected",
+            item.checked
+          );
+        });
+      }
+    );
+  });
+
+  checkButton.addEventListener(
+    "click",
+    function () {
+      const selected = options.find(
+        function (input) {
+          return input.checked;
+        }
+      );
+
+      if (!selected) {
+        alertBox.hidden = false;
+        return;
+      }
+
+      const correct =
+        selected.value === "b";
+
+      options.forEach(function (input) {
+        const label = input.closest(
+          ".cap5-p41v4-option"
+        );
+
+        if (!label) {
+          return;
+        }
+
+        label.classList.remove(
+          "is-selected"
+        );
+
+        if (input.value === "b") {
+          label.classList.add(
+            "is-correct"
+          );
+        }
+
+        if (
+          input.checked &&
+          input.value !== "b"
+        ) {
+          label.classList.add(
+            "is-incorrect"
+          );
+        }
+
+        input.disabled = true;
+      });
+
+      feedback.classList.toggle(
+        "is-incorrect",
+        !correct
+      );
+
+      if (correct) {
+        feedbackTitle.textContent =
+          "Interpretação adequada";
+
+        feedbackText.textContent =
+          "A reação ao Gram é uma informação inicial. Alterações nas células e interferências técnicas podem modificar a coloração; por isso, resultados inesperados devem ser correlacionados com as demais etapas e esclarecidos com o laboratório quando necessário.";
+      } else {
+        feedbackTitle.textContent =
+          "Reconsidere a discordância";
+
+        feedbackText.textContent =
+          "Nem a bacterioscopia nem a identificação devem ser descartadas isoladamente. A discordância pode refletir alterações bacterianas ou interferências na técnica e precisa ser analisada em conjunto com os demais resultados.";
+      }
+
+      feedback.hidden = false;
+      checkButton.hidden = true;
+      resetButton.hidden = false;
+
+      if (takeaway) {
+        takeaway.hidden = false;
+        takeaway.classList.add(
+          "is-visible"
+        );
+      }
+
+      feedback.focus();
+    }
+  );
+
+  resetButton.addEventListener(
+    "click",
+    function () {
+      options.forEach(function (input) {
+        const label = input.closest(
+          ".cap5-p41v4-option"
+        );
+
+        input.checked = false;
+        input.disabled = false;
+
+        if (label) {
+          label.classList.remove(
+            "is-selected",
+            "is-correct",
+            "is-incorrect"
+          );
+        }
+      });
+
+      alertBox.hidden = true;
+      feedback.hidden = true;
+
+      feedback.classList.remove(
+        "is-incorrect"
+      );
+
+      feedbackTitle.textContent = "";
+      feedbackText.textContent = "";
+
+      checkButton.hidden = false;
+      resetButton.hidden = true;
+
+      if (takeaway) {
+        takeaway.hidden = true;
+        takeaway.classList.remove(
+          "is-visible"
+        );
+      }
+
+      if (options[0]) {
+        options[0].focus();
+      }
+    }
+  );
+})();
+
+/* =========================
+   ANIMAÇÃO DE ENTRADA
+   ========================= */
+
+(function revealCap5Page41() {
+  const items = document.querySelectorAll(
+    ".cap5-page41 .cap5-p41v4-reveal"
+  );
+
+  if (!items.length) {
+    return;
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    items.forEach(function (item) {
+      if (!item.hidden) {
+        item.classList.add("is-visible");
+      }
     });
 
     return;
   }
 
-  const observer =
-    new IntersectionObserver(
-      function(entries){
+  const observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) {
+          return;
+        }
 
-        entries.forEach(function(entry){
-          if(!entry.isIntersecting) return;
+        entry.target.classList.add(
+          "is-visible"
+        );
 
-          entry.target.classList.add(
-            "is-visible"
-          );
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.12,
+      rootMargin: "0px 0px -30px 0px"
+    }
+  );
 
-          observer.unobserve(entry.target);
-        });
-
-      },
-      {
-        threshold:.14,
-        rootMargin:"0px 0px -35px 0px"
-      }
-    );
-
-  revealItems.forEach(function(item){
+  items.forEach(function (item) {
     observer.observe(item);
   });
-
 })();
-
 /* =========================
    CAPÍTULO 5 — PÁGINA 42
    GRAM-POSITIVAS E GRAM-NEGATIVAS

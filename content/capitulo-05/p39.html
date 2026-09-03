@@ -36,7 +36,7 @@
     <section class="prose cap5-p39-reading">
 
       <p>
-        O resultado microbiológico corresponde ao produto final de um processo técnico padronizado que inclui a coleta adequada da amostra clínica, seu processamento no laboratório, a identificação do microrganismo e a avaliação da suscetibilidade aos antimicrobianos <sup>1,2</sup>.
+        O laudo microbiológico é construído em diferentes etapas: fase pré-analítica, que inclui a coleta e o transporte da amostra; fase analítica, em que a amostra é processada no laboratório; e fase pós-analítica, que envolve a interpretação e a liberação dos resultados. A qualidade de cada etapa influencia a confiabilidade do laudo. Dependendo da amostra e do método utilizado, informações preliminares podem ser liberadas antes do resultado final <sup>1,2</sup>.
       </p>
 
       <p>
@@ -44,31 +44,31 @@
       </p>
 
       <p>
-        A padronização do ensaio envolve a concentração do inóculo bacteriano, a composição do meio de cultura, a atmosfera de incubação, a temperatura, o tempo de incubação e os critérios interpretativos adotados. O controle rigoroso desses parâmetros reduz a variabilidade analítica e assegura que os resultados sejam reprodutíveis e comparáveis entre diferentes laboratórios <sup>2,3</sup>.
+        A padronização do teste inclui a concentração do inóculo bacteriano, a composição do meio de cultura, a atmosfera, a temperatura e o tempo de incubação, além dos critérios utilizados para interpretar os resultados. O controle desses parâmetros reduz variações no teste e permite obter resultados reprodutíveis e comparáveis entre diferentes laboratórios <sup>2,3</sup>.
       </p>
 
       <section
         class="cap5-p39v2-interaction cap5-p39v2-reveal"
         data-cap5-p39v2
-        aria-label="Liberação progressiva do laudo microbiológico"
+        aria-label="Evolução do raciocínio diante dos resultados microbiológicos"
       >
 
         <div class="cap5-p39v2-case">
           <span class="cap5-p39v2-caseLabel">Situação clínica</span>
 
           <p>
-            Paciente internado com suspeita de infecção bacteriana. A amostra clínica foi encaminhada ao laboratório, e as informações microbiológicas serão disponibilizadas progressivamente conforme o processamento avança.
+            Paciente de 67 anos, internado, apresenta febre, calafrios e hipotensão. Possui cateter venoso central. Antes do início da antibioticoterapia, foram coletados dois frascos de hemocultura. Após a coleta, foi iniciada antibioticoterapia empírica. Após 14 horas de incubação, o equipamento detectou crescimento microbiano em ambos os frascos.
           </p>
         </div>
 
         <p class="cap5-p39v2-instruction">
-          Selecione uma etapa para analisar o que o resultado permite interpretar naquele momento.
+          Acompanhe a liberação dos resultados e reavalie a decisão a cada nova informação. Responda à etapa atual para liberar a próxima.
         </p>
 
         <div
           class="cap5-p39v2-progress"
           role="tablist"
-          aria-label="Etapas da liberação do laudo microbiológico"
+          aria-label="Etapas da evolução do caso"
         >
           <button
             class="cap5-p39v2-step is-active"
@@ -83,8 +83,8 @@
             <span class="cap5-p39v2-stepNumber">1</span>
 
             <span class="cap5-p39v2-stepText">
-              <strong>Gram</strong>
-              <small>Informação preliminar</small>
+              <strong>Bacterioscopia</strong>
+              <small>Revisão da cobertura</small>
             </span>
           </button>
 
@@ -99,12 +99,13 @@
             aria-controls="cap5P39V2View"
             tabindex="-1"
             data-p39v2-target="identificacao"
+            disabled
           >
             <span class="cap5-p39v2-stepNumber">2</span>
 
             <span class="cap5-p39v2-stepText">
               <strong>Identificação</strong>
-              <small>Agente isolado</small>
+              <small>Relevância do achado</small>
             </span>
           </button>
 
@@ -119,12 +120,13 @@
             aria-controls="cap5P39V2View"
             tabindex="-1"
             data-p39v2-target="suscetibilidade"
+            disabled
           >
             <span class="cap5-p39v2-stepNumber">3</span>
 
             <span class="cap5-p39v2-stepText">
               <strong>Suscetibilidade</strong>
-              <small>Perfil S/I/R</small>
+              <small>Direcionamento</small>
             </span>
           </button>
         </div>
@@ -149,71 +151,66 @@
               id="cap5P39V2Result"
               class="cap5-p39v2-resultText"
             >
-              Cocos Gram-positivos em cachos.
+              Cocos Gram-positivos em cachos nos dois frascos.
             </p>
           </div>
 
-          <div
-            id="cap5P39V2Body"
-            class="cap5-p39v2-analysisGrid"
-          >
+          <div id="cap5P39V2Body" class="cap5-p39v2-question">
+            <p class="cap5-p39v2-questionTitle">
+              Considerando que o paciente já iniciou antibioticoterapia empírica, qual é a conduta mais adequada diante desse resultado preliminar?
+            </p>
 
-            <article class="cap5-p39v2-analysis">
-              <span>O que permite inferir</span>
-              <p>
-                O achado sugere a presença de cocos Gram-positivos com arranjo compatível com grupos como <em>Staphylococcus</em>.
-              </p>
-            </article>
+            <div
+              class="cap5-p39v2-options"
+              role="group"
+              aria-label="Opções de resposta"
+            >
+              <button
+                type="button"
+                class="cap5-p39v2-option"
+                data-option="0"
+              >
+                <span>A</span>
+                Manter o esquema inicialmente prescrito até a identificação da espécie, pois a bacterioscopia fornece apenas informações sobre a morfologia e o arranjo bacteriano.
+              </button>
 
-            <article class="cap5-p39v2-analysis cap5-p39v2-analysis--limit">
-              <span>O que ainda não permite concluir</span>
-              <p>
-                A coloração de Gram não determina a espécie, o perfil de suscetibilidade nem confirma, isoladamente, que o achado representa infecção verdadeira.
-              </p>
-            </article>
+              <button
+                type="button"
+                class="cap5-p39v2-option"
+                data-option="1"
+              >
+                <span>B</span>
+                Redirecionar o esquema para cocos Gram-positivos, considerando a concordância entre o resultado dos dois frascos, a presença do cateter e a instabilidade clínica.
+              </button>
 
-            <article class="cap5-p39v2-analysis">
-              <span>Repercussão clínica</span>
-              <p>
-                A informação pode orientar a avaliação inicial e a cobertura empírica, mas deve ser correlacionada ao tipo de amostra, ao quadro clínico e ao risco epidemiológico.
-              </p>
-            </article>
+              <button
+                type="button"
+                class="cap5-p39v2-option"
+                data-option="2"
+              >
+                <span>C</span>
+                Revisar se o esquema iniciado contempla o grupo bacteriano sugerido e os fatores de risco do paciente, ajustando-o caso seja identificada possível falha de cobertura, sem restringir o tratamento apenas com base na bacterioscopia.
+              </button>
+            </div>
 
-            <article class="cap5-p39v2-analysis cap5-p39v2-analysis--key">
-              <span>Ponto de interpretação</span>
-              <p>
-                Quanto mais precoce o resultado, menor sua especificidade. A interpretação deve respeitar os limites de cada etapa.
-              </p>
-            </article>
-
+            <div
+              class="cap5-p39v2-feedback"
+              aria-live="polite"
+            ></div>
           </div>
 
         </article>
       </section>
 
       <aside class="cap5-p39v2-sequence cap5-p39v2-reveal">
-        A coloração de Gram costuma ser o primeiro resultado microbiológico disponibilizado, antecedendo a identificação definitiva do microrganismo e o teste de suscetibilidade. À medida que o processamento laboratorial evolui, novas informações são incorporadas ao laudo, ampliando sua precisão microbiológica.
+        Quando indicada e disponível, a bacterioscopia pelo método de Gram pode fornecer uma das primeiras informações microbiológicas, antes da identificação definitiva do microrganismo e do teste de suscetibilidade. Cada etapa fornece informações diferentes, e sua interpretação deve considerar o que o método permite ou não concluir.
       </aside>
 
       <p>
-        O teste de suscetibilidade representa uma avaliação in vitro, realizada em condições laboratoriais padronizadas. Entretanto, diversos fatores que influenciam a resposta à infecção, como a resposta imunológica do hospedeiro, a perfusão tecidual, a presença de biofilmes, a carga bacteriana, o controle do foco infeccioso e as características farmacocinéticas e farmacodinâmicas dos antimicrobianos, não são contemplados pelo ensaio <sup>2,6</sup>.
+        O teste de suscetibilidade avalia, em condições laboratoriais padronizadas, a resposta do microrganismo aos antibacterianos. Embora os pontos de corte utilizados na interpretação considerem dados farmacocinéticos e farmacodinâmicos, o teste não reproduz todas as condições presentes no paciente, como a resposta imunológica, a perfusão tecidual, a presença de biofilmes, a carga bacteriana, o controle do foco infeccioso e a exposição ao antibacteriano no local da infecção <sup>2,6</sup>.
       </p>
 
-      <aside class="cap5-p39v2-principle cap5-p39v2-reveal">
-        O laudo microbiológico descreve o comportamento do microrganismo em condições experimentais padronizadas. A interpretação desse resultado deve ser integrada à síndrome clínica, ao sítio da infecção, às características do paciente e à evolução do quadro clínico.
-      </aside>
-
-      <details class="cap5-p39v2-more cap5-p39v2-reveal">
-        <summary>
-          Saiba mais
-        </summary>
-
-        <div class="cap5-p39v2-moreContent">
-          <p>
-          Muitos laboratórios utilizam sistemas automatizados e tecnologias como o MALDI-TOF MS para acelerar a identificação dos microrganismos. Independentemente do método utilizado, a interpretação do laudo segue os mesmos princípios: compreender o que cada etapa do processo laboratorial informa, reconhecer as limitações dos métodos empregados e integrar os resultados ao contexto clínico.
-          </p>
-        </div>
-      </details>
+ 
 
     </section>
 

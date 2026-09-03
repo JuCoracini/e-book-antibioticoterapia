@@ -2,21 +2,44 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  />
 
   <title>Capítulo 5 — Página 41</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
 
   <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Merriweather:wght@400;700&family=Playfair+Display:wght@500;600;700&display=swap"
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="../../css/base.css" />
-  <link rel="stylesheet" href="../../css/components.css" />
-  <link rel="stylesheet" href="../../css/capitulo-05.css" />
+  <link
+    rel="stylesheet"
+    href="../../css/base.css"
+  />
+
+  <link
+    rel="stylesheet"
+    href="../../css/components.css"
+  />
+
+  <link
+    rel="stylesheet"
+    href="../../css/capitulo-05.css"
+  />
 </head>
 
 <body class="cap5-page41">
@@ -24,6 +47,7 @@
   <main class="page-shell">
 
     <header class="page-header">
+
       <div class="chapter">
         Capítulo 5 — Laboratório de Microbiologia e Interpretação do Antibiograma
       </div>
@@ -31,226 +55,538 @@
       <h1 class="page-title">
         Coloração de Gram
       </h1>
+
     </header>
 
-    <section class="prose cap5-p41v3-reading">
+    <section class="prose cap5-p41v4-reading">
 
       <p>
-        A coloração de Gram é a principal técnica diferencial utilizada na bacterioscopia clínica. Seu princípio baseia-se nas diferenças estruturais do envelope bacteriano, especialmente na espessura da camada de peptidoglicano e na presença da membrana externa das bactérias Gram-negativas <sup>2,5</sup>.
+        A coloração de Gram é uma das técnicas diferenciais mais utilizadas na bacterioscopia clínica. De acordo com a forma como as estruturas bacterianas retêm os corantes, as bactérias são inicialmente classificadas como Gram-positivas, em tons de violeta, ou Gram-negativas, em tons de rosa. Compreender como esse resultado é produzido ajuda a reconhecer seu valor e suas limitações <sup>2,5</sup>.
       </p>
 
-      <p>
-        Essas características determinam a retenção ou a perda do complexo cristal violeta–iodo durante a descoloração. Ao final do procedimento, as bactérias Gram-positivas permanecem azul-arroxeadas, enquanto as Gram-negativas incorporam o contra-corante e adquirem coloração rosada <sup>5</sup>.
-      </p>
+      <!-- INTERAÇÃO PRINCIPAL -->
 
       <section
-        class="cap5-p41v3-interaction cap5-p41v3-reveal"
-        data-cap5-p41v3
+        class="cap5-p41v4-interaction cap5-p41v4-reveal"
+        data-cap5-p41v4
         aria-label="Etapas da coloração de Gram"
       >
 
-        <p class="cap5-p41v3-instruction">
-          Selecione uma etapa para acompanhar o comportamento das bactérias Gram-positivas e Gram-negativas durante a técnica.
+        <p class="cap5-p41v4-instruction">
+          Percorra as etapas e observe como as bactérias Gram-positivas e Gram-negativas se apresentam em cada momento. A descoloração é a etapa crítica da diferenciação.
         </p>
 
         <div
-          class="cap5-p41v3-tabs"
+          class="cap5-p41v4-tabs"
           role="tablist"
           aria-label="Etapas da coloração de Gram"
         >
+
           <button
-            class="cap5-p41v3-tab is-active"
+            class="cap5-p41v4-tab is-active"
             type="button"
             role="tab"
-            id="cap5P41V3TabFixacao"
+            id="cap5P41V4TabFixacao"
             aria-selected="true"
-            aria-controls="cap5P41V3View"
+            aria-controls="cap5P41V4View"
             tabindex="0"
-            data-p41v3-target="fixacao"
+            data-p41v4-target="fixacao"
           >
             <span>1</span>
             Fixação
           </button>
 
           <button
-            class="cap5-p41v3-tab"
+            class="cap5-p41v4-tab"
             type="button"
             role="tab"
-            id="cap5P41V3TabCristal"
+            id="cap5P41V4TabCristal"
             aria-selected="false"
-            aria-controls="cap5P41V3View"
+            aria-controls="cap5P41V4View"
             tabindex="-1"
-            data-p41v3-target="cristal"
+            data-p41v4-target="cristal"
           >
             <span>2</span>
             Cristal violeta
           </button>
 
           <button
-            class="cap5-p41v3-tab"
+            class="cap5-p41v4-tab"
             type="button"
             role="tab"
-            id="cap5P41V3TabLugol"
+            id="cap5P41V4TabLugol"
             aria-selected="false"
-            aria-controls="cap5P41V3View"
+            aria-controls="cap5P41V4View"
             tabindex="-1"
-            data-p41v3-target="lugol"
+            data-p41v4-target="lugol"
           >
             <span>3</span>
             Lugol
           </button>
 
           <button
-            class="cap5-p41v3-tab cap5-p41v3-tab--critical"
+            class="cap5-p41v4-tab cap5-p41v4-tab--critical"
             type="button"
             role="tab"
-            id="cap5P41V3TabAlcool"
+            id="cap5P41V4TabAlcool"
             aria-selected="false"
-            aria-controls="cap5P41V3View"
+            aria-controls="cap5P41V4View"
             tabindex="-1"
-            data-p41v3-target="alcool"
+            data-p41v4-target="alcool"
           >
             <span>4</span>
             Descoloração
           </button>
 
           <button
-            class="cap5-p41v3-tab"
+            class="cap5-p41v4-tab"
             type="button"
             role="tab"
-            id="cap5P41V3TabSafranina"
+            id="cap5P41V4TabSafranina"
             aria-selected="false"
-            aria-controls="cap5P41V3View"
+            aria-controls="cap5P41V4View"
             tabindex="-1"
-            data-p41v3-target="safranina"
+            data-p41v4-target="safranina"
           >
             <span>5</span>
             Safranina
           </button>
+
         </div>
 
         <article
-          id="cap5P41V3View"
-          class="cap5-p41v3-view"
+          id="cap5P41V4View"
+          class="cap5-p41v4-view"
           role="tabpanel"
-          aria-labelledby="cap5P41V3TabFixacao"
+          aria-labelledby="cap5P41V4TabFixacao"
           aria-live="polite"
         >
 
-          <figure class="cap5-p41v3-figure">
+          <figure class="cap5-p41v4-figure">
+
             <button
-              id="cap5P41V3Zoom"
-              class="cap5-p41v3-zoom"
+              id="cap5P41V4Zoom"
+              class="cap5-p41v4-zoom"
               type="button"
               data-zoom="../../assets/capitulo-05/imagens/fixacao.png"
               aria-label="Ampliar imagem da etapa de fixação"
             >
+
               <img
-                id="cap5P41V3Image"
+                id="cap5P41V4Image"
                 src="../../assets/capitulo-05/imagens/fixacao.png"
                 alt="Etapa de fixação da amostra na coloração de Gram"
                 loading="lazy"
               />
+
             </button>
 
             <figcaption
-              id="cap5P41V3Caption"
-              class="cap5-p41v3-caption"
+              id="cap5P41V4Caption"
+              class="cap5-p41v4-caption"
             >
-              Preparação e fixação do material clínico na lâmina.
+              Preparação e fixação do material na lâmina.
             </figcaption>
+
           </figure>
 
-          <div class="cap5-p41v3-summary">
+          <div class="cap5-p41v4-summary">
 
-            <div class="cap5-p41v3-summaryHeader">
+            <div class="cap5-p41v4-summaryHeader">
+
               <span
-                id="cap5P41V3Kicker"
-                class="cap5-p41v3-kicker"
+                id="cap5P41V4Kicker"
+                class="cap5-p41v4-kicker"
               >
                 Etapa preparatória
               </span>
 
               <h2
-                id="cap5P41V3Title"
-                class="cap5-p41v3-title"
+                id="cap5P41V4Title"
+                class="cap5-p41v4-title"
               >
                 Fixação da amostra
               </h2>
+
             </div>
 
             <div
-              id="cap5P41V3Body"
-              class="cap5-p41v3-body"
+              id="cap5P41V4Body"
+              class="cap5-p41v4-body"
             >
-              <div class="cap5-p41v3-infoGrid">
 
-                <article class="cap5-p41v3-info">
-                  <span>Função da etapa</span>
+              <div class="cap5-p41v4-infoGrid">
+
+                <article class="cap5-p41v4-info">
+                  <span>O que acontece</span>
+
                   <p>
-                    Promover a aderência do material à lâmina e preservar a morfologia bacteriana.
+                    O material é fixado à lâmina para permanecer aderido durante a coloração.
                   </p>
                 </article>
 
-                <article class="cap5-p41v3-info">
+                <article class="cap5-p41v4-info">
                   <span>Gram-positivas</span>
+
                   <p>
-                    Ainda não apresentam diferenciação cromática.
+                    Ainda não apresentam diferenciação pela cor.
                   </p>
                 </article>
 
-                <article class="cap5-p41v3-info">
+                <article class="cap5-p41v4-info">
                   <span>Gram-negativas</span>
+
                   <p>
-                    Ainda não apresentam diferenciação cromática.
+                    Ainda não apresentam diferenciação pela cor.
                   </p>
                 </article>
 
-                <article class="cap5-p41v3-info cap5-p41v3-info--key">
-                  <span>Ponto-chave</span>
+                <article
+                  class="cap5-p41v4-info cap5-p41v4-info--key"
+                >
+                  <span>Por que isso importa?</span>
+
                   <p>
-                    A etapa prepara a amostra para receber os reagentes, sem diferenciar os grupos bacterianos.
+                    Uma fixação inadequada pode causar perda de material ou alterar a morfologia observada.
                   </p>
                 </article>
 
               </div>
+
             </div>
 
           </div>
 
         </article>
+
+        <!--
+          Este resultado aparece somente quando
+          o estudante seleciona a etapa Safranina.
+        -->
+
+        <section
+          class="cap5-p41v4-results"
+          data-p41v4-results
+          aria-label="Resultado final da coloração de Gram"
+          hidden
+        >
+
+          <article
+            class="cap5-p41v4-result cap5-p41v4-result--positive"
+          >
+            <strong>Gram-positivas</strong>
+
+            <p>
+              Retêm o complexo cristal violeta–iodo e permanecem violetas.
+            </p>
+          </article>
+
+          <article
+            class="cap5-p41v4-result cap5-p41v4-result--negative"
+          >
+            <strong>Gram-negativas</strong>
+
+            <p>
+              Perdem o complexo na descoloração e tornam-se rosadas após receber o contra-corante.
+            </p>
+          </article>
+
+        </section>
+
       </section>
+
+      <!-- INTERFERÊNCIAS RECOLHÍVEIS -->
 
       <section
-        class="cap5-p41v3-results cap5-p41v3-reveal"
-        aria-label="Resultado da coloração de Gram"
+        class="cap5-p41v4-interferences cap5-p41v4-reveal"
+        data-cap5-p41v4-interferences
+        aria-label="Interferências na coloração de Gram"
       >
 
-        <article class="cap5-p41v3-result cap5-p41v3-result--positive">
-          <strong>Gram-positivas</strong>
+        <button
+          class="cap5-p41v4-disclosureButton"
+          type="button"
+          data-p41v4-open-interferences
+          aria-expanded="false"
+          aria-controls="cap5P41V4InterferencesContent"
+        >
+          Quando a coloração pode não corresponder ao esperado?
 
-          <p>
-            Retêm o complexo cristal violeta–iodo e permanecem azul-arroxeadas.
+          <span>
+            Ver interferências →
+          </span>
+        </button>
+
+        <div
+          id="cap5P41V4InterferencesContent"
+          class="cap5-p41v4-disclosureContent"
+          data-p41v4-interferences-content
+          hidden
+        >
+
+          <p class="cap5-p41v4-interferenceIntro">
+            Algumas condições podem modificar a retenção dos corantes, alterar a morfologia ou produzir estruturas semelhantes a bactérias. Selecione cada situação para compreender seu possível efeito.
           </p>
-        </article>
 
-        <article class="cap5-p41v3-result cap5-p41v3-result--negative">
-          <strong>Gram-negativas</strong>
+          <div
+            class="cap5-p41v4-interferenceTabs"
+            role="tablist"
+            aria-label="Interferências na coloração de Gram"
+          >
 
-          <p>
-            Perdem o corante primário e incorporam a safranina, tornando-se rosadas.
-          </p>
-        </article>
+            <button
+              class="cap5-p41v4-interferenceTab is-active"
+              type="button"
+              role="tab"
+              id="cap5P41V4IntTabExcesso"
+              aria-selected="true"
+              aria-controls="cap5P41V4InterferenceView"
+              tabindex="0"
+              data-p41v4-interference="excesso"
+            >
+              Descoloração excessiva
+            </button>
+
+            <button
+              class="cap5-p41v4-interferenceTab"
+              type="button"
+              role="tab"
+              id="cap5P41V4IntTabInsuficiente"
+              aria-selected="false"
+              aria-controls="cap5P41V4InterferenceView"
+              tabindex="-1"
+              data-p41v4-interference="insuficiente"
+            >
+              Descoloração insuficiente
+            </button>
+
+            <button
+              class="cap5-p41v4-interferenceTab"
+              type="button"
+              role="tab"
+              id="cap5P41V4IntTabEspesso"
+              aria-selected="false"
+              aria-controls="cap5P41V4InterferenceView"
+              tabindex="-1"
+              data-p41v4-interference="espesso"
+            >
+              Esfregaço espesso
+            </button>
+
+            <button
+              class="cap5-p41v4-interferenceTab"
+              type="button"
+              role="tab"
+              id="cap5P41V4IntTabAlteradas"
+              aria-selected="false"
+              aria-controls="cap5P41V4InterferenceView"
+              tabindex="-1"
+              data-p41v4-interference="alteradas"
+            >
+              Células alteradas
+            </button>
+
+            <button
+              class="cap5-p41v4-interferenceTab"
+              type="button"
+              role="tab"
+              id="cap5P41V4IntTabArtefatos"
+              aria-selected="false"
+              aria-controls="cap5P41V4InterferenceView"
+              tabindex="-1"
+              data-p41v4-interference="artefatos"
+            >
+              Artefatos
+            </button>
+
+          </div>
+
+          <article
+            id="cap5P41V4InterferenceView"
+            class="cap5-p41v4-interferenceView"
+            role="tabpanel"
+            aria-labelledby="cap5P41V4IntTabExcesso"
+            aria-live="polite"
+          >
+
+            <div>
+              <span>O que pode ocorrer</span>
+
+              <p id="cap5P41V4InterferenceEffect">
+                Bactérias Gram-positivas podem perder o complexo cristal violeta–iodo e aparecer rosadas.
+              </p>
+            </div>
+
+            <div>
+              <span>Por que isso importa?</span>
+
+              <p id="cap5P41V4InterferenceMeaning">
+                O resultado pode sugerir incorretamente uma reação Gram-negativa.
+              </p>
+            </div>
+
+          </article>
+
+          <button
+            class="cap5-p41v4-disclosureButton cap5-p41v4-disclosureButton--challenge"
+            type="button"
+            data-p41v4-open-challenge
+            aria-expanded="false"
+            aria-controls="cap5P41V4Challenge"
+          >
+            Aplicar em uma situação
+          </button>
+
+          <!-- SITUAÇÃO APLICADA -->
+
+          <div
+            id="cap5P41V4Challenge"
+            class="cap5-p41v4-challenge"
+            data-p41v4-challenge
+            hidden
+          >
+
+            <span class="cap5-p41v4-challengeLabel">
+              Situação para interpretar
+            </span>
+
+            <p class="cap5-p41v4-case">
+              A bacterioscopia mostrou cocos rosados. Posteriormente, a identificação revelou uma espécie habitualmente Gram-positiva. Qual é a interpretação mais adequada?
+            </p>
+
+            <fieldset class="cap5-p41v4-options">
+
+              <legend class="sr-only">
+                Selecione uma resposta
+              </legend>
+
+              <label class="cap5-p41v4-option">
+                <input
+                  type="radio"
+                  name="cap5P41V4Answer"
+                  value="a"
+                />
+
+                <span>
+                  A identificação deve ser desconsiderada, porque a bacterioscopia define a reação ao Gram de forma definitiva.
+                </span>
+              </label>
+
+              <label class="cap5-p41v4-option">
+                <input
+                  type="radio"
+                  name="cap5P41V4Answer"
+                  value="b"
+                />
+
+                <span>
+                  A discordância pode estar relacionada a alterações bacterianas ou a interferências na coloração e deve ser analisada com os demais resultados e, quando necessário, discutida com o laboratório.
+                </span>
+              </label>
+
+              <label class="cap5-p41v4-option">
+                <input
+                  type="radio"
+                  name="cap5P41V4Answer"
+                  value="c"
+                />
+
+                <span>
+                  O achado confirma dois microrganismos diferentes, mesmo que apenas um tenha sido identificado.
+                </span>
+              </label>
+
+              <label class="cap5-p41v4-option">
+                <input
+                  type="radio"
+                  name="cap5P41V4Answer"
+                  value="d"
+                />
+
+                <span>
+                  A espécie identificada deve ser classificada como Gram-negativa com base apenas na cor observada inicialmente.
+                </span>
+              </label>
+
+            </fieldset>
+
+            <div class="cap5-p41v4-actions">
+
+              <button
+                class="btn primary"
+                type="button"
+                data-p41v4-check
+              >
+                Conferir interpretação
+              </button>
+
+              <button
+                class="btn"
+                type="button"
+                data-p41v4-reset
+                hidden
+              >
+                Refazer
+              </button>
+
+            </div>
+
+            <p
+              class="cap5-p41v4-alert"
+              data-p41v4-alert
+              role="alert"
+              hidden
+            >
+              Selecione uma alternativa antes de conferir.
+            </p>
+
+            <div
+              class="cap5-p41v4-feedback"
+              data-p41v4-feedback
+              aria-live="polite"
+              tabindex="-1"
+              hidden
+            >
+
+              <strong data-p41v4-feedback-title></strong>
+
+              <p data-p41v4-feedback-text></p>
+
+            </div>
+
+          </div>
+
+        </div>
 
       </section>
 
-      <p>
-        A reação ao Gram representa uma característica estrutural inicial do microrganismo, mas não permite identificar a espécie bacteriana nem determinar seu perfil de suscetibilidade.
-      </p>
+      <!--
+        A síntese aparece após a situação aplicada.
+      -->
+
+      <aside
+        class="cap5-p41v4-takeaway cap5-p41v4-reveal"
+        data-p41v4-takeaway
+        hidden
+      >
+
+        <strong>
+          Na interpretação do laudo
+        </strong>
+
+        <p>
+          A reação ao Gram oferece uma caracterização inicial, mas não identifica a espécie nem determina a suscetibilidade aos antibacterianos. Um resultado inesperado deve ser correlacionado com o tipo de amostra, a cultura, a identificação e o contexto clínico <sup>2,5</sup>.
+        </p>
+
+      </aside>
 
     </section>
 
-    <nav class="pager" aria-label="Paginação">
+    <nav
+      class="pager"
+      aria-label="Paginação"
+    >
+
       <a
         class="btn"
         href="p40.html"
@@ -270,11 +606,13 @@
       >
         Próxima →
       </a>
+
     </nav>
 
   </main>
 
   <script src="../../js/app.js"></script>
   <script src="../../js/capitulo-05.js"></script>
+
 </body>
 </html>
